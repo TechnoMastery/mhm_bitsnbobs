@@ -1,4 +1,6 @@
 {
   "item.mhm_bitsnbobs.sapphire": "Sapphire",
-  "item.mhm_bitsnbobs.raw_sapphire": "Raw sapphire"
+  "item.mhm_bitsnbobs.raw_sapphire": "Raw sapphire",
+
+  "creativetab.tutorial_tab": "Sapphire tab"
 }
