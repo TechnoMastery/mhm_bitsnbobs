@@ -1,4 +1,6 @@
 {
-  "item.mhm_bitsnbobs.sapphire": "Sapphire [fr]",
-  "item.mhm_bitsnbobs.raw_sapphire": "Sapphire brut [fr]"
+  "item.mhm_bitsnbobs.sapphire": "Saphir",
+  "item.mhm_bitsnbobs.raw_sapphire": "Saphir brut",
+
+  "creativetab.tutorial_tab": "Les saphirs"
 }
