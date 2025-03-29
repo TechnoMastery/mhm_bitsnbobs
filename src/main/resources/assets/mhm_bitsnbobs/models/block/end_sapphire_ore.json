@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "mhm_bitsnbobs:block/end_stone_sapphire_ore"
+    "all": "mhm_bitsnbobs:block/end_sapphire_ore"
   }
 }
