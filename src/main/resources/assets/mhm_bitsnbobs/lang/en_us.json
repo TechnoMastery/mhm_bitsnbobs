@@ -5,5 +5,10 @@
   "block.mhm_bitsnbobs.sapphire_block": "Block of sapphire",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Block of raw sapphire",
 
+  "block.mhm_bitsnbobs.sapphire_ore": "Sapphire ore",
+  "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Deepslate sapphire ore",
+  "block.mhm_bitsnbobs.nether_sapphire_ore": "Nether sapphire ore",
+  "block.mhm_bitsnbobs.end_sapphire_ore": "End sapphire ore",
+
   "creativetab.tutorial_tab": "Sapphire tab"
 }

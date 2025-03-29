@@ -5,5 +5,10 @@
   "block.mhm_bitsnbobs.sapphire_block": "Bloc de saphir",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Bloc de saphir brut",
 
+  "block.mhm_bitsnbobs.sapphire_ore": "Minerais de saphir",
+  "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Minerais de saphir de pierre des abîmes",
+  "block.mhm_bitsnbobs.nether_sapphire_ore": "Minerais de saphir du nether",
+  "block.mhm_bitsnbobs.end_sapphire_ore": "Minerais de saphir de l'end",
+
   "creativetab.tutorial_tab": "Les saphirs"
 }
