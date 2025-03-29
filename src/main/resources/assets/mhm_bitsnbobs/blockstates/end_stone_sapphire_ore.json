@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/end_stone_sapphire_ore"
+      "model": "mhm_bitsnbobs:block/end_stone_sapphire_ore"
     }
   }
 }
