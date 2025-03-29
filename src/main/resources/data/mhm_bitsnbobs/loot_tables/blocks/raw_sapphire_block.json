@@ -8,7 +8,7 @@
           "condition": "minecraft:survives_explosion"
         }
       ],
-      "entry": [
+      "entries": [
         {
           "type": "minecraft:item",
           "name": "mhm_bitsnbobs:raw_sapphire_block"
@@ -17,5 +17,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequenced": "mhm_bitsnbobs:blocks/raw_sapphire_block"
+  "random_sequenced": "mhm_bitsnbobs:blocks/sapphire_block"
 }
