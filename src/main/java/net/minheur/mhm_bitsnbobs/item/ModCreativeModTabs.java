@@ -30,6 +30,7 @@ public class ModCreativeModTabs {
 
                         // block
                         output.accept(ModBlocks.SAPPHIRE_BLOCK.get());
+                        output.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
                         // plus block
 
                         // end

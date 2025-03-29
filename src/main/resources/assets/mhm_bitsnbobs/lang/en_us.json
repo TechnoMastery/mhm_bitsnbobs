@@ -2,7 +2,8 @@
   "item.mhm_bitsnbobs.sapphire": "Sapphire",
   "item.mhm_bitsnbobs.raw_sapphire": "Raw sapphire",
 
-  "block.mhm_bitsnbobs.sapphire_block": "Block of Sapphire",
+  "block.mhm_bitsnbobs.sapphire_block": "Block of sapphire",
+  "block.mhm_bitsnbobs.raw_sapphire_block": "Block of raw sapphire",
 
   "creativetab.tutorial_tab": "Sapphire tab"
 }
