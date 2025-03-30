@@ -19,5 +19,7 @@
 
   "block.mhm_bitsnbobs.sound_block": "Sound block",
 
-  "creativetab.tutorial_tab": "Sapphire tab"
+  "creativetab.tutorial_tab": "Sapphire tab",
+
+  "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground"
 }

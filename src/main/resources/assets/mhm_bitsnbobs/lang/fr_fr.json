@@ -19,5 +19,7 @@
 
   "block.mhm_bitsnbobs.sound_block": "Block de musique",
 
-  "creativetab.tutorial_tab": "Les saphirs"
+  "creativetab.tutorial_tab": "Les saphirs",
+
+  "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéreux sous terre"
 }
