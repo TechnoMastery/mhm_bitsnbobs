@@ -2,6 +2,10 @@
   "item.mhm_bitsnbobs.sapphire": "Saphir",
   "item.mhm_bitsnbobs.raw_sapphire": "Saphir brut",
 
+  "item.mhm_bitsnbobs.metal_detector": "Détécteur de métaux",
+  "item.mhm_bitsnbobs.burger": "Burger",
+  "item.mhm_bitsnbobs.strawberry": "Fraise",
+
   "block.mhm_bitsnbobs.sapphire_block": "Bloc de saphir",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Bloc de saphir brut",
 
@@ -9,6 +13,8 @@
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Minerais de saphir de pierre des abîmes",
   "block.mhm_bitsnbobs.nether_sapphire_ore": "Minerais de saphir du nether",
   "block.mhm_bitsnbobs.end_sapphire_ore": "Minerais de saphir de l'end",
+
+  "block.mhm_bitsnbobs.sound_block": "Block de musique",
 
   "creativetab.tutorial_tab": "Les saphirs"
 }

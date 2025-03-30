@@ -2,6 +2,10 @@
   "item.mhm_bitsnbobs.sapphire": "Sapphire",
   "item.mhm_bitsnbobs.raw_sapphire": "Raw sapphire",
 
+  "item.mhm_bitsnbobs.metal_detector": "Metal detector",
+  "item.mhm_bitsnbobs.burger": "Burger",
+  "item.mhm_bitsnbobs.strawberry": "Strawberry",
+
   "block.mhm_bitsnbobs.sapphire_block": "Block of sapphire",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Block of raw sapphire",
 
@@ -9,6 +13,8 @@
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Deepslate sapphire ore",
   "block.mhm_bitsnbobs.nether_sapphire_ore": "Nether sapphire ore",
   "block.mhm_bitsnbobs.end_sapphire_ore": "End sapphire ore",
+
+  "block.mhm_bitsnbobs.sound_block": "Sound block",
 
   "creativetab.tutorial_tab": "Sapphire tab"
 }
