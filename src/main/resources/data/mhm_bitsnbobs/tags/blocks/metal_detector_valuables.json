@@ -1,6 +1,9 @@
 {
   "values": [
     "mhm_bitsnbobs:sapphire_ore",
+    "mhm_bitsnbobs:deepslate_sapphire_ore",
+    "mhm_bitsnbobs:nether_sapphire_ore",
+    "mhm_bitsnbobs:end_sapphire_ore",
     "#forge:ores"
   ]
 }
