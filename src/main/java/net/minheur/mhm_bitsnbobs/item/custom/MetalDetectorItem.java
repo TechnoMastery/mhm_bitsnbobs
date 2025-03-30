@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minheur.mhm_bitsnbobs.util.ModTags;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -60,7 +61,7 @@ public class MetalDetectorItem extends Item {
     }
 
     private void OutputValuableCoordinates(BlockPos blockPos, Player player, Block block) {
-        player.sendSystemMessage(Component.literal("Found" + I18n.get(block.getDescriptionId()) + " at " +
+        player.sendSystemMessage(Component.literal("Found " + I18n.get(block.getDescriptionId()) + " at " +
                 "(" + blockPos.getX() + ", " + blockPos.getY() + ", " + blockPos.getZ() + ")"));
     }
 
