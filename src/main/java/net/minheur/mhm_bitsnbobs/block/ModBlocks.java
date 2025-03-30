@@ -33,7 +33,7 @@ public class ModBlocks {
     // custom block
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
-            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.AMETHYST)));
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
     // end custom
 
