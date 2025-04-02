@@ -19,6 +19,16 @@
 
   "block.mhm_bitsnbobs.sound_block": "Block de musique",
 
+  "block.mhm_bitsnbobs.sapphire_stairs": "Escaliers en saphir",
+  "block.mhm_bitsnbobs.sapphire_slab": "Dalle en saphir",
+  "block.mhm_bitsnbobs.sapphire_button": "Bouton en saphir",
+  "block.mhm_bitsnbobs.sapphire_pressure_plate": "Plaque de pression en saphir",
+  "block.mhm_bitsnbobs.sapphire_fence": "Barrière en saphir",
+  "block.mhm_bitsnbobs.sapphire_fence_gate": "Portillon en saphir",
+  "block.mhm_bitsnbobs.sapphire_wall": "Muret en saphir",
+  "block.mhm_bitsnbobs.sapphire_door": "Porte en saphit",
+  "block.mhm_bitsnbobs.sapphire_trapdoor": "Trappe en saphir",
+
   "creativetab.tutorial_tab": "Les saphirs",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéreux sous terre",

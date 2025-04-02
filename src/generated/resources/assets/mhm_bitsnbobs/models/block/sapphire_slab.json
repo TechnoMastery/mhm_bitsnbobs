@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "mhm_bitsnbobs:block/sapphire_block",
+    "side": "mhm_bitsnbobs:block/sapphire_block",
+    "top": "mhm_bitsnbobs:block/sapphire_block"
+  }
+}

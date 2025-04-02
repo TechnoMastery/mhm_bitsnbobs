@@ -19,6 +19,16 @@
 
   "block.mhm_bitsnbobs.sound_block": "Sound block",
 
+  "block.mhm_bitsnbobs.sapphire_stairs": "Sapphire stairs",
+  "block.mhm_bitsnbobs.sapphire_slab": "Sapphire slab",
+  "block.mhm_bitsnbobs.sapphire_button": "Sapphire button",
+  "block.mhm_bitsnbobs.sapphire_pressure_plate": "Sapphire pressure plate",
+  "block.mhm_bitsnbobs.sapphire_fence": "Sapphire fence",
+  "block.mhm_bitsnbobs.sapphire_fence_gate": "Sapphire fence gate",
+  "block.mhm_bitsnbobs.sapphire_wall": "Sapphire wall",
+  "block.mhm_bitsnbobs.sapphire_door": "Sapphire door",
+  "block.mhm_bitsnbobs.sapphire_trapdoor": "Sapphire trapdoor",
+
   "creativetab.tutorial_tab": "Sapphire tab",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",

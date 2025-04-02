@@ -1,6 +1,10 @@
-// 1.20.1	2025-03-30T18:11:34.4957801	Tags for minecraft:block mod id mhm_bitsnbobs
+// 1.20.1	2025-04-01T19:25:48.6802057	Tags for minecraft:block mod id mhm_bitsnbobs
 11e63f23b0ffee7587c42b04ebce74bb52b9c091 data/forge/tags/blocks/needs_netherite_tool.json
-598f50fd0a9bbca465c0d60065e8749ec5b5150c data/mhm_bitsnbobs/tags/blocks/metal_detector_valuables.json
+8b1f7efa45de20673290401d6797c82262b41867 data/mhm_bitsnbobs/tags/blocks/metal_detector_valuables.json
+adec57994a5a293d4e60eb67610588a681515913 data/minecraft/tags/blocks/fences.json
+536ea771d2cb477c435675f55d696a4a46068147 data/minecraft/tags/blocks/fence_gates.json
 e2aa384d558aaec723a42481663933307881d4c5 data/minecraft/tags/blocks/mineable/pickaxe.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/blocks/needs_diamond_tool.json
 e1be572841c1d2eac42ea9e6ededeba71e3e09cd data/minecraft/tags/blocks/needs_iron_tool.json
+69608dd370939cc73edbf72cb8261e7e469c31fd data/minecraft/tags/blocks/needs_stone_tool.json
+47356215c9cfc928a2b2932bb6deb587cd6774ca data/minecraft/tags/blocks/walls.json

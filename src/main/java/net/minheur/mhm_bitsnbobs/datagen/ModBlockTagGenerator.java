@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -20,7 +21,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        // METAL DETECTOR detecion list
+        // METAL DETECTOR detection list
         this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
                 .add(
                         ModBlocks.SAPPHIRE_ORE.get()
@@ -50,9 +51,27 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 );
 
         // stone tool
-        this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
+        this.tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(
                         ModBlocks.NETHER_SAPPHIRE_ORE.get()
+                );
+
+        // fences ==> not wood fences
+        this.tag(BlockTags.FENCES)
+                .add(
+                        ModBlocks.SAPPHIRE_FENCE.get()
+                );
+
+        // fences gate
+        this.tag(BlockTags.FENCE_GATES)
+                .add(
+                        ModBlocks.SAPPHIRE_FENCE_GATE.get()
+                );
+
+        // walls
+        this.tag(BlockTags.WALLS)
+                .add(
+                        ModBlocks.SAPPHIRE_WALL.get()
                 );
 
         // mineable/pickaxe
