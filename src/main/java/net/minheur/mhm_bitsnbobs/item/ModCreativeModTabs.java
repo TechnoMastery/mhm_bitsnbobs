@@ -34,6 +34,8 @@ public class ModCreativeModTabs {
 
                         output.accept(ModItems.BURGER.get());
                         output.accept(ModItems.STRAWBERRY.get());
+
+                        output.accept(ModItems.SAPPHIRE_STAFF.get());
                         // plus item
 
                         // block
