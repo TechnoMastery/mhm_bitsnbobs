@@ -36,7 +36,15 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_ORE.get(),
                         ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
                         ModBlocks.SAPPHIRE_BLOCK.get(),
-                        ModBlocks.RAW_SAPPHIRE_BLOCK.get()
+                        ModBlocks.RAW_SAPPHIRE_BLOCK.get(),
+
+                        ModBlocks.SAPPHIRE_SLAB.get(),
+                        ModBlocks.SAPPHIRE_TRAPDOOR.get(),
+                        ModBlocks.SAPPHIRE_DOOR.get(),
+                        ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(),
+                        ModBlocks.SAPPHIRE_FENCE_GATE.get(),
+                        ModBlocks.SAPPHIRE_FENCE.get(),
+                        ModBlocks.SAPPHIRE_STAIRS.get()
                 );
 
         // DIAMOND TOOL
@@ -89,7 +97,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.NETHER_SAPPHIRE_ORE.get(),
                         ModBlocks.END_SAPPHIRE_ORE.get(),
                         ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
-                        ModBlocks.SOUND_BLOCK.get()
+                        ModBlocks.SOUND_BLOCK.get(),
+                        ModBlocks.SAPPHIRE_SLAB.get(),
+                        ModBlocks.SAPPHIRE_TRAPDOOR.get(),
+                        ModBlocks.SAPPHIRE_DOOR.get(),
+                        ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(),
+                        ModBlocks.SAPPHIRE_FENCE_GATE.get(),
+                        ModBlocks.SAPPHIRE_FENCE.get(),
+                        ModBlocks.SAPPHIRE_STAIRS.get()
                 );
     }
 }
