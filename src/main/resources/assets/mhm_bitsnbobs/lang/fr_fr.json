@@ -11,6 +11,12 @@
 
   "item.mhm_bitsnbobs.pine_cone": "Pomme de pin",
 
+  "item.mhm_bitsnbobs.sapphire_sword": "Epée en saphir",
+  "item.mhm_bitsnbobs.sapphire_shovel": "Pelle en saphit",
+  "item.mhm_bitsnbobs.sapphire_pickaxe": "Pioche en saphir",
+  "item.mhm_bitsnbobs.sapphire_axe": "Hache en saphir",
+  "item.mhm_bitsnbobs.sapphire_hoe": "Houe en saphir",
+
   "block.mhm_bitsnbobs.sapphire_block": "Bloc de saphir",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Bloc de saphir brut",
 

@@ -50,6 +50,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.END_SAPPHIRE_ORE.get()
                 );
 
+        //
+        this.tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
+                .add(
+                        ModBlocks.SOUND_BLOCK.get()
+                );
+
         // stone tool
         this.tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(

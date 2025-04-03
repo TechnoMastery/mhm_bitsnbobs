@@ -3,11 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "mhm_bitsnbobs:raw_sapphire_block"
+      "item": "mhm_bitsnbobs:sapphire"
     }
   ],
   "result": {
-    "count": 9,
-    "item": "mhm_bitsnbobs:raw_sapphire"
+    "item": "mhm_bitsnbobs:sapphire_button"
   }
 }

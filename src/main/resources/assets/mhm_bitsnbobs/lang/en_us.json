@@ -11,6 +11,12 @@
 
   "item.mhm_bitsnbobs.pine_cone": "Pine cone",
 
+  "item.mhm_bitsnbobs.sapphire_sword": "Sapphire sword",
+  "item.mhm_bitsnbobs.sapphire_shovel": "Sapphire shovel",
+  "item.mhm_bitsnbobs.sapphire_pickaxe": "Sapphire pickaxe",
+  "item.mhm_bitsnbobs.sapphire_axe": "Sapphire axe",
+  "item.mhm_bitsnbobs.sapphire_hoe": "Sapphire hoe",
+
   "block.mhm_bitsnbobs.sapphire_block": "Block of sapphire",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Block of raw sapphire",
 
