@@ -49,7 +49,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // no pattern
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR.get())
                 .pattern(" I ")
-                .pattern("I I")
+                .pattern("IGI")
                 .pattern(" S ")
                 .define('I', Items.IRON_INGOT)
                 .define('S', Items.STICK)
