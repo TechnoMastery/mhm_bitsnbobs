@@ -42,6 +42,11 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SAPPHIRE_AXE.get());
                         output.accept(ModItems.SAPPHIRE_SHOVEL.get());
                         output.accept(ModItems.SAPPHIRE_HOE.get());
+
+                        output.accept(ModItems.SAPPHIRE_HELMET.get());
+                        output.accept(ModItems.SAPPHIRE_CHESTPLATE.get());
+                        output.accept(ModItems.SAPPHIRE_LEGGINGS.get());
+                        output.accept(ModItems.SAPPHIRE_BOOTS.get());
                         // plus item
 
                         // block
