@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
+  "category": "equipment",
   "key": {
     "S": {
-      "item": "mhm_bitsnbobs:sapphire_block"
+      "item": "mhm_bitsnbobs:sapphire"
     }
   },
   "pattern": [
-    "SSS"
+    "SSS",
+    "S S"
   ],
   "result": {
-    "count": 6,
-    "item": "mhm_bitsnbobs:sapphire_slab"
+    "item": "mhm_bitsnbobs:sapphire_helmet"
   },
   "show_notification": true
 }

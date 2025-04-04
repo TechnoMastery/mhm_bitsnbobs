@@ -2,6 +2,8 @@ package net.minheur.mhm_bitsnbobs.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -11,6 +13,7 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
@@ -34,15 +37,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, SAPPHIRE_SMELTABLE, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
         oreBlasting(pWriter, SAPPHIRE_SMELTABLE, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
 
-        // shaped recipe pattern
+        // shaped recipe pattern ==> 3x3 crafting
         simpleBlockCrafting(pWriter, ModBlocks.SAPPHIRE_BLOCK.get(), ModItems.SAPPHIRE.get());
         simpleBlockCrafting(pWriter, ModBlocks.RAW_SAPPHIRE_BLOCK.get(), ModItems.RAW_SAPPHIRE.get());
 
+        // call craft armor ==> chacun le leur
+        simpleHelmetCrafting(pWriter, ModItems.SAPPHIRE_HELMET.get(), ModItems.SAPPHIRE.get());
+        simpleChestplateCrafting(pWriter, ModItems.SAPPHIRE_CHESTPLATE.get(), ModItems.SAPPHIRE.get());
+        simpleLeggingsCrafting(pWriter, ModItems.SAPPHIRE_LEGGINGS.get(), ModItems.SAPPHIRE.get());
+        simpleBootsCrafting(pWriter, ModItems.SAPPHIRE_BOOTS.get(), ModItems.SAPPHIRE.get());
+
+        // tools & weapons : chacun le leur (préciser le stick pls)
+        simpleSwordCrafting(pWriter, ModItems.SAPPHIRE_SWORD.get(), ModItems.SAPPHIRE.get(), Items.STICK);
+        simplePickaxeCrafting(pWriter, ModItems.SAPPHIRE_PICKAXE.get(), ModItems.SAPPHIRE.get(), Items.STICK);
+        simpleAxesCrafting(pWriter, ModItems.SAPPHIRE_AXE.get(), ModItems.SAPPHIRE.get(), Items.STICK);
+        simpleShovelCrafting(pWriter, ModItems.SAPPHIRE_SHOVEL.get(), ModItems.SAPPHIRE.get(), Items.STICK);
+        simpleHoesCrafting(pWriter, ModItems.SAPPHIRE_HOE.get(), ModItems.SAPPHIRE.get(), Items.STICK);
+
+        // slab, stair & pressure plate ont leurs propres mod
         simpleSlabCrafting(pWriter, ModBlocks.SAPPHIRE_SLAB.get(), ModBlocks.SAPPHIRE_BLOCK.get());
         simpleStairsCrafting(pWriter, ModBlocks.SAPPHIRE_STAIRS.get(), ModBlocks.SAPPHIRE_BLOCK.get());
         simplePressurePlateCrafting(pWriter, ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(), ModBlocks.SAPPHIRE_BLOCK.get());
 
-        // simple shapeless pattern
+        // simple shapeless pattern ==> 1 item
         simpleShappelessCrafting(pWriter, ModBlocks.SAPPHIRE_BUTTON.get(), ModItems.SAPPHIRE.get(), 1);
         simpleShappelessCrafting(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), 9);
 
@@ -69,7 +86,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void simpleStairsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Block result, Block ingredient) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, 6)
                 .pattern("S  ")
                 .pattern("SS ")
                 .pattern("SSS")
@@ -78,8 +95,104 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
+    // armor making
+    protected static void simpleHelmetCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("SSS")
+                .pattern("S S")
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    protected static void simpleChestplateCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("S S")
+                .pattern("SSS")
+                .pattern("SSS")
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    protected static void simpleLeggingsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("SSS")
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    protected static void simpleBootsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("S S")
+                .pattern("S S")
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    // tools and weapons
+    protected static void simpleSwordCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
+                .pattern("S")
+                .pattern("S")
+                .pattern("P")
+                .define('S', ingredient)
+                .define('P', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    protected static void simplePickaxeCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("SSS")
+                .pattern(" P ")
+                .pattern(" P ")
+                .define('S', ingredient)
+                .define('P', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    protected static void simpleShovelCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("S")
+                .pattern("P")
+                .pattern("P")
+                .define('S', ingredient)
+                .define('P', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    protected static void simpleAxesCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("SS")
+                .pattern("PS")
+                .pattern("P ")
+                .define('S', ingredient)
+                .define('P', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+    protected static void simpleHoesCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .pattern("SS")
+                .pattern("P ")
+                .pattern("P ")
+                .define('S', ingredient)
+                .define('P', stick)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinisherRecpipeConsumer);
+    }
+
+
     protected static void simpleSlabCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Block result, Block ingredient) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, 6)
                 .pattern("SSS")
                 .define('S', ingredient)
                 .unlockedBy(getHasName(ingredient), has(ingredient))

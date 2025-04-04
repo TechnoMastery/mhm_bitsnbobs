@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:sapphire"
+    }
+  },
+  "pattern": [
+    "SS",
+    "PS",
+    "P "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:sapphire_axe"
+  },
+  "show_notification": true
+}

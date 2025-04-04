@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "P": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:sapphire"
+    }
+  },
+  "pattern": [
+    "S",
+    "P",
+    "P"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:sapphire_shovel"
+  },
+  "show_notification": true
+}
