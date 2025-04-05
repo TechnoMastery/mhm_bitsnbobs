@@ -15,6 +15,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.loot.AddItemModifier;
+import net.minheur.mhm_bitsnbobs.loot.AddSusSandItemModifier;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
@@ -44,5 +45,10 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 new LootTableIdCondition.Builder(new ResourceLocation("blocks/grass")).build(),
                 LootItemRandomChanceCondition.randomChance(0.35f).build()
         }, ModItems.PINE_CONE.get(), 1));
+
+        // sus sand
+        add("storm_fragment_from_sus_sand", new AddSusSandItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("archaeology/desert_pyramid")).build()
+        }, ModItems.STORM_FRAGMENT.get(), 0.11f));
     }
 }
