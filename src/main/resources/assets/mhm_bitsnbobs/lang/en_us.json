@@ -1,6 +1,7 @@
 {
   "item.mhm_bitsnbobs.sapphire": "Sapphire",
   "item.mhm_bitsnbobs.raw_sapphire": "Raw sapphire",
+  "item.mhm_bitsnbobs.storm_fragment": "Storm fragment",
 
   "item.mhm_bitsnbobs.metal_detector": "Metal detector",
 
@@ -43,6 +44,7 @@
   "block.mhm_bitsnbobs.sapphire_trapdoor": "Sapphire trapdoor",
 
   "creativetab.tutorial_tab": "Sapphire tab",
+  "creativetab.storm_component": "Storm items",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises"

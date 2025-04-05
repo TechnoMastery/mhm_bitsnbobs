@@ -1,6 +1,7 @@
 {
   "item.mhm_bitsnbobs.sapphire": "Saphir",
   "item.mhm_bitsnbobs.raw_sapphire": "Saphir brut",
+  "item.mhm_bitsnbobs.storm_fragment": "Fragement de tempète",
 
   "item.mhm_bitsnbobs.metal_detector": "Détécteur de métaux",
 
@@ -43,6 +44,7 @@
   "block.mhm_bitsnbobs.sapphire_trapdoor": "Trappe en saphir",
 
   "creativetab.tutorial_tab": "Les saphirs",
+  "creativetab.storm_component": "Objets de la tempète",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéreux sous terre",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit"

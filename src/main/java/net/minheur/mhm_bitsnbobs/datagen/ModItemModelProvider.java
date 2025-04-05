@@ -46,6 +46,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.SAPPHIRE);
         simpleitem(ModItems.RAW_SAPPHIRE);
 
+        simpleitem(ModItems.STORM_FRAGMENT);
+
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
 

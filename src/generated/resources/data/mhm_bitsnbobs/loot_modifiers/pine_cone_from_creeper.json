@@ -6,10 +6,10 @@
       "loot_table_id": "minecraft:entities/creeper"
     },
     {
-      "chance": 0.5,
+      "chance": 0.1,
       "condition": "minecraft:random_chance"
     }
   ],
   "item": "mhm_bitsnbobs:pine_cone",
-  "quantity": 1
+  "minQuantity": 1
 }

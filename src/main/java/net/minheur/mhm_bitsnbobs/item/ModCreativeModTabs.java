@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -86,6 +87,15 @@ public class ModCreativeModTabs {
                         // plus block
 
                         // end
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> STORM_COMPONENT = CREATIVE_MODE_TABS.register("storm_component",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STORM_FRAGMENT.get()))
+                    .title(Component.translatable("creativetab.storm_component"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
+                        output.accept(ModItems.STORM_FRAGMENT.get());
                     })
                     .build());
 

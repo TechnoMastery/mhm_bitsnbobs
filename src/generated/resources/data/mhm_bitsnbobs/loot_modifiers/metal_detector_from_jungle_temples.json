@@ -11,5 +11,5 @@
     }
   ],
   "item": "mhm_bitsnbobs:metal_detector",
-  "quantity": 1
+  "minQuantity": 1
 }

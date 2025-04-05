@@ -10,6 +10,6 @@
       "condition": "minecraft:random_chance"
     }
   ],
-  "item": "mhm_bitsnbobs:sapphire_block",
-  "quantity": 1
+  "item": "mhm_bitsnbobs:pine_cone",
+  "minQuantity": 1
 }
