@@ -36,6 +36,8 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.BURGER.get());
                         output.accept(ModItems.STRAWBERRY.get());
 
+                        output.accept(ModItems.STRAWBERRY_SEEDS.get());
+
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
 
                         output.accept(ModItems.SAPPHIRE_SWORD.get());

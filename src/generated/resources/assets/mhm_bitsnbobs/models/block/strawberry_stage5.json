@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/crop",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "crop": "mhm_bitsnbobs:block/strawberry_stage5"
+  }
+}

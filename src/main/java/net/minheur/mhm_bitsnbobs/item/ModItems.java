@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.custom.FuelItem;
 import net.minheur.mhm_bitsnbobs.item.custom.MetalDetectorItem;
 import net.minheur.mhm_bitsnbobs.item.custom.ModArmorItem;
@@ -73,6 +74,11 @@ public class ModItems {
             () -> new ModArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE_BOOTS = ITEMS.register("sapphire_boots",
             () -> new ModArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new Item.Properties()));
+
+    // seeds
+    public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.STRAWBERRY_CROP.get(), new Item.Properties()));
+
     // end item create
 
 

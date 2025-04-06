@@ -14,6 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.custom.SoundBlock;
+import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 
 import java.util.function.Supplier;
@@ -81,7 +82,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> SAPPHIRE_TRAPDOOR = registerBlock("sapphire_trapdoor",
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST).noOcclusion(), BlockSetType.IRON));
 
-
+    // crops
+    public static final RegistryObject<Block> STRAWBERRY_CROP = BLOCKS.register("strawberry_crop",
+            () -> new StrawberryCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
 
 
     // end block create
