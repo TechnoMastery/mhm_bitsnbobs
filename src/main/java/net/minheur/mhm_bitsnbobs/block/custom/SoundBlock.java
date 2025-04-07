@@ -27,7 +27,7 @@ public class SoundBlock extends Block {
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
                                  Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        pLevel.playSound(pPlayer, pPos, SoundEvents.NOTE_BLOCK_DIDGERIDOO.get(), SoundSource.BLOCKS);
+        pLevel.playSound(pPlayer, pPos, SoundEvents.SCAFFOLDING_BREAK, SoundSource.BLOCKS);
         return InteractionResult.SUCCESS;
     }
 

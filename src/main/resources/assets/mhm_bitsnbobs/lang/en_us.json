@@ -54,6 +54,8 @@
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Sound master",
 
+  "sounds.mhm_bitsnbobs.metal_detector_found_ore": "Metal detector ding",
+
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises"
 }

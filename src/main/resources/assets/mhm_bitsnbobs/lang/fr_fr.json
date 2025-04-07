@@ -46,7 +46,7 @@
   "block.mhm_bitsnbobs.sapphire_fence": "Barrière en saphir",
   "block.mhm_bitsnbobs.sapphire_fence_gate": "Portillon en saphir",
   "block.mhm_bitsnbobs.sapphire_wall": "Muret en saphir",
-  "block.mhm_bitsnbobs.sapphire_door": "Porte en saphit",
+  "block.mhm_bitsnbobs.sapphire_door": "Porte en saphir",
   "block.mhm_bitsnbobs.sapphire_trapdoor": "Trappe en saphir",
 
   "creativetab.tutorial_tab": "Les saphirs",
@@ -54,6 +54,8 @@
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Ingénieur son",
 
-  "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéreux sous terre",
+  "sounds.mhm_bitsnbobs.metal_detector_found_ore": "Ding de détecteur de métal",
+
+  "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéraux sous terre",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit"
 }

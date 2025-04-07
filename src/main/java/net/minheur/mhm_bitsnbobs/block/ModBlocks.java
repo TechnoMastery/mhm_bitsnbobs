@@ -18,6 +18,7 @@ import net.minheur.mhm_bitsnbobs.block.custom.CornCropBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.SoundBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
 import java.util.function.Supplier;
 
@@ -36,7 +37,7 @@ public class ModBlocks {
     // custom block
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
-            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSounds.SOUND_BLOCK_SOUNDS)));
 
     // end custom
 
