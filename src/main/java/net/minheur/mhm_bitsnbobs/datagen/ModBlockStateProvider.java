@@ -51,6 +51,13 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // then trapdoor too but 1 texture plus an oriantable value
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.SAPPHIRE_TRAPDOOR.get()), modLoc("block/sapphire_trapdoor"), true, "cutout");
 
+        // flowers      paté de 2 simpleBlockWithItem (flower + potted_flower)
+        simpleBlockWithItem(ModBlocks.CATMINT.get(), models().cross(blockTexture(ModBlocks.CATMINT.get()).getPath(),
+                blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
+        simpleBlockWithItem(ModBlocks.POTTED_CATMINT.get(), models().singleTexture("potted_catmint", new ResourceLocation("flower_pot_cross"),
+                "plant", blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
+
+        // quand paté de crop fini, l'appeler ici
         makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
         makeCornCrop(((CropBlock) ModBlocks.CORN_CROP.get()), "corn_stage_", "corn_stage_");
     }

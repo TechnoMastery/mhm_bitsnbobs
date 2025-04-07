@@ -66,6 +66,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(),
                 ModItems.CORN_SEEDS.get(), lootitemcomdition$builder2));
 
+        // flowers      packet de 2 pour la fleur + potted flower
+        this.dropSelf(ModBlocks.CATMINT.get());
+        this.add(ModBlocks.POTTED_CATMINT.get(), createPotFlowerItemTable(ModBlocks.CATMINT.get()));
+
         // packet sapphire ore
         this.add(ModBlocks.SAPPHIRE_ORE.get(),
                 block -> createCopperLickOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get()));
