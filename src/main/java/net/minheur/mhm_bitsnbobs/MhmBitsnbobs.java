@@ -18,8 +18,13 @@ import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.loot.ModLootModifiers;
-import net.minheur.mhm_bitsnbobs.util.ModTags;
+import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
 import org.slf4j.Logger;
+
+/// ce fichier est le coeur, le cerveau, le tous ce que tu veut de ton mod.
+/// C'est entre autre lui qui va définire les bases, qui va appeler les fichier de données comme les creative mod tabs etc.
+/// Le supprimmer est critique (comme la plupare des fichiers xD) : cela empècherais le mod de comprendre ce qui ce passe.
+/// Il s'agit de la javaClass principale.
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(MhmBitsnbobs.MOD_ID)
@@ -40,6 +45,7 @@ public class MhmBitsnbobs
         ModBlocks.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
+        ModVillagers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

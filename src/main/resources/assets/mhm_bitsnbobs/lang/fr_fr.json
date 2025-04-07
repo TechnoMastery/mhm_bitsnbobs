@@ -52,6 +52,8 @@
   "creativetab.tutorial_tab": "Les saphirs",
   "creativetab.storm_component": "Objets de la tempète",
 
+  "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Ingénieur son",
+
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéreux sous terre",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit"
 }

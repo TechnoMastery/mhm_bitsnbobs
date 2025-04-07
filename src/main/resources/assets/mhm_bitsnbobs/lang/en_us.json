@@ -52,6 +52,8 @@
   "creativetab.tutorial_tab": "Sapphire tab",
   "creativetab.storm_component": "Storm items",
 
+  "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Sound master",
+
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises"
 }
