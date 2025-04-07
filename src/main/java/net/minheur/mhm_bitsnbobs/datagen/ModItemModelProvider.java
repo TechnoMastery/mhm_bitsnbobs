@@ -45,13 +45,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         // dupli = auto get model item gen
         simpleitem(ModItems.SAPPHIRE);
         simpleitem(ModItems.RAW_SAPPHIRE);
-
+        simpleitem(ModItems.CORN);
         simpleitem(ModItems.STORM_FRAGMENT);
 
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
 
         simpleitem(ModItems.STRAWBERRY_SEEDS);
+        simpleitem(ModItems.CORN_SEEDS);
 
         simpleitem(ModItems.METAL_DETECTOR);
 

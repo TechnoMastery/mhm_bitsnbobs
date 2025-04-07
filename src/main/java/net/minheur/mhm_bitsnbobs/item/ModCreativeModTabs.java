@@ -28,6 +28,8 @@ public class ModCreativeModTabs {
                         // item
                         output.accept(ModItems.RAW_SAPPHIRE.get());
                         output.accept(ModItems.SAPPHIRE.get());
+                        output.accept(ModItems.SAPPHIRE_STAFF.get());
+                        output.accept(ModItems.CORN.get());
 
                         output.accept(ModItems.METAL_DETECTOR.get());
 
@@ -37,8 +39,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.STRAWBERRY.get());
 
                         output.accept(ModItems.STRAWBERRY_SEEDS.get());
-
-                        output.accept(ModItems.SAPPHIRE_STAFF.get());
+                        output.accept(ModItems.CORN_SEEDS.get());
 
                         output.accept(ModItems.SAPPHIRE_SWORD.get());
                         output.accept(ModItems.SAPPHIRE_PICKAXE.get());
