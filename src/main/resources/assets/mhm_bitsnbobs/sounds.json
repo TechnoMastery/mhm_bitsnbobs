@@ -34,5 +34,32 @@
     "sounds": [
       "mhm_bitsnbobs:sound_block_fall"
     ]
+  },
+  "bar_brawl": {
+    "subtitle": "sounds.mhm_bitsnbobs.bar_brawl",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:bar_brawl",
+        "stream": true
+      }
+    ]
+  },
+  "dark_soul": {
+    "subtitle": "sounds.mhm_bitsnbobs.dark_soul",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:myuu-holdon_1",
+        "stream": true
+      }
+    ]
+  },
+  "end_of_the_start": {
+    "subtitle": "sounds.mhm_bitsnbobs.end_of_the_start",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:punchdeck_destabilized",
+        "stream": true
+      }
+    ]
   }
 }

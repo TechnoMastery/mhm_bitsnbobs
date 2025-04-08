@@ -25,6 +25,11 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> SOUND_BLOCK_PLACE = registerSoundEvents("sound_block_place");
     public static final RegistryObject<SoundEvent> SOUND_BLOCK_HIT = registerSoundEvents("sound_block_hit");
 
+    // diques de musiques
+    public static final RegistryObject<SoundEvent> BAR_BRAWL = registerSoundEvents("bar_brawl");
+    public static final RegistryObject<SoundEvent> DARK_SOUL = registerSoundEvents("dark_soul");
+    public static final RegistryObject<SoundEvent> END_OF_THE_START = registerSoundEvents("end_of_the_start");
+
     // groupes de sons      ATTENTION l'ordre dans lequel les sons sont appelé est important
     public static final ForgeSoundType SOUND_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.SOUND_BLOCK_BREAK, ModSounds.SOUND_BLOCK_STEP, ModSounds.SOUND_BLOCK_PLACE,

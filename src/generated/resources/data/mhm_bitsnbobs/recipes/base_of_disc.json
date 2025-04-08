@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "forge:ingots"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:hardened_ingot"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SDS",
+    " S "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:base_of_disc"
+  },
+  "show_notification": true
+}

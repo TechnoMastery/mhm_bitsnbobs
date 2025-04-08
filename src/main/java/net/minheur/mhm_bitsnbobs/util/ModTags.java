@@ -10,6 +10,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 
 public class ModTags {
     public static class Blocks {
+        // ligne suivante = create of tag blocks
         public static final TagKey<Block> METAL_DETECTOR_VALUABLES = tag("metal_detector_valuables");
         public static final TagKey<Block> NEEDS_SAPPHIRE_TOOL = tag("needs_sapphire_tool");
 
@@ -20,6 +21,8 @@ public class ModTags {
     }
 
     public static class Items {
+        // modele item tags
+        public static final TagKey<Item> BASEDISK = tag("basedisk");
 
 
         private static TagKey<Item> tag(String name) {

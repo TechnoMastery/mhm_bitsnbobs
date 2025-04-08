@@ -10,6 +10,7 @@ import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.custom.FuelItem;
 import net.minheur.mhm_bitsnbobs.item.custom.MetalDetectorItem;
 import net.minheur.mhm_bitsnbobs.item.custom.ModArmorItem;
+import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -33,6 +34,19 @@ public class ModItems {
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> HARDENED_INGOT = ITEMS.register("hardened_ingot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
+            () -> new RecordItem(6, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));
+    public static final RegistryObject<Item> DARK_SOUL_MUSIC_DISC = ITEMS.register("dark_soul_music_disc",
+            () -> new RecordItem(6, ModSounds.DARK_SOUL, new Item.Properties().stacksTo(1), 3240));
+    public static final RegistryObject<Item> END_OF_THE_START_MUSIC_DISC = ITEMS.register("end_of_the_start_music_disc",
+            () -> new RecordItem(6, ModSounds.END_OF_THE_START, new Item.Properties().stacksTo(1), 2680));
 
     // fuel item
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",

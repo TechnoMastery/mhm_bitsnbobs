@@ -2,7 +2,9 @@ package net.minheur.mhm_bitsnbobs.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -15,9 +17,11 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.fml.common.Mod;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -63,7 +67,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCrafting(pWriter, ModBlocks.SAPPHIRE_BUTTON.get(), ModItems.SAPPHIRE.get(), 1);
         simpleShappelessCrafting(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), 9);
 
+        // simple music disc ==> second item is what item you want it to be made with (center always = basedisk tag)
+        simpleDiscCrafting(pWriter, ModItems.DARK_SOUL_MUSIC_DISC.get(), Items.ECHO_SHARD);
+        simpleDiscCrafting(pWriter, ModItems.END_OF_THE_START_MUSIC_DISC.get(), ModItems.HARDENED_INGOT.get());
+        simpleDiscCrafting(pWriter, ModItems.BAR_BRAWL_MUSIC_DISC.get(), ModItems.SAPPHIRE.get());
+
         // no pattern
+        // metal detector
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR.get())
                 .pattern(" I ")
                 .pattern("IGI")
@@ -73,6 +83,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Items.GLASS)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
+
+        // base of disc
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASE_OF_DISC.get())
+                .pattern(" S ")
+                .pattern("SDS")
+                .pattern(" S ")
+                .define('S', ModItems.HARDENED_INGOT.get())
+                .define('D', Tags.Items.INGOTS)
+                .unlockedBy(getHasName(ModItems.HARDENED_INGOT.get()), has(ModItems.HARDENED_INGOT.get()))
+                .save(pWriter);
     }
 
     protected static void simpleBlockCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Block block, Item item) {
@@ -81,6 +101,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("SSS")
                 .pattern("SSS")
                 .define('S', item)
+                .unlockedBy(getHasName(item), has(item))
+                .save(pFinishedRecipeConsumer);
+    }
+
+    protected static void simpleDiscCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item result, Item item) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern(" S ")
+                .pattern("SBS")
+                .pattern(" S ")
+                .define('S', item)
+                .define('B', ModTags.Items.BASEDISK)
                 .unlockedBy(getHasName(item), has(item))
                 .save(pFinishedRecipeConsumer);
     }

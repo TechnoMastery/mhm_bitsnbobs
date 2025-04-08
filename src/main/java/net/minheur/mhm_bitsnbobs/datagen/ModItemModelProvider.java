@@ -47,12 +47,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.RAW_SAPPHIRE);
         simpleitem(ModItems.CORN);
         simpleitem(ModItems.STORM_FRAGMENT);
+        simpleitem(ModItems.BASE_OF_DISC);
+        simpleitem(ModItems.HARDENED_INGOT);
 
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
 
         simpleitem(ModItems.STRAWBERRY_SEEDS);
         simpleitem(ModItems.CORN_SEEDS);
+
+        simpleitem(ModItems.BAR_BRAWL_MUSIC_DISC);
+        simpleitem(ModItems.DARK_SOUL_MUSIC_DISC);
+        simpleitem(ModItems.END_OF_THE_START_MUSIC_DISC);
 
         simpleitem(ModItems.METAL_DETECTOR);
 

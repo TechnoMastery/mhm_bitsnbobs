@@ -3,6 +3,7 @@
   "item.mhm_bitsnbobs.raw_sapphire": "Raw sapphire",
   "item.mhm_bitsnbobs.storm_fragment": "Storm fragment",
   "item.mhm_bitsnbobs.corn": "Corn",
+  "item.mhm_bitsnbobs.base_of_disc": "Base of disc",
 
   "item.mhm_bitsnbobs.metal_detector": "Metal detector",
 
@@ -27,6 +28,13 @@
   "item.mhm_bitsnbobs.sapphire_leggings": "Sapphire leggings",
   "item.mhm_bitsnbobs.sapphire_boots": "Sapphire boots",
 
+  "item.mhm_bitsnbobs.bar_brawl_music_disc": "Bar brawl music disc",
+  "item.mhm_bitsnbobs.bar_brawl_music_disc.desc": "Bryan Tech - Bar brawl (CC0)",
+  "item.mhm_bitsnbobs.dark_soul_music_disc": "Dark soul music disc",
+  "item.mhm_bitsnbobs.dark_soul_music_disc.desc": "Hold On - Myuu",
+  "item.mhm_bitsnbobs.end_of_the_start_music_disc": "End of the start music disc",
+  "item.mhm_bitsnbobs.end_of_the_start_music_disc.desc": "Destabilized - PunchDeck",
+
   "block.mhm_bitsnbobs.sapphire_block": "Block of sapphire",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Block of raw sapphire",
 
@@ -50,11 +58,14 @@
   "block.mhm_bitsnbobs.sapphire_trapdoor": "Sapphire trapdoor",
 
   "creativetab.tutorial_tab": "Sapphire tab",
-  "creativetab.storm_component": "Storm items",
+  "creativetab.dark_storm": "Storm items",
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Sound master",
 
   "sounds.mhm_bitsnbobs.metal_detector_found_ore": "Metal detector ding",
+  "sounds.mhm_bitsnbobs.bar_brawl": "Playing Bar brawl",
+  "sounds.mhm_bitsnbobs.dark_soul": "Playing Dark soul",
+  "sounds.mhm_bitsnbobs.end_of_the_start": "Playing End of the start",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises"

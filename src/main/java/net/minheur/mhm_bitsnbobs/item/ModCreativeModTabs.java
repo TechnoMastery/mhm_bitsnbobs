@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -95,12 +94,16 @@ public class ModCreativeModTabs {
                     })
                     .build());
 
-    public static final RegistryObject<CreativeModeTab> STORM_COMPONENT = CREATIVE_MODE_TABS.register("storm_component",
+    public static final RegistryObject<CreativeModeTab> DARK_STORM = CREATIVE_MODE_TABS.register("dark_storm",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STORM_FRAGMENT.get()))
-                    .title(Component.translatable("creativetab.storm_component"))
+                    .title(Component.translatable("creativetab.dark_storm"))
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModItems.STORM_FRAGMENT.get());
+                        output.accept(ModItems.BASE_OF_DISC.get());
+                        output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+                        output.accept(ModItems.DARK_SOUL_MUSIC_DISC.get());
+                        output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
                     })
                     .build());
 
