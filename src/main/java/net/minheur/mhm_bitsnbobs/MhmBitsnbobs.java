@@ -1,7 +1,6 @@
 package net.minheur.mhm_bitsnbobs;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;

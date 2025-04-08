@@ -105,6 +105,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
                         output.accept(ModItems.DARK_SOUL_MUSIC_DISC.get());
                         output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
+                        output.accept(ModItems.HARDENED_INGOT.get());
                     })
                     .build());
 
