@@ -29,6 +29,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SAPPHIRE.get());
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
                         output.accept(ModItems.CORN.get());
+                        output.accept(ModItems.RHINO_SPAWN_EGG.get());
 
                         output.accept(ModItems.METAL_DETECTOR.get());
 

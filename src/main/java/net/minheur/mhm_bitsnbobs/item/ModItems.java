@@ -1,12 +1,14 @@
 package net.minheur.mhm_bitsnbobs.item;
 
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
+import net.minheur.mhm_bitsnbobs.entity.ModEntities;
 import net.minheur.mhm_bitsnbobs.item.custom.FuelItem;
 import net.minheur.mhm_bitsnbobs.item.custom.MetalDetectorItem;
 import net.minheur.mhm_bitsnbobs.item.custom.ModArmorItem;
@@ -99,6 +101,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> CORN_SEEDS = ITEMS.register("corn_seeds",
             () -> new ItemNameBlockItem(ModBlocks.CORN_CROP.get(), new Item.Properties()));
+
+    // spawn eggs
+    public static final RegistryObject<Item> RHINO_SPAWN_EGG = ITEMS. register("rhino_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5,
+                    new Item.Properties()));
 
     // end item create
 

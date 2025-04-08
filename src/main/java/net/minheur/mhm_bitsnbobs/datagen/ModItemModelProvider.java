@@ -96,6 +96,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // flowers
         simpleBlockItemBlockTexture(ModBlocks.CATMINT);
+
+        // spawn egg
+        withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
