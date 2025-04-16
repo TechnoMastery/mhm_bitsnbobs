@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "mhm_bitsnbobs:fire_stick"
+    },
+    "D": {
+      "item": "mhm_bitsnbobs:fire_sword"
+    },
+    "I": {
+      "item": "mhm_bitsnbobs:rubinium"
+    },
+    "X": {
+      "item": "mhm_bitsnbobs:rubis"
+    }
+  },
+  "pattern": [
+    " IX",
+    "IDI",
+    "BI "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:rubinium"
+  },
+  "show_notification": true
+}

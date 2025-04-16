@@ -49,6 +49,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.STORM_FRAGMENT);
         simpleitem(ModItems.BASE_OF_DISC);
         simpleitem(ModItems.HARDENED_INGOT);
+        simpleitem(ModItems.BASE_EGG);
+        simpleitem(ModItems.SPAWNER_PART);
+        simpleitem(ModItems.CREATIVE_ESSENCE);
+        simpleitem(ModItems.CREATIVE_NUGGET);
+        simpleitem(ModItems.CREATIVE_INGOT);
+        simpleitem(ModItems.SMALL_CREATIVE_NUGGET);
+        simpleitem(ModItems.CREATIVE_RESIDUE);
+        simpleitem(ModItems.LITTLE_COPPER_NUGGET);
+        simpleitem(ModItems.LIGHTNING_UPGRADE);
+        simpleitem(ModItems.FIRE_DIAMOND);
+        simpleitem(ModItems.FIRE_STICK);
+        simpleitem(ModItems.FIRE_SEEDS);
+        simpleitem(ModItems.RUBIS);
+        simpleitem(ModItems.RUBINIUM);
+        simpleitem(ModItems.SUPER_CHARGED_INGOT);
+        simpleitem(ModItems.SUPER_CHARGED_BALL);
+        simpleitem(ModItems.COPPER_BALL);
+        simpleitem(ModItems.IRON_BALL);
+        simpleitem(ModItems.GOLD_BALL);
+        simpleitem(ModItems.DIAMOND_BALL);
 
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
@@ -61,6 +81,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.END_OF_THE_START_MUSIC_DISC);
 
         simpleitem(ModItems.METAL_DETECTOR);
+
+        // runes
+        runeItem(ModItems.XP_RUNE);
 
         simpleitem(ModItems.PINE_CONE);
 
@@ -87,6 +110,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.SAPPHIRE_AXE);
         handheldItem(ModItems.SAPPHIRE_SHOVEL);
         handheldItem(ModItems.SAPPHIRE_HOE);
+        handheldItem(ModItems.FIRE_SWORD);
+        handheldItem(ModItems.LIGHTNING_SWORD);
+        handheldItem(ModItems.RUBINIUM_SWORD);
+        handheldItem(ModItems.ALLOYED_SWORD);
 
         // armor
         trimmedArmorItem(ModItems.SAPPHIRE_HELMET);
@@ -152,6 +179,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder runeItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/rune"));
     }
 
     public void eventSimplerBlockItem(RegistryObject<Block> block) {

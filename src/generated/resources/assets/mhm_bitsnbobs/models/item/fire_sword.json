@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "mhm_bitsnbobs:item/fire_sword"
+  }
+}

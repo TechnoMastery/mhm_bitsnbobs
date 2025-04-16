@@ -70,11 +70,48 @@ public class MhmBitsnbobs
         });
     }
 
-    // Add the example block item to the building blocks tab
+    /// c'est ici que l'on ajoute des items a des creative mod tabs vanilla
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
              event.accept(ModItems.SAPPHIRE);
              event.accept(ModItems.RAW_SAPPHIRE);
+             event.accept(ModItems.HARDENED_INGOT);
+             event.accept(ModItems.CREATIVE_RESIDUE);
+             event.accept(ModItems.CREATIVE_ESSENCE);
+             event.accept(ModItems.SMALL_CREATIVE_NUGGET);
+             event.accept(ModItems.CREATIVE_NUGGET);
+             event.accept(ModItems.CREATIVE_INGOT);
+             event.accept(ModBlocks.CREATIVE_BLOCK);
+             event.accept(ModBlocks.CREATIVE_RESIDUE_BLOCK);
+             event.accept(ModItems.LITTLE_COPPER_NUGGET);
+             event.accept(ModItems.LIGHTNING_UPGRADE);
+             event.accept(ModItems.FIRE_DIAMOND);
+             event.accept(ModItems.FIRE_STICK);
+             event.accept(ModItems.RUBIS);
+             event.accept(ModItems.RUBINIUM);
+             event.accept(ModItems.SUPER_CHARGED_INGOT);
+             event.accept(ModItems.IRON_BALL);
+             event.accept(ModItems.COPPER_BALL);
+             event.accept(ModItems.GOLD_BALL);
+             event.accept(ModItems.DIAMOND_BALL);
+        }
+        if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+            event.accept(ModItems.BASE_EGG);
+            event.accept(ModItems.RHINO_SPAWN_EGG);
+        }
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.SPAWNER_PART);
+            event.accept(ModItems.FIRE_STICK);
+        }
+        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.FIRE_SWORD);
+            event.accept(ModItems.LIGHTNING_SWORD);
+            event.accept(ModItems.RUBINIUM_SWORD);
+            event.accept(ModItems.ALLOYED_SWORD);
+        }
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModItems.FIRE_SEEDS);
+            event.accept(ModBlocks.RUBINIUM_BLOCK);
         }
     }
 

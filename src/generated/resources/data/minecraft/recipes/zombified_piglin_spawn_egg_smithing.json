@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:golden_sword"
+  },
+  "base": {
+    "item": "minecraft:pig_spawn_egg"
+  },
+  "result": {
+    "item": "minecraft:zombified_piglin_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

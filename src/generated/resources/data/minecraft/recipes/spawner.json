@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "mhm_bitsnbobs:base_egg"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:spawner_part"
+    }
+  },
+  "pattern": [
+    "SSS",
+    "SDS",
+    "SSS"
+  ],
+  "result": {
+    "item": "minecraft:spawner"
+  },
+  "show_notification": true
+}

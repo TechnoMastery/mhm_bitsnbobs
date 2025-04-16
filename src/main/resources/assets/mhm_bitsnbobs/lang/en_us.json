@@ -5,6 +5,29 @@
   "item.mhm_bitsnbobs.corn": "Corn",
   "item.mhm_bitsnbobs.base_of_disc": "Base of disc",
   "item.mhm_bitsnbobs.hardened_ingot": "Hardened ingot",
+  "item.mhm_bitsnbobs.spawner_part": "Spawner part",
+  "item.mhm_bitsnbobs.creative_essence": "Creative essence",
+  "item.mhm_bitsnbobs.creative_nugget": "Creative nugget",
+  "item.mhm_bitsnbobs.creative_ingot": "Creative ingot",
+  "item.mhm_bitsnbobs.creative_residue": "Creative residue",
+  "item.mhm_bitsnbobs.small_creative_nugget": "Small creative nugget",
+  "item.mhm_bitsnbobs.little_copper_nugget": "Little copper nugget",
+  "item.mhm_bitsnbobs.lightning_upgrade": "Lightning upgrade",
+  "item.mhm_bitsnbobs.fire_diamond": "Fire diamond",
+  "item.mhm_bitsnbobs.fire_stick": "Fire stick",
+  "item.mhm_bitsnbobs.fire_sword": "Fire sword",
+  "item.mhm_bitsnbobs.rubinium_sword": "Rubinium sword",
+  "item.mhm_bitsnbobs.lightning_sword": "Lightning sword",
+  "item.mhm_bitsnbobs.base_egg": "Base egg",
+  "item.mhm_bitsnbobs.rubis": "Ruby",
+  "item.mhm_bitsnbobs.runinium": "Rubinium",
+  "item.mhm_bitsnbobs.alloyed_sword": "Alloyed sword",
+  "item.mhm_bitsnbobs.super_charged_ingot": "Super charged ingot",
+  "item.mhm_bitsnbobs.super_charged_ball": "Super charged ball",
+  "item.mhm_bitsnbobs.copper_ball": "Copper ball",
+  "item.mhm_bitsnbobs.iron_ball": "Iron ball",
+  "item.mhm_bitsnbobs.gold_ball": "Gold ball",
+  "item.mhm_bitsnbobs.diamond_ball": "Diamond ball",
 
   "item.mhm_bitsnbobs.metal_detector": "Metal detector",
 
@@ -15,6 +38,7 @@
 
   "item.mhm_bitsnbobs.strawberry_seeds": "Strawberry seeds",
   "item.mhm_bitsnbobs.corn_seeds": "Corn seeds",
+  "item.mhm_bitsnbobs.fire_seeds": "Fire seeds",
 
   "item.mhm_bitsnbobs.pine_cone": "Pine cone",
 
@@ -40,6 +64,10 @@
 
   "block.mhm_bitsnbobs.sapphire_block": "Block of sapphire",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Block of raw sapphire",
+  "block.mhm_bitsnbobs.creative_residue_block": "Block of creative residue",
+  "block.mhm_bitsnbobs.creative_block": "Creative block",
+  "block.mhm_bitsnbobs.rubinium_block": "Rubinium block",
+  "block.mhm_bitsnbobs.super_charged_block": "Super charged block",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Sapphire ore",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Deepslate sapphire ore",
@@ -62,6 +90,7 @@
 
   "creativetab.tutorial_tab": "Sapphire tab",
   "creativetab.dark_storm": "Storm items",
+  "creativetab.lightning": "Lightning items",
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Sound master",
 
@@ -71,5 +100,7 @@
   "sounds.mhm_bitsnbobs.end_of_the_start": "Playing End of the start",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
+  "tooltip.mhm_bitsnbobs.runes.tooltip": "Right click to use",
+  "tooltip.mhm_bitsnbobs.alloyed_sword.tooltip": "Useless like this, but needed to craft the best sword ever!",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises"
 }

@@ -99,13 +99,45 @@ public class ModCreativeModTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STORM_FRAGMENT.get()))
                     .title(Component.translatable("creativetab.dark_storm"))
                     .displayItems((itemDisplayParameters, output) -> {
-
                         output.accept(ModItems.STORM_FRAGMENT.get());
                         output.accept(ModItems.BASE_OF_DISC.get());
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
                         output.accept(ModItems.DARK_SOUL_MUSIC_DISC.get());
                         output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
                         output.accept(ModItems.HARDENED_INGOT.get());
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> LIGHTNING = CREATIVE_MODE_TABS.register("lightning",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.LIGHTNING_UPGRADE.get()))
+                    .title(Component.translatable("creativetab.lightning"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.LIGHTNING_UPGRADE.get());
+                        output.accept(ModItems.FIRE_DIAMOND.get());
+                        output.accept(ModItems.FIRE_STICK.get());
+                        output.accept(ModItems.FIRE_SWORD.get());
+                        output.accept(ModItems.LIGHTNING_SWORD.get());
+                        output.accept(ModItems.FIRE_SEEDS.get());
+                        output.accept(ModBlocks.RUBINIUM_BLOCK.get());
+                        output.accept(ModItems.RUBIS.get());
+                        output.accept(ModItems.RUBINIUM.get());
+                        output.accept(ModItems.RUBINIUM_SWORD.get());
+                        output.accept(ModItems.ALLOYED_SWORD.get());
+                        output.accept(ModItems.SUPER_CHARGED_INGOT.get());
+                        output.accept(ModBlocks.SUPER_CHARGED_BLOCK.get());
+                        output.accept(ModItems.SUPER_CHARGED_BALL.get());
+                    })
+                    .build());
+
+    public static final RegistryObject<CreativeModeTab> BALLS = CREATIVE_MODE_TABS.register("balls",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DIAMOND_BALL.get()))
+                    .title(Component.translatable("creativetab.balls"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.IRON_BALL.get());
+                        output.accept(ModItems.COPPER_BALL.get());
+                        output.accept(ModItems.GOLD_BALL.get());
+                        output.accept(ModItems.DIAMOND_BALL.get());
+                        output.accept(ModItems.SUPER_CHARGED_BALL.get());
                     })
                     .build());
 

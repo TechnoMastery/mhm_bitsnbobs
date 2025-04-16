@@ -9,12 +9,14 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.custom.CornCropBlock;
+import net.minheur.mhm_bitsnbobs.block.custom.FirePlantCropBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.SoundBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
@@ -33,6 +35,16 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.AMETHYST)));
+
+    public static final RegistryObject<Block> CREATIVE_RESIDUE_BLOCK = registerBlock("creative_residue_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE).strength(15, 20)));
+    public static final RegistryObject<Block> CREATIVE_BLOCK = registerBlock("creative_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(500, 500)));
+
+    public static final RegistryObject<Block> RUBINIUM_BLOCK = registerBlock("rubinium_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(20, 30)));
+    public static final RegistryObject<Block> SUPER_CHARGED_BLOCK = registerBlock("super_charged_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1, 10)));
 
     // custom block
 
@@ -91,6 +103,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> CORN_CROP = BLOCKS.register("corn_crop",
             () -> new CornCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noCollission().noOcclusion()));
+
+    public static final RegistryObject<Block> FIRE_PLANT = BLOCKS.register("fire_crop",
+            () -> new FirePlantCropBlock(BlockBehaviour.Properties.copy(Blocks.SUGAR_CANE).noCollission().noOcclusion().instabreak().mapColor(MapColor.COLOR_RED)));
 
     // flowers      ils sont par 2
     public static final RegistryObject<Block> CATMINT = registerBlock("catmint",

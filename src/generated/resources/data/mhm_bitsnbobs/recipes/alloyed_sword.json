@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "mhm_bitsnbobs:fire_stick"
+    },
+    "D": {
+      "item": "mhm_bitsnbobs:rubinium_sword"
+    },
+    "H": {
+      "item": "mhm_bitsnbobs:hardened_ingot"
+    },
+    "I": {
+      "item": "minecraft:golden_sword"
+    },
+    "S": {
+      "item": "minecraft:iron_sword"
+    },
+    "V": {
+      "item": "minecraft:diamond_sword"
+    },
+    "X": {
+      "item": "mhm_bitsnbobs:diamond_ball"
+    }
+  },
+  "pattern": [
+    "HVX",
+    "IDS",
+    "BIH"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:alloyed_sword"
+  },
+  "show_notification": true
+}

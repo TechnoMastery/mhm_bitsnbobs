@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "base": {
+    "item": "minecraft:horse_spawn_egg"
+  },
+  "result": {
+    "item": "minecraft:zombie_horse_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

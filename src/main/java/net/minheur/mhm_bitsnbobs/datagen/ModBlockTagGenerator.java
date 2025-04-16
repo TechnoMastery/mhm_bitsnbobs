@@ -47,27 +47,30 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_STAIRS.get()
                 );
 
-        // DIAMOND TOOL
-        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
-
-        ;
-
         // NETHERITE TOOL
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(
                         ModBlocks.END_SAPPHIRE_ORE.get()
                 );
 
-        //
+        // sapphire tools
         this.tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
                 .add(
-                        ModBlocks.SOUND_BLOCK.get()
+                        ModBlocks.SOUND_BLOCK.get(),
+                        ModBlocks.CREATIVE_RESIDUE_BLOCK.get(),
+                        ModBlocks.CREATIVE_BLOCK.get()
                 );
 
         // stone tool
         this.tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(
                         ModBlocks.NETHER_SAPPHIRE_ORE.get()
+                );
+
+        // diamond tool
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
+                .add(
+                        ModBlocks.SUPER_CHARGED_BLOCK.get()
                 );
 
         // fences ==> not wood fences
@@ -104,7 +107,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(),
                         ModBlocks.SAPPHIRE_FENCE_GATE.get(),
                         ModBlocks.SAPPHIRE_FENCE.get(),
-                        ModBlocks.SAPPHIRE_STAIRS.get()
+                        ModBlocks.CREATIVE_RESIDUE_BLOCK.get(),
+                        ModBlocks.SUPER_CHARGED_BLOCK.get(),
+                        ModBlocks.CREATIVE_BLOCK.get()
                 );
     }
 }

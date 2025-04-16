@@ -1,6 +1,5 @@
 package net.minheur.mhm_bitsnbobs.datagen;
 
-import net.minecraft.client.tutorial.Tutorial;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -31,10 +30,14 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
         blockWithItem(ModBlocks.END_SAPPHIRE_ORE);
         blockWithItem(ModBlocks.NETHER_SAPPHIRE_ORE);
+        blockWithItem(ModBlocks.CREATIVE_BLOCK);
+        blockWithItem(ModBlocks.CREATIVE_RESIDUE_BLOCK);
+        blockWithItem(ModBlocks.RUBINIUM_BLOCK);
+        blockWithItem(ModBlocks.SUPER_CHARGED_BLOCK);
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
 
-        // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressur_plate , fence , fence_gate , wall ] too (or dupli)
+        // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or dupli)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
         // slab : 2 textures
         slabBlock(((SlabBlock) ModBlocks.SAPPHIRE_SLAB.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
@@ -56,6 +59,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
         simpleBlockWithItem(ModBlocks.POTTED_CATMINT.get(), models().singleTexture("potted_catmint", new ResourceLocation("flower_pot_cross"),
                 "plant", blockTexture(ModBlocks.CATMINT.get())).renderType("cutout"));
+
+        simpleBlockWithItem(ModBlocks.FIRE_PLANT.get(), models().cross(blockTexture(ModBlocks.FIRE_PLANT.get()).getPath(),
+                blockTexture(ModBlocks.FIRE_PLANT.get())).renderType("cutout"));
 
         // quand paté de crop fini, l'appeler ici
         makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");

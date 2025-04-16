@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "mhm_bitsnbobs:block/creative_block"
+  }
+}

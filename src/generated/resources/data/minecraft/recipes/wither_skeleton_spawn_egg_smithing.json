@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:wither_skeleton_skull"
+  },
+  "base": {
+    "item": "minecraft:skeleton_spawn_egg"
+  },
+  "result": {
+    "item": "minecraft:wither_skeleton_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

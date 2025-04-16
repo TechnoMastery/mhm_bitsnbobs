@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:iron_bars"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:hardened_ingot"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SDS",
+    " S "
+  ],
+  "result": {
+    "count": 2,
+    "item": "mhm_bitsnbobs:spawner_part"
+  },
+  "show_notification": true
+}

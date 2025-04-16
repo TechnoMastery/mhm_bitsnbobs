@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "mhm_bitsnbobs:creative_ingot"
+    },
+    "X": {
+      "item": "minecraft:experience_bottle"
+    }
+  },
+  "pattern": [
+    "XIX",
+    "IDI",
+    "XIX"
+  ],
+  "result": {
+    "count": 4,
+    "item": "mhm_bitsnbobs:base_egg"
+  },
+  "show_notification": true
+}
