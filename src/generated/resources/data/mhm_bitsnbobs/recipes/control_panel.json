@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "mhm_bitsnbobs:iron_ball"
+    },
+    "F": {
+      "item": "minecraft:blast_furnace"
+    }
+  },
+  "pattern": [
+    " B ",
+    "BFB",
+    " B "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:control_panel"
+  },
+  "show_notification": true
+}

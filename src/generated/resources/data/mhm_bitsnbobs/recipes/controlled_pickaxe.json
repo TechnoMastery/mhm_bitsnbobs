@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "mhm_bitsnbobs:control_panel"
+    },
+    "P": {
+      "item": "minecraft:golden_pickaxe"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:quater_stick"
+    }
+  },
+  "pattern": [
+    "  P",
+    " S ",
+    "C  "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:controlled_pickaxe"
+  },
+  "show_notification": true
+}

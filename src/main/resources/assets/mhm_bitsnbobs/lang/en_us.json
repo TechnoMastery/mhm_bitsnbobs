@@ -28,6 +28,20 @@
   "item.mhm_bitsnbobs.iron_ball": "Iron ball",
   "item.mhm_bitsnbobs.gold_ball": "Gold ball",
   "item.mhm_bitsnbobs.diamond_ball": "Diamond ball",
+  "item.mhm_bitsnbobs.transfer_flask": "Transfer flask",
+  "item.mhm_bitsnbobs.empty_big_flask": "Empty big flask",
+  "item.mhm_bitsnbobs.empty_little_flask": "Empty little flask flask",
+  "item.mhm_bitsnbobs.dirty_humid_potion": "Dirty humid potion",
+  "item.mhm_bitsnbobs.humid_potion": "Humid potion",
+  "item.mhm_bitsnbobs.little_humid_potion": "Little humid potion",
+  "item.mhm_bitsnbobs.exploded_potato": "Exploded potato",
+  "item.mhm_bitsnbobs.money_rune": "Money rune",
+  "item.mhm_bitsnbobs.empty_rune": "Empty rune",
+  "item.mhm_bitsnbobs.control_panel": "Control panel",
+  "item.mhm_bitsnbobs.controlled_stick": "Controlled stick",
+  "item.mhm_bitsnbobs.controlled_pickaxe": "Controlled pickaxe",
+  "item.mhm_bitsnbobs.half_stick": "Half stick",
+  "item.mhm_bitsnbobs.quater_stick": "Quater stick",
 
   "item.mhm_bitsnbobs.metal_detector": "Metal detector",
 
@@ -101,6 +115,7 @@
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Right click to use",
+  "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "An empty and useless item. Use in crafts to fill it.",
   "tooltip.mhm_bitsnbobs.alloyed_sword.tooltip": "Useless like this, but needed to craft the best sword ever!",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises"
 }

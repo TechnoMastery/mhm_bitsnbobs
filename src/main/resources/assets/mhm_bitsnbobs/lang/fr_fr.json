@@ -28,6 +28,20 @@
   "item.mhm_bitsnbobs.iron_ball": "Balle de fer",
   "item.mhm_bitsnbobs.gold_ball": "Balle d'or",
   "item.mhm_bitsnbobs.diamond_ball": "Balle de diamant",
+  "item.mhm_bitsnbobs.transfer_flask": "Transvaseur",
+  "item.mhm_bitsnbobs.empty_big_flask": "Grande fiole vide",
+  "item.mhm_bitsnbobs.empty_little_flask": "Petite fiole vide",
+  "item.mhm_bitsnbobs.dirty_humid_potion": "Potion humide sale",
+  "item.mhm_bitsnbobs.humid_potion": "Potion humid",
+  "item.mhm_bitsnbobs.little_humid_potion": "Petite potion humide",
+  "item.mhm_bitsnbobs.exploded_potato": "Pomme de terre explosée",
+  "item.mhm_bitsnbobs.money_rune": "Rune d'argent",
+  "item.mhm_bitsnbobs.empty_rune": "Rune vide",
+  "item.mhm_bitsnbobs.control_panel": "Panel de contrôle",
+  "item.mhm_bitsnbobs.controlled_stick": "Baton de contrôle",
+  "item.mhm_bitsnbobs.controlled_pickaxe": "Pioche de contrôle",
+  "item.mhm_bitsnbobs.half_stick": "Demi baton",
+  "item.mhm_bitsnbobs.quater_stick": "Quart de baton",
 
   "item.mhm_bitsnbobs.metal_detector": "Détecteur de métaux",
 
@@ -101,6 +115,7 @@
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéraux sous terre",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Clic droit pour utiliser",
+  "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "Un objet vide et inutile. Utiliser les crafts pour le remplir",
   "tooltip.mhm_bitsnbobs.alloyed_sword.tooltip": "Inutile comme sa, mais nécessaire pour fabriquer la mailleur épée !",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit"
 }

@@ -1,4 +1,4 @@
-package net.minheur.mhm_bitsnbobs.item.custom;
+package net.minheur.mhm_bitsnbobs.item.custom.runes;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;

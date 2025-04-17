@@ -94,14 +94,30 @@ public class MhmBitsnbobs
              event.accept(ModItems.COPPER_BALL);
              event.accept(ModItems.GOLD_BALL);
              event.accept(ModItems.DIAMOND_BALL);
+             event.accept(ModItems.CONTROL_PANEL);
+             event.accept(ModItems.CONTROLLED_STICK);
+             event.accept(ModItems.HALF_STICK);
+             event.accept(ModItems.QUATER_STICK);
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BASE_EGG);
             event.accept(ModItems.RHINO_SPAWN_EGG);
         }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.BURGER);
+            event.accept(ModItems.STRAWBERRY);
+            event.accept(ModItems.EXPLODED_POTATO);
+        }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);
             event.accept(ModItems.FIRE_STICK);
+            event.accept(ModItems.TRANSFER_FLASK);
+            event.accept(ModItems.EMPTY_BIG_FLASK);
+            event.accept(ModItems.EMPTY_LITTLE_FLASK);
+            event.accept(ModItems.HUMID_POTION);
+            event.accept(ModItems.DIRTY_HUMID_POTION);
+            event.accept(ModItems.LITTLE_HUMID_POTION);
+            event.accept(ModItems.CONTROLLED_PICKAXE);
         }
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.FIRE_SWORD);

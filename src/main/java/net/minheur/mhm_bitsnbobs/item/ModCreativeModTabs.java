@@ -126,6 +126,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SUPER_CHARGED_INGOT.get());
                         output.accept(ModBlocks.SUPER_CHARGED_BLOCK.get());
                         output.accept(ModItems.SUPER_CHARGED_BALL.get());
+                        output.accept(ModItems.CONTROL_PANEL.get());
                     })
                     .build());
 
@@ -140,6 +141,16 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SUPER_CHARGED_BALL.get());
                     })
                     .build());
+
+    public static final RegistryObject<CreativeModeTab> RUNES = CREATIVE_MODE_TABS.register("runes",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.EMPTY_RUNE.get()))
+                    .title(Component.translatable("creativetab.runes"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.EMPTY_RUNE.get());
+                        output.accept(ModItems.XP_RUNE.get());
+                        output.accept(ModItems.MONEY_RUNE.get());
+                    })
+                    .withSearchBar().build());
 
             public static void register(IEventBus eventBus) {
                 CREATIVE_MODE_TABS.register(eventBus);

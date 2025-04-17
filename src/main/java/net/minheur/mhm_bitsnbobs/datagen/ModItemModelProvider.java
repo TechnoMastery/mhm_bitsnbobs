@@ -69,6 +69,16 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.IRON_BALL);
         simpleitem(ModItems.GOLD_BALL);
         simpleitem(ModItems.DIAMOND_BALL);
+        simpleitem(ModItems.TRANSFER_FLASK);
+        simpleitem(ModItems.EMPTY_BIG_FLASK);
+        simpleitem(ModItems.EMPTY_LITTLE_FLASK);
+        simpleitem(ModItems.DIRTY_HUMID_POTION);
+        simpleitem(ModItems.HUMID_POTION);
+        simpleitem(ModItems.LITTLE_HUMID_POTION);
+        simpleitem(ModItems.EXPLODED_POTATO);
+        simpleitem(ModItems.CONTROL_PANEL);
+        simpleitem(ModItems.HALF_STICK);
+        simpleitem(ModItems.QUATER_STICK);
 
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
@@ -84,6 +94,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // runes
         runeItem(ModItems.XP_RUNE);
+        runeItem(ModItems.MONEY_RUNE);
+        runeItem(ModItems.EMPTY_RUNE);
 
         simpleitem(ModItems.PINE_CONE);
 
@@ -114,6 +126,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.LIGHTNING_SWORD);
         handheldItem(ModItems.RUBINIUM_SWORD);
         handheldItem(ModItems.ALLOYED_SWORD);
+        handheldItem(ModItems.CONTROLLED_PICKAXE);
+        handheldItem(ModItems.CONTROLLED_STICK);
 
         // armor
         trimmedArmorItem(ModItems.SAPPHIRE_HELMET);

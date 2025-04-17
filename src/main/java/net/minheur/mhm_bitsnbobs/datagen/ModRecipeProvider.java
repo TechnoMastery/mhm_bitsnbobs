@@ -71,15 +71,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleStairsCrafting(pWriter, ModBlocks.SAPPHIRE_STAIRS.get(), ModBlocks.SAPPHIRE_BLOCK.get());
         simplePressurePlateCrafting(pWriter, ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(), ModBlocks.SAPPHIRE_BLOCK.get());
 
-        // simple shapeless pattern ==> 1 item
-        simpleShappelessCrafting(pWriter, ModBlocks.SAPPHIRE_BUTTON.get(), ModItems.SAPPHIRE.get(), 1);
-        simpleShappelessCrafting(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), 9);
+        // simple shapeless pattern ==> utiliser le bon selon la qté d'items diferents
+        simpleShappelessCraftingOne(pWriter, ModBlocks.SAPPHIRE_BUTTON.get(), ModItems.SAPPHIRE.get(), 1, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), 9, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.FIRE_DIAMOND.get(), ModItems.FIRE_SEEDS.get(), 5, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.CREATIVE_NUGGET.get(), ModItems.CREATIVE_INGOT.get(), 9, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.CREATIVE_INGOT.get(), ModBlocks.CREATIVE_BLOCK.get(), 9, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.SUPER_CHARGED_INGOT.get(), ModBlocks.SUPER_CHARGED_BLOCK.get(), 9, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.EMPTY_RUNE.get(), Items.EMERALD, 5, 1);
 
-        simpleShappelessCrafting(pWriter, ModItems.FIRE_DIAMOND.get(), ModItems.FIRE_SEEDS.get(), 5);
+        simpleShappelessCraftingTwo(pWriter, ModItems.XP_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.GOLD_INGOT, 1);
+        simpleShappelessCraftingTwo(pWriter, ModItems.MONEY_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.COPPER_INGOT, 1);
 
-        simpleShappelessCrafting(pWriter, ModItems.CREATIVE_NUGGET.get(), ModItems.CREATIVE_INGOT.get(), 9);
-        simpleShappelessCrafting(pWriter, ModItems.CREATIVE_INGOT.get(), ModBlocks.CREATIVE_BLOCK.get(), 9);
-        simpleShappelessCrafting(pWriter, ModItems.SUPER_CHARGED_INGOT.get(), ModBlocks.SUPER_CHARGED_BLOCK.get(), 9);
+        simpleShappelessCraftingThree(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
+        simpleShappelessCraftingThree(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
 
         // simple music disc ==> second item is what item you want it to be made with (center always = basedisk tag)
         simpleDiscCrafting(pWriter, ModItems.DARK_SOUL_MUSIC_DISC.get(), Items.ECHO_SHARD);
@@ -112,6 +117,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.ENDERMAN_SPAWN_EGG, Items.ENDER_PEARL, RecipeCategory.MISC, Items.ENDERMITE_SPAWN_EGG);
 
         simpleSmithing(pWriter, ModItems.LIGHTNING_UPGRADE.get(), ModItems.ALLOYED_SWORD.get(), ModItems.SUPER_CHARGED_INGOT.get(), RecipeCategory.COMBAT, ModItems.LIGHTNING_SWORD.get());
+        simpleSmithing(pWriter, ModItems.LIGHTNING_UPGRADE.get(), ModItems.DIAMOND_BALL.get(), Items.DIAMOND, RecipeCategory.MISC, ModItems.SUPER_CHARGED_BALL.get());
+
+        // stone cutting : use 'stonecutterResultFromBase' from minecraft libraries.
+        // use it with pWriter, recipeCategory, result, ingredient ==> you can add, at last parameter, the amount of results. Not needed : don't set to use 1
+        stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModItems.EMPTY_LITTLE_FLASK.get(), ModItems.EMPTY_BIG_FLASK.get(), 2);
 
         // no pattern
         // metal detector
@@ -123,6 +133,60 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STICK)
                 .define('G', Items.GLASS)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
+        // emerald
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.EMERALD)
+                .pattern("DDD")
+                .pattern("DED")
+                .pattern("DDD")
+                .define('D', Blocks.DEEPSLATE)
+                .define('E', ModItems.CONTROLLED_PICKAXE.get())
+                .unlockedBy(getHasName(ModItems.CONTROLLED_PICKAXE.get()), has(ModItems.CONTROLLED_PICKAXE.get()))
+                .save(pWriter);
+
+        // controlled pickaxe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROLLED_PICKAXE.get())
+                .pattern("  P")
+                .pattern(" S ")
+                .pattern("C  ")
+                .define('P', Items.GOLDEN_PICKAXE)
+                .define('S', ModItems.QUATER_STICK.get())
+                .define('C', ModItems.CONTROL_PANEL.get())
+                .unlockedBy(getHasName(ModItems.CONTROL_PANEL.get()), has(ModItems.CONTROL_PANEL.get()))
+                .save(pWriter);
+
+        // control panel craft
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROL_PANEL.get())
+                .pattern(" B ")
+                .pattern("BFB")
+                .pattern(" B ")
+                .define('B', ModItems.IRON_BALL.get())
+                .define('F', Blocks.BLAST_FURNACE)
+                .unlockedBy(getHasName(Blocks.BLAST_FURNACE), has(Blocks.BLAST_FURNACE))
+                .save(pWriter);
+
+        // transfer flask
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TRANSFER_FLASK.get())
+                .pattern(" F ")
+                .pattern("G B")
+                .pattern(" V ")
+                .define('F', ModItems.EMPTY_BIG_FLASK.get())
+                .define('V', Blocks.GLASS)
+                .define('B', Items.OAK_BUTTON)
+                .define('G', Blocks.GLASS_PANE)
+                .unlockedBy(getHasName(ModItems.EMPTY_BIG_FLASK.get()), has(ModItems.EMPTY_BIG_FLASK.get()))
+                .save(pWriter);
+
+        // empty big pot
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EMPTY_BIG_FLASK.get())
+                .pattern(" B ")
+                .pattern("G G")
+                .pattern("VVV")
+                .define('B', Blocks.OAK_BUTTON)
+                .define('G', Blocks.GLASS_PANE)
+                .define('V', Blocks.GLASS)
+                .unlockedBy(getHasName(Blocks.GLASS), has(Blocks.GLASS))
                 .save(pWriter);
 
         // dupli lightning upgrade
@@ -368,11 +432,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
-    protected static void simpleShappelessCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, Integer quantity) {
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, quantity)
-                .requires(ingredient)
+    // en dessous : liste des shappeless crafting (1 to 9 ingredient. only the used ones wrote, cause very big xD). l'item 1 est le plus important, c'est celuis qui unlock
+    // la recette et qui s'affiche en nom
+    protected static void simpleShappelessCraftingOne(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, Integer resultQuantity, Integer ingredientQuantity) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQuantity)
+                .requires(ingredient, ingredientQuantity)
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer, getItemName(result) + "_from_shappeless_of_one_" + getItemName(ingredient));
+    }
+    protected static void simpleShappelessCraftingTwo(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Integer resultQ, ItemLike ingredient1, Integer ingredient1Q, ItemLike ingredient2, Integer ingredient2Q) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQ)
+                .requires(ingredient1, ingredient1Q)
+                .requires(ingredient2, ingredient2Q)
+                .unlockedBy(getHasName(ingredient1), has(ingredient1))
+                .save(pFinishedRecipeConsumer, getItemName(result) + "_from_shappeless_of_two_base_" + getItemName(ingredient1));
+    }
+    protected static void simpleShappelessCraftingThree(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Integer resultQuantity, ItemLike ingredient1, Integer ingredient1Q, ItemLike ingredient2, Integer ingredient2Q, ItemLike ingredient3, Integer ingredient3Q) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQuantity)
+                .requires(ingredient1, ingredient1Q)
+                .requires(ingredient1, ingredient2Q)
+                .requires(ingredient1, ingredient3Q)
+                .unlockedBy(getHasName(ingredient1), has(ingredient1))
+                .save(pFinishedRecipeConsumer, getItemName(result)+"_from_shappeless_of_three_base_"+getItemName(ingredient1));
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {

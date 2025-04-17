@@ -10,6 +10,9 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
 import net.minheur.mhm_bitsnbobs.item.custom.*;
+import net.minheur.mhm_bitsnbobs.item.custom.runes.EmptyRuneItem;
+import net.minheur.mhm_bitsnbobs.item.custom.runes.MoneyRuneItem;
+import net.minheur.mhm_bitsnbobs.item.custom.runes.XpRuneItem;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
 public class ModItems {
@@ -19,12 +22,20 @@ public class ModItems {
     // create item
     public static final RegistryObject<Item> SAPPHIRE = ITEMS. register("sapphire",
             () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> BASE_EGG = ITEMS. register("base_egg",
             () -> new Item(new Item.Properties()));
-
     public static final RegistryObject<Item> SPAWNER_PART = ITEMS. register("spawner_part",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CONTROL_PANEL = ITEMS. register("control_panel",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HALF_STICK = ITEMS. register("half_stick",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUATER_STICK = ITEMS. register("quater_stick",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
+            () -> new Item(new Item.Properties().stacksTo(8)));
+    public static final RegistryObject<Item> CONTROLLED_PICKAXE = ITEMS. register("controlled_pickaxe",
+            () -> new CraftingRemaningItem(new Item.Properties().stacksTo(1).durability(32)));
 
     public static final RegistryObject<Item> CREATIVE_ESSENCE = ITEMS. register("creative_essence",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
@@ -42,10 +53,17 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LIGHTNING_UPGRADE = ITEMS. register("lightning_upgrade",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).fireResistant()));
-    public static final RegistryObject<Item> XP_RUNE = ITEMS.register("xp_rune",
-            () -> new XpRuneItem(new Item.Properties()));
     public static final RegistryObject<Item> SUPER_CHARGED_INGOT = ITEMS.register("super_charged_ingot",
             () -> new GlowingItem(new Item.Properties().fireResistant().rarity(Rarity.RARE)));
+
+    // runes
+    public static final RegistryObject<Item> EMPTY_RUNE = ITEMS.register("empty_rune",
+            () -> new EmptyRuneItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> XP_RUNE = ITEMS.register("xp_rune",
+            () -> new XpRuneItem(new Item.Properties()));
+    public static final RegistryObject<Item> MONEY_RUNE = ITEMS.register("money_rune",
+            () -> new MoneyRuneItem(new Item.Properties()));
 
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
             () -> new Item(new Item.Properties()));
@@ -54,7 +72,20 @@ public class ModItems {
     public static final RegistryObject<Item> COPPER_BALL = ITEMS. register("copper_ball",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_BALL = ITEMS. register("diamond_ball",
-            () -> new Item(new Item.Properties()));         // to finish
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TRANSFER_FLASK = ITEMS. register("transfer_flask",
+            () -> new CraftingRemaningItem(new Item.Properties()));
+    public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> EMPTY_LITTLE_FLASK = ITEMS. register("empty_little_flask",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> DIRTY_HUMID_POTION = ITEMS. register("dirty_humid_potion",
+            () -> new Item(new Item.Properties().stacksTo(8)));
+    public static final RegistryObject<Item> HUMID_POTION = ITEMS. register("humid_potion",
+            () -> new CraftingKeepOtherItem(new Item.Properties(), new ItemStack(ModItems.EMPTY_BIG_FLASK.get())));
+    public static final RegistryObject<Item> LITTLE_HUMID_POTION = ITEMS. register("little_humid_potion",
+            () -> new CraftingKeepOtherItem(new Item.Properties(), new ItemStack(ModItems.EMPTY_LITTLE_FLASK.get())));
 
     public static final RegistryObject<Item> STORM_FRAGMENT = ITEMS.register("storm_fragment",
             () -> new Item(new Item.Properties()));
@@ -150,6 +181,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> BURGER = ITEMS.register("burger",
             () -> new Item(new Item.Properties().food(ModFoods.BURGER)));
+
+    public static final RegistryObject<Item> EXPLODED_POTATO = ITEMS.register("exploded_potato",
+            () -> new Item(new Item.Properties().food(ModFoods.EXPLODED_POTATO)));
 
     // seeds
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
