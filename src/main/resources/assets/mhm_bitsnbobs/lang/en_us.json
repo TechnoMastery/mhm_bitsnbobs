@@ -3,7 +3,6 @@
   "item.mhm_bitsnbobs.raw_sapphire": "Raw sapphire",
   "item.mhm_bitsnbobs.storm_fragment": "Storm fragment",
   "item.mhm_bitsnbobs.corn": "Corn",
-  "item.mhm_bitsnbobs.base_of_disc": "Base of disc",
   "item.mhm_bitsnbobs.hardened_ingot": "Hardened ingot",
   "item.mhm_bitsnbobs.spawner_part": "Spawner part",
   "item.mhm_bitsnbobs.creative_essence": "Creative essence",
@@ -16,6 +15,10 @@
   "item.mhm_bitsnbobs.fire_diamond": "Fire diamond",
   "item.mhm_bitsnbobs.fire_stick": "Fire stick",
   "item.mhm_bitsnbobs.fire_sword": "Fire sword",
+  "item.mhm_bitsnbobs.piece_of_dirt": "¨Piece of dirt",
+  "item.mhm_bitsnbobs.wet_dirt": "Wet dirt",
+  "item.mhm_bitsnbobs.extremely_dry_dirt": "Extremely dry dirt",
+  "item.mhm_bitsnbobs.piece_of_extremely_dry_dirt": "Piece of extremely dry dirt",
   "item.mhm_bitsnbobs.rubinium_sword": "Rubinium sword",
   "item.mhm_bitsnbobs.lightning_sword": "Lightning sword",
   "item.mhm_bitsnbobs.base_egg": "Base egg",
@@ -42,6 +45,8 @@
   "item.mhm_bitsnbobs.controlled_pickaxe": "Controlled pickaxe",
   "item.mhm_bitsnbobs.half_stick": "Half stick",
   "item.mhm_bitsnbobs.quater_stick": "Quater stick",
+  "item.mhm_bitsnbobs.skullkery_tool": "Skullkery tool",
+  "item.mhm_bitsnbobs.rotten_leather": "Rotten leather",
 
   "item.mhm_bitsnbobs.metal_detector": "Metal detector",
 
@@ -82,6 +87,7 @@
   "block.mhm_bitsnbobs.creative_block": "Creative block",
   "block.mhm_bitsnbobs.rubinium_block": "Rubinium block",
   "block.mhm_bitsnbobs.super_charged_block": "Super charged block",
+  "block.mhm_bitsnbobs.compressed_dirt": "Compressed dirt",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Sapphire ore",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Deepslate sapphire ore",
@@ -117,5 +123,6 @@
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Right click to use",
   "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "An empty and useless item. Use in crafts to fill it.",
   "tooltip.mhm_bitsnbobs.alloyed_sword.tooltip": "Useless like this, but needed to craft the best sword ever!",
+  "tooltip.mhm_bitsnbobs.skullkery_tool.tooltip": "A powerful tool used in skullkery",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises"
 }

@@ -49,6 +49,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
         // utilisé quand le block drop 1 type d'item / block, dans une quantité fixe
         this.dropOneType(ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.CREATIVE_RESIDUE.get(), 2);
+        this.dropOneType(ModBlocks.COMPRESSED_DIRT.get(), ModItems.PIECE_OF_DIRT.get(), 3);
+        this.dropOneType(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.EXTREMELY_DRY_DIRT.get(), 4);
 
         this.dropOneType(ModBlocks.FIRE_PLANT.get(), ModItems.FIRE_SEEDS.get(), 1);
 

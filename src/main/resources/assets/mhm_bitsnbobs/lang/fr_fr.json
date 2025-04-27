@@ -3,7 +3,10 @@
   "item.mhm_bitsnbobs.raw_sapphire": "Saphir brut",
   "item.mhm_bitsnbobs.storm_fragment": "Fragment de tempète",
   "item.mhm_bitsnbobs.corn": "Maïs",
-  "item.mhm_bitsnbobs.base_of_disc": "Base de disque",
+  "item.mhm_bitsnbobs.piece_of_dirt": "Morceaux de terre",
+  "item.mhm_bitsnbobs.wet_dirt": "Terre mouillée",
+  "item.mhm_bitsnbobs.extremely_dry_dirt": "Terre extrêmement sèche",
+  "item.mhm_bitsnbobs.piece_of_extremely_dry_dirt": "Morceau de terre extrêmement sèche",
   "item.mhm_bitsnbobs.hardened_ingot": "Lingot renforcé",
   "item.mhm_bitsnbobs.spawner_part": "Morceau de spawner",
   "item.mhm_bitsnbobs.creative_essence": "Essence créative",
@@ -42,6 +45,8 @@
   "item.mhm_bitsnbobs.controlled_pickaxe": "Pioche de contrôle",
   "item.mhm_bitsnbobs.half_stick": "Demi baton",
   "item.mhm_bitsnbobs.quater_stick": "Quart de baton",
+  "item.mhm_bitsnbobs.skullkery_tool": "Outil de têtes",
+  "item.mhm_bitsnbobs.rotten_leather": "Cuir putréfié",
 
   "item.mhm_bitsnbobs.metal_detector": "Détecteur de métaux",
 
@@ -82,6 +87,7 @@
   "block.mhm_bitsnbobs.creative_block": "Bloc créatif",
   "block.mhm_bitsnbobs.rubinium_block": "Bloc de runinium",
   "block.mhm_bitsnbobs.super_charged_block": "Bloc super chargé",
+  "block.mhm_bitsnbobs.compressed_dirt": "Terre compréssé",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Minerais de saphir",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Minerais de saphir de pierre des abîmes",
@@ -117,5 +123,6 @@
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Clic droit pour utiliser",
   "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "Un objet vide et inutile. Utiliser les crafts pour le remplir",
   "tooltip.mhm_bitsnbobs.alloyed_sword.tooltip": "Inutile comme sa, mais nécessaire pour fabriquer la mailleur épée !",
+  "tooltip.mhm_bitsnbobs.skullkery_tool.tooltip": "Un outil puissant utilisé dans l'art des têtes",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit"
 }

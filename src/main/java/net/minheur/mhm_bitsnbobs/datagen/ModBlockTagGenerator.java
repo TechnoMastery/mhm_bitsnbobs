@@ -44,7 +44,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(),
                         ModBlocks.SAPPHIRE_FENCE_GATE.get(),
                         ModBlocks.SAPPHIRE_FENCE.get(),
-                        ModBlocks.SAPPHIRE_STAIRS.get()
+                        ModBlocks.SAPPHIRE_STAIRS.get(),
+                        ModBlocks.COMPRESSED_DIRT.get()
                 );
 
         // NETHERITE TOOL
@@ -70,7 +71,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         // diamond tool
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(
-                        ModBlocks.SUPER_CHARGED_BLOCK.get()
+                        ModBlocks.SUPER_CHARGED_BLOCK.get(),
+                        ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get()
                 );
 
         // fences ==> not wood fences
@@ -110,6 +112,11 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.CREATIVE_RESIDUE_BLOCK.get(),
                         ModBlocks.SUPER_CHARGED_BLOCK.get(),
                         ModBlocks.CREATIVE_BLOCK.get()
+                );
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(
+                        ModBlocks.COMPRESSED_DIRT.get(),
+                        ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get()
                 );
     }
 }

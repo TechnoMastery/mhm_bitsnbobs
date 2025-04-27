@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "item": "minecraft:dragon_breath"
+    },
+    "G": {
+      "item": "mhm_bitsnbobs:skullkery_tool"
+    },
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "J": {
+      "item": "minecraft:purple_concrete"
+    },
+    "S": {
+      "tag": "forge:heads"
+    }
+  },
+  "pattern": [
+    "IFI",
+    "JGJ",
+    "SSS"
+  ],
+  "result": {
+    "item": "minecraft:dragon_head"
+  },
+  "show_notification": true
+}

@@ -46,6 +46,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> SUPER_CHARGED_BLOCK = registerBlock("super_charged_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).strength(1, 10)));
 
+    public static final RegistryObject<Block> COMPRESSED_DIRT = registerBlock("compressed_dirt",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
+    public static final RegistryObject<Block> EXTREMELY_DRY_DIRT_BLOCK = registerBlock("extremely_dry_dirt_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
+
     // custom block
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",

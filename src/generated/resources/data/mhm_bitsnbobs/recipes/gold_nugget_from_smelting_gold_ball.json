@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "balls",
+  "ingredient": {
+    "item": "mhm_bitsnbobs:gold_ball"
+  },
+  "result": "minecraft:gold_nugget"
+}

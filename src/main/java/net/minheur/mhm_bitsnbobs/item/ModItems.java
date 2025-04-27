@@ -32,6 +32,18 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> QUATER_STICK = ITEMS. register("quater_stick",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_LEATHER = ITEMS. register("rotten_leather",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EXTREMELY_DRY_DIRT = ITEMS. register("extremely_dry_dirt",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PIECE_OF_EXTREMELY_DRY_DIRT = ITEMS. register("piece_of_extremely_dry_dirt",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> PIECE_OF_DIRT = ITEMS. register("piece_of_dirt",
+            () -> new ReturnOtherWhenEatedItem(new Item.Properties().food(ModFoods.PIECE_OF_DIRT), ModItems.WET_DIRT.get()));
+    public static final RegistryObject<Item> WET_DIRT = ITEMS. register("wet_dirt",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SKULLKERY_TOOL = ITEMS. register("skullkery_tool",
+            () -> new SkullkeryToolItem(new Item.Properties().stacksTo(1).durability(59)));
     public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final RegistryObject<Item> CONTROLLED_PICKAXE = ITEMS. register("controlled_pickaxe",
@@ -103,9 +115,6 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HARDENED_INGOT = ITEMS.register("hardened_ingot",

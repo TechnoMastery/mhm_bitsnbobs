@@ -13,4 +13,7 @@ public class ModFoods {
 
     public static final FoodProperties EXPLODED_POTATO = new FoodProperties.Builder().nutrition(2)
             .saturationMod(0.5f).build();
+
+    public static final FoodProperties PIECE_OF_DIRT = new FoodProperties.Builder().nutrition(0)
+            .saturationMod(0f).alwaysEat().build();
 }

@@ -2,6 +2,8 @@ package net.minheur.mhm_bitsnbobs.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -36,6 +38,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // call for smelting ore : SMELTING = BLASTING but put x2 time in SMELTING
         oreSmelting(pWriter, SAPPHIRE_SMELTABLE, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
         oreBlasting(pWriter, SAPPHIRE_SMELTABLE, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
+        oreSmelting(pWriter, List.of(ModItems.IRON_BALL.get()), RecipeCategory.MISC, Items.IRON_NUGGET, 0.1f, 200, "balls");
+        oreSmelting(pWriter, List.of(ModItems.COPPER_BALL.get()), RecipeCategory.MISC, ModItems.LITTLE_COPPER_NUGGET.get(), 0.1f, 200, "balls");
+        oreSmelting(pWriter, List.of(ModItems.GOLD_BALL.get()), RecipeCategory.MISC, Items.GOLD_NUGGET, 0.1f, 200, "balls");
+        oreSmelting(pWriter, List.of(ModItems.DIAMOND_BALL.get()), RecipeCategory.MISC, Items.DIAMOND, 0.1f, 200, "balls");
+        oreSmelting(pWriter, List.of(Items.ROTTEN_FLESH), RecipeCategory.MISC, ModItems.ROTTEN_LEATHER.get(), 0.1f, 200, "rotten");
+        oreSmelting(pWriter, List.of(ModBlocks.COMPRESSED_DIRT.get()), RecipeCategory.MISC, ModItems.EXTREMELY_DRY_DIRT.get(), 0.1f, 600, "dirt");
+        oreSmelting(pWriter, List.of(ModItems.WET_DIRT.get()), RecipeCategory.MISC, ModItems.EXTREMELY_DRY_DIRT.get(), 0.1f, 1800, "dirt");
 
         oreBlasting(pWriter, List.of(ModItems.CREATIVE_ESSENCE.get()), RecipeCategory.MISC, ModItems.CREATIVE_RESIDUE.get(), 1f, 24000, "creative");
 
@@ -123,6 +132,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // use it with pWriter, recipeCategory, result, ingredient ==> you can add, at last parameter, the amount of results. Not needed : don't set to use 1
         stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModItems.EMPTY_LITTLE_FLASK.get(), ModItems.EMPTY_BIG_FLASK.get(), 2);
 
+        // head crafting
+        simpleHeadCrafting(pWriter, Items.SKELETON_SKULL, Items.BONE, Items.BONE);
+        simpleHeadCrafting(pWriter, Items.WITHER_SKELETON_SKULL, Items.BONE, Items.WITHER_ROSE);
+        simpleHeadCrafting(pWriter, Items.CREEPER_HEAD, Items.GUNPOWDER, Items.GUNPOWDER);
+        simpleHeadCrafting(pWriter, Items.ZOMBIE_HEAD, Items.ROTTEN_FLESH, ModItems.ROTTEN_LEATHER.get());
+
         // no pattern
         // metal detector
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR.get())
@@ -133,6 +148,29 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STICK)
                 .define('G', Items.GLASS)
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
+                .save(pWriter);
+
+        // heads
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.PLAYER_HEAD)
+                .pattern("III")
+                .pattern("IGI")
+                .pattern("SVS")
+                .define('I', ItemTags.PLANKS)
+                .define('S', Items.DIAMOND)
+                .define('G', Blocks.BLACK_CONCRETE)
+                .define('V', ModItems.SKULLKERY_TOOL.get())
+                .unlockedBy(getHasName(ModItems.SKULLKERY_TOOL.get()), has(ModItems.SKULLKERY_TOOL.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.DRAGON_HEAD)
+                .pattern("IFI")
+                .pattern("JGJ")
+                .pattern("SSS")
+                .define('I', Items.DIAMOND)
+                .define('J', Blocks.PURPLE_CONCRETE)
+                .define('F', Items.DRAGON_BREATH)
+                .define('S', Tags.Items.HEADS)
+                .define('G', ModItems.SKULLKERY_TOOL.get())
+                .unlockedBy(getHasName(ModItems.SKULLKERY_TOOL.get()), has(ModItems.SKULLKERY_TOOL.get()))
                 .save(pWriter);
 
         // emerald
@@ -154,6 +192,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.QUATER_STICK.get())
                 .define('C', ModItems.CONTROL_PANEL.get())
                 .unlockedBy(getHasName(ModItems.CONTROL_PANEL.get()), has(ModItems.CONTROL_PANEL.get()))
+                .save(pWriter);
+
+        // controled stick
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROLLED_STICK.get())
+                .pattern(" P")
+                .pattern("S ")
+                .define('P', ModItems.CONTROL_PANEL.get())
+                .define('S', ModItems.HALF_STICK.get())
+                .unlockedBy(getHasName(ModItems.CONTROL_PANEL.get()), has(ModItems.CONTROL_PANEL.get()))
+                .save(pWriter);
+
+        // skulkery tool
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SKULLKERY_TOOL.get())
+                .pattern("  P")
+                .pattern(" S ")
+                .pattern("C  ")
+                .define('P', ModItems.QUATER_STICK.get())
+                .define('S', Tags.Items.HEADS)
+                .define('C', ModItems.CONTROLLED_STICK.get())
+                .unlockedBy(getHasName(ModItems.CONTROLLED_STICK.get()), has(ModItems.CONTROLLED_STICK.get()))
                 .save(pWriter);
 
         // control panel craft
@@ -238,16 +296,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.RUBINIUM.get()), has(ModItems.RUBINIUM.get()))
                 .save(pWriter);
 
-        // base of disc
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASE_OF_DISC.get())
-                .pattern(" S ")
-                .pattern("SDS")
-                .pattern(" S ")
-                .define('S', ModItems.HARDENED_INGOT.get())
-                .define('D', Tags.Items.INGOTS)
-                .unlockedBy(getHasName(ModItems.HARDENED_INGOT.get()), has(ModItems.HARDENED_INGOT.get()))
-                .save(pWriter);
-
         // fire diamond
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.FIRE_DIAMOND.get())
                 .pattern("BSB")
@@ -287,6 +335,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.FIRE_DIAMOND.get())
                 .unlockedBy(getHasName(ModItems.FIRE_DIAMOND.get()), has(ModItems.FIRE_DIAMOND.get()))
                 .save(pWriter);
+    }
+
+    protected static void simpleHeadCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike headResult, ItemLike ingredient1, ItemLike ingredient2) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, headResult)
+                .pattern("IUI")
+                .pattern("ISI")
+                .pattern("HHH")
+                .define('I', ingredient1)
+                .define('U', ingredient2)
+                .define('S', ModItems.SKULLKERY_TOOL.get())
+                .define('H', Tags.Items.HEADS)
+                .unlockedBy(getHasName(ingredient1), has(ingredient1))
+                .save(pFinishedRecipeConsumer);
     }
 
     protected static void simpleBlockCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {

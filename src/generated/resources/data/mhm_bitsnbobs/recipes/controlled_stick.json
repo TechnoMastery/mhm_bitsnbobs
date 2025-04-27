@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "mhm_bitsnbobs:control_panel"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:half_stick"
+    }
+  },
+  "pattern": [
+    " P",
+    "S "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:controlled_stick"
+  },
+  "show_notification": true
+}

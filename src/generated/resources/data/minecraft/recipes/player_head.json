@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "minecraft:black_concrete"
+    },
+    "I": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "item": "minecraft:diamond"
+    },
+    "V": {
+      "item": "mhm_bitsnbobs:skullkery_tool"
+    }
+  },
+  "pattern": [
+    "III",
+    "IGI",
+    "SVS"
+  ],
+  "result": {
+    "item": "minecraft:player_head"
+  },
+  "show_notification": true
+}

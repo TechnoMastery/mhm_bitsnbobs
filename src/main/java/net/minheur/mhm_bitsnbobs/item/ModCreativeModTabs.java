@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -100,7 +101,6 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.dark_storm"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.STORM_FRAGMENT.get());
-                        output.accept(ModItems.BASE_OF_DISC.get());
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
                         output.accept(ModItems.DARK_SOUL_MUSIC_DISC.get());
                         output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
@@ -151,6 +151,19 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.MONEY_RUNE.get());
                     })
                     .withSearchBar().build());
+
+    public static final RegistryObject<CreativeModeTab> DIRT_THINGS = CREATIVE_MODE_TABS.register("dirt_things",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.COMPRESSED_DIRT.get()))
+                    .title(Component.translatable("creativetab.dirt_things"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.COMPRESSED_DIRT.get());
+                        output.accept(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get());
+                        output.accept(ModItems.PIECE_OF_DIRT.get());
+                        output.accept(ModItems.WET_DIRT.get());
+                        output.accept(ModItems.EXTREMELY_DRY_DIRT.get());
+                        output.accept(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT.get());
+                    })
+                    .build());
 
             public static void register(IEventBus eventBus) {
                 CREATIVE_MODE_TABS.register(eventBus);

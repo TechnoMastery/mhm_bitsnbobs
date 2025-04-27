@@ -45,9 +45,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         // dupli = auto get model item gen
         simpleitem(ModItems.SAPPHIRE);
         simpleitem(ModItems.RAW_SAPPHIRE);
+        simpleitem(ModItems.EXTREMELY_DRY_DIRT);
+        simpleitem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);
         simpleitem(ModItems.CORN);
         simpleitem(ModItems.STORM_FRAGMENT);
-        simpleitem(ModItems.BASE_OF_DISC);
+        simpleitem(ModItems.WET_DIRT);
+        simpleitem(ModItems.PIECE_OF_DIRT);
         simpleitem(ModItems.HARDENED_INGOT);
         simpleitem(ModItems.BASE_EGG);
         simpleitem(ModItems.SPAWNER_PART);
@@ -59,6 +62,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.LITTLE_COPPER_NUGGET);
         simpleitem(ModItems.LIGHTNING_UPGRADE);
         simpleitem(ModItems.FIRE_DIAMOND);
+        simpleitem(ModItems.ROTTEN_LEATHER);
         simpleitem(ModItems.FIRE_STICK);
         simpleitem(ModItems.FIRE_SEEDS);
         simpleitem(ModItems.RUBIS);
@@ -128,6 +132,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ALLOYED_SWORD);
         handheldItem(ModItems.CONTROLLED_PICKAXE);
         handheldItem(ModItems.CONTROLLED_STICK);
+        handheldItem(ModItems.SKULLKERY_TOOL);
 
         // armor
         trimmedArmorItem(ModItems.SAPPHIRE_HELMET);

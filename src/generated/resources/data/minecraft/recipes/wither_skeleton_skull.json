@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "forge:heads"
+    },
+    "I": {
+      "item": "minecraft:bone"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:skullkery_tool"
+    },
+    "U": {
+      "item": "minecraft:wither_rose"
+    }
+  },
+  "pattern": [
+    "IUI",
+    "ISI",
+    "HHH"
+  ],
+  "result": {
+    "item": "minecraft:wither_skeleton_skull"
+  },
+  "show_notification": true
+}

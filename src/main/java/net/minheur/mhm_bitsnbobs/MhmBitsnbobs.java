@@ -76,6 +76,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.SAPPHIRE);
              event.accept(ModItems.RAW_SAPPHIRE);
              event.accept(ModItems.HARDENED_INGOT);
+             event.accept(ModItems.ROTTEN_LEATHER);
              event.accept(ModItems.CREATIVE_RESIDUE);
              event.accept(ModItems.CREATIVE_ESSENCE);
              event.accept(ModItems.SMALL_CREATIVE_NUGGET);
@@ -118,6 +119,7 @@ public class MhmBitsnbobs
             event.accept(ModItems.DIRTY_HUMID_POTION);
             event.accept(ModItems.LITTLE_HUMID_POTION);
             event.accept(ModItems.CONTROLLED_PICKAXE);
+            event.accept(ModItems.SKULLKERY_TOOL);
         }
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.FIRE_SWORD);

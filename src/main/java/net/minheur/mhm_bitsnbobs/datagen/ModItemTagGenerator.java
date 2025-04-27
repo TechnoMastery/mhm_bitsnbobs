@@ -41,10 +41,5 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(
                         ModItems.HARDENED_INGOT.get()
                 );
-
-        this.tag(ModTags.Items.BASEDISK)
-                .add(
-                        ModItems.BASE_OF_DISC.get()
-                );
     }
 }
