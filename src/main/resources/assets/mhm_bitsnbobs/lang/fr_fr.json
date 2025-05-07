@@ -47,6 +47,9 @@
   "item.mhm_bitsnbobs.quater_stick": "Quart de baton",
   "item.mhm_bitsnbobs.skullkery_tool": "Outil de têtes",
   "item.mhm_bitsnbobs.rotten_leather": "Cuir putréfié",
+  "item.mhm_bitsnbobs.ressource_dirt": "Terre de ressources",
+  "item.mhm_bitsnbobs.quantum_core": "Coeur quantique",
+  "item.mhm_bitsnbobs.tree_grower": "Arboriculteur",
 
   "item.mhm_bitsnbobs.metal_detector": "Détecteur de métaux",
 
@@ -88,6 +91,7 @@
   "block.mhm_bitsnbobs.rubinium_block": "Bloc de runinium",
   "block.mhm_bitsnbobs.super_charged_block": "Bloc super chargé",
   "block.mhm_bitsnbobs.compressed_dirt": "Terre compréssé",
+  "block.mhm_bitsnbobs.ressource_dirt_block": "Bloc de terre de ressource",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Minerais de saphir",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Minerais de saphir de pierre des abîmes",

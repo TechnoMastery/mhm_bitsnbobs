@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:amethyst_shard"
+  },
+  "base": {
+    "item": "minecraft:amethyst_block"
+  },
+  "result": {
+    "item": "minecraft:budding_amethyst"
+  },
+  "template": {
+    "item": "minecraft:emerald_block"
+  }
+}

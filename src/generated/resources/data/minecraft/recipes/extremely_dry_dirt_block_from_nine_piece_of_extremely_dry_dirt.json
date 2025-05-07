@@ -2,20 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "D": {
-      "tag": "forge:ingots"
-    },
     "S": {
-      "item": "mhm_bitsnbobs:hardened_ingot"
+      "item": "mhm_bitsnbobs:piece_of_extremely_dry_dirt"
     }
   },
   "pattern": [
-    " S ",
-    "SDS",
-    " S "
+    "SSS",
+    "SSS",
+    "SSS"
   ],
   "result": {
-    "item": "mhm_bitsnbobs:base_of_disc"
+    "item": "mhm_bitsnbobs:extremely_dry_dirt_block"
   },
   "show_notification": true
 }

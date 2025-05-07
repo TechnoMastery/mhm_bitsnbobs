@@ -10,6 +10,8 @@
     "mhm_bitsnbobs:sapphire_pressure_plate",
     "mhm_bitsnbobs:sapphire_fence_gate",
     "mhm_bitsnbobs:sapphire_fence",
-    "mhm_bitsnbobs:sapphire_stairs"
+    "mhm_bitsnbobs:sapphire_stairs",
+    "mhm_bitsnbobs:compressed_dirt",
+    "mhm_bitsnbobs:ressource_dirt_block"
   ]
 }

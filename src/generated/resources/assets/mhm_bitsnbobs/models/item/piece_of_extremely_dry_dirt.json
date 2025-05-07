@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mhm_bitsnbobs:item/piece_of_extremely_dry_dirt"
+  }
+}

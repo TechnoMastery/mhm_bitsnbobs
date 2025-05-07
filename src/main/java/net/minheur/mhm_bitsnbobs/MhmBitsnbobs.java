@@ -80,6 +80,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.CREATIVE_RESIDUE);
              event.accept(ModItems.CREATIVE_ESSENCE);
              event.accept(ModItems.SMALL_CREATIVE_NUGGET);
+             event.accept(ModItems.QUANTUM_CORE);
              event.accept(ModItems.CREATIVE_NUGGET);
              event.accept(ModItems.CREATIVE_INGOT);
              event.accept(ModBlocks.CREATIVE_BLOCK);
@@ -130,6 +131,7 @@ public class MhmBitsnbobs
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModItems.FIRE_SEEDS);
             event.accept(ModBlocks.RUBINIUM_BLOCK);
+            event.accept(ModItems.TREE_GROWER);
         }
     }
 

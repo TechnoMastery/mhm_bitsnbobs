@@ -38,16 +38,23 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PIECE_OF_EXTREMELY_DRY_DIRT = ITEMS. register("piece_of_extremely_dry_dirt",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> PIECE_OF_DIRT = ITEMS. register("piece_of_dirt",
-            () -> new ReturnOtherWhenEatedItem(new Item.Properties().food(ModFoods.PIECE_OF_DIRT), ModItems.WET_DIRT.get()));
+    public static final RegistryObject<Item> RESSOURCE_DIRT = ITEMS.register("ressource_dirt",
+            () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> WET_DIRT = ITEMS. register("wet_dirt",
             () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> PIECE_OF_DIRT = ITEMS. register("piece_of_dirt",
+            () -> new ReturnOtherWhenEatedItem(new Item.Properties().food(ModFoods.PIECE_OF_DIRT), ModItems.WET_DIRT.get()));
     public static final RegistryObject<Item> SKULLKERY_TOOL = ITEMS. register("skullkery_tool",
             () -> new SkullkeryToolItem(new Item.Properties().stacksTo(1).durability(59)));
     public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final RegistryObject<Item> CONTROLLED_PICKAXE = ITEMS. register("controlled_pickaxe",
             () -> new CraftingRemaningItem(new Item.Properties().stacksTo(1).durability(32)));
+
+    public static final RegistryObject<Item> QUANTUM_CORE = ITEMS.register("quantum_core",
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
+            () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));
 
     public static final RegistryObject<Item> CREATIVE_ESSENCE = ITEMS. register("creative_essence",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));

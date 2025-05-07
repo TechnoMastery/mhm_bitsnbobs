@@ -22,6 +22,7 @@ import net.minheur.mhm_bitsnbobs.block.custom.CornCropBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 
+import java.util.Random;
 import java.util.Set;
 
 public class ModBlockLootTables extends BlockLootSubProvider {
@@ -46,6 +47,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SAPPHIRE_FENCE_GATE.get());
         this.dropSelf(ModBlocks.SAPPHIRE_WALL.get());
         this.dropSelf(ModBlocks.SUPER_CHARGED_BLOCK.get());
+
+        // ressource dirt block break
+        this.add(ModBlocks.RESSOURCE_DIRT_BLOCK.get(), this.ressourceDirtLikeDrop());
 
         // utilisé quand le block drop 1 type d'item / block, dans une quantité fixe
         this.dropOneType(ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.CREATIVE_RESIDUE.get(), 2);
@@ -97,6 +101,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                         LootItem.lootTableItem(item)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
                                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+    }
+
+    protected LootTable.Builder ressourceDirtLikeDrop() {
+        return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 5.0F)).setBonusRolls(UniformGenerator.between(0.0F, 2.0F))
+                .add(LootItem.lootTableItem(ModItems.COPPER_BALL.get()).setWeight(100).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 16.0F))))
+                .add(LootItem.lootTableItem(ModItems.IRON_BALL.get()).setWeight(80).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 8.0F))))
+                .add(LootItem.lootTableItem(ModItems.GOLD_BALL.get()).setWeight(50).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F))))
+                .add(LootItem.lootTableItem(ModItems.DIAMOND_BALL.get()).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))
+                .add(LootItem.lootTableItem(ModItems.CREATIVE_ESSENCE.get()).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))));
     }
 
     protected LootTable.Builder createOneDropTable(ItemLike pItem, int pCount) {

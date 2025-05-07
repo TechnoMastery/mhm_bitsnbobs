@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hardened_ingot": {
+    "has_flower_pot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:hardened_ingot"
+              "minecraft:flower_pot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:base_of_disc"
+        "recipe": "minecraft:tree_grower_from_shappeless_of_two_base_flower_pot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_hardened_ingot",
+      "has_flower_pot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:base_of_disc"
+      "minecraft:tree_grower_from_shappeless_of_two_base_flower_pot"
     ]
   },
   "sends_telemetry_event": false

@@ -47,9 +47,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.RAW_SAPPHIRE);
         simpleitem(ModItems.EXTREMELY_DRY_DIRT);
         simpleitem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);
+        simpleitem(ModItems.RESSOURCE_DIRT);
         simpleitem(ModItems.CORN);
         simpleitem(ModItems.STORM_FRAGMENT);
         simpleitem(ModItems.WET_DIRT);
+        simpleitem(ModItems.QUANTUM_CORE);
         simpleitem(ModItems.PIECE_OF_DIRT);
         simpleitem(ModItems.HARDENED_INGOT);
         simpleitem(ModItems.BASE_EGG);
@@ -61,6 +63,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.CREATIVE_RESIDUE);
         simpleitem(ModItems.LITTLE_COPPER_NUGGET);
         simpleitem(ModItems.LIGHTNING_UPGRADE);
+        simpleitem(ModItems.TREE_GROWER);
         simpleitem(ModItems.FIRE_DIAMOND);
         simpleitem(ModItems.ROTTEN_LEATHER);
         simpleitem(ModItems.FIRE_STICK);

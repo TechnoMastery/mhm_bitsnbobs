@@ -36,6 +36,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SUPER_CHARGED_BLOCK);
         blockWithItem(ModBlocks.COMPRESSED_DIRT);
         blockWithItem(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK);
+        blockWithItem(ModBlocks.RESSOURCE_DIRT_BLOCK);
 
         blockWithItem(ModBlocks.SOUND_BLOCK);
 

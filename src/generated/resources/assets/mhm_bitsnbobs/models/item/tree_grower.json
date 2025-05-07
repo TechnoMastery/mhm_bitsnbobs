@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mhm_bitsnbobs:item/base_of_disc"
+    "layer0": "mhm_bitsnbobs:item/tree_grower"
   }
 }

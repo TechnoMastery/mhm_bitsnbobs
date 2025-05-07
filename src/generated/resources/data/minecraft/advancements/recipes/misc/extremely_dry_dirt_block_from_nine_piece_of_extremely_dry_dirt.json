@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_piece_of_extremely_dry_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:piece_of_extremely_dry_dirt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:extremely_dry_dirt_block_from_nine_piece_of_extremely_dry_dirt"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_piece_of_extremely_dry_dirt",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:extremely_dry_dirt_block_from_nine_piece_of_extremely_dry_dirt"
+    ]
+  },
+  "sends_telemetry_event": false
+}
