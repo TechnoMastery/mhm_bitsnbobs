@@ -103,6 +103,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         runeItem(ModItems.XP_RUNE);
         runeItem(ModItems.MONEY_RUNE);
         runeItem(ModItems.EMPTY_RUNE);
+        runeItem(ModItems.OAK_RUNE);
+        runeItem(ModItems.SPRUCE_RUNE);
 
         simpleitem(ModItems.PINE_CONE);
 

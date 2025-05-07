@@ -10,9 +10,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
 import net.minheur.mhm_bitsnbobs.item.custom.*;
-import net.minheur.mhm_bitsnbobs.item.custom.runes.EmptyRuneItem;
-import net.minheur.mhm_bitsnbobs.item.custom.runes.MoneyRuneItem;
-import net.minheur.mhm_bitsnbobs.item.custom.runes.XpRuneItem;
+import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
 public class ModItems {
@@ -83,6 +81,10 @@ public class ModItems {
             () -> new XpRuneItem(new Item.Properties()));
     public static final RegistryObject<Item> MONEY_RUNE = ITEMS.register("money_rune",
             () -> new MoneyRuneItem(new Item.Properties()));
+    public static final RegistryObject<Item> OAK_RUNE = ITEMS.register("oak_rune",
+            () -> new OakRuneItem(new Item.Properties()));
+    public static final RegistryObject<Item> SPRUCE_RUNE = ITEMS.register("spruce_rune",
+            () -> new SpruceRuneItem(new Item.Properties()));
 
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
             () -> new Item(new Item.Properties()));
