@@ -18,7 +18,8 @@
     "DDD"
   ],
   "result": {
-    "item": "mhm_bitsnbobs:metal_detector"
+    "count": 2,
+    "item": "mhm_bitsnbobs:lightning_upgrade"
   },
   "show_notification": true
 }

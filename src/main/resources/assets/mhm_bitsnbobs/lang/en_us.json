@@ -39,6 +39,7 @@
   "item.mhm_bitsnbobs.little_humid_potion": "Little humid potion",
   "item.mhm_bitsnbobs.exploded_potato": "Exploded potato",
   "item.mhm_bitsnbobs.money_rune": "Money rune",
+  "item.mhm_bitsnbobs.xp_rune": "Xp rune",
   "item.mhm_bitsnbobs.empty_rune": "Empty rune",
   "item.mhm_bitsnbobs.control_panel": "Control panel",
   "item.mhm_bitsnbobs.controlled_stick": "Controlled stick",
@@ -92,6 +93,7 @@
   "block.mhm_bitsnbobs.super_charged_block": "Super charged block",
   "block.mhm_bitsnbobs.compressed_dirt": "Compressed dirt",
   "block.mhm_bitsnbobs.ressource_dirt_block": "Ressource dirt block",
+  "block.mhm_bitsnbobs.extremely_dry_dirt_block": "Extremely dry dirt block",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Sapphire ore",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Deepslate sapphire ore",
@@ -115,6 +117,9 @@
   "creativetab.tutorial_tab": "Sapphire tab",
   "creativetab.dark_storm": "Storm items",
   "creativetab.lightning": "Lightning items",
+  "creativetab.balls": "Balls",
+  "creativetab.dirt_things": "Dirt things",
+  "creativetab.runes": "Runes",
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Sound master",
 

@@ -39,6 +39,7 @@
   "item.mhm_bitsnbobs.little_humid_potion": "Petite potion humide",
   "item.mhm_bitsnbobs.exploded_potato": "Pomme de terre explosée",
   "item.mhm_bitsnbobs.money_rune": "Rune d'argent",
+  "item.mhm_bitsnbobs.xp_rune": "Rune d'xp",
   "item.mhm_bitsnbobs.empty_rune": "Rune vide",
   "item.mhm_bitsnbobs.control_panel": "Panel de contrôle",
   "item.mhm_bitsnbobs.controlled_stick": "Baton de contrôle",
@@ -92,6 +93,7 @@
   "block.mhm_bitsnbobs.super_charged_block": "Bloc super chargé",
   "block.mhm_bitsnbobs.compressed_dirt": "Terre compréssé",
   "block.mhm_bitsnbobs.ressource_dirt_block": "Bloc de terre de ressource",
+  "block.mhm_bitsnbobs.extremely_dry_dirt_block": "Bloc de terre extrèmement sèche",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Minerais de saphir",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Minerais de saphir de pierre des abîmes",
@@ -115,6 +117,9 @@
   "creativetab.tutorial_tab": "Les saphirs",
   "creativetab.dark_storm": "Objets de la tempète",
   "creativetab.lightning": "Objets de la foudre",
+  "creativetab.balls": "Balls",
+  "creativetab.dirt_things": "Objets de terre",
+  "creativetab.runes": "Runes",
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Ingénieur son",
 

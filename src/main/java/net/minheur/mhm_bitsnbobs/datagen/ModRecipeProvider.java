@@ -99,6 +99,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingThree(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
         simpleShappelessCraftingThree(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
         simpleShappelessCraftingThree(pWriter, ModItems.RESSOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
+        // les shapeless of 3 sont a retest
 
         // simple music disc ==> second item is what item you want it to be made with (center always = basedisk tag)
         simpleDiscCrafting(pWriter, ModItems.DARK_SOUL_MUSIC_DISC.get(), Items.ECHO_SHARD);
@@ -263,7 +264,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
 
         // dupli lightning upgrade
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LIGHTNING_UPGRADE.get(), 2)
                 .pattern("DID")
                 .pattern("DGD")
                 .pattern("DDD")
@@ -526,8 +527,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected static void simpleShappelessCraftingThree(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Integer resultQuantity, ItemLike ingredient1, Integer ingredient1Q, ItemLike ingredient2, Integer ingredient2Q, ItemLike ingredient3, Integer ingredient3Q) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQuantity)
                 .requires(ingredient1, ingredient1Q)
-                .requires(ingredient1, ingredient2Q)
-                .requires(ingredient1, ingredient3Q)
+                .requires(ingredient2, ingredient2Q)
+                .requires(ingredient3, ingredient3Q)
                 .unlockedBy(getHasName(ingredient1), has(ingredient1))
                 .save(pFinishedRecipeConsumer, getItemName(result)+"_from_shappeless_of_three_base_"+getItemName(ingredient1));
     }
