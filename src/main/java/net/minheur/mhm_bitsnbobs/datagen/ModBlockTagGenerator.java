@@ -46,7 +46,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_FENCE.get(),
                         ModBlocks.SAPPHIRE_STAIRS.get(),
                         ModBlocks.COMPRESSED_DIRT.get(),
-                        ModBlocks.RESSOURCE_DIRT_BLOCK.get()
+                        ModBlocks.RESSOURCE_DIRT_BLOCK.get(),
+                        ModBlocks.GEM_POLISHING_STATION.get()
                 );
 
         // NETHERITE TOOL
@@ -112,6 +113,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_FENCE.get(),
                         ModBlocks.CREATIVE_RESIDUE_BLOCK.get(),
                         ModBlocks.SUPER_CHARGED_BLOCK.get(),
+                        ModBlocks.GEM_POLISHING_STATION.get(),
                         ModBlocks.CREATIVE_BLOCK.get()
                 );
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)

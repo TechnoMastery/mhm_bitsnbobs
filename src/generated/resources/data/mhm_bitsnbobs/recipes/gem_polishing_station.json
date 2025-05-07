@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:blackstone"
+    },
+    "C": {
+      "item": "mhm_bitsnbobs:control_panel"
+    },
+    "Q": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "pattern": [
+    "QQQ",
+    "BCB",
+    "QQQ"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:gem_polishing_station"
+  },
+  "show_notification": true
+}

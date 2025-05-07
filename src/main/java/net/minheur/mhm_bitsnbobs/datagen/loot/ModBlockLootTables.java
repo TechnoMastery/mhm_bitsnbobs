@@ -47,6 +47,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SAPPHIRE_FENCE_GATE.get());
         this.dropSelf(ModBlocks.SAPPHIRE_WALL.get());
         this.dropSelf(ModBlocks.SUPER_CHARGED_BLOCK.get());
+        this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
 
         // ressource dirt block break
         this.add(ModBlocks.RESSOURCE_DIRT_BLOCK.get(), this.ressourceDirtLikeDrop());

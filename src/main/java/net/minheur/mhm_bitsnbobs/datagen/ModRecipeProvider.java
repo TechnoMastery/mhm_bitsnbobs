@@ -159,6 +159,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.IRON_INGOT), has(Items.IRON_INGOT))
                 .save(pWriter);
 
+        // gem polishing station
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.GEM_POLISHING_STATION.get())
+                .pattern("QQQ")
+                .pattern("BCB")
+                .pattern("QQQ")
+                .define('Q', Blocks.QUARTZ_BLOCK)
+                .define('C', ModItems.CONTROL_PANEL.get())
+                .define('B', Blocks.BLACKSTONE)
+                .unlockedBy(getHasName(Blocks.BLACKSTONE), has(Blocks.BLACKSTONE))
+                .save(pWriter);
+
         // dirt
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.DIRT)
                 .pattern(" G ")

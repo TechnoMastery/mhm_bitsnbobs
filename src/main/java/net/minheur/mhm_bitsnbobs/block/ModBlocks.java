@@ -15,10 +15,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
-import net.minheur.mhm_bitsnbobs.block.custom.CornCropBlock;
-import net.minheur.mhm_bitsnbobs.block.custom.FirePlantCropBlock;
-import net.minheur.mhm_bitsnbobs.block.custom.SoundBlock;
-import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
+import net.minheur.mhm_bitsnbobs.block.custom.*;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
@@ -57,6 +54,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSounds.SOUND_BLOCK_SOUNDS)));
+
+    public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
+            () -> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     // end custom
 
