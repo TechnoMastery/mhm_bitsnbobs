@@ -30,8 +30,12 @@ public class GemPolishingRecipe implements Recipe<SimpleContainer> {
         if(level.isClientSide()) {
             return false;
         }
-
         return inputItems.get(0).test(simpleContainer.getItem(0));
+    }
+
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return inputItems;
     }
 
     @Override
