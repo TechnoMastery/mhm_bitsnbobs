@@ -141,7 +141,6 @@ public class GemPolishingStationBlockEntity extends BlockEntity implements MenuP
     private void resetProgress() {
         progress = 0;
     }
-    // next 2 methods are hard-coded : next is creating custom recipe type.
     private void craftItem() {
         Optional<GemPolishingRecipe> recipe = getCurrentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
