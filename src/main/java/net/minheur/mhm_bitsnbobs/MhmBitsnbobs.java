@@ -109,6 +109,9 @@ public class MhmBitsnbobs
             event.accept(ModItems.BURGER);
             event.accept(ModItems.STRAWBERRY);
             event.accept(ModItems.EXPLODED_POTATO);
+            event.accept(ModItems.YEAST);
+            event.accept(ModItems.HOLY_BREAD);
+            event.accept(ModItems.DEVIL_BREAD);
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);

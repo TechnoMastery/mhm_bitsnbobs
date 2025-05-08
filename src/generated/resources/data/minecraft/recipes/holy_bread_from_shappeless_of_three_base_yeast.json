@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:yeast"
+    },
+    {
+      "item": "mhm_bitsnbobs:yeast"
+    },
+    {
+      "item": "mhm_bitsnbobs:yeast"
+    },
+    {
+      "item": "minecraft:enchanted_golden_apple"
+    },
+    {
+      "item": "minecraft:bread"
+    },
+    {
+      "item": "minecraft:bread"
+    }
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:holy_bread"
+  }
+}

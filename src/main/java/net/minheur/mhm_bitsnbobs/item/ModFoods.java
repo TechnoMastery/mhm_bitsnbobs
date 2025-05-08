@@ -16,4 +16,15 @@ public class ModFoods {
 
     public static final FoodProperties PIECE_OF_DIRT = new FoodProperties.Builder().nutrition(0)
             .saturationMod(0f).alwaysEat().build();
+
+    public static final FoodProperties HOLY_BREAD = new FoodProperties.Builder().nutrition(20)
+            .saturationMod(20f).alwaysEat().effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600,50), 1f)
+            .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600), 1f)
+            .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 3600,4), 1f)
+            .effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 3600, 9), 1f).build();
+
+    public static final FoodProperties DEVIl_BREAD = new FoodProperties.Builder().nutrition(0)
+            .saturationMod(0f).alwaysEat().effect(() -> new MobEffectInstance(MobEffects.WITHER, 2000, 3), 1f)
+            .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2000, 20), 1f)
+            .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 2000), 1f).build();
 }
