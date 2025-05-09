@@ -23,6 +23,7 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.loot.ModLootModifiers;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
+import org.antlr.v4.runtime.LexerNoViableAltException;
 import org.slf4j.Logger;
 
 /// ce fichier est le coeur, le cerveau, le tous ce que tu veut de ton mod.
@@ -130,6 +131,7 @@ public class MhmBitsnbobs
             event.accept(ModItems.LIGHTNING_SWORD);
             event.accept(ModItems.RUBINIUM_SWORD);
             event.accept(ModItems.ALLOYED_SWORD);
+            event.accept(ModItems.WIND_STICK);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModItems.FIRE_SEEDS);

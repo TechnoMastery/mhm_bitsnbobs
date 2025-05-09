@@ -23,6 +23,7 @@ import org.lwjgl.system.macosx.MacOSXLibraryDL;
 import java.util.List;
 import java.util.function.Consumer;
 
+// TODO: ajouter recette wind stick
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     // lists pour cook (si y a plusieurs items / blocks)
