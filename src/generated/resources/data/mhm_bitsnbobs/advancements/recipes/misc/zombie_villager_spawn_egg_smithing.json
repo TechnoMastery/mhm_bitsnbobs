@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mhm_bitsnbobs:zombie_villager_spawn_egg_smithing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_villager_spawn_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:villager_spawn_egg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_villager_spawn_egg",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mhm_bitsnbobs:zombie_villager_spawn_egg_smithing"
+    ]
+  },
+  "sends_telemetry_event": false
+}

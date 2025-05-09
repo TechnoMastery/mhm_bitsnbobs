@@ -100,6 +100,17 @@
   "block.mhm_bitsnbobs.compressed_dirt": "Compressed dirt",
   "block.mhm_bitsnbobs.ressource_dirt_block": "Ressource dirt block",
   "block.mhm_bitsnbobs.extremely_dry_dirt_block": "Extremely dry dirt block",
+  "block.mhm_bitsnbobs.dark_log": "Dark log",
+  "block.mhm_bitsnbobs.dark_wood": "Dark wood",
+  "block.mhm_bitsnbobs.stripped_dark_log": "Stripped dark log",
+  "block.mhm_bitsnbobs.stripped_dark_wood": "Stripped dark wood",
+  "block.mhm_bitsnbobs.dark_planks": "Dark planks",
+  "block.mhm_bitsnbobs.leaves": "Dark leaves",
+
+  "block.mhm_bitsnbobs.dark_sign": "Dark sign",
+  "block.mhm_bitsnbobs.dark_hanging_sign": "Dark hanging sign",
+
+  "block.mhm_bitsnbobs.gem_polishing_station": "Gem polishing station",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Sapphire ore",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Deepslate sapphire ore",

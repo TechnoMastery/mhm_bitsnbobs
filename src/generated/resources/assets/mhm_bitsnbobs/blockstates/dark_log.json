@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "mhm_bitsnbobs:block/dark_log_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "mhm_bitsnbobs:block/dark_log"
+    },
+    "axis=z": {
+      "model": "mhm_bitsnbobs:block/dark_log_horizontal",
+      "x": 90
+    }
+  }
+}

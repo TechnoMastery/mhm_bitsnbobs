@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "mhm_bitsnbobs:block/dark_log_top",
+    "side": "mhm_bitsnbobs:block/dark_log"
+  }
+}

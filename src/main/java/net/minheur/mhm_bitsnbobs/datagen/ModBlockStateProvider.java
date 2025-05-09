@@ -6,7 +6,10 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
@@ -37,8 +40,25 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.COMPRESSED_DIRT);
         blockWithItem(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK);
         blockWithItem(ModBlocks.RESSOURCE_DIRT_BLOCK);
-
         blockWithItem(ModBlocks.SOUND_BLOCK);
+
+        // signs
+        signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));
+        hangingSignBlock(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.DARK_PLANKS.get()));
+
+        // wood
+        logBlock(((RotatedPillarBlock) ModBlocks.DARK_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.DARK_WOOD.get()), blockTexture(ModBlocks.DARK_LOG.get()), blockTexture(ModBlocks.DARK_LOG.get()));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_LOG.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/stripped_dark_log_top"));
+        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_WOOD.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
+                blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()));
+        blockItem(ModBlocks.DARK_LOG);
+        blockItem(ModBlocks.DARK_WOOD);
+        blockItem(ModBlocks.STRIPPED_DARK_LOG);
+        blockItem(ModBlocks.STRIPPED_DARK_WOOD);
+        blockWithItem(ModBlocks.DARK_PLANKS);
+        leavesBlock(ModBlocks.DARK_LEAVES);
 
         // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or dupli)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
@@ -69,6 +89,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // quand paté de crop fini, l'appeler ici
         makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
         makeCornCrop(((CropBlock) ModBlocks.CORN_CROP.get()), "corn_stage_", "corn_stage_");
+
+        // block entity
+        simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
     }
 
     // ce paté de public void + private est a dupli pour les crop blocks. changer les 2 cast dans la 2nd + les noms et le use dans le 1er : acctuellement StrawberryCropBlock.
@@ -97,8 +121,32 @@ public class ModBlockStateProvider extends BlockStateProvider {
         return models;
     }
 
+    private void blockItem(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(MhmBitsnbobs.MOD_ID + ":block/" +
+                ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
+    }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
+                new ResourceLocation("minecraft:block/leaves"), "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+        ModelFile sign = models().sign(name(signBlock), texture);
+        hangingSignBlock(signBlock, wallSignBlock, sign);
+    }
+    public void hangingSignBlock(Block signBloc, Block wallSignBloc, ModelFile sign) {
+        simpleBlock(signBloc, sign);
+        simpleBlock(wallSignBloc, sign);
+    }
+    private String name(Block block) {
+        return key(block).getPath();
+    }
+    private ResourceLocation key(Block block) {
+        return ForgeRegistries.BLOCKS.getKey(block);
     }
 }

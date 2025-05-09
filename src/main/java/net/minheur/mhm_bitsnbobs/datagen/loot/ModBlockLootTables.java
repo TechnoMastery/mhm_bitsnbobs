@@ -47,6 +47,26 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SAPPHIRE_FENCE_GATE.get());
         this.dropSelf(ModBlocks.SAPPHIRE_WALL.get());
         this.dropSelf(ModBlocks.SUPER_CHARGED_BLOCK.get());
+        this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
+
+        this.dropSelf(ModBlocks.DARK_LOG.get());
+        this.dropSelf(ModBlocks.DARK_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_DARK_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_DARK_WOOD.get());
+        this.dropSelf(ModBlocks.DARK_PLANKS.get());
+
+        this.add(ModBlocks.DARK_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.SAPPHIRE_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES)); // TODO: change to sapling !
+
+        // signs
+        this.add(ModBlocks.DARK_SIGN.get(), block ->
+                createSingleItemTable(ModItems.DARK_SIGN.get()));
+        this.add(ModBlocks.DARK_WALL_SIGN.get(), block ->
+                createSingleItemTable(ModItems.DARK_SIGN.get()));
+        this.add(ModBlocks.DARK_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
+        this.add(ModBlocks.DARK_WALL_HANGING_SIGN.get(), block ->
+                createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
 
         // ressource dirt block break
         this.add(ModBlocks.RESSOURCE_DIRT_BLOCK.get(), this.ressourceDirtLikeDrop());

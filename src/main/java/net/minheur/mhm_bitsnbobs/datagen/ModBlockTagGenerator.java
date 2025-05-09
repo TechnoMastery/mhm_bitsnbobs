@@ -29,7 +29,6 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .addTag(
                         Tags.Blocks.ORES
                 );
-
         // IRON TOOL
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(
@@ -37,7 +36,6 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
                         ModBlocks.SAPPHIRE_BLOCK.get(),
                         ModBlocks.RAW_SAPPHIRE_BLOCK.get(),
-
                         ModBlocks.SAPPHIRE_SLAB.get(),
                         ModBlocks.SAPPHIRE_TRAPDOOR.get(),
                         ModBlocks.SAPPHIRE_DOOR.get(),
@@ -46,15 +44,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_FENCE.get(),
                         ModBlocks.SAPPHIRE_STAIRS.get(),
                         ModBlocks.COMPRESSED_DIRT.get(),
-                        ModBlocks.RESSOURCE_DIRT_BLOCK.get()
+                        ModBlocks.RESSOURCE_DIRT_BLOCK.get(),
+                        ModBlocks.GEM_POLISHING_STATION.get()
                 );
-
         // NETHERITE TOOL
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(
                         ModBlocks.END_SAPPHIRE_ORE.get()
                 );
-
         // sapphire tools
         this.tag(ModTags.Blocks.NEEDS_SAPPHIRE_TOOL)
                 .add(
@@ -62,38 +59,32 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.CREATIVE_RESIDUE_BLOCK.get(),
                         ModBlocks.CREATIVE_BLOCK.get()
                 );
-
         // stone tool
         this.tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(
                         ModBlocks.NETHER_SAPPHIRE_ORE.get()
                 );
-
         // diamond tool
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(
                         ModBlocks.SUPER_CHARGED_BLOCK.get(),
                         ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get()
                 );
-
         // fences ==> not wood fences
         this.tag(BlockTags.FENCES)
                 .add(
                         ModBlocks.SAPPHIRE_FENCE.get()
                 );
-
         // fences gate
         this.tag(BlockTags.FENCE_GATES)
                 .add(
                         ModBlocks.SAPPHIRE_FENCE_GATE.get()
                 );
-
         // walls
         this.tag(BlockTags.WALLS)
                 .add(
                         ModBlocks.SAPPHIRE_WALL.get()
                 );
-
         // mineable/pickaxe
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(
@@ -112,6 +103,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_FENCE.get(),
                         ModBlocks.CREATIVE_RESIDUE_BLOCK.get(),
                         ModBlocks.SUPER_CHARGED_BLOCK.get(),
+                        ModBlocks.GEM_POLISHING_STATION.get(),
                         ModBlocks.CREATIVE_BLOCK.get()
                 );
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -119,6 +111,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.COMPRESSED_DIRT.get(),
                         ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(),
                         ModBlocks.RESSOURCE_DIRT_BLOCK.get()
+                );
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(
+                        ModBlocks.DARK_LOG.get(),
+                        ModBlocks.DARK_WOOD.get(),
+                        ModBlocks.STRIPPED_DARK_LOG.get(),
+                        ModBlocks.STRIPPED_DARK_WOOD.get()
+                );
+        this.tag(BlockTags.PLANKS)
+                .add(
+                        ModBlocks.DARK_PLANKS.get()
                 );
     }
 }
