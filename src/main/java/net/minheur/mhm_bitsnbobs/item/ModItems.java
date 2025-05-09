@@ -220,6 +220,12 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.RHINO, 0x7e9680, 0xc5d1c5,
                     new Item.Properties()));
 
+    // signs
+    public static final RegistryObject<Item> DARK_SIGN = ITEMS.register("dark_sign",
+            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_WALL_SIGN.get()));
+    public static final RegistryObject<Item> DARK_HANGING_SIGN = ITEMS.register("dark_hanging_sign",
+            () -> new HangingSignItem(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+
     // end item create
 
 

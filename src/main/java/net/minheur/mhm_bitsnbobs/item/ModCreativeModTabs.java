@@ -80,6 +80,8 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.STRIPPED_DARK_WOOD.get());
                         output.accept(ModBlocks.DARK_PLANKS.get());
                         output.accept(ModBlocks.DARK_LEAVES.get());
+                        output.accept(ModItems.DARK_SIGN.get());
+                        output.accept(ModItems.DARK_HANGING_SIGN.get());
                     })
                     .build());
 

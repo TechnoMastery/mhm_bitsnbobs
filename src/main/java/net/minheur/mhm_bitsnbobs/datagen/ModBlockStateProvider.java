@@ -40,8 +40,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.COMPRESSED_DIRT);
         blockWithItem(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK);
         blockWithItem(ModBlocks.RESSOURCE_DIRT_BLOCK);
-
         blockWithItem(ModBlocks.SOUND_BLOCK);
+
+        // signs
+        signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));
+        hangingSignBlock(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.DARK_PLANKS.get()));
 
         // wood
         logBlock(((RotatedPillarBlock) ModBlocks.DARK_LOG.get()));
@@ -130,5 +133,20 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+        ModelFile sign = models().sign(name(signBlock), texture);
+        hangingSignBlock(signBlock, wallSignBlock, sign);
+    }
+    public void hangingSignBlock(Block signBloc, Block wallSignBloc, ModelFile sign) {
+        simpleBlock(signBloc, sign);
+        simpleBlock(wallSignBloc, sign);
+    }
+    private String name(Block block) {
+        return key(block).getPath();
+    }
+    private ResourceLocation key(Block block) {
+        return ForgeRegistries.BLOCKS.getKey(block);
     }
 }

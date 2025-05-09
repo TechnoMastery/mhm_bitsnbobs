@@ -2,6 +2,7 @@ package net.minheur.mhm_bitsnbobs;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
@@ -27,6 +28,7 @@ import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationScreen;
 import net.minheur.mhm_bitsnbobs.screen.ModMenuTypes;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
+import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
 import org.slf4j.Logger;
 
@@ -160,6 +162,9 @@ public class MhmBitsnbobs
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+            // wood types
+            Sheets.addWoodType(ModWoodTypes.DARK);
+
             // entities
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
 
