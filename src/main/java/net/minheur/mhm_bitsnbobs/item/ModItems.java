@@ -156,13 +156,15 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.SAPPHIRE, 4, 2, new Item.Properties()));
 
     public static final RegistryObject<Item> FIRE_SWORD = ITEMS.register("fire_sword",
-            () -> new SwordItem(Tiers.DIAMOND, 15, 1, new Item.Properties().durability(1600).fireResistant()));
+            () -> new SwordItem(ModToolTiers.FIRE, 1, 1, new Item.Properties().durability(1600).fireResistant()));
 
     public static final RegistryObject<Item> LIGHTNING_SWORD = ITEMS.register("lightning_sword",
             () -> new SwordItem(Tiers.NETHERITE, 60, 1, new Item.Properties().durability(15000).fireResistant()));
+    // TODO: add a tool tier
 
     public static final RegistryObject<Item> RUBINIUM_SWORD = ITEMS.register("rubinium_sword",
             () -> new SwordItem(Tiers.NETHERITE, 35, 1, new Item.Properties().durability(10000).fireResistant()));
+    // TODO: add a tool tier
 
     // pickaxes
     public static final RegistryObject<Item> SAPPHIRE_PICKAXE = ITEMS.register("sapphire_pickaxe",
