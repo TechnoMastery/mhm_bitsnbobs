@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "mhm_bitsnbobs:wind_stick_3d",
-		"particle": "mhm_bitsnbobs:wind_stick_3d"
+		"0": "mhm_bitsnbobs:item/wind_stick_3d",
+		"particle": "mhm_bitsnbobs:item/wind_stick_3d"
 	},
 	"elements": [
 		{
