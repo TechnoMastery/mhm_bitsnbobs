@@ -58,7 +58,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_DARK_LOG);
         blockItem(ModBlocks.STRIPPED_DARK_WOOD);
         blockWithItem(ModBlocks.DARK_PLANKS);
-        leavesBlock(ModBlocks.DARK_LEAVES);
+        leavesBlock(ModBlocks.DARK_LEAVES); // TODO: patch leaves not having texture
 
         // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or dupli)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
