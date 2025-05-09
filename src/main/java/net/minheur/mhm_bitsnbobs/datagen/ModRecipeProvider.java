@@ -154,7 +154,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleHeadCrafting(pWriter, Items.ZOMBIE_HEAD, Items.ROTTEN_FLESH, ModItems.ROTTEN_LEATHER.get());
 
         // no pattern
-        // TODO: change minecraft crafting to only one "", so don't have "" + "".
         // metal detector
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR.get())
                 .pattern(" I ")
@@ -184,7 +183,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" G ")
                 .define('G', Blocks.GRAVEL)
                 .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
-                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "gravel_crafting");
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":gravel_crafting");
 
         // heads
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.PLAYER_HEAD)
@@ -196,7 +195,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Blocks.BLACK_CONCRETE)
                 .define('V', ModItems.SKULLKERY_TOOL.get())
                 .unlockedBy(getHasName(ModItems.SKULLKERY_TOOL.get()), has(ModItems.SKULLKERY_TOOL.get()))
-                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "player_head_crafting");
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":player_head_crafting");
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.DRAGON_HEAD)
                 .pattern("IFI")
                 .pattern("JGJ")
@@ -207,7 +206,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Tags.Items.HEADS)
                 .define('G', ModItems.SKULLKERY_TOOL.get())
                 .unlockedBy(getHasName(ModItems.SKULLKERY_TOOL.get()), has(ModItems.SKULLKERY_TOOL.get()))
-                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "dragon_head_crafting");
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":dragon_head_crafting");
 
         // emerald
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.EMERALD)
@@ -217,7 +216,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', Blocks.DEEPSLATE)
                 .define('E', ModItems.CONTROLLED_PICKAXE.get())
                 .unlockedBy(getHasName(ModItems.CONTROLLED_PICKAXE.get()), has(ModItems.CONTROLLED_PICKAXE.get()))
-                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "emerald_crafting");
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":emerald_crafting");
 
         // controlled pickaxe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROLLED_PICKAXE.get())
@@ -292,7 +291,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', Items.DIAMOND)
                 .define('G', ModItems.SUPER_CHARGED_INGOT.get())
                 .unlockedBy(getHasName(ModItems.LIGHTNING_UPGRADE.get()), has(ModItems.LIGHTNING_UPGRADE.get()))
-                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "lightning_upgrade_duplication");
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":lightning_upgrade_duplication");
 
         // egg base craft
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASE_EGG.get(), 4)
@@ -361,7 +360,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SPAWNER_PART.get())
                 .define('D', ModItems.BASE_EGG.get())
                 .unlockedBy(getHasName(ModItems.HARDENED_INGOT.get()), has(ModItems.HARDENED_INGOT.get()))
-                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "spawner_crafting");
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":spawner_crafting");
 
         // fire stick
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.FIRE_STICK.get())
