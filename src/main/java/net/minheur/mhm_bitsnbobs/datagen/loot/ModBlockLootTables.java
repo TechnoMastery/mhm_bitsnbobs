@@ -49,6 +49,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SUPER_CHARGED_BLOCK.get());
         this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
 
+        this.dropSelf(ModBlocks.DARK_LOG.get());
+        this.dropSelf(ModBlocks.DARK_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_DARK_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_DARK_WOOD.get());
+        this.dropSelf(ModBlocks.DARK_PLANKS.get());
+
+        this.add(ModBlocks.DARK_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.SAPPHIRE_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES)); // TODO: change to sapling !
+
         // ressource dirt block break
         this.add(ModBlocks.RESSOURCE_DIRT_BLOCK.get(), this.ressourceDirtLikeDrop());
 

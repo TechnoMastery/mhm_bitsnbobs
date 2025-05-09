@@ -24,7 +24,7 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
-    // lists pour cook (si y a plusieurs items / blocks)
+    // lists pour recettes (si y a plusieurs items / blocks, planches par exemple)
     private static final List<ItemLike> SAPPHIRE_SMELTABLE = List.of(ModItems.RAW_SAPPHIRE.get(),
             ModBlocks.SAPPHIRE_BLOCK.get(), ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
             ModBlocks.NETHER_SAPPHIRE_ORE.get(), ModBlocks.END_SAPPHIRE_ORE.get());
@@ -51,7 +51,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // smoking
         itemSmoking(pWriter, List.of(Items.IRON_INGOT), RecipeCategory.MISC, ModItems.HARDENED_INGOT.get(), 0.0f, 500, "hardened");
 
-        // shaped recipe pattern ==> 3x3 crafting
+        // shaped recipe pattern → 3x3 crafting
         simpleBlockCrafting(pWriter, ModBlocks.SAPPHIRE_BLOCK.get(), ModItems.SAPPHIRE.get());
         simpleBlockCrafting(pWriter, ModBlocks.RAW_SAPPHIRE_BLOCK.get(), ModItems.RAW_SAPPHIRE.get());
         simpleBlockCrafting(pWriter, ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.CREATIVE_RESIDUE.get());
@@ -65,7 +65,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleBlockCrafting(pWriter, ModBlocks.CREATIVE_BLOCK.get(), ModItems.CREATIVE_INGOT.get());
         simpleBlockCrafting(pWriter, ModBlocks.SUPER_CHARGED_BLOCK.get(), ModItems.SUPER_CHARGED_INGOT.get());
 
-        // call craft armor ==> chacun le leur
+        // call craft armor → chacun le leur
         simpleHelmetCrafting(pWriter, ModItems.SAPPHIRE_HELMET.get(), ModItems.SAPPHIRE.get());
         simpleChestplateCrafting(pWriter, ModItems.SAPPHIRE_CHESTPLATE.get(), ModItems.SAPPHIRE.get());
         simpleLeggingsCrafting(pWriter, ModItems.SAPPHIRE_LEGGINGS.get(), ModItems.SAPPHIRE.get());
@@ -83,7 +83,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleStairsCrafting(pWriter, ModBlocks.SAPPHIRE_STAIRS.get(), ModBlocks.SAPPHIRE_BLOCK.get());
         simplePressurePlateCrafting(pWriter, ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(), ModBlocks.SAPPHIRE_BLOCK.get());
 
-        // simple shapeless pattern ==> utiliser le bon selon la qté d'items diferents
+        // simple shapeless pattern → utiliser le bon selon la qté d'items diferents
         simpleShappelessCraftingOne(pWriter, ModBlocks.SAPPHIRE_BUTTON.get(), ModItems.SAPPHIRE.get(), 1, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), 9, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.FIRE_DIAMOND.get(), ModItems.FIRE_SEEDS.get(), 5, 1);
@@ -91,6 +91,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingOne(pWriter, ModItems.CREATIVE_INGOT.get(), ModBlocks.CREATIVE_BLOCK.get(), 9, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.SUPER_CHARGED_INGOT.get(), ModBlocks.SUPER_CHARGED_BLOCK.get(), 9, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.EMPTY_RUNE.get(), Items.EMERALD, 5, 1);
+        simpleShappelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_LOG.get(), 4, 1);
+        simpleShappelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_WOOD.get(), 4, 1);
+        simpleShappelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_WOOD.get(), 4, 1);
+        simpleShappelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_LOG.get(), 4, 1);
 
         simpleShappelessCraftingTwo(pWriter, ModItems.XP_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.GOLD_INGOT, 1);
         simpleShappelessCraftingTwo(pWriter, ModItems.MONEY_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.COPPER_INGOT, 1);
@@ -101,9 +105,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingThree(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
         simpleShappelessCraftingThree(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
         simpleShappelessCraftingThree(pWriter, ModItems.RESSOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
-        // les shapeless of 3 sont a retest
 
-        // simple music disc ==> second item is what item you want it to be made with (center always = basedisk tag)
+        // crafting log → wood
+        simpleWoodCrafting(pWriter, ModBlocks.DARK_WOOD.get(), ModBlocks.DARK_LOG.get());
+
+        // simple music disc → second item is what item you want it to be made with (center always = basedisk tag)
         simpleDiscCrafting(pWriter, ModItems.DARK_SOUL_MUSIC_DISC.get(), Items.ECHO_SHARD);
         simpleDiscCrafting(pWriter, ModItems.END_OF_THE_START_MUSIC_DISC.get(), ModItems.HARDENED_INGOT.get());
         simpleDiscCrafting(pWriter, ModItems.BAR_BRAWL_MUSIC_DISC.get(), ModItems.SAPPHIRE.get());
@@ -137,9 +143,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleSmithing(pWriter, ModItems.LIGHTNING_UPGRADE.get(), ModItems.DIAMOND_BALL.get(), Items.DIAMOND, RecipeCategory.MISC, ModItems.SUPER_CHARGED_BALL.get());
         simpleSmithing(pWriter, Blocks.EMERALD_BLOCK, Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD, RecipeCategory.MISC, Items.BUDDING_AMETHYST);
 
-        // stone cutting : use 'stonecutterResultFromBase' from minecraft libraries.
-        // use it with pWriter, recipeCategory, result, ingredient ==> you can add, at last parameter, the amount of results. Not needed : don't set to use 1
-        stonecutterResultFromBase(pWriter, RecipeCategory.MISC, ModItems.EMPTY_LITTLE_FLASK.get(), ModItems.EMPTY_BIG_FLASK.get(), 2);
+        // stone cutting : use 'simpleStoneCutting' from our libraries.
+        // use it with pWriter, recipeCategory, result, ingredient → you can add, at last parameter, the amount of results. Not needed : don't set to use 1
+        simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.EMPTY_LITTLE_FLASK.get(), ModItems.EMPTY_BIG_FLASK.get(), 2);
 
         // head crafting
         simpleHeadCrafting(pWriter, Items.SKELETON_SKULL, Items.BONE, Items.BONE);
@@ -148,6 +154,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleHeadCrafting(pWriter, Items.ZOMBIE_HEAD, Items.ROTTEN_FLESH, ModItems.ROTTEN_LEATHER.get());
 
         // no pattern
+        // TODO: change minecraft crafting to only one "", so don't have "" + "".
         // metal detector
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR.get())
                 .pattern(" I ")
@@ -177,7 +184,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" G ")
                 .define('G', Blocks.GRAVEL)
                 .unlockedBy(getHasName(Blocks.GRAVEL), has(Blocks.GRAVEL))
-                .save(pWriter);
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "gravel_crafting");
 
         // heads
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.PLAYER_HEAD)
@@ -189,7 +196,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('G', Blocks.BLACK_CONCRETE)
                 .define('V', ModItems.SKULLKERY_TOOL.get())
                 .unlockedBy(getHasName(ModItems.SKULLKERY_TOOL.get()), has(ModItems.SKULLKERY_TOOL.get()))
-                .save(pWriter);
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "player_head_crafting");
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.DRAGON_HEAD)
                 .pattern("IFI")
                 .pattern("JGJ")
@@ -200,7 +207,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Tags.Items.HEADS)
                 .define('G', ModItems.SKULLKERY_TOOL.get())
                 .unlockedBy(getHasName(ModItems.SKULLKERY_TOOL.get()), has(ModItems.SKULLKERY_TOOL.get()))
-                .save(pWriter);
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "dragon_head_crafting");
 
         // emerald
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.EMERALD)
@@ -210,7 +217,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', Blocks.DEEPSLATE)
                 .define('E', ModItems.CONTROLLED_PICKAXE.get())
                 .unlockedBy(getHasName(ModItems.CONTROLLED_PICKAXE.get()), has(ModItems.CONTROLLED_PICKAXE.get()))
-                .save(pWriter);
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "emerald_crafting");
 
         // controlled pickaxe
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROLLED_PICKAXE.get())
@@ -285,7 +292,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('D', Items.DIAMOND)
                 .define('G', ModItems.SUPER_CHARGED_INGOT.get())
                 .unlockedBy(getHasName(ModItems.LIGHTNING_UPGRADE.get()), has(ModItems.LIGHTNING_UPGRADE.get()))
-                .save(pWriter, "lightning_upgrade_duplication");
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "lightning_upgrade_duplication");
 
         // egg base craft
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASE_EGG.get(), 4)
@@ -354,7 +361,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SPAWNER_PART.get())
                 .define('D', ModItems.BASE_EGG.get())
                 .unlockedBy(getHasName(ModItems.HARDENED_INGOT.get()), has(ModItems.HARDENED_INGOT.get()))
-                .save(pWriter);
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + "spawner_crafting");
 
         // fire stick
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.FIRE_STICK.get())
@@ -376,7 +383,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.SKULLKERY_TOOL.get())
                 .define('H', Tags.Items.HEADS)
                 .unlockedBy(getHasName(ingredient1), has(ingredient1))
-                .save(pFinishedRecipeConsumer);
+                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + headResult + "_head_crafting");
     }
 
     protected static void simpleBlockCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {
@@ -386,7 +393,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("SSS")
                 .define('S', ingredient)
                 .unlockedBy(getHasName(ingredient), has(ingredient))
-                .save(pFinishedRecipeConsumer, getItemName(result) + "_from_nine_" + getItemName(ingredient));
+                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result) + "_from_nine_" + getItemName(ingredient));
+    }
+
+    protected static void simpleWoodCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+                .pattern("SS")
+                .pattern("SS")
+                .define('S', ingredient)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinishedRecipeConsumer);
     }
 
     protected static void simpleDiscCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item resultDisc, Item discIngretient) {
@@ -397,7 +413,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', discIngretient)
                 .define('B', ModTags.Items.BASEDISK)
                 .unlockedBy(getHasName(discIngretient), has(discIngretient))
-                .save(pFinishedRecipeConsumer, getItemName(resultDisc) + "_with_" + getItemName(discIngretient));
+                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(resultDisc) + "_with_" + getItemName(discIngretient));
     }
 
     protected static void simpleStairsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Block result, Block ingredient) {
@@ -528,14 +544,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQuantity)
                 .requires(ingredient, ingredientQuantity)
                 .unlockedBy(getHasName(ingredient), has(ingredient))
-                .save(pFinishedRecipeConsumer, getItemName(result) + "_from_shappeless_of_one_" + getItemName(ingredient));
+                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result) + "_from_shapeless_of_one_" + getItemName(ingredient));
     }
     protected static void simpleShappelessCraftingTwo(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Integer resultQ, ItemLike ingredient1, Integer ingredient1Q, ItemLike ingredient2, Integer ingredient2Q) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQ)
                 .requires(ingredient1, ingredient1Q)
                 .requires(ingredient2, ingredient2Q)
                 .unlockedBy(getHasName(ingredient1), has(ingredient1))
-                .save(pFinishedRecipeConsumer, getItemName(result) + "_from_shappeless_of_two_base_" + getItemName(ingredient1));
+                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result) + "_from_shappeless_of_two_base_" + getItemName(ingredient1));
     }
     protected static void simpleShappelessCraftingThree(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Integer resultQuantity, ItemLike ingredient1, Integer ingredient1Q, ItemLike ingredient2, Integer ingredient2Q, ItemLike ingredient3, Integer ingredient3Q) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQuantity)
@@ -543,7 +559,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ingredient2, ingredient2Q)
                 .requires(ingredient3, ingredient3Q)
                 .unlockedBy(getHasName(ingredient1), has(ingredient1))
-                .save(pFinishedRecipeConsumer, getItemName(result)+"_from_shappeless_of_three_base_"+getItemName(ingredient1));
+                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result)+"_from_shappeless_of_three_base_"+getItemName(ingredient1));
     }
 
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
@@ -568,7 +584,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     }
 
+    protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {
+        SingleItemRecipeBuilder var10000 = SingleItemRecipeBuilder.stonecutting(Ingredient.of(new ItemLike[]{pMaterial}), pCategory, pResult, pResultCount).unlockedBy(getHasName(pMaterial), has(pMaterial));
+        String var10002 = getConversionRecipeName(pResult, pMaterial);
+        var10000.save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + var10002 + "_stonecutting");
+    }
+
     protected static void simpleSmithing(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pTemplate, ItemLike pIngredientItem, ItemLike pAddition, RecipeCategory pCategory, ItemLike pResultItem) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(new ItemLike[]{pTemplate}), Ingredient.of(new ItemLike[]{pIngredientItem}), Ingredient.of(new ItemLike[]{pAddition}), pCategory, (Item) pResultItem).unlocks(getHasName(pIngredientItem), has(pIngredientItem)).save(pFinishedRecipeConsumer, getItemName(pResultItem) + "_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(new ItemLike[]{pTemplate}), Ingredient.of(new ItemLike[]{pIngredientItem}), Ingredient.of(new ItemLike[]{pAddition}), pCategory, (Item) pResultItem).unlocks(getHasName(pIngredientItem), has(pIngredientItem)).save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(pResultItem) + "_smithing");
     }
 }

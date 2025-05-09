@@ -96,6 +96,12 @@
   "block.mhm_bitsnbobs.compressed_dirt": "Terre compréssé",
   "block.mhm_bitsnbobs.ressource_dirt_block": "Bloc de terre de ressource",
   "block.mhm_bitsnbobs.extremely_dry_dirt_block": "Bloc de terre extrèmement sèche",
+  "block.mhm_bitsnbobs.dark_log": "Tronc sombre",
+  "block.mhm_bitsnbobs.dark_wood": "Bois sombre",
+  "block.mhm_bitsnbobs.stripped_dark_log": "Tronc sombre écorcé",
+  "block.mhm_bitsnbobs.stripped_dark_wood": "Bois sombre écorcé",
+  "block.mhm_bitsnbobs.dark_planks": "Planches sombre",
+  "block.mhm_bitsnbobs.leaves": "Feuillages sombre",
 
   "block.mhm_bitsnbobs.gem_polishing_station": "Station de polissage de gems",
 

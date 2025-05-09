@@ -74,6 +74,12 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.DARK_SOUL_MUSIC_DISC.get());
                         output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
                         output.accept(ModItems.HARDENED_INGOT.get());
+                        output.accept(ModBlocks.DARK_LOG.get());
+                        output.accept(ModBlocks.DARK_WOOD.get());
+                        output.accept(ModBlocks.STRIPPED_DARK_LOG.get());
+                        output.accept(ModBlocks.STRIPPED_DARK_WOOD.get());
+                        output.accept(ModBlocks.DARK_PLANKS.get());
+                        output.accept(ModBlocks.DARK_LEAVES.get());
                     })
                     .build());
 
