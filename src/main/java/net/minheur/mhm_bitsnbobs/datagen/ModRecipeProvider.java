@@ -18,10 +18,12 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
+import org.lwjgl.system.macosx.MacOSXLibraryDL;
 
 import java.util.List;
 import java.util.function.Consumer;
 
+// TODO: ajouter recette wind stick
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     // lists pour recettes (si y a plusieurs items / blocks, planches par exemple)
@@ -105,6 +107,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingThree(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
         simpleShappelessCraftingThree(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
         simpleShappelessCraftingThree(pWriter, ModItems.RESSOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
+        simpleShappelessCraftingThree(pWriter, ModItems.HOLY_BREAD.get(), 1, ModItems.YEAST.get(),3, Items.ENCHANTED_GOLDEN_APPLE, 1, Items.BREAD, 2);
+        simpleShappelessCraftingThree(pWriter,ModItems.DEVIL_BREAD.get(),3, ModItems.HOLY_BREAD.get(),1, Items.LAVA_BUCKET, 2, ModItems.YEAST.get(),6);
 
         // crafting log → wood
         simpleWoodCrafting(pWriter, ModBlocks.DARK_WOOD.get(), ModBlocks.DARK_LOG.get());
@@ -154,6 +158,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleHeadCrafting(pWriter, Items.ZOMBIE_HEAD, Items.ROTTEN_FLESH, ModItems.ROTTEN_LEATHER.get());
 
         // no pattern
+        // levure
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.YEAST.get())
+                .pattern("PPP")
+                .pattern("PSP")
+                .pattern("PPP")
+                .define('P', Items.PAPER)
+                .define('S',Items.SUGAR)
+                .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR))
+                .save(pWriter);
+
         // metal detector
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.METAL_DETECTOR.get())
                 .pattern(" I ")

@@ -5,6 +5,7 @@ import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
@@ -18,6 +19,8 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, MhmBitsnbobs.MOD_ID);
 
     // create item
+    public static final RegistryObject<Item> YEAST = ITEMS.register("yeast",
+            () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS. register("sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BASE_EGG = ITEMS. register("base_egg",
@@ -122,6 +125,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> WIND_STICK = ITEMS.register("wind_stick",
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
             () -> new Item(new Item.Properties()));
@@ -204,6 +209,11 @@ public class ModItems {
 
     public static final RegistryObject<Item> EXPLODED_POTATO = ITEMS.register("exploded_potato",
             () -> new Item(new Item.Properties().food(ModFoods.EXPLODED_POTATO)));
+    public static final RegistryObject<Item> HOLY_BREAD = ITEMS.register("holy_bread",
+            () -> new Item(new Item.Properties().food(ModFoods.HOLY_BREAD)));
+    public static final RegistryObject<Item> DEVIL_BREAD = ITEMS.register("devil_bread",
+            () -> new Item(new Item.Properties().food(ModFoods.DEVIl_BREAD)));
+
 
     // seeds
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",

@@ -1,0 +1,18 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "mhm_bitsnbobs:item/wind_stick_3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "mhm_bitsnbobs:item/wind_stick_2d"
+    },
+    "ground": {
+      "parent": "mhm_bitsnbobs:item/wind_stick_2d"
+    },
+    "fixed": {
+      "parent": "mhm_bitsnbobs:item/wind_stick_2d"
+    }
+  }
+}

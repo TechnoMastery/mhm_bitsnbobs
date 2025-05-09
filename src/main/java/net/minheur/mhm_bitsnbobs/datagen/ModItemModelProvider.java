@@ -13,6 +13,7 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
@@ -86,11 +87,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.CONTROL_PANEL);
         simpleitem(ModItems.HALF_STICK);
         simpleitem(ModItems.QUATER_STICK);
+        simpleitem(ModItems.YEAST);
         simpleitem(ModItems.DARK_SIGN);
         simpleitem(ModItems.DARK_HANGING_SIGN);
 
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
+        simpleitem(ModItems.HOLY_BREAD);
+        simpleitem(ModItems.DEVIL_BREAD);
 
         simpleitem(ModItems.STRAWBERRY_SEEDS);
         simpleitem(ModItems.CORN_SEEDS);
