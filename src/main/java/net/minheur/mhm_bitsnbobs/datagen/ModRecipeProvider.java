@@ -397,7 +397,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void simpleWoodCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, 3)
                 .pattern("SS")
                 .pattern("SS")
                 .define('S', ingredient)
