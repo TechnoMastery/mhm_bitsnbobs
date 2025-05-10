@@ -39,7 +39,7 @@ public class MetalDetectorItem extends Item {
                     OutputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
                     foundBlock = true;
 
-                    // la ligne suivante joue un son lorceque le detecteur trouve un minerais
+                    // la ligne suivante joue un son lorsque le détecteur trouve des minerais
                     pContext.getLevel().playSeededSound(null, positionClicked.getX(), positionClicked.getY(), positionClicked.getZ(),
                             ModSounds.METAL_DETECTOR_FOUND_ORE.get(), SoundSource.BLOCKS, 1f, 1f, 0);
 
