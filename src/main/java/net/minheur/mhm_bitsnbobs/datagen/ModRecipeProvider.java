@@ -24,7 +24,6 @@ import java.util.List;
 import java.util.function.Consumer;
 
 // TODO: add recipe wind stick
-// TODO: add recipe & recipe methods for signs & hanging signs
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     // lists pour recettes (si y a plusieurs items / blocks, planches par exemple)
@@ -162,6 +161,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleHeadCrafting(pWriter, Items.WITHER_SKELETON_SKULL, Items.BONE, Items.WITHER_ROSE);
         simpleHeadCrafting(pWriter, Items.CREEPER_HEAD, Items.GUNPOWDER, Items.GUNPOWDER);
         simpleHeadCrafting(pWriter, Items.ZOMBIE_HEAD, Items.ROTTEN_FLESH, ModItems.ROTTEN_LEATHER.get());
+
+        // signs & hanging signs
+        signCrafting(pWriter, ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_PLANKS.get());
+        signHangingCrafting(pWriter, ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.STRIPPED_DARK_LOG.get());
 
         // no pattern
         // levure
@@ -432,6 +435,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ingredient)
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result) + "_from_nine_" + getItemName(ingredient));
+    }
+
+    protected static void signCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike signResult, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, signResult, 3)
+                .pattern("SSS")
+                .pattern(" B ")
+                .define('S', ingredient)
+                .define('B', Items.STICK)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinishedRecipeConsumer, getItemName(signResult));
+    }
+    protected static void signHangingCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike hangingSignResult, ItemLike ingredient) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, hangingSignResult, 6)
+                .pattern("C C")
+                .pattern("BBB")
+                .pattern("BBB")
+                .define('B', ingredient)
+                .define('C', Items.CHAIN)
+                .unlockedBy(getHasName(ingredient), has(ingredient))
+                .save(pFinishedRecipeConsumer, getItemName(hangingSignResult));
     }
 
     protected static void simpleWoodCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {
