@@ -134,6 +134,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> HARDENED_INGOT = ITEMS.register("hardened_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DICE = ITEMS.register("dice",
+            () -> new DiceItem(new Item.Properties()));
 
     public static final RegistryObject<Item> RUBIS = ITEMS.register("rubis",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));

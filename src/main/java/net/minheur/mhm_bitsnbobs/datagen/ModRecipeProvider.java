@@ -98,6 +98,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_WOOD.get(), 4, 1);
         simpleShappelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_WOOD.get(), 4, 1);
         simpleShappelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_LOG.get(), 4, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.DICE.get(), Blocks.WHITE_CONCRETE, 16, 1);
 
         simpleShappelessCraftingTwo(pWriter, ModItems.XP_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.GOLD_INGOT, 1);
         simpleShappelessCraftingTwo(pWriter, ModItems.MONEY_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.COPPER_INGOT, 1);

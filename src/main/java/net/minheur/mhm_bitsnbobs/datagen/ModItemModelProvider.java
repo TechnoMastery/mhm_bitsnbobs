@@ -51,6 +51,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.RESSOURCE_DIRT);
         simpleitem(ModItems.CORN);
         simpleitem(ModItems.STORM_FRAGMENT);
+        simpleitem(ModItems.DICE);
         simpleitem(ModItems.WET_DIRT);
         simpleitem(ModItems.QUANTUM_CORE);
         simpleitem(ModItems.PIECE_OF_DIRT);

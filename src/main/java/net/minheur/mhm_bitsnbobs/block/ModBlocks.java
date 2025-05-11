@@ -57,6 +57,9 @@ public class ModBlocks {
 
     // custom block
 
+    public static final RegistryObject<Block> DICE_BLOCK = BLOCKS.register("dice_block",
+            () -> new DiceBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noLootTable()));
+
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSounds.SOUND_BLOCK_SOUNDS)));
 
