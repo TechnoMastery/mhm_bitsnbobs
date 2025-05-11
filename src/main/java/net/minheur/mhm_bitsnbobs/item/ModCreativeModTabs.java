@@ -82,6 +82,8 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.DARK_LEAVES.get());
                         output.accept(ModItems.DARK_SIGN.get());
                         output.accept(ModItems.DARK_HANGING_SIGN.get());
+                        output.accept(ModItems.DARK_BOAT.get());
+                        output.accept(ModItems.DARK_CHEST_BOAT.get());
                     })
                     .build());
 

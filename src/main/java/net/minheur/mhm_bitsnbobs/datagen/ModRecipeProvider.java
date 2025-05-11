@@ -23,7 +23,8 @@ import org.lwjgl.system.macosx.MacOSXLibraryDL;
 import java.util.List;
 import java.util.function.Consumer;
 
-// TODO: ajouter recette wind stick
+// TODO: add recipe wind stick
+// TODO: add recipe & recipe methods for signs & hanging signs
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     // lists pour recettes (si y a plusieurs items / blocks, planches par exemple)
@@ -150,6 +151,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // stone cutting : use 'simpleStoneCutting' from our libraries.
         // use it with pWriter, recipeCategory, result, ingredient → you can add, at last parameter, the amount of results. Not needed : don't set to use 1
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.EMPTY_LITTLE_FLASK.get(), ModItems.EMPTY_BIG_FLASK.get(), 2);
+
+        // chest crafting
+        simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
+        simpleBoatCrafting(pWriter, ModItems.DARK_CHEST_BOAT.get(), ModBlocks.DARK_PLANKS.get(), true);
 
         // head crafting
         simpleHeadCrafting(pWriter, Items.SKELETON_SKULL, Items.BONE, Items.BONE);
@@ -384,6 +389,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.FIRE_DIAMOND.get())
                 .unlockedBy(getHasName(ModItems.FIRE_DIAMOND.get()), has(ModItems.FIRE_DIAMOND.get()))
                 .save(pWriter);
+    }
+
+    protected static void simpleBoatCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike boatResult, ItemLike ingredient, boolean isChestBoat) {
+        if(isChestBoat) {
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, boatResult)
+                    .pattern("PCP")
+                    .pattern("PPP")
+                    .define('P', ingredient)
+                    .define('C', Blocks.CHEST)
+                    .unlockedBy(getHasName(ingredient), has(ingredient))
+                    .save(pFinishedRecipeConsumer);
+        } else {
+            ShapedRecipeBuilder.shaped(RecipeCategory.MISC, boatResult)
+                    .pattern("P P")
+                    .pattern("PPP")
+                    .define('P', ingredient)
+                    .unlockedBy(getHasName(ingredient), has(ingredient))
+                    .save(pFinishedRecipeConsumer);
+        }
     }
 
     protected static void simpleHeadCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike headResult, ItemLike ingredient1, ItemLike ingredient2) {

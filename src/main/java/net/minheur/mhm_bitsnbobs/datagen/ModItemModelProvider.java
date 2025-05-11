@@ -90,6 +90,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.YEAST);
         simpleitem(ModItems.DARK_SIGN);
         simpleitem(ModItems.DARK_HANGING_SIGN);
+        simpleitem(ModItems.DARK_BOAT);
+        simpleitem(ModItems.DARK_CHEST_BOAT);
 
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);

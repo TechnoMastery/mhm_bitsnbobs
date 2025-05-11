@@ -57,6 +57,8 @@
   "item.mhm_bitsnbobs.devil_bread": "Devil bread",
   "item.mhm_bitsnbobs.holy_bread": "Holy bread",
   "item.mhm_bitsnbobs.wind_stick": "Wind stick",
+  "item.mhm_bitsnbobs.dark_boat": "Dark boat",
+  "item.mhm_bitsnbobs.dark_chest_boat": "Dark boat with chest",
 
   "item.mhm_bitsnbobs.metal_detector": "Metal detector",
 
@@ -105,7 +107,7 @@
   "block.mhm_bitsnbobs.stripped_dark_log": "Stripped dark log",
   "block.mhm_bitsnbobs.stripped_dark_wood": "Stripped dark wood",
   "block.mhm_bitsnbobs.dark_planks": "Dark planks",
-  "block.mhm_bitsnbobs.leaves": "Dark leaves",
+  "block.mhm_bitsnbobs.dark_leaves": "Dark leaves",
 
   "block.mhm_bitsnbobs.dark_sign": "Dark sign",
   "block.mhm_bitsnbobs.dark_hanging_sign": "Dark hanging sign",
@@ -139,6 +141,7 @@
   "creativetab.runes": "Runes",
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Sound master",
+  "entity.mhm_bitsnbobs.mod_chest_boat": "Boat with chest",
 
   "sounds.mhm_bitsnbobs.metal_detector_found_ore": "Metal detector ding",
   "sounds.mhm_bitsnbobs.bar_brawl": "Playing Bar brawl",

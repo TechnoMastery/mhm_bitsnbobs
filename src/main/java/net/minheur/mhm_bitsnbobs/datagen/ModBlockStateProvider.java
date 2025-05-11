@@ -58,7 +58,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_DARK_LOG);
         blockItem(ModBlocks.STRIPPED_DARK_WOOD);
         blockWithItem(ModBlocks.DARK_PLANKS);
-        leavesBlock(ModBlocks.DARK_LEAVES); // TODO: patch leaves not having texture
+        leavesBlock(ModBlocks.DARK_LEAVES); // TODO: patch leaves not having texture → patch done, wait to see if work
 
         // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or dupli)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
@@ -127,8 +127,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockItem(blockRegistryObject.get(), models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
-                new ResourceLocation("minecraft:block/leaves"), "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

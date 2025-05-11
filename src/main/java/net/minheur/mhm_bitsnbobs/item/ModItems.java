@@ -10,6 +10,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
+import net.minheur.mhm_bitsnbobs.entity.custom.ModBoatEntity;
 import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
@@ -214,6 +215,11 @@ public class ModItems {
     public static final RegistryObject<Item> DEVIL_BREAD = ITEMS.register("devil_bread",
             () -> new Item(new Item.Properties().food(ModFoods.DEVIl_BREAD)));
 
+    // boats
+    public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> DARK_CHEST_BOAT = ITEMS.register("dark_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
 
     // seeds
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",

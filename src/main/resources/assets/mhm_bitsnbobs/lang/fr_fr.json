@@ -57,6 +57,8 @@
   "item.mhm_bitsnbobs.devil_bread": "Pain de démon",
   "item.mhm_bitsnbobs.holy_bread": "Saint-Pain",
   "item.mhm_bitsnbobs.wind_stick": "Baton du vent",
+  "item.mhm_bitsnbobs.dark_boat": "Bateau sombre",
+  "item.mhm_bitsnbobs.dark_chest_boat": "Bateau sombre avec coffre",
 
   "item.mhm_bitsnbobs.metal_detector": "Détecteur de métaux",
 
@@ -105,7 +107,7 @@
   "block.mhm_bitsnbobs.stripped_dark_log": "Tronc sombre écorcé",
   "block.mhm_bitsnbobs.stripped_dark_wood": "Bois sombre écorcé",
   "block.mhm_bitsnbobs.dark_planks": "Planches sombre",
-  "block.mhm_bitsnbobs.leaves": "Feuillages sombre",
+  "block.mhm_bitsnbobs.dark_leaves": "Feuillages sombre",
 
   "block.mhm_bitsnbobs.dark_sign": "Panneau sombre",
   "block.mhm_bitsnbobs.dark_hanging_sign": "Panneau suspendu sombre",
@@ -139,6 +141,7 @@
   "creativetab.runes": "Runes",
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Ingénieur son",
+  "entity.mhm_bitsnbobs.mod_chest_boat": "Bateau avec coffre",
 
   "sounds.mhm_bitsnbobs.metal_detector_found_ore": "Ding de détecteur de métal",
   "sounds.mhm_bitsnbobs.bar_brawl": "Playing Bar brawl",
