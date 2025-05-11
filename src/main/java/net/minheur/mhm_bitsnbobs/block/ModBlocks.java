@@ -22,6 +22,7 @@ import net.minheur.mhm_bitsnbobs.block.custom.*;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
+import net.minheur.mhm_bitsnbobs.worldgen.tree.DarkTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -66,6 +67,10 @@ public class ModBlocks {
             () -> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     // end custom
+
+    // saplings
+    public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
+            () -> new SaplingBlock(new DarkTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     // modèle minerais si dessous ==> UniformInt.of() = qnt min / max d'XP.
     // eft c un modèle de block a XP

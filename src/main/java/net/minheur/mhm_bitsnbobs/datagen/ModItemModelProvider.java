@@ -108,6 +108,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleitem(ModItems.METAL_DETECTOR);
 
+        // saplings
+        saplingItem(ModBlocks.DARK_SAPLING);
+
         // runes
         runeItem(ModItems.XP_RUNE);
         runeItem(ModItems.MONEY_RUNE);
@@ -206,6 +209,12 @@ public class ModItemModelProvider extends ItemModelProvider {
                                         "item/" + itemRegistryObject.getId().getPath()));
             });
         }
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleitem(RegistryObject<Item> item) {
