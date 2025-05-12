@@ -32,6 +32,7 @@ import net.minheur.mhm_bitsnbobs.screen.ModMenuTypes;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
+import net.minheur.mhm_bitsnbobs.worldgen.tree.ModFoliagePlacers;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
@@ -69,7 +70,9 @@ public class MhmBitsnbobs
         ModMenuTypes.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+
         ModTrunkPlacerTypes.register(modEventBus);
+        ModFoliagePlacers.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
+import net.minheur.mhm_bitsnbobs.worldgen.tree.custom.DarkFoliagePlacer;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.custom.DarkTrunkPlacer;
 
 import java.util.List;
@@ -53,7 +54,7 @@ public class ModConfiguredFeatures {
                 // on choisi le trunk si dessous
                 new DarkTrunkPlacer(5, 4, 3),
                 BlockStateProvider.simple(ModBlocks.DARK_LEAVES.get()),
-                new BlobFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+                new DarkFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
                 new TwoLayersFeatureSize(1, 0, 2)).build());
 
     }
