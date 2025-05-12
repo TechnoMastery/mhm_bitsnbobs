@@ -27,9 +27,10 @@ public class DarkFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected void createFoliage(LevelSimulatedReader pLevel, FoliageSetter pBlockSetter, RandomSource pRandom, TreeConfiguration pConfig, int pMaxFreeHeight, FoliageAttachment pAttachement, int pFoliageHeight, int pFoliageRadius, int pOffset) {
-        this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachement.pos().above(0), 2, 2, pAttachement.doubleTrunk());
-        this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachement.pos().above(1), 2, 2, pAttachement.doubleTrunk());
-        this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachement.pos().above(2), 2, 2, pAttachement.doubleTrunk());
+        this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachement.pos().above(0), 2, 0, pAttachement.doubleTrunk());
+        this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachement.pos().above(1), 2, 0, pAttachement.doubleTrunk());
+        this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachement.pos().above(2), 2, 0, pAttachement.doubleTrunk());
+        this.placeLeavesRow(pLevel, pBlockSetter, pRandom, pConfig, pAttachement.pos().above(3), 1, 0, pAttachement.doubleTrunk());
     }
 
     @Override

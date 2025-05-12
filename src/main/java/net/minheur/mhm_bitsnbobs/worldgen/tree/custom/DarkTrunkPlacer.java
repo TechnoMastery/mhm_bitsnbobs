@@ -36,39 +36,12 @@ public class DarkTrunkPlacer extends TrunkPlacer {
 
     @Override
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader pLevel, BiConsumer<BlockPos, BlockState> pBlockSetter, RandomSource pRandom, int pFreeTreeHeight, BlockPos pPos, TreeConfiguration pConfig) {
-
         // block place logic
         setDirtAt(pLevel, pBlockSetter, pRandom, pPos.below(), pConfig);
         int height = pFreeTreeHeight + pRandom.nextInt(heightRandA, heightRandA + 3) + pRandom.nextInt(heightRandB - 1, heightRandB + 1);
 
         for(int i = 0; i < height; i++) {
             placeLog(pLevel, pBlockSetter, pRandom, pPos.above(i), pConfig);
-            if(i % 2 == 0 && pRandom.nextBoolean()) {
-                if(pRandom.nextFloat() > 0.25f) {
-                    for(int x = 0; x < 4; x++) {
-                        pBlockSetter.accept(pPos.above(i).relative(Direction.NORTH, x), ((BlockState)
-                                Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                }
-                if(pRandom.nextFloat() > 0.25f) {
-                    for(int x = 0; x < 4; x++) {
-                        pBlockSetter.accept(pPos.above(i).relative(Direction.SOUTH, x), ((BlockState)
-                                Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.Z))));
-                    }
-                }
-                if(pRandom.nextFloat() > 0.25f) {
-                    for(int x = 0; x < 4; x++) {
-                        pBlockSetter.accept(pPos.above(i).relative(Direction.EAST, x), ((BlockState)
-                                Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                }
-                if(pRandom.nextFloat() > 0.25f) {
-                    for(int x = 0; x < 4; x++) {
-                        pBlockSetter.accept(pPos.above(i).relative(Direction.WEST, x), ((BlockState)
-                                Function.identity().apply(pConfig.trunkProvider.getState(pRandom, pPos).setValue(RotatedPillarBlock.AXIS, Direction.Axis.X))));
-                    }
-                }
-            }
         }
 
 
