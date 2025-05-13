@@ -32,9 +32,12 @@ import net.minheur.mhm_bitsnbobs.screen.ModMenuTypes;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
+import net.minheur.mhm_bitsnbobs.worldgen.biome.ModTerrablender;
+import net.minheur.mhm_bitsnbobs.worldgen.biome.surface.ModSurfaceRules;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModFoliagePlacers;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
+import terrablender.api.SurfaceRuleManager;
 
 /// ce fichier est le coeur, le cerveau, le tous ce que tu veut de ton mod.
 /// C'est entre autre lui qui va définire les bases, qui va appeler les fichier de données comme les creative mod tabs etc.
@@ -74,6 +77,8 @@ public class MhmBitsnbobs
         ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacers.register(modEventBus);
 
+        ModTerrablender.registerBiomes();
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -86,6 +91,9 @@ public class MhmBitsnbobs
         event.enqueueWork(() -> {
             // ligne suivante : dupli pour les plantes
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
+
+            // biome rules
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
     }
 

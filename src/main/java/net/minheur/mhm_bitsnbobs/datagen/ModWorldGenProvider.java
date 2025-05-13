@@ -10,6 +10,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.worldgen.ModBiomeModifier;
 import net.minheur.mhm_bitsnbobs.worldgen.ModConfiguredFeatures;
 import net.minheur.mhm_bitsnbobs.worldgen.ModPlacedFeatures;
+import net.minheur.mhm_bitsnbobs.worldgen.biome.ModBiomes;
 
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -18,7 +19,8 @@ public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
-            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifier::bootstrap);
+            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifier::bootstrap)
+            .add(Registries.BIOME, ModBiomes::boostrap);
 
 
     public ModWorldGenProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {

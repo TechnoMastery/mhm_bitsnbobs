@@ -13,6 +13,7 @@ import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
+import net.minheur.mhm_bitsnbobs.worldgen.biome.ModBiomes;
 
 public class ModBiomeModifier {
     public static final ResourceKey<BiomeModifier> ADD_SAPPHIRE_ORE = registerKey("add_sapphire_ore");

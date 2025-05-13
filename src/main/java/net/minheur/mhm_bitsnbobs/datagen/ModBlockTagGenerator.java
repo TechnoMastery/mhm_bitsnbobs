@@ -123,5 +123,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(
                         ModBlocks.DARK_PLANKS.get()
                 );
+        this.tag(BlockTags.DIRT)
+                .add(
+                        ModBlocks.RESSOURCE_DIRT_BLOCK.get()
+                );
     }
 }
