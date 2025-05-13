@@ -68,6 +68,11 @@ public class ModBlocks {
 
     // end custom
 
+    // teleporters
+    public static final RegistryObject<Block> MOD_PORTAL = registerBlock("mod_portal",
+            () -> new ModPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().noCollission().noLootTable()));
+    // TODO: add a way to enter the dim
+
     // saplings
     public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
             () -> new SaplingBlock(new DarkTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
