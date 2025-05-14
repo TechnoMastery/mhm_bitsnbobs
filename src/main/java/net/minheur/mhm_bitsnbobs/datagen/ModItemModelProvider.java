@@ -13,7 +13,6 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
@@ -48,7 +47,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.RAW_SAPPHIRE);
         simpleitem(ModItems.EXTREMELY_DRY_DIRT);
         simpleitem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);
-        simpleitem(ModItems.RESSOURCE_DIRT);
+        simpleitem(ModItems.RESOURCE_DIRT);
         simpleitem(ModItems.CORN);
         simpleitem(ModItems.STORM_FRAGMENT);
         simpleitem(ModItems.DICE);

@@ -2,7 +2,6 @@ package net.minheur.mhm_bitsnbobs.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -18,7 +17,6 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
-import org.lwjgl.system.macosx.MacOSXLibraryDL;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -61,7 +59,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleBlockCrafting(pWriter, ModItems.RUBINIUM.get(), ModItems.RUBIS.get());
         simpleBlockCrafting(pWriter, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.EXTREMELY_DRY_DIRT.get());
         simpleBlockCrafting(pWriter, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.PIECE_OF_EXTREMELY_DRY_DIRT.get());
-        simpleBlockCrafting(pWriter, ModBlocks.RESSOURCE_DIRT_BLOCK.get(), ModItems.RESSOURCE_DIRT.get());
+        simpleBlockCrafting(pWriter, ModBlocks.RESSOURCE_DIRT_BLOCK.get(), ModItems.RESOURCE_DIRT.get());
 
         simpleBlockCrafting(pWriter, ModItems.CREATIVE_INGOT.get(), ModItems.CREATIVE_NUGGET.get());
         simpleBlockCrafting(pWriter, ModBlocks.CREATIVE_BLOCK.get(), ModItems.CREATIVE_INGOT.get());
@@ -107,7 +105,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingThree(pWriter, ModItems.SPRUCE_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.SPRUCE_SAPLING, 1);
         simpleShappelessCraftingThree(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
         simpleShappelessCraftingThree(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
-        simpleShappelessCraftingThree(pWriter, ModItems.RESSOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
+        simpleShappelessCraftingThree(pWriter, ModItems.RESOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
         simpleShappelessCraftingThree(pWriter, ModItems.HOLY_BREAD.get(), 1, ModItems.YEAST.get(),3, Items.ENCHANTED_GOLDEN_APPLE, 1, Items.BREAD, 2);
         simpleShappelessCraftingThree(pWriter,ModItems.DEVIL_BREAD.get(),3, ModItems.HOLY_BREAD.get(),1, Items.LAVA_BUCKET, 2, ModItems.YEAST.get(),6);
 
