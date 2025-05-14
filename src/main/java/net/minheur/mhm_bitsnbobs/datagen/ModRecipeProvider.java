@@ -444,7 +444,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ingredient)
                 .define('B', Items.STICK)
                 .unlockedBy(getHasName(ingredient), has(ingredient))
-                .save(pFinishedRecipeConsumer, getItemName(signResult));
+                .save(pFinishedRecipeConsumer);
     }
     protected static void signHangingCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike hangingSignResult, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, hangingSignResult, 6)
@@ -454,7 +454,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ingredient)
                 .define('C', Items.CHAIN)
                 .unlockedBy(getHasName(ingredient), has(ingredient))
-                .save(pFinishedRecipeConsumer, getItemName(hangingSignResult));
+                .save(pFinishedRecipeConsumer);
     }
 
     protected static void simpleWoodCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {

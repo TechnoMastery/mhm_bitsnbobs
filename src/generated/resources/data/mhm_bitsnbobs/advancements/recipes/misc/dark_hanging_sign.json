@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:dark_hanging_sign"
+        "recipe": "mhm_bitsnbobs:dark_hanging_sign"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:dark_hanging_sign"
+      "mhm_bitsnbobs:dark_hanging_sign"
     ]
   },
   "sends_telemetry_event": false
