@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:story/smelt_iron",
+  "criteria": {
+    "hardened": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:hardened_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.story.hardened_ingot.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:hardened_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.story.hardened_ingot.title"
+    }
+  },
+  "requirements": [
+    [
+      "hardened"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

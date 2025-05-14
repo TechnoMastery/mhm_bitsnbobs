@@ -152,6 +152,9 @@
   "sounds.mhm_bitsnbobs.dark_soul": "Playing Dark soul",
   "sounds.mhm_bitsnbobs.end_of_the_start": "Playing End of the start",
 
+  "advancements.story.hardened_ingot.title": "A powerful ingot",
+  "advancements.story.hardened_ingot.description": "But not very useful...",
+
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Right click to use",
   "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "An empty and useless item. Use in crafts to fill it.",

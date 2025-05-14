@@ -152,6 +152,9 @@
   "sounds.mhm_bitsnbobs.dark_soul": "Playing Dark soul",
   "sounds.mhm_bitsnbobs.end_of_the_start": "Playing End of the start",
 
+  "advancements.story.hardened_ingot.title": "Un lingot puissant",
+  "advancements.story.hardened_ingot.description": "mais pas très utile...",
+
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéraux sous terre",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Clic droit pour utiliser",
   "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "Un objet vide et inutile. Utiliser les crafts pour le remplir",
