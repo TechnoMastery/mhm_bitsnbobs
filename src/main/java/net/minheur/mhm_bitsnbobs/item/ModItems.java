@@ -31,7 +31,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HALF_STICK = ITEMS. register("half_stick",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> QUATER_STICK = ITEMS. register("quarter_stick",
+    public static final RegistryObject<Item> QUARTER_STICK = ITEMS. register("quarter_stick",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ROTTEN_LEATHER = ITEMS. register("rotten_leather",
             () -> new Item(new Item.Properties()));
