@@ -43,7 +43,7 @@ public class WindStickItem extends Item {
         double x = pLivingEntity.getX();
         double y = pLivingEntity.getY();
         double z = pLivingEntity.getZ();
-        WindStickOnUse.execute(pLevel, x, y, z, pLivingEntity);
+        WindStickOnUse.execute(pLivingEntity);
         return retval;
     }
 }
