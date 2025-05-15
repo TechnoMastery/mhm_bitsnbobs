@@ -8,7 +8,6 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
@@ -16,7 +15,6 @@ import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.block.custom.CornCropBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 
-import java.awt.*;
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -39,7 +37,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SUPER_CHARGED_BLOCK);
         blockWithItem(ModBlocks.COMPRESSED_DIRT);
         blockWithItem(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK);
-        blockWithItem(ModBlocks.RESSOURCE_DIRT_BLOCK);
+        blockWithItem(ModBlocks.RESOURCE_DIRT_BLOCK);
         blockWithItem(ModBlocks.SOUND_BLOCK);
         blockWithItem(ModBlocks.MOD_PORTAL);
 

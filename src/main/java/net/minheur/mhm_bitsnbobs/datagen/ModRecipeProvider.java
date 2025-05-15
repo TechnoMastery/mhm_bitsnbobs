@@ -59,7 +59,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleBlockCrafting(pWriter, ModItems.RUBINIUM.get(), ModItems.RUBIS.get());
         simpleBlockCrafting(pWriter, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.EXTREMELY_DRY_DIRT.get());
         simpleBlockCrafting(pWriter, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.PIECE_OF_EXTREMELY_DRY_DIRT.get());
-        simpleBlockCrafting(pWriter, ModBlocks.RESSOURCE_DIRT_BLOCK.get(), ModItems.RESOURCE_DIRT.get());
+        simpleBlockCrafting(pWriter, ModBlocks.RESOURCE_DIRT_BLOCK.get(), ModItems.RESOURCE_DIRT.get());
 
         simpleBlockCrafting(pWriter, ModItems.CREATIVE_INGOT.get(), ModItems.CREATIVE_NUGGET.get());
         simpleBlockCrafting(pWriter, ModBlocks.CREATIVE_BLOCK.get(), ModItems.CREATIVE_INGOT.get());

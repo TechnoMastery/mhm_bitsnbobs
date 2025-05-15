@@ -52,7 +52,7 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
     public static final RegistryObject<Block> EXTREMELY_DRY_DIRT_BLOCK = registerBlock("extremely_dry_dirt_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
-    public static final RegistryObject<Block> RESSOURCE_DIRT_BLOCK = registerBlock("ressource_dirt_block",
+    public static final RegistryObject<Block> RESOURCE_DIRT_BLOCK = registerBlock("resource_dirt_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
 
     // custom block

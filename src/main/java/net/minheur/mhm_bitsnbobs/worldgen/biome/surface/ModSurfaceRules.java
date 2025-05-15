@@ -11,7 +11,7 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
     private static final SurfaceRules.RuleSource DEEPSLATE = makeStateRule(Blocks.DEEPSLATE);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-    private static final SurfaceRules.RuleSource RESSOURCE_DIRT = makeStateRule(ModBlocks.RESSOURCE_DIRT_BLOCK.get());
+    private static final SurfaceRules.RuleSource RESSOURCE_DIRT = makeStateRule(ModBlocks.RESOURCE_DIRT_BLOCK.get());
 
 
 

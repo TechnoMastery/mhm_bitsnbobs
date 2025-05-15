@@ -3,7 +3,7 @@
   "category": "misc",
   "key": {
     "S": {
-      "item": "mhm_bitsnbobs:ressource_dirt"
+      "item": "mhm_bitsnbobs:resource_dirt"
     }
   },
   "pattern": [
@@ -12,7 +12,7 @@
     "SSS"
   ],
   "result": {
-    "item": "mhm_bitsnbobs:ressource_dirt_block"
+    "item": "mhm_bitsnbobs:resource_dirt_block"
   },
   "show_notification": true
 }

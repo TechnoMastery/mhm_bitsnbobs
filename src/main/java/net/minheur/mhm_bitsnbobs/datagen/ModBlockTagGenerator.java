@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -44,7 +43,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.SAPPHIRE_FENCE.get(),
                         ModBlocks.SAPPHIRE_STAIRS.get(),
                         ModBlocks.COMPRESSED_DIRT.get(),
-                        ModBlocks.RESSOURCE_DIRT_BLOCK.get(),
+                        ModBlocks.RESOURCE_DIRT_BLOCK.get(),
                         ModBlocks.GEM_POLISHING_STATION.get()
                 );
         // NETHERITE TOOL
@@ -110,7 +109,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(
                         ModBlocks.COMPRESSED_DIRT.get(),
                         ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(),
-                        ModBlocks.RESSOURCE_DIRT_BLOCK.get()
+                        ModBlocks.RESOURCE_DIRT_BLOCK.get()
                 );
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(
@@ -125,7 +124,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 );
         this.tag(BlockTags.DIRT)
                 .add(
-                        ModBlocks.RESSOURCE_DIRT_BLOCK.get()
+                        ModBlocks.RESOURCE_DIRT_BLOCK.get()
                 );
     }
 }

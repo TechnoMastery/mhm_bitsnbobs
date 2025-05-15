@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "mhm_bitsnbobs:item/quater_stick"
+    "layer0": "mhm_bitsnbobs:item/quarter_stick"
   }
 }

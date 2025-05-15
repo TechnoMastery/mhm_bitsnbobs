@@ -145,7 +145,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.EXTREMELY_DRY_DIRT.get());
                         output.accept(ModItems.RESOURCE_DIRT.get());
                         output.accept(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT.get());
-                        output.accept(ModBlocks.RESSOURCE_DIRT_BLOCK.get());
+                        output.accept(ModBlocks.RESOURCE_DIRT_BLOCK.get());
                     })
                     .build());
 

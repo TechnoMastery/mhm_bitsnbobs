@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_ressource_dirt": {
+    "has_humid_potion": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:ressource_dirt"
+              "mhm_bitsnbobs:humid_potion"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:ressource_dirt_block_from_nine_ressource_dirt"
+        "recipe": "mhm_bitsnbobs:resource_dirt_from_shappeless_of_three_base_humid_potion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_ressource_dirt",
+      "has_humid_potion",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:ressource_dirt_block_from_nine_ressource_dirt"
+      "mhm_bitsnbobs:resource_dirt_from_shappeless_of_three_base_humid_potion"
     ]
   },
   "sends_telemetry_event": false
