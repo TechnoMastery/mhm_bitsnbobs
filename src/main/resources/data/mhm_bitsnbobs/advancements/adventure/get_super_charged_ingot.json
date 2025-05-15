@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "mhm_bitsnbobs:super_charged_ingot"
+    },
+    "title": {
+      "translate": "advancements.adventure.get_super_charged_ingot.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.get_super_charged_ingot.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_super_charged_ingot_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:super_charged_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "mhm_bitsnbobs:adventure/enter_deep_dimension"
+}

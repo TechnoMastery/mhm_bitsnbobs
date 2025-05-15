@@ -245,7 +245,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern(" S ")
                 .pattern("C  ")
                 .define('P', Items.GOLDEN_PICKAXE)
-                .define('S', ModItems.QUATER_STICK.get())
+                .define('S', ModItems.QUARTER_STICK.get())
                 .define('C', ModItems.CONTROL_PANEL.get())
                 .unlockedBy(getHasName(ModItems.CONTROL_PANEL.get()), has(ModItems.CONTROL_PANEL.get()))
                 .save(pWriter);
@@ -264,7 +264,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("  P")
                 .pattern(" S ")
                 .pattern("C  ")
-                .define('P', ModItems.QUATER_STICK.get())
+                .define('P', ModItems.QUARTER_STICK.get())
                 .define('S', Tags.Items.HEADS)
                 .define('C', ModItems.CONTROLLED_STICK.get())
                 .unlockedBy(getHasName(ModItems.CONTROLLED_STICK.get()), has(ModItems.CONTROLLED_STICK.get()))

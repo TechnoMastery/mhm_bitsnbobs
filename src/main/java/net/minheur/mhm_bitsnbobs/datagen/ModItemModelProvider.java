@@ -86,7 +86,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.EXPLODED_POTATO);
         simpleitem(ModItems.CONTROL_PANEL);
         simpleitem(ModItems.HALF_STICK);
-        simpleitem(ModItems.QUATER_STICK);
+        simpleitem(ModItems.QUARTER_STICK);
         simpleitem(ModItems.YEAST);
         simpleitem(ModItems.DARK_SIGN);
         simpleitem(ModItems.DARK_HANGING_SIGN);

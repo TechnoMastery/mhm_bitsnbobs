@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "mhm_bitsnbobs:lightning_upgrade"
+    },
+    "title": {
+      "translate": "advancements.get_lightning_upgrade.title"
+    },
+    "description": {
+      "translate": "advancements.get_lightning_upgrade.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_lightning_upgrade_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:lightning_upgrade"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "mhm_bitsnbobs:adventure/enter_deep_dimension"
+}

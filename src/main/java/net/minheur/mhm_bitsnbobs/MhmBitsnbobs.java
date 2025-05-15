@@ -126,7 +126,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.CONTROL_PANEL);
              event.accept(ModItems.CONTROLLED_STICK);
              event.accept(ModItems.HALF_STICK);
-             event.accept(ModItems.QUATER_STICK);
+             event.accept(ModItems.QUARTER_STICK);
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BASE_EGG);
