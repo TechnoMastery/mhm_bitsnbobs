@@ -1,11 +1,8 @@
 package net.minheur.mhm_bitsnbobs.procedures;
 
-import net.minecraft.commands.CommandSource;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.level.LevelAccessor;
 
 public class WindStickOnUse {
     public static void execute(Entity pPlayer) {
