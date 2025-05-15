@@ -106,6 +106,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CATMINT.get());
         this.add(ModBlocks.POTTED_CATMINT.get(), createPotFlowerItemTable(ModBlocks.CATMINT.get()));
 
+        this.add(ModBlocks.RUBIS_ORE.get(),
+                block -> createCopperLickOreDrops(ModBlocks.RUBIS_ORE.get(), ModItems.RUBIS.get()));
+
         // packet sapphire ore
         this.add(ModBlocks.SAPPHIRE_ORE.get(),
                 block -> createCopperLickOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get()));
