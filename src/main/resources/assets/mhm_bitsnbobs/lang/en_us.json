@@ -152,6 +152,10 @@
   "sounds.mhm_bitsnbobs.dark_soul": "Playing Dark soul",
   "sounds.mhm_bitsnbobs.end_of_the_start": "Playing End of the start",
 
+  "death.attack.electrocuted": "%1$s got electrocuted",
+  "death.attack.electrocuted.item": "%1$s got electrocuted by %2$s using %3$s",
+  "death.attack.electrocuted.player": "%1$s got electrocuted whilst trying to escape %2$s",
+
   "advancements.dirt.root.title": "Mine dirt !",
   "advancements.dirt.root.description": "WAIT ! That doesn't exist... Why ?",
   "advancements.dirt.comp_dirt.title": "That compact...",

@@ -152,7 +152,9 @@
   "sounds.mhm_bitsnbobs.dark_soul": "Playing Dark soul",
   "sounds.mhm_bitsnbobs.end_of_the_start": "Playing End of the start",
 
-
+  "death.attack.electrocuted": "%1$s a été éléctrocuté",
+  "death.attack.electrocuted.item": "%1$s a été éléctrocuté par %2$s utilisant %3$s",
+  "death.attack.electrocuted.player": "%1$s a été éléctrocuté en essayant de fuir %2$s",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéraux sous terre",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Clic droit pour utiliser",
