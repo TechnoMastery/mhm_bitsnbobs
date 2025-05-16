@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -195,6 +196,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', ModItems.CONTROL_PANEL.get())
                 .define('B', Blocks.BLACKSTONE)
                 .unlockedBy(getHasName(Blocks.BLACKSTONE), has(Blocks.BLACKSTONE))
+                .save(pWriter);
+
+        // rubis ore
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RUBIS_ORE.get())
+                .pattern("DGD")
+                .pattern("GSG")
+                .pattern("DGD")
+                .define('D', ModItems.DIAMOND_BALL.get())
+                .define('G', ModItems.GOLD_BALL.get())
+                .define('S', Blocks.STONE)
+                .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
                 .save(pWriter);
 
         // dirt
