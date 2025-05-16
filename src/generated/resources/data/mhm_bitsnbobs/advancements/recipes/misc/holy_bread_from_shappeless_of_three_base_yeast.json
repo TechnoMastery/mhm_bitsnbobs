@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_holy_bread": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mhm_bitsnbobs:holy_bread_from_shappeless_of_three_base_yeast"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yeast": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:holy_bread"
+              "mhm_bitsnbobs:yeast"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "minecraft:devil_bread_from_shappeless_of_three_base_holy_bread"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_holy_bread",
+      "has_yeast",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:devil_bread_from_shappeless_of_three_base_holy_bread"
+      "mhm_bitsnbobs:holy_bread_from_shappeless_of_three_base_yeast"
     ]
   },
   "sends_telemetry_event": false

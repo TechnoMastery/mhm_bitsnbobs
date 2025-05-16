@@ -144,6 +144,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.CONTROLLED_PICKAXE);
         handheldItem(ModItems.CONTROLLED_STICK);
         handheldItem(ModItems.SKULLKERY_TOOL);
+        handheldItem(ModItems.SLIME_SWORD);
 
         // armor
         trimmedArmorItem(ModItems.SAPPHIRE_HELMET);

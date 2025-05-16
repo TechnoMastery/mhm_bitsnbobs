@@ -144,6 +144,7 @@ public class MhmBitsnbobs
             event.accept(ModItems.RUBINIUM_SWORD);
             event.accept(ModItems.ALLOYED_SWORD);
             event.accept(ModItems.WIND_STICK);
+            event.accept(ModItems.SLIME_SWORD);
         }
         if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModItems.FIRE_SEEDS);
