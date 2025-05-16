@@ -29,6 +29,7 @@ import java.util.List;
 public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SAPPHIRE_ORE_KEY = registerKey("sapphire_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_SAPPHIRE_ORE_KEY = registerKey("nether_sapphire_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RUBIS_ORE_KEY = registerKey("rubis_ore_key");
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_SAPPHIRE_ORE_KEY = registerKey("end_sapphire_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_KEY = registerKey("dark");
 
@@ -47,6 +48,8 @@ public class ModConfiguredFeatures {
         // when only one type of ore in the dim, place directly the replaceable
         register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(netherackReplaceable, ModBlocks.NETHER_SAPPHIRE_ORE.get().defaultBlockState(), 9));
         register(context, END_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceable, ModBlocks.END_SAPPHIRE_ORE.get().defaultBlockState(), 9));
+
+        register(context, RUBIS_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables, ModBlocks.RUBIS_ORE.get().defaultBlockState(), 3));
 
         // here example of tree gen
         register(context, DARK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
