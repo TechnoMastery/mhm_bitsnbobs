@@ -76,8 +76,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
             () -> new SaplingBlock(new DarkTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
-    // modèle minerais si dessous ==> UniformInt.of() = qnt min / max d'XP.
-    // eft c un modèle de block a XP
+    // Modèle minerai si dessous ==> UniformInt.of() = qnt min / max d'XP.
+    // Eft c un modèle de block a XP
     public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
