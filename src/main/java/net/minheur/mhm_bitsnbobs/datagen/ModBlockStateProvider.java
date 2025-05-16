@@ -40,7 +40,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK);
         blockWithItem(ModBlocks.RESOURCE_DIRT_BLOCK);
         blockWithItem(ModBlocks.SOUND_BLOCK);
-        blockWithItem(ModBlocks.MOD_PORTAL);
+        blockWithItem(ModBlocks.MOD_DEEP_PORTAL);
 
         // signs
         signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));

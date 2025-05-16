@@ -53,7 +53,7 @@ public class ModTeleporter implements ITeleporter {
                 }
             }
             if (doSetBlock) {
-                destinationWorld.setBlock(destinationPos, ModBlocks.MOD_PORTAL.get().defaultBlockState(), 3);
+                destinationWorld.setBlock(destinationPos, ModBlocks.MOD_DEEP_PORTAL.get().defaultBlockState(), 3);
             }
         }
 
