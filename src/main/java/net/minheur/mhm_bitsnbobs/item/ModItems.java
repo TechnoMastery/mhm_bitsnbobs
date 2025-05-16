@@ -166,8 +166,7 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.FIRE, 1, 1, new Item.Properties().durability(1600).fireResistant()));
 
     public static final RegistryObject<Item> LIGHTNING_SWORD = ITEMS.register("lightning_sword",
-            () -> new SwordItem(Tiers.NETHERITE, 60, 1, new Item.Properties().durability(15000).fireResistant()));
-    // TODO: add a tool tier
+            () -> new LightningSwordItem(ModToolTiers.LIGHTNING, 60, 1, new Item.Properties().durability(15000).fireResistant()));
 
     public static final RegistryObject<Item> RUBINIUM_SWORD = ITEMS.register("rubinium_sword",
             () -> new SwordItem(Tiers.NETHERITE, 35, 1, new Item.Properties().durability(10000).fireResistant()));
