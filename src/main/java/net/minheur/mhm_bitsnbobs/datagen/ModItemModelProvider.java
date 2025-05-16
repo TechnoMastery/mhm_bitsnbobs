@@ -44,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         // dupli = auto get model item gen
         simpleitem(ModItems.SAPPHIRE);
+        simpleitem(ModItems.WIND_CHARGED_INGOT);
         simpleitem(ModItems.RAW_SAPPHIRE);
         simpleitem(ModItems.EXTREMELY_DRY_DIRT);
         simpleitem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);

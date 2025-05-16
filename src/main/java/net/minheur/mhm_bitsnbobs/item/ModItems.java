@@ -21,6 +21,8 @@ public class ModItems {
     // create item
     public static final RegistryObject<Item> YEAST = ITEMS.register("yeast",
             () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> WIND_CHARGED_INGOT = ITEMS.register("wind_charged_ingot",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS. register("sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BASE_EGG = ITEMS. register("base_egg",

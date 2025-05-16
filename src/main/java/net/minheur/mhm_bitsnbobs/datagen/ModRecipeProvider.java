@@ -22,7 +22,7 @@ import net.minheur.mhm_bitsnbobs.util.ModTags;
 import java.util.List;
 import java.util.function.Consumer;
 
-// TODO: add recipe wind stick
+// TODO: add recipe for wind charged ingot
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     // lists pour recettes (si y a plusieurs items / blocks, planches par exemple)
@@ -101,6 +101,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingTwo(pWriter, ModItems.XP_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.GOLD_INGOT, 1);
         simpleShappelessCraftingTwo(pWriter, ModItems.MONEY_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.COPPER_INGOT, 1);
         simpleShappelessCraftingTwo(pWriter, ModItems.TREE_GROWER.get(), 1, Items.FLOWER_POT, 1, Blocks.DIRT, 1);
+        simpleShappelessCraftingTwo(pWriter, ModItems.WIND_STICK.get(), 1, Items.STICK, 1, ModItems.WIND_CHARGED_INGOT.get(), 1);
 
         simpleShappelessCraftingThree(pWriter, ModItems.OAK_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.OAK_SAPLING, 1);
         simpleShappelessCraftingThree(pWriter, ModItems.SPRUCE_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.SPRUCE_SAPLING, 1);
