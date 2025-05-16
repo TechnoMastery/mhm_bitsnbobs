@@ -158,6 +158,8 @@
   "death.attack.electrocuted.item": "%1$s a été éléctrocuté par %2$s utilisant %3$s",
   "death.attack.electrocuted.player": "%1$s a été éléctrocuté en essayant de fuir %2$s",
 
+  "effect.mhm_bitsnbobs.quantum_chocked": "Choc quantique",
+
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéraux sous terre",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Clic droit pour utiliser",
   "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "Un objet vide et inutile. Utiliser les crafts pour le remplir",
