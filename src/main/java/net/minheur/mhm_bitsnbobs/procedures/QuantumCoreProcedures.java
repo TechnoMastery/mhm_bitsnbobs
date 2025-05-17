@@ -14,19 +14,24 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minheur.mhm_bitsnbobs.potion.ModEffects;
 
 public class QuantumCoreProcedures {
-    public static void executeTickInInventory(Entity pEntity) {
-        if(pEntity == null)
+    public static void executeTickInInventory(Entity entity) {
+        if (entity == null)
             return;
-        if(pEntity instanceof Player _playerHasItem && _playerHasItem.getInventory().contains(new ItemStack(Items.TOTEM_OF_UNDYING))) {
-            _playerHasItem.removeEffect(ModEffects.QUANTUM_CHOCKED.get());
-        } else if(pEntity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(ModEffects.QUANTUM_CHOCKED.get()) &&
-                (pEntity instanceof LivingEntity _livEnt && _livEnt.hasEffect(ModEffects.QUANTUM_CHOCKED.get()) ? _livEnt.getEffect(ModEffects.QUANTUM_CHOCKED.get()).getDuration() : 0) < 40) {
-            if(pEntity instanceof LivingEntity _entity)
+        if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(Items.TOTEM_OF_UNDYING)) : false) {
+            if (entity instanceof LivingEntity _entity)
                 _entity.removeEffect(ModEffects.QUANTUM_CHOCKED.get());
-            if(pEntity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-                _entity.addEffect(new MobEffectInstance(ModEffects.QUANTUM_CHOCKED.get(),120, 1));
+        } else if (entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(ModEffects.QUANTUM_CHOCKED.get())
+                && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(ModEffects.QUANTUM_CHOCKED.get()) ? _livEnt.getEffect(ModEffects.QUANTUM_CHOCKED.get()).getDuration() : 0) < 40) {
+//            if (entity instanceof LivingEntity _entity)
+//                _entity.removeEffect(ModEffects.QUANTUM_CHOCKED.get());
+            if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+                _entity.addEffect(new MobEffectInstance(ModEffects.QUANTUM_CHOCKED.get(), 120, 1));
+        } else if (!(entity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(ModEffects.QUANTUM_CHOCKED.get()))) {
+            if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+                _entity.addEffect(new MobEffectInstance(ModEffects.QUANTUM_CHOCKED.get(), 120, 1));
         }
     }
+
     public static void executeFinishedUsing(LevelAccessor world, double x, double y, double z, Entity entity) {
         if (entity == null)
             return;
