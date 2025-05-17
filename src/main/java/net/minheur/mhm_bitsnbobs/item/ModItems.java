@@ -165,7 +165,7 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.SAPPHIRE, 4, 2, new Item.Properties()));
 
     public static final RegistryObject<Item> FIRE_SWORD = ITEMS.register("fire_sword",
-            () -> new SwordItem(ModToolTiers.FIRE, 1, 1, new Item.Properties().durability(1600).fireResistant()));
+            () -> new FireSwordItem(ModToolTiers.FIRE, 1, 1, new Item.Properties().durability(1600).fireResistant()));
 
     public static final RegistryObject<Item> LIGHTNING_SWORD = ITEMS.register("lightning_sword",
             () -> new LightningSwordItem(ModToolTiers.LIGHTNING, 60, 1, new Item.Properties().durability(15000).fireResistant()));
