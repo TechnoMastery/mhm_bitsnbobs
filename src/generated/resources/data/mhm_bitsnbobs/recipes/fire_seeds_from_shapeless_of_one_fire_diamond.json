@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "mhm_bitsnbobs:fire_seeds"
+      "item": "mhm_bitsnbobs:fire_diamond"
     }
   ],
   "result": {
     "count": 5,
-    "item": "mhm_bitsnbobs:fire_diamond"
+    "item": "mhm_bitsnbobs:fire_seeds"
   }
 }

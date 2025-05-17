@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_stick": {
+    "has_fire_diamond": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:stick"
+              "mhm_bitsnbobs:fire_diamond"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:wind_stick_from_shappeless_of_two_base_stick"
+        "recipe": "mhm_bitsnbobs:fire_seeds_from_shapeless_of_one_fire_diamond"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_stick",
+      "has_fire_diamond",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:wind_stick_from_shappeless_of_two_base_stick"
+      "mhm_bitsnbobs:fire_seeds_from_shapeless_of_one_fire_diamond"
     ]
   },
   "sends_telemetry_event": false

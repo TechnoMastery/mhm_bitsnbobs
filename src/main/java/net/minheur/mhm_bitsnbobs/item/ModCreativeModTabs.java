@@ -132,6 +132,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.XP_RUNE.get());
                         output.accept(ModItems.MONEY_RUNE.get());
                         output.accept(ModItems.OAK_RUNE.get());
+                        output.accept(ModItems.SPRUCE_RUNE.get());
                     })
                     .withSearchBar().build());
 

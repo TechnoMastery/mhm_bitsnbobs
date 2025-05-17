@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fire_seeds": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mhm_bitsnbobs:wind_stick"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wind_charged_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:fire_seeds"
+              "mhm_bitsnbobs:wind_charged_ingot"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "mhm_bitsnbobs:fire_diamond_from_shapeless_of_one_fire_seeds"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_fire_seeds",
+      "has_wind_charged_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:fire_diamond_from_shapeless_of_one_fire_seeds"
+      "mhm_bitsnbobs:wind_stick"
     ]
   },
   "sends_telemetry_event": false

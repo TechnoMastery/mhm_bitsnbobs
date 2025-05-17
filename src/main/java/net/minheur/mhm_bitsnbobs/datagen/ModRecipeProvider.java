@@ -87,7 +87,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // simple shapeless pattern → utiliser le bon selon la qté d'items diferents
         simpleShappelessCraftingOne(pWriter, ModBlocks.SAPPHIRE_BUTTON.get(), ModItems.SAPPHIRE.get(), 1, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), 9, 1);
-        simpleShappelessCraftingOne(pWriter, ModItems.FIRE_DIAMOND.get(), ModItems.FIRE_SEEDS.get(), 5, 1);
+        simpleShappelessCraftingOne(pWriter, ModItems.FIRE_SEEDS.get(), ModItems.FIRE_DIAMOND.get(), 5, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.CREATIVE_NUGGET.get(), ModItems.CREATIVE_INGOT.get(), 9, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.CREATIVE_INGOT.get(), ModBlocks.CREATIVE_BLOCK.get(), 9, 1);
         simpleShappelessCraftingOne(pWriter, ModItems.SUPER_CHARGED_INGOT.get(), ModBlocks.SUPER_CHARGED_BLOCK.get(), 9, 1);
@@ -101,7 +101,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShappelessCraftingTwo(pWriter, ModItems.XP_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.GOLD_INGOT, 1);
         simpleShappelessCraftingTwo(pWriter, ModItems.MONEY_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.COPPER_INGOT, 1);
         simpleShappelessCraftingTwo(pWriter, ModItems.TREE_GROWER.get(), 1, Items.FLOWER_POT, 1, Blocks.DIRT, 1);
-        simpleShappelessCraftingTwo(pWriter, ModItems.WIND_STICK.get(), 1, Items.STICK, 1, ModItems.WIND_CHARGED_INGOT.get(), 1);
 
         simpleShappelessCraftingThree(pWriter, ModItems.OAK_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.OAK_SAPLING, 1);
         simpleShappelessCraftingThree(pWriter, ModItems.SPRUCE_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.SPRUCE_SAPLING, 1);
@@ -167,6 +166,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         signHangingCrafting(pWriter, ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.STRIPPED_DARK_LOG.get());
 
         // no pattern
+        // wind stick
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WIND_STICK.get())
+                .pattern("P")
+                .pattern("S")
+                .define('P', ModItems.WIND_CHARGED_INGOT.get())
+                .define('S',Items.STICK)
+                .unlockedBy(getHasName(ModItems.WIND_CHARGED_INGOT.get()), has(ModItems.WIND_CHARGED_INGOT.get()))
+                .save(pWriter);
+
         // levure
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.YEAST.get())
                 .pattern("PPP")
@@ -274,7 +282,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.CONTROL_PANEL.get()), has(ModItems.CONTROL_PANEL.get()))
                 .save(pWriter);
 
-        // controled stick
+        // controlled stick
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROLLED_STICK.get())
                 .pattern(" P")
                 .pattern("S ")
@@ -350,7 +358,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
 
         // rubinium sword
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBINIUM.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.RUBINIUM_SWORD.get())
                 .pattern(" IX")
                 .pattern("IDI")
                 .pattern("BI ")
