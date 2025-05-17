@@ -10,7 +10,7 @@ public class WindStickOnUse {
         CommandSourceStack source = pPlayer.createCommandSourceStack()
                 .withPermission(Commands.LEVEL_GAMEMASTERS)
                 .withSuppressedOutput();
-        String command = "effect give @a[name=!" + pPlayer.getName() + "] levitation 1 10 true";
+        String command = "effect give @e[name=!" + pPlayer.getName().getString() + ", distance=..5] levitation 1 10 true";
         pPlayer.getServer().getCommands().performPrefixedCommand(source, command);
     }
 }
