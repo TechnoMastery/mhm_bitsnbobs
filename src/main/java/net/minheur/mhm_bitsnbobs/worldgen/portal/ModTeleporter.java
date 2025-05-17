@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.util.ITeleporter;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
-import net.minheur.mhm_bitsnbobs.block.custom.ModPortalBlock;
+import net.minheur.mhm_bitsnbobs.block.custom.ModDeepPortalBlock;
 
 import java.util.function.Function;
 
@@ -47,7 +47,7 @@ public class ModTeleporter implements ITeleporter {
             boolean doSetBlock = true;
             for (BlockPos checkPos : BlockPos.betweenClosed(destinationPos.below(10).west(10),
                     destinationPos.above(10).east(10))) {
-                if (destinationWorld.getBlockState(checkPos).getBlock() instanceof ModPortalBlock) {
+                if (destinationWorld.getBlockState(checkPos).getBlock() instanceof ModDeepPortalBlock) {
                     doSetBlock = false;
                     break;
                 }

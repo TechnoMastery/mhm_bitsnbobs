@@ -15,22 +15,22 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minheur.mhm_bitsnbobs.worldgen.dimension.ModDimensions;
 import net.minheur.mhm_bitsnbobs.worldgen.portal.ModTeleporter;
 
-public class ModPortalBlock extends Block {
-    public ModPortalBlock(Properties pProperties) {
+public class ModDeepPortalBlock extends Block {
+    public ModDeepPortalBlock(Properties pProperties) {
         super(pProperties);
     }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (pPlayer.canChangeDimensions()) {
-            handleKaupenPortal(pPlayer, pPos);
+            handleDeepPortal(pPlayer, pPos);
             return InteractionResult.SUCCESS;
         } else {
             return InteractionResult.CONSUME;
         }
     }
 
-    private void handleKaupenPortal(Entity player, BlockPos pPos) {
+    private void handleDeepPortal(Entity player, BlockPos pPos) {
         if (player.level() instanceof ServerLevel serverlevel) {
             MinecraftServer minecraftserver = serverlevel.getServer();
             ResourceKey<Level> resourcekey = player.level().dimension() == ModDimensions.DEEP_DIMENSION_LEVEL_KEY ?
