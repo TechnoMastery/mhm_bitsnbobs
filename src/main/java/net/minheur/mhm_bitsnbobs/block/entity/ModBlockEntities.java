@@ -16,6 +16,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("gem_polishing_be", () ->
                     BlockEntityType.Builder.of(GemPolishingStationBlockEntity::new,
                             ModBlocks.GEM_POLISHING_STATION.get()).build(null));
+    public static final RegistryObject<BlockEntityType<IncubatorBlockEntity>> INCUBATOR_BE =
+            BLOCK_ENTITIES.register("incubator_be", () ->
+                    BlockEntityType.Builder.of(IncubatorBlockEntity::new,
+                            ModBlocks.INCUBATOR.get()).build(null));
 
     /// add here all signs
     public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =

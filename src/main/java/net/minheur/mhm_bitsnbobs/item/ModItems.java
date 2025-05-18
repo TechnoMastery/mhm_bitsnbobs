@@ -91,6 +91,20 @@ public class ModItems {
     public static final RegistryObject<Item> SPRUCE_RUNE = ITEMS.register("spruce_rune",
             () -> new SpruceRuneItem(new Item.Properties()));
 
+    // catalyzers
+    public static final RegistryObject<Item> IRON_CATALYZER = ITEMS.register("iron_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(250), "iron"));
+    public static final RegistryObject<Item> WIND_CHARGED_CATALYZER = ITEMS.register("wind_charged_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(150), "wind_charged"));
+    public static final RegistryObject<Item> GOLD_CATALYZER = ITEMS.register("gold_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(32), "gold"));
+    public static final RegistryObject<Item> DIAMOND_CATALYZER = ITEMS.register("diamond_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(1561), "diamond"));
+    public static final RegistryObject<Item> NETHERITE_CATALYZER = ITEMS.register("netherite_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(2031), "netherite"));
+    public static final RegistryObject<Item> SUPER_CHARGED_CATALYZER = ITEMS.register("super_charged_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(3000), "super_charged"));
+
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_BALL = ITEMS. register("gold_ball",

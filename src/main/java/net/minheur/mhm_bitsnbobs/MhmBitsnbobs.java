@@ -29,6 +29,7 @@ import net.minheur.mhm_bitsnbobs.loot.ModLootModifiers;
 import net.minheur.mhm_bitsnbobs.potion.ModEffects;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationScreen;
+import net.minheur.mhm_bitsnbobs.screen.IncubatorScreen;
 import net.minheur.mhm_bitsnbobs.screen.ModMenuTypes;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
@@ -194,6 +195,7 @@ public class MhmBitsnbobs
 
             // block entities
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
+            MenuScreens.register(ModMenuTypes.INCUBATOR_MENU.get(), IncubatorScreen::new);
         }
     }
 }

@@ -95,6 +95,20 @@
 
   "item.mhm_bitsnbobs.rhino_spawn_egg": "Rhino spawn egg",
 
+  "item.mhm_bitsnbobs.iron_catalyzer": "Iron catalyzer",
+  "item.mhm_bitsnbobs.wind_charged_catalyzer": "Wind charged catalyzer",
+  "item.mhm_bitsnbobs.gold_catalyzer": "Gold catalyzer",
+  "item.mhm_bitsnbobs.diamond_catalyzer": "Diamond catalyzer",
+  "item.mhm_bitsnbobs.netherite_catalyzer": "Netherite catalyzer",
+  "item.mhm_bitsnbobs.super_charged_catalyzer": "Super charged catalyzer",
+
+  "tooltip.mhm_bitsnbobs.iron.tooltip": "This catalyzer can handle simple incubations.",
+  "tooltip.mhm_bitsnbobs.wind_charged.tooltip": "This catalyzer can handle incubations that need the power of the nature.",
+  "tooltip.mhm_bitsnbobs.gold.tooltip": "This catalyzer can handle basic incubations.",
+  "tooltip.mhm_bitsnbobs.diamond.tooltip": "This catalyzer can handle advanced incubations.",
+  "tooltip.mhm_bitsnbobs.netherite.tooltip": "This catalyzer can handle ultimate incubations.",
+  "tooltip.mhm_bitsnbobs.super_charged.tooltip": "This catalyzer can handle the most power-needed incubations.",
+
   "block.mhm_bitsnbobs.sapphire_block": "Block of sapphire",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Block of raw sapphire",
   "block.mhm_bitsnbobs.creative_residue_block": "Block of creative residue",
@@ -120,6 +134,7 @@
   "block.mhm_bitsnbobs.dark_hanging_sign": "Dark hanging sign",
 
   "block.mhm_bitsnbobs.gem_polishing_station": "Gem polishing station",
+  "block.mhm_bitsnbobs.incubator": "Incubator",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Sapphire ore",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Deepslate sapphire ore",

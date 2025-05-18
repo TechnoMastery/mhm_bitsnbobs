@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "mhm_bitsnbobs:gold_ball"
+    },
+    "I": {
+      "item": "mhm_bitsnbobs:iron_catalyzer"
+    }
+  },
+  "pattern": [
+    " B ",
+    "BIB",
+    " B "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:gold_catalyzer"
+  },
+  "show_notification": true
+}

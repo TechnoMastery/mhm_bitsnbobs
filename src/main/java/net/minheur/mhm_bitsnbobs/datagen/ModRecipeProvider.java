@@ -22,7 +22,7 @@ import net.minheur.mhm_bitsnbobs.util.ModTags;
 import java.util.List;
 import java.util.function.Consumer;
 
-// TODO: add recipe for wind charged ingot
+// TODO: create recipe wind charged ingot → incubator(gold) + iron ingot
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     // lists pour recettes (si y a plusieurs items / blocks, planches par exemple)
@@ -113,6 +113,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // crafting log → wood
         simpleWoodCrafting(pWriter, ModBlocks.DARK_WOOD.get(), ModBlocks.DARK_LOG.get());
 
+        // catalyzers
+        catalyzerCrafting(pWriter, ModItems.IRON_CATALYZER.get(), ModItems.CONTROL_PANEL.get(), ModItems.IRON_BALL.get());
+        catalyzerCrafting(pWriter, ModItems.WIND_CHARGED_CATALYZER.get(), ModItems.IRON_CATALYZER.get(), ModItems.WIND_CHARGED_INGOT.get());
+        catalyzerCrafting(pWriter, ModItems.GOLD_CATALYZER.get(), ModItems.IRON_CATALYZER.get(), ModItems.GOLD_BALL.get());
+        catalyzerCrafting(pWriter, ModItems.DIAMOND_CATALYZER.get(), ModItems.GOLD_CATALYZER.get(), ModItems.DIAMOND_BALL.get());
+        catalyzerCrafting(pWriter, ModItems.SUPER_CHARGED_CATALYZER.get(), ModItems.NETHERITE_CATALYZER.get(), ModItems.SUPER_CHARGED_BALL.get());
+
         // simple music disc → second item is what item you want it to be made with (center always = basedisk tag)
         simpleDiscCrafting(pWriter, ModItems.DARK_SOUL_MUSIC_DISC.get(), Items.ECHO_SHARD);
         simpleDiscCrafting(pWriter, ModItems.END_OF_THE_START_MUSIC_DISC.get(), ModItems.HARDENED_INGOT.get());
@@ -146,6 +153,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleSmithing(pWriter, ModItems.LIGHTNING_UPGRADE.get(), ModItems.ALLOYED_SWORD.get(), ModItems.SUPER_CHARGED_INGOT.get(), RecipeCategory.COMBAT, ModItems.LIGHTNING_SWORD.get());
         simpleSmithing(pWriter, ModItems.LIGHTNING_UPGRADE.get(), ModItems.DIAMOND_BALL.get(), Items.DIAMOND, RecipeCategory.MISC, ModItems.SUPER_CHARGED_BALL.get());
         simpleSmithing(pWriter, Blocks.EMERALD_BLOCK, Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD, RecipeCategory.MISC, Items.BUDDING_AMETHYST);
+        simpleSmithing(pWriter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.DIAMOND_CATALYZER.get(), Items.NETHERITE_INGOT, RecipeCategory.MISC, ModItems.NETHERITE_CATALYZER.get());
 
         // stone cutting : use 'simpleStoneCutting' from our libraries.
         // use it with pWriter, recipeCategory, result, ingredient → you can add, at last parameter, the amount of results. Not needed : don't set to use 1
@@ -526,7 +534,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
-
     protected static void simpleChestplateCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("S S")
@@ -536,7 +543,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
-
     protected static void simpleLeggingsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("SSS")
@@ -546,7 +552,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
-
     protected static void simpleBootsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("S S")
@@ -567,7 +572,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
-
     protected static void simplePickaxeCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("SSS")
@@ -578,7 +582,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
-
     protected static void simpleShovelCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("S")
@@ -589,7 +592,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
-
     protected static void simpleAxesCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("SS")
@@ -600,7 +602,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
-
     protected static void simpleHoesCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("SS")
@@ -612,6 +613,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
+    protected static void catalyzerCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike catalyzerResult, ItemLike base, ItemLike surround) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, catalyzerResult)
+                .pattern(" B ")
+                .pattern("BIB")
+                .pattern(" B ")
+                .define('I', base)
+                .define('B', surround)
+                .unlockedBy(getHasName(base), has(base))
+                .save(pFinishedRecipeConsumer);
+    }
 
     protected static void simpleSlabCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Block result, Block ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, 6)
@@ -656,15 +667,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
-
     protected static void oreBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.BLASTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_blasting");
     }
-
     protected static void itemSmoking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMOKING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_smoking");
     }
-
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
         for(ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(new ItemLike[]{itemlike}), pCategory, pResult,

@@ -94,6 +94,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.DARK_BOAT);
         simpleitem(ModItems.DARK_CHEST_BOAT);
 
+        simpleitem(ModItems.IRON_CATALYZER);
+        simpleitem(ModItems.WIND_CHARGED_CATALYZER);
+        simpleitem(ModItems.GOLD_CATALYZER);
+        simpleitem(ModItems.DIAMOND_CATALYZER);
+        simpleitem(ModItems.NETHERITE_CATALYZER);
+        simpleitem(ModItems.SUPER_CHARGED_CATALYZER);
+
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
         simpleitem(ModItems.HOLY_BREAD);

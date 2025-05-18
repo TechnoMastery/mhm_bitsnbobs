@@ -109,6 +109,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.SUPER_CHARGED_BLOCK.get());
                         output.accept(ModItems.SUPER_CHARGED_BALL.get());
                         output.accept(ModItems.CONTROL_PANEL.get());
+                        output.accept(ModBlocks.INCUBATOR.get());
                     })
                     .build());
 
@@ -121,6 +122,13 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.GOLD_BALL.get());
                         output.accept(ModItems.DIAMOND_BALL.get());
                         output.accept(ModItems.SUPER_CHARGED_BALL.get());
+
+                        output.accept(ModItems.IRON_CATALYZER.get());
+                        output.accept(ModItems.WIND_CHARGED_CATALYZER.get());
+                        output.accept(ModItems.GOLD_CATALYZER.get());
+                        output.accept(ModItems.DIAMOND_CATALYZER.get());
+                        output.accept(ModItems.NETHERITE_CATALYZER.get());
+                        output.accept(ModItems.SUPER_CHARGED_CATALYZER.get());
                     })
                     .build());
 
