@@ -24,9 +24,12 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.mhm_bitsnbobs.recipe.IncubatorRecipe;
 import net.minheur.mhm_bitsnbobs.screen.IncubatorMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class IncubatorBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3);
@@ -134,20 +137,27 @@ public class IncubatorBlockEntity extends BlockEntity implements MenuProvider {
         }
     }
 
-    private void resetProgress() { progress = 0; }
+    private void resetProgress() {progress = 0;}
 
     private void craftItem() {
-        ItemStack result = new ItemStack(Items.DIRT, 1);
+        Optional<IncubatorRecipe> recipe = getCurrentRecipe();
+        ItemStack result = recipe.get().getResultItem(null);
+
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
-        int newDamage = this.itemHandler.getStackInSlot(CATALYZER_SLOT).getDamageValue() + 1;
+        damageCatalyzer();
+
+        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
+                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
+    }
+
+    private void damageCatalyzer() {
+        int newDamage = this.itemHandler.getStackInSlot(CATALYZER_SLOT).getDamageValue() +1;
         int maxDamage = this.itemHandler.getStackInSlot(CATALYZER_SLOT).getMaxDamage();
-        if(newDamage >= maxDamage) {
+        if (newDamage >= maxDamage) {
             this.itemHandler.setStackInSlot(CATALYZER_SLOT, new ItemStack(Blocks.AIR));
         } else {
             this.itemHandler.getStackInSlot(CATALYZER_SLOT).setDamageValue(newDamage);
         }
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
 
     private boolean hasProgressFinished() { return progress >= maxProgress; }
@@ -155,10 +165,21 @@ public class IncubatorBlockEntity extends BlockEntity implements MenuProvider {
     private void increaseCraftingProgress() { progress++; }
 
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == Items.SAND;
-        boolean hasCorrectCatalyzer = this.itemHandler.getStackInSlot(CATALYZER_SLOT).getItem() == ModItems.IRON_CATALYZER.get();
-        ItemStack result = new ItemStack(Items.DIRT);
-        return hasCraftingItem && hasCorrectCatalyzer && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        Optional<IncubatorRecipe> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return false;
+        }
+        ItemStack result = recipe.get().getResultItem(null);
+
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+    }
+
+    private Optional<IncubatorRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+        }
+        return this.level.getRecipeManager().getRecipeFor(IncubatorRecipe.Type.INSTANCE, inventory, level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {

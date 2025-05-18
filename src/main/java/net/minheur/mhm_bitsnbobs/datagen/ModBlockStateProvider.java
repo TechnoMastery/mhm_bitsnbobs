@@ -94,8 +94,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // block entity
         simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
-//        simpleBlockWithItem(ModBlocks.INCUBATOR.get(),
-//                new ModelFile.UncheckedModelFile(modLoc("block/incubator")));
+
         simpleBlock(ModBlocks.INCUBATOR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/incubator")));
         itemModels().withExistingParent("mhm_bitsnbobs:incubator", "item/generated").texture("layer0", "mhm_bitsnbobs:item/incubator_item");

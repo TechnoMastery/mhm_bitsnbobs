@@ -21,9 +21,9 @@ public class IncubatorScreen extends AbstractContainerScreen<IncubatorMenu> {
     protected void init() {
         super.init();
         this.inventoryLabelX = 5;
-        this.inventoryLabelY = 5;
+        this.inventoryLabelY = 70;
         this.titleLabelX = 5;
-        this.titleLabelY = 70;
+        this.titleLabelY = 5;
     }
 
     @Override
