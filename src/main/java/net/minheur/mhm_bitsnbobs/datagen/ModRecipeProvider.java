@@ -23,6 +23,8 @@ import java.util.List;
 import java.util.function.Consumer;
 
 // TODO: create recipe wind charged ingot → incubator(gold) + iron ingot
+// TODO: add recipe slimy ingot (not existing yet)
+// TODO: add a recipe for slime sword
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     // lists pour recettes (si y a plusieurs items / blocks, planches par exemple)

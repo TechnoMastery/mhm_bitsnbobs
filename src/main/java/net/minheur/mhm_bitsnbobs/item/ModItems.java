@@ -14,6 +14,7 @@ import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
+// TODO: add the slimy ingot + all
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MhmBitsnbobs.MOD_ID);
