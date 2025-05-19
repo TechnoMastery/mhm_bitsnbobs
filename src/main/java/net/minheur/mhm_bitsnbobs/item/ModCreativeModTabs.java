@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -27,6 +26,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
                         output.accept(ModItems.CORN.get());
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
+                        output.accept(ModItems.DICE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
                         output.accept(ModItems.PINE_CONE.get());
                         output.accept(ModItems.BURGER.get());
@@ -82,6 +82,11 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.DARK_LEAVES.get());
                         output.accept(ModItems.DARK_SIGN.get());
                         output.accept(ModItems.DARK_HANGING_SIGN.get());
+                        output.accept(ModItems.DARK_BOAT.get());
+                        output.accept(ModItems.DARK_CHEST_BOAT.get());
+                        output.accept(ModBlocks.DARK_SAPLING.get());
+                        output.accept(ModBlocks.MOD_DEEP_PORTAL.get());
+                        output.accept(ModItems.WIND_CHARGED_INGOT.get());
                     })
                     .build());
 
@@ -104,6 +109,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.SUPER_CHARGED_BLOCK.get());
                         output.accept(ModItems.SUPER_CHARGED_BALL.get());
                         output.accept(ModItems.CONTROL_PANEL.get());
+                        output.accept(ModBlocks.INCUBATOR.get());
                     })
                     .build());
 
@@ -116,6 +122,13 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.GOLD_BALL.get());
                         output.accept(ModItems.DIAMOND_BALL.get());
                         output.accept(ModItems.SUPER_CHARGED_BALL.get());
+
+                        output.accept(ModItems.IRON_CATALYZER.get());
+                        output.accept(ModItems.WIND_CHARGED_CATALYZER.get());
+                        output.accept(ModItems.GOLD_CATALYZER.get());
+                        output.accept(ModItems.DIAMOND_CATALYZER.get());
+                        output.accept(ModItems.NETHERITE_CATALYZER.get());
+                        output.accept(ModItems.SUPER_CHARGED_CATALYZER.get());
                     })
                     .build());
 
@@ -127,6 +140,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.XP_RUNE.get());
                         output.accept(ModItems.MONEY_RUNE.get());
                         output.accept(ModItems.OAK_RUNE.get());
+                        output.accept(ModItems.SPRUCE_RUNE.get());
                     })
                     .withSearchBar().build());
 
@@ -139,9 +153,9 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.PIECE_OF_DIRT.get());
                         output.accept(ModItems.WET_DIRT.get());
                         output.accept(ModItems.EXTREMELY_DRY_DIRT.get());
-                        output.accept(ModItems.RESSOURCE_DIRT.get());
+                        output.accept(ModItems.RESOURCE_DIRT.get());
                         output.accept(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT.get());
-                        output.accept(ModBlocks.RESSOURCE_DIRT_BLOCK.get());
+                        output.accept(ModBlocks.RESOURCE_DIRT_BLOCK.get());
                     })
                     .build());
 

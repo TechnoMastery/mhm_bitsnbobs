@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:dark_planks"
+    }
+  },
+  "pattern": [
+    "SSS",
+    " B "
+  ],
+  "result": {
+    "count": 3,
+    "item": "mhm_bitsnbobs:dark_sign"
+  },
+  "show_notification": true
+}

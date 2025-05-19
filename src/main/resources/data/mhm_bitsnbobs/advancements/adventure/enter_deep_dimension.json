@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:echo_shard"
+    },
+    "title": {
+      "translate": "advancements.adventure.enter_deep.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.enter_deep.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enter_deep_dim_0": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "mhm_bitsnbobs:deep_dimension"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 1000,
+    "loot": [
+      "mhm_bitsnbobs:chests/barrel_ancient_temple"
+    ]
+  },
+  "parent": "minecraft:adventure/avoid_vibration"
+}

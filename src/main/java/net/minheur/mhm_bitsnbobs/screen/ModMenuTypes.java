@@ -17,6 +17,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<GemPolishingStationMenu>> GEM_POLISHING_MENU =
             registerMenuType("gem_polishing_menu", GemPolishingStationMenu::new);
+    public static final RegistryObject<MenuType<IncubatorMenu>> INCUBATOR_MENU =
+            registerMenuType("incubator_menu", IncubatorMenu::new);
 
 
 private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {

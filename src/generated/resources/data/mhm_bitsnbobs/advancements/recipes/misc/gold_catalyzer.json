@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_iron_catalyzer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:iron_catalyzer"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mhm_bitsnbobs:gold_catalyzer"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_iron_catalyzer",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mhm_bitsnbobs:gold_catalyzer"
+    ]
+  },
+  "sends_telemetry_event": false
+}

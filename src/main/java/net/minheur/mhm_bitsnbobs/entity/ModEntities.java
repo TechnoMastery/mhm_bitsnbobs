@@ -7,6 +7,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.mhm_bitsnbobs.entity.custom.DiceProjectileEntity;
+import net.minheur.mhm_bitsnbobs.entity.custom.ModBoatEntity;
+import net.minheur.mhm_bitsnbobs.entity.custom.ModChestBoatEntity;
 import net.minheur.mhm_bitsnbobs.entity.custom.RhinoEntity;
 
 public class ModEntities {
@@ -18,8 +21,18 @@ public class ModEntities {
             ENTITY_TYPES.register("rhino", () -> EntityType.Builder.of(RhinoEntity::new, MobCategory.CREATURE)
                     .sized(2.5f, 2.5f).build("rhino"));
 
+    public static final RegistryObject<EntityType<ModBoatEntity>> MOD_BOAT =
+            ENTITY_TYPES.register("mod_boat", () -> EntityType.Builder.<ModBoatEntity>of(ModBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375f, 0.5625f).build("mod_boat"));
+    public static final RegistryObject<EntityType<ModChestBoatEntity>> MOD_CHEST_BOAT =
+            ENTITY_TYPES.register("mod_chest_boat", () -> EntityType.Builder.<ModChestBoatEntity>of(ModChestBoatEntity::new, MobCategory.MISC)
+                    .sized(1.375f, 0.5625f).build("mod_chest_boat"));
 
-    /// pareille pour la register methode, toujours la avec les deferredRegister
+    public static final RegistryObject<EntityType<DiceProjectileEntity>> DICE_PROJECTILE =
+            ENTITY_TYPES.register("dice_projectile", () -> EntityType.Builder.<DiceProjectileEntity>of(DiceProjectileEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).build("dice_projectile"));
+
+    /// Pareille pour la register methode, toujours la avec les deferredRegister
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

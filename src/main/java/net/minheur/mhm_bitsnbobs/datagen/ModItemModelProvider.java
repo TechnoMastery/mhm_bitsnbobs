@@ -13,7 +13,6 @@ import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
@@ -45,12 +44,14 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         // dupli = auto get model item gen
         simpleitem(ModItems.SAPPHIRE);
+        simpleitem(ModItems.WIND_CHARGED_INGOT);
         simpleitem(ModItems.RAW_SAPPHIRE);
         simpleitem(ModItems.EXTREMELY_DRY_DIRT);
         simpleitem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);
-        simpleitem(ModItems.RESSOURCE_DIRT);
+        simpleitem(ModItems.RESOURCE_DIRT);
         simpleitem(ModItems.CORN);
         simpleitem(ModItems.STORM_FRAGMENT);
+        simpleitem(ModItems.DICE);
         simpleitem(ModItems.WET_DIRT);
         simpleitem(ModItems.QUANTUM_CORE);
         simpleitem(ModItems.PIECE_OF_DIRT);
@@ -59,6 +60,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.SPAWNER_PART);
         simpleitem(ModItems.CREATIVE_ESSENCE);
         simpleitem(ModItems.CREATIVE_NUGGET);
+        simpleitem(ModItems.UNPROCESSED_CREATIVE_NUGGET);
         simpleitem(ModItems.CREATIVE_INGOT);
         simpleitem(ModItems.SMALL_CREATIVE_NUGGET);
         simpleitem(ModItems.CREATIVE_RESIDUE);
@@ -86,10 +88,19 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.EXPLODED_POTATO);
         simpleitem(ModItems.CONTROL_PANEL);
         simpleitem(ModItems.HALF_STICK);
-        simpleitem(ModItems.QUATER_STICK);
+        simpleitem(ModItems.QUARTER_STICK);
         simpleitem(ModItems.YEAST);
         simpleitem(ModItems.DARK_SIGN);
         simpleitem(ModItems.DARK_HANGING_SIGN);
+        simpleitem(ModItems.DARK_BOAT);
+        simpleitem(ModItems.DARK_CHEST_BOAT);
+
+        simpleitem(ModItems.IRON_CATALYZER);
+        simpleitem(ModItems.WIND_CHARGED_CATALYZER);
+        simpleitem(ModItems.GOLD_CATALYZER);
+        simpleitem(ModItems.DIAMOND_CATALYZER);
+        simpleitem(ModItems.NETHERITE_CATALYZER);
+        simpleitem(ModItems.SUPER_CHARGED_CATALYZER);
 
         simpleitem(ModItems.BURGER);
         simpleitem(ModItems.STRAWBERRY);
@@ -104,6 +115,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.END_OF_THE_START_MUSIC_DISC);
 
         simpleitem(ModItems.METAL_DETECTOR);
+
+        // saplings
+        saplingItem(ModBlocks.DARK_SAPLING);
 
         // runes
         runeItem(ModItems.XP_RUNE);
@@ -204,6 +218,12 @@ public class ModItemModelProvider extends ItemModelProvider {
                                         "item/" + itemRegistryObject.getId().getPath()));
             });
         }
+    }
+
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleitem(RegistryObject<Item> item) {

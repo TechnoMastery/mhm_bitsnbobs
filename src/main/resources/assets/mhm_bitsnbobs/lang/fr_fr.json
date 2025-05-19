@@ -24,7 +24,7 @@
   "item.mhm_bitsnbobs.lightning_sword": "Epée de foudre",
   "item.mhm_bitsnbobs.base_egg": "Base d'oeuf",
   "item.mhm_bitsnbobs.rubis": "Rubis",
-  "item.mhm_bitsnbobs.runinium": "Rubinium",
+  "item.mhm_bitsnbobs.rubinium": "Rubinium",
   "item.mhm_bitsnbobs.rubinium_sword": "Epée de rubinium",
   "item.mhm_bitsnbobs.alloyed_sword": "Epée en alliage",
   "item.mhm_bitsnbobs.super_charged_ingot": "Lingot super chargé",
@@ -50,7 +50,7 @@
   "item.mhm_bitsnbobs.quater_stick": "Quart de baton",
   "item.mhm_bitsnbobs.skullkery_tool": "Outil de têtes",
   "item.mhm_bitsnbobs.rotten_leather": "Cuir putréfié",
-  "item.mhm_bitsnbobs.ressource_dirt": "Terre de ressources",
+  "item.mhm_bitsnbobs.resource_dirt": "Terre de ressources",
   "item.mhm_bitsnbobs.quantum_core": "Coeur quantique",
   "item.mhm_bitsnbobs.tree_grower": "Arboriculteur",
   "item.mhm_bitsnbobs.yeast": "Levure",
@@ -58,6 +58,10 @@
   "item.mhm_bitsnbobs.holy_bread": "Saint-Pain",
   "item.mhm_bitsnbobs.wind_stick": "Baton du vent",
   "item.mhm_bitsnbobs.slime_sword": "L'épée gluante",
+  "item.mhm_bitsnbobs.dark_boat": "Bateau sombre",
+  "item.mhm_bitsnbobs.dark_chest_boat": "Bateau sombre avec coffre",
+  "item.mhm_bitsnbobs.dice": "Dé",
+  "item.mhm_bitsnbobs.wind_charged_ingot": "Lingot chargé en vent",
 
   "item.mhm_bitsnbobs.metal_detector": "Détecteur de métaux",
 
@@ -92,6 +96,20 @@
 
   "item.mhm_bitsnbobs.rhino_spawn_egg": "Oeuf d'apparition de rhino",
 
+  "item.mhm_bitsnbobs.iron_catalyzer": "Catalyseur de fer",
+  "item.mhm_bitsnbobs.wind_charged_catalyzer": "Catalyseur chargé en vent",
+  "item.mhm_bitsnbobs.gold_catalyzer": "Catalyseur d'or",
+  "item.mhm_bitsnbobs.diamond_catalyzer": "Catalyseur de diamant",
+  "item.mhm_bitsnbobs.netherite_catalyzer": "Catalyseur de netherite",
+  "item.mhm_bitsnbobs.super_charged_catalyzer": "Catalyseur super chargé",
+
+  "tooltip.mhm_bitsnbobs.iron.tooltip": "Ce catalyseur peut gérer des incubations simple.",
+  "tooltip.mhm_bitsnbobs.wind_charged.tooltip": "Ce catalyseur peut gérer des incubations qui demandent la puissance de la nature.",
+  "tooltip.mhm_bitsnbobs.gold.tooltip": "Ce catalyseur peut gérer des incubations basiques.",
+  "tooltip.mhm_bitsnbobs.diamond.tooltip": "Ce catalyseur peut gérer des incubations avancées.",
+  "tooltip.mhm_bitsnbobs.netherite.tooltip": "Ce catalyseur peut gérer des incubations ultimes.",
+  "tooltip.mhm_bitsnbobs.super_charged.tooltip": "Ce catalyseur peut gérer les incubations qui demandent le plus de puissance.",
+
   "block.mhm_bitsnbobs.sapphire_block": "Bloc de saphir",
   "block.mhm_bitsnbobs.raw_sapphire_block": "Bloc de saphir brut",
   "block.mhm_bitsnbobs.creative_residue_block": "Bloc de résidues créatifs",
@@ -99,19 +117,25 @@
   "block.mhm_bitsnbobs.rubinium_block": "Bloc de runinium",
   "block.mhm_bitsnbobs.super_charged_block": "Bloc super chargé",
   "block.mhm_bitsnbobs.compressed_dirt": "Terre compréssé",
-  "block.mhm_bitsnbobs.ressource_dirt_block": "Bloc de terre de ressource",
-  "block.mhm_bitsnbobs.extremely_dry_dirt_block": "Bloc de terre extrèmement sèche",
+  "block.mhm_bitsnbobs.resource_dirt_block": "Bloc de terre de ressource",
+  "block.mhm_bitsnbobs.extremely_dry_dirt_block": "Bloc de terre extrêmement sèche",
   "block.mhm_bitsnbobs.dark_log": "Tronc sombre",
   "block.mhm_bitsnbobs.dark_wood": "Bois sombre",
   "block.mhm_bitsnbobs.stripped_dark_log": "Tronc sombre écorcé",
   "block.mhm_bitsnbobs.stripped_dark_wood": "Bois sombre écorcé",
   "block.mhm_bitsnbobs.dark_planks": "Planches sombre",
-  "block.mhm_bitsnbobs.leaves": "Feuillages sombre",
+  "block.mhm_bitsnbobs.dark_leaves": "Feuillages sombre",
+  "block.mhm_bitsnbobs.dice_block": "Dé",
+  "block.mhm_bitsnbobs.mod_deep_portal": "Portail sombre",
+  "block.mhm_bitsnbobs.rubis_ore": "Minerais de rubis",
+
+  "block.mhm_bitsnbobs.dark_sapling": "Pousse d'arbre sombre",
 
   "block.mhm_bitsnbobs.dark_sign": "Panneau sombre",
   "block.mhm_bitsnbobs.dark_hanging_sign": "Panneau suspendu sombre",
 
   "block.mhm_bitsnbobs.gem_polishing_station": "Station de polissage de gems",
+  "block.mhm_bitsnbobs.incubator": "Incubateur",
 
   "block.mhm_bitsnbobs.sapphire_ore": "Minerais de saphir",
   "block.mhm_bitsnbobs.deepslate_sapphire_ore": "Minerais de saphir de pierre des abîmes",
@@ -140,11 +164,18 @@
   "creativetab.runes": "Runes",
 
   "entity.minecraft.villager.mhm_bitsnbobs.soundmaster": "Ingénieur son",
+  "entity.mhm_bitsnbobs.mod_chest_boat": "Bateau avec coffre",
 
   "sounds.mhm_bitsnbobs.metal_detector_found_ore": "Ding de détecteur de métal",
   "sounds.mhm_bitsnbobs.bar_brawl": "Playing Bar brawl",
   "sounds.mhm_bitsnbobs.dark_soul": "Playing Dark soul",
   "sounds.mhm_bitsnbobs.end_of_the_start": "Playing End of the start",
+
+  "death.attack.electrocuted": "%1$s a été éléctrocuté",
+  "death.attack.electrocuted.item": "%1$s a été éléctrocuté par %2$s utilisant %3$s",
+  "death.attack.electrocuted.player": "%1$s a été éléctrocuté en essayant de fuir %2$s",
+
+  "effect.mhm_bitsnbobs.quantum_chocked": "Choc quantique",
 
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéraux sous terre",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Clic droit pour utiliser",

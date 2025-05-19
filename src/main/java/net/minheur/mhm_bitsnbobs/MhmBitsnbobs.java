@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -20,18 +21,25 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.block.entity.ModBlockEntities;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
+import net.minheur.mhm_bitsnbobs.entity.client.ModBoatRenderer;
 import net.minheur.mhm_bitsnbobs.entity.client.RhinoRenderer;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.loot.ModLootModifiers;
+import net.minheur.mhm_bitsnbobs.potion.ModEffects;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationScreen;
+import net.minheur.mhm_bitsnbobs.screen.IncubatorScreen;
 import net.minheur.mhm_bitsnbobs.screen.ModMenuTypes;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
-import org.antlr.v4.runtime.LexerNoViableAltException;
+import net.minheur.mhm_bitsnbobs.worldgen.biome.ModTerrablender;
+import net.minheur.mhm_bitsnbobs.worldgen.biome.surface.ModSurfaceRules;
+import net.minheur.mhm_bitsnbobs.worldgen.tree.ModFoliagePlacers;
+import net.minheur.mhm_bitsnbobs.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
+import terrablender.api.SurfaceRuleManager;
 
 /// ce fichier est le coeur, le cerveau, le tous ce que tu veut de ton mod.
 /// C'est entre autre lui qui va définire les bases, qui va appeler les fichier de données comme les creative mod tabs etc.
@@ -56,6 +64,7 @@ public class MhmBitsnbobs
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEffects.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);
@@ -67,6 +76,11 @@ public class MhmBitsnbobs
         ModMenuTypes.register(modEventBus);
 
         ModRecipes.register(modEventBus);
+
+        ModTrunkPlacerTypes.register(modEventBus);
+        ModFoliagePlacers.register(modEventBus);
+
+        ModTerrablender.registerBiomes();
 
         modEventBus.addListener(this::commonSetup);
 
@@ -80,6 +94,9 @@ public class MhmBitsnbobs
         event.enqueueWork(() -> {
             // ligne suivante : dupli pour les plantes
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
+
+            // biome rules
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
     }
 
@@ -112,7 +129,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.CONTROL_PANEL);
              event.accept(ModItems.CONTROLLED_STICK);
              event.accept(ModItems.HALF_STICK);
-             event.accept(ModItems.QUATER_STICK);
+             event.accept(ModItems.QUARTER_STICK);
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BASE_EGG);
@@ -173,9 +190,13 @@ public class MhmBitsnbobs
 
             // entities
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
+            EntityRenderers.register(ModEntities.MOD_BOAT.get(), context -> new ModBoatRenderer(context, false));
+            EntityRenderers.register(ModEntities.MOD_CHEST_BOAT.get(), context -> new ModBoatRenderer(context, true));
+            EntityRenderers.register(ModEntities.DICE_PROJECTILE.get(), ThrownItemRenderer::new);
 
             // block entities
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
+            MenuScreens.register(ModMenuTypes.INCUBATOR_MENU.get(), IncubatorScreen::new);
         }
     }
 }

@@ -30,6 +30,10 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 
+    /// This method is used to generate loot tables. To exclude a block from loot tables,
+    /// use `.noLootTables()` in the ModBlocks.java file, in the `Blocks.property()`.
+    /// For exclude a block from loot table gen but having a manual one in the files,
+    /// refer to the `getKnownBlocks()` down there.
     @Override
     protected void generate() {
         // all blocks that drop self
@@ -48,6 +52,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SAPPHIRE_WALL.get());
         this.dropSelf(ModBlocks.SUPER_CHARGED_BLOCK.get());
         this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
+        this.dropSelf(ModBlocks.INCUBATOR.get());
+        this.dropSelf(ModBlocks.DARK_SAPLING.get());
 
         this.dropSelf(ModBlocks.DARK_LOG.get());
         this.dropSelf(ModBlocks.DARK_WOOD.get());
@@ -56,7 +62,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.DARK_PLANKS.get());
 
         this.add(ModBlocks.DARK_LEAVES.get(), block ->
-                createLeavesDrops(block, ModBlocks.SAPPHIRE_BLOCK.get(), NORMAL_LEAVES_SAPLING_CHANCES)); // TODO: change to sapling !
+                createLeavesDrops(block, ModBlocks.DARK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         // signs
         this.add(ModBlocks.DARK_SIGN.get(), block ->
@@ -67,9 +73,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
         this.add(ModBlocks.DARK_WALL_HANGING_SIGN.get(), block ->
                 createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
-
-        // ressource dirt block break
-        this.add(ModBlocks.RESSOURCE_DIRT_BLOCK.get(), this.ressourceDirtLikeDrop());
 
         // utilisé quand le block drop 1 type d'item / block, dans une quantité fixe
         this.dropOneType(ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.CREATIVE_RESIDUE.get(), 2);
@@ -104,6 +107,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.CATMINT.get());
         this.add(ModBlocks.POTTED_CATMINT.get(), createPotFlowerItemTable(ModBlocks.CATMINT.get()));
 
+        this.add(ModBlocks.RUBIS_ORE.get(),
+                block -> createCopperLickOreDrops(ModBlocks.RUBIS_ORE.get(), ModItems.RUBIS.get()));
+
         // packet sapphire ore
         this.add(ModBlocks.SAPPHIRE_ORE.get(),
                 block -> createCopperLickOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get()));
@@ -123,15 +129,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
     }
 
-    protected LootTable.Builder ressourceDirtLikeDrop() {
-        return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(UniformGenerator.between(1.0F, 5.0F)).setBonusRolls(UniformGenerator.between(0.0F, 2.0F))
-                .add(LootItem.lootTableItem(ModItems.COPPER_BALL.get()).setWeight(100).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 16.0F))))
-                .add(LootItem.lootTableItem(ModItems.IRON_BALL.get()).setWeight(80).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 8.0F))))
-                .add(LootItem.lootTableItem(ModItems.GOLD_BALL.get()).setWeight(50).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 3.0F))))
-                .add(LootItem.lootTableItem(ModItems.DIAMOND_BALL.get()).setWeight(20).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))))
-                .add(LootItem.lootTableItem(ModItems.CREATIVE_ESSENCE.get()).setWeight(15).apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))));
-    }
-
     protected LootTable.Builder createOneDropTable(ItemLike pItem, int pCount) {
         return LootTable.lootTable().withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(this.applyExplosionDecay(pItem, LootItem.lootTableItem(pItem).apply(SetItemCountFunction.setCount(ConstantValue.exactly(pCount))))));
     }
@@ -140,8 +137,13 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(rootBlock, this.createOneDropTable(droppedItem, dropCount));
     }
 
+    /// Here, you can add a `.filter(block -> block != ModBlocks.YOUR_BLOCK.get())`
+    /// to remove `YOUR_BLOCK` from creating a datagened file. It will still look for a
+    /// file it the manuals ones.
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
+        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
+                .filter(block -> block != ModBlocks.RESOURCE_DIRT_BLOCK.get())
+                ::iterator;
     }
 }

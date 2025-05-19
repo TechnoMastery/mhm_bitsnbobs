@@ -2,7 +2,6 @@ package net.minheur.mhm_bitsnbobs.block;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
@@ -20,9 +19,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.custom.*;
+import net.minheur.mhm_bitsnbobs.block.custom.IncubatorBlock;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
+import net.minheur.mhm_bitsnbobs.worldgen.tree.DarkTreeGrower;
 
 import java.util.function.Supplier;
 
@@ -31,10 +32,8 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, MhmBitsnbobs.MOD_ID);
 
     // block create
-
     public static final RegistryObject<Block> SAPPHIRE_BLOCK = registerBlock("sapphire_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.AMETHYST)));
-
     public static final RegistryObject<Block> RAW_SAPPHIRE_BLOCK = registerBlock("raw_sapphire_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.AMETHYST)));
 
@@ -52,22 +51,39 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
     public static final RegistryObject<Block> EXTREMELY_DRY_DIRT_BLOCK = registerBlock("extremely_dry_dirt_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
-    public static final RegistryObject<Block> RESSOURCE_DIRT_BLOCK = registerBlock("ressource_dirt_block",
+    public static final RegistryObject<Block> RESOURCE_DIRT_BLOCK = registerBlock("resource_dirt_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
 
     // custom block
+
+    public static final RegistryObject<Block> DICE_BLOCK = BLOCKS.register("dice_block",
+            () -> new DiceBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).noLootTable()));
 
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(ModSounds.SOUND_BLOCK_SOUNDS)));
 
     public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
             () -> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> INCUBATOR = registerBlock("incubator",
+            () -> new IncubatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     // end custom
 
-    // modèle minerais si dessous ==> UniformInt.of() = qnt min / max d'XP.
-    // eft c un modèle de block a XP
+    // teleporters
+    public static final RegistryObject<Block> MOD_DEEP_PORTAL = registerBlock("mod_deep_portal",
+            () -> new ModDeepPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().noCollission().noLootTable()));
+
+    // saplings
+    public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
+            () -> new SaplingBlock(new DarkTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+
+    // Modèle minerai si dessous ==> UniformInt.of() = qnt min / max d'XP.
+    // Eft c un modèle de block a XP
     public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
+                    .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
+
+    public static final RegistryObject<Block> RUBIS_ORE = registerBlock("rubis_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
                     .strength(2f).requiresCorrectToolForDrops(), UniformInt.of(3, 6)));
 

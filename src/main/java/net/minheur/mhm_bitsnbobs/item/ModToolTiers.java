@@ -22,4 +22,8 @@ public class ModToolTiers {
                     BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ModItems.FIRE_DIAMOND.get())),
             new ResourceLocation(MhmBitsnbobs.MOD_ID, "fire"), List.of(Tiers.DIAMOND), List.of());
 
+    public static final Tier LIGHTNING = TierSortingRegistry.registerTier(
+            new ForgeTier(4, 15000, 999f, 56f, 10,
+                    ModTags.Blocks.NEEDS_LIGHTNING_TOOL, () -> Ingredient.of(ModItems.SUPER_CHARGED_INGOT.get())),
+            new ResourceLocation(MhmBitsnbobs.MOD_ID, "lightning"), List.of(Tiers.NETHERITE), List.of());
 }

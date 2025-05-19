@@ -8,7 +8,6 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
@@ -16,7 +15,6 @@ import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.block.custom.CornCropBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 
-import java.awt.*;
 import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -29,6 +27,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
         blockWithItem(ModBlocks.RAW_SAPPHIRE_BLOCK);
 
+        blockWithItem(ModBlocks.RUBIS_ORE);
         blockWithItem(ModBlocks.SAPPHIRE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
         blockWithItem(ModBlocks.END_SAPPHIRE_ORE);
@@ -39,8 +38,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SUPER_CHARGED_BLOCK);
         blockWithItem(ModBlocks.COMPRESSED_DIRT);
         blockWithItem(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK);
-        blockWithItem(ModBlocks.RESSOURCE_DIRT_BLOCK);
+        blockWithItem(ModBlocks.RESOURCE_DIRT_BLOCK);
         blockWithItem(ModBlocks.SOUND_BLOCK);
+        blockWithItem(ModBlocks.MOD_DEEP_PORTAL);
 
         // signs
         signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));
@@ -58,7 +58,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.STRIPPED_DARK_LOG);
         blockItem(ModBlocks.STRIPPED_DARK_WOOD);
         blockWithItem(ModBlocks.DARK_PLANKS);
-        leavesBlock(ModBlocks.DARK_LEAVES); // TODO: patch leaves not having texture
+        leavesBlock(ModBlocks.DARK_LEAVES);
+        saplingBlock(ModBlocks.DARK_SAPLING);
 
         // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or dupli)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
@@ -93,6 +94,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // block entity
         simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
+
+        simpleBlock(ModBlocks.INCUBATOR.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/incubator")));
+        itemModels().withExistingParent("mhm_bitsnbobs:incubator", "item/generated").texture("layer0", "mhm_bitsnbobs:item/incubator_item");
     }
 
     // ce paté de public void + private est a dupli pour les crop blocks. changer les 2 cast dans la 2nd + les noms et le use dans le 1er : acctuellement StrawberryCropBlock.
@@ -126,9 +131,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(), models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
-        simpleBlockItem(blockRegistryObject.get(), models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(),
-                new ResourceLocation("minecraft:block/leaves"), "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
+
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

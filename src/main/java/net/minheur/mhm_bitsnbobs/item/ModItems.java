@@ -5,11 +5,11 @@ import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
+import net.minheur.mhm_bitsnbobs.entity.custom.ModBoatEntity;
 import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
@@ -21,6 +21,8 @@ public class ModItems {
     // create item
     public static final RegistryObject<Item> YEAST = ITEMS.register("yeast",
             () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> WIND_CHARGED_INGOT = ITEMS.register("wind_charged_ingot",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS. register("sapphire",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BASE_EGG = ITEMS. register("base_egg",
@@ -31,7 +33,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> HALF_STICK = ITEMS. register("half_stick",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> QUATER_STICK = ITEMS. register("quater_stick",
+    public static final RegistryObject<Item> QUARTER_STICK = ITEMS. register("quarter_stick",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ROTTEN_LEATHER = ITEMS. register("rotten_leather",
             () -> new Item(new Item.Properties()));
@@ -39,7 +41,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> PIECE_OF_EXTREMELY_DRY_DIRT = ITEMS. register("piece_of_extremely_dry_dirt",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> RESSOURCE_DIRT = ITEMS.register("ressource_dirt",
+    public static final RegistryObject<Item> RESOURCE_DIRT = ITEMS.register("resource_dirt",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> WET_DIRT = ITEMS. register("wet_dirt",
             () -> new Item(new Item.Properties().stacksTo(1)));
@@ -60,6 +62,8 @@ public class ModItems {
     public static final RegistryObject<Item> CREATIVE_ESSENCE = ITEMS. register("creative_essence",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CREATIVE_NUGGET = ITEMS. register("creative_nugget",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> UNPROCESSED_CREATIVE_NUGGET = ITEMS. register("unprocessed_creative_nugget",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CREATIVE_INGOT = ITEMS. register("creative_ingot",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
@@ -88,6 +92,20 @@ public class ModItems {
             () -> new OakRuneItem(new Item.Properties()));
     public static final RegistryObject<Item> SPRUCE_RUNE = ITEMS.register("spruce_rune",
             () -> new SpruceRuneItem(new Item.Properties()));
+
+    // catalyzers
+    public static final RegistryObject<Item> IRON_CATALYZER = ITEMS.register("iron_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(250), "iron"));
+    public static final RegistryObject<Item> WIND_CHARGED_CATALYZER = ITEMS.register("wind_charged_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(150), "wind_charged"));
+    public static final RegistryObject<Item> GOLD_CATALYZER = ITEMS.register("gold_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(32), "gold"));
+    public static final RegistryObject<Item> DIAMOND_CATALYZER = ITEMS.register("diamond_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(1561), "diamond"));
+    public static final RegistryObject<Item> NETHERITE_CATALYZER = ITEMS.register("netherite_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(2031), "netherite"));
+    public static final RegistryObject<Item> SUPER_CHARGED_CATALYZER = ITEMS.register("super_charged_catalyzer",
+            () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(3000), "super_charged"));
 
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
             () -> new Item(new Item.Properties()));
@@ -126,13 +144,15 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> WIND_STICK = ITEMS.register("wind_stick",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new WindStickItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HARDENED_INGOT = ITEMS.register("hardened_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DICE = ITEMS.register("dice",
+            () -> new DiceItem(new Item.Properties()));
 
     public static final RegistryObject<Item> RUBIS = ITEMS.register("rubis",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
@@ -161,11 +181,10 @@ public class ModItems {
             () -> new SwordItem(ModToolTiers.SAPPHIRE, 4, 2, new Item.Properties()));
 
     public static final RegistryObject<Item> FIRE_SWORD = ITEMS.register("fire_sword",
-            () -> new SwordItem(ModToolTiers.FIRE, 1, 1, new Item.Properties().durability(1600).fireResistant()));
+            () -> new FireSwordItem(ModToolTiers.FIRE, 1, 1, new Item.Properties().durability(1600).fireResistant()));
 
     public static final RegistryObject<Item> LIGHTNING_SWORD = ITEMS.register("lightning_sword",
-            () -> new SwordItem(Tiers.NETHERITE, 60, 1, new Item.Properties().durability(15000).fireResistant()));
-    // TODO: add a tool tier
+            () -> new LightningSwordItem(ModToolTiers.LIGHTNING, 60, 1, new Item.Properties().durability(15000).fireResistant()));
 
     public static final RegistryObject<Item> RUBINIUM_SWORD = ITEMS.register("rubinium_sword",
             () -> new SwordItem(Tiers.NETHERITE, 35, 1, new Item.Properties().durability(10000).fireResistant()));
@@ -217,6 +236,11 @@ public class ModItems {
     public static final RegistryObject<Item> DEVIL_BREAD = ITEMS.register("devil_bread",
             () -> new Item(new Item.Properties().food(ModFoods.DEVIl_BREAD)));
 
+    // boats
+    public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",
+            () -> new ModBoatItem(false, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> DARK_CHEST_BOAT = ITEMS.register("dark_chest_boat",
+            () -> new ModBoatItem(true, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
 
     // seeds
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
