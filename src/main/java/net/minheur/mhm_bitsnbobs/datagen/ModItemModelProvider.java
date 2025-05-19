@@ -60,6 +60,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.SPAWNER_PART);
         simpleitem(ModItems.CREATIVE_ESSENCE);
         simpleitem(ModItems.CREATIVE_NUGGET);
+        simpleitem(ModItems.UNPROCESSED_CREATIVE_NUGGET);
         simpleitem(ModItems.CREATIVE_INGOT);
         simpleitem(ModItems.SMALL_CREATIVE_NUGGET);
         simpleitem(ModItems.CREATIVE_RESIDUE);

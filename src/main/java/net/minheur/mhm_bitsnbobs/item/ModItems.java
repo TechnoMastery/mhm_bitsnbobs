@@ -63,6 +63,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CREATIVE_NUGGET = ITEMS. register("creative_nugget",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> UNPROCESSED_CREATIVE_NUGGET = ITEMS. register("unprocessed_creative_nugget",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CREATIVE_INGOT = ITEMS. register("creative_ingot",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> CREATIVE_RESIDUE = ITEMS. register("creative_residue",
