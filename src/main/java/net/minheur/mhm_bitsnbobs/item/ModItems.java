@@ -190,6 +190,9 @@ public class ModItems {
             () -> new SwordItem(Tiers.NETHERITE, 35, 1, new Item.Properties().durability(10000).fireResistant()));
     // TODO: add a tool tier
 
+    public static final RegistryObject<Item> SLIME_SWORD = ITEMS.register("slime_sword",
+            () -> new SlimeSwordItem(Tiers.IRON, 10,5, new Item.Properties().fireResistant().durability(250)));
+
     // pickaxes
     public static final RegistryObject<Item> SAPPHIRE_PICKAXE = ITEMS.register("sapphire_pickaxe",
             () -> new PickaxeItem(ModToolTiers.SAPPHIRE, 4, 2, new Item.Properties()));
