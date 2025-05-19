@@ -66,6 +66,13 @@ description='''${mod_description}'''
     ordering="NONE"
     side="BOTH"
 
+[[dependencies.${modid}]]
+modId="create"
+mandatory=true
+versionRange="[6.0.4,6.1.0)"
+ordering="NONE"
+side="BOTH"
+
 [[dependencies.${mod_id}]]
 modId="terrablender"
 mandatory=true
