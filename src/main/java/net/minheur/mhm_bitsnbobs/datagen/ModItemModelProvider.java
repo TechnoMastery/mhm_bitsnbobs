@@ -94,6 +94,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.DARK_HANGING_SIGN);
         simpleitem(ModItems.DARK_BOAT);
         simpleitem(ModItems.DARK_CHEST_BOAT);
+        simpleitem(ModItems.SLIMY_INGOT);
+        simpleitem(ModItems.SLIMY_STICK);
 
         simpleitem(ModItems.IRON_CATALYZER);
         simpleitem(ModItems.WIND_CHARGED_CATALYZER);

@@ -184,6 +184,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.WIND_CHARGED_INGOT.get()), has(ModItems.WIND_CHARGED_INGOT.get()))
                 .save(pWriter);
 
+        // slimy stick
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SLIMY_STICK.get(), 4)
+                .pattern("S")
+                .pattern("S")
+                .define('S', ModItems.SLIMY_INGOT.get())
+                .unlockedBy(getHasName(ModItems.SLIMY_INGOT.get()), has(ModItems.SLIMY_INGOT.get()))
+                .save(pWriter);
+
         // levure
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.YEAST.get())
                 .pattern("PPP")

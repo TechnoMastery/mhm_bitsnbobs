@@ -60,6 +60,12 @@ public class ModItems {
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));
 
+    public static final RegistryObject<Item> SLIMY_INGOT = ITEMS.register("slimy_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SLIMY_STICK = ITEMS.register("slimy_stick",
+            () -> new Item(new Item.Properties()));
+    // TODO: WARNING: add texture for SLIMY_INGOT & SLIMY_STICK
+
     public static final RegistryObject<Item> CREATIVE_ESSENCE = ITEMS. register("creative_essence",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> CREATIVE_NUGGET = ITEMS. register("creative_nugget",
