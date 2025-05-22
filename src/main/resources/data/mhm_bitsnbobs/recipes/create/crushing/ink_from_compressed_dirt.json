@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:compressed_dirt"
+    }
+  ],
+  "processingTime": 15,
+  "results": [
+    {
+      "chance": 0.50,
+      "item": "minecraft:ink_sac"
+    }
+  ]
+}

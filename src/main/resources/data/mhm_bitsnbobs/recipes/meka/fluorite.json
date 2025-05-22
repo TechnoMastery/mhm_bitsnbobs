@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mekanism:fluorite_gem"
+    }
+  ],
+  "result": {
+    "item": "mekanism:fluorite_ore",
+    "count": 2
+  }
+}

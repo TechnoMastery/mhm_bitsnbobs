@@ -1,0 +1,16 @@
+{
+  "type": "mhm_bitsnbobs:incubating",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:rotten_leather"
+    }
+  ],
+  "catalyzer": {
+    "count": 1,
+    "item": "mhm_bitsnbobs:iron_catalyzer"
+  },
+  "output": {
+    "count": 1,
+    "item": "minecraft:leather"
+  }
+}
