@@ -14,7 +14,6 @@ import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
-// TODO: add the slimy ingot + all
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MhmBitsnbobs.MOD_ID);
@@ -64,7 +63,6 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SLIMY_STICK = ITEMS.register("slimy_stick",
             () -> new Item(new Item.Properties()));
-    // TODO: WARNING: add texture for SLIMY_INGOT & SLIMY_STICK
 
     public static final RegistryObject<Item> CREATIVE_ESSENCE = ITEMS. register("creative_essence",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
