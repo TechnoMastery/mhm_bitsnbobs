@@ -96,6 +96,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleitem(ModItems.DARK_CHEST_BOAT);
         simpleitem(ModItems.SLIMY_INGOT);
         simpleitem(ModItems.SLIMY_STICK);
+        simpleitem(ModItems.BASE_OF_DISC);
 
         simpleitem(ModItems.IRON_CATALYZER);
         simpleitem(ModItems.WIND_CHARGED_CATALYZER);

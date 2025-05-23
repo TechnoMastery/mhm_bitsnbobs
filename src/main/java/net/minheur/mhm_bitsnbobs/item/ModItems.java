@@ -54,6 +54,10 @@ public class ModItems {
     public static final RegistryObject<Item> CONTROLLED_PICKAXE = ITEMS. register("controlled_pickaxe",
             () -> new CraftingRemaningItem(new Item.Properties().stacksTo(1).durability(32)));
 
+    // to see
+    public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> QUANTUM_CORE = ITEMS.register("quantum_core",
             () -> new QuantumCoreItem(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
