@@ -13,8 +13,8 @@ public class FireSwordItem extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        boolean retval = super.hurtEnemy(pStack, pTarget, pAttacker);
+        boolean returnValue = super.hurtEnemy(pStack, pTarget, pAttacker);
         FireSwordHitEvent.execute(pTarget);
-        return retval;
+        return returnValue;
     }
 }

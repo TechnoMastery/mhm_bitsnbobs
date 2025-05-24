@@ -64,7 +64,7 @@ public class ModBoatEntity extends Boat {
     }
 
     public static enum Type implements StringRepresentable {
-        // here put all boats type. seperate with ",". End with ";".
+        // here put all boats type. separate with ",". End with ";".
         DARK(ModBlocks.DARK_PLANKS.get(), "dark");
 
         private final String name;

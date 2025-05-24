@@ -42,82 +42,82 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        // dupli = auto get model item gen
-        simpleitem(ModItems.SAPPHIRE);
-        simpleitem(ModItems.WIND_CHARGED_INGOT);
-        simpleitem(ModItems.RAW_SAPPHIRE);
-        simpleitem(ModItems.EXTREMELY_DRY_DIRT);
-        simpleitem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);
-        simpleitem(ModItems.RESOURCE_DIRT);
-        simpleitem(ModItems.CORN);
-        simpleitem(ModItems.STORM_FRAGMENT);
-        simpleitem(ModItems.DICE);
-        simpleitem(ModItems.WET_DIRT);
-        simpleitem(ModItems.QUANTUM_CORE);
-        simpleitem(ModItems.PIECE_OF_DIRT);
-        simpleitem(ModItems.HARDENED_INGOT);
-        simpleitem(ModItems.BASE_EGG);
-        simpleitem(ModItems.SPAWNER_PART);
-        simpleitem(ModItems.CREATIVE_ESSENCE);
-        simpleitem(ModItems.CREATIVE_NUGGET);
-        simpleitem(ModItems.UNPROCESSED_CREATIVE_NUGGET);
-        simpleitem(ModItems.CREATIVE_INGOT);
-        simpleitem(ModItems.SMALL_CREATIVE_NUGGET);
-        simpleitem(ModItems.CREATIVE_RESIDUE);
-        simpleitem(ModItems.LITTLE_COPPER_NUGGET);
-        simpleitem(ModItems.LIGHTNING_UPGRADE);
-        simpleitem(ModItems.TREE_GROWER);
-        simpleitem(ModItems.FIRE_DIAMOND);
-        simpleitem(ModItems.ROTTEN_LEATHER);
-        simpleitem(ModItems.FIRE_STICK);
-        simpleitem(ModItems.FIRE_SEEDS);
-        simpleitem(ModItems.RUBIS);
-        simpleitem(ModItems.RUBINIUM);
-        simpleitem(ModItems.SUPER_CHARGED_INGOT);
-        simpleitem(ModItems.SUPER_CHARGED_BALL);
-        simpleitem(ModItems.COPPER_BALL);
-        simpleitem(ModItems.IRON_BALL);
-        simpleitem(ModItems.GOLD_BALL);
-        simpleitem(ModItems.DIAMOND_BALL);
-        simpleitem(ModItems.TRANSFER_FLASK);
-        simpleitem(ModItems.EMPTY_BIG_FLASK);
-        simpleitem(ModItems.EMPTY_LITTLE_FLASK);
-        simpleitem(ModItems.DIRTY_HUMID_POTION);
-        simpleitem(ModItems.HUMID_POTION);
-        simpleitem(ModItems.LITTLE_HUMID_POTION);
-        simpleitem(ModItems.EXPLODED_POTATO);
-        simpleitem(ModItems.CONTROL_PANEL);
-        simpleitem(ModItems.HALF_STICK);
-        simpleitem(ModItems.QUARTER_STICK);
-        simpleitem(ModItems.YEAST);
-        simpleitem(ModItems.DARK_SIGN);
-        simpleitem(ModItems.DARK_HANGING_SIGN);
-        simpleitem(ModItems.DARK_BOAT);
-        simpleitem(ModItems.DARK_CHEST_BOAT);
-        simpleitem(ModItems.SLIMY_INGOT);
-        simpleitem(ModItems.SLIMY_STICK);
-        simpleitem(ModItems.BASE_OF_DISC);
+        // duplicate = auto get model item gen
+        simpleItem(ModItems.SAPPHIRE);
+        simpleItem(ModItems.WIND_CHARGED_INGOT);
+        simpleItem(ModItems.RAW_SAPPHIRE);
+        simpleItem(ModItems.EXTREMELY_DRY_DIRT);
+        simpleItem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);
+        simpleItem(ModItems.RESOURCE_DIRT);
+        simpleItem(ModItems.CORN);
+        simpleItem(ModItems.STORM_FRAGMENT);
+        simpleItem(ModItems.DICE);
+        simpleItem(ModItems.WET_DIRT);
+        simpleItem(ModItems.QUANTUM_CORE);
+        simpleItem(ModItems.PIECE_OF_DIRT);
+        simpleItem(ModItems.HARDENED_INGOT);
+        simpleItem(ModItems.BASE_EGG);
+        simpleItem(ModItems.SPAWNER_PART);
+        simpleItem(ModItems.CREATIVE_ESSENCE);
+        simpleItem(ModItems.CREATIVE_NUGGET);
+        simpleItem(ModItems.UNPROCESSED_CREATIVE_NUGGET);
+        simpleItem(ModItems.CREATIVE_INGOT);
+        simpleItem(ModItems.SMALL_CREATIVE_NUGGET);
+        simpleItem(ModItems.CREATIVE_RESIDUE);
+        simpleItem(ModItems.LITTLE_COPPER_NUGGET);
+        simpleItem(ModItems.LIGHTNING_UPGRADE);
+        simpleItem(ModItems.TREE_GROWER);
+        simpleItem(ModItems.FIRE_DIAMOND);
+        simpleItem(ModItems.ROTTEN_LEATHER);
+        simpleItem(ModItems.FIRE_STICK);
+        simpleItem(ModItems.FIRE_SEEDS);
+        simpleItem(ModItems.RUBIS);
+        simpleItem(ModItems.RUBINIUM);
+        simpleItem(ModItems.SUPER_CHARGED_INGOT);
+        simpleItem(ModItems.SUPER_CHARGED_BALL);
+        simpleItem(ModItems.COPPER_BALL);
+        simpleItem(ModItems.IRON_BALL);
+        simpleItem(ModItems.GOLD_BALL);
+        simpleItem(ModItems.DIAMOND_BALL);
+        simpleItem(ModItems.TRANSFER_FLASK);
+        simpleItem(ModItems.EMPTY_BIG_FLASK);
+        simpleItem(ModItems.EMPTY_LITTLE_FLASK);
+        simpleItem(ModItems.DIRTY_HUMID_POTION);
+        simpleItem(ModItems.HUMID_POTION);
+        simpleItem(ModItems.LITTLE_HUMID_POTION);
+        simpleItem(ModItems.EXPLODED_POTATO);
+        simpleItem(ModItems.CONTROL_PANEL);
+        simpleItem(ModItems.HALF_STICK);
+        simpleItem(ModItems.QUARTER_STICK);
+        simpleItem(ModItems.YEAST);
+        simpleItem(ModItems.DARK_SIGN);
+        simpleItem(ModItems.DARK_HANGING_SIGN);
+        simpleItem(ModItems.DARK_BOAT);
+        simpleItem(ModItems.DARK_CHEST_BOAT);
+        simpleItem(ModItems.SLIMY_INGOT);
+        simpleItem(ModItems.SLIMY_STICK);
+        simpleItem(ModItems.BASE_OF_DISC);
 
-        simpleitem(ModItems.IRON_CATALYZER);
-        simpleitem(ModItems.WIND_CHARGED_CATALYZER);
-        simpleitem(ModItems.GOLD_CATALYZER);
-        simpleitem(ModItems.DIAMOND_CATALYZER);
-        simpleitem(ModItems.NETHERITE_CATALYZER);
-        simpleitem(ModItems.SUPER_CHARGED_CATALYZER);
+        simpleItem(ModItems.IRON_CATALYZER);
+        simpleItem(ModItems.WIND_CHARGED_CATALYZER);
+        simpleItem(ModItems.GOLD_CATALYZER);
+        simpleItem(ModItems.DIAMOND_CATALYZER);
+        simpleItem(ModItems.NETHERITE_CATALYZER);
+        simpleItem(ModItems.SUPER_CHARGED_CATALYZER);
 
-        simpleitem(ModItems.BURGER);
-        simpleitem(ModItems.STRAWBERRY);
-        simpleitem(ModItems.HOLY_BREAD);
-        simpleitem(ModItems.DEVIL_BREAD);
+        simpleItem(ModItems.BURGER);
+        simpleItem(ModItems.STRAWBERRY);
+        simpleItem(ModItems.HOLY_BREAD);
+        simpleItem(ModItems.DEVIL_BREAD);
 
-        simpleitem(ModItems.STRAWBERRY_SEEDS);
-        simpleitem(ModItems.CORN_SEEDS);
+        simpleItem(ModItems.STRAWBERRY_SEEDS);
+        simpleItem(ModItems.CORN_SEEDS);
 
-        simpleitem(ModItems.BAR_BRAWL_MUSIC_DISC);
-        simpleitem(ModItems.DARK_SOUL_MUSIC_DISC);
-        simpleitem(ModItems.END_OF_THE_START_MUSIC_DISC);
+        simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
+        simpleItem(ModItems.DARK_SOUL_MUSIC_DISC);
+        simpleItem(ModItems.END_OF_THE_START_MUSIC_DISC);
 
-        simpleitem(ModItems.METAL_DETECTOR);
+        simpleItem(ModItems.METAL_DETECTOR);
 
         // saplings
         saplingItem(ModBlocks.DARK_SAPLING);
@@ -129,7 +129,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         runeItem(ModItems.OAK_RUNE);
         runeItem(ModItems.SPRUCE_RUNE);
 
-        simpleitem(ModItems.PINE_CONE);
+        simpleItem(ModItems.PINE_CONE);
 
         // pour une porte call simpleBlockItem sans
         simpleBlockItem(ModBlocks.SAPPHIRE_DOOR);
@@ -139,7 +139,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         buttonItem(ModBlocks.SAPPHIRE_BUTTON, ModBlocks.SAPPHIRE_BLOCK);
         wallItem(ModBlocks.SAPPHIRE_WALL, ModBlocks.SAPPHIRE_BLOCK);
 
-        // staire, slab, pressure_plate and gate
+        // stairs, slab, pressure_plate and gate
         eventSimplerBlockItem(ModBlocks.SAPPHIRE_STAIRS);
         eventSimplerBlockItem(ModBlocks.SAPPHIRE_SLAB);
         eventSimplerBlockItem(ModBlocks.SAPPHIRE_PRESSURE_PLATE);
@@ -229,7 +229,7 @@ public class ModItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/" + item.getId().getPath()));
     }
 
-    private ItemModelBuilder simpleitem(RegistryObject<Item> item) {
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/" + item.getId().getPath()));

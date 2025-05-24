@@ -17,9 +17,9 @@ public class LightningSwordItem extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        boolean retval = super.hurtEnemy(pStack, pTarget, pAttacker);
+        boolean returnValue = super.hurtEnemy(pStack, pTarget, pAttacker);
         LightningSwordHitEvent.execute(pTarget.level(), pTarget.getX(), pTarget.getY(), pTarget.getZ(), pAttacker);
-        return retval;
+        return returnValue;
     }
 
     @Override

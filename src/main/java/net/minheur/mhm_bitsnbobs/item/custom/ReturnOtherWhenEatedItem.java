@@ -16,14 +16,14 @@ public class ReturnOtherWhenEatedItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        ItemStack retval = new ItemStack(returnItem);
+        ItemStack returnValue = new ItemStack(returnItem);
         super.finishUsingItem(pStack, pLevel, pLivingEntity);
         if(pStack.isEmpty()) {
-            return retval;
+            return returnValue;
         } else {
             if(pLivingEntity instanceof Player player && !player.getAbilities().instabuild) {
-                if(!player.getInventory().add(retval))
-                    player.drop(retval, false);
+                if(!player.getInventory().add(returnValue))
+                    player.drop(returnValue, false);
             }
             return pStack;
         }

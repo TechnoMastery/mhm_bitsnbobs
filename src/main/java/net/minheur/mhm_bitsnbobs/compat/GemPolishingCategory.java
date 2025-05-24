@@ -23,11 +23,11 @@ public class GemPolishingCategory implements IRecipeCategory<GemPolishingRecipe>
     public static final RecipeType<GemPolishingRecipe> GEM_POLISHING_TYPE =
             new RecipeType<>(UID, GemPolishingRecipe.class);
 
-    private final IDrawable backgroud;
+    private final IDrawable background;
     private final IDrawable icon;
 
     public GemPolishingCategory(IGuiHelper helper) {
-        this.backgroud = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
+        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.GEM_POLISHING_STATION.get()));
     }
 
@@ -43,7 +43,7 @@ public class GemPolishingCategory implements IRecipeCategory<GemPolishingRecipe>
 
     @Override
     public IDrawable getBackground() {    // warning
-        return this.backgroud;
+        return this.background;
     }
 
     @Override

@@ -82,7 +82,7 @@ public class GemPolishingRecipe implements Recipe<SimpleContainer> {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(jsonObject, "ingredients");
-            // the size changes depending on the amount of inputs the recpie have
+            // the size changes depending on the amount of inputs the recipe have
             NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
 
             for(int i=0; i < inputs.size(); i++) {

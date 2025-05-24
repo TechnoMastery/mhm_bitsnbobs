@@ -39,11 +39,11 @@ public class WindStickItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        ItemStack retval = super.finishUsingItem(pStack, pLevel, pLivingEntity);
+        ItemStack returnValue = super.finishUsingItem(pStack, pLevel, pLivingEntity);
         double x = pLivingEntity.getX();
         double y = pLivingEntity.getY();
         double z = pLivingEntity.getZ();
         WindStickOnUse.execute(pLivingEntity);
-        return retval;
+        return returnValue;
     }
 }

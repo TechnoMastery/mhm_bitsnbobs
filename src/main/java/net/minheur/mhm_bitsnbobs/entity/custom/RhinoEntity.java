@@ -118,7 +118,7 @@ public class RhinoEntity extends Animal {
 
     /// Les données suivantes définissent l'entité :
     ///
-    /// Sa vie max, sa vitesse, son armure, ses dommages et son recul d'atk.
+    /// Sa vie max, sa vitesse, son armure, ses dommages et son recul d'attaque.
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createLivingAttributes()
                 .add(Attributes.MAX_HEALTH, 10D)

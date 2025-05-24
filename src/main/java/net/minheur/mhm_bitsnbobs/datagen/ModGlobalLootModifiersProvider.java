@@ -25,7 +25,7 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        // shema add item to vannila drops : change name (modifier) + change where it drops & randomChance. Also can add others properties
+        // shema add item to vanilla drops : change name (modifier) + change where it drops & randomChance. Also, can add others properties
         add("pine_cone_from_creeper", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("entities/creeper")).build(),
                 LootItemRandomChanceCondition.randomChance(0.1f).build()

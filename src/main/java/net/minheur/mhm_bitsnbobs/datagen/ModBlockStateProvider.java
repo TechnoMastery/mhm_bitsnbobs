@@ -61,7 +61,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.DARK_LEAVES);
         saplingBlock(ModBlocks.DARK_SAPLING);
 
-        // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or dupli)
+        // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or duplicate)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
         // slab : 2 textures
         slabBlock(((SlabBlock) ModBlocks.SAPPHIRE_SLAB.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
@@ -75,7 +75,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         // warning for the door : 2 texture block and "cutout" at end
         doorBlockWithRenderType(((DoorBlock) ModBlocks.SAPPHIRE_DOOR.get()), modLoc("block/sapphire_door_bottom"), modLoc("block/sapphire_door_top"), "cutout");
-        // then trapdoor too but 1 texture plus an oriantable value
+        // then trapdoor too but 1 texture plus an orientable value
         trapdoorBlockWithRenderType(((TrapDoorBlock) ModBlocks.SAPPHIRE_TRAPDOOR.get()), modLoc("block/sapphire_trapdoor"), true, "cutout");
 
         // flowers      paté de 2 simpleBlockWithItem (flower + potted_flower)
@@ -100,7 +100,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         itemModels().withExistingParent("mhm_bitsnbobs:incubator", "item/generated").texture("layer0", "mhm_bitsnbobs:item/incubator_item");
     }
 
-    // ce paté de public void + private est a dupli pour les crop blocks. changer les 2 cast dans la 2nd + les noms et le use dans le 1er : acctuellement StrawberryCropBlock.
+    // Ce paté de public void + private est à dupliquer pour les crop blocks. changer les 2 cast dans le second + les noms et l'use dans le 1er : actuellement StrawberryCropBlock.
     public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
 

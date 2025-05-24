@@ -97,11 +97,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 ModItems.STRAWBERRY_SEEDS.get(), lootitemcomdition$builder));
 
         // two blocks tall
-        LootItemCondition.Builder lootitemcomdition$builder2 = LootItemBlockStatePropertyCondition
+        LootItemCondition.Builder lootItemCondition$builder2 = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8));
         this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(),
-                ModItems.CORN_SEEDS.get(), lootitemcomdition$builder2));
+                ModItems.CORN_SEEDS.get(), lootItemCondition$builder2));
 
         // flowers      packet de 2 pour la fleur + potted flower
         this.dropSelf(ModBlocks.CATMINT.get());
@@ -138,7 +138,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     }
 
     /// Here, you can add a `.filter(block -> block != ModBlocks.YOUR_BLOCK.get())`
-    /// to remove `YOUR_BLOCK` from creating a datagened file. It will still look for a
+    /// to remove `YOUR_BLOCK` from creating a data-generated file. It will still look for a
     /// file it the manuals ones.
     @Override
     protected Iterable<Block> getKnownBlocks() {

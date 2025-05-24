@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_empty_rune": {
+    "has_slime_ball": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:empty_rune"
+              "minecraft:slime_ball"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:xp_rune_from_shappeless_of_two_base_empty_rune"
+        "recipe": "mhm_bitsnbobs:slimy_ingot_from_shapeless_of_two_base_slime_ball"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_empty_rune",
+      "has_slime_ball",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:xp_rune_from_shappeless_of_two_base_empty_rune"
+      "mhm_bitsnbobs:slimy_ingot_from_shapeless_of_two_base_slime_ball"
     ]
   },
   "sends_telemetry_event": false

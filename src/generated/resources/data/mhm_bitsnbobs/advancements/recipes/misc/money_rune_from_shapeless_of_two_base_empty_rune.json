@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:spruce_rune_from_shappeless_of_three_base_empty_rune"
+        "recipe": "mhm_bitsnbobs:money_rune_from_shapeless_of_two_base_empty_rune"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:spruce_rune_from_shappeless_of_three_base_empty_rune"
+      "mhm_bitsnbobs:money_rune_from_shapeless_of_two_base_empty_rune"
     ]
   },
   "sends_telemetry_event": false

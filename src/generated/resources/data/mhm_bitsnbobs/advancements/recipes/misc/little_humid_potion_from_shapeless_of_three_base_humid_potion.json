@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_slime_ball": {
+    "has_humid_potion": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:slime_ball"
+              "mhm_bitsnbobs:humid_potion"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:slimy_ingot_from_shappeless_of_two_base_slime_ball"
+        "recipe": "mhm_bitsnbobs:little_humid_potion_from_shapeless_of_three_base_humid_potion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_slime_ball",
+      "has_humid_potion",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:slimy_ingot_from_shappeless_of_two_base_slime_ball"
+      "mhm_bitsnbobs:little_humid_potion_from_shapeless_of_three_base_humid_potion"
     ]
   },
   "sends_telemetry_event": false

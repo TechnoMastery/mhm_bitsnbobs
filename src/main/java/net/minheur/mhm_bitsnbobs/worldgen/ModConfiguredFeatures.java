@@ -34,22 +34,22 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> DARK_KEY = registerKey("dark");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest stoneReplaceable = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
         RuleTest deepslateReplaceable = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        RuleTest netherackReplaceable = new BlockMatchTest(Blocks.NETHERRACK);
+        RuleTest netherrackReplaceable = new BlockMatchTest(Blocks.NETHERRACK);
         RuleTest endReplaceable = new BlockMatchTest(Blocks.END_STONE);
 
-        List<OreConfiguration.TargetBlockState> overworldSapphireOres = List.of(OreConfiguration.target(stoneReplaceables,
+        List<OreConfiguration.TargetBlockState> overworldSapphireOres = List.of(OreConfiguration.target(stoneReplaceable,
                 ModBlocks.SAPPHIRE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceable, ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get().defaultBlockState()));
 
         // put here first the ResourceKey, then Feature.ORE because, well, it's an ore, then create a new OreConfiguration pasting in the list. pSize is the vein size. Work only for overworld (because list).
         register(context, OVERWORLD_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldSapphireOres, 9));
         // when only one type of ore in the dim, place directly the replaceable
-        register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(netherackReplaceable, ModBlocks.NETHER_SAPPHIRE_ORE.get().defaultBlockState(), 9));
+        register(context, NETHER_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(netherrackReplaceable, ModBlocks.NETHER_SAPPHIRE_ORE.get().defaultBlockState(), 9));
         register(context, END_SAPPHIRE_ORE_KEY, Feature.ORE, new OreConfiguration(endReplaceable, ModBlocks.END_SAPPHIRE_ORE.get().defaultBlockState(), 9));
 
-        register(context, RUBIS_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceables, ModBlocks.RUBIS_ORE.get().defaultBlockState(), 3));
+        register(context, RUBIS_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceable, ModBlocks.RUBIS_ORE.get().defaultBlockState(), 3));
 
         // here example of tree gen
         register(context, DARK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(

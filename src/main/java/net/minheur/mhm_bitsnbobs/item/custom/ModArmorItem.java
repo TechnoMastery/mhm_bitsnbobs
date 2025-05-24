@@ -15,7 +15,7 @@ import java.util.Map;
 public class ModArmorItem extends ArmorItem {
     private static final Map<ArmorMaterial, MobEffectInstance> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffectInstance>())
-                    // more = duplis le .put : ne pas dupli .build();
+                    // more = dupliquer le .put : Ne pas dupliquer .build();
                     .put(ModArmorMaterials.SAPPHIRE, new MobEffectInstance(MobEffects.NIGHT_VISION, 200, 1,
                             false, false, true)).build();
 

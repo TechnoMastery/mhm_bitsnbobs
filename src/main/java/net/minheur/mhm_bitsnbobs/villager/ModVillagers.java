@@ -20,7 +20,7 @@ public class ModVillagers {
     // start create professions
     ///  Pour créer une profession, il faut d'abord ajouter le POI. Donc le premier public static final va définir, dans notre cas,
     /// un type de POI 'SOUND'. Il va lui donner des indications comme le block (ModBlocks.SOUND_BLOCK.get()), ainsi que des
-    /// valeurs : maxTickets donc le nombre de villageois sur ce block. validRange est la distance à laquelle le villageois doit être
+    /// valeurs : maxTickets ainsi le nombre de villageois sur ce block. validRange est la distance à laquelle le villageois doit être
     /// pour utiliser le block (recup le job et restock).
     /// Pour en ajouter, il faut ainsi dupliquer aussi le second public static final qui défini le villageois en lui-même.
     public static final RegistryObject<PoiType> SOUND_POI = POI_TYPES.register("sound_poi",

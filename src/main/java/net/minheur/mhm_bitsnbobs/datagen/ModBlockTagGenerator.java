@@ -84,7 +84,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(
                         ModBlocks.SAPPHIRE_WALL.get()
                 );
-        // mineable/pickaxe
+        // minable/pickaxe
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(
                         ModBlocks.SAPPHIRE_BLOCK.get(),

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_flower_pot": {
+    "has_empty_rune": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:flower_pot"
+              "mhm_bitsnbobs:empty_rune"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:tree_grower_from_shappeless_of_two_base_flower_pot"
+        "recipe": "mhm_bitsnbobs:spruce_rune_from_shapeless_of_three_base_empty_rune"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_flower_pot",
+      "has_empty_rune",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:tree_grower_from_shappeless_of_two_base_flower_pot"
+      "mhm_bitsnbobs:spruce_rune_from_shapeless_of_three_base_empty_rune"
     ]
   },
   "sends_telemetry_event": false

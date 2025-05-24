@@ -42,7 +42,7 @@ public class ModDimensions {
                 0, // minY
                 256, // height
                 256, // logicalHeight
-                BlockTags.INFINIBURN_OVERWORLD, // infiniburn
+                BlockTags.INFINIBURN_OVERWORLD, // infini burn
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS, // effectsLocation
                 1.0f, // ambientLight
                 new DimensionType.MonsterSettings(false, false, ConstantInt.of(0), 0)));

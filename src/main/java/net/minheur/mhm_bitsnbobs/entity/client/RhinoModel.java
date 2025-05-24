@@ -85,7 +85,7 @@ public class RhinoModel<T extends Entity> extends HierarchicalModel<T> {
     @Override
     public void setupAnim(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
          this.root().getAllParts().forEach(ModelPart::resetPose);
-         // ligne suivante va avec applyHeadRotation. comme sa la tête tourne !
+         // Ligne suivante va avec applyHeadRotation. Comme ça la tête tourne !
          this.applyHeadRotation(netHeadYaw, headPitch, ageInTicks);
 
          // les lignes suivantes permettent l'animation de marche
@@ -94,7 +94,7 @@ public class RhinoModel<T extends Entity> extends HierarchicalModel<T> {
          this.animate(((RhinoEntity) entity).attackAnimationState, ModAnimationDefinitions.RHINO_ATTACK, ageInTicks, 1f);
     }
 
-    /// cette animation est celle de la tête.
+    /// Cette animation est celle de la tête.
     ///
     /// Elle fait que l'entité regarde le joueur
     private void applyHeadRotation(float pNetHeadYaw, float pHeadPitch, float pAgeInTicks) {

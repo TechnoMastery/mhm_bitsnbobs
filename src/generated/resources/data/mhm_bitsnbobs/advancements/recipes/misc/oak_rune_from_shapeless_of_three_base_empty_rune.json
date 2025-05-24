@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_little_humid_potion": {
+    "has_empty_rune": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:little_humid_potion"
+              "mhm_bitsnbobs:empty_rune"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:humid_potion_from_shappeless_of_three_base_little_humid_potion"
+        "recipe": "mhm_bitsnbobs:oak_rune_from_shapeless_of_three_base_empty_rune"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_little_humid_potion",
+      "has_empty_rune",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:humid_potion_from_shappeless_of_three_base_little_humid_potion"
+      "mhm_bitsnbobs:oak_rune_from_shapeless_of_three_base_empty_rune"
     ]
   },
   "sends_telemetry_event": false

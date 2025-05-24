@@ -10,7 +10,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial  {
-    // creation de armor materials : (different models = seperate with ',' and last end with ;
+    // creation de armor materials : (different models = separate with ',' and last end with ;
     SAPPHIRE("sapphire", 27, new int[]{ 5, 7, 5, 4 }, 25,
             SoundEvents.ARMOR_EQUIP_GOLD, 1f, 0f, () -> Ingredient.of(ModItems.SAPPHIRE.get()));
 

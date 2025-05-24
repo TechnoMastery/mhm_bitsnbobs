@@ -29,12 +29,12 @@ public class QuantumCoreItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        ItemStack retval = super.finishUsingItem(pStack, pLevel, pLivingEntity);
+        ItemStack returnValue = super.finishUsingItem(pStack, pLevel, pLivingEntity);
         double x = pLivingEntity.getX();
         double y = pLivingEntity.getY();
         double z = pLivingEntity.getZ();
         QuantumCoreProcedures.executeFinishedUsing(pLevel, x, y, z, pLivingEntity);
-        return retval;
+        return returnValue;
     }
 
     @Override

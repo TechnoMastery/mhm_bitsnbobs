@@ -41,9 +41,9 @@ import net.minheur.mhm_bitsnbobs.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 import terrablender.api.SurfaceRuleManager;
 
-/// ce fichier est le coeur, le cerveau, le tous ce que tu veut de ton mod.
-/// C'est entre autre lui qui va définire les bases, qui va appeler les fichier de données comme les creative mod tabs etc.
-/// Le supprimmer est critique (comme la plupare des fichiers xD) : cela empècherais le mod de comprendre ce qui ce passe.
+/// Ce fichier est le cœur, le cerveau, le tout ce que tu veux de ton mod.
+/// C'est entre autre lui qui va définir les bases, qui va appeler les fichiers de données comme les creative mod tabs, etc.
+/// Le supprimer est critique (comme la plus pars des fichiers xD) : cela empêcherait le mod de comprendre ce qui se passe.
 /// Il s'agit de la javaClass principale.
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -55,7 +55,7 @@ public class MhmBitsnbobs
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    /// Ici donc on vient utiliser la métode register a chaque fois pour les fichier ayant une DeferredRegister
+    /// Ici donc on vient utiliser la méthode register à chaque fois pour les fichiers ayant une DeferredRegister
     public MhmBitsnbobs(FMLJavaModLoadingContext context)
     {
         IEventBus modEventBus = context.getModEventBus();
@@ -92,7 +92,7 @@ public class MhmBitsnbobs
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork(() -> {
-            // ligne suivante : dupli pour les plantes
+            // ligne suivante : duplication pour les plantes
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
 
             // biome rules

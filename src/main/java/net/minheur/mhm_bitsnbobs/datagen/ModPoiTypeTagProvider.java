@@ -16,8 +16,8 @@ public class ModPoiTypeTagProvider extends PoiTypeTagsProvider {
         super(p_256012_, p_256617_, MhmBitsnbobs.MOD_ID, existingFileHelper);
     }
 
-    /// l'info suivante est importante : le pPath présent dans le .addOptional DOIS être la même chose que celui donné au poi dans ModVillagers.java
-    ///  C'est une info très importante, j'insiste
+    /// L'info suivante est importante : le pPath présent dans le. addOptional DOIS être la même chose que celui donné au poi dans ModVillagers.java
+    ///  C'est une info très importante, j'insiste.
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
         tag(PoiTypeTags.ACQUIRABLE_JOB_SITE)

@@ -77,7 +77,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
             () -> new SaplingBlock(new DarkTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
-    // Modèle minerai si dessous ==> UniformInt.of() = qnt min / max d'XP.
+    // Modèle minerai si dessous ==> UniformInt.of() = qnt min / max d' experience.
     // Eft c un modèle de block a XP
     public static final RegistryObject<Block> SAPPHIRE_ORE = registerBlock("sapphire_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.copy(Blocks.STONE)
@@ -145,7 +145,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> FIRE_PLANT = BLOCKS.register("fire_crop",
             () -> new FirePlantCropBlock(BlockBehaviour.Properties.copy(Blocks.SUGAR_CANE).noCollission().noOcclusion().instabreak().mapColor(MapColor.COLOR_RED)));
 
-    // flowers      ils sont par 2
+    // flowers, ils sont par 2.
     public static final RegistryObject<Block> CATMINT = registerBlock("catmint",
             () -> new FlowerBlock(() -> MobEffects.LUCK, 5,
                     BlockBehaviour.Properties.copy(Blocks.ALLIUM).noOcclusion().noCollission()));
@@ -182,7 +182,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> DARK_LEAVES = registerBlock("dark_leaves",
             () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
                 // here is an anonymous class. When multiples leaves, can create a LeavesBlock custom block class.
-                // If possible ; already is a LeavesBlock. Might have to create a class extends LeavesBlock. To expermient.
+                // If possible ; already is a LeavesBlock. Might have to create a class extends LeavesBlock. To experiment.
                 @Override
                 public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
                     return true;

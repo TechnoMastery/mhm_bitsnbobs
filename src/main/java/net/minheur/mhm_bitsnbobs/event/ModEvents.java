@@ -25,20 +25,20 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = MhmBitsnbobs.MOD_ID)
 public class ModEvents {
 
-    /// ce fichier cert actuellement uniquement a créer des trades.
+    /// Ce fichier cert actuellement uniquement à créer des trades.
     /// Pour cela, choisissez votre villageois : pour le wandering trader, suivez la procédure d'ajout dans le AddCustomWanderingTrades.
-    /// Pour des villageois normaux, dans AddCustomTrades créer un if : un seul par métier. event.getType() dois être egal a VillagerProfession.LA PROFESSION QUE VOUS SOUHAITEZ.
-    /// ensuite, dans les if, ajoutez le Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades(); a chaque fois.
-    /// procédure ajout : copiez le paté. changez les infos (tous est dans le nom des infos). pour les enchants, créer l'item dans un variable.
-    /// Pour les enchants, regardez il y a des exemple dans LIBRARIAN. Les noms de variables peuvent être utilisé une fois dans un même if,
-    /// mais un nom peut être le même entre 2 if différent. Il ne pourront pas accéder a la variable d'un autre if
+    /// Pour des villageois normaux, dans AddCustomTrades créer un if : un seul par métier. Le `event.getType()` doit être égal à `VillagerProfession.LA PROFESSION QUE VOUS SOUHAITEZ` : c'est simple.
+    /// Ensuite, dans les "if", ajoutez le `Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();` à chaque fois.
+    /// Procédure ajout : copiez le paté. changez les infos (tous est dans le nom des infos). pour les enchants, créer l'item dans une variable.
+    /// Pour les enchants, regardez il y a des exemples dans LIBRARIAN. Les noms de variables peuvent être utilisé une fois dans un même if,
+    /// mais un nom peut être le même entre 2 "if" différent. Ils ne pourront pas accéder à la variable d'un autre if
 
     // villagers
     @SubscribeEvent
     public static void AddCustomTrades(VillagerTradesEvent event) {
 
         if(event.getType() == VillagerProfession.FARMER) {
-            // penser a ajouter la ligne suivante a chaques profession (chaque if)
+            // penser à ajouter la ligne suivante à cheques profession (chaque if)
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
             // level 1
@@ -79,12 +79,12 @@ public class ModEvents {
 
         if(event.getType() == VillagerProfession.LIBRARIAN) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
-            // listing de création de livres anchantées
+            // listing de création de livres enchantées
             ItemStack enchantedBook1 = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(Enchantments.THORNS, 2));
             ItemStack enchantedBook2 = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(Enchantments.BINDING_CURSE, 1));
 
             // level 1
-            // ceci est le schéma pour un livre enchanté : retourner la variable itemstack créer ci dessus
+            // ceci est le schéma pour un livre enchanté : retourner la variable item stack créer ci-dessus
             trades.get(1).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 32),
                     enchantedBook1,

@@ -5,7 +5,7 @@ import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 
-/// dans cette public class se trouve pleins de public static final :
+/// Dans cette publique class se trouve pleins de public static final :
 ///
 /// Il s'agit des animations !
 public class ModAnimationDefinitions {

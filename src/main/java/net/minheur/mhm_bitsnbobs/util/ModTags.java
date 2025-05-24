@@ -24,7 +24,7 @@ public class ModTags {
     }
 
     public static class Items {
-        // modele item tags
+        // model item tags
         public static final TagKey<Item> BASEDISK = tag("basedisk");
 
 
