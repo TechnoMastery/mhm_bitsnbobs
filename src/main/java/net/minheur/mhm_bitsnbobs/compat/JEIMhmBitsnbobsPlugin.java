@@ -3,12 +3,14 @@ package net.minheur.mhm_bitsnbobs.compat;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.recipe.GemPolishingRecipe;
 import net.minheur.mhm_bitsnbobs.recipe.IncubatorRecipe;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationScreen;
@@ -25,8 +27,16 @@ public class JEIMhmBitsnbobsPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-        registration.addRecipeCategories(new GemPolishingCategory(registration.getJeiHelpers().getGuiHelper()));
-        registration.addRecipeCategories(new IncubatingCategory(registration.getJeiHelpers().getGuiHelper()));
+
+           registration.addRecipeCategories(new GemPolishingCategory(registration.getJeiHelpers().getGuiHelper()));
+           registration.addRecipeCategories(new IncubatingCategory(registration.getJeiHelpers().getGuiHelper()));
+    }
+
+    @Override
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(ModBlocks.INCUBATOR.get(), IncubatingCategory.INCUBATING_TYPE);
+        registration.addRecipeCatalyst(ModBlocks.GEM_POLISHING_STATION.get(), GemPolishingCategory.GEM_POLISHING_TYPE);
+        IModPlugin.super.registerRecipeCatalysts(registration);
     }
 
     @Override

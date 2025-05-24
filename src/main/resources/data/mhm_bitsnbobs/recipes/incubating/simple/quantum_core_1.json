@@ -1,0 +1,22 @@
+{
+  "type": "mhm_bitsnbobs:incubating",
+  "ingredients": [
+    {
+      "item": "ae2:singularity"
+    }
+  ],
+  "catalyzer": {
+    "count": 1,
+    "item": "mhm_bitsnbobs:iron_catalyzer"
+  },
+  "output": {
+    "count": 1,
+    "item": "mhm_bitsnbobs:quantum_core",
+    "functions": [
+      {
+        "function": "minecraft:set_damage",
+        "damage": 4
+      }
+    ]
+  }
+}

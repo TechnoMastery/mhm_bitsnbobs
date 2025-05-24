@@ -38,7 +38,7 @@ public class GemPolishingCategory implements IRecipeCategory<GemPolishingRecipe>
 
     @Override
     public Component getTitle() {
-        return Component.translatable("block.mhm_bitsnbobs.gem_polishing_station");
+        return Component.translatable("recipe.mhm_bitsnbobs.gem_polishing_station");
     }
 
     @Override

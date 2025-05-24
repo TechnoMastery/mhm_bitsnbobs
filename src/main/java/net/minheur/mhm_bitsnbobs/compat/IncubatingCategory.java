@@ -39,7 +39,7 @@ public class IncubatingCategory implements IRecipeCategory<IncubatorRecipe> {
 
     @Override
     public Component getTitle() {
-        return Component.translatable("block.mhm_bitsnbobs.incubator");
+        return Component.translatable("recipe.mhm_bitsnbobs.incubator");
     }
 
     @Override
