@@ -191,6 +191,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SLIMY_INGOT.get()), has(ModItems.SLIMY_INGOT.get()))
                 .save(pWriter);
 
+        // base de dique
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASE_OF_DISC.get())
+                .pattern(" H ")
+                .pattern("HIH")
+                .pattern(" H ")
+                .define('H', ModItems.HARDENED_INGOT.get())
+                .define('I', Tags.Items.INGOTS)
+                .unlockedBy(getHasName(ModItems.HARDENED_INGOT.get()), has(ModItems.HARDENED_INGOT.get()))
+                .save(pWriter);
+
+        // incubator
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.INCUBATOR.get())
+                .pattern("III")
+                .pattern("IDC")
+                .pattern("III")
+                .define('I', Items.IRON_BLOCK)
+                .define('D', Items.DIAMOND)
+                .define('C', ModItems.CONTROL_PANEL.get())
+                .unlockedBy(getHasName(Items.DIAMOND), has(Items.DIAMOND))
+                .save(pWriter);
+
         // levure
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, ModItems.YEAST.get())
                 .pattern("PPP")

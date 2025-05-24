@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:base_egg"
+        "recipe": "mhm_bitsnbobs:base_of_disc"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:base_egg"
+      "mhm_bitsnbobs:base_of_disc"
     ]
   },
   "sends_telemetry_event": false

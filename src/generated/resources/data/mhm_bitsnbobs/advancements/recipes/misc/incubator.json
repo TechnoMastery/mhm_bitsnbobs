@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hardened_ingot": {
+    "has_diamond": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:hardened_ingot"
+              "minecraft:diamond"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:base_egg"
+        "recipe": "mhm_bitsnbobs:incubator"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_hardened_ingot",
+      "has_diamond",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:base_egg"
+      "mhm_bitsnbobs:incubator"
     ]
   },
   "sends_telemetry_event": false
