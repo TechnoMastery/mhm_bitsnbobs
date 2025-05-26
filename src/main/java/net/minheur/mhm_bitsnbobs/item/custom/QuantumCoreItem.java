@@ -1,5 +1,6 @@
 package net.minheur.mhm_bitsnbobs.item.custom;
 
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
@@ -7,9 +8,14 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
+import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.procedures.QuantumCoreProcedures;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class QuantumCoreItem extends Item {
     public QuantumCoreItem(Properties pProperties) {
@@ -25,6 +31,15 @@ public class QuantumCoreItem extends Item {
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
         QuantumCoreProcedures.executeTickInInventory(pEntity);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        if(MhmBitsnbobs.isNotAe2()) {
+            pTooltipComponents.add(Component.translatable("nomod.ae2.item"));
+        }
+
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 
     @Override
