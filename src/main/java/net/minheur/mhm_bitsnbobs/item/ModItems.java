@@ -59,7 +59,19 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> QUANTUM_CORE = ITEMS.register("quantum_core",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1)));
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 0));
+    public static final RegistryObject<Item> QUANTUM_CORE_1 = ITEMS.register("quantum_core_1",
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 1));
+    public static final RegistryObject<Item> QUANTUM_CORE_2 = ITEMS.register("quantum_core_2",
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 2));
+    public static final RegistryObject<Item> QUANTUM_CORE_3 = ITEMS.register("quantum_core_3",
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 3));
+    public static final RegistryObject<Item> QUANTUM_CORE_4 = ITEMS.register("quantum_core_4",
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 4));
+    public static final RegistryObject<Item> QUANTUM_CORE_5 = ITEMS.register("quantum_core_5",
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 5));
+
+
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));
 

@@ -18,13 +18,21 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class QuantumCoreItem extends Item {
-    public QuantumCoreItem(Properties pProperties) {
+    private static int level;
+
+    public QuantumCoreItem(Properties pProperties, int level) {
         super(pProperties);
+        QuantumCoreItem.level = level;
     }
+    public static int getItemLevel() { return level; }
 
     @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
-        return UseAnim.BOW;
+        if (isFinished()) {
+            return UseAnim.BOW;
+        } else {
+            return super.getUseAnimation(pStack);
+        }
     }
 
     @Override
@@ -44,23 +52,39 @@ public class QuantumCoreItem extends Item {
 
     @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
-        ItemStack returnValue = super.finishUsingItem(pStack, pLevel, pLivingEntity);
-        double x = pLivingEntity.getX();
-        double y = pLivingEntity.getY();
-        double z = pLivingEntity.getZ();
-        QuantumCoreProcedures.executeFinishedUsing(pLevel, x, y, z, pLivingEntity);
-        return returnValue;
+        if (isFinished()) {
+            ItemStack returnValue = super.finishUsingItem(pStack, pLevel, pLivingEntity);
+            double x = pLivingEntity.getX();
+            double y = pLivingEntity.getY();
+            double z = pLivingEntity.getZ();
+            QuantumCoreProcedures.executeFinishedUsing(pLevel, x, y, z, pLivingEntity);
+            return returnValue;
+        } else {
+            return super.finishUsingItem(pStack, pLevel, pLivingEntity);
+        }
     }
 
     @Override
     public int getUseDuration(ItemStack pStack) {
-        return 30;
+        if(isFinished()) {
+            return 30;
+        } else {
+            return super.getUseDuration(pStack);
+        }
     }
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
-        InteractionResultHolder<ItemStack> ar = super.use(pLevel, pPlayer, pUsedHand);
-        pPlayer.startUsingItem(pUsedHand);
-        return ar;
+        if(isFinished()) {
+            InteractionResultHolder<ItemStack> ar = super.use(pLevel, pPlayer, pUsedHand);
+            pPlayer.startUsingItem(pUsedHand);
+            return ar;
+        } else {
+            return super.use(pLevel, pPlayer, pUsedHand);
+        }
+    }
+
+    public static boolean isFinished() {
+        return level == 0;
     }
 }

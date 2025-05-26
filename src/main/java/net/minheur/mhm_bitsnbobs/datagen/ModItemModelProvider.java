@@ -53,7 +53,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.STORM_FRAGMENT);
         simpleItem(ModItems.DICE);
         simpleItem(ModItems.WET_DIRT);
-        simpleItem(ModItems.QUANTUM_CORE);
         simpleItem(ModItems.PIECE_OF_DIRT);
         simpleItem(ModItems.HARDENED_INGOT);
         simpleItem(ModItems.BASE_EGG);
@@ -97,6 +96,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SLIMY_INGOT);
         simpleItem(ModItems.SLIMY_STICK);
         simpleItem(ModItems.BASE_OF_DISC);
+
+        quantumCoreItem(ModItems.QUANTUM_CORE);
+        quantumCoreItem(ModItems.QUANTUM_CORE_1);
+        quantumCoreItem(ModItems.QUANTUM_CORE_2);
+        quantumCoreItem(ModItems.QUANTUM_CORE_3);
+        quantumCoreItem(ModItems.QUANTUM_CORE_4);
+        quantumCoreItem(ModItems.QUANTUM_CORE_5);
 
         simpleItem(ModItems.IRON_CATALYZER);
         simpleItem(ModItems.WIND_CHARGED_CATALYZER);
@@ -249,6 +255,13 @@ public class ModItemModelProvider extends ItemModelProvider {
     public void trapdoorItem(RegistryObject<Block> block) {
         this.withExistingParent(ForgeRegistries.BLOCKS.getKey(block.get()).getPath(),
                 modLoc("block/" + ForgeRegistries.BLOCKS.getKey(block.get()).getPath() + "_bottom"));
+    }
+
+    public ItemModelBuilder quantumCoreItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID,"item/quantum_core"));
+
     }
 
     public void fenceItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {
