@@ -16,9 +16,7 @@ public class CatalyzerItem extends Item {
         super(pProperties);
         this.rank = rank;
     }
-    public String getRank() {
-        return rank;
-    }
+    public String getRank() { return rank; }
     // TODO: add things here. Don't know what.
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
