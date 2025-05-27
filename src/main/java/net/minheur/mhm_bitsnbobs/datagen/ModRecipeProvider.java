@@ -194,6 +194,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SLIMY_INGOT.get()), has(ModItems.SLIMY_INGOT.get()))
                 .save(pWriter);
 
+        // sapphire staff
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SAPPHIRE_STAFF.get())
+                .pattern("G")
+                .pattern("S")
+                .pattern("S")
+                .define('G', ModItems.STORM_FRAGMENT.get())
+                .define('S', ModItems.SAPPHIRE.get())
+                .unlockedBy(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                .save(pWriter);
+
         // base de dique
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.BASE_OF_DISC.get())
                 .pattern(" H ")
