@@ -158,6 +158,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // stone cutting : use 'simpleStoneCutting' from our libraries.
         // use it with pWriter, recipeCategory, result, ingredient → you can add, at last parameter, the amount of results. Not needed : don't set to use 1
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.EMPTY_LITTLE_FLASK.get(), ModItems.EMPTY_BIG_FLASK.get(), 2);
+        simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.HALF_STICK.get(), Items.STICK, 2);
+        simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.QUARTER_STICK.get(), ModItems.HALF_STICK.get(), 2);
+        simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.QUARTER_STICK.get(), Items.STICK, 4);
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
