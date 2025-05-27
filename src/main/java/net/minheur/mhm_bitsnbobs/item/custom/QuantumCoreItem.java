@@ -42,15 +42,6 @@ public class QuantumCoreItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        if(MhmBitsnbobs.isNotAe2()) {
-            pTooltipComponents.add(Component.translatable("nomod.ae2.item"));
-        }
-
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
-    }
-
-    @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         if (isFinished()) {
             ItemStack returnValue = super.finishUsingItem(pStack, pLevel, pLivingEntity);

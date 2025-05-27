@@ -128,6 +128,16 @@ repositories {
     maven { url = "https://maven.tterrag.com" } // Registration
     maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // ForgeConfigAPIPort
 
+    // ae2
+    maven {
+        name "Modmaven"
+        url "https://modmaven.dev/"
+        // For Gradle 5.1 and above, limit it to just AE2
+        content {
+            includeGroup 'appeng'
+        }
+    }
+
     maven {
         // location of the maven that hosts JEI files since January 2023
         name = "Jared's maven"
@@ -168,6 +178,13 @@ dependencies {
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
     implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
 
+    // ae2
+    implementation(fg.deobf("appeng:appliedenergistics2-forge:${ae2_version}"))
+
+    implementation(fg.deobf("org.appliedenergistics:guideme:${guideme_version}"))
+    compileOnly(fg.deobf("org.appliedenergistics:guideme:${guideme_version}:api"))
+    runtimeOnly(fg.deobf("org.appliedenergistics:guideme:${guideme_version}"))
+
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
@@ -189,7 +206,7 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range: loader_version_range,
             mod_id: mod_id, modid: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description,
-            terrablender_version_range: terrablender_version_range
+            terrablender_version_range: terrablender_version_range, ae2_version: ae2_version, ae2_version_range: ae2_version_range
     ]
     inputs.properties replaceProperties
 

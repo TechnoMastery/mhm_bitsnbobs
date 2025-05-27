@@ -198,15 +198,6 @@ public class MhmBitsnbobs
             // block entities
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
             MenuScreens.register(ModMenuTypes.INCUBATOR_MENU.get(), IncubatorScreen::new);
-
-            // mods not present
-            if(isNotAe2()) {
-                LOGGER.warn("The mod 'ae2' is NOT installed. This disable some features, like the Quantum core. Disabled features WILL HAVE a note.");
-            }
         }
-    }
-
-    public static boolean isNotAe2() {
-        return !ModList.get().isLoaded("ae2");
     }
 }
