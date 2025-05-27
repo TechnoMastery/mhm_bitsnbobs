@@ -1,0 +1,29 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "B": {
+      "item": "mhm_bitsnbobs:creative_ingot"
+    },
+    "A": {
+      "item": "mhm_bitsnbobs:creative_block"
+    },
+    "C": {
+      "item": "create:fluid_tank"
+    },
+    "D": {
+      "item": "mhm_bitsnbobs:hardened_ingot"
+    }
+  },
+  "pattern": [
+    "AAAAA",
+    "ABDBA",
+    "ADCDA",
+    "ABDBA",
+    "AAAAA"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create:creative_fluid_tank"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:little_copper_nugget"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:copper_nugget"
+    }
+  ]
+}

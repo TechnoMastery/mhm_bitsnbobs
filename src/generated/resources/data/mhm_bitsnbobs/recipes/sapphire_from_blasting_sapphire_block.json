@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "sapphire",
+  "ingredient": {
+    "item": "mhm_bitsnbobs:sapphire_block"
+  },
+  "result": "mhm_bitsnbobs:sapphire"
+}

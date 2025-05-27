@@ -1,0 +1,11 @@
+{
+  "type": "mhm_bitsnbobs:add_sus_sand_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:archaeology/desert_pyramid"
+    }
+  ],
+  "item": "mhm_bitsnbobs:storm_fragment",
+  "quantity": 0.11
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 500,
+  "experience": 0.0,
+  "group": "hardened",
+  "ingredient": {
+    "item": "minecraft:iron_ingot"
+  },
+  "result": "mhm_bitsnbobs:hardened_ingot"
+}

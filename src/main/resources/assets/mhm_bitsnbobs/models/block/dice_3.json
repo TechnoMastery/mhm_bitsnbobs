@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "mhm_bitsnbobs:block/dice_3",
+    "down": "mhm_bitsnbobs:block/dice_4",
+    "north": "mhm_bitsnbobs:block/dice_6",
+    "east": "mhm_bitsnbobs:block/dice_2",
+    "south": "mhm_bitsnbobs:block/dice_1",
+    "west": "mhm_bitsnbobs:block/dice_5",
+    "particle": "mhm_bitsnbobs:block/dice_3"
+  }
+}

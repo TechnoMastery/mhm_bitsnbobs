@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:salmon"
+  },
+  "base": {
+    "item": "minecraft:diamond"
+  },
+  "result": {
+    "item": "minecraft:cat_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

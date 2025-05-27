@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "S": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "pattern": [
+    "BSB",
+    "SDS",
+    "BSB"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:fire_diamond"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 24000,
+  "experience": 1.0,
+  "group": "creative",
+  "ingredient": {
+    "item": "mhm_bitsnbobs:creative_essence"
+  },
+  "result": "mhm_bitsnbobs:creative_residue"
+}

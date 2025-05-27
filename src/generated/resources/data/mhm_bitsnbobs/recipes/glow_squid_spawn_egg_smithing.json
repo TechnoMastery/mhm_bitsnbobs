@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:glow_ink_sac"
+  },
+  "base": {
+    "item": "minecraft:squid_spawn_egg"
+  },
+  "result": {
+    "item": "minecraft:glow_squid_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

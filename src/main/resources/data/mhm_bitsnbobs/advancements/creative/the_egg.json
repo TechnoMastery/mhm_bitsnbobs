@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "mhm_bitsnbobs:base_egg"
+    },
+    "title": {
+      "translate": "advancements.creative.the_egg.title"
+    },
+    "description": {
+      "translate": "advancements.creative.the_egg.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "the_egg_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:base_egg"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "mhm_bitsnbobs:creative/get_creative_ingot"
+}

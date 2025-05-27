@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:gold_ingot"
+  },
+  "base": {
+    "item": "minecraft:pig_spawn_egg"
+  },
+  "result": {
+    "item": "minecraft:piglin_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

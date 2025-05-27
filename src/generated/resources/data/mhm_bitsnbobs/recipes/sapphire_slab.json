@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "mhm_bitsnbobs:sapphire_block"
+    }
+  },
+  "pattern": [
+    "SSS"
+  ],
+  "result": {
+    "count": 6,
+    "item": "mhm_bitsnbobs:sapphire_slab"
+  },
+  "show_notification": true
+}

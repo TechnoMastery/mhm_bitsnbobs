@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:oak_planks"
+    },
+    "title": {
+      "translate": "advancements.story.buttons_1.title"
+    },
+    "description": {
+      "translate": "advancements.story.buttons_1.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "buttons_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:oak_button"
+            ],
+            "count": {
+              "min": 128
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 50,
+    "loot": [
+      "mhm_bitsnbobs:blocks/resource_dirt"
+    ]
+  },
+  "parent": "mhm_bitsnbobs:story/buttons"
+}

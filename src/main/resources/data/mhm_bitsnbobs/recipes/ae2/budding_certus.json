@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "minecraft:emerald"
+  },
+  "base": {
+    "item": "ae2:quartz_block"
+  },
+  "addition": {
+    "item": "ae2:certus_quartz_crystal"
+  },
+  "result": {
+    "item": "ae2:flawless_budding_quartz"
+  }
+}

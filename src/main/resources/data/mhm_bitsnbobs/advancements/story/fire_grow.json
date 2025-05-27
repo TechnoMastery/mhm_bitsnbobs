@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "mhm_bitsnbobs:fire_seeds"
+    },
+    "title": {
+      "translate": "advancements.story.fire_grow.title"
+    },
+    "description": {
+      "translate": "advancements.story.fire_grow.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fire_grow_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:fire_seeds"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "parent": "mhm_bitsnbobs:get_fire_diamond"
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:leather_horse_armor"
+  },
+  "base": {
+    "item": "minecraft:diamond"
+  },
+  "result": {
+    "item": "minecraft:horse_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

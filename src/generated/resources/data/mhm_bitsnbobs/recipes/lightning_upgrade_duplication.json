@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "G": {
+      "item": "mhm_bitsnbobs:super_charged_ingot"
+    },
+    "I": {
+      "item": "mhm_bitsnbobs:lightning_upgrade"
+    }
+  },
+  "pattern": [
+    "DID",
+    "DGD",
+    "DDD"
+  ],
+  "result": {
+    "count": 2,
+    "item": "mhm_bitsnbobs:lightning_upgrade"
+  },
+  "show_notification": true
+}

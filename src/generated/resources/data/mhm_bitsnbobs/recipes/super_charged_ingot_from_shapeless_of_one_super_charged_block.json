@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:super_charged_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "mhm_bitsnbobs:super_charged_ingot"
+  }
+}

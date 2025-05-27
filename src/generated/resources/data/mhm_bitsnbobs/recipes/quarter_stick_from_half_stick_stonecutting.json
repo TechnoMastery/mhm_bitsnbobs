@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "mhm_bitsnbobs:half_stick"
+  },
+  "result": "mhm_bitsnbobs:quarter_stick"
+}

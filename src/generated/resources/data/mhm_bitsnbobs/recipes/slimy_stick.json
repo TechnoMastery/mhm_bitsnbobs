@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "mhm_bitsnbobs:slimy_ingot"
+    }
+  },
+  "pattern": [
+    "S",
+    "S"
+  ],
+  "result": {
+    "count": 4,
+    "item": "mhm_bitsnbobs:slimy_stick"
+  },
+  "show_notification": true
+}

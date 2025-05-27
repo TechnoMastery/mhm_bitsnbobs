@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "minecraft:oak_button"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    },
+    "V": {
+      "item": "minecraft:glass"
+    }
+  },
+  "pattern": [
+    " B ",
+    "G G",
+    "VVV"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:empty_big_flask"
+  },
+  "show_notification": true
+}

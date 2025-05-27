@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "base": {
+    "item": "mhm_bitsnbobs:diamond_ball"
+  },
+  "result": {
+    "item": "mhm_bitsnbobs:super_charged_ball"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:lightning_upgrade"
+  }
+}

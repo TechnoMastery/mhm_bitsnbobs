@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "mhm_bitsnbobs:control_panel"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "pattern": [
+    "III",
+    "IDC",
+    "III"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:incubator"
+  },
+  "show_notification": true
+}

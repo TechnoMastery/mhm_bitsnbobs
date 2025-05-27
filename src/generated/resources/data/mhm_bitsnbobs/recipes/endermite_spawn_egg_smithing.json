@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:ender_pearl"
+  },
+  "base": {
+    "item": "minecraft:enderman_spawn_egg"
+  },
+  "result": {
+    "item": "minecraft:endermite_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "mhm_bitsnbobs:lightning_sword"
+    },
+    "title": {
+      "translate": "advancements.adventure.get_lightning_sword.title"
+    },
+    "description": {
+      "translate": "advancements.adventure.get_lightning_sword.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get_lightning_sword_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:lightning_sword"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 5000
+  },
+  "parent": "mhm_bitsnbobs:adventure/get_lightning_upgrade"
+}

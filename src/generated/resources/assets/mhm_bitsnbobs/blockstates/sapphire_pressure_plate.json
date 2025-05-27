@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "mhm_bitsnbobs:block/sapphire_pressure_plate"
+    },
+    "powered=true": {
+      "model": "mhm_bitsnbobs:block/sapphire_pressure_plate_down"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "mhm_bitsnbobs:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/creeper"
+    },
+    {
+      "chance": 0.1,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "mhm_bitsnbobs:pine_cone",
+  "quantity": 1
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:white_wool"
+  },
+  "base": {
+    "item": "minecraft:diamond"
+  },
+  "result": {
+    "item": "minecraft:sheep_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

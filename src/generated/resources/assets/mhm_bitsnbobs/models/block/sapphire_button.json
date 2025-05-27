@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "mhm_bitsnbobs:block/sapphire_block"
+  }
+}

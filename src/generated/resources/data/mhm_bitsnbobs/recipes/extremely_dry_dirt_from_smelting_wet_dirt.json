@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 1800,
+  "experience": 0.1,
+  "group": "dirt",
+  "ingredient": {
+    "item": "mhm_bitsnbobs:wet_dirt"
+  },
+  "result": "mhm_bitsnbobs:extremely_dry_dirt"
+}

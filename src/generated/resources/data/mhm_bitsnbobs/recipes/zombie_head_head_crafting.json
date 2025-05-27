@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "forge:heads"
+    },
+    "I": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:skullkery_tool"
+    },
+    "U": {
+      "item": "mhm_bitsnbobs:rotten_leather"
+    }
+  },
+  "pattern": [
+    "IUI",
+    "ISI",
+    "HHH"
+  ],
+  "result": {
+    "item": "minecraft:zombie_head"
+  },
+  "show_notification": true
+}

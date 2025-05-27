@@ -1,0 +1,18 @@
+{
+  "values": [
+    "mhm_bitsnbobs:sapphire_ore",
+    "mhm_bitsnbobs:deepslate_sapphire_ore",
+    "mhm_bitsnbobs:sapphire_block",
+    "mhm_bitsnbobs:raw_sapphire_block",
+    "mhm_bitsnbobs:sapphire_slab",
+    "mhm_bitsnbobs:sapphire_trapdoor",
+    "mhm_bitsnbobs:sapphire_door",
+    "mhm_bitsnbobs:sapphire_pressure_plate",
+    "mhm_bitsnbobs:sapphire_fence_gate",
+    "mhm_bitsnbobs:sapphire_fence",
+    "mhm_bitsnbobs:sapphire_stairs",
+    "mhm_bitsnbobs:compressed_dirt",
+    "mhm_bitsnbobs:resource_dirt_block",
+    "mhm_bitsnbobs:gem_polishing_station"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "alexscaves:sulfur_dust"
+    }
+  ],
+  "result": {
+    "item": "alexscaves:sulfur_cluster",
+    "count": 2
+  }
+}

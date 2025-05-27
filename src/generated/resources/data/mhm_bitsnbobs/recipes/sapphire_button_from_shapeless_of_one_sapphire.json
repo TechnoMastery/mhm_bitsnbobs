@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:sapphire"
+    }
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:sapphire_button"
+  }
+}

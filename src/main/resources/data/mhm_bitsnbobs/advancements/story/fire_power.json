@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "item": "mhm_bitsnbobs:fire_sword"
+    },
+    "title": {
+      "translate": "advancements.story.fire_power.title"
+    },
+    "description": {
+      "translate": "advancements.story.fire_power.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fire_power_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:fire_sword"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 5
+  },
+  "parent": "mhm_bitsnbobs:get_fire_diamond"
+}

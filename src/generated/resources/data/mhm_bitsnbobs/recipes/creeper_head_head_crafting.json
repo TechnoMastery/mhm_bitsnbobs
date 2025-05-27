@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "tag": "forge:heads"
+    },
+    "I": {
+      "item": "minecraft:gunpowder"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:skullkery_tool"
+    },
+    "U": {
+      "item": "minecraft:gunpowder"
+    }
+  },
+  "pattern": [
+    "IUI",
+    "ISI",
+    "HHH"
+  ],
+  "result": {
+    "item": "minecraft:creeper_head"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "number=up": {
+      "model": "mhm_bitsnbobs:block/dice_1"
+    },
+    "number=north": {
+      "model": "mhm_bitsnbobs:block/dice_2"
+    },
+    "number=east": {
+      "model": "mhm_bitsnbobs:block/dice_3"
+    },
+    "number=south": {
+      "model": "mhm_bitsnbobs:block/dice_5"
+    },
+    "number=west": {
+      "model": "mhm_bitsnbobs:block/dice_4"
+    },
+    "number=down": {
+      "model": "mhm_bitsnbobs:block/dice_6"
+    }
+  }
+}

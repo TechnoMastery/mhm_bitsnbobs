@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "mhm_bitsnbobs:block/sapphire_block"
+  }
+}

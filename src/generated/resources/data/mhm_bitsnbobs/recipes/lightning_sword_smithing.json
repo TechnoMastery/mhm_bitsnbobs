@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "mhm_bitsnbobs:super_charged_ingot"
+  },
+  "base": {
+    "item": "mhm_bitsnbobs:alloyed_sword"
+  },
+  "result": {
+    "item": "mhm_bitsnbobs:lightning_sword"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:lightning_upgrade"
+  }
+}

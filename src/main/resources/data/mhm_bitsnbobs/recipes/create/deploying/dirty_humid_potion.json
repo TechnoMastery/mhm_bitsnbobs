@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:empty_big_flask"
+    },
+    {
+      "item": "mhm_bitsnbobs:wet_dirt"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:dirty_humid_potion"
+    }
+  ]
+}

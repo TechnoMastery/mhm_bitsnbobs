@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "base": {
+    "item": "minecraft:villager_spawn_egg"
+  },
+  "result": {
+    "item": "minecraft:zombie_villager_spawn_egg"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_egg"
+  }
+}

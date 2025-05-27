@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:slime_ball"
+    },
+    {
+      "item": "mhm_bitsnbobs:hardened_ingot"
+    }
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:slimy_ingot"
+  }
+}

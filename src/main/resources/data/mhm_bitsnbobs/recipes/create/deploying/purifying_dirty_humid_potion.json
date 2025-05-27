@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:dirty_humid_potion"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:humid_potion"
+    }
+  ]
+}

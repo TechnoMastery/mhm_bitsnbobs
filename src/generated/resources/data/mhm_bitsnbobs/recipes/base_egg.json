@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "item": "mhm_bitsnbobs:hardened_ingot"
+    },
+    "I": {
+      "tag": "forge:ingots"
+    }
+  },
+  "pattern": [
+    " H ",
+    "HIH",
+    " H "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:base_egg"
+  },
+  "show_notification": true
+}
