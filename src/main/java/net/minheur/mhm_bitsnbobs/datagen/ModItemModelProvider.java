@@ -98,11 +98,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BASE_OF_DISC);
 
         quantumCoreItem(ModItems.QUANTUM_CORE);
-        quantumCoreItem(ModItems.QUANTUM_CORE_1);
-        quantumCoreItem(ModItems.QUANTUM_CORE_2);
-        quantumCoreItem(ModItems.QUANTUM_CORE_3);
-        quantumCoreItem(ModItems.QUANTUM_CORE_4);
-        quantumCoreItem(ModItems.QUANTUM_CORE_5);
+        quantumCoreItem(ModItems.UNPROCESSED_QUANTUM_CORE);
 
         simpleItem(ModItems.IRON_CATALYZER);
         simpleItem(ModItems.WIND_CHARGED_CATALYZER);

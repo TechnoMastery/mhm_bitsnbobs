@@ -59,18 +59,141 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> QUANTUM_CORE = ITEMS.register("quantum_core",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 0));
-    public static final RegistryObject<Item> QUANTUM_CORE_1 = ITEMS.register("quantum_core_1",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 1));
-    public static final RegistryObject<Item> QUANTUM_CORE_2 = ITEMS.register("quantum_core_2",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 2));
-    public static final RegistryObject<Item> QUANTUM_CORE_3 = ITEMS.register("quantum_core_3",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 3));
-    public static final RegistryObject<Item> QUANTUM_CORE_4 = ITEMS.register("quantum_core_4",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 4));
-    public static final RegistryObject<Item> QUANTUM_CORE_5 = ITEMS.register("quantum_core_5",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1), 5));
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> UNPROCESSED_QUANTUM_CORE = ITEMS.register("unprocessed_quantum_core",
+            () -> new Item(new Item.Properties().stacksTo(1)));
 
+    /*
+        {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
+    },
+    {
+      "type": "mhm_bitsnbobs:incubating",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "catalyzer": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:iron_catalyzer"
+      },
+      "output": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
+    },
+    {
+      "type": "mhm_bitsnbobs:incubating",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "catalyzer": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:gold_catalyzer"
+      },
+      "output": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
+    },
+    {
+      "type": "mhm_bitsnbobs:incubating",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "catalyzer": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:diamond_catalyzer"
+      },
+      "output": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
+    },
+    {
+      "type": "mhm_bitsnbobs:incubating",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "catalyzer": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:netherite_catalyzer"
+      },
+      "output": {
+        "count": 1,
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
+    },
+     */
 
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));
