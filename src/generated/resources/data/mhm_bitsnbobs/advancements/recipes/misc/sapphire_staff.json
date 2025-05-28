@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_creative_ingot": {
+    "has_sapphire": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:creative_ingot"
+              "mhm_bitsnbobs:sapphire"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:base_egg"
+        "recipe": "mhm_bitsnbobs:sapphire_staff"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_creative_ingot",
+      "has_sapphire",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:base_egg"
+      "mhm_bitsnbobs:sapphire_staff"
     ]
   },
   "sends_telemetry_event": false

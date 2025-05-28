@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "mhm_bitsnbobs:storm_fragment"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:sapphire"
+    }
+  },
+  "pattern": [
+    "G",
+    "S",
+    "S"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:sapphire_staff"
+  },
+  "show_notification": true
+}

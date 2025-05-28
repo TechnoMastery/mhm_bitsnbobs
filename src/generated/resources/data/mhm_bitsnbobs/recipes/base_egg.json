@@ -2,19 +2,23 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "H": {
-      "item": "mhm_bitsnbobs:hardened_ingot"
+    "D": {
+      "item": "minecraft:diamond"
     },
     "I": {
-      "tag": "forge:ingots"
+      "item": "mhm_bitsnbobs:creative_ingot"
+    },
+    "X": {
+      "item": "minecraft:experience_bottle"
     }
   },
   "pattern": [
-    " H ",
-    "HIH",
-    " H "
+    "XIX",
+    "IDI",
+    "XIX"
   ],
   "result": {
+    "count": 4,
     "item": "mhm_bitsnbobs:base_egg"
   },
   "show_notification": true
