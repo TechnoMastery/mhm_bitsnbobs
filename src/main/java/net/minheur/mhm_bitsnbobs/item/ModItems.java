@@ -59,11 +59,11 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> QUANTUM_CORE = ITEMS.register("quantum_core",
-            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1)));
+            () -> new QuantumCoreItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> UNPROCESSED_QUANTUM_CORE = ITEMS.register("unprocessed_quantum_core",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> STABILIZED_QUANTUM_CORE = ITEMS.register("stabilized_quantum_core",
-            () -> new StabilizedQuantumCoreItem(new Item.Properties().stacksTo(1)));
+            () -> new StabilizedQuantumCoreItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));
@@ -158,7 +158,7 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> QUANTUM_STAFF = ITEMS.register("quantum_staff",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> WIND_STICK = ITEMS.register("wind_stick",
             () -> new WindStickItem(new Item.Properties().stacksTo(1)));
 
