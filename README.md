@@ -1,8 +1,16 @@
 This is a mod from Min_heur2000 called MinheurModding Bits'n'Bobs (or mhm_bitsnbobs).
 Here is the dev workspace :
-If you want to help, please refers to CONTRIBUTING.md
+If you want to help, please refer to CONTRIBUTING.md
 
-I am actually french. If you are too, or you want to talk with us, join our discord :
+I am actually French ! If you are too, or you want to talk with us, join our discord :
 https://discord.gg/sWg385fNdZ
 
 Check out their job in their branchs !
+
+I want to give a big thanks to my friends that participated to the project :
+XaQorix
+Catoutou
+Benny
+Exio2fk
+
+And also to Kaupenjoe for his amazing tutorial series that helped me create this project. 
