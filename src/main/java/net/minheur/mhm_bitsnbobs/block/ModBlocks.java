@@ -71,7 +71,7 @@ public class ModBlocks {
 
     // teleporters
     public static final RegistryObject<Block> MOD_DEEP_PORTAL = registerBlock("mod_deep_portal",
-            () -> new ModDeepPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().noCollission().noLootTable()));
+            () -> new ModDeepPortalBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
 
     // saplings
     public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
