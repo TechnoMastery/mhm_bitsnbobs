@@ -157,6 +157,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> QUANTUM_STAFF = ITEMS.register("quantum_staff",
+            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> WIND_STICK = ITEMS.register("wind_stick",
             () -> new WindStickItem(new Item.Properties().stacksTo(1)));
 

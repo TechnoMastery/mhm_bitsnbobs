@@ -199,6 +199,10 @@
   "advancements.ae2.singularity.description": "It's sounds like nothing like that... But no.",
   "advancements.ae2.quantum_core.title": "A quantum core",
   "advancements.ae2.quantum_core.description": "You definitely shouldn't play with that.",
+  "advancements.ae2.stabilized_quantum_core.title": "A stabilized quantum core",
+  "advancements.ae2.stabilized_quantum_core.description": "You REALLY shouldn't play with that. Are hearing me ??",
+  "advancements.ae2.quantum_staff.title": "A staff",
+  "advancements.ae2.quantum_staff.description": "Cosmetic for the moment. But you should keep it.",
 
   "advancements.story.fire_diamond_get.title": "Fire-full",
   "advancements.story.fire_diamond_get.description": "And strong like a diamond :)",

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "Q": {
+      "item": "mhm_bitsnbobs:stabilized_quantum_core"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:sapphire"
+    }
+  },
+  "pattern": [
+    " Q ",
+    "SCS",
+    "SCS"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:quantum_staff"
+  },
+  "show_notification": true
+}
