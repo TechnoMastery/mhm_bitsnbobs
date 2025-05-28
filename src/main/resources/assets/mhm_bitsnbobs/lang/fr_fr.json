@@ -53,6 +53,7 @@
   "item.mhm_bitsnbobs.resource_dirt": "Terre de ressources",
   "item.mhm_bitsnbobs.quantum_core": "Coeur quantique",
   "item.mhm_bitsnbobs.unprocessed_quantum_core": "Coeur quantique non terminé",
+  "item.mhm_bitsnbobs.stabilized_quantum_core": "Coeur quantique stabilisé",
   "item.mhm_bitsnbobs.tree_grower": "Arboriculteur",
   "item.mhm_bitsnbobs.yeast": "Levure",
   "item.mhm_bitsnbobs.devil_bread": "Pain de démon",
@@ -230,7 +231,8 @@
   "advancements.creative.creative_package.title": "Paquet créatif",
   "advancements.creative.creative_package.description": "Wow ! Comment ?",
 
-  "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minéraux sous terre",
+  "tooltip.mhm_bitsnbobs.stabilized_quantum_core.tooltip": "Un objet désormait stable. Avancez lentement afin de ne pas le réveiller.",
+  "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Trouve des minerais sous terre",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Clic droit pour utiliser",
   "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "Un objet vide et inutile. Utiliser les crafts pour le remplir",
   "tooltip.mhm_bitsnbobs.alloyed_sword.tooltip": "Inutile comme sa, mais nécessaire pour fabriquer la mailleur épée !",

@@ -53,6 +53,7 @@
   "item.mhm_bitsnbobs.resource_dirt": "Resource dirt",
   "item.mhm_bitsnbobs.quantum_core": "Quantum core",
   "item.mhm_bitsnbobs.unprocessed_quantum_core": "Unprocessed quantum core",
+  "item.mhm_bitsnbobs.stabilized_quantum_core": "Stabilized quantum core",
   "item.mhm_bitsnbobs.tree_grower": "Tree grower",
   "item.mhm_bitsnbobs.yeast": "Yeast",
   "item.mhm_bitsnbobs.devil_bread": "Devil bread",
@@ -230,6 +231,7 @@
   "advancements.creative.creative_package.title": "Creative package",
   "advancements.creative.creative_package.description": "Wow ! How ?",
 
+  "tooltip.mhm_bitsnbobs.stabilized_quantum_core.tooltip": "An item now stable. Walk slow, or you'll awake it !",
   "tooltip.mhm_bitsnbobs.metal_detector.tooltip": "Finds minerals underground",
   "tooltip.mhm_bitsnbobs.runes.tooltip": "Right click to use",
   "tooltip.mhm_bitsnbobs.empty_rune.tooltip": "An empty and useless item. Use in crafts to fill it.",
