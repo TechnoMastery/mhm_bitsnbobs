@@ -56,9 +56,9 @@ public class MhmBitsnbobs
     private static final Logger LOGGER = LogUtils.getLogger();
 
     /// Ici donc on vient utiliser la méthode register à chaque fois pour les fichiers ayant une DeferredRegister
-    public MhmBitsnbobs(FMLJavaModLoadingContext context)
+    public MhmBitsnbobs() // FMLJavaModLoadingContext context
     {
-        IEventBus modEventBus = context.getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModCreativeModTabs.register(modEventBus);
 
