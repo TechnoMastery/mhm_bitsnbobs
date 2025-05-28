@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hardened_ingot": {
+    "has_creative_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:hardened_ingot"
+              "mhm_bitsnbobs:creative_ingot"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_hardened_ingot",
+      "has_creative_ingot",
       "has_the_recipe"
     ]
   ],
