@@ -131,7 +131,6 @@
   "block.mhm_bitsnbobs.dark_planks": "Planches sombre",
   "block.mhm_bitsnbobs.dark_leaves": "Feuillages sombre",
   "block.mhm_bitsnbobs.dice_block": "Dé",
-  "block.mhm_bitsnbobs.mod_deep_portal": "Portail sombre",
   "block.mhm_bitsnbobs.rubis_ore": "Minerais de rubis",
 
   "block.mhm_bitsnbobs.dark_sapling": "Pousse d'arbre sombre",
@@ -217,8 +216,6 @@
   "advancements.story.hardened_ingot.title": "Lingot puissant",
   "advancements.story.hardened_ingot.description": "Et pas très utile. xD",
 
-  "advancements.adventure.enter_deep.title": "Entrez dans la dimension sombre",
-  "advancements.adventure.enter_deep.description": "Pas de bruits autorisés ici",
   "advancements.adventure.get_super_charged_ingot.title": "Lingot le plus puissant du monde",
   "advancements.adventure.get_super_charged_ingot.description": "Le super chargé",
   "advancements.adventure.get_lightning_upgrade.title": "L'amélioration pour netherite",

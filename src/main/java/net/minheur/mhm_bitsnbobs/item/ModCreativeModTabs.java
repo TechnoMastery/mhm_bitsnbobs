@@ -85,7 +85,6 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.DARK_BOAT.get());
                         output.accept(ModItems.DARK_CHEST_BOAT.get());
                         output.accept(ModBlocks.DARK_SAPLING.get());
-                        output.accept(ModBlocks.MOD_DEEP_PORTAL.get());
                         output.accept(ModItems.WIND_CHARGED_INGOT.get());
                         output.accept(ModItems.QUANTUM_CORE.get());
                         output.accept(ModItems.STABILIZED_QUANTUM_CORE.get());

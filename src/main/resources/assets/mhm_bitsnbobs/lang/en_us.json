@@ -131,7 +131,6 @@
   "block.mhm_bitsnbobs.dark_planks": "Dark planks",
   "block.mhm_bitsnbobs.dark_leaves": "Dark leaves",
   "block.mhm_bitsnbobs.dice_block": "Dice",
-  "block.mhm_bitsnbobs.mod_deep_portal": "Deep portal",
   "block.mhm_bitsnbobs.rubis_ore": "Rubis ore",
 
   "block.mhm_bitsnbobs.dark_sapling": "Dark sapling",
@@ -217,8 +216,6 @@
   "advancements.story.hardened_ingot.title": "A powerful ingot",
   "advancements.story.hardened_ingot.description": "But not very useful...",
 
-  "advancements.adventure.enter_deep.title": "Enter the deep dimension",
-  "advancements.adventure.enter_deep.description": "No noises allowed there",
   "advancements.adventure.get_super_charged_ingot.title": "Most powerful ingot in the world",
   "advancements.adventure.get_super_charged_ingot.description": "The Super Charged one",
   "advancements.adventure.get_lightning_upgrade.title": "The upgrade for netherite",

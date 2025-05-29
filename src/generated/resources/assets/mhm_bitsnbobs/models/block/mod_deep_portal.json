@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "mhm_bitsnbobs:block/mod_deep_portal"
-  }
-}

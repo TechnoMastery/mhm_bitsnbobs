@@ -6,7 +6,6 @@ import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
-import net.minheur.mhm_bitsnbobs.worldgen.biome.ModBiomes;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;

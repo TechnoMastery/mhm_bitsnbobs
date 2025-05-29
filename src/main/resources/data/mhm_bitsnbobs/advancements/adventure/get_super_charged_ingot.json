@@ -28,5 +28,5 @@
       }
     }
   },
-  "parent": "mhm_bitsnbobs:adventure/enter_deep_dimension"
+  "parent": "minecraft:adventure/avoid_vibration"
 }

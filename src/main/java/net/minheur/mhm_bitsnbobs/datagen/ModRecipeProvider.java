@@ -279,17 +279,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Blocks.STONE), has(Blocks.STONE))
                 .save(pWriter);
 
-        // deep portal
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MOD_DEEP_PORTAL.get())
-                .pattern("DGD")
-                .pattern("GSG")
-                .pattern("DGD")
-                .define('D', ModItems.DIAMOND_BALL.get())
-                .define('G', ModItems.GOLD_BALL.get())
-                .define('S', Blocks.DIAMOND_BLOCK)
-                .unlockedBy(getHasName(Blocks.DIAMOND_BLOCK), has(Blocks.DIAMOND_BLOCK))
-                .save(pWriter);
-
         // dirt
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.DIRT)
                 .pattern(" G ")
