@@ -2,6 +2,18 @@
   "values": [
     "mhm_bitsnbobs:bar_brawl_music_disc",
     "mhm_bitsnbobs:dark_soul_music_disc",
-    "mhm_bitsnbobs:end_of_the_start_music_disc"
+    "mhm_bitsnbobs:end_of_the_start_music_disc",
+    "mhm_bitsnbobs:ballad_of_the_blocks_music_disc",
+    "mhm_bitsnbobs:block_by_block_music_disc",
+    "mhm_bitsnbobs:cubic_groove_music_disc",
+    "mhm_bitsnbobs:in_the_world_of_minecraft_music_disc",
+    "mhm_bitsnbobs:in_the_block_music_disc",
+    "mhm_bitsnbobs:the_world_of_cubes_music_disc",
+    "mhm_bitsnbobs:legends_awaken_v1_music_disc",
+    "mhm_bitsnbobs:legends_awaken_v2_music_disc",
+    "mhm_bitsnbobs:my_minecraft_world_music_disc",
+    "mhm_bitsnbobs:nether_nights_music_disc",
+    "mhm_bitsnbobs:redstone_pulse_music_disc",
+    "mhm_bitsnbobs:serene_echo_music_disc"
   ]
 }

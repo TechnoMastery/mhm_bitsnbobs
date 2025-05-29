@@ -71,6 +71,7 @@ public class ModCreativeModTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.BASE_OF_DISC.get());
                         output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
+                        output.accept(ModItems.DARK_SOUL_MUSIC_DISC.get());
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
                         output.accept(ModItems.BALLAD_OF_THE_BLOCKS_MUSIC_DISC.get());
                         output.accept(ModItems.BLOCK_BY_BLOCK_MUSIC_DISC.get());
