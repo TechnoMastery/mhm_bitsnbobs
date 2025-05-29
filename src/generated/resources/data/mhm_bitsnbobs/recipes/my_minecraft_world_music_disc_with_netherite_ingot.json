@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "mhm_bitsnbobs:basedisk"
+    },
+    "S": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "X": {
+      "item": "mhm_bitsnbobs:storm_fragment"
+    }
+  },
+  "pattern": [
+    "XSX",
+    "SBS",
+    "XSX"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:my_minecraft_world_music_disc"
+  },
+  "show_notification": true
+}

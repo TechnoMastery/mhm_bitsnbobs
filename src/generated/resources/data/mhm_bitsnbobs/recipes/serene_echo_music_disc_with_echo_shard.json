@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "mhm_bitsnbobs:basedisk"
+    },
+    "S": {
+      "item": "minecraft:echo_shard"
+    },
+    "X": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "XSX",
+    "SBS",
+    "XSX"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:serene_echo_music_disc"
+  },
+  "show_notification": true
+}

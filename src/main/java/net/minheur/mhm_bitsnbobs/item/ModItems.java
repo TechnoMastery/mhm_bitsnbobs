@@ -182,6 +182,31 @@ public class ModItems {
     public static final RegistryObject<Item> END_OF_THE_START_MUSIC_DISC = ITEMS.register("end_of_the_start_music_disc",
             () -> new RecordItem(6, ModSounds.END_OF_THE_START, new Item.Properties().rarity(Rarity.EPIC).stacksTo(1), 2680));
 
+    public static final RegistryObject<Item> BALLAD_OF_THE_BLOCKS_MUSIC_DISC = ITEMS.register("ballad_of_the_blocks_music_disc",
+            () -> new RecordItem(6, ModSounds.BALLAD_OF_THE_BLOCKS, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 2380));
+    public static final RegistryObject<Item> BLOCK_BY_BLOCK_MUSIC_DISC = ITEMS.register("block_by_block_music_disc",
+            () -> new RecordItem(6, ModSounds.BLOCK_BY_BLOCK, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3120));
+    public static final RegistryObject<Item> CUBIC_GROOVE_MUSIC_DISC = ITEMS.register("cubic_groove_music_disc",
+            () -> new RecordItem(6, ModSounds.CUBIC_GROOVE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3100));
+    public static final RegistryObject<Item> IN_THE_WORLD_OF_MINECRAFT_MUSIC_DISC = ITEMS.register("in_the_world_of_minecraft_music_disc",
+            () -> new RecordItem(6, ModSounds.IN_THE_WORLD_OF_MINECRAFT, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 2440));
+    public static final RegistryObject<Item> IN_THE_BLOCK_MUSIC_DISC = ITEMS.register("in_the_block_music_disc",
+            () -> new RecordItem(6, ModSounds.IN_THE_BLOCK, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3000));
+    public static final RegistryObject<Item> THE_WORLD_OF_CUBES_MUSIC_DISC = ITEMS.register("the_world_of_cubes_music_disc",
+            () -> new RecordItem(6, ModSounds.THE_WORLD_OF_CUBES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 2540));
+    public static final RegistryObject<Item> LEGENDS_AWAKEN_V1_MUSIC_DISC = ITEMS.register("legends_awaken_v1_music_disc",
+            () -> new RecordItem(6, ModSounds.LEGENDS_AWAKEN_V1, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 2360));
+    public static final RegistryObject<Item> LEGENDS_AWAKEN_V2_MUSIC_DISC = ITEMS.register("legends_awaken_v2_music_disc",
+            () -> new RecordItem(6, ModSounds.LEGENDS_AWAKEN_V2, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
+    public static final RegistryObject<Item> MY_MINECRAFT_WORLD_MUSIC_DISC = ITEMS.register("my_minecraft_world_music_disc",
+            () -> new RecordItem(6, ModSounds.MY_MINECRAFT_WORLD, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3920));
+    public static final RegistryObject<Item> NETHER_NIGHTS_MUSIC_DISC = ITEMS.register("nether_nights_music_disc",
+            () -> new RecordItem(6, ModSounds.NETHER_NIGHTS, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 2540));
+    public static final RegistryObject<Item> REDSTONE_PULSE_MUSIC_DISC = ITEMS.register("redstone_pulse_music_disc",
+            () -> new RecordItem(6, ModSounds.REDSTONE_PULSE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3080));
+    public static final RegistryObject<Item> SERENE_ECHO_MUSIC_DISC = ITEMS.register("serene_echo_music_disc",
+            () -> new RecordItem(6, ModSounds.SERENE_ECHO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4800));
+
     // fuel item
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
             () -> new FuelItem(new Item.Properties(), 400));

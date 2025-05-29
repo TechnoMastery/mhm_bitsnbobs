@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "mhm_bitsnbobs:basedisk"
+    },
+    "S": {
+      "item": "minecraft:dirt"
+    },
+    "X": {
+      "item": "minecraft:iron_boots"
+    }
+  },
+  "pattern": [
+    "XSX",
+    "SBS",
+    "XSX"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:ballad_of_the_blocks_music_disc"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "mhm_bitsnbobs:basedisk"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:wet_dirt"
+    },
+    "X": {
+      "item": "mhm_bitsnbobs:sapphire"
+    }
+  },
+  "pattern": [
+    "XSX",
+    "SBS",
+    "XSX"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:the_world_of_cubes_music_disc"
+  },
+  "show_notification": true
+}

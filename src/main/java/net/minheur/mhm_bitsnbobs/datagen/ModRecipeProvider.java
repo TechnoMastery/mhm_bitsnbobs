@@ -5,6 +5,7 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.fml.common.Mod;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
@@ -124,6 +126,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleDiscCrafting(pWriter, ModItems.DARK_SOUL_MUSIC_DISC.get(), Items.ECHO_SHARD);
         simpleDiscCrafting(pWriter, ModItems.END_OF_THE_START_MUSIC_DISC.get(), ModItems.HARDENED_INGOT.get());
         simpleDiscCrafting(pWriter, ModItems.BAR_BRAWL_MUSIC_DISC.get(), ModItems.SAPPHIRE.get());
+        advancedDiscCrafting(pWriter, ModItems.BALLAD_OF_THE_BLOCKS_MUSIC_DISC.get(), Items.DIRT, Items.IRON_BOOTS);
+        advancedDiscCrafting(pWriter, ModItems.BLOCK_BY_BLOCK_MUSIC_DISC.get(), Items.DIRT, Items.COBBLESTONE);
+        simpleDiscCrafting(pWriter, ModItems.CUBIC_GROOVE_MUSIC_DISC.get(), Items.SCULK_CATALYST);
+        advancedDiscCrafting(pWriter, ModItems.IN_THE_WORLD_OF_MINECRAFT_MUSIC_DISC.get(), Items.OBSIDIAN, Items.ENDER_EYE);
+        advancedDiscCrafting(pWriter, ModItems.IN_THE_BLOCK_MUSIC_DISC.get(), ModItems.PINE_CONE.get(), ModItems.WIND_CHARGED_INGOT.get());
+        advancedDiscCrafting(pWriter, ModItems.THE_WORLD_OF_CUBES_MUSIC_DISC.get(), ModItems.WET_DIRT.get(), ModItems.SAPPHIRE.get());
+        advancedDiscCrafting(pWriter, ModItems.LEGENDS_AWAKEN_V1_MUSIC_DISC.get(), Items.GOLD_INGOT, ModItems.QUANTUM_CORE.get());
+        simpleSmithing(pWriter, ModItems.BASE_OF_DISC.get(), ModItems.LEGENDS_AWAKEN_V1_MUSIC_DISC.get(), ModItems.CREATIVE_ESSENCE.get(), RecipeCategory.MISC, ModItems.LEGENDS_AWAKEN_V2_MUSIC_DISC.get());
+        advancedDiscCrafting(pWriter, ModItems.MY_MINECRAFT_WORLD_MUSIC_DISC.get(), Items.NETHERITE_INGOT, ModItems.STORM_FRAGMENT.get());
+        advancedDiscCrafting(pWriter, ModItems.NETHER_NIGHTS_MUSIC_DISC.get(), Items.NETHERRACK, Items.NETHER_GOLD_ORE);
+        advancedDiscCrafting(pWriter, ModItems.REDSTONE_PULSE_MUSIC_DISC.get(), Items.REDSTONE_BLOCK, Items.FIRE_CHARGE);
+        advancedDiscCrafting(pWriter, ModItems.SERENE_ECHO_MUSIC_DISC.get(), Items.ECHO_SHARD, Items.DIAMOND);
 
         // simple smithing
         // eggs
@@ -552,6 +566,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("SBS")
                 .pattern(" S ")
                 .define('S', discIngredient)
+                .define('B', ModTags.Items.BASEDISK)
+                .unlockedBy(getHasName(discIngredient), has(discIngredient))
+                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(resultDisc) + "_with_" + getItemName(discIngredient));
+    }
+    protected static void advancedDiscCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item resultDisc, ItemLike discIngredient, ItemLike discAddition) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, resultDisc)
+                .pattern("XSX")
+                .pattern("SBS")
+                .pattern("XSX")
+                .define('S', discIngredient)
+                .define('X', discAddition)
                 .define('B', ModTags.Items.BASEDISK)
                 .unlockedBy(getHasName(discIngredient), has(discIngredient))
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(resultDisc) + "_with_" + getItemName(discIngredient));

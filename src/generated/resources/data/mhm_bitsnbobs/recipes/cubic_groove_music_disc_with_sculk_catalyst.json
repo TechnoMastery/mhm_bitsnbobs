@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "mhm_bitsnbobs:basedisk"
+    },
+    "S": {
+      "item": "minecraft:sculk_catalyst"
+    }
+  },
+  "pattern": [
+    " S ",
+    "SBS",
+    " S "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:cubic_groove_music_disc"
+  },
+  "show_notification": true
+}

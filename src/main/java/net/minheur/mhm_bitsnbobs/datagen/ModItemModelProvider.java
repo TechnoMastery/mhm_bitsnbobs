@@ -55,7 +55,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.WET_DIRT);
         simpleItem(ModItems.PIECE_OF_DIRT);
         simpleItem(ModItems.HARDENED_INGOT);
-        simpleItem(ModItems.BASE_EGG);
         simpleItem(ModItems.SPAWNER_PART);
         simpleItem(ModItems.CREATIVE_ESSENCE);
         simpleItem(ModItems.CREATIVE_NUGGET);
@@ -95,7 +94,26 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DARK_CHEST_BOAT);
         simpleItem(ModItems.SLIMY_INGOT);
         simpleItem(ModItems.SLIMY_STICK);
-        simpleItem(ModItems.BASE_OF_DISC);
+        simpleItem(ModItems.BASE_EGG);
+
+        // base
+        discItem(ModItems.BASE_OF_DISC);
+        // discs → simpleItem si personalisé / discItem sinon
+        discItem(ModItems.BALLAD_OF_THE_BLOCKS_MUSIC_DISC);
+        discItem(ModItems.BLOCK_BY_BLOCK_MUSIC_DISC);
+        discItem(ModItems.CUBIC_GROOVE_MUSIC_DISC);
+        discItem(ModItems.IN_THE_WORLD_OF_MINECRAFT_MUSIC_DISC);
+        discItem(ModItems.IN_THE_BLOCK_MUSIC_DISC);
+        discItem(ModItems.THE_WORLD_OF_CUBES_MUSIC_DISC);
+        discItem(ModItems.LEGENDS_AWAKEN_V1_MUSIC_DISC);
+        discItem(ModItems.LEGENDS_AWAKEN_V2_MUSIC_DISC);
+        discItem(ModItems.MY_MINECRAFT_WORLD_MUSIC_DISC);
+        discItem(ModItems.NETHER_NIGHTS_MUSIC_DISC);
+        discItem(ModItems.REDSTONE_PULSE_MUSIC_DISC);
+        discItem(ModItems.SERENE_ECHO_MUSIC_DISC);
+        simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
+        simpleItem(ModItems.DARK_SOUL_MUSIC_DISC);
+        simpleItem(ModItems.END_OF_THE_START_MUSIC_DISC);
 
         quantumCoreItem(ModItems.QUANTUM_CORE);
         quantumCoreItem(ModItems.UNPROCESSED_QUANTUM_CORE);
@@ -115,10 +133,6 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleItem(ModItems.STRAWBERRY_SEEDS);
         simpleItem(ModItems.CORN_SEEDS);
-
-        simpleItem(ModItems.BAR_BRAWL_MUSIC_DISC);
-        simpleItem(ModItems.DARK_SOUL_MUSIC_DISC);
-        simpleItem(ModItems.END_OF_THE_START_MUSIC_DISC);
 
         simpleItem(ModItems.METAL_DETECTOR);
 
@@ -242,6 +256,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/rune"));
+    }
+
+    private ItemModelBuilder discItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/base_of_disc"));
     }
 
     public void eventSimplerBlockItem(RegistryObject<Block> block) {

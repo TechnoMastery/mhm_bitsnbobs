@@ -61,5 +61,114 @@
         "stream": true
       }
     ]
+  },
+
+  "ballad_of_the_blocks": {
+    "subtitle": "sounds.mhm_bitsnbobs.ballad_of_the_blocks",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:ballad_of_the_blocks",
+        "stream": true
+      }
+    ]
+  },
+  "block_by_block": {
+    "subtitle": "sounds.mhm_bitsnbobs.block_by_block",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:block_by_block",
+        "stream": true
+      }
+    ]
+  },
+  "cubic_groove": {
+    "subtitle": "sounds.mhm_bitsnbobs.cubic_groove",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:cubic_groove",
+        "stream": true
+      }
+    ]
+  },
+  "in_the_world_of_minecraft": {
+    "subtitle": "sounds.mhm_bitsnbobs.in_the_world_of_minecraft",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:dans_le_monde_minecraft",
+        "stream": true
+      }
+    ]
+  },
+  "in_the_block": {
+    "subtitle": "sounds.mhm_bitsnbobs.in_the_block",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:in_the_block",
+        "stream": true
+      }
+    ]
+  },
+  "the_world_of_cubes": {
+    "subtitle": "sounds.mhm_bitsnbobs.the_world_of_cubes",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:le_monde_des_cubes",
+        "stream": true
+      }
+    ]
+  },
+  "legends_awaken_v1": {
+    "subtitle": "sounds.mhm_bitsnbobs.legends_awaken_v1",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:legends_awaken_v1",
+        "stream": true
+      }
+    ]
+  },
+  "legends_awaken_v2": {
+    "subtitle": "sounds.mhm_bitsnbobs.legends_awaken_v2",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:legends_awaken_v2",
+        "stream": true
+      }
+    ]
+  },
+  "my_minecraft_world": {
+    "subtitle": "sounds.mhm_bitsnbobs.my_minecraft_world",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:mon_monde_minecraft",
+        "stream": true
+      }
+    ]
+  },
+  "nether_nights": {
+    "subtitle": "sounds.mhm_bitsnbobs.nether_nights",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:nether_nights",
+        "stream": true
+      }
+    ]
+  },
+  "redstone_pulse": {
+    "subtitle": "sounds.mhm_bitsnbobs.redstone_pulse",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:redstone_pulse",
+        "stream": true
+      }
+    ]
+  },
+  "serene_echo": {
+    "subtitle": "sounds.mhm_bitsnbobs.serene_echo",
+    "sounds": [
+      {
+        "name": "mhm_bitsnbobs:serene_echo",
+        "stream": true
+      }
+    ]
   }
 }

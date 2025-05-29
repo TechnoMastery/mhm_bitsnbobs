@@ -65,14 +65,33 @@ public class ModCreativeModTabs {
                     })
                     .build());
 
+    public static final RegistryObject<CreativeModeTab> MUSIC_DISCS = CREATIVE_MODE_TABS.register("discs",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BASE_OF_DISC.get()))
+                    .title(Component.translatable("creativetab.discs"))
+                    .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.BASE_OF_DISC.get());
+                        output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
+                        output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+                        output.accept(ModItems.BALLAD_OF_THE_BLOCKS_MUSIC_DISC.get());
+                        output.accept(ModItems.BLOCK_BY_BLOCK_MUSIC_DISC.get());
+                        output.accept(ModItems.CUBIC_GROOVE_MUSIC_DISC.get());
+                        output.accept(ModItems.IN_THE_WORLD_OF_MINECRAFT_MUSIC_DISC.get());
+                        output.accept(ModItems.IN_THE_BLOCK_MUSIC_DISC.get());
+                        output.accept(ModItems.THE_WORLD_OF_CUBES_MUSIC_DISC.get());
+                        output.accept(ModItems.LEGENDS_AWAKEN_V1_MUSIC_DISC.get());
+                        output.accept(ModItems.LEGENDS_AWAKEN_V2_MUSIC_DISC.get());
+                        output.accept(ModItems.MY_MINECRAFT_WORLD_MUSIC_DISC.get());
+                        output.accept(ModItems.NETHER_NIGHTS_MUSIC_DISC.get());
+                        output.accept(ModItems.REDSTONE_PULSE_MUSIC_DISC.get());
+                        output.accept(ModItems.SERENE_ECHO_MUSIC_DISC.get());
+                    })
+                    .withSearchBar().build());
+
     public static final RegistryObject<CreativeModeTab> DARK_STORM = CREATIVE_MODE_TABS.register("dark_storm",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STORM_FRAGMENT.get()))
                     .title(Component.translatable("creativetab.dark_storm"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.STORM_FRAGMENT.get());
-                        output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
-                        output.accept(ModItems.DARK_SOUL_MUSIC_DISC.get());
-                        output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
                         output.accept(ModItems.HARDENED_INGOT.get());
                         output.accept(ModBlocks.DARK_LOG.get());
                         output.accept(ModBlocks.DARK_WOOD.get());

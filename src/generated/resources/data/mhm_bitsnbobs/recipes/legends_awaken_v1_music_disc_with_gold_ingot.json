@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "tag": "mhm_bitsnbobs:basedisk"
+    },
+    "S": {
+      "item": "minecraft:gold_ingot"
+    },
+    "X": {
+      "item": "mhm_bitsnbobs:quantum_core"
+    }
+  },
+  "pattern": [
+    "XSX",
+    "SBS",
+    "XSX"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:legends_awaken_v1_music_disc"
+  },
+  "show_notification": true
+}

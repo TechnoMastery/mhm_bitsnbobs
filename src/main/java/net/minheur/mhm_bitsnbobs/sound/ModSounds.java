@@ -30,6 +30,19 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> DARK_SOUL = registerSoundEvents("dark_soul");
     public static final RegistryObject<SoundEvent> END_OF_THE_START = registerSoundEvents("end_of_the_start");
 
+    public static final RegistryObject<SoundEvent> BALLAD_OF_THE_BLOCKS = registerSoundEvents("ballad_of_the_blocks");
+    public static final RegistryObject<SoundEvent> BLOCK_BY_BLOCK = registerSoundEvents("block_by_block");
+    public static final RegistryObject<SoundEvent> CUBIC_GROOVE = registerSoundEvents("cubic_groove");
+    public static final RegistryObject<SoundEvent> IN_THE_WORLD_OF_MINECRAFT = registerSoundEvents("in_the_world_of_minecraft");
+    public static final RegistryObject<SoundEvent> IN_THE_BLOCK = registerSoundEvents("in_the_block");
+    public static final RegistryObject<SoundEvent> THE_WORLD_OF_CUBES = registerSoundEvents("the_world_of_minecraft");
+    public static final RegistryObject<SoundEvent> LEGENDS_AWAKEN_V1 = registerSoundEvents("legends_awaken_v1");
+    public static final RegistryObject<SoundEvent> LEGENDS_AWAKEN_V2 = registerSoundEvents("legends_awaken_v2");
+    public static final RegistryObject<SoundEvent> MY_MINECRAFT_WORLD = registerSoundEvents("my_minecraft_world");
+    public static final RegistryObject<SoundEvent> NETHER_NIGHTS = registerSoundEvents("nether_nights");
+    public static final RegistryObject<SoundEvent> REDSTONE_PULSE = registerSoundEvents("redstone_pulse");
+    public static final RegistryObject<SoundEvent> SERENE_ECHO = registerSoundEvents("serene_echo");
+
     // Groupes de sons. ATTENTION l'ordre dans lequel les sons sont appelé est important
     public static final ForgeSoundType SOUND_BLOCK_SOUNDS = new ForgeSoundType(1f, 1f,
             ModSounds.SOUND_BLOCK_BREAK, ModSounds.SOUND_BLOCK_STEP, ModSounds.SOUND_BLOCK_PLACE,

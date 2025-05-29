@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "mhm_bitsnbobs:creative_essence"
+  },
+  "base": {
+    "item": "mhm_bitsnbobs:legends_awaken_v1_music_disc"
+  },
+  "result": {
+    "item": "mhm_bitsnbobs:legends_awaken_v2_music_disc"
+  },
+  "template": {
+    "item": "mhm_bitsnbobs:base_of_disc"
+  }
+}
