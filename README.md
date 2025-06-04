@@ -7,6 +7,8 @@ https://discord.gg/sWg385fNdZ
 
 Check out their job in their branchs !
 
+Full changelog : https://technomastery.github.io/TechnoWeb/pages/changelog-mod/
+
 I want to give a big thanks to my friends that participated to the project :
 XaQorix
 Catoutou
