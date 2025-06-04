@@ -52,7 +52,7 @@ public class ModItems {
     public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final RegistryObject<Item> CONTROLLED_PICKAXE = ITEMS. register("controlled_pickaxe",
-            () -> new CraftingRemaningItem(new Item.Properties().stacksTo(1).durability(32)));
+            () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(32)));
 
     // to see
     public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
@@ -131,7 +131,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TRANSFER_FLASK = ITEMS. register("transfer_flask",
-            () -> new CraftingRemaningItem(new Item.Properties()));
+            () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(1500)));
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> EMPTY_LITTLE_FLASK = ITEMS. register("empty_little_flask",

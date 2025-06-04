@@ -15,11 +15,6 @@ public class EmptyRuneItem extends Item {
     }
 
     @Override
-    public boolean isFoil(ItemStack pStack) {
-        return true;
-    }
-
-    @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.translatable("tooltip.mhm_bitsnbobs.empty_rune.tooltip"));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
