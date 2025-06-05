@@ -158,9 +158,9 @@ public class ModItems {
     public static final RegistryObject<Item> SAPPHIRE_STAFF = ITEMS.register("sapphire_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> QUANTUM_STAFF = ITEMS.register("quantum_staff",
-            () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+            () -> new QuantumStaffItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).durability(50000)));
     public static final RegistryObject<Item> WIND_STICK = ITEMS.register("wind_stick",
-            () -> new WindStickItem(new Item.Properties().stacksTo(1)));
+            () -> new WindStickItem(new Item.Properties().stacksTo(1).durability(600)));
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
             () -> new Item(new Item.Properties()));

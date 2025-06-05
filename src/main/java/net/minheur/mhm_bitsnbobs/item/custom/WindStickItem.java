@@ -2,13 +2,15 @@ package net.minheur.mhm_bitsnbobs.item.custom;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minheur.mhm_bitsnbobs.procedures.WindStickOnUse;
+import net.minheur.mhm_bitsnbobs.util.Utils;
 
 public class WindStickItem extends Item {
     public WindStickItem(Properties pProperties) {
@@ -27,7 +29,7 @@ public class WindStickItem extends Item {
 
     @Override
     public int getUseDuration(ItemStack pStack) {
-        return 60;
+        return 20;
     }
 
     @Override
@@ -38,12 +40,26 @@ public class WindStickItem extends Item {
     }
 
     @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        if (!((Player) pAttacker).getCooldowns().isOnCooldown(this)) {
+            pTarget.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 60, 4));
+            Utils.damageAndBreakItem(pStack);
+            ((Player) pAttacker).getCooldowns().addCooldown(this, 60);
+        }
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
+    }
+
+    @Override
     public ItemStack finishUsingItem(ItemStack pStack, Level pLevel, LivingEntity pLivingEntity) {
         ItemStack returnValue = super.finishUsingItem(pStack, pLevel, pLivingEntity);
         double x = pLivingEntity.getX();
         double y = pLivingEntity.getY();
         double z = pLivingEntity.getZ();
-        WindStickOnUse.execute(pLivingEntity);
+        if (!((Player) pLivingEntity).getCooldowns().isOnCooldown(this)) {
+            pLivingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 60, 4));
+            Utils.damageAndBreakItem(pStack);
+            ((Player) pLivingEntity).getCooldowns().addCooldown(this, 60);
+        }
         return returnValue;
     }
 }
