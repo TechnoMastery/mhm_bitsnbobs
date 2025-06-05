@@ -23,14 +23,14 @@ public class ModArmorItem extends ArmorItem {
         super(pMaterial, pType, pProperties);
     }
 
-    @Override
-    public void onArmorTick(ItemStack stack, Level world, Player player) {
-        if(!world.isClientSide()) {
-            if(hasFullSuitOfArmorOn(player)) {
-                evaluateArmorEffects(player);
-            }
-        }
-    }
+    // @Override
+    // public void onArmorTick(ItemStack stack, Level world, Player player) {
+    //     if(!world.isClientSide()) {
+    //         if(hasFullSuitOfArmorOn(player)) {
+    //             evaluateArmorEffects(player);
+    //         }
+    //     }
+    // }
 
     private void evaluateArmorEffects(Player player) {
         for(Map.Entry<ArmorMaterial, MobEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
