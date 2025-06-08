@@ -13,7 +13,7 @@ public class RunesExecuteEvents {
                 .withSuppressedOutput();
         String command = "give @s numismatics:spur 16";
         pPlayer.getServer().getCommands().performPrefixedCommand(source, command);
-        String command1 = "clear @s mhm_bitsnbobs:money_rune";
+        String command1 = "clear @s mhm_bitsnbobs:money_rune 1";
         pPlayer.getServer().getCommands().performPrefixedCommand(source, command1);
     }
     public static void executeXp(Entity pPlayer) {
