@@ -49,6 +49,14 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
         // sus sand
         add("storm_fragment_from_sus_sand", new AddSusSandItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("archaeology/desert_pyramid")).build()
-        }, ModItems.STORM_FRAGMENT.get(), 0.11f));
+        }, ModItems.STORM_FRAGMENT.get(), 0.22f));
+        add("storm_fragment_from_sus_sand_well", new AddSusSandItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("archaeology/desert_well")).build()
+        }, ModItems.STORM_FRAGMENT.get(), 0.22f));
+
+        add("storm_fragment_from_pyramid_chest", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("chests/desert_pyramid")).build(),
+                LootItemRandomChanceCondition.randomChance(4f).build()
+        }, ModItems.STORM_FRAGMENT.get(), 3));
     }
 }
