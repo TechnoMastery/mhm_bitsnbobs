@@ -1,16 +1,19 @@
 package net.minheur.mhm_bitsnbobs;
 
+import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
+import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.block.entity.ModBlockEntities;
+import net.minheur.mhm_bitsnbobs.commands.ModCommandsRegister;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
 import net.minheur.mhm_bitsnbobs.entity.client.ModBoatRenderer;
 import net.minheur.mhm_bitsnbobs.entity.client.RhinoRenderer;
@@ -82,6 +86,12 @@ public class MhmBitsnbobs
         MinecraftForge.EVENT_BUS.register(this);
         modEventBus.addListener(this::addCreative);
 
+        MinecraftForge.EVENT_BUS.addListener(this::onRegisterCommands);
+    }
+
+    private void onRegisterCommands(RegisterCommandsEvent event) {
+        CommandDispatcher<CommandSourceStack> dispatcher = event.getDispatcher();
+        ModCommandsRegister.registerCommands(dispatcher);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
