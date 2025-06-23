@@ -27,10 +27,13 @@ public class ModCommandsRegister {
                                 // .then → add arguments to the command
                                 .then(Commands.argument("text", StringArgumentType.greedyString())
                                         .executes(commandContext -> {
-                                            String input = StringArgumentType.getString(commandContext, "text");
+                                            String input = StringArgumentType.getString(commandContext, "text").toLowerCase();
                                             CommandSourceStack source = commandContext.getSource();
 
                                             String answer = RconInputHandler.analyzeText(input);
+                                            if (answer == null) {
+                                                return 1;
+                                            }
 
                                             source.sendSuccess(() -> Component.literal("[Bits'n'Bobs: Rcon] " + answer), false);
                                             return 1;
@@ -43,10 +46,13 @@ public class ModCommandsRegister {
                 Commands.literal("trcon")
                         .then(Commands.argument("text", StringArgumentType.greedyString())
                                 .executes(commandContext -> {
-                                    String input = StringArgumentType.getString(commandContext, "text");
+                                    String input = StringArgumentType.getString(commandContext, "text").toLowerCase();
                                     CommandSourceStack source = commandContext.getSource();
 
                                     String answer = RconInputHandler.analyzeText(input);
+                                    if (answer == null) {
+                                        return 1;
+                                    }
 
                                     source.sendSuccess(() -> Component.literal("[Bits'n'Bobs: Rcon] " + answer), false);
                                     return 1;

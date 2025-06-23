@@ -11,6 +11,7 @@ import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -140,6 +141,11 @@ public class ModEvents {
                 new ItemStack(Items.EMERALD, 24),
                 new ItemStack(ModItems.METAL_DETECTOR.get(), 1),
                 1, 2, 0.15f));
+    }
+
+    @SubscribeEvent
+    public static void onRegisterReloadListeners(AddReloadListenerEvent event) {
+        event.addListener(new RconKeywordLoader());
     }
 
 }
