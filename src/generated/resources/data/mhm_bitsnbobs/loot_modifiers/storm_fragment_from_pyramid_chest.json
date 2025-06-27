@@ -1,0 +1,15 @@
+{
+  "type": "mhm_bitsnbobs:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/desert_pyramid"
+    },
+    {
+      "chance": 4.0,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "mhm_bitsnbobs:storm_fragment",
+  "quantity": 3
+}

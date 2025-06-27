@@ -148,7 +148,6 @@ public class MhmBitsnbobs
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);
             event.accept(ModItems.FIRE_STICK);
-            event.accept(ModItems.TRANSFER_FLASK);
             event.accept(ModItems.EMPTY_BIG_FLASK);
             event.accept(ModItems.EMPTY_LITTLE_FLASK);
             event.accept(ModItems.HUMID_POTION);

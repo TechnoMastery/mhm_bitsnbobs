@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_empty_big_flask": {
+    "has_humid_potion": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:empty_big_flask"
+              "mhm_bitsnbobs:humid_potion"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:transfer_flask"
+        "recipe": "mhm_bitsnbobs:resource_dirt_from_shapeless_of_two_base_humid_potion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_empty_big_flask",
+      "has_humid_potion",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:transfer_flask"
+      "mhm_bitsnbobs:resource_dirt_from_shapeless_of_two_base_humid_potion"
     ]
   },
   "sends_telemetry_event": false

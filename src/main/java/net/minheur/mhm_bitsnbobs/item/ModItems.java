@@ -130,8 +130,6 @@ public class ModItems {
     public static final RegistryObject<Item> DIAMOND_BALL = ITEMS. register("diamond_ball",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> TRANSFER_FLASK = ITEMS. register("transfer_flask",
-            () -> new Item(new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> EMPTY_LITTLE_FLASK = ITEMS. register("empty_little_flask",

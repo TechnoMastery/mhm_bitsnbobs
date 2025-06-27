@@ -3,7 +3,7 @@
   "conditions": [
     {
       "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:archaeology/desert_pyramid"
+      "loot_table_id": "minecraft:archaeology/desert_well"
     }
   ],
   "item": "mhm_bitsnbobs:storm_fragment",

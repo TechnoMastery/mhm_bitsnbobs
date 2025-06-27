@@ -6,13 +6,14 @@
       "item": "mhm_bitsnbobs:humid_potion"
     },
     {
-      "item": "mhm_bitsnbobs:transfer_flask"
+      "item": "mhm_bitsnbobs:empty_little_flask"
     },
     {
-      "item": "mhm_bitsnbobs:extremely_dry_dirt_block"
+      "item": "mhm_bitsnbobs:empty_little_flask"
     }
   ],
   "result": {
-    "item": "mhm_bitsnbobs:resource_dirt"
+    "count": 2,
+    "item": "mhm_bitsnbobs:little_humid_potion"
   }
 }

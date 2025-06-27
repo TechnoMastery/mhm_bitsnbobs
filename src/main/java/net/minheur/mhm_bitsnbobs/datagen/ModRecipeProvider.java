@@ -103,12 +103,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShapelessCraftingTwo(pWriter, ModItems.XP_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.GOLD_INGOT, 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.MONEY_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.COPPER_INGOT, 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.TREE_GROWER.get(), 1, Items.FLOWER_POT, 1, Blocks.DIRT, 1);
+        simpleShapelessCraftingTwo(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
+        simpleShapelessCraftingTwo(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
+        simpleShapelessCraftingTwo(pWriter, ModItems.RESOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1,ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
 
         simpleShapelessCraftingThree(pWriter, ModItems.OAK_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.OAK_SAPLING, 1);
         simpleShapelessCraftingThree(pWriter, ModItems.SPRUCE_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.SPRUCE_SAPLING, 1);
-        simpleShapelessCraftingThree(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
-        simpleShapelessCraftingThree(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
-        simpleShapelessCraftingThree(pWriter, ModItems.RESOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1, ModItems.TRANSFER_FLASK.get(), 1, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
         simpleShapelessCraftingThree(pWriter, ModItems.HOLY_BREAD.get(), 1, ModItems.YEAST.get(),3, Items.ENCHANTED_GOLDEN_APPLE, 1, Items.BREAD, 2);
         simpleShapelessCraftingThree(pWriter,ModItems.DEVIL_BREAD.get(),3, ModItems.HOLY_BREAD.get(),1, Items.LAVA_BUCKET, 2, ModItems.YEAST.get(),6);
 
@@ -375,18 +375,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('B', ModItems.IRON_BALL.get())
                 .define('F', Blocks.BLAST_FURNACE)
                 .unlockedBy(getHasName(Blocks.BLAST_FURNACE), has(Blocks.BLAST_FURNACE))
-                .save(pWriter);
-
-        // transfer flask
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.TRANSFER_FLASK.get())
-                .pattern(" F ")
-                .pattern("G B")
-                .pattern(" V ")
-                .define('F', ModItems.EMPTY_BIG_FLASK.get())
-                .define('V', Blocks.GLASS)
-                .define('B', Items.OAK_BUTTON)
-                .define('G', Blocks.GLASS_PANE)
-                .unlockedBy(getHasName(ModItems.EMPTY_BIG_FLASK.get()), has(ModItems.EMPTY_BIG_FLASK.get()))
                 .save(pWriter);
 
         // empty big pot

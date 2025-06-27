@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:humid_potion_from_shapeless_of_three_base_little_humid_potion"
+        "recipe": "mhm_bitsnbobs:humid_potion_from_shapeless_of_two_base_little_humid_potion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:humid_potion_from_shapeless_of_three_base_little_humid_potion"
+      "mhm_bitsnbobs:humid_potion_from_shapeless_of_two_base_little_humid_potion"
     ]
   },
   "sends_telemetry_event": false

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:humid_potion"
+    },
+    {
+      "item": "mhm_bitsnbobs:extremely_dry_dirt_block"
+    }
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:resource_dirt"
+  }
+}
