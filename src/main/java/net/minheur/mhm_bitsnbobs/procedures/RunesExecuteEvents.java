@@ -16,6 +16,7 @@ public class RunesExecuteEvents {
         String command1 = "clear @s mhm_bitsnbobs:money_rune 1";
         pPlayer.getServer().getCommands().performPrefixedCommand(source, command1);
     }
+
     public static void executeXp(Entity pPlayer) {
         if(pPlayer == null || pPlayer.getServer() == null) return;
         if(pPlayer instanceof Player _player) {
