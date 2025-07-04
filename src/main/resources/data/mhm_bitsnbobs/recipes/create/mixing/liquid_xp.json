@@ -3,8 +3,7 @@
   "heatRequirement": "superheated",
   "ingredients": [
     {
-      "item": "minecraft:rotten_flesh",
-      "amount": 5
+      "tag": "mhm_bitsnbobs:rotten_meats"
     },
     {
       "item": "minecraft:lapis_lazuli",
