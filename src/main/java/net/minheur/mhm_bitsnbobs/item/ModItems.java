@@ -134,6 +134,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> UNFINISHED_STORM_FRAGMENT = ITEMS.register("unfinished_storm_fragment",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> UNPROCESSED_SEA_PICKLE = ITEMS.register("unprocessed_sea_pickle",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ZOMBIE_ARM = ITEMS.register("zombie_arm",
             () -> new ZombieArmItem(new Item.Properties()));
