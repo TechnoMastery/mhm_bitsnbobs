@@ -78,6 +78,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropOneType(ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.CREATIVE_RESIDUE.get(), 2);
         this.dropOneType(ModBlocks.COMPRESSED_DIRT.get(), ModItems.PIECE_OF_DIRT.get(), 3);
         this.dropOneType(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.EXTREMELY_DRY_DIRT.get(), 4);
+        this.dropOneType(ModBlocks.RESOURCE_DIRT_BLOCK.get(), ModItems.RESOURCE_DIRT.get(), 1);
 
         this.dropOneType(ModBlocks.FIRE_PLANT.get(), ModItems.FIRE_SEEDS.get(), 1);
 
@@ -143,7 +144,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)
-                .filter(block -> block != ModBlocks.RESOURCE_DIRT_BLOCK.get())
+                // .filter(block -> block != ModBlocks.YOU_BLOCK.get())
                 ::iterator;
     }
 }

@@ -119,8 +119,6 @@ public class ModItems {
     public static final RegistryObject<Item> SUPER_CHARGED_CATALYZER = ITEMS.register("super_charged_catalyzer",
             () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(3000), "super_charged"));
 
-    // TODO: add tooltip to balls
-    // TODO: patch balls
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
             () -> new BallItem(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_BALL = ITEMS. register("gold_ball",
