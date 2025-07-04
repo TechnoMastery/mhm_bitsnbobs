@@ -25,6 +25,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SAPPHIRE = ITEMS. register("sapphire",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAPPHIRE_NUGGET = ITEMS. register("sapphire_nugget",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BASE_EGG = ITEMS. register("base_egg",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> SPAWNER_PART = ITEMS. register("spawner_part",

@@ -60,6 +60,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleBlockCrafting(pWriter, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.EXTREMELY_DRY_DIRT.get());
         simpleBlockCrafting(pWriter, ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.PIECE_OF_EXTREMELY_DRY_DIRT.get());
         simpleBlockCrafting(pWriter, ModBlocks.RESOURCE_DIRT_BLOCK.get(), ModItems.RESOURCE_DIRT.get());
+        simpleBlockCrafting(pWriter, ModItems.SAPPHIRE.get(), ModItems.SAPPHIRE_NUGGET.get());
 
         simpleBlockCrafting(pWriter, ModItems.CREATIVE_INGOT.get(), ModItems.CREATIVE_NUGGET.get());
         simpleBlockCrafting(pWriter, ModBlocks.CREATIVE_BLOCK.get(), ModItems.CREATIVE_INGOT.get());
@@ -85,6 +86,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simplePressurePlateCrafting(pWriter, ModBlocks.SAPPHIRE_PRESSURE_PLATE.get(), ModBlocks.SAPPHIRE_BLOCK.get());
 
         // simple shapeless pattern → utiliser le bon selon la qté d'items different
+        simpleShapelessCraftingOne(pWriter, ModItems.SAPPHIRE_NUGGET.get(), ModItems.SAPPHIRE.get(), 9, 1);
         simpleShapelessCraftingOne(pWriter, ModBlocks.SAPPHIRE_BUTTON.get(), ModItems.SAPPHIRE.get(), 1, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.SAPPHIRE.get(), ModBlocks.SAPPHIRE_BLOCK.get(), 9, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.FIRE_SEEDS.get(), ModItems.FIRE_DIAMOND.get(), 5, 1);

@@ -23,6 +23,7 @@ public class ModCreativeModTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.RAW_SAPPHIRE.get());
                         output.accept(ModItems.SAPPHIRE.get());
+                        output.accept(ModItems.SAPPHIRE_NUGGET.get());
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
                         output.accept(ModItems.CORN.get());
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
