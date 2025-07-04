@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:little_copper_nugget_from_smelting_copper_ball"
+        "recipe": "mhm_bitsnbobs:copper_nugget_from_smelting_copper_ball"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:little_copper_nugget_from_smelting_copper_ball"
+      "mhm_bitsnbobs:copper_nugget_from_smelting_copper_ball"
     ]
   },
   "sends_telemetry_event": false

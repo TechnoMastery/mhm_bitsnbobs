@@ -117,7 +117,6 @@ public class MhmBitsnbobs
              event.accept(ModItems.CREATIVE_INGOT);
              event.accept(ModBlocks.CREATIVE_BLOCK);
              event.accept(ModBlocks.CREATIVE_RESIDUE_BLOCK);
-             event.accept(ModItems.LITTLE_COPPER_NUGGET);
              event.accept(ModItems.LIGHTNING_UPGRADE);
              event.accept(ModItems.FIRE_DIAMOND);
              event.accept(ModItems.FIRE_STICK);

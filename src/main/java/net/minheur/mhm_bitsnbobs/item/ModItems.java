@@ -82,10 +82,7 @@ public class ModItems {
     public static final RegistryObject<Item> CREATIVE_RESIDUE = ITEMS. register("creative_residue",
             () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> SMALL_CREATIVE_NUGGET = ITEMS. register("small_creative_nugget",
-            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> LITTLE_COPPER_NUGGET = ITEMS. register("little_copper_nugget",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SUPER_CHARGED_BALL = ITEMS. register("super_charged_ball",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));public static final RegistryObject<Item> SUPER_CHARGED_BALL = ITEMS. register("super_charged_ball",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> LIGHTNING_UPGRADE = ITEMS. register("lightning_upgrade",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).fireResistant()));

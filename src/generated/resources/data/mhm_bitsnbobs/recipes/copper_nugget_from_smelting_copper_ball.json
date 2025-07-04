@@ -7,5 +7,5 @@
   "ingredient": {
     "item": "mhm_bitsnbobs:copper_ball"
   },
-  "result": "mhm_bitsnbobs:little_copper_nugget"
+  "result": "create:copper_nugget"
 }
