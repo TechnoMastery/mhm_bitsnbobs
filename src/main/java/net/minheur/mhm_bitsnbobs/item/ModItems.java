@@ -136,7 +136,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ZOMBIE_ARM = ITEMS.register("zombie_arm",
-            () -> new Item(new Item.Properties()));
+            () -> new ZombieArmItem(new Item.Properties()));
 
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));

@@ -14,5 +14,6 @@ XaQorix
 Catoutou
 Benny
 Exio2fk
+Jema
 
 And also to Kaupenjoe for his amazing tutorial series that helped me create this project. 
