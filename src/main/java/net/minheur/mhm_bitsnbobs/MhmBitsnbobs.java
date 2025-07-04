@@ -153,7 +153,6 @@ public class MhmBitsnbobs
             event.accept(ModItems.HUMID_POTION);
             event.accept(ModItems.DIRTY_HUMID_POTION);
             event.accept(ModItems.LITTLE_HUMID_POTION);
-            event.accept(ModItems.CONTROLLED_PICKAXE);
             event.accept(ModItems.SKULLKERY_TOOL);
         }
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {

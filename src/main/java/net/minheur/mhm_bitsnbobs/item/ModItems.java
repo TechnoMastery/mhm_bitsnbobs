@@ -122,13 +122,13 @@ public class ModItems {
     // TODO: add tooltip to balls
     // TODO: patch balls
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
-            () -> new Item(new Item.Properties()));
+            () -> new BallItem(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_BALL = ITEMS. register("gold_ball",
-            () -> new Item(new Item.Properties()));
+            () -> new BallItem(new Item.Properties()));
     public static final RegistryObject<Item> COPPER_BALL = ITEMS. register("copper_ball",
-            () -> new Item(new Item.Properties()));
+            () -> new BallItem(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_BALL = ITEMS. register("diamond_ball",
-            () -> new Item(new Item.Properties()));
+            () -> new BallItem(new Item.Properties()));
 
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));
