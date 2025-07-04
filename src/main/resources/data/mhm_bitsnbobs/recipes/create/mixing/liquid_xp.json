@@ -1,0 +1,27 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "item": "minecraft:rotten_flesh",
+      "amount": 5
+    },
+    {
+      "item": "minecraft:lapis_lazuli",
+      "amount": 3
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "amount": 1000,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "amount": 5,
+      "fluid": "create_enchantment_industry:experience"
+    }
+  ]
+}
