@@ -96,6 +96,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BASE_EGG);
         simpleItem(ModItems.UNFINISHED_EMERALD);
         simpleItem(ModItems.UNFINISHED_BLAZE_POWDER);
+        simpleItem(ModItems.UNFINISHED_STORM_FRAGMENT);
 
         // base
         discItem(ModItems.BASE_OF_DISC);

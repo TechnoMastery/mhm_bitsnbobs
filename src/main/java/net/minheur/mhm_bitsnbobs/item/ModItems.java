@@ -132,6 +132,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> UNFINISHED_BLAZE_POWDER = ITEMS.register("unfinished_blaze_powder",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> UNFINISHED_STORM_FRAGMENT = ITEMS.register("unfinished_storm_fragment",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));
