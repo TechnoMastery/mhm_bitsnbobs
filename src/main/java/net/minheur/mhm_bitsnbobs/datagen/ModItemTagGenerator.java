@@ -40,6 +40,14 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         Items.ROTTEN_FLESH,
                         ModItems.ZOMBIE_ARM.get()
                 );
+        this.tag(ModTags.Items.GLOWING_UTILITY)
+                .add(
+                        Items.GLOWSTONE,
+                        Items.GLOWSTONE_DUST,
+                        Items.GLOW_INK_SAC,
+                        Items.GLOW_BERRIES,
+                        Items.GLOW_LICHEN
+                );
         this.tag(ItemTags.MUSIC_DISCS)
                 .add(
                         ModItems.BAR_BRAWL_MUSIC_DISC.get(),

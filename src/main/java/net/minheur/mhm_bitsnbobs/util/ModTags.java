@@ -27,6 +27,7 @@ public class ModTags {
         // model item tags
         public static final TagKey<Item> BASEDISK = tag("basedisk");
         public static final TagKey<Item> ROTTEN_MEATS = tag("rotten_meats");
+        public static final TagKey<Item> GLOWING_UTILITY = tag("glowing_utility");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(MhmBitsnbobs.MOD_ID, name));
