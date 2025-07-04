@@ -326,27 +326,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.SKULLKERY_TOOL.get()), has(ModItems.SKULLKERY_TOOL.get()))
                 .save(pWriter, MhmBitsnbobs.MOD_ID + ":dragon_head_crafting");
 
-        // emerald
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.EMERALD)
-                .pattern("DDD")
-                .pattern("DED")
-                .pattern("DDD")
-                .define('D', Blocks.DEEPSLATE)
-                .define('E', ModItems.CONTROLLED_PICKAXE.get())
-                .unlockedBy(getHasName(ModItems.CONTROLLED_PICKAXE.get()), has(ModItems.CONTROLLED_PICKAXE.get()))
-                .save(pWriter, MhmBitsnbobs.MOD_ID + ":emerald_crafting");
-
-        // controlled pickaxe
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROLLED_PICKAXE.get())
-                .pattern("  P")
-                .pattern(" S ")
-                .pattern("C  ")
-                .define('P', Items.GOLDEN_PICKAXE)
-                .define('S', ModItems.QUARTER_STICK.get())
-                .define('C', ModItems.CONTROL_PANEL.get())
-                .unlockedBy(getHasName(ModItems.CONTROL_PANEL.get()), has(ModItems.CONTROL_PANEL.get()))
-                .save(pWriter);
-
         // controlled stick
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROLLED_STICK.get())
                 .pattern(" P")

@@ -174,7 +174,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.LIGHTNING_SWORD);
         handheldItem(ModItems.RUBINIUM_SWORD);
         handheldItem(ModItems.ALLOYED_SWORD);
-        handheldItem(ModItems.CONTROLLED_PICKAXE);
         handheldItem(ModItems.CONTROLLED_STICK);
         handheldItem(ModItems.SKULLKERY_TOOL);
         handheldItem(ModItems.SLIME_SWORD);

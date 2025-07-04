@@ -51,8 +51,6 @@ public class ModItems {
             () -> new SkullkeryToolItem(new Item.Properties().stacksTo(1).durability(59)));
     public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
             () -> new Item(new Item.Properties().stacksTo(8)));
-    public static final RegistryObject<Item> CONTROLLED_PICKAXE = ITEMS. register("controlled_pickaxe",
-            () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(32)));
 
     // to see
     public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
@@ -121,6 +119,8 @@ public class ModItems {
     public static final RegistryObject<Item> SUPER_CHARGED_CATALYZER = ITEMS.register("super_charged_catalyzer",
             () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(3000), "super_charged"));
 
+    // TODO: add tooltip to balls
+    // TODO: patch balls
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_BALL = ITEMS. register("gold_ball",
