@@ -32,7 +32,7 @@
       "type": "create:pressing",
       "ingredients": [
         {
-          "item": "minecraft:unfinished_blaze_powder"
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
         }
       ],
       "results": [
@@ -45,7 +45,7 @@
       "type": "create:pressing",
       "ingredients": [
         {
-          "item": "minecraft:unfinished_blaze_powder"
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
         }
       ],
       "results": [
