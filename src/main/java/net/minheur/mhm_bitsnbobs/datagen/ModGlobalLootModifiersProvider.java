@@ -46,6 +46,11 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.35f).build()
         }, ModItems.PINE_CONE.get(), 1));
 
+        add("zombie_arm_from_zombie", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("entities/zombie")).build(),
+                LootItemRandomChanceCondition.randomChance(0.35f).build()
+        }, ModItems.ZOMBIE_ARM.get(), 1));
+
         // sus sand
         add("storm_fragment_from_sus_sand", new AddSusSandItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("archaeology/desert_pyramid")).build()

@@ -135,6 +135,9 @@ public class ModItems {
     public static final RegistryObject<Item> UNFINISHED_STORM_FRAGMENT = ITEMS.register("unfinished_storm_fragment",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> ZOMBIE_ARM = ITEMS.register("zombie_arm",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> EMPTY_LITTLE_FLASK = ITEMS. register("empty_little_flask",
