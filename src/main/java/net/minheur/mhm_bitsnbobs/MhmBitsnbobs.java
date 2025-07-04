@@ -132,6 +132,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.HALF_STICK);
              event.accept(ModItems.QUARTER_STICK);
              event.accept(ModItems.ZOMBIE_ARM);
+             event.accept(ModItems.BIOMASS);
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BASE_EGG);
@@ -167,6 +168,7 @@ public class MhmBitsnbobs
             event.accept(ModItems.FIRE_SEEDS);
             event.accept(ModBlocks.RUBINIUM_BLOCK);
             event.accept(ModItems.TREE_GROWER);
+            event.accept(ModItems.BIOMASS);
         }
     }
 
