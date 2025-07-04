@@ -94,6 +94,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SLIMY_INGOT);
         simpleItem(ModItems.SLIMY_STICK);
         simpleItem(ModItems.BASE_EGG);
+        simpleItem(ModItems.UNFINISHED_EMERALD);
 
         // base
         discItem(ModItems.BASE_OF_DISC);

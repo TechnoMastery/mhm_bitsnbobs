@@ -128,6 +128,9 @@ public class ModItems {
     public static final RegistryObject<Item> DIAMOND_BALL = ITEMS. register("diamond_ball",
             () -> new BallItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> UNFINISHED_EMERALD = ITEMS.register("unfinished_emerald",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> EMPTY_LITTLE_FLASK = ITEMS. register("empty_little_flask",
