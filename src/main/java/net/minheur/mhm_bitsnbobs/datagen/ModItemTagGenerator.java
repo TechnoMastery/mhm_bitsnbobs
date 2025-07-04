@@ -4,6 +4,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -33,6 +34,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ModTags.Items.BASEDISK)
                 .add(
                         ModItems.BASE_OF_DISC.get()
+                );
+        this.tag(ModTags.Items.ROTTEN_MEATS)
+                .add(
+                        Items.ROTTEN_FLESH,
+                        ModItems.ZOMBIE_ARM.get()
                 );
         this.tag(ItemTags.MUSIC_DISCS)
                 .add(
