@@ -230,7 +230,7 @@ public class ModItems {
     // TODO: add a tool tier
 
     public static final RegistryObject<Item> SLIME_SWORD = ITEMS.register("slime_sword",
-            () -> new SlimeSwordItem(Tiers.IRON, 10,5, new Item.Properties().fireResistant().durability(250)));
+            () -> new SlimeSwordItem(Tiers.IRON, 10,5, new Item.Properties().fireResistant().durability(750)));
 
     // pickaxes
     public static final RegistryObject<Item> SAPPHIRE_PICKAXE = ITEMS.register("sapphire_pickaxe",
