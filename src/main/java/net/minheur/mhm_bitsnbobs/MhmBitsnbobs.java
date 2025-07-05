@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -99,6 +100,9 @@ public class MhmBitsnbobs
         event.enqueueWork(() -> {
             // ligne suivante : duplication pour les plantes
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
+
+            // ligne suivante : ajout au compostage
+            ComposterBlock.COMPOSTABLES.put(ModItems.PINE_CONE.get(), 0.2f);
         });
     }
 
