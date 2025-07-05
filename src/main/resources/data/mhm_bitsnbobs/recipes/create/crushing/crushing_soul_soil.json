@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:soul_soil"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "chance": 0.5,
+      "item": "minecraft:soul_sand"
+    }
+  ]
+}
