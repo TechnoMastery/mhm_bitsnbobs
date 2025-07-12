@@ -174,6 +174,7 @@ public class MhmBitsnbobs
             event.accept(ModBlocks.RUBINIUM_BLOCK);
             event.accept(ModItems.TREE_GROWER);
             event.accept(ModItems.BIOMASS);
+            event.accept(ModBlocks.RUBIS_ORE);
         }
     }
 
