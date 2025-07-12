@@ -140,6 +140,8 @@ public class ModItems {
             () -> new ZombieArmItem(new Item.Properties()));
     public static final RegistryObject<Item> BIOMASS = ITEMS.register("biomass",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RED_CLAY_BALL = ITEMS.register("red_clay_ball",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
             () -> new Item(new Item.Properties().stacksTo(16)));
