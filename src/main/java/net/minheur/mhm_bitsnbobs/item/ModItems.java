@@ -93,8 +93,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> ROTTEN_BEEF = ITEMS.register("rotten_beef",
             () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> ROTTEN_PORKCHOP = ITEMS.register("rotten_porkchop",
-    //         () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_PORKCHOP = ITEMS.register("rotten_porkchop",
+            () -> new Item(new Item.Properties()));
     // public static final RegistryObject<Item> ROTTEN_MUTTON = ITEMS.register("rotten_mutton",
     //         () -> new Item(new Item.Properties()));
     // public static final RegistryObject<Item> ROTTEN_CHICKEN = ITEMS.register("rotten_chicken",
