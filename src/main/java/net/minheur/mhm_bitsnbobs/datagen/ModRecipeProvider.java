@@ -4,6 +4,7 @@ import com.simibubi.create.AllItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -187,7 +188,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleHeadCrafting(pWriter, Items.SKELETON_SKULL, Items.BONE, Items.BONE);
         simpleHeadCrafting(pWriter, Items.WITHER_SKELETON_SKULL, Items.BONE, Items.WITHER_ROSE);
         simpleHeadCrafting(pWriter, Items.CREEPER_HEAD, Items.GUNPOWDER, Items.GUNPOWDER);
-        simpleHeadCrafting(pWriter, Items.ZOMBIE_HEAD, Items.ROTTEN_FLESH, ModItems.ROTTEN_LEATHER.get());
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Items.ZOMBIE_HEAD)
+                .pattern("IUI")
+                .pattern("ISI")
+                .pattern("HHH")
+                .define('I', ModTags.Items.ROTTEN_MEATS)
+                .define('U', ModItems.ROTTEN_LEATHER.get())
+                .define('S', ModItems.SKULLKERY_TOOL.get())
+                .define('H', Tags.Items.HEADS)
+                .unlockedBy(getHasName(ModItems.ROTTEN_LEATHER.get()), has(ModItems.ROTTEN_LEATHER.get()))
+                .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + Items.ZOMBIE_HEAD + "_head_crafting");
 
         // signs & hanging signs
         signCrafting(pWriter, ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_PLANKS.get());

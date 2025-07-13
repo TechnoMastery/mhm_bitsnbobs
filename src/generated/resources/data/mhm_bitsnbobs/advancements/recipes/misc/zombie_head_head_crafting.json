@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rotten_flesh": {
+    "has_rotten_leather": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:rotten_flesh"
+              "mhm_bitsnbobs:rotten_leather"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_rotten_flesh",
+      "has_rotten_leather",
       "has_the_recipe"
     ]
   ],

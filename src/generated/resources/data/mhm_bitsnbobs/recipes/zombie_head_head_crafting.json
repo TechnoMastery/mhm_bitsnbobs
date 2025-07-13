@@ -6,7 +6,7 @@
       "tag": "forge:heads"
     },
     "I": {
-      "item": "minecraft:rotten_flesh"
+      "tag": "mhm_bitsnbobs:rotten_meats"
     },
     "S": {
       "item": "mhm_bitsnbobs:skullkery_tool"
