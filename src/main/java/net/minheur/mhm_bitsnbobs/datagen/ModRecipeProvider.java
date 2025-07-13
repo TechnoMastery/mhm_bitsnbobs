@@ -4,7 +4,6 @@ import com.simibubi.create.AllItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -364,6 +363,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Tags.Items.HEADS)
                 .define('C', ModItems.CONTROLLED_STICK.get())
                 .unlockedBy(getHasName(ModItems.CONTROLLED_STICK.get()), has(ModItems.CONTROLLED_STICK.get()))
+                .save(pWriter);
+
+        // sound block craft
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.SOUND_BLOCK.get())
+                .pattern("MMM")
+                .pattern("MDM")
+                .pattern("MJM")
+                .define('M', Items.NOTE_BLOCK)
+                .define('D', Items.DIAMOND)
+                .define('J', Items.JUKEBOX)
+                .unlockedBy(getHasName(Items.JUKEBOX), has(Items.JUKEBOX))
                 .save(pWriter);
 
         // control panel craft

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "J": {
+      "item": "minecraft:jukebox"
+    },
+    "M": {
+      "item": "minecraft:note_block"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "MDM",
+    "MJM"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:sound_block"
+  },
+  "show_notification": true
+}
