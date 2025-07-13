@@ -1,4 +1,4 @@
-package net.minheur.mhm_bitsnbobs.potion.custom;
+package net.minheur.mhm_bitsnbobs.effects.custom;
 
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;

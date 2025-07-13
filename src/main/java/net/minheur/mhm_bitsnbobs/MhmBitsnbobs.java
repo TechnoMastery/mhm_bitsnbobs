@@ -31,7 +31,7 @@ import net.minheur.mhm_bitsnbobs.entity.client.RhinoRenderer;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.loot.ModLootModifiers;
-import net.minheur.mhm_bitsnbobs.potion.ModEffects;
+import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationScreen;
 import net.minheur.mhm_bitsnbobs.screen.IncubatorScreen;
