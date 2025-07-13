@@ -91,6 +91,21 @@ public class ModItems {
     public static final RegistryObject<Item> SUPER_CHARGED_INGOT = ITEMS.register("super_charged_ingot",
             () -> new GlowingItem(new Item.Properties().fireResistant().rarity(Rarity.RARE)));
 
+    public static final RegistryObject<Item> ROTTEN_BEEF = ITEMS.register("rotten_beef",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_PORKCHOP = ITEMS.register("rotten_porkchop",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_MUTTON = ITEMS.register("rotten_mutton",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_CHICKEN = ITEMS.register("rotten_chicken",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_RABBIT = ITEMS.register("rotten_rabbit",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_COD = ITEMS.register("rotten_cod",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ROTTEN_SALMON = ITEMS.register("rotten_salmon",
+            () -> new Item(new Item.Properties()));
+
     // runes
     public static final RegistryObject<Item> EMPTY_RUNE = ITEMS.register("empty_rune",
             () -> new EmptyRuneItem(new Item.Properties()));

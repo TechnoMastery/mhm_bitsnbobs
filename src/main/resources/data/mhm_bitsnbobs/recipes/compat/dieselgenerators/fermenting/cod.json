@@ -1,0 +1,16 @@
+{
+  "type": "createdieselgenerators:bulk_fermenting",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:cod"
+    }
+  ],
+  "processingTime": 400,
+  "results": [
+    {
+      "chance": 0.25,
+      "fluid": "mhm_bitsnbobs:rotten_cod"
+    }
+  ]
+}

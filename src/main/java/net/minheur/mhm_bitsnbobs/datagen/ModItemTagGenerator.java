@@ -38,7 +38,14 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ModTags.Items.ROTTEN_MEATS)
                 .add(
                         Items.ROTTEN_FLESH,
-                        ModItems.ZOMBIE_ARM.get()
+                        ModItems.ZOMBIE_ARM.get(),
+                        ModItems.ROTTEN_PORKCHOP.get(),
+                        ModItems.ROTTEN_RABBIT.get(),
+                        ModItems.ROTTEN_BEEF.get(),
+                        ModItems.ROTTEN_SALMON.get(),
+                        ModItems.ROTTEN_MUTTON.get(),
+                        ModItems.ROTTEN_COD.get(),
+                        ModItems.ROTTEN_CHICKEN.get()
                 );
         this.tag(ModTags.Items.GLOWING_UTILITY)
                 .add(
