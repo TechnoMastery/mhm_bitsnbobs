@@ -45,6 +45,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, List.of(Items.ROTTEN_FLESH), RecipeCategory.MISC, ModItems.ROTTEN_LEATHER.get(), 0.1f, 200, "rotten");
         oreSmelting(pWriter, List.of(ModBlocks.COMPRESSED_DIRT.get()), RecipeCategory.MISC, ModItems.EXTREMELY_DRY_DIRT.get(), 0.1f, 600, "dirt");
         oreSmelting(pWriter, List.of(ModItems.WET_DIRT.get()), RecipeCategory.MISC, ModItems.EXTREMELY_DRY_DIRT.get(), 0.1f, 1800, "dirt");
+        oreSmelting(pWriter, List.of(ModBlocks.RED_CLAY.get()), RecipeCategory.MISC, Blocks.RED_TERRACOTTA, 0.1f, 200, "clay");
 
         oreBlasting(pWriter, List.of(ModItems.CREATIVE_ESSENCE.get()), RecipeCategory.MISC, ModItems.CREATIVE_RESIDUE.get(), 1f, 24000, "creative");
 

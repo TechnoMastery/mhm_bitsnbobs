@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "clay",
+  "ingredient": {
+    "item": "mhm_bitsnbobs:red_clay"
+  },
+  "result": "minecraft:red_terracotta"
+}

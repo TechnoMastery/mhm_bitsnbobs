@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "minecraft:red_terracotta"
+    }
+  ],
+  "processingTime": 500,
+  "results": [
+    {
+      "count": 3,
+      "item": "minecraft:red_sand"
+    }
+  ]
+}
