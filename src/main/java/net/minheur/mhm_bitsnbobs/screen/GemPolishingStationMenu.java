@@ -40,7 +40,7 @@ public class GemPolishingStationMenu extends AbstractContainerMenu {
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1); // max progress (finished)
-        int progressArrowSize = 26; // height in pixels of the arrow
+        int progressArrowSize = 22; // height in pixels of the arrow
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 

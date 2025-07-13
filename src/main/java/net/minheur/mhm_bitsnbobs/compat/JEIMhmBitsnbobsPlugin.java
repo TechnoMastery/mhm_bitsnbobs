@@ -52,7 +52,7 @@ public class JEIMhmBitsnbobsPlugin implements IModPlugin {
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-        registration.addRecipeClickArea(GemPolishingStationScreen.class, 80, 30, 16, 26, GemPolishingCategory.GEM_POLISHING_TYPE);
+        registration.addRecipeClickArea(GemPolishingStationScreen.class, 80, 30, 16, 22, GemPolishingCategory.GEM_POLISHING_TYPE);
 
         registration.addRecipeClickArea(IncubatorScreen.class, 61, 24, 54, 15, IncubatingCategory.INCUBATING_TYPE);
     }
