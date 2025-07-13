@@ -134,13 +134,13 @@ public class ModItems {
             () -> new CatalyzerItem(new Item.Properties().stacksTo(1).durability(3000), "super_charged"));
 
     public static final RegistryObject<Item> IRON_BALL = ITEMS. register("iron_ball",
-            () -> new BallItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> GOLD_BALL = ITEMS. register("gold_ball",
-            () -> new BallItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> COPPER_BALL = ITEMS. register("copper_ball",
-            () -> new BallItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_BALL = ITEMS. register("diamond_ball",
-            () -> new BallItem(new Item.Properties()));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> UNFINISHED_EMERALD = ITEMS.register("unfinished_emerald",
             () -> new Item(new Item.Properties()));
