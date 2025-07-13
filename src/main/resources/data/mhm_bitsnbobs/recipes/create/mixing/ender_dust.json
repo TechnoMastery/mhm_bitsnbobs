@@ -1,0 +1,25 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "amount": 3,
+      "item": "minecraft:sand"
+    },
+    {
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "item": "ae2:fluix_crystal",
+      "amount": 2
+    },
+    {
+      "tag": "forge:dusts/obsidian"
+    }
+  ],
+  "results": [
+    {
+      "item": "ae2:ender_dust"
+    }
+  ]
+}
