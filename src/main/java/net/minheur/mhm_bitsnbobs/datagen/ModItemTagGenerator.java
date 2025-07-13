@@ -39,13 +39,13 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(
                         Items.ROTTEN_FLESH,
                         ModItems.ZOMBIE_ARM.get(),
-                        ModItems.ROTTEN_PORKCHOP.get(),
-                        ModItems.ROTTEN_RABBIT.get(),
-                        ModItems.ROTTEN_BEEF.get(),
-                        ModItems.ROTTEN_SALMON.get(),
-                        ModItems.ROTTEN_MUTTON.get(),
-                        ModItems.ROTTEN_COD.get(),
-                        ModItems.ROTTEN_CHICKEN.get()
+                        // ModItems.ROTTEN_PORKCHOP.get(),
+                        // ModItems.ROTTEN_RABBIT.get(),
+                        ModItems.ROTTEN_BEEF.get()// ,
+                        // ModItems.ROTTEN_SALMON.get(),
+                        // ModItems.ROTTEN_MUTTON.get(),
+                        // ModItems.ROTTEN_COD.get(),
+                        // ModItems.ROTTEN_CHICKEN.get()
                 );
         this.tag(ModTags.Items.CATALYZERS)
                 .add(

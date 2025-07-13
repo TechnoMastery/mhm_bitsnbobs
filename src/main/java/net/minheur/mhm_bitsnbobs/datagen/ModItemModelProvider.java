@@ -100,13 +100,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNFINISHED_BLAZE_POWDER);
         simpleItem(ModItems.UNFINISHED_STORM_FRAGMENT);
         simpleItem(ModItems.UNPROCESSED_SEA_PICKLE);
-        simpleItem(ModItems.ROTTEN_PORKCHOP);
+        // simpleItem(ModItems.ROTTEN_PORKCHOP);
         simpleItem(ModItems.ROTTEN_BEEF);
-        simpleItem(ModItems.ROTTEN_MUTTON);
-        simpleItem(ModItems.ROTTEN_CHICKEN);
-        simpleItem(ModItems.ROTTEN_COD);
-        simpleItem(ModItems.ROTTEN_SALMON);
-        simpleItem(ModItems.ROTTEN_RABBIT);
+        // simpleItem(ModItems.ROTTEN_MUTTON);
+        // simpleItem(ModItems.ROTTEN_CHICKEN);
+        // simpleItem(ModItems.ROTTEN_COD);
+        // simpleItem(ModItems.ROTTEN_SALMON);
+        // simpleItem(ModItems.ROTTEN_RABBIT);
 
         // base
         discItem(ModItems.BASE_OF_DISC);
