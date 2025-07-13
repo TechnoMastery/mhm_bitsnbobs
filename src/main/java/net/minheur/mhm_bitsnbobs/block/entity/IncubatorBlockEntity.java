@@ -34,7 +34,9 @@ public class IncubatorBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            if (slot == INPUT_SLOT) return true;
+            if (slot == INPUT_SLOT) {
+                return !stack.is(ModTags.Items.CATALYZERS);
+            }
             if (slot == CATALYZER_SLOT) {
                 return stack.is(ModTags.Items.CATALYZERS);
             }
