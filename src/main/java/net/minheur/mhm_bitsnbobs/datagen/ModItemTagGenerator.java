@@ -47,6 +47,15 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.ROTTEN_COD.get(),
                         ModItems.ROTTEN_CHICKEN.get()
                 );
+        this.tag(ModTags.Items.CATALYZERS)
+                .add(
+                        ModItems.IRON_CATALYZER.get(),
+                        ModItems.WIND_CHARGED_CATALYZER.get(),
+                        ModItems.GOLD_CATALYZER.get(),
+                        ModItems.DIAMOND_CATALYZER.get(),
+                        ModItems.NETHERITE_CATALYZER.get(),
+                        ModItems.SUPER_CHARGED_CATALYZER.get()
+                );
         this.tag(ModTags.Items.GLOWING_UTILITY)
                 .add(
                         Items.GLOWSTONE,
