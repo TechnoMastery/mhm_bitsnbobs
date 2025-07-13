@@ -1,0 +1,19 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:red_clay"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "count": 3,
+      "item": "mhm_bitsnbobs:red_clay_ball"
+    },
+    {
+      "chance": 0.5,
+      "item": "mhm_bitsnbobs:small_creative_nugget"
+    }
+  ]
+}

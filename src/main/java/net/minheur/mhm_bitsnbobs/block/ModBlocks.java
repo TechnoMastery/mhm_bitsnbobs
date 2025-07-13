@@ -54,6 +54,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> RESOURCE_DIRT_BLOCK = registerBlock("resource_dirt_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIRT).strength(1, 10)));
 
+    public static final RegistryObject<Block> RED_CLAY = registerBlock("red_clay",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CLAY)));
+
     // custom block
 
     public static final RegistryObject<Block> DICE_BLOCK = BLOCKS.register("dice_block",

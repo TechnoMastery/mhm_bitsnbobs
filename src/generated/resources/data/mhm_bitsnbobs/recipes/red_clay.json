@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "mhm_bitsnbobs:red_clay_ball"
+    }
+  },
+  "pattern": [
+    "CC",
+    "CC"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:red_clay"
+  },
+  "show_notification": true
+}

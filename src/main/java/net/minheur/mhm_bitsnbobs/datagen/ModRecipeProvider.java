@@ -202,6 +202,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.WIND_CHARGED_INGOT.get()), has(ModItems.WIND_CHARGED_INGOT.get()))
                 .save(pWriter);
 
+        // red clay
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.RED_CLAY.get())
+                .pattern("CC")
+                .pattern("CC")
+                .define('C', ModItems.RED_CLAY_BALL.get())
+                .unlockedBy(getHasName(ModItems.RED_CLAY_BALL.get()), has(ModItems.RED_CLAY_BALL.get()))
+                .save(pWriter);
+
         // slimy stick
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SLIMY_STICK.get(), 4)
                 .pattern("S")

@@ -1,0 +1,18 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:red_clay"
+    }
+  ],
+  "result": [
+    {
+      "count": 4,
+      "item": "mhm_bitsnbobs:red_clay_ball"
+    }
+  ],
+  "tool": {
+    "type": "farmersdelight:tool_action",
+    "action": "shovel_dig"
+  }
+}

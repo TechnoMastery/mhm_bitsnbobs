@@ -78,6 +78,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.IRON_BALL);
         simpleItem(ModItems.GOLD_BALL);
         simpleItem(ModItems.DIAMOND_BALL);
+        simpleItem(ModItems.RED_CLAY_BALL);
         simpleItem(ModItems.EMPTY_BIG_FLASK);
         simpleItem(ModItems.EMPTY_LITTLE_FLASK);
         simpleItem(ModItems.DIRTY_HUMID_POTION);

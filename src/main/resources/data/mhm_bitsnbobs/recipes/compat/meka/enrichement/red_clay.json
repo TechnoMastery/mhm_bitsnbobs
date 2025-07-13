@@ -1,0 +1,12 @@
+{
+  "type": "mekanism:enriching",
+  "input": {
+    "ingredient": {
+      "item":"mhm_bitsnbobs:red_clay"
+    }
+  },
+  "output": {
+    "count": 4,
+    "item": "mhm_bitsnbobs:red_clay_ball"
+  }
+}

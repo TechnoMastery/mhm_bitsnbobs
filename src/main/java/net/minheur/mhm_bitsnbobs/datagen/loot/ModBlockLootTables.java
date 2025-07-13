@@ -79,6 +79,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropOneType(ModBlocks.COMPRESSED_DIRT.get(), ModItems.PIECE_OF_DIRT.get(), 3);
         this.dropOneType(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), ModItems.EXTREMELY_DRY_DIRT.get(), 4);
         this.dropOneType(ModBlocks.RESOURCE_DIRT_BLOCK.get(), ModItems.RESOURCE_DIRT.get(), 1);
+        this.dropOneType(ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 4);
 
         this.dropOneType(ModBlocks.FIRE_PLANT.get(), ModItems.FIRE_SEEDS.get(), 1);
 
