@@ -66,6 +66,7 @@ public class MhmBitsnbobs
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+
         ModEffects.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
