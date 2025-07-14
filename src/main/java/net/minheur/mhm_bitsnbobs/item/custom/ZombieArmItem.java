@@ -16,7 +16,7 @@ public class ZombieArmItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.mhm_bitsnbobs.zombie_arm.tooltip"));
+        pTooltipComponents.add(Component.translatable("tooltip.mhm_bitsnbobs.zombie_arm.credit"));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }
