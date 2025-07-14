@@ -142,6 +142,9 @@ public class ModItems {
     public static final RegistryObject<Item> DIAMOND_BALL = ITEMS. register("diamond_ball",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> QUARTZ_SHARD = ITEMS.register("quartz_shard",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> UNFINISHED_EMERALD = ITEMS.register("unfinished_emerald",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> UNFINISHED_BLAZE_POWDER = ITEMS.register("unfinished_blaze_powder",

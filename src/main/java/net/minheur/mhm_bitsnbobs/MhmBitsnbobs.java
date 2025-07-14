@@ -127,6 +127,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.FIRE_STICK);
              event.accept(ModItems.RUBIS);
              event.accept(ModItems.RUBINIUM);
+             event.accept(ModItems.QUARTZ_SHARD);
              event.accept(ModItems.SUPER_CHARGED_INGOT);
              event.accept(ModItems.IRON_BALL);
              event.accept(ModItems.COPPER_BALL);
