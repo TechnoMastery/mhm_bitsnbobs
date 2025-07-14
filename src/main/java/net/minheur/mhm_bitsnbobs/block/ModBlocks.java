@@ -68,7 +68,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> GEM_POLISHING_STATION = registerBlock("gem_polishing_station",
             () -> new GemPolishingStationBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> INCUBATOR = registerBlock("incubator",
-            () -> new IncubatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+            () -> new IncubatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+    public static final RegistryObject<Block> MYSTERIOUS_ALTAR = registerBlock("mysterious_altar",
+            () -> new MysteriousAltarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK_CATALYST)));
 
     // end custom
 

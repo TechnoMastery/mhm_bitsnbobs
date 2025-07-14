@@ -80,6 +80,7 @@
   "item.mhm_bitsnbobs.rotten_rabbit": "Lapin putréfié",
   "item.mhm_bitsnbobs.rotten_cod": "Morue putréfié",
   "item.mhm_bitsnbobs.rotten_salmon": "Saumon putréfié",
+  "item.mhm_bitsnbobs.magic_shard": "Eclat magique",
 
   "item.mhm_bitsnbobs.metal_detector": "Détecteur de métaux",
 
@@ -170,6 +171,7 @@
   "block.mhm_bitsnbobs.dark_leaves": "Feuillages sombre",
   "block.mhm_bitsnbobs.dice_block": "Dé",
   "block.mhm_bitsnbobs.rubis_ore": "Minerais de rubis",
+  "block.mhm_bitsnbobs.mysterious_altar": "Autel mystérieux",
 
   "block.mhm_bitsnbobs.dark_sapling": "Pousse d'arbre sombre",
 
@@ -290,6 +292,7 @@
   "tooltip.mhm_bitsnbobs.skullkery_tool.tooltip": "Un outil puissant utilisé dans l'art des têtes",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit",
   "tooltip.mhm_bitsnbobs.balls.tooltip": "Récupéré au concassage de terre de ressource.",
+  "tooltip.mhm_bitsnbobs.magicfuel.tooltip": "Cet objet a un potentiel magique.",
 
   "tooltip.mhm_bitsnbobs.zombie_arm.credit": "Créer par Jema",
 

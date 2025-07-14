@@ -80,6 +80,7 @@
   "item.mhm_bitsnbobs.rotten_rabbit": "Rotten rabbit",
   "item.mhm_bitsnbobs.rotten_cod": "Rotten cod",
   "item.mhm_bitsnbobs.rotten_salmon": "Rotten salmon",
+  "item.mhm_bitsnbobs.magic_shard": "Magic shard",
 
   "item.mhm_bitsnbobs.metal_detector": "Metal detector",
 
@@ -169,6 +170,7 @@
   "block.mhm_bitsnbobs.dark_leaves": "Dark leaves",
   "block.mhm_bitsnbobs.dice_block": "Dice",
   "block.mhm_bitsnbobs.rubis_ore": "Rubis ore",
+  "block.mhm_bitsnbobs.mysterious_altar": "Mysterious altar",
 
   "block.mhm_bitsnbobs.dark_sapling": "Dark sapling",
 
@@ -289,6 +291,7 @@
   "tooltip.mhm_bitsnbobs.skullkery_tool.tooltip": "A powerful tool used in skullkery",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises",
   "tooltip.mhm_bitsnbobs.balls.tooltip": "Get from crushing resource dirt block",
+  "tooltip.mhm_bitsnbobs.magicfuel.tooltip": "This item have a magic potential",
 
   "tooltip.mhm_bitsnbobs.zombie_arm.credit": "Made by Jema",
 

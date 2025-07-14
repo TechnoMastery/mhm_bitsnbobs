@@ -17,6 +17,9 @@ public class ModRecipes {
     public static final RegistryObject<RecipeSerializer<IncubatorRecipe>> INCUBATING_SERIALIZER =
             SERIALIZERS.register("incubating", () -> IncubatorRecipe.Serializer.INSTANCE);
 
+    public static final RegistryObject<RecipeSerializer<MysteriousMagicRecipe>> MYSTERIOUS_MAGIC_SERIALIZER =
+            SERIALIZERS.register("mysterious_magic", () -> MysteriousMagicRecipe.Serializer.INSTANCE);
+
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

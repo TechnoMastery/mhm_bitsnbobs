@@ -110,6 +110,8 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.QUANTUM_CORE.get());
                         output.accept(ModItems.STABILIZED_QUANTUM_CORE.get());
                         output.accept(ModItems.QUANTUM_STAFF.get());
+                        output.accept(ModBlocks.MYSTERIOUS_ALTAR.get());
+                        output.accept(ModItems.MAGIC_SHARD.get());
                     })
                     .build());
 

@@ -101,6 +101,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNFINISHED_BLAZE_POWDER);
         simpleItem(ModItems.UNFINISHED_STORM_FRAGMENT);
         simpleItem(ModItems.UNPROCESSED_SEA_PICKLE);
+        simpleItem(ModItems.MAGIC_SHARD);
         simpleItem(ModItems.ROTTEN_PORKCHOP);
         simpleItem(ModItems.ROTTEN_BEEF);
         // simpleItem(ModItems.ROTTEN_MUTTON);

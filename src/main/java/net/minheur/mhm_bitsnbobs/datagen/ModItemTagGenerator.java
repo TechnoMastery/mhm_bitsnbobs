@@ -35,6 +35,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(
                         ModItems.BASE_OF_DISC.get()
                 );
+        this.tag(ModTags.Items.MAGIC_FUELS)
+                .add(
+                        ModItems.MAGIC_SHARD.get()
+                );
         this.tag(ModTags.Items.ROTTEN_MEATS)
                 .add(
                         Items.ROTTEN_FLESH,

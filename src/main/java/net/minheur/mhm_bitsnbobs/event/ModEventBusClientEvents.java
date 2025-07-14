@@ -11,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.entity.ModBlockEntities;
 import net.minheur.mhm_bitsnbobs.block.entity.renderer.GemPolishingBlockEntityRenderer;
+import net.minheur.mhm_bitsnbobs.block.entity.renderer.MysteriousAltarBlockEntityRenderer;
 import net.minheur.mhm_bitsnbobs.entity.client.ModModelLayers;
 import net.minheur.mhm_bitsnbobs.entity.client.RhinoModel;
 
@@ -27,6 +28,7 @@ public class ModEventBusClientEvents {
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.GEM_POLISHING_BE.get(), GemPolishingBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.MYSTERIOUS_MAGIC_BE.get(), MysteriousAltarBlockEntityRenderer::new);
 
         event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);

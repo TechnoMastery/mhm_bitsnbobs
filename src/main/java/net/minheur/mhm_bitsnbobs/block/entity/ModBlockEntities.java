@@ -20,6 +20,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("incubator_be", () ->
                     BlockEntityType.Builder.of(IncubatorBlockEntity::new,
                             ModBlocks.INCUBATOR.get()).build(null));
+    public static final RegistryObject<BlockEntityType<MysteriousAltarBlockEntity>> MYSTERIOUS_MAGIC_BE =
+            BLOCK_ENTITIES.register("mysterious_magic_be", () ->
+                    BlockEntityType.Builder.of(MysteriousAltarBlockEntity::new,
+                            ModBlocks.MYSTERIOUS_ALTAR.get()).build(null));
 
     /// add here all signs
     public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =

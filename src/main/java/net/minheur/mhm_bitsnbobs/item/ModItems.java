@@ -91,6 +91,9 @@ public class ModItems {
     public static final RegistryObject<Item> SUPER_CHARGED_INGOT = ITEMS.register("super_charged_ingot",
             () -> new GlowingItem(new Item.Properties().fireResistant().rarity(Rarity.RARE)));
 
+    public static final RegistryObject<Item> MAGIC_SHARD = ITEMS.register("magic_shard",
+            () -> new MagicFuelItem(new Item.Properties().durability(100)));
+
     public static final RegistryObject<Item> ROTTEN_BEEF = ITEMS.register("rotten_beef",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ROTTEN_PORKCHOP = ITEMS.register("rotten_porkchop",

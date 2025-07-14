@@ -29,6 +29,7 @@ public class ModTags {
         public static final TagKey<Item> ROTTEN_MEATS = tag("rotten_meats");
         public static final TagKey<Item> GLOWING_UTILITY = tag("glowing_utility");
         public static final TagKey<Item> CATALYZERS = tag("catalyzers");
+        public static final TagKey<Item> MAGIC_FUELS = tag("magic_fuel");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(MhmBitsnbobs.MOD_ID, name));
