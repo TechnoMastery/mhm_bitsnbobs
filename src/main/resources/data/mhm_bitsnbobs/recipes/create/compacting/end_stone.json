@@ -1,0 +1,22 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:stone"
+    },
+    {
+      "item": "ae2:fluix_crystal"
+    },
+    {
+      "tag": "forge:dusts/obsidian"
+    },
+    {
+      "tag": "minecraft:sand"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:end_stone"
+    }
+  ]
+}
