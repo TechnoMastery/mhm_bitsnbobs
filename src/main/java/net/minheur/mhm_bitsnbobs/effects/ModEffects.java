@@ -6,6 +6,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.mhm_bitsnbobs.effects.custom.IcedEffect;
 import net.minheur.mhm_bitsnbobs.effects.custom.QuantumChockedEffect;
 
 public class ModEffects {
@@ -14,6 +15,8 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> QUANTUM_CHOCKED = EFFECTS.register("quantum_chocked",
             () -> new QuantumChockedEffect());
+    public static final RegistryObject<MobEffect> ICED = EFFECTS.register("iced",
+            () -> new IcedEffect());
 
     public static void register(IEventBus eventBus) {
         EFFECTS.register(eventBus);

@@ -1,6 +1,10 @@
 package net.minheur.mhm_bitsnbobs.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.client.gui.screens.social.PlayerEntry;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.EnchantedBookItem;
@@ -11,6 +15,9 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.event.village.WandererTradesEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,6 +25,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.mhm_bitsnbobs.util.cold_head.ColdHeadCapability;
+import net.minheur.mhm_bitsnbobs.util.cold_head.ColdHeadProvider;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
 
 import java.util.List;
@@ -147,7 +156,30 @@ public class ModEvents {
         event.addListener(new RconKeywordLoader());
     }
 
+    @SubscribeEvent
+    public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
+        if (event.getObject() instanceof LivingEntity) {
+            event.addCapability(new ResourceLocation(MhmBitsnbobs.MOD_ID, "cold_head"), new ColdHeadProvider());
+        }
+    }
+
+    @SubscribeEvent
+    public static void onClone(PlayerEvent.Clone event) {
+        if (!event.isWasDeath()) return;
+
+        event.getOriginal().getCapability(ColdHeadCapability.INSTANCE).ifPresent(oldCap -> {
+            event.getEntity().getCapability(ColdHeadCapability.INSTANCE).ifPresent(newCap -> {
+                newCap.setColdLevel(oldCap.getColdLevel());
+            });
+        });
+    }
+
+    @SubscribeEvent
+    public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
+        if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide()) return;
+
+        event.player.getCapability(ColdHeadCapability.INSTANCE).ifPresent(cold -> {
+            cold.tick(event.player.level().getGameTime(), event.player);
+        });
+    }
 }
-
-
-

@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 
 public class ModFoods {
     public static final FoodProperties BURGER = new FoodProperties.Builder().nutrition(10)
@@ -29,5 +30,5 @@ public class ModFoods {
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 2000), 1f).build();
 
     public static final FoodProperties ICE_CREAM = new FoodProperties.Builder().nutrition(6)
-            .saturationMod(0.6f).alwaysEat().fast().build();
+            .saturationMod(0.6f).alwaysEat().fast().effect(() -> new MobEffectInstance(ModEffects.ICED.get(), 200, 0), 0.3f).build();
 }

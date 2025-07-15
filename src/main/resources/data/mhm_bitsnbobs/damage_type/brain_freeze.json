@@ -1,0 +1,8 @@
+{
+  "message_id": "brain_freeze",
+  "scaling": "never",
+  "exhaustion": 0.1,
+  "death_message_type": "default",
+  "effects": [],
+  "bypasses_armor": true
+}

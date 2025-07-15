@@ -9,6 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.LevelAccessor;
+import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
 
 public class QuantumChockedProcedures {
     public static boolean executeActiveTickCondition(double amplifier, double duration) {
@@ -26,8 +27,7 @@ public class QuantumChockedProcedures {
         if (entity == null)
             return;
         if (!((Player) entity).getInventory().contains(new ItemStack(Items.TOTEM_OF_UNDYING))) {
-            entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE,
-                    new ResourceLocation("mhm_bitsnbobs:electrocuted")))), 1);
+            entity.hurt(ModDamageTypes.electrocuted(entity.level()), 1.0f);
         }
     }
 

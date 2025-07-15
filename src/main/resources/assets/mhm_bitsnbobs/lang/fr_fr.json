@@ -230,6 +230,9 @@
   "death.attack.electrocuted": "%1$s a été éléctrocuté",
   "death.attack.electrocuted.item": "%1$s a été éléctrocuté par %2$s utilisant %3$s",
   "death.attack.electrocuted.player": "%1$s a été éléctrocuté en essayant de fuir %2$s",
+  "death.attack.brain_freeze": "%1$s a eu un mal de tête givré",
+  "death.attack.brain_freeze.item": "%1$s a eu un mal de tête givré a cause de %2$s utilisant %3$s",
+  "death.attack.brain_freeze.player": "%1$s a eu un mal de tête givré en essayant de fuir %2$s",
 
   "effect.mhm_bitsnbobs.quantum_chocked": "Choc quantique",
 

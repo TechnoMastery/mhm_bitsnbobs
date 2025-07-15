@@ -229,6 +229,9 @@
   "death.attack.electrocuted": "%1$s got electrocuted",
   "death.attack.electrocuted.item": "%1$s got electrocuted by %2$s using %3$s",
   "death.attack.electrocuted.player": "%1$s got electrocuted whilst trying to escape %2$s",
+  "death.attack.brain_freeze": "%1$s got brain-freezed",
+  "death.attack.brain_freeze.item": "%1$s got brain-freezed by %2$s using %3$s",
+  "death.attack.brain_freeze.player": "%1$s got brain-freezed whilst trying to escape %2$s",
 
   "effect.mhm_bitsnbobs.quantum_chocked": "Quantum chocked",
 
