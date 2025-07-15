@@ -13,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.mhm_bitsnbobs.item.custom.MagicFuelItem;
 import net.minheur.mhm_bitsnbobs.recipe.MysteriousMagicRecipe;
 import org.jetbrains.annotations.Nullable;
 
@@ -54,6 +55,14 @@ public class MysteriousMagicCategory implements IRecipeCategory<MysteriousMagicR
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, MysteriousMagicRecipe recipe, IFocusGroup iFocusGroup) {
-        // TODO: faire sa g la flemme la
+        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 17, 32).addItemStack(ModItems.MAGIC_SHARD.get().getDefaultInstance().setHoverName(
+                Component.translatable("recipe.mhm_bitsnbobs.mysterious_magic.power").append(Component.literal(" : " + recipe.getFuelAmount()))
+        ));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 138, 33).addItemStack(recipe.getResultItem(null));
+        builder.addSlot(RecipeIngredientRole.INPUT, 80, 32).addItemStack(recipe.getPrimaryInput());
+        builder.addSlot(RecipeIngredientRole.INPUT, 80, 7).addItemStack(recipe.getUpInput());
+        builder.addSlot(RecipeIngredientRole.INPUT, 80, 57).addItemStack(recipe.getDownInput());
+        builder.addSlot(RecipeIngredientRole.INPUT, 55, 32).addItemStack(recipe.getLeftInput());
+        builder.addSlot(RecipeIngredientRole.INPUT, 105, 32).addItemStack(recipe.getRightInput());
     }
 }
