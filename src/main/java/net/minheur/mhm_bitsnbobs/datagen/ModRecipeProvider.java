@@ -185,6 +185,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.QUARTER_STICK.get(), Items.STICK, 4);
         simpleStoneCutting(pWriter, RecipeCategory.MISC, Items.COBBLED_DEEPSLATE, Items.COBBLESTONE, 1);
 
+        simpleWoodCrafting(pWriter, Items.MOSS_BLOCK, ModItems.BIOMASS.get());
+
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
         simpleBoatCrafting(pWriter, ModItems.DARK_CHEST_BOAT.get(), ModBlocks.DARK_PLANKS.get(), true);
