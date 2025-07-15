@@ -61,8 +61,9 @@ public class GemPolishingStationBlock extends BaseEntityBlock {
             } else {
                 throw new IllegalStateException("Our Container provider is missing");
             }
+            return InteractionResult.CONSUME;
         }
-        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
+        return InteractionResult.SUCCESS;
     }
 
     @Override

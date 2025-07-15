@@ -1,10 +1,13 @@
 package net.minheur.mhm_bitsnbobs.block.custom;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -18,15 +21,17 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
+import net.minheur.mhm_bitsnbobs.block.entity.FreezerBlockEntity;
 import net.minheur.mhm_bitsnbobs.block.entity.GemPolishingStationBlockEntity;
 import net.minheur.mhm_bitsnbobs.block.entity.ModBlockEntities;
-import net.minheur.mhm_bitsnbobs.block.entity.MysteriousAltarBlockEntity;
 import org.jetbrains.annotations.Nullable;
 
-public class MysteriousAltarBlock extends BaseEntityBlock {
-    public static final VoxelShape SHAPE = Block.box(0, 0, 0, 16, 10, 16);
+import java.util.function.Function;
 
-    public MysteriousAltarBlock(Properties pProperties) {
+public class FreezerBlock extends BaseEntityBlock {
+    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 15, 15);
+
+    public FreezerBlock(Properties pProperties) {
         super(pProperties);
     }
 
@@ -44,8 +49,8 @@ public class MysteriousAltarBlock extends BaseEntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if(pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if(blockEntity instanceof MysteriousAltarBlockEntity) {
-                ((MysteriousAltarBlockEntity) blockEntity).drops();
+            if(blockEntity instanceof FreezerBlockEntity) {
+                ((FreezerBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
@@ -55,18 +60,19 @@ public class MysteriousAltarBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if(!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof MysteriousAltarBlockEntity) {
-                NetworkHooks.openScreen(((ServerPlayer) pPlayer), (MysteriousAltarBlockEntity) entity, pPos);
+            if(entity instanceof FreezerBlockEntity) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), (FreezerBlockEntity) entity, pPos);
             } else {
-                return InteractionResult.CONSUME;
+                throw new IllegalStateException("Our Container provider is missing");
             }
+            return InteractionResult.CONSUME;
         }
         return InteractionResult.SUCCESS;
     }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
-        return new MysteriousAltarBlockEntity(blockPos, blockState);
+        return new FreezerBlockEntity(blockPos, blockState);
     }
 
     @Override
@@ -74,7 +80,7 @@ public class MysteriousAltarBlock extends BaseEntityBlock {
         if(pLevel.isClientSide()) {
             return null;
         }
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.MYSTERIOUS_MAGIC_BE.get(),
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.FREEZING_BE.get(),
                 (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
     }
 

@@ -21,6 +21,8 @@ public class ModMenuTypes {
             registerMenuType("incubator_menu", IncubatorMenu::new);
     public static final RegistryObject<MenuType<MysteriousAltarMenu>> MYSTERIOUS_ALTAR_MENU =
             registerMenuType("mysterious_altar_menu", MysteriousAltarMenu::new);
+    public static final RegistryObject<MenuType<FreezerMenu>> FREEZER_MENU =
+            registerMenuType("freezer_menu", FreezerMenu::new);
 
 
 private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {

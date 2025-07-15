@@ -177,6 +177,7 @@
   "block.mhm_bitsnbobs.dice_block": "Dé",
   "block.mhm_bitsnbobs.rubis_ore": "Minerais de rubis",
   "block.mhm_bitsnbobs.mysterious_altar": "Autel mystérieux",
+  "block.mhm_bitsnbobs.freezer": "Congélateur",
 
   "block.mhm_bitsnbobs.dark_sapling": "Pousse d'arbre sombre",
 
@@ -240,6 +241,7 @@
   "death.attack.brain_freeze.player": "%1$s a eu un mal de tête givré en essayant de fuir %2$s",
 
   "effect.mhm_bitsnbobs.quantum_chocked": "Choc quantique",
+  "effect.mhm_bitsnbobs.iced": "Glacé",
 
   "advancements.dirt.root.title": "Mine de la terre !",
   "advancements.dirt.root.description": "ATTEND ! Sa n'existe pas... Pourquoi ?",
@@ -305,6 +307,7 @@
   "tooltip.mhm_bitsnbobs.zombie_arm.credit": "Créer par Jema",
 
   "recipe.mhm_bitsnbobs.incubator": "Incubation",
+  "recipe.mhm_bitsnbobs.freezing": "Congélation",
   "recipe.mhm_bitsnbobs.gem_polishing_station": "Polissage des gems",
   "recipe.mhm_bitsnbobs.mysterious_magic": "Magie mystérieuse",
   "recipe.mhm_bitsnbobs.mysterious_magic.power": "Energie demandé"

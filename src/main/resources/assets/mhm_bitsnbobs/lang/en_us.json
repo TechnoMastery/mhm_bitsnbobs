@@ -176,6 +176,7 @@
   "block.mhm_bitsnbobs.dice_block": "Dice",
   "block.mhm_bitsnbobs.rubis_ore": "Rubis ore",
   "block.mhm_bitsnbobs.mysterious_altar": "Mysterious altar",
+  "block.mhm_bitsnbobs.freezer": "Freezer",
 
   "block.mhm_bitsnbobs.dark_sapling": "Dark sapling",
 
@@ -239,6 +240,7 @@
   "death.attack.brain_freeze.player": "%1$s got brain-freezed whilst trying to escape %2$s",
 
   "effect.mhm_bitsnbobs.quantum_chocked": "Quantum chocked",
+  "effect.mhm_bitsnbobs.iced": "Iced",
 
   "advancements.dirt.root.title": "Mine dirt !",
   "advancements.dirt.root.description": "WAIT ! That doesn't exist... Why ?",
@@ -304,6 +306,7 @@
   "tooltip.mhm_bitsnbobs.zombie_arm.credit": "Made by Jema",
 
   "recipe.mhm_bitsnbobs.incubator": "Incubation",
+  "recipe.mhm_bitsnbobs.freezing": "Freezing",
   "recipe.mhm_bitsnbobs.gem_polishing_station": "Gem polishing",
   "recipe.mhm_bitsnbobs.mysterious_magic": "Mysterious magic",
   "recipe.mhm_bitsnbobs.mysterious_magic.power": "Power needed"

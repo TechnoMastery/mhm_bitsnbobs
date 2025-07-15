@@ -26,7 +26,11 @@ public class QuantumChockedProcedures {
     public static void executeActiveTickEffect(LevelAccessor world, Entity entity) {
         if (entity == null)
             return;
-        if (!((Player) entity).getInventory().contains(new ItemStack(Items.TOTEM_OF_UNDYING))) {
+        if (entity instanceof Player) {
+            if (!((Player) entity).getInventory().contains(new ItemStack(Items.TOTEM_OF_UNDYING))) {
+                entity.hurt(ModDamageTypes.electrocuted(entity.level()), 1.0f);
+            }
+        } else {
             entity.hurt(ModDamageTypes.electrocuted(entity.level()), 1.0f);
         }
     }

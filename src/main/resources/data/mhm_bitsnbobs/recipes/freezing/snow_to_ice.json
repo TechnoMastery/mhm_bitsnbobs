@@ -1,0 +1,11 @@
+{
+  "type": "mhm_bitsnbobs:freezing",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    }
+  ],
+  "output": {
+    "item": "mhm_bitsnbobs:vanilla_ice_cream"
+  }
+}

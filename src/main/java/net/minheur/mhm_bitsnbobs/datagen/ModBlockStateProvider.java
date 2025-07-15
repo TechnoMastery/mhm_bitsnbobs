@@ -93,6 +93,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         // block entity
         simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
+        simpleBlockWithItem(ModBlocks.FREEZER.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/freezer")));
 
         simpleBlockWithItem(ModBlocks.MYSTERIOUS_ALTAR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/mysterious_altar")));

@@ -24,6 +24,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("mysterious_magic_be", () ->
                     BlockEntityType.Builder.of(MysteriousAltarBlockEntity::new,
                             ModBlocks.MYSTERIOUS_ALTAR.get()).build(null));
+    public static final RegistryObject<BlockEntityType<FreezerBlockEntity>> FREEZING_BE =
+            BLOCK_ENTITIES.register("freezer_be", () ->
+                    BlockEntityType.Builder.of(FreezerBlockEntity::new,
+                            ModBlocks.FREEZER.get()).build(null));
 
     /// add here all signs
     public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =

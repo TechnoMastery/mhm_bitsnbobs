@@ -52,6 +52,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.SAPPHIRE_WALL.get());
         this.dropSelf(ModBlocks.SUPER_CHARGED_BLOCK.get());
         this.dropSelf(ModBlocks.GEM_POLISHING_STATION.get());
+        this.dropSelf(ModBlocks.FREEZER.get());
         this.dropSelf(ModBlocks.MYSTERIOUS_ALTAR.get());
         this.dropSelf(ModBlocks.INCUBATOR.get());
         this.dropSelf(ModBlocks.DARK_SAPLING.get());
