@@ -27,4 +27,7 @@ public class ModFoods {
             .saturationMod(0f).alwaysEat().effect(() -> new MobEffectInstance(MobEffects.WITHER, 2000, 3), 1f)
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2000, 20), 1f)
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 2000), 1f).build();
+
+    public static final FoodProperties ICE_CREAM = new FoodProperties.Builder().nutrition(6)
+            .saturationMod(0.6f).alwaysEat().fast().build();
 }
