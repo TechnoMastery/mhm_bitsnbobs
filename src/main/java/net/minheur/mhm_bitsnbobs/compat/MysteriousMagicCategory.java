@@ -55,9 +55,11 @@ public class MysteriousMagicCategory implements IRecipeCategory<MysteriousMagicR
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, MysteriousMagicRecipe recipe, IFocusGroup iFocusGroup) {
-        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 17, 32).addItemStack(ModItems.MAGIC_SHARD.get().getDefaultInstance().setHoverName(
+        ItemStack power = ModItems.MAGIC_SHARD.get().getDefaultInstance().setHoverName(
                 Component.translatable("recipe.mhm_bitsnbobs.mysterious_magic.power").append(Component.literal(" : " + recipe.getFuelAmount()))
-        ));
+        );
+        power.hideTooltipPart(ItemStack.TooltipPart.ADDITIONAL);
+        builder.addSlot(RecipeIngredientRole.RENDER_ONLY, 17, 32).addItemStack(power);
         builder.addSlot(RecipeIngredientRole.OUTPUT, 138, 33).addItemStack(recipe.getResultItem(null));
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 32).addItemStack(recipe.getPrimaryInput());
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 7).addItemStack(recipe.getUpInput());
