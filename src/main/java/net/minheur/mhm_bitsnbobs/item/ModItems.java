@@ -1,5 +1,6 @@
 package net.minheur.mhm_bitsnbobs.item;
 
+import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -95,19 +96,19 @@ public class ModItems {
             () -> new MagicFuelItem(new Item.Properties().durability(100)));
 
     public static final RegistryObject<Item> ROTTEN_BEEF = ITEMS.register("rotten_beef",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
     public static final RegistryObject<Item> ROTTEN_PORKCHOP = ITEMS.register("rotten_porkchop",
-            () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> ROTTEN_MUTTON = ITEMS.register("rotten_mutton",
-    //         () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> ROTTEN_CHICKEN = ITEMS.register("rotten_chicken",
-    //         () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> ROTTEN_RABBIT = ITEMS.register("rotten_rabbit",
-    //         () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> ROTTEN_COD = ITEMS.register("rotten_cod",
-    //         () -> new Item(new Item.Properties()));
-    // public static final RegistryObject<Item> ROTTEN_SALMON = ITEMS.register("rotten_salmon",
-    //         () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
+    public static final RegistryObject<Item> ROTTEN_MUTTON = ITEMS.register("rotten_mutton",
+            () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
+    public static final RegistryObject<Item> ROTTEN_CHICKEN = ITEMS.register("rotten_chicken",
+            () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
+    public static final RegistryObject<Item> ROTTEN_RABBIT = ITEMS.register("rotten_rabbit",
+            () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
+    public static final RegistryObject<Item> ROTTEN_COD = ITEMS.register("rotten_cod",
+            () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
+    public static final RegistryObject<Item> ROTTEN_SALMON = ITEMS.register("rotten_salmon",
+            () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
 
     // runes
     public static final RegistryObject<Item> EMPTY_RUNE = ITEMS.register("empty_rune",
