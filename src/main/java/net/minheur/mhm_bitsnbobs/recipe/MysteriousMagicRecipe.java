@@ -35,12 +35,32 @@ public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        if (pLevel.isClientSide()) {
-            return false;
-        }
-        return upInput.is(pContainer.getItem(3).getItem()) && downInput.is(pContainer.getItem(5).getItem()) &&
-                leftInput.is(pContainer.getItem(6).getItem()) && rightInput.is(pContainer.getItem(4).getItem()) &&
-                primaryInput.is(pContainer.getItem(2).getItem());
+        if (pLevel.isClientSide()) return false;
+
+        ItemStack fuel = pContainer.getItem(1);
+        int fuelRemaining = fuel.getMaxDamage() - fuel.getDamageValue();
+        if (fuelRemaining < this.fuelAmount) return false;
+
+        System.out.println("FUEL PASSED");
+
+        ItemStack primaryStack = pContainer.getItem(2);
+        ItemStack upStack = pContainer.getItem(3);
+        ItemStack rightStack = pContainer.getItem(4);
+        ItemStack downStack = pContainer.getItem(5);
+        ItemStack leftStack = pContainer.getItem(6);
+
+        return
+                areStacksEqualEnough(primaryInput, primaryStack) &&
+                        areStacksEqualEnough(upInput, upStack) &&
+                        areStacksEqualEnough(downInput, downStack) &&
+                        areStacksEqualEnough(leftInput, leftStack) &&
+                        areStacksEqualEnough(rightInput, rightStack);
+    }
+
+    private boolean areStacksEqualEnough(ItemStack expected, ItemStack actual) {
+        System.out.println("CHECKING : expected " + expected + " having " + actual);
+        return expected.getItem() == actual.getItem()
+                && actual.getCount() >= expected.getCount();
     }
 
     @Override
@@ -104,15 +124,21 @@ public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public MysteriousMagicRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
-            ItemStack primaryInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "primary"));
-            int fuelAmount = GsonHelper.getAsInt(pSerializedRecipe, "fuelAmount");
-            ItemStack upInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "upItem"));
-            ItemStack downInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "downItem"));
-            ItemStack leftInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "leftItem"));
-            ItemStack rightInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "rightItem"));
+            try {
+                ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "output"));
+                ItemStack primaryInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "primary"));
+                int fuelAmount = GsonHelper.getAsInt(pSerializedRecipe, "fuelAmount");
+                ItemStack upInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "upItem"));
+                ItemStack downInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "downItem"));
+                ItemStack leftInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "leftItem"));
+                ItemStack rightInput = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "rightItem"));
 
-            return new MysteriousMagicRecipe(primaryInput, upInput, downInput, leftInput, rightInput, fuelAmount, output, pRecipeId);
+                return new MysteriousMagicRecipe(primaryInput, upInput, downInput, leftInput, rightInput, fuelAmount, output, pRecipeId);
+            } catch (Exception e) {
+                System.err.println("Failed to parse recipe: " + pRecipeId);
+                e.printStackTrace();
+                return null;
+            }
         }
 
         @Override

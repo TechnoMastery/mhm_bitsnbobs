@@ -292,10 +292,12 @@
   "tooltip.mhm_bitsnbobs.skullkery_tool.tooltip": "Un outil puissant utilisé dans l'art des têtes",
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit",
   "tooltip.mhm_bitsnbobs.balls.tooltip": "Récupéré au concassage de terre de ressource.",
-  "tooltip.mhm_bitsnbobs.magicfuel.tooltip": "Cet objet a un potentiel magique.",
+  "tooltip.mhm_bitsnbobs.magicfuel.tooltip": "Cet objet a un pouvoir magique de",
 
   "tooltip.mhm_bitsnbobs.zombie_arm.credit": "Créer par Jema",
 
   "recipe.mhm_bitsnbobs.incubator": "Incubation",
-  "recipe.mhm_bitsnbobs.gem_polishing_station": "Polissage des gems"
+  "recipe.mhm_bitsnbobs.gem_polishing_station": "Polissage des gems",
+  "recipe.mhm_bitsnbobs.mysterious_magic": "Magie mystérieuse",
+  "recipe.mhm_bitsnbobs.mysterious_magic.power": "Energie demandé"
 }

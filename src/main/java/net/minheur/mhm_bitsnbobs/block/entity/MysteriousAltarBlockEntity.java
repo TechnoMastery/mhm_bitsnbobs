@@ -27,6 +27,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import net.minheur.mhm_bitsnbobs.recipe.MysteriousMagicRecipe;
 import net.minheur.mhm_bitsnbobs.screen.MysteriousAltarMenu;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
+import net.minheur.mhm_bitsnbobs.util.MysteriousMagicContainer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -213,10 +214,11 @@ public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvi
     }
 
     private Optional<MysteriousMagicRecipe> getCurentRecipe() {
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        MysteriousMagicContainer inventory = new MysteriousMagicContainer(this.power, this.itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
+        System.out.println(this.level.getRecipeManager().getRecipeFor(MysteriousMagicRecipe.Type.INSTANCE, inventory, level));
         return this.level.getRecipeManager().getRecipeFor(MysteriousMagicRecipe.Type.INSTANCE, inventory, level);
     }
 
@@ -224,10 +226,10 @@ public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvi
         Optional<MysteriousMagicRecipe> recipe = getCurentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
         this.itemHandler.extractItem(PRIMARY_INPUT, recipe.get().getPrimaryInput().getCount(), false);
-        this.itemHandler.extractItem(UP_INPUT_SLOT, recipe.get().getPrimaryInput().getCount(), false);
-        this.itemHandler.extractItem(DOWN_INPUT_SLOT, recipe.get().getPrimaryInput().getCount(), false);
-        this.itemHandler.extractItem(LEFT_INPUT_SLOT, recipe.get().getPrimaryInput().getCount(), false);
-        this.itemHandler.extractItem(RIGHT_INPUT_SLOT, recipe.get().getPrimaryInput().getCount(), false);
+        this.itemHandler.extractItem(UP_INPUT_SLOT, recipe.get().getUpInput().getCount(), false);
+        this.itemHandler.extractItem(DOWN_INPUT_SLOT, recipe.get().getDownInput().getCount(), false);
+        this.itemHandler.extractItem(LEFT_INPUT_SLOT, recipe.get().getLeftInput().getCount(), false);
+        this.itemHandler.extractItem(RIGHT_INPUT_SLOT, recipe.get().getRightInput().getCount(), false);
         consumePower(recipe.get().getFuelAmount());
 
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
@@ -237,7 +239,7 @@ public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvi
     private void consumePower(int fuelAmount) {
         int newDamage = this.itemHandler.getStackInSlot(FUEL_SLOT).getDamageValue() + fuelAmount;
         int maxDamage = this.itemHandler.getStackInSlot(FUEL_SLOT).getMaxDamage();
-        if (newDamage >= maxDamage) {
+        if (newDamage > maxDamage) {
             throw new RuntimeException("You are tying to consume more power than existing !");
         } else {
             this.itemHandler.getStackInSlot(FUEL_SLOT).setDamageValue(newDamage);

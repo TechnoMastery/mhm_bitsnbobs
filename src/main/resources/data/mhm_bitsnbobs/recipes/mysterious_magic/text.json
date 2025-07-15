@@ -1,0 +1,27 @@
+{
+  "type": "mhm_bitsnbobs:mysterious_magic",
+  "output": {
+    "count": 2,
+    "item": "minecraft:dirt"
+  },
+  "primary": {
+    "count": 3,
+    "item": "minecraft:sand"
+  },
+  "fuelAmount": 20,
+  "upItem": {
+    "count": 8,
+    "item": "minecraft:iron_ingot"
+  },
+  "downItem": {
+    "count": 8,
+    "item": "minecraft:copper_ingot"
+  },
+  "leftItem": {
+    "count": 8,
+    "item": "minecraft:gold_ingot"
+  },
+  "rightItem": {
+    "item": "minecraft:diamond"
+  }
+}

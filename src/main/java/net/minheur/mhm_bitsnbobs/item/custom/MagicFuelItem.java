@@ -17,7 +17,7 @@ public class MagicFuelItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.mhm_bitsnbobs.magicfuel.tooltip"));
+        pTooltipComponents.add(Component.translatable("tooltip.mhm_bitsnbobs.magicfuel.tooltip").append(Component.literal(" : " + (this.getMaxDamage(this.getDefaultInstance()) - this.getDamage(this.getDefaultInstance())))));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }

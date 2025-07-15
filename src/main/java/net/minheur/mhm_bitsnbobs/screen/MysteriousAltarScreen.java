@@ -43,14 +43,13 @@ public class MysteriousAltarScreen extends AbstractContainerScreen<MysteriousAlt
 
     protected void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x +55, y +8, 144, 176, 67, -menu.getScaledProgress());
+            guiGraphics.blit(TEXTURE, x +55, y +75 - menu.getScaledProgress(), 144, 242 - menu.getScaledProgress(), 67, menu.getScaledProgress());
         }
     }
 
     protected void renderPowerLevel(GuiGraphics guiGraphics, int x, int y) {
         if (menu.hasPower()) {
-            System.out.println("sa marche !!!");
-            guiGraphics.blit(TEXTURE, x +11, y +26, 192, 96, 28, -menu.getScaledPower());
+            guiGraphics.blit(TEXTURE, x +11, y + 53 - menu.getScaledPower(), 192, 123 - menu.getScaledPower(), 28, menu.getScaledPower());
         }
     }
 
