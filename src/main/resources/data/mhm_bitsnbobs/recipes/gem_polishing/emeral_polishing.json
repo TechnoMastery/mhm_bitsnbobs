@@ -1,0 +1,12 @@
+{
+  "type": "mhm_bitsnbobs:gem_polishing",
+  "ingredients": [
+    {
+      "tag": "minecraft:emerald_ores"
+    }
+  ],
+  "output": {
+    "count": 8,
+    "item": "minecraft:emerald"
+  }
+}

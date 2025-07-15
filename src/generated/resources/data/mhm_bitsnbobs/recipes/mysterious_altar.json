@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "L": {
+      "item": "minecraft:lightning_rod"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "R": {
+      "tag": "forge:rotten_meats"
+    }
+  },
+  "pattern": [
+    "ALA",
+    "DRD",
+    "OOO"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:mysterious_altar"
+  },
+  "show_notification": true
+}

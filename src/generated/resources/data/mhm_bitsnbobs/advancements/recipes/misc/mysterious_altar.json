@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_sapphire_block": {
+    "has_amethyst_shard": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:sapphire_block"
+              "minecraft:amethyst_shard"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:sapphire_from_blasting_sapphire_block"
+        "recipe": "mhm_bitsnbobs:mysterious_altar"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_sapphire_block",
+      "has_amethyst_shard",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:sapphire_from_blasting_sapphire_block"
+      "mhm_bitsnbobs:mysterious_altar"
     ]
   },
   "sends_telemetry_event": false

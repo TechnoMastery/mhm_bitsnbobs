@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_nether_sapphire_ore": {
+    "has_control_panel": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:nether_sapphire_ore"
+              "mhm_bitsnbobs:control_panel"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:sapphire_from_smelting_nether_sapphire_ore"
+        "recipe": "mhm_bitsnbobs:freezer"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_nether_sapphire_ore",
+      "has_control_panel",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:sapphire_from_smelting_nether_sapphire_ore"
+      "mhm_bitsnbobs:freezer"
     ]
   },
   "sends_telemetry_event": false

@@ -114,6 +114,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ROTTEN_MUTTON);
         simpleItem(ModItems.ROTTEN_CHICKEN);
         simpleItem(ModItems.ROTTEN_COD);
+        simpleItem(ModItems.ICE_SCOOP);
+        simpleItem(ModItems.FROZEN_CHOCOLATE);
         simpleItem(ModItems.ROTTEN_SALMON);
         simpleItem(ModItems.ROTTEN_RABBIT);
 

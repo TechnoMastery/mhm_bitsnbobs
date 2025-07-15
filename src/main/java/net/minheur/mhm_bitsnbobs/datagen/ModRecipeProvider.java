@@ -26,11 +26,6 @@ import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
-    // lists pour recettes (s'il a plusieurs items / blocks, planches par exemple)
-    private static final List<ItemLike> SAPPHIRE_SMELTABLE = List.of(ModItems.RAW_SAPPHIRE.get(),
-            ModBlocks.SAPPHIRE_BLOCK.get(), ModBlocks.DEEPSLATE_SAPPHIRE_ORE.get(),
-            ModBlocks.NETHER_SAPPHIRE_ORE.get(), ModBlocks.END_SAPPHIRE_ORE.get());
-
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -38,8 +33,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         // call for smelting ore : SMELTING = BLASTING but put x2 time in SMELTING
-        oreSmelting(pWriter, SAPPHIRE_SMELTABLE, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 200, "sapphire");
-        oreBlasting(pWriter, SAPPHIRE_SMELTABLE, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 100, "sapphire");
         oreSmelting(pWriter, List.of(ModItems.IRON_BALL.get()), RecipeCategory.MISC, Items.IRON_NUGGET, 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.COPPER_BALL.get()), RecipeCategory.MISC, AllItems.COPPER_NUGGET, 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.GOLD_BALL.get()), RecipeCategory.MISC, Items.GOLD_NUGGET, 0.1f, 200, "balls");
@@ -110,6 +103,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShapelessCraftingTwo(pWriter, ModItems.LITTLE_HUMID_POTION.get(), 2, ModItems.HUMID_POTION.get(), 1, ModItems.EMPTY_LITTLE_FLASK.get(), 2);
         simpleShapelessCraftingTwo(pWriter, ModItems.HUMID_POTION.get(), 1, ModItems.LITTLE_HUMID_POTION.get(), 1, ModItems.EMPTY_BIG_FLASK.get(), 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.RESOURCE_DIRT.get(), 1, ModItems.HUMID_POTION.get(), 1,ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(), 1);
+        simpleShapelessCraftingTwo(pWriter, ModItems.VANILLA_ICE_CREAM.get(), 1, ModItems.CONE.get(), 1, ModItems.VANILLA_SCOOP.get(), 1);
+        simpleShapelessCraftingTwo(pWriter, ModItems.CHOCOLATE_ICE_CREAM.get(), 1, ModItems.CONE.get(), 1, ModItems.CHOCOLATE_SCOOP.get(), 1);
+        simpleShapelessCraftingTwo(pWriter, ModItems.STRAWBERRY_ICE_CREAM.get(), 1, ModItems.CONE.get(), 1, ModItems.STRAWBERRY_SCOOP.get(), 1);
 
         simpleShapelessCraftingThree(pWriter, ModItems.OAK_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.OAK_SAPLING, 1);
         simpleShapelessCraftingThree(pWriter, ModItems.SPRUCE_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.SPRUCE_SAPLING, 1);
@@ -234,6 +230,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("S")
                 .define('S', ModItems.SLIMY_INGOT.get())
                 .unlockedBy(getHasName(ModItems.SLIMY_INGOT.get()), has(ModItems.SLIMY_INGOT.get()))
+                .save(pWriter);
+
+        // freezer
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.FREEZER.get())
+                .pattern("GIG")
+                .pattern("GCG")
+                .pattern("QQQ")
+                .define('C', ModItems.CONTROL_PANEL.get())
+                .define('Q', Items.QUARTZ_BLOCK)
+                .define('I', Items.IRON_INGOT)
+                .define('G', Items.ICE)
+                .unlockedBy(getHasName(ModItems.CONTROL_PANEL.get()), has(ModItems.CONTROL_PANEL.get()))
+                .save(pWriter);
+
+        // mysterious altar
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.MYSTERIOUS_ALTAR.get())
+                .pattern("ALA")
+                .pattern("DRD")
+                .pattern("OOO")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('L', Items.LIGHTNING_ROD)
+                .define('D', Items.DIAMOND)
+                .define('O', Items.OBSIDIAN)
+                .define('R', ModTags.Items.ROTTEN_MEATS)
+                .unlockedBy(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
                 .save(pWriter);
 
         // Quantum stick

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "mhm_bitsnbobs:control_panel"
+    },
+    "G": {
+      "item": "minecraft:ice"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "Q": {
+      "item": "minecraft:quartz_block"
+    }
+  },
+  "pattern": [
+    "GIG",
+    "GCG",
+    "QQQ"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:freezer"
+  },
+  "show_notification": true
+}
