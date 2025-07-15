@@ -1,0 +1,27 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "minecraft:mossy_cobblestone"
+    }
+  ],
+  "processingTime": 50,
+  "results": [
+    {
+      "chance": 0.5,
+      "item": "minecraft:cobblestone"
+    },
+    {
+      "chance": 0.2,
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "chance": 0.05,
+      "item": "minecraft:rotten_flesh"
+    },
+    {
+      "chance": 0.25,
+      "item": "minecraft:vine"
+    }
+  ]
+}
