@@ -30,6 +30,10 @@ public class ModTags {
         public static final TagKey<Item> GLOWING_UTILITY = tag("glowing_utility");
         public static final TagKey<Item> CATALYZERS = tag("catalyzers");
         public static final TagKey<Item> MAGIC_FUELS = tag("magic_fuel");
+        public static final TagKey<Item> CHOCOLATE_SCOOPS = forgeTag("chocolate_scoops");
+        public static final TagKey<Item> VANILLA_SCOOPS = forgeTag("vanilla_scoops");
+        public static final TagKey<Item> STRAWBERRY_SCOOPS = forgeTag("strawberry_scoops");
+        public static final TagKey<Item> FUELS = forgeTag("fuels");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(MhmBitsnbobs.MOD_ID, name));
