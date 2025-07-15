@@ -41,11 +41,6 @@ public class ModBiomeModifier {
                 biomes.getOrThrow(BiomeTags.IS_BADLANDS),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.RUBIS_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES));
-
-        context.register(ADD_TREE_DARK, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(ModTags.Biomes.IS_DARK_DIMENSION),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.DARK_PLACED_KEY)),
-                GenerationStep.Decoration.VEGETAL_DECORATION));
     }
 
     private static ResourceKey<BiomeModifier> registerKey(String name) {

@@ -34,17 +34,9 @@ public class ModTags {
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(MhmBitsnbobs.MOD_ID, name));
         }
-    }
 
-    public static class Biomes {
-        public static final TagKey<Biome> IS_DARK_DIMENSION = tag("is_dark_dimension");
-
-
-        private static TagKey<Biome> tag(String name) {
-            return biomeTagCreate(new ResourceLocation(MhmBitsnbobs.MOD_ID, name));
-        }
-        private static TagKey<Biome> biomeTagCreate(ResourceLocation pName) {
-            return TagKey.create(Registries.BIOME, pName);
+        private static TagKey<Item> forgeTag(String name) {
+            return ItemTags.create(new ResourceLocation("forge", name));
         }
     }
 }

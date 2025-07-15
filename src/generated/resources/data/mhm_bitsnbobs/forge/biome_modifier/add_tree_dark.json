@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#mhm_bitsnbobs:is_dark_dimension",
-  "features": "mhm_bitsnbobs:dark_placed",
-  "step": "vegetal_decoration"
-}
