@@ -43,6 +43,18 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(
                         ModItems.BIOMASS.get()
                 );
+        this.tag(ModTags.Items.CHOCOLATE_SCOOPS)
+                .add(
+                        ModItems.CHOCOLATE_SCOOP.get()
+                );
+        this.tag(ModTags.Items.STRAWBERRY_SCOOPS)
+                .add(
+                        ModItems.STRAWBERRY_SCOOP.get()
+                );
+        this.tag(ModTags.Items.VANILLA_SCOOPS)
+                .add(
+                        ModItems.VANILLA_SCOOP.get()
+                );
         this.tag(ModTags.Items.ROTTEN_MEATS)
                 .add(
                         Items.ROTTEN_FLESH,

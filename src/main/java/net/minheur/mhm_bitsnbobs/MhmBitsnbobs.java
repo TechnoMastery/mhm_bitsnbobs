@@ -119,6 +119,9 @@ public class MhmBitsnbobs
              event.accept(ModItems.CREATIVE_ESSENCE);
              event.accept(ModItems.SMALL_CREATIVE_NUGGET);
              event.accept(ModItems.QUANTUM_CORE);
+             event.accept(ModItems.CHOCOLATE_SCOOP);
+             event.accept(ModItems.STRAWBERRY_SCOOP);
+             event.accept(ModItems.VANILLA_SCOOP);
              event.accept(ModItems.CREATIVE_NUGGET);
              event.accept(ModItems.CREATIVE_INGOT);
              event.accept(ModBlocks.CREATIVE_BLOCK);
@@ -153,6 +156,12 @@ public class MhmBitsnbobs
             event.accept(ModItems.YEAST);
             event.accept(ModItems.HOLY_BREAD);
             event.accept(ModItems.DEVIL_BREAD);
+            event.accept(ModItems.CHOCOLATE_SCOOP);
+            event.accept(ModItems.STRAWBERRY_SCOOP);
+            event.accept(ModItems.VANILLA_SCOOP);
+            event.accept(ModItems.STRAWBERRY_ICE_CREAM);
+            event.accept(ModItems.VANILLA_ICE_CREAM);
+            event.accept(ModItems.CHOCOLATE_ICE_CREAM);
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);
