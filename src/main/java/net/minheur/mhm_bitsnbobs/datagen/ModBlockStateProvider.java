@@ -99,9 +99,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(ModBlocks.MYSTERIOUS_ALTAR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/mysterious_altar")));
 
-        simpleBlock(ModBlocks.INCUBATOR.get(),
+        simpleBlockWithItem(ModBlocks.INCUBATOR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/incubator")));
-        itemModels().withExistingParent("mhm_bitsnbobs:incubator", "item/generated").texture("layer0", "mhm_bitsnbobs:item/incubator_item");
     }
 
     // Ce paté de public void + private est à dupliquer pour les crop blocks. changer les 2 cast dans le second + les noms et l'use dans le 1er : actuellement StrawberryCropBlock.

@@ -218,7 +218,6 @@ public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvi
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
-        System.out.println(this.level.getRecipeManager().getRecipeFor(MysteriousMagicRecipe.Type.INSTANCE, inventory, level));
         return this.level.getRecipeManager().getRecipeFor(MysteriousMagicRecipe.Type.INSTANCE, inventory, level);
     }
 

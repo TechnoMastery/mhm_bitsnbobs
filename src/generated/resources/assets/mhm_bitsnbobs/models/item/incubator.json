@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "mhm_bitsnbobs:item/incubator_item"
-  }
+  "parent": "mhm_bitsnbobs:block/incubator"
 }

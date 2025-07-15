@@ -41,8 +41,6 @@ public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
         int fuelRemaining = fuel.getMaxDamage() - fuel.getDamageValue();
         if (fuelRemaining < this.fuelAmount) return false;
 
-        System.out.println("FUEL PASSED");
-
         ItemStack primaryStack = pContainer.getItem(2);
         ItemStack upStack = pContainer.getItem(3);
         ItemStack rightStack = pContainer.getItem(4);
@@ -58,7 +56,6 @@ public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
     }
 
     private boolean areStacksEqualEnough(ItemStack expected, ItemStack actual) {
-        System.out.println("CHECKING : expected " + expected + " having " + actual);
         return expected.getItem() == actual.getItem()
                 && actual.getCount() >= expected.getCount();
     }
