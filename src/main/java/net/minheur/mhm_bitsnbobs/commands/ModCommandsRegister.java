@@ -4,10 +4,57 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minheur.mhm_bitsnbobs.config.ModServerConfig;
 
 public class ModCommandsRegister {
     public static void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
+
+        dispatcher.register(
+                Commands.literal("spawn")
+                        .then(Commands.literal("set")
+                                .requires(source -> source.hasPermission(2))
+                                .executes(ctx -> {
+                                    ServerPlayer player = ctx.getSource().getPlayerOrException();
+                                    BlockPos pos = player.blockPosition();
+
+                                    ModServerConfig.setSpawnPos(pos);
+                                    ctx.getSource().sendSuccess(() -> Component.literal("Spawn set to " + pos), true);
+                                    return 1;
+                                }))
+                        .then(Commands.literal("enable")
+                                .requires(commandSourceStack -> commandSourceStack.hasPermission(3))
+                                .executes(commandContext -> {
+                                    ServerPlayer player = commandContext.getSource().getPlayerOrException();
+
+                                    ModServerConfig.setSpawnEnabled(true);
+                                    commandContext.getSource().sendSuccess(() -> Component.literal("Spawn enabled"), true);
+                                    return 1;
+                                }))
+                        .then(Commands.literal("disable")
+                                .requires(commandSourceStack -> commandSourceStack.hasPermission(3))
+                                .executes(commandContext -> {
+                                    ServerPlayer player = commandContext.getSource().getPlayerOrException();
+
+                                    ModServerConfig.setSpawnEnabled(false);
+                                    commandContext.getSource().sendSuccess(() -> Component.literal("Spawn disabled"), true);
+                                    return 1;
+                                }))
+                        .executes(commandContext -> {
+                            ServerPlayer player = commandContext.getSource().getPlayerOrException();
+                            BlockPos pos = ModServerConfig.getSpawnPos();
+
+                            if (!ModServerConfig.getSpawnEnabled()) {
+                                commandContext.getSource().sendFailure(Component.literal("Spawn disabled !"));
+                                return 0;
+                            }
+                            player.teleportTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+                            commandContext.getSource().sendSuccess(() -> Component.literal("Teleported to spawn"), true);
+                            return 1;
+                        })
+        );
 
         // → duplicate this to create new commands.
         // command /bitsnbobs

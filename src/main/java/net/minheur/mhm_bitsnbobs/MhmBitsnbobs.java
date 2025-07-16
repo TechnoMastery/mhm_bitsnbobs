@@ -18,13 +18,16 @@ import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.block.entity.ModBlockEntities;
 import net.minheur.mhm_bitsnbobs.commands.ModCommandsRegister;
+import net.minheur.mhm_bitsnbobs.config.ModServerConfig;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
 import net.minheur.mhm_bitsnbobs.entity.client.ModBoatRenderer;
 import net.minheur.mhm_bitsnbobs.entity.client.RhinoRenderer;
@@ -60,6 +63,8 @@ public class MhmBitsnbobs
     public MhmBitsnbobs() // FMLJavaModLoadingContext context
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ModServerConfig.CONFIG, "mhm_bitsnbobs-server.toml");
 
         ModCreativeModTabs.register(modEventBus);
 
