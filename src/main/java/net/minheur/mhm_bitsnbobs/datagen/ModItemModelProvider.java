@@ -103,6 +103,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.DARK_CHEST_BOAT);
         simpleItem(ModItems.SLIMY_INGOT);
         simpleItem(ModItems.SLIMY_STICK);
+        simpleItem(ModItems.BUCKET_OF_LIQUID_ICE_CREAM);
         simpleItem(ModItems.BASE_EGG);
         simpleItem(ModItems.UNFINISHED_EMERALD);
         simpleItem(ModItems.UNFINISHED_BLAZE_POWDER);

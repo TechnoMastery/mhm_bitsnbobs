@@ -151,6 +151,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> CONE = ITEMS.register("cone",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BUCKET_OF_LIQUID_ICE_CREAM = ITEMS.register("bucket_of_liquid_ice_cream",
+            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
 
     public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM = ITEMS.register("chocolate_ice_cream",
             () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
