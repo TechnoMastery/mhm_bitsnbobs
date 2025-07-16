@@ -1,0 +1,19 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:echo_shard"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:magic_shard",
+      "nbt": {
+        "Damage": 100
+      }
+    }
+  ]
+}
