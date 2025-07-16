@@ -24,6 +24,7 @@ import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.FreezingRecipe;
 import net.minheur.mhm_bitsnbobs.recipe.GemPolishingRecipe;
 import net.minheur.mhm_bitsnbobs.screen.FreezerMenu;
@@ -152,7 +153,14 @@ public class FreezerBlockEntity extends BlockEntity implements MenuProvider {
     private void craftItem() {
         Optional<FreezingRecipe> recipe = getCurrentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
+        ItemStack input = recipe.get().getIngredients().get(0).getItems()[0];
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
+        if (input.getItem().hasCraftingRemainingItem()) {
+            if (input.getCount() > 1) {
+                throw new RuntimeException("This stack is too big for this slot !");
+            }
+            this.itemHandler.setStackInSlot(INPUT_SLOT, input.getCraftingRemainingItem());
+        }
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }

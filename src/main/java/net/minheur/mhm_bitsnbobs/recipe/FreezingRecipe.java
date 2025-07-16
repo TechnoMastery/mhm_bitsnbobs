@@ -8,6 +8,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
@@ -23,6 +24,23 @@ public class FreezingRecipe implements Recipe<SimpleContainer> {
         this.inputItems = inputItems;
         this.output = output;
         this.id = id;
+    }
+
+    @Override
+    public NonNullList<ItemStack> getRemainingItems(SimpleContainer pContainer) {
+        NonNullList<ItemStack> remainders = NonNullList.withSize(pContainer.getContainerSize(), ItemStack.EMPTY);
+        for (int i = 0; i < pContainer.getContainerSize(); i++) {
+            ItemStack itemstack = pContainer.getItem(i);
+            Item item = itemstack.getItem();
+            if (item.hasCraftingRemainingItem()) {
+                ItemStack remainder = new ItemStack(item.getCraftingRemainingItem());
+                if (itemstack.hasTag()) {
+                    remainder.setTag(itemstack.getTag().copy());
+                }
+                remainders.set(i, remainder);
+            }
+        }
+        return remainders;
     }
 
     @Override

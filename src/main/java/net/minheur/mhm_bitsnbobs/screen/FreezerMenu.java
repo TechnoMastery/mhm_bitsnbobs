@@ -12,6 +12,7 @@ import net.minecraftforge.items.SlotItemHandler;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.block.entity.FreezerBlockEntity;
 import net.minheur.mhm_bitsnbobs.block.entity.GemPolishingStationBlockEntity;
+import org.jetbrains.annotations.NotNull;
 
 public class FreezerMenu extends AbstractContainerMenu {
     public final FreezerBlockEntity blockEntity;
@@ -30,7 +31,12 @@ public class FreezerMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 80, 11));
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 80, 11) {
+                @Override
+                public int getMaxStackSize(@NotNull ItemStack stack) {
+                    return 1;
+                }
+            });
             this.addSlot(new SlotItemHandler(iItemHandler, 1, 80, 59));
         });
         addDataSlots(data);
