@@ -1,13 +1,10 @@
 package net.minheur.mhm_bitsnbobs.block.custom;
 
-import com.google.common.collect.ImmutableMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
@@ -19,17 +16,25 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import net.minheur.mhm_bitsnbobs.block.entity.FreezerBlockEntity;
-import net.minheur.mhm_bitsnbobs.block.entity.GemPolishingStationBlockEntity;
 import net.minheur.mhm_bitsnbobs.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.function.Function;
-
 public class FreezerBlock extends BaseEntityBlock {
-    public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 15, 15);
+    public static final VoxelShape SHAPE;
+
+    static {
+        VoxelShape shapeBox = Block.box(1, 3, 1, 15, 15, 15);
+        shapeBox = Shapes.or(shapeBox, Block.box(1, 0, 1, 3, 3, 3));
+        shapeBox = Shapes.or(shapeBox, Block.box(1, 0, 13, 3, 3, 15));
+        shapeBox = Shapes.or(shapeBox, Block.box(13, 0, 1, 15, 3, 3));
+        shapeBox = Shapes.or(shapeBox, Block.box(13, 0, 13, 15, 3, 15));
+
+        SHAPE = shapeBox;
+    }
 
     public FreezerBlock(Properties pProperties) {
         super(pProperties);
