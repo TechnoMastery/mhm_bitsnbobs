@@ -162,6 +162,7 @@ public class MhmBitsnbobs
             event.accept(ModItems.STRAWBERRY_ICE_CREAM);
             event.accept(ModItems.VANILLA_ICE_CREAM);
             event.accept(ModItems.CHOCOLATE_ICE_CREAM);
+            event.accept(ModItems.SWEET_BERRIES_ICE_CREAM);
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);

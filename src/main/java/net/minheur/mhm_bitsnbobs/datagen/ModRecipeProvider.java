@@ -170,10 +170,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleSmithing(pWriter, Blocks.EMERALD_BLOCK, Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD, RecipeCategory.MISC, Items.BUDDING_AMETHYST);
         simpleSmithing(pWriter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.DIAMOND_CATALYZER.get(), Items.NETHERITE_INGOT, RecipeCategory.MISC, ModItems.NETHERITE_CATALYZER.get());
 
-        simpleIceCreamCrafting(pWriter, ModItems.CHOCOLATE_ICE_CREAM.get(), ModTags.Items.CHOCOLATE_SCOOPS);
-        simpleIceCreamCrafting(pWriter, ModItems.STRAWBERRY_ICE_CREAM.get(), ModTags.Items.STRAWBERRY_SCOOPS);
-        simpleIceCreamCrafting(pWriter, ModItems.VANILLA_ICE_CREAM.get(), ModTags.Items.VANILLA_SCOOPS);
-
         // stone cutting : use 'simpleStoneCutting' from our libraries.
         // use it with pWriter, recipeCategory, result, ingredient → you can add, at last parameter, the amount of results. Not needed : don't set to use 1
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.EMPTY_LITTLE_FLASK.get(), ModItems.EMPTY_BIG_FLASK.get(), 2);
@@ -534,16 +530,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .unlockedBy(getHasName(ingredient), has(ingredient))
                     .save(pFinishedRecipeConsumer);
         }
-    }
-
-    protected static void simpleIceCreamCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike iceCreamResult, TagKey<Item> scoop) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, iceCreamResult)
-                .pattern(" S")
-                .pattern("C ")
-                .define('S', scoop)
-                .define('C', ModItems.CONE.get())
-                .unlockedBy(getHasName(ModItems.CONE.get()), has(ModItems.CONE.get()))
-                .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + iceCreamResult + "_cream_crafting");
     }
 
     protected static void simpleHeadCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike headResult, ItemLike ingredient1, ItemLike ingredient2) {

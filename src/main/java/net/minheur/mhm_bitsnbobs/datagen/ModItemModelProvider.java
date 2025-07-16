@@ -101,6 +101,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CHOCOLATE_ICE_CREAM);
         simpleItem(ModItems.VANILLA_ICE_CREAM);
         simpleItem(ModItems.STRAWBERRY_ICE_CREAM);
+        simpleItem(ModItems.SWEET_BERRIES_ICE_CREAM);
         simpleItem(ModItems.QUARTER_STICK);
         simpleItem(ModItems.YEAST);
         simpleItem(ModItems.DARK_SIGN);
