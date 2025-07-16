@@ -160,12 +160,16 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
     public static final RegistryObject<Item> STRAWBERRY_ICE_CREAM = ITEMS.register("strawberry_ice_cream",
             () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
+    public static final RegistryObject<Item> SWEET_BERRIES_ICE_CREAM = ITEMS.register("sweet_berries_ice_cream",
+            () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
 
     public static final RegistryObject<Item> CHOCOLATE_SCOOP = ITEMS.register("chocolate_scoop",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> VANILLA_SCOOP = ITEMS.register("vanilla_scoop",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> STRAWBERRY_SCOOP = ITEMS.register("strawberry_scoop",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> SWEET_BERRIES_SCOOP = ITEMS.register("sweet_berries_scoop",
             () -> new Item(new Item.Properties().stacksTo(16)));
 
     public static final RegistryObject<Item> UNFINISHED_EMERALD = ITEMS.register("unfinished_emerald",

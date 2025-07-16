@@ -119,6 +119,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.CHOCOLATE_SCOOP);
              event.accept(ModItems.STRAWBERRY_SCOOP);
              event.accept(ModItems.VANILLA_SCOOP);
+             event.accept(ModItems.SWEET_BERRIES_SCOOP);
              event.accept(ModItems.CREATIVE_NUGGET);
              event.accept(ModItems.BUCKET_OF_LIQUID_ICE_CREAM);
              event.accept(ModItems.CREATIVE_INGOT);
@@ -154,9 +155,6 @@ public class MhmBitsnbobs
             event.accept(ModItems.YEAST);
             event.accept(ModItems.HOLY_BREAD);
             event.accept(ModItems.DEVIL_BREAD);
-            event.accept(ModItems.CHOCOLATE_SCOOP);
-            event.accept(ModItems.STRAWBERRY_SCOOP);
-            event.accept(ModItems.VANILLA_SCOOP);
             event.accept(ModItems.STRAWBERRY_ICE_CREAM);
             event.accept(ModItems.VANILLA_ICE_CREAM);
             event.accept(ModItems.CHOCOLATE_ICE_CREAM);

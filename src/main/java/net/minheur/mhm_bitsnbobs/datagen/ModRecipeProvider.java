@@ -106,6 +106,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShapelessCraftingTwo(pWriter, ModItems.VANILLA_ICE_CREAM.get(), 1, ModItems.CONE.get(), 1, ModItems.VANILLA_SCOOP.get(), 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.CHOCOLATE_ICE_CREAM.get(), 1, ModItems.CONE.get(), 1, ModItems.CHOCOLATE_SCOOP.get(), 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.STRAWBERRY_ICE_CREAM.get(), 1, ModItems.CONE.get(), 1, ModItems.STRAWBERRY_SCOOP.get(), 1);
+        simpleShapelessCraftingTwo(pWriter, ModItems.SWEET_BERRIES_ICE_CREAM.get(), 1, ModItems.CONE.get(), 1, ModItems.SWEET_BERRIES_SCOOP.get(), 1);
 
         simpleShapelessCraftingThree(pWriter, ModItems.OAK_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.OAK_SAPLING, 1);
         simpleShapelessCraftingThree(pWriter, ModItems.SPRUCE_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, ModItems.TREE_GROWER.get(), 1, Items.SPRUCE_SAPLING, 1);
