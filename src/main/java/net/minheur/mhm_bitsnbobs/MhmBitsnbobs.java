@@ -35,6 +35,7 @@ import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.mhm_bitsnbobs.screen.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
+import net.minheur.mhm_bitsnbobs.util.ModNetworking;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModFoliagePlacers;
@@ -97,6 +98,8 @@ public class MhmBitsnbobs
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork(() -> {
+            ModNetworking.register();
+
             // ligne suivante : duplication pour les plantes
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
 

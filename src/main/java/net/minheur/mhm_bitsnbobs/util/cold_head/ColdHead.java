@@ -1,10 +1,11 @@
 package net.minheur.mhm_bitsnbobs.util.cold_head;
 
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraftforge.network.PacketDistributor;
 import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
+import net.minheur.mhm_bitsnbobs.util.ModNetworking;
 
 public class ColdHead implements IColdHead {
     private float cold = 0f;
@@ -33,9 +34,16 @@ public class ColdHead implements IColdHead {
             this.cold = Math.max(0f, this.cold - 0.01f);
         }
 
+        if (!entity.level().isClientSide() && entity instanceof ServerPlayer pPlayer) {
+            ModNetworking.INSTANCE.send(
+                    PacketDistributor.PLAYER.with(() -> pPlayer),
+                    new SyncColdHeadPacket(this.cold)
+            );
+        }
+
         float level = this.cold;
 
-        if (level < 0.25f) {
+        if (level < 0.15f) {
             damageCooldown = 0;
             return;
         }
@@ -43,17 +51,16 @@ public class ColdHead implements IColdHead {
         int damageInterval = 0;
 
         if (level < 0.5f) {
-            damageInterval = 60;
+            damageInterval = 80;
         } else if (level < 0.75f) {
-            damageInterval = 20;
+            damageInterval = 40;
         } else {
-            damageInterval = 10;
+            damageInterval = 20;
         }
 
         damageCooldown++;
         if (damageCooldown >= damageInterval) {
             entity.hurt(ModDamageTypes.brainFreeze(entity.level()), 1.0f);
         }
-
     }
 }
