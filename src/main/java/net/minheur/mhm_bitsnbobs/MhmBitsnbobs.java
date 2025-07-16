@@ -120,6 +120,10 @@ public class MhmBitsnbobs
              event.accept(ModItems.STRAWBERRY_SCOOP);
              event.accept(ModItems.VANILLA_SCOOP);
              event.accept(ModItems.SWEET_BERRIES_SCOOP);
+             event.accept(ModItems.CHOCOLATE_SNOWBALL);
+             event.accept(ModItems.VANILLA_SNOWBALL);
+             event.accept(ModItems.STRAWBERRIES_SNOWBALL);
+             event.accept(ModItems.SWEET_BERRIES_SNOWBALL);
              event.accept(ModItems.CREATIVE_NUGGET);
              event.accept(ModItems.BUCKET_OF_LIQUID_ICE_CREAM);
              event.accept(ModItems.CREATIVE_INGOT);

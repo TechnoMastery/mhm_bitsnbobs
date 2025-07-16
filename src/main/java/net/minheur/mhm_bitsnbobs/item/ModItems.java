@@ -172,6 +172,15 @@ public class ModItems {
     public static final RegistryObject<Item> SWEET_BERRIES_SCOOP = ITEMS.register("sweet_berries_scoop",
             () -> new Item(new Item.Properties().stacksTo(16)));
 
+    public static final RegistryObject<Item> CHOCOLATE_SNOWBALL = ITEMS.register("chocolate_snowball",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> VANILLA_SNOWBALL = ITEMS.register("vanilla_snowball",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> STRAWBERRIES_SNOWBALL = ITEMS.register("strawberries_snowball",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> SWEET_BERRIES_SNOWBALL = ITEMS.register("sweet_berries_snowball",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
     public static final RegistryObject<Item> UNFINISHED_EMERALD = ITEMS.register("unfinished_emerald",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> UNFINISHED_BLAZE_POWDER = ITEMS.register("unfinished_blaze_powder",
