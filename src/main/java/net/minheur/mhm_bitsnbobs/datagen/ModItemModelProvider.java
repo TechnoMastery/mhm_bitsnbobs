@@ -86,6 +86,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SCOOP_OF_CHOCOLATE_SORBET);
         simpleItem(ModItems.SCOOP_OF_VANILLA_SORBET);
         simpleItem(ModItems.SCOOP_OF_SWEET_BERRIES_SORBET);
+        simpleItem(ModItems.VANILLA_SORBET);
+        simpleItem(ModItems.SWEET_BERRIES_SORBET);
+        simpleItem(ModItems.CHOCOLATE_SORBET);
+        simpleItem(ModItems.STRAWBERRIES_SORBET);
         simpleItem(ModItems.FIRE_SEEDS);
         simpleItem(ModItems.RUBIS);
         simpleItem(ModItems.RUBINIUM);

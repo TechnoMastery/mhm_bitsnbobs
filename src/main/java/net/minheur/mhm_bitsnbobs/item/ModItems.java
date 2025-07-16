@@ -192,6 +192,15 @@ public class ModItems {
     public static final RegistryObject<Item> SWEET_BERRIES_SNOWBALL = ITEMS.register("sweet_berries_snowball",
             () -> new Item(new Item.Properties().stacksTo(16)));
 
+    public static final RegistryObject<Item> CHOCOLATE_SORBET = ITEMS.register("chocolate_sorbet",
+            () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.SORBET)));
+    public static final RegistryObject<Item> VANILLA_SORBET = ITEMS.register("vanilla_sorbet",
+            () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.SORBET)));
+    public static final RegistryObject<Item> STRAWBERRIES_SORBET = ITEMS.register("strawberries_sorbet",
+            () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.SORBET)));
+    public static final RegistryObject<Item> SWEET_BERRIES_SORBET = ITEMS.register("sweet_berries_sorbet",
+            () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.SORBET)));
+
     public static final RegistryObject<Item> SCOOP_OF_CHOCOLATE_SORBET = ITEMS.register("scoop_of_chocolate_sorbet",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> SCOOP_OF_VANILLA_SORBET = ITEMS.register("scoop_of_vanilla_sorbet",

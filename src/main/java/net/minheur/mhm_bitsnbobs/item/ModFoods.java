@@ -31,4 +31,7 @@ public class ModFoods {
 
     public static final FoodProperties ICE_CREAM = new FoodProperties.Builder().nutrition(6)
             .saturationMod(0.6f).alwaysEat().fast().effect(() -> new MobEffectInstance(ModEffects.ICED.get(), 200, 0), 0.3f).build();
+    public static final FoodProperties SORBET = new FoodProperties.Builder().nutrition(3)
+
+            .saturationMod(0.2f).alwaysEat().fast().effect(() -> new MobEffectInstance(ModEffects.ICED.get(), 200, 0), 0.3f).build();
 }
