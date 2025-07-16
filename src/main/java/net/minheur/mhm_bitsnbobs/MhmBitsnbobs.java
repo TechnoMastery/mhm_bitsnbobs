@@ -119,8 +119,6 @@ public class MhmBitsnbobs
              event.accept(ModItems.CHOCOLATE_SCOOP);
              event.accept(ModItems.STRAWBERRY_SCOOP);
              event.accept(ModItems.VANILLA_SCOOP);
-             event.accept(ModItems.ICE_SCOOP);
-             event.accept(ModItems.FROZEN_CHOCOLATE);
              event.accept(ModItems.CREATIVE_NUGGET);
              event.accept(ModItems.CREATIVE_INGOT);
              event.accept(ModBlocks.CREATIVE_BLOCK);

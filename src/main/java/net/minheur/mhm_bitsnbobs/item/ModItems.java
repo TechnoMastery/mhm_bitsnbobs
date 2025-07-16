@@ -151,22 +151,20 @@ public class ModItems {
 
     public static final RegistryObject<Item> CONE = ITEMS.register("cone",
             () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM = ITEMS.register("chocolate_ice_cream",
             () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
     public static final RegistryObject<Item> VANILLA_ICE_CREAM = ITEMS.register("vanilla_ice_cream",
             () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
     public static final RegistryObject<Item> STRAWBERRY_ICE_CREAM = ITEMS.register("strawberry_ice_cream",
             () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
+
     public static final RegistryObject<Item> CHOCOLATE_SCOOP = ITEMS.register("chocolate_scoop",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> VANILLA_SCOOP = ITEMS.register("vanilla_scoop",
             () -> new Item(new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> ICE_SCOOP = ITEMS.register("ice_scoop",
-            () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> STRAWBERRY_SCOOP = ITEMS.register("strawberry_scoop",
             () -> new Item(new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> FROZEN_CHOCOLATE = ITEMS.register("frozen_chocolate",
-            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> UNFINISHED_EMERALD = ITEMS.register("unfinished_emerald",
             () -> new Item(new Item.Properties()));

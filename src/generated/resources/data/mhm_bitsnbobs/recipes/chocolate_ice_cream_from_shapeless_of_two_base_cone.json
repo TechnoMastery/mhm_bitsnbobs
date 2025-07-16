@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:cone"
+    },
+    {
+      "item": "mhm_bitsnbobs:chocolate_scoop"
+    }
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:chocolate_ice_cream"
+  }
+}
