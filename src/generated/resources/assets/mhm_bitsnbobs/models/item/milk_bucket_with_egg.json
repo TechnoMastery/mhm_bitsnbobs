@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mhm_bitsnbobs:item/milk_bucket_with_egg"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bucket"
+  },
+  "loops": 6,
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_ice_cream"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        },
+        {
+          "amount": 50,
+          "fluid": "minecraft:milk",
+          "nbt": {}
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        },
+        {
+          "tag": "forge:eggs"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        },
+        {
+          "item": "minecraft:sugar"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+  }
+}
