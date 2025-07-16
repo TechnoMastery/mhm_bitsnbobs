@@ -128,6 +128,10 @@ public class MhmBitsnbobs
              event.accept(ModItems.BUCKET_OF_LIQUID_VANILLA_ICE_CREAM);
              event.accept(ModItems.BUCKET_OF_LIQUID_STRAWBERRIES_ICE_CREAM);
              event.accept(ModItems.BUCKET_OF_LIQUID_SWEET_BERRIES_ICE_CREAM);
+             event.accept(ModItems.SCOOP_OF_STRAWBERRIES_SORBET);
+             event.accept(ModItems.SCOOP_OF_CHOCOLATE_SORBET);
+             event.accept(ModItems.SCOOP_OF_SWEET_BERRIES_SORBET);
+             event.accept(ModItems.SCOOP_OF_VANILLA_SORBET);
              event.accept(ModItems.CREATIVE_NUGGET);
              event.accept(ModItems.BUCKET_OF_LIQUID_ICE_CREAM);
              event.accept(ModItems.CREATIVE_INGOT);
