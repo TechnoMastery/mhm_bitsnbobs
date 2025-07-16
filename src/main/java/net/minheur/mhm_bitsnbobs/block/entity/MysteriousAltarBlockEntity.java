@@ -28,13 +28,10 @@ import net.minheur.mhm_bitsnbobs.recipe.MysteriousMagicRecipe;
 import net.minheur.mhm_bitsnbobs.screen.MysteriousAltarMenu;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 import net.minheur.mhm_bitsnbobs.util.MysteriousMagicContainer;
-import net.minheur.mhm_bitsnbobs.util.SidedItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.EnumMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvider {
@@ -49,15 +46,13 @@ public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvi
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            if (INPUT_SLOTS.contains(slot) && stack.is(ModTags.Items.MAGIC_FUELS)) return false;
+            if (INPUT_SLOTS.contains(slot)) return true;
             if (slot == FUEL_SLOT) {
                 return stack.is(ModTags.Items.MAGIC_FUELS);
             }
             return false;
         }
     };
-
-    private final Map<Direction, LazyOptional<IItemHandler>> handlers = new EnumMap<>(Direction.class);
 
     public static final int OUTPUT_SLOT = 0;
     public static final int FUEL_SLOT = 1;
@@ -83,11 +78,6 @@ public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvi
 
     public MysteriousAltarBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.MYSTERIOUS_MAGIC_BE.get(), pPos, pBlockState);
-
-        for (Direction dir : Direction.values()) {
-            handlers.put(dir, LazyOptional.of(() -> createSidedHandler(dir)));
-        }
-
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -114,10 +104,6 @@ public class MysteriousAltarBlockEntity extends BlockEntity implements MenuProvi
                 return 4;
             }
         };
-    }
-
-    private IItemHandler createSidedHandler(Direction side) {
-        return new SidedItemHandler(this, side);
     }
 
     public ItemStack getRenderStack() {
