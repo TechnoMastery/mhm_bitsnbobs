@@ -48,7 +48,7 @@ public class FreezerBlockEntity extends BlockEntity implements MenuProvider {
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 78;
+    private int maxProgress = 500;
 
     public FreezerBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.FREEZING_BE.get(), pPos, pBlockState);
