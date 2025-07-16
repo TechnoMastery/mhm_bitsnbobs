@@ -1,0 +1,18 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_ice_cream"
+    },
+    {
+      "amount": 100,
+      "fluid": "create:chocolate",
+      "nbt": {}
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_chocolate_ice_cream"
+    }
+  ]
+}

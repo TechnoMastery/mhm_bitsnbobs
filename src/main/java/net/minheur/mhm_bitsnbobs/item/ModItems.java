@@ -156,6 +156,15 @@ public class ModItems {
     public static final RegistryObject<Item> MILK_BUCKET_WITH_EGG = ITEMS.register("milk_bucket_with_egg",
             () -> new Item(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM = ITEMS.register("bucket_of_liquid_chocolate_ice_cream",
+            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
+    public static final RegistryObject<Item> BUCKET_OF_LIQUID_VANILLA_ICE_CREAM = ITEMS.register("bucket_of_liquid_vanilla_ice_cream",
+            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
+    public static final RegistryObject<Item> BUCKET_OF_LIQUID_STRAWBERRIES_ICE_CREAM = ITEMS.register("bucket_of_liquid_strawberries_ice_cream",
+            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
+    public static final RegistryObject<Item> BUCKET_OF_LIQUID_SWEET_BERRIES_ICE_CREAM = ITEMS.register("bucket_of_liquid_sweet_berries_ice_cream",
+            () -> new Item(new Item.Properties().stacksTo(1).craftRemainder(Items.BUCKET)));
+
     public static final RegistryObject<Item> CHOCOLATE_ICE_CREAM = ITEMS.register("chocolate_ice_cream",
             () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.ICE_CREAM)));
     public static final RegistryObject<Item> VANILLA_ICE_CREAM = ITEMS.register("vanilla_ice_cream",

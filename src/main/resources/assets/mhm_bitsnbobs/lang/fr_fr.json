@@ -95,6 +95,11 @@
   "item.mhm_bitsnbobs.vanilla_snowball": "Boule glacé à la vanille",
   "item.mhm_bitsnbobs.strawberries_snowball": "Boule glacé à la fraise",
   "item.mhm_bitsnbobs.sweet_berries_snowball": "Boule glacé aux baies sucrées",
+  "item.mhm_bitsnbobs.milk_bucket_with_egg": "Seau de lait avec un oeuf",
+  "item.mhm_bitsnbobs.bucket_of_liquid_chocolate_ice_cream": "Seau de glace au chocolat liquide",
+  "item.mhm_bitsnbobs.bucket_of_liquid_vanilla_ice_cream": "Seau de glace à la vanille liquide",
+  "item.mhm_bitsnbobs.bucket_of_liquid_strawberries_ice_cream": "Seau de glace aux baies sucrées liquide",
+  "item.mhm_bitsnbobs.bucket_of_liquid_sweet_berries_ice_cream": "Bucket Seau de glace sweet berries liquide",
   "item.mhm_bitsnbobs.quartz_shard": "Eclat de quartz",
 
   "item.mhm_bitsnbobs.metal_detector": "Détecteur de métaux",

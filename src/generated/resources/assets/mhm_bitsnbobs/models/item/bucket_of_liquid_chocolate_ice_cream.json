@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mhm_bitsnbobs:item/bucket_of_liquid_chocolate_ice_cream"
+  }
+}
