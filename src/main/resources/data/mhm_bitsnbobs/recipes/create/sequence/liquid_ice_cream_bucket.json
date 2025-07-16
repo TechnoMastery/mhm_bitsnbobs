@@ -1,0 +1,67 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:bucket"
+  },
+  "loops": 6,
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_ice_cream"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        },
+        {
+          "amount": 50,
+          "fluid": "minecraft:lava",
+          "nbt": {}
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        },
+        {
+          "item": "ae2:singularity"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        },
+        {
+          "item": "ae2:singularity"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "mhm_bitsnbobs:milk_bucket_with_egg"
+  }
+}
