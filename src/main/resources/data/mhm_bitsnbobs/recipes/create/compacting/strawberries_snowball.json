@@ -1,0 +1,22 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "mhm_bitsnbobs:strawberry"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:strawberries_snowball"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:snowball"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "amount": 100,
+      "fluid": "create:chocolate"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:chocolate_snowball"
+    }
+  ]
+}
