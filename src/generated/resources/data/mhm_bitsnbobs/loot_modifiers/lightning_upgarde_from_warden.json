@@ -1,0 +1,15 @@
+{
+  "type": "mhm_bitsnbobs:add_item",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/warden"
+    },
+    {
+      "chance": 0.01,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "item": "mhm_bitsnbobs:lightning_upgrade",
+  "quantity": 1
+}

@@ -31,6 +31,11 @@ public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
                 LootItemRandomChanceCondition.randomChance(0.1f).build()
         }, ModItems.PINE_CONE.get(), 1));
 
+        add("lightning_upgarde_from_warden", new AddItemModifier(new LootItemCondition[] {
+                new LootTableIdCondition.Builder(new ResourceLocation("entities/warden")).build(),
+                LootItemRandomChanceCondition.randomChance(0.01f).build()
+        }, ModItems.LIGHTNING_UPGRADE.get(), 1));
+
         add("metal_detector_from_jungle_temples", new AddItemModifier(new LootItemCondition[] {
                 new LootTableIdCondition.Builder(new ResourceLocation("chests/jungle_temple")).build(),
                 LootItemRandomChanceCondition.randomChance(4f).build()
