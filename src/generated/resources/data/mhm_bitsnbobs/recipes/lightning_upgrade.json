@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:sculk_catalyst"
+    },
+    "D": {
+      "item": "minecraft:diamond_block"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "T": {
+      "item": "minecraft:netherite_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "DTD",
+    "DND",
+    "CCC"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:lightning_upgrade"
+  },
+  "show_notification": true
+}

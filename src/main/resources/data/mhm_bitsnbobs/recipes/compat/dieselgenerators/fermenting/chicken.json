@@ -10,7 +10,7 @@
   "results": [
     {
       "chance": 0.25,
-      "fluid": "mhm_bitsnbobs:rotten_chicken"
+      "item": "mhm_bitsnbobs:rotten_chicken"
     }
   ]
 }

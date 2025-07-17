@@ -326,6 +326,7 @@
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Fait du bruit",
   "tooltip.mhm_bitsnbobs.balls.tooltip": "Récupéré au concassage de terre de ressource.",
   "tooltip.mhm_bitsnbobs.magicfuel.tooltip": "Cet objet a un pouvoir magique de",
+  "tooltip.mhm_bitsnbobs.rotten_item.tooltip": "Cet objet est désactivé : installez createdieselgenerators pour l'activer.",
 
   "tooltip.mhm_bitsnbobs.zombie_arm.credit": "Créer par Jema",
 

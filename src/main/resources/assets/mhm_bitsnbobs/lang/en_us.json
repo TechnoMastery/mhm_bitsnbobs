@@ -325,6 +325,7 @@
   "tooltip.mhm_bitsnbobs.sound_block.tooltip": "Make noises",
   "tooltip.mhm_bitsnbobs.balls.tooltip": "Get from crushing resource dirt block",
   "tooltip.mhm_bitsnbobs.magicfuel.tooltip": "This item have a magic power of",
+  "tooltip.mhm_bitsnbobs.rotten_item.tooltip": "This item is disabled : insall createdieselgenerators to enable it.",
 
   "tooltip.mhm_bitsnbobs.zombie_arm.credit": "Made by Jema",
 

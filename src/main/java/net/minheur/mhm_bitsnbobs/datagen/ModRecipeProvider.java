@@ -406,6 +406,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.JUKEBOX), has(Items.JUKEBOX))
                 .save(pWriter);
 
+        // lightning upgrade
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LIGHTNING_UPGRADE.get())
+                .pattern("DTD")
+                .pattern("DND")
+                .pattern("CCC")
+                .define('C', Items.SCULK_CATALYST)
+                .define('D', Items.DIAMOND_BLOCK)
+                .define('N', Items.NETHERITE_INGOT)
+                .define('T', Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE)
+                .unlockedBy(getHasName(Items.SCULK_CATALYST), has(Items.SCULK_CATALYST))
+                .save(pWriter);
+
         // control panel craft
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONTROL_PANEL.get())
                 .pattern(" B ")
