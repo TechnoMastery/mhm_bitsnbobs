@@ -10,7 +10,7 @@ public class RconInputHandler {
 
     public static String analyzeText(String input) {
         List<String> detectedCategories = new ArrayList<>();
-        String answer = null;
+        String answer;
 
         for (Map.Entry<String, List<String>> entry : RconKeywordLoader.KEYWORDS.entrySet()) {
             for (String keyword : entry.getValue()) {

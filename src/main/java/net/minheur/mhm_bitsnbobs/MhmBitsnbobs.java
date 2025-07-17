@@ -57,7 +57,7 @@ public class MhmBitsnbobs
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "mhm_bitsnbobs";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     /// Ici donc on vient utiliser la méthode register à chaque fois pour les fichiers ayant une DeferredRegister
     public MhmBitsnbobs() // FMLJavaModLoadingContext context
@@ -110,6 +110,8 @@ public class MhmBitsnbobs
 
             // ligne suivante : ajout au compostage
             ComposterBlock.COMPOSTABLES.put(ModItems.PINE_CONE.get(), 0.2f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.STRAWBERRY.get(), 0.5f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.CORN.get(), 0.3f);
         });
     }
 

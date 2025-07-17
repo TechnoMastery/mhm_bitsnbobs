@@ -20,9 +20,8 @@ public class RconKeywordLoader extends SimpleJsonResourceReloadListener {
     public static final Map<String, List<String>> KEYWORDS = new HashMap<>();
     private static final Gson GSON = new Gson();
 
-    // Ici, on cible directement le fichier JSON (pas un dossier)
     public RconKeywordLoader() {
-        super(GSON, "rcon_keywords"); // Correspond à data/mhm_bitsnbobs/rcon_keywords.json
+        super(GSON, "rcon_keywords");
     }
 
     @Override
@@ -34,7 +33,7 @@ public class RconKeywordLoader extends SimpleJsonResourceReloadListener {
 
         JsonElement jsonElement = jsonElements.get(expectedLocation);
         if (jsonElement == null) {
-            System.out.println("[mhm_bitsnbobs:RconKeywordLoader] Rcon keywords file not found ! (data/mhm_bitsnbobs/rcon_keywords.json)");
+            MhmBitsnbobs.LOGGER.error("Rcon keywords file not found ! (data/mhm_bitsnbobs/rcon_keywords.json)");
             return;
         }
 
@@ -52,7 +51,7 @@ public class RconKeywordLoader extends SimpleJsonResourceReloadListener {
             KEYWORDS.put(key, keywords);
         }
 
-        System.out.println("[mhm_bitsnbobs:RconKeywordLoader] Rcon keywords loaded successfully.");
+        MhmBitsnbobs.LOGGER.info("Rcon keywords loaded successfully.");
     }
 }
 
