@@ -16,7 +16,7 @@
       "item": "minecraft:bone_meal"
     },
     {
-      "chance": "0.8",
+      "chance": 0.8,
       "item": "minecraft:soul_sand"
     }
   ]
