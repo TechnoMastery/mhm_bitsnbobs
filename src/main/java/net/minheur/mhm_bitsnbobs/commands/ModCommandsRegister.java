@@ -21,7 +21,7 @@ public class ModCommandsRegister {
                                     BlockPos pos = player.blockPosition();
 
                                     ModServerConfig.setSpawnPos(pos);
-                                    ctx.getSource().sendSuccess(() -> Component.literal("Spawn set to " + pos), true);
+                                    ctx.getSource().sendSuccess(() -> Component.literal("Spawn set to " + pos + " in the overworld"), true);
                                     return 1;
                                 }))
                         .then(Commands.literal("enable")
@@ -50,7 +50,13 @@ public class ModCommandsRegister {
                                 commandContext.getSource().sendFailure(Component.literal("Spawn disabled !"));
                                 return 0;
                             }
-                            player.teleportTo(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+                            CommandSourceStack commandSource = player.createCommandSourceStack()
+                                    .withPermission(Commands.LEVEL_GAMEMASTERS)
+                                    .withSuppressedOutput();
+                            double xPos = pos.getX() + 0.5;
+                            double yPos = pos.getY() + 0.5;
+                            double zPos = pos.getZ() + 0.5;
+                            String command = "execute in execute in minecraft:overworld run tp @s " + xPos + " " + yPos + " " + zPos;
                             commandContext.getSource().sendSuccess(() -> Component.literal("Teleported to spawn"), true);
                             return 1;
                         })
