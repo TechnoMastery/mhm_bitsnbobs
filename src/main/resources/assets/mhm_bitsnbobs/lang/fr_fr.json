@@ -334,5 +334,8 @@
   "recipe.mhm_bitsnbobs.freezing": "Congélation",
   "recipe.mhm_bitsnbobs.gem_polishing_station": "Polissage des gems",
   "recipe.mhm_bitsnbobs.mysterious_magic": "Magie mystérieuse",
-  "recipe.mhm_bitsnbobs.mysterious_magic.power": "Energie demandé"
+  "recipe.mhm_bitsnbobs.mysterious_magic.power": "Energie demandé",
+
+  "menu.discord": "Notre discord",
+  "menu.github": "Notre github"
 }
