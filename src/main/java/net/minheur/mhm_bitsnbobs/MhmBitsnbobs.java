@@ -144,6 +144,9 @@ public class MhmBitsnbobs
              event.accept(ModItems.SCOOP_OF_VANILLA_SORBET);
              event.accept(ModItems.CREATIVE_NUGGET);
              event.accept(ModItems.BUCKET_OF_LIQUID_ICE_CREAM);
+             event.accept(ModItems.VANILLA_EXTRACT);
+             event.accept(ModItems.VANILLA_POD);
+             event.accept(ModItems.DRIED_VANILLA_POD);
              event.accept(ModItems.CREATIVE_INGOT);
              event.accept(ModBlocks.CREATIVE_BLOCK);
              event.accept(ModBlocks.CREATIVE_RESIDUE_BLOCK);

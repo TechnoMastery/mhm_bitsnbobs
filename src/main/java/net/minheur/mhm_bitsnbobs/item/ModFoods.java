@@ -29,9 +29,11 @@ public class ModFoods {
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2000, 20), 1f)
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 2000), 1f).build();
 
+    public static final FoodProperties VANILLA_PODS = new FoodProperties.Builder().nutrition(0)
+            .saturationMod(0f).alwaysEat().effect(() -> new MobEffectInstance(MobEffects.HUNGER, 50, 3), 1f).build();
+
     public static final FoodProperties ICE_CREAM = new FoodProperties.Builder().nutrition(6)
             .saturationMod(0.6f).alwaysEat().fast().effect(() -> new MobEffectInstance(ModEffects.ICED.get(), 200, 0), 0.3f).build();
     public static final FoodProperties SORBET = new FoodProperties.Builder().nutrition(3)
-
             .saturationMod(0.2f).alwaysEat().fast().effect(() -> new MobEffectInstance(ModEffects.ICED.get(), 200, 0), 0.3f).build();
 }
