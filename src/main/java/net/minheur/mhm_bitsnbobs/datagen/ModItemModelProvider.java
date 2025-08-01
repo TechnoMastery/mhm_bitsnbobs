@@ -112,6 +112,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CONE);
         simpleItem(ModItems.CHOCOLATE_ICE_CREAM);
         simpleItem(ModItems.VANILLA_ICE_CREAM);
+        simpleItem(ModItems.QUANTUM_DUST);
         simpleItem(ModItems.STRAWBERRY_ICE_CREAM);
         simpleItem(ModItems.SWEET_BERRIES_ICE_CREAM);
         simpleItem(ModItems.QUARTER_STICK);

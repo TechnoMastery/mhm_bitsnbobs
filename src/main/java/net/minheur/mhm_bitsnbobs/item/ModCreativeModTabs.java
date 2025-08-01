@@ -109,6 +109,7 @@ public class ModCreativeModTabs {
                         output.accept(ModBlocks.DARK_SAPLING.get());
                         output.accept(ModItems.WIND_CHARGED_INGOT.get());
                         output.accept(ModItems.QUANTUM_CORE.get());
+                        output.accept(ModItems.QUANTUM_DUST.get());
                         output.accept(ModItems.STABILIZED_QUANTUM_CORE.get());
                         output.accept(ModItems.QUANTUM_STAFF.get());
                         output.accept(ModBlocks.MYSTERIOUS_ALTAR.get());
