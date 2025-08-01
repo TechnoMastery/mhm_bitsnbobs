@@ -1,0 +1,51 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "mhm_bitsnbobs:block/vanilla_cake_down",
+		"1": "mhm_bitsnbobs:block/vanilla_cake_middle",
+		"2": "mhm_bitsnbobs:block/vanilla_cake_up",
+		"particle": "mhm_bitsnbobs:block/vanilla_cake_down"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 1],
+			"to": [15, 8, 15],
+			"rotation": {"angle": 0, "axis": "y", "origin": [1, 0, 1]},
+			"faces": {
+				"north": {"uv": [7, 0, 14, 4], "texture": "#0"},
+				"east": {"uv": [7, 4, 14, 8], "texture": "#0"},
+				"south": {"uv": [7, 8, 14, 12], "texture": "#0"},
+				"west": {"uv": [7, 12, 14, 16], "texture": "#0"},
+				"up": {"uv": [7, 7, 0, 0], "texture": "#0"},
+				"down": {"uv": [7, 7, 0, 14], "texture": "#0"}
+			}
+		},
+		{
+			"from": [4, 8, 4],
+			"to": [12, 12, 12],
+			"rotation": {"angle": 0, "axis": "x", "origin": [4, 8, 4]},
+			"faces": {
+				"north": {"uv": [8, 0, 16, 4], "texture": "#1"},
+				"east": {"uv": [8, 4, 16, 8], "texture": "#1"},
+				"south": {"uv": [8, 8, 16, 12], "texture": "#1"},
+				"west": {"uv": [8, 12, 16, 16], "texture": "#1"},
+				"up": {"uv": [8, 8, 0, 0], "texture": "#1"},
+				"down": {"uv": [8, 8, 0, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [7, 12, 6],
+			"to": [10, 15, 9],
+			"rotation": {"angle": 22.5, "axis": "x", "origin": [8, 12, 6]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 3], "texture": "#2"},
+				"east": {"uv": [0, 3, 3, 6], "texture": "#2"},
+				"south": {"uv": [3, 0, 6, 3], "texture": "#2"},
+				"west": {"uv": [3, 3, 6, 6], "texture": "#2"},
+				"up": {"uv": [3, 9, 0, 6], "texture": "#2"},
+				"down": {"uv": [9, 0, 6, 3], "texture": "#2"}
+			}
+		}
+	]
+}
