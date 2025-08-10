@@ -161,6 +161,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.COPPER_BALL);
              event.accept(ModItems.GOLD_BALL);
              event.accept(ModItems.DIAMOND_BALL);
+             event.accept(ModItems.SAPPHIRE_BALL);
              event.accept(ModItems.CONTROL_PANEL);
              event.accept(ModItems.CONTROLLED_STICK);
              event.accept(ModItems.HALF_STICK);

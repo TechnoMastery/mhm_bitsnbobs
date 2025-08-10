@@ -148,6 +148,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.COPPER_BALL.get());
                         output.accept(ModItems.GOLD_BALL.get());
                         output.accept(ModItems.DIAMOND_BALL.get());
+                        output.accept(ModItems.SAPPHIRE_BALL.get());
                         output.accept(ModItems.SUPER_CHARGED_BALL.get());
 
                         output.accept(ModItems.IRON_CATALYZER.get());

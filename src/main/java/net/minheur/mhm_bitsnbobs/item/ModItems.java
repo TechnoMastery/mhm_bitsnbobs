@@ -156,6 +156,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DIAMOND_BALL = ITEMS. register("diamond_ball",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SAPPHIRE_BALL = ITEMS.register("sapphire_ball",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> QUARTZ_SHARD = ITEMS.register("quartz_shard",
             () -> new Item(new Item.Properties()));

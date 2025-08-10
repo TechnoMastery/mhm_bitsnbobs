@@ -35,6 +35,11 @@
       "item": "mhm_bitsnbobs:diamond_ball"
     },
     {
+      "count": 2,
+      "chance": 0.13,
+      "item": "mhm_bitsnbobs:sapphire_ball"
+    },
+    {
       "chance": 0.02,
       "item": "mhm_bitsnbobs:creative_essence"
     }
