@@ -3,11 +3,7 @@ Here is the dev workspace :
 If you want to help, please refer to CONTRIBUTING.md
 
 I am actually French ! If you are too, or you want to talk with us, join our discord :
-https://discord.gg/sWg385fNdZ
-
-Check out their job in their branchs !
-
-Full changelog : https://technomastery.github.io/TechnoWeb/pages/changelog-mod/
+https://discord.gg/wCTcVnJFmx
 
 I want to give a big thanks to my friends that participated to the project :
 XaQorix
