@@ -114,6 +114,12 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.QUANTUM_STAFF.get());
                         output.accept(ModBlocks.MYSTERIOUS_ALTAR.get());
                         output.accept(ModItems.MAGIC_SHARD.get());
+                        output.accept(ModItems.PRINTED_QUANTUM_CIRCUIT.get());
+                        output.accept(ModItems.INSCRIBER_QUANTUM_PRESS.get());
+                        output.accept(ModItems.QUANTUM_PROCESSOR.get());
+                        output.accept(ModItems.QUANTUMITE_INGOT.get());
+                        output.accept(ModItems.QUANTUMITE_SHEET.get());
+                        output.accept(ModItems.QUANTUMITE_CHUNK.get());
                     })
                     .build());
 

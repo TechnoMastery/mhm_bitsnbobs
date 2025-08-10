@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -66,6 +65,20 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> STABILIZED_QUANTUM_CORE = ITEMS.register("stabilized_quantum_core",
             () -> new StabilizedQuantumCoreItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> PRINTED_QUANTUM_CIRCUIT = ITEMS.register("printed_quantum_circuit",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> INSCRIBER_QUANTUM_PRESS = ITEMS.register("inscriber_quantum_press",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUM_PROCESSOR = ITEMS.register("quantum_processor",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> QUANTUMITE_INGOT = ITEMS.register("quantumite_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUMITE_SHEET = ITEMS.register("quantumite_sheet",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUMITE_CHUNK = ITEMS.register("quantumite_chunk",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));

@@ -100,6 +100,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GOLD_BALL);
         simpleItem(ModItems.DIAMOND_BALL);
         simpleItem(ModItems.SAPPHIRE_BALL);
+        simpleItem(ModItems.PRINTED_QUANTUM_CIRCUIT);
+        simpleItem(ModItems.INSCRIBER_QUANTUM_PRESS);
+        simpleItem(ModItems.QUANTUM_PROCESSOR);
+        simpleItem(ModItems.QUANTUMITE_INGOT);
+        simpleItem(ModItems.QUANTUMITE_SHEET);
+        simpleItem(ModItems.QUANTUMITE_CHUNK);
         simpleItem(ModItems.RED_CLAY_BALL);
         simpleItem(ModItems.EMPTY_BIG_FLASK);
         simpleItem(ModItems.EMPTY_LITTLE_FLASK);
