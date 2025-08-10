@@ -74,6 +74,8 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> FREEZER = registerBlock("freezer",
             () -> new FreezerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+    public static final RegistryObject<Block> ATOMICAL_STABILIZATOR = registerBlock("atomical_stabilizator",
+            () -> new AtomicalStabilizatorBlock(BlockBehaviour.Properties.copy(ModBlocks.CREATIVE_BLOCK.get())));
 
     // end custom
 
