@@ -64,8 +64,8 @@ public class AtomicalStabilizatorBlock extends BaseEntityBlock {
     public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if(pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
-            if(blockEntity instanceof GemPolishingStationBlockEntity) {
-                ((GemPolishingStationBlockEntity) blockEntity).drops();
+            if(blockEntity instanceof AtomicalStabilizatorBlockEntity) {
+                ((AtomicalStabilizatorBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
@@ -75,8 +75,8 @@ public class AtomicalStabilizatorBlock extends BaseEntityBlock {
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if(!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
-            if(entity instanceof GemPolishingStationBlockEntity) {
-                NetworkHooks.openScreen(((ServerPlayer) pPlayer), (GemPolishingStationBlockEntity) entity, pPos);
+            if(entity instanceof AtomicalStabilizatorBlockEntity) {
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer), (AtomicalStabilizatorBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing");
             }

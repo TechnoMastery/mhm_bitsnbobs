@@ -245,6 +245,7 @@ public class MhmBitsnbobs
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
             MenuScreens.register(ModMenuTypes.INCUBATOR_MENU.get(), IncubatorScreen::new);
             MenuScreens.register(ModMenuTypes.MYSTERIOUS_ALTAR_MENU.get(), MysteriousAltarScreen::new);
+            MenuScreens.register(ModMenuTypes.ATOMICAL_STABILIZATOR_MENU.get(), AtomicalStabilizatorScreen::new);
         }
     }
 }
