@@ -44,6 +44,7 @@ public class ModItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         // duplicate = auto get model item gen
         simpleItem(ModItems.SAPPHIRE);
+        simpleItem(ModItems.NETHER_STICK);
         simpleItem(ModItems.WIND_CHARGED_INGOT);
         simpleItem(ModItems.RAW_SAPPHIRE);
         simpleItem(ModItems.EXTREMELY_DRY_DIRT);
