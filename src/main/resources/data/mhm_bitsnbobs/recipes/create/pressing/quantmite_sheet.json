@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:quantumite_ingot"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:quantumite_sheet"
+    }
+  ]
+}

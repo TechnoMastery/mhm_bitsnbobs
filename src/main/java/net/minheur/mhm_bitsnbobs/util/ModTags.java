@@ -34,6 +34,7 @@ public class ModTags {
         public static final TagKey<Item> VANILLA_SCOOPS = forgeTag("vanilla_scoops");
         public static final TagKey<Item> STRAWBERRY_SCOOPS = forgeTag("strawberry_scoops");
         public static final TagKey<Item> FUELS = forgeTag("fuels");
+        public static final TagKey<Item> QUANTUMITE_INGOTS = forgeTag("ingot/quantumite");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(new ResourceLocation(MhmBitsnbobs.MOD_ID, name));

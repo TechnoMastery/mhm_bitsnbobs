@@ -31,6 +31,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.SAPPHIRE_LEGGINGS.get(),
                         ModItems.SAPPHIRE_BOOTS.get()
                 );
+        this.tag(ModTags.Items.QUANTUMITE_INGOTS)
+                .add(
+                        ModItems.QUANTUMITE_INGOT.get()
+                );
         this.tag(ModTags.Items.BASEDISK)
                 .add(
                         ModItems.BASE_OF_DISC.get()
