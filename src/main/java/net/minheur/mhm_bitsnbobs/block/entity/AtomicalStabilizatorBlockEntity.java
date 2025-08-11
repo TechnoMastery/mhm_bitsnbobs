@@ -49,7 +49,7 @@ public class AtomicalStabilizatorBlockEntity extends BlockEntity implements Menu
             if (slot == GLUE_SLOT) {
                 return stack.is(ModTags.Items.ATOMICAL_STABILIZATOR_GLUES);
             } else {
-                return !(slot == OUTPUT_SLOT);
+                return slot != OUTPUT_SLOT;
             }
         }
     };
