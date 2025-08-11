@@ -28,20 +28,27 @@ public class AtomicalStabilizatorBlock extends BaseEntityBlock {
     public static final VoxelShape SHAPE;
 
     static {
+        // feet
         VoxelShape shapeBox = Block.box(0, 0, 0, 2, 2, 2);
+        shapeBox = Shapes.or(shapeBox, Block.box(0, 0, 14, 2, 2, 16));
         shapeBox = Shapes.or(shapeBox, Block.box(14, 0, 0, 16, 2, 2));
-        shapeBox = Shapes.or(shapeBox, Block.box(0, 14, 0, 2, 14, 2));
-        shapeBox = Shapes.or(shapeBox, Block.box(14, 14, 0, 16, 16, 2));
-        shapeBox = Shapes.or(shapeBox, Block.box(0, 0, 2, 16, 16, 14));
-        shapeBox = Shapes.or(shapeBox, Block.box(3, 11, 3, 13, 13, 13));
-        shapeBox = Shapes.or(shapeBox, Block.box(5, 11, 2, 11, 13, 3));
-        shapeBox = Shapes.or(shapeBox, Block.box(7, 11, 1, 8, 13, 2));
-        shapeBox = Shapes.or(shapeBox, Block.box(2, 11, 5, 3, 13, 11));
-        shapeBox = Shapes.or(shapeBox, Block.box(1, 11, 7, 2, 13, 9));
-        shapeBox = Shapes.or(shapeBox, Block.box(5, 11, 13, 11, 13, 14));
-        shapeBox = Shapes.or(shapeBox, Block.box(7, 11, 14, 9, 13, 15));
-        shapeBox = Shapes.or(shapeBox, Block.box(13, 11, 5, 14, 13, 11));
-        shapeBox = Shapes.or(shapeBox, Block.box(14, 11, 7, 15, 13, 9));
+        shapeBox = Shapes.or(shapeBox, Block.box(14, 0, 14, 16, 2, 16));
+        // main box
+        shapeBox = Shapes.or(shapeBox, Block.box(0, 2, 0, 16, 12, 16));
+        // control panel
+        shapeBox = Shapes.or(shapeBox, Block.box(3, 12, 3, 13, 13, 13));
+
+        shapeBox = Shapes.or(shapeBox, Block.box(2, 12, 5, 3, 13, 11));
+        shapeBox = Shapes.or(shapeBox, Block.box(1, 12, 7, 2, 13, 9));
+
+        shapeBox = Shapes.or(shapeBox, Block.box(5, 12, 2,11, 13, 3));
+        shapeBox = Shapes.or(shapeBox, Block.box(7, 12, 1, 9, 13, 2));
+
+        shapeBox = Shapes.or(shapeBox, Block.box(13, 12, 5, 14, 13, 11));
+        shapeBox = Shapes.or(shapeBox, Block.box(14, 12, 7, 15, 13, 9));
+
+        shapeBox = Shapes.or(shapeBox, Block.box(5, 12, 13, 11, 13, 14));
+        shapeBox = Shapes.or(shapeBox, Block.box(7, 12, 14, 9, 13, 15));
 
         SHAPE = shapeBox;
     }
