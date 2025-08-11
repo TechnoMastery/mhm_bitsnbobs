@@ -1,0 +1,11 @@
+{
+  "type": "mhm_bitsnbobs:atomical_stabilizator",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:quantumite_chunk"
+    }
+  ],
+  "output": {
+    "item": "mhm_bitsnbobs:quantumite_ingot"
+  }
+}
