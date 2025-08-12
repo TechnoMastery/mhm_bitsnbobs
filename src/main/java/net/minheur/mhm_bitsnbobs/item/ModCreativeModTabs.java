@@ -121,6 +121,11 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.QUANTUMITE_INGOT.get());
                         output.accept(ModItems.QUANTUMITE_SHEET.get());
                         output.accept(ModItems.QUANTUMITE_CHUNK.get());
+                        output.accept(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD.get());
                     })
                     .build());
 

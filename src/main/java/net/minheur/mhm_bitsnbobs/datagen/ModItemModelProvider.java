@@ -55,6 +55,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.WET_DIRT);
         simpleItem(ModItems.PIECE_OF_DIRT);
         simpleItem(ModItems.HARDENED_INGOT);
+        simpleItem(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD);
+        simpleItem(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD);
+        simpleItem(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD);
+        simpleItem(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD);
+        simpleItem(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD);
         simpleItem(ModItems.SPAWNER_PART);
         simpleItem(ModItems.CREATIVE_ESSENCE);
         simpleItem(ModItems.CREATIVE_NUGGET);
