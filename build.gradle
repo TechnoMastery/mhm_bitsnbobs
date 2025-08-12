@@ -185,6 +185,9 @@ dependencies {
 
     // ae2
     implementation(fg.deobf("appeng:appliedenergistics2-forge:${ae2_version}"))
+    // mega cells
+    implementation fg.deobf("curse.maven:mega-cells-622112:${megacells_file_id}")
+    implementation fg.deobf("curse.maven:cloth-config-348521:${cloth_file_id}")
 
     implementation(fg.deobf("org.appliedenergistics:guideme:${guideme_version}"))
     compileOnly(fg.deobf("org.appliedenergistics:guideme:${guideme_version}:api"))
@@ -211,7 +214,8 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range: loader_version_range,
             mod_id: mod_id, modid: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, create_ei_file_id: create_ei_file_id,
-            ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits, tfmg_file_id: tfmg_file_if
+            ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits, tfmg_file_id: tfmg_file_if,
+            megacells_file_id: megacells_file_id, cloth_file_id: cloth_file_id
     ]
     inputs.properties replaceProperties
 
