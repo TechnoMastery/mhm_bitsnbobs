@@ -11,10 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
-import net.minheur.mhm_bitsnbobs.recipe.FreezingRecipe;
-import net.minheur.mhm_bitsnbobs.recipe.GemPolishingRecipe;
-import net.minheur.mhm_bitsnbobs.recipe.IncubatorRecipe;
-import net.minheur.mhm_bitsnbobs.recipe.MysteriousMagicRecipe;
+import net.minheur.mhm_bitsnbobs.recipe.*;
 import net.minheur.mhm_bitsnbobs.screen.FreezerScreen;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationScreen;
 import net.minheur.mhm_bitsnbobs.screen.IncubatorScreen;
@@ -30,15 +27,16 @@ public class JEIMhmBitsnbobsPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-
-           registration.addRecipeCategories(new FreezingCategory(registration.getJeiHelpers().getGuiHelper()));
-           registration.addRecipeCategories(new GemPolishingCategory(registration.getJeiHelpers().getGuiHelper()));
-           registration.addRecipeCategories(new IncubatingCategory(registration.getJeiHelpers().getGuiHelper()));
-           registration.addRecipeCategories(new MysteriousMagicCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new AtomicalStabilizatorCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new FreezingCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new GemPolishingCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new IncubatingCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new MysteriousMagicCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(ModBlocks.ATOMICAL_STABILIZATOR.get(), AtomicalStabilizatorCategory.ATOMICAL_STABILIZATOR_TYPE);
         registration.addRecipeCatalyst(ModBlocks.FREEZER.get(), FreezingCategory.FREEZING_TYPE);
         registration.addRecipeCatalyst(ModBlocks.INCUBATOR.get(), IncubatingCategory.INCUBATING_TYPE);
         registration.addRecipeCatalyst(ModBlocks.GEM_POLISHING_STATION.get(), GemPolishingCategory.GEM_POLISHING_TYPE);
@@ -49,6 +47,9 @@ public class JEIMhmBitsnbobsPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
+
+        List<AtomicalStabilizatorRecipe> atomicalStabilizatorRecipes = recipeManager.getAllRecipesFor(AtomicalStabilizatorRecipe.Type.INSTANCE);
+        registration.addRecipes(AtomicalStabilizatorCategory.ATOMICAL_STABILIZATOR_TYPE, atomicalStabilizatorRecipes);
 
         List<FreezingRecipe> freezingRecipes = recipeManager.getAllRecipesFor(FreezingRecipe.Type.INSTANCE);
         registration.addRecipes(FreezingCategory.FREEZING_TYPE, freezingRecipes);
