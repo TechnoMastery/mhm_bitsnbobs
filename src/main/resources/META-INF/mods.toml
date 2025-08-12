@@ -88,7 +88,7 @@ side="BOTH"
 modId="megacells"
 mandatory=true
 versionRange="[2.4.6,)"
-ordering="NONE"
+ordering="AFTER"
 side="BOTH"
 [[dependencies.${modid}]]
 modId="tfmg"
