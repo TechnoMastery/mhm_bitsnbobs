@@ -72,7 +72,7 @@ public class ModBlocks {
     public static final RegistryObject<Block> MYSTERIOUS_ALTAR = registerBlock("mysterious_altar",
             () -> new MysteriousAltarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK_CATALYST)));
     public static final RegistryObject<Block> CRYPTO_MINER = registerBlock("crypto_miner",
-            () -> new CryptoMinerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            () -> new CryptoMinerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> FREEZER = registerBlock("freezer",
             () -> new FreezerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 

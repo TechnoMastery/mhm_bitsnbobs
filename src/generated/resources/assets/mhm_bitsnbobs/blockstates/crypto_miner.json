@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mhm_bitsnbobs:block/crypto_miner"
+    }
+  }
+}

@@ -59,10 +59,7 @@ public class CryptoMinerBlock extends BaseEntityBlock {
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
-        if (pLevel.isClientSide()) {
-            return null;
-        }
-        return createTickerHelper(pBlockEntityType, ModBlockEntities.CRYPTO_MINER_BE.get(),
-                (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
+        return pLevel.isClientSide ? null :
+                createTickerHelper(pBlockEntityType, ModBlockEntities.CRYPTO_MINER_BE.get(), CryptoMinerBlockEntity::serverTick);
     }
 }
