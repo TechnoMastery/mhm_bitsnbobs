@@ -49,6 +49,11 @@ public class AtomicalStabilizatorCategory implements IRecipeCategory<AtomicalSta
     }
 
     @Override
+    public @Nullable IDrawable getBackground() {
+        return this.background;
+    }
+
+    @Override
     public void setRecipe(IRecipeLayoutBuilder builder, AtomicalStabilizatorRecipe recipe, IFocusGroup focuses) {
         builder.addSlot(RecipeIngredientRole.INPUT, 52, 11).addItemStack(recipe.getInputLeft());
         builder.addSlot(RecipeIngredientRole.INPUT, 108, 11).addItemStack(recipe.getInputRight());
