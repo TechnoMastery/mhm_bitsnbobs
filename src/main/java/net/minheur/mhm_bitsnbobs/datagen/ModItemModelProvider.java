@@ -55,11 +55,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.WET_DIRT);
         simpleItem(ModItems.PIECE_OF_DIRT);
         simpleItem(ModItems.HARDENED_INGOT);
-        simpleItem(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD);
-        simpleItem(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD);
-        simpleItem(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD);
-        simpleItem(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD);
-        simpleItem(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD);
         simpleItem(ModItems.SPAWNER_PART);
         simpleItem(ModItems.CREATIVE_ESSENCE);
         simpleItem(ModItems.CREATIVE_NUGGET);
@@ -222,6 +217,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         // trapdoor
         trapdoorItem(ModBlocks.SAPPHIRE_TRAPDOOR);
 
+        circuitBoardItem(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD);
+
         // tools
         handheldItem(ModItems.SAPPHIRE_SWORD);
         handheldItem(ModItems.SAPPHIRE_PICKAXE);
@@ -312,6 +313,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/rune"));
+    }
+
+    private ItemModelBuilder circuitBoardItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/assisted_circuit_board"));
     }
 
     private ItemModelBuilder discItem(RegistryObject<Item> item) {
