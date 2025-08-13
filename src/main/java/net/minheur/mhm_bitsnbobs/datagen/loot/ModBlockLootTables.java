@@ -56,7 +56,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.MYSTERIOUS_ALTAR.get());
         this.dropSelf(ModBlocks.INCUBATOR.get());
         this.dropSelf(ModBlocks.DARK_SAPLING.get());
-
+        this.dropSelf(ModBlocks.CRYPTO_MINER.get());
         this.dropSelf(ModBlocks.DARK_LOG.get());
         this.dropSelf(ModBlocks.DARK_WOOD.get());
         this.dropSelf(ModBlocks.STRIPPED_DARK_LOG.get());
