@@ -55,6 +55,17 @@ public class ModItems {
     public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
             () -> new Item(new Item.Properties().stacksTo(8)));
 
+    public static final RegistryObject<Item> LOGIC_ASSISTED_CIRCUIT_BOARD = ITEMS.register("logic_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> CALCULATION_ASSISTED_CIRCUIT_BOARD = ITEMS.register("calculation_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> ENGINEERING_ASSISTED_CIRCUIT_BOARD = ITEMS.register("engineering_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> ACCUMULATION_ASSISTED_CIRCUIT_BOARD = ITEMS.register("accumulation_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> QUANTUM_ASSISTED_CIRCUIT_BOARD = ITEMS.register("quantum_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
     // to see
     public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
             () -> new Item(new Item.Properties().stacksTo(1)));
