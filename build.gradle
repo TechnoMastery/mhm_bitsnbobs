@@ -187,6 +187,8 @@ dependencies {
     compileOnly(fg.deobf("org.appliedenergistics:guideme:${guideme_version}:api"))
     runtimeOnly(fg.deobf("org.appliedenergistics:guideme:${guideme_version}"))
 
+    implementation fg.deobf("curse.maven:numismatics-889722:${numismatics_file_id}")
+
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
@@ -208,7 +210,8 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range: loader_version_range,
             mod_id: mod_id, modid: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, create_ei_file_id: create_ei_file_id,
-            ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits
+            ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits,
+            numismatics_file_id: numismatics_file_id
     ]
     inputs.properties replaceProperties
 
