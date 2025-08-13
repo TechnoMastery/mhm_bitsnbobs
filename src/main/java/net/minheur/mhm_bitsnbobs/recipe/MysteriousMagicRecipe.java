@@ -12,6 +12,8 @@ import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import org.jetbrains.annotations.Nullable;
 
+import static net.minheur.mhm_bitsnbobs.util.Utils.areStacksEqualEnough;
+
 public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
     private final ItemStack primaryInput;
     private final ItemStack upInput;
@@ -53,11 +55,6 @@ public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
                         areStacksEqualEnough(downInput, downStack) &&
                         areStacksEqualEnough(leftInput, leftStack) &&
                         areStacksEqualEnough(rightInput, rightStack);
-    }
-
-    private boolean areStacksEqualEnough(ItemStack expected, ItemStack actual) {
-        return expected.getItem() == actual.getItem()
-                && actual.getCount() >= expected.getCount();
     }
 
     @Override

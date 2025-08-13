@@ -1,8 +1,6 @@
 package net.minheur.mhm_bitsnbobs.recipe;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -14,28 +12,34 @@ import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import org.jetbrains.annotations.Nullable;
 
+import static net.minheur.mhm_bitsnbobs.util.Utils.areStacksEqualEnough;
+
 public class AtomicalStabilizatorRecipe implements Recipe<SimpleContainer> {
-    private final NonNullList<Ingredient> inputItems;
+    private final ItemStack inputLeft;
+    private final ItemStack inputRight;
+    private final ItemStack glue;
     private final ItemStack output;
     private final ResourceLocation id;
 
-    public AtomicalStabilizatorRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id) {
-        this.inputItems = inputItems;
+    public AtomicalStabilizatorRecipe(ItemStack inputLeft, ItemStack inputRight, ItemStack glue, ItemStack output, ResourceLocation id) {
+        this.inputLeft = inputLeft;
+        this.inputRight = inputRight;
+        this.glue = glue;
         this.output = output;
         this.id = id;
     }
 
     @Override
     public boolean matches(SimpleContainer simpleContainer, Level level) {
-        if(level.isClientSide()) {
-            return false;
-        }
-        return inputItems.get(0).test(simpleContainer.getItem(0));
-    }
+        if(level.isClientSide()) return false;
 
-    @Override
-    public NonNullList<Ingredient> getIngredients() {
-        return inputItems;
+        ItemStack inLeft = simpleContainer.getItem(0);
+        ItemStack inRight = simpleContainer.getItem(1);
+        ItemStack glueSlot = simpleContainer.getItem(2);
+
+        return areStacksEqualEnough(inputLeft, inLeft) &&
+                areStacksEqualEnough(inputRight, inRight) &&
+                areStacksEqualEnough(glue, glueSlot);
     }
 
     @Override
@@ -53,6 +57,15 @@ public class AtomicalStabilizatorRecipe implements Recipe<SimpleContainer> {
         return output.copy();
     }
 
+    public ItemStack getInputLeft() {
+        return inputLeft.copy();
+    }
+    public ItemStack getInputRight() {
+        return inputRight.copy();
+    }
+    public ItemStack getGlue() {
+        return glue.copy();
+    }
 
     @Override
     public ResourceLocation getId() {
@@ -80,36 +93,37 @@ public class AtomicalStabilizatorRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public AtomicalStabilizatorRecipe fromJson(ResourceLocation resourceLocation, JsonObject jsonObject) {
-            ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "output"));
+            try {
+                ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "output"));
 
-            JsonArray ingredients = GsonHelper.getAsJsonArray(jsonObject, "ingredients");
-            // the size changes depending on the amount of inputs the recipe have
-            NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+                ItemStack inLeft = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "left"));
+                ItemStack inRight = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "right"));
+                ItemStack glueItem = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "glue"));
 
-            for(int i=0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+                return new AtomicalStabilizatorRecipe(inLeft, inRight, glueItem, output, resourceLocation);
+            } catch (Exception e) {
+                System.err.println("Failed to parse recipe : " + resourceLocation);
+                e.printStackTrace();
+                return null;
             }
-
-            return new AtomicalStabilizatorRecipe(inputs, output, resourceLocation);
         }
 
         @Override
         public @Nullable AtomicalStabilizatorRecipe fromNetwork(ResourceLocation resourceLocation, FriendlyByteBuf pBuffer) {
-            NonNullList<Ingredient> inputs = NonNullList.withSize(pBuffer.readInt(), Ingredient.EMPTY);
-            for(int i=0; i < inputs.size(); i++) {
-                inputs.set(i, Ingredient.fromNetwork(pBuffer));
-            }
             ItemStack output = pBuffer.readItem();
-            return new AtomicalStabilizatorRecipe(inputs, output, resourceLocation);
+            ItemStack inLeft = pBuffer.readItem();
+            ItemStack inRight = pBuffer.readItem();
+            ItemStack glueItem = pBuffer.readItem();
+
+            return new AtomicalStabilizatorRecipe(inLeft, inRight, glueItem, output, resourceLocation);
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, AtomicalStabilizatorRecipe pRecipe) {
-            pBuffer.writeInt(pRecipe.inputItems.size());
-            for(Ingredient ingredient : pRecipe.getIngredients()) {
-                ingredient.toNetwork(pBuffer);
-            }
             pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
+            pBuffer.writeItemStack(pRecipe.getInputLeft(), false);
+            pBuffer.writeItemStack(pRecipe.inputRight, false);
+            pBuffer.writeItemStack(pRecipe.getGlue(), false);
         }
     }
 

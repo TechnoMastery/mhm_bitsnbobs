@@ -88,6 +88,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         Items.GLOW_BERRIES,
                         Items.GLOW_LICHEN
                 );
+        this.tag(ModTags.Items.ATOMICAL_STABILIZATOR_GLUES)
+                .add(
+                        Items.GHAST_TEAR
+                );
         this.tag(ItemTags.MUSIC_DISCS)
                 .add(
                         ModItems.BAR_BRAWL_MUSIC_DISC.get(),

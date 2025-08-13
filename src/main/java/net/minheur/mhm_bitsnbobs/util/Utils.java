@@ -16,4 +16,9 @@ public class Utils {
     public static int getRGB(int r, int g, int b) {
         return (r << 16) | (g << 8) | b;
     }
+
+    public static boolean areStacksEqualEnough(ItemStack expected, ItemStack actual) {
+        return expected.getItem() == actual.getItem()
+                && actual.getCount() >= expected.getCount();
+    }
 }
