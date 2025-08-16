@@ -1,0 +1,13 @@
+{
+  "type": "mhm_bitsnbobs:incubating",
+  "catalyzer": {
+    "item": "mhm_bitsnbobs:super_charged_catalyzer"
+  },
+  "ingredients": {
+    "item": "mhm_bitsnbobs:stabilized_quantum_core"
+  },
+  "output": {
+    "count": 5,
+    "item": "mhm_bitsnbobs:super_charged_ingot"
+  }
+}

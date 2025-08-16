@@ -1,0 +1,12 @@
+{
+  "type": "mhm_bitsnbobs:incubating",
+  "catalyzer": {
+    "item": "mhm_bitsnbobs:wind_charged_catalyzer"
+  },
+  "ingredients": {
+    "item": "minecraft:sand"
+  },
+  "output": {
+    "item": "minecraft:dirt"
+  }
+}

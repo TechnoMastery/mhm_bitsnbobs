@@ -20,8 +20,10 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.mhm_bitsnbobs.item.custom.CatalyzerItem;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.FreezingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.GemPolishingRecipeBuilder;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.IncubatorRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -202,6 +204,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // gem polishing
         gemPolishingRecipe(pWriter, Items.EMERALD, ItemTags.EMERALD_ORES, 5);
         gemPolishingRecipe(pWriter, ModItems.SAPPHIRE.get(), ModItems.RAW_SAPPHIRE.get(), 3);
+
+        // incubator
+        //basique
+        incubationRecipe(pWriter, Items.IRON_INGOT, ModItems.GOLD_CATALYZER.get(), ModItems.WIND_CHARGED_INGOT.get(), 1);
+        // simple
+        incubationRecipe(pWriter, ModItems.ROTTEN_LEATHER.get(), ModItems.IRON_CATALYZER.get(), Items.LEATHER, 1);
+        // supercharged
+        incubationRecipe(pWriter, Items.NETHERITE_INGOT, ModItems.SUPER_CHARGED_CATALYZER.get(), ModItems.SUPER_CHARGED_INGOT.get(), 1);
+        incubationRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.SUPER_CHARGED_CATALYZER.get(), ModItems.SUPER_CHARGED_INGOT.get(), 5, "super_charged_ingot_bis");
+        // wind charged
+        incubationRecipe(pWriter, Items.SAND, ModItems.WIND_CHARGED_CATALYZER.get(), Items.DIRT, 1);
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
@@ -831,6 +844,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, TagKey<Item> ingredient, int resultAmount) {
         GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount)
+                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
+    }
+
+    protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count) {
+        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count)
+                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
+    }
+    protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count, String id) {
+        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count)
+                .save(finishedRecipeConsumer, new ResourceLocation(id));
+    }
+    protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, TagKey<Item> ingredient, ItemLike catalyzer, ItemLike result, int count) {
+        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count)
                 .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
     }
 
