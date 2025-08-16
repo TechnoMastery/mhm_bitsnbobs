@@ -2,12 +2,12 @@
   "type": "create:pressing",
   "ingredients": [
     {
-      "item": "minecraft:charcoal"
+      "item": "mhm_bitsnbobs:quantumite_ingot"
     }
   ],
   "results": [
     {
-      "item": "minecraft:coal"
+      "item": "mhm_bitsnbobs:quantumite_sheet"
     }
   ]
 }

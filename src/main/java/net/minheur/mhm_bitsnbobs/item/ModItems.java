@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -56,6 +55,17 @@ public class ModItems {
     public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
             () -> new Item(new Item.Properties().stacksTo(8)));
 
+    public static final RegistryObject<Item> LOGIC_ASSISTED_CIRCUIT_BOARD = ITEMS.register("logic_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> CALCULATION_ASSISTED_CIRCUIT_BOARD = ITEMS.register("calculation_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> ENGINEERING_ASSISTED_CIRCUIT_BOARD = ITEMS.register("engineering_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> ACCUMULATION_ASSISTED_CIRCUIT_BOARD = ITEMS.register("accumulation_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> QUANTUM_ASSISTED_CIRCUIT_BOARD = ITEMS.register("quantum_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
     // to see
     public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
             () -> new Item(new Item.Properties().stacksTo(1)));
@@ -66,6 +76,20 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> STABILIZED_QUANTUM_CORE = ITEMS.register("stabilized_quantum_core",
             () -> new StabilizedQuantumCoreItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> PRINTED_QUANTUM_CIRCUIT = ITEMS.register("printed_quantum_circuit",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> INSCRIBER_QUANTUM_PRESS = ITEMS.register("inscriber_quantum_press",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUM_PROCESSOR = ITEMS.register("quantum_processor",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> QUANTUMITE_INGOT = ITEMS.register("quantumite_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUMITE_SHEET = ITEMS.register("quantumite_sheet",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUMITE_CHUNK = ITEMS.register("quantumite_chunk",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));

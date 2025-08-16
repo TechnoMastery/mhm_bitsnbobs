@@ -95,10 +95,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
         simpleBlockWithItem(ModBlocks.FREEZER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/freezer")));
-
+        simpleBlockWithItem(ModBlocks.ATOMICAL_STABILIZATOR.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/atomical_stabilizator")));
         simpleBlockWithItem(ModBlocks.MYSTERIOUS_ALTAR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/mysterious_altar")));
-
         simpleBlockWithItem(ModBlocks.INCUBATOR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/incubator")));
     }

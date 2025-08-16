@@ -100,6 +100,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GOLD_BALL);
         simpleItem(ModItems.DIAMOND_BALL);
         simpleItem(ModItems.SAPPHIRE_BALL);
+        simpleItem(ModItems.PRINTED_QUANTUM_CIRCUIT);
+        simpleItem(ModItems.INSCRIBER_QUANTUM_PRESS);
+        simpleItem(ModItems.QUANTUM_PROCESSOR);
+        simpleItem(ModItems.QUANTUMITE_INGOT);
+        simpleItem(ModItems.QUANTUMITE_SHEET);
+        simpleItem(ModItems.QUANTUMITE_CHUNK);
         simpleItem(ModItems.RED_CLAY_BALL);
         simpleItem(ModItems.EMPTY_BIG_FLASK);
         simpleItem(ModItems.EMPTY_LITTLE_FLASK);
@@ -211,6 +217,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         // trapdoor
         trapdoorItem(ModBlocks.SAPPHIRE_TRAPDOOR);
 
+        circuitBoardItem(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD);
+
         // tools
         handheldItem(ModItems.SAPPHIRE_SWORD);
         handheldItem(ModItems.SAPPHIRE_PICKAXE);
@@ -301,6 +313,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/rune"));
+    }
+
+    private ItemModelBuilder circuitBoardItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/assisted_circuit_board"));
     }
 
     private ItemModelBuilder discItem(RegistryObject<Item> item) {

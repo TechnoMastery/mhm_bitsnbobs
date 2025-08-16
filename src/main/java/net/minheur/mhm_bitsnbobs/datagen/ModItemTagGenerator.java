@@ -31,6 +31,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.SAPPHIRE_LEGGINGS.get(),
                         ModItems.SAPPHIRE_BOOTS.get()
                 );
+        this.tag(ModTags.Items.QUANTUMITE_INGOTS)
+                .add(
+                        ModItems.QUANTUMITE_INGOT.get()
+                );
         this.tag(ModTags.Items.BASEDISK)
                 .add(
                         ModItems.BASE_OF_DISC.get()
@@ -83,6 +87,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         Items.GLOW_INK_SAC,
                         Items.GLOW_BERRIES,
                         Items.GLOW_LICHEN
+                );
+        this.tag(ModTags.Items.ATOMICAL_STABILIZATOR_GLUES)
+                .add(
+                        Items.GHAST_TEAR
                 );
         this.tag(ItemTags.MUSIC_DISCS)
                 .add(

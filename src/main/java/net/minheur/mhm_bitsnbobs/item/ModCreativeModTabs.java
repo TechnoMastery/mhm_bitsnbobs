@@ -28,6 +28,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.CORN.get());
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
                         output.accept(ModBlocks.FREEZER.get());
+                        output.accept(ModBlocks.ATOMICAL_STABILIZATOR.get());
                         output.accept(ModItems.DICE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
                         output.accept(ModItems.PINE_CONE.get());
@@ -114,6 +115,17 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.QUANTUM_STAFF.get());
                         output.accept(ModBlocks.MYSTERIOUS_ALTAR.get());
                         output.accept(ModItems.MAGIC_SHARD.get());
+                        output.accept(ModItems.PRINTED_QUANTUM_CIRCUIT.get());
+                        output.accept(ModItems.INSCRIBER_QUANTUM_PRESS.get());
+                        output.accept(ModItems.QUANTUM_PROCESSOR.get());
+                        output.accept(ModItems.QUANTUMITE_INGOT.get());
+                        output.accept(ModItems.QUANTUMITE_SHEET.get());
+                        output.accept(ModItems.QUANTUMITE_CHUNK.get());
+                        output.accept(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD.get());
                     })
                     .build());
 
