@@ -28,13 +28,14 @@ import net.minheur.mhm_bitsnbobs.recipe.AtomicalStabilizatorRecipe;
 import net.minheur.mhm_bitsnbobs.recipe.GemPolishingRecipe;
 import net.minheur.mhm_bitsnbobs.screen.AtomicalStabilizatorMenu;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationMenu;
+import net.minheur.mhm_bitsnbobs.util.ModTags;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class AtomicalStabilizatorBlockEntity extends BlockEntity implements MenuProvider {
-    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -45,12 +46,18 @@ public class AtomicalStabilizatorBlockEntity extends BlockEntity implements Menu
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return slot == INPUT_SLOT;
+            if (slot == GLUE_SLOT) {
+                return stack.is(ModTags.Items.ATOMICAL_STABILIZATOR_GLUES);
+            } else {
+                return slot != OUTPUT_SLOT;
+            }
         }
     };
 
-    public static final int INPUT_SLOT = 0;
-    public static final int OUTPUT_SLOT = 1;
+    public static final int INPUT_SLOT_LEFT = 0;
+    public static final int INPUT_SLOT_RIGHT = 1;
+    public static final int GLUE_SLOT = 2;
+    public static final int OUTPUT_SLOT = 3;
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
@@ -83,14 +90,6 @@ public class AtomicalStabilizatorBlockEntity extends BlockEntity implements Menu
                 return 2;
             }
         };
-    }
-
-    public ItemStack getRenderStack() {
-        if(itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty()) {
-            return itemHandler.getStackInSlot(INPUT_SLOT);
-        } else {
-            return itemHandler.getStackInSlot(OUTPUT_SLOT);
-        }
     }
 
     @Override
@@ -166,7 +165,9 @@ public class AtomicalStabilizatorBlockEntity extends BlockEntity implements Menu
     private void craftItem() {
         Optional<AtomicalStabilizatorRecipe> recipe = getCurrentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
-        this.itemHandler.extractItem(INPUT_SLOT, 1, false);
+        this.itemHandler.extractItem(INPUT_SLOT_LEFT, recipe.get().getInputLeft().getCount(), false);
+        this.itemHandler.extractItem(INPUT_SLOT_RIGHT, recipe.get().getInputRight().getCount(), false);
+        this.itemHandler.extractItem(GLUE_SLOT, recipe.get().getGlue().getCount(), false);
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }

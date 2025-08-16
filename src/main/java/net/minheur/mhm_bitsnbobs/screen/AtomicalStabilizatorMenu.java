@@ -19,7 +19,7 @@ public class AtomicalStabilizatorMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public AtomicalStabilizatorMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(pContainerId, inv, inv.player.level().getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
     public AtomicalStabilizatorMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -31,8 +31,10 @@ public class AtomicalStabilizatorMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 80, 11));
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 80, 59));
+            this.addSlot(new SlotItemHandler(iItemHandler, 2, 80, 11)); // glue
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 52, 11)); // left
+            this.addSlot(new SlotItemHandler(iItemHandler, 1, 108, 11)); // right
+            this.addSlot(new SlotItemHandler(iItemHandler, 3, 80, 59)); // out
         });
         addDataSlots(data);
     }
@@ -63,7 +65,7 @@ public class AtomicalStabilizatorMenu extends AbstractContainerMenu {
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
     ///  DEFINE THE VARIABLE DOWN HERE : EXACT COUNT OF SLOTS
-    private static final int TE_INVENTORY_SLOT_COUNT = 2;  // must be the number of slots you have!
+    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
     // this method is very long !
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
