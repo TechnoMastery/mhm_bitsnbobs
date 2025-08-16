@@ -1,10 +1,8 @@
 {
   "type": "mhm_bitsnbobs:gem_polishing",
-  "ingredients": [
-    {
-      "item": "mhm_bitsnbobs:raw_sapphire"
-    }
-  ],
+  "ingredients": {
+    "item": "mhm_bitsnbobs:raw_sapphire"
+  },
   "output": {
     "count": 3,
     "item": "mhm_bitsnbobs:sapphire"

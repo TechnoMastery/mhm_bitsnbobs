@@ -3,7 +3,9 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -19,6 +21,7 @@ import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.FreezingRecipeBuilder;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.GemPolishingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -186,6 +189,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         simpleWoodCrafting(pWriter, Items.MOSS_BLOCK, ModItems.BIOMASS.get());
 
+        // freezing
         freezingRecipe(pWriter, ModItems.CHOCOLATE_SCOOP.get(), ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get(), 8);
         freezingRecipe(pWriter, ModItems.STRAWBERRY_SCOOP.get(), ModItems.BUCKET_OF_LIQUID_STRAWBERRIES_ICE_CREAM.get(), 8);
         freezingRecipe(pWriter, ModItems.SWEET_BERRIES_SCOOP.get(), ModItems.BUCKET_OF_LIQUID_SWEET_BERRIES_ICE_CREAM.get(), 8);
@@ -194,6 +198,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         freezingRecipe(pWriter, ModItems.STRAWBERRIES_SORBET.get(), ModItems.STRAWBERRIES_SNOWBALL.get(), 1);
         freezingRecipe(pWriter, ModItems.SWEET_BERRIES_SORBET.get(), ModItems.SWEET_BERRIES_SNOWBALL.get(), 1);
         freezingRecipe(pWriter, ModItems.VANILLA_SORBET.get(), ModItems.VANILLA_SNOWBALL.get(), 1);
+
+        // gem polishing
+        gemPolishingRecipe(pWriter, Items.EMERALD, ItemTags.EMERALD_ORES, 5);
+        gemPolishingRecipe(pWriter, ModItems.SAPPHIRE.get(), ModItems.RAW_SAPPHIRE.get(), 3);
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
@@ -815,6 +823,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         FreezingRecipeBuilder.freezing(Ingredient.of(ingredient), result, resultAmount)
                 .save(pFinishedRecipeConsumer, new ResourceLocation(result.toString()));
+    }
+
+    protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
+        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount)
+                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
+    }
+    protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, TagKey<Item> ingredient, int resultAmount) {
+        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount)
+                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
     }
 
     protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {
