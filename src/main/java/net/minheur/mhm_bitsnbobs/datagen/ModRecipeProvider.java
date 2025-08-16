@@ -21,6 +21,7 @@ import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.item.custom.CatalyzerItem;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.AtomicalStabilizationRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.FreezingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.GemPolishingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.IncubatorRecipeBuilder;
@@ -204,6 +205,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // gem polishing
         gemPolishingRecipe(pWriter, Items.EMERALD, ItemTags.EMERALD_ORES, "has_emerald_ore", 5);
         gemPolishingRecipe(pWriter, ModItems.SAPPHIRE.get(), ModItems.RAW_SAPPHIRE.get(), 3);
+
+        // atomical stabilizator
+
 
         // incubator
         //basique
@@ -854,6 +858,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count, String id) {
         IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, id);
+    }
+
+    protected static void atomicalStabilizatorRecipe(Consumer<FinishedRecipe> consumer, ItemLike leftIngredient, ItemLike rightIngredient, ItemLike glueIngredient, ItemLike result, int count) {
+        AtomicalStabilizationRecipeBuilder.stabilization(leftIngredient, rightIngredient, glueIngredient, result, count).unlocks(getHasName(glueIngredient), has(glueIngredient))
     }
 
     protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {
