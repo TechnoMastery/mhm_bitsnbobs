@@ -1,5 +1,11 @@
 {
   "type": "create:crushing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
   "ingredients": [
     {
       "item": "mhm_bitsnbobs:quartz_shard"
