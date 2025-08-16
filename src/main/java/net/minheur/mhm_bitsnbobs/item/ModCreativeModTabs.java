@@ -120,6 +120,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.QUANTUM_PROCESSOR.get());
                         output.accept(ModItems.QUANTUMITE_INGOT.get());
                         output.accept(ModItems.QUANTUMITE_SHEET.get());
+                        output.accept(ModItems.HALF_QUANTUMITE_SHEET.get());
                         output.accept(ModItems.QUANTUMITE_CHUNK.get());
                         output.accept(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD.get());
                         output.accept(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD.get());

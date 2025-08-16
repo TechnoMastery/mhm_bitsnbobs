@@ -105,6 +105,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.QUANTUM_PROCESSOR);
         simpleItem(ModItems.QUANTUMITE_INGOT);
         simpleItem(ModItems.QUANTUMITE_SHEET);
+        simpleItem(ModItems.HALF_QUANTUMITE_SHEET);
         simpleItem(ModItems.QUANTUMITE_CHUNK);
         simpleItem(ModItems.RED_CLAY_BALL);
         simpleItem(ModItems.EMPTY_BIG_FLASK);

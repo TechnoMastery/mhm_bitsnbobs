@@ -90,6 +90,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> QUANTUMITE_CHUNK = ITEMS.register("quantumite_chunk",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HALF_QUANTUMITE_SHEET = ITEMS.register("half_quantumite_sheet",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));
