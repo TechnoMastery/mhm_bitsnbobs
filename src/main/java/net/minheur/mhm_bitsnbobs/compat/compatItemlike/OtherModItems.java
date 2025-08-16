@@ -1,6 +1,4 @@
-package net.minheur.mhm_bitsnbobs.compat;
-
-import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItem;
+package net.minheur.mhm_bitsnbobs.compat.compatItemlike;
 
 /**
  * This class contains the creation of {@link OtherModItem} instances.
