@@ -1,6 +1,5 @@
 package net.minheur.mhm_bitsnbobs.datagen;
 
-import com.simibubi.create.AllItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.tags.ItemTags;
@@ -33,7 +32,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         // call for smelting ore : SMELTING = BLASTING but put x2 time in SMELTING
         oreSmelting(pWriter, List.of(ModItems.IRON_BALL.get()), RecipeCategory.MISC, Items.IRON_NUGGET, 0.1f, 200, "balls");
-        oreSmelting(pWriter, List.of(ModItems.COPPER_BALL.get()), RecipeCategory.MISC, AllItems.COPPER_NUGGET, 0.1f, 200, "balls");
+        oreSmelting(pWriter, List.of(ModItems.COPPER_BALL.get()), RecipeCategory.MISC, OtherModItems.COPPER_NUGGET.getAsRawItem(), 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.GOLD_BALL.get()), RecipeCategory.MISC, Items.GOLD_NUGGET, 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.DIAMOND_BALL.get()), RecipeCategory.MISC, Items.DIAMOND, 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.SAPPHIRE_BALL.get()), RecipeCategory.MISC, ModItems.SAPPHIRE_NUGGET.get(), 0.1f, 200, "balls");

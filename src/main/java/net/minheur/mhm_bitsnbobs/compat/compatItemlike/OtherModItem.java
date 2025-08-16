@@ -30,8 +30,9 @@ public class OtherModItem {
      * Construct an object which represents the other mod item.
      * @param modid the item's mod ID (ex. "ae2")
      * @param id the item's ID (ex. "calculation_processor")
+     * @param enableRaw controls if you can use raw item (so you can't call items that aren't always loaded)
      */
-    public OtherModItem(String modid, String id) {
+    public OtherModItem(String modid, String id, boolean enableRaw) {
         super();
         MODID = modid;
         ID = id;
