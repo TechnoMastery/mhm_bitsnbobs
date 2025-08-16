@@ -112,7 +112,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 );
         this.tag(Tags.Items.INGOTS)
                 .add(
-                        ModItems.HARDENED_INGOT.get()
+                        ModItems.HARDENED_INGOT.get(),
+                        ModItems.CREATIVE_INGOT.get(),
+                        ModItems.SLIMY_INGOT.get(),
+                        ModItems.SUPER_CHARGED_INGOT.get(),
+                        ModItems.WIND_CHARGED_INGOT.get()
                 );
         this.tag(ItemTags.LOGS_THAT_BURN)
                 .add(
