@@ -1,13 +1,20 @@
 package net.minheur.mhm_bitsnbobs.recipe.datagen;
 
 import com.google.gson.JsonObject;
+import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRewards;
+import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,7 +25,7 @@ public class IncubatorRecipeBuilder {
     private final ItemLike catalyzer;
     private final ItemLike result;
     private final int count;
-
+    private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
     public IncubatorRecipeBuilder(Ingredient ingredient, ItemLike catalyzer, ItemLike result, int count) {
         this.ingredient = ingredient;
@@ -34,16 +41,28 @@ public class IncubatorRecipeBuilder {
         return new IncubatorRecipeBuilder(ingredient, catalyzer, result, count);
     }
 
+    public IncubatorRecipeBuilder unlocks(String pKey, CriterionTriggerInstance pCriterion) {
+        this.advancement.addCriterion(pKey, pCriterion);
+        return this;
+    }
+
     private void ensureValid(ResourceLocation pId) {
         if (this.ingredient.isEmpty()) throw new IllegalStateException("No ingredients for incubating recipe " + pId + "!");
         if (this.result == null) throw new IllegalStateException("No result for incubating recipe " + pId + "!");
         if (this.count == 0) throw new IllegalStateException("Result count is 0 for incubating recipe " + pId + "!");
         if (this.catalyzer == null) throw new IllegalStateException("No catalyzer for incubating recipe " + pId + "!");
+        if (this.advancement.getCriteria().isEmpty()) {
+            throw new IllegalStateException("No way of obtaining recipe " + pId);
+        }
     }
 
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
-        consumer.accept(new Result(id, this.ingredient, this.catalyzer, this.result, this.count));
+        this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
+        consumer.accept(new Result(id.withPrefix("incubating/"), this.ingredient, this.catalyzer, this.result, this.count, this.advancement, id.withPrefix("recipes/incubation/")));
+    }
+    public void save(Consumer<FinishedRecipe> consumer, String id) {
+        this.save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
     }
 
     public static class Result implements FinishedRecipe {
@@ -52,13 +71,17 @@ public class IncubatorRecipeBuilder {
         private final ItemLike catalyzer;
         private final ItemLike result;
         private final int count;
+        private final Advancement.Builder advancement;
+        private final ResourceLocation advancementId;
 
-        public Result(ResourceLocation id, Ingredient ingredient, ItemLike catalyzer, ItemLike result, int count) {
+        public Result(ResourceLocation id, Ingredient ingredient, ItemLike catalyzer, ItemLike result, int count, Advancement.Builder advancement, ResourceLocation advancementId) {
             this.id = id;
             this.ingredient = ingredient;
             this.catalyzer = catalyzer;
             this.result = result;
             this.count = count;
+            this.advancement = advancement;
+            this.advancementId = advancementId;
         }
 
 
@@ -86,12 +109,12 @@ public class IncubatorRecipeBuilder {
 
         @Override
         public @Nullable JsonObject serializeAdvancement() {
-            return null;
+            return advancement.serializeToJson();
         }
 
         @Override
         public @Nullable ResourceLocation getAdvancementId() {
-            return null;
+            return advancementId;
         }
     }
 

@@ -202,7 +202,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         freezingRecipe(pWriter, ModItems.VANILLA_SORBET.get(), ModItems.VANILLA_SNOWBALL.get(), 1);
 
         // gem polishing
-        gemPolishingRecipe(pWriter, Items.EMERALD, ItemTags.EMERALD_ORES, 5);
+        gemPolishingRecipe(pWriter, Items.EMERALD, ItemTags.EMERALD_ORES, "has_emerald_ore", 5);
         gemPolishingRecipe(pWriter, ModItems.SAPPHIRE.get(), ModItems.RAW_SAPPHIRE.get(), 3);
 
         // incubator
@@ -834,30 +834,26 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
-        FreezingRecipeBuilder.freezing(Ingredient.of(ingredient), result, resultAmount)
-                .save(pFinishedRecipeConsumer, new ResourceLocation(result.toString()));
+        FreezingRecipeBuilder.freezing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName(ingredient), has(ingredient))
+                .save(pFinishedRecipeConsumer, result.toString());
     }
 
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
-        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount)
-                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
+        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName(ingredient), has(ingredient))
+                .save(finishedRecipeConsumer, result.toString());
     }
-    protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, TagKey<Item> ingredient, int resultAmount) {
-        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount)
-                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
+    protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, TagKey<Item> ingredient, String getHasName, int resultAmount) {
+        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName, has(ingredient))
+                .save(finishedRecipeConsumer, result.toString());
     }
 
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count) {
-        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count)
-                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
+        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count).unlocks(getHasName(ingredient), has(ingredient))
+                .save(finishedRecipeConsumer, result.toString());
     }
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count, String id) {
-        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count)
-                .save(finishedRecipeConsumer, new ResourceLocation(id));
-    }
-    protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, TagKey<Item> ingredient, ItemLike catalyzer, ItemLike result, int count) {
-        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count)
-                .save(finishedRecipeConsumer, new ResourceLocation(result.toString()));
+        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count).unlocks(getHasName(ingredient), has(ingredient))
+                .save(finishedRecipeConsumer, id);
     }
 
     protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {
