@@ -38,7 +38,7 @@ public class FreezingCategory implements IRecipeCategory<FreezingRecipe> {
 
     @Override
     public Component getTitle() {
-        return Component.translatable("recipe.mhm_bitsnbobs.gem_polishing_station");
+        return Component.translatable("recipe.mhm_bitsnbobs.freezing");
     }
 
     @Override
