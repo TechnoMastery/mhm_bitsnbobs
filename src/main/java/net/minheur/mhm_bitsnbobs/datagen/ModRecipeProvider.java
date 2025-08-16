@@ -1,7 +1,9 @@
 package net.minheur.mhm_bitsnbobs.datagen;
 
+import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -17,6 +19,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.FreezingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -183,6 +186,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleStoneCutting(pWriter, RecipeCategory.MISC, Items.COBBLED_DEEPSLATE, Items.COBBLESTONE, 1);
 
         simpleWoodCrafting(pWriter, Items.MOSS_BLOCK, ModItems.BIOMASS.get());
+
+        freezingRecipe(pWriter, ModItems.CHOCOLATE_SCOOP.get(), ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get(), 8);
+        freezingRecipe(pWriter, ModItems.STRAWBERRY_SCOOP.get(), ModItems.BUCKET_OF_LIQUID_STRAWBERRIES_ICE_CREAM.get(), 8);
+        freezingRecipe(pWriter, ModItems.SWEET_BERRIES_SCOOP.get(), ModItems.BUCKET_OF_LIQUID_SWEET_BERRIES_ICE_CREAM.get(), 8);
+        freezingRecipe(pWriter, ModItems.VANILLA_SCOOP.get(), ModItems.BUCKET_OF_LIQUID_VANILLA_ICE_CREAM.get(), 8);
+        freezingRecipe(pWriter, ModItems.SCOOP_OF_CHOCOLATE_SORBET.get(), ModItems.CHOCOLATE_SNOWBALL.get(), 1);
+        freezingRecipe(pWriter, ModItems.STRAWBERRIES_SORBET.get(), ModItems.STRAWBERRIES_SNOWBALL.get(), 1);
+        freezingRecipe(pWriter, ModItems.SWEET_BERRIES_SORBET.get(), ModItems.SWEET_BERRIES_SNOWBALL.get(), 1);
+        freezingRecipe(pWriter, ModItems.VANILLA_SORBET.get(), ModItems.VANILLA_SNOWBALL.get(), 1);
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
@@ -799,6 +811,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                     .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(pResult) + pRecipeName + "_" + getItemName(itemlike));
         }
 
+    }
+
+    protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
+        FreezingRecipeBuilder.freezing(Ingredient.of(ingredient), result, resultAmount)
+                .save(pFinishedRecipeConsumer, new ResourceLocation(result.toString()));
     }
 
     protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {

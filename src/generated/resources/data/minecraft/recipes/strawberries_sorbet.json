@@ -1,0 +1,9 @@
+{
+  "type": "mhm_bitsnbobs:freezing",
+  "ingredients": {
+    "item": "mhm_bitsnbobs:strawberries_snowball"
+  },
+  "output": {
+    "item": "mhm_bitsnbobs:strawberries_sorbet"
+  }
+}
