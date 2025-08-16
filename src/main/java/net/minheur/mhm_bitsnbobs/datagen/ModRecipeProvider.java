@@ -3,9 +3,7 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import com.simibubi.create.AllItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.nbt.Tag;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
@@ -18,6 +16,7 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
+import net.minheur.mhm_bitsnbobs.compat.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
@@ -216,6 +215,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('P', ModItems.WIND_CHARGED_INGOT.get())
                 .define('S',Items.STICK)
                 .unlockedBy(getHasName(ModItems.WIND_CHARGED_INGOT.get()), has(ModItems.WIND_CHARGED_INGOT.get()))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ATOMICAL_STABILIZATOR.get())
+                .pattern("IEI")
+                .pattern("CAC")
+                .pattern("III")
+                .define('I', Blocks.IRON_BLOCK)
+                .define('E', ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get())
+                .define('C', OtherModItems.CALCULATION_PROCESSOR.getAsIngredient())
+                .define('A', OtherModItems.ACCUMULATION_PROCESSOR.getAsIngredient())
+                .unlockedBy(getHasName(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get()), has(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get()))
                 .save(pWriter);
 
         // red clay
