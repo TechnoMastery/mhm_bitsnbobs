@@ -30,13 +30,11 @@ public class OtherModItem {
      * Construct an object which represents the other mod item.
      * @param modid the item's mod ID (ex. "ae2")
      * @param id the item's ID (ex. "calculation_processor")
-     * @param enableRaw controls if you can use raw item (so you can't call items that aren't always loaded)
      */
-    public OtherModItem(String modid, String id, boolean enableRaw) {
-        super();
-        MODID = modid;
-        ID = id;
-        RAW_ITEM = ForgeRegistries.ITEMS.getValue(new ResourceLocation(MODID, ID));
+    public OtherModItem(String modid, String id) {
+        this.MODID = modid;
+        this.ID = id;
+        this.RAW_ITEM = ForgeRegistries.ITEMS.getValue(new ResourceLocation(MODID, ID));
     }
 
     /**
@@ -77,8 +75,8 @@ public class OtherModItem {
     public Item getAsRawItem() {
         if (RAW_ITEM == null) {
             throw new NullPointerException("Compat item not found: \"" + MODID + ":" + ID + "\"");
-        } else {
-            return RAW_ITEM;
         }
+
+        return RAW_ITEM;
     }
 }

@@ -172,6 +172,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleSmithing(pWriter, ModItems.LIGHTNING_UPGRADE.get(), ModItems.DIAMOND_BALL.get(), Items.DIAMOND, RecipeCategory.MISC, ModItems.SUPER_CHARGED_BALL.get());
         simpleSmithing(pWriter, Blocks.EMERALD_BLOCK, Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD, RecipeCategory.MISC, Items.BUDDING_AMETHYST);
         simpleSmithing(pWriter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.DIAMOND_CATALYZER.get(), Items.NETHERITE_INGOT, RecipeCategory.MISC, ModItems.NETHERITE_CATALYZER.get());
+        simpleSmithing(pWriter, Items.EMERALD, OtherModItems.CERTUS_QUARTZ_BLOCK.getAsRawItem(), OtherModItems.CERTUS_QUARTZ_CRYSTAL.getAsRawItem(), RecipeCategory.MISC, OtherModItems.FLAWLESS_BUDDING_CERTUS_QUARTZ.getAsRawItem());
 
         // stone cutting : use 'simpleStoneCutting' from our libraries.
         // use it with pWriter, recipeCategory, result, ingredient → you can add, at last parameter, the amount of results. Not needed : don't set to use 1
