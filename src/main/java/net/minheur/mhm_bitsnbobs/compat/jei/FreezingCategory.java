@@ -1,4 +1,4 @@
-package net.minheur.mhm_bitsnbobs.compat;
+package net.minheur.mhm_bitsnbobs.compat.jei;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -13,27 +13,27 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
-import net.minheur.mhm_bitsnbobs.recipe.GemPolishingRecipe;
+import net.minheur.mhm_bitsnbobs.recipe.FreezingRecipe;
 
-public class GemPolishingCategory implements IRecipeCategory<GemPolishingRecipe> {
-    public static final ResourceLocation UID = new ResourceLocation(MhmBitsnbobs.MOD_ID, "gem_polishing");
+public class FreezingCategory implements IRecipeCategory<FreezingRecipe> {
+    public static final ResourceLocation UID = new ResourceLocation(MhmBitsnbobs.MOD_ID, "freezing");
     public static final ResourceLocation TEXTURE = new ResourceLocation(MhmBitsnbobs.MOD_ID,
             "textures/gui/gem_polishing_station_jei.png");
 
-    public static final RecipeType<GemPolishingRecipe> GEM_POLISHING_TYPE =
-            new RecipeType<>(UID, GemPolishingRecipe.class);
+    public static final RecipeType<FreezingRecipe> FREEZING_TYPE =
+            new RecipeType<>(UID, FreezingRecipe.class);
 
     private final IDrawable background;
     private final IDrawable icon;
 
-    public GemPolishingCategory(IGuiHelper helper) {
+    public FreezingCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 85);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.GEM_POLISHING_STATION.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(ModBlocks.FREEZER.get()));
     }
 
     @Override
-    public RecipeType<GemPolishingRecipe> getRecipeType() {
-        return GEM_POLISHING_TYPE;
+    public RecipeType<FreezingRecipe> getRecipeType() {
+        return FREEZING_TYPE;
     }
 
     @Override
@@ -52,8 +52,9 @@ public class GemPolishingCategory implements IRecipeCategory<GemPolishingRecipe>
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, GemPolishingRecipe recipe, IFocusGroup iFocusGroup) {
+    public void setRecipe(IRecipeLayoutBuilder builder, FreezingRecipe recipe, IFocusGroup iFocusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 80, 11).addIngredients(recipe.getIngredients().get(0));
         builder.addSlot(RecipeIngredientRole.OUTPUT, 80, 59).addItemStack(recipe.getResultItem(null));
     }
+
 }

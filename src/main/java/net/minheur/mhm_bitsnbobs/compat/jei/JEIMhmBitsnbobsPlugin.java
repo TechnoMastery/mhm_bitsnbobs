@@ -1,4 +1,4 @@
-package net.minheur.mhm_bitsnbobs.compat;
+package net.minheur.mhm_bitsnbobs.compat.jei;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;

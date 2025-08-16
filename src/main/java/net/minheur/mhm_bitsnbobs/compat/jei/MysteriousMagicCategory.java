@@ -1,4 +1,4 @@
-package net.minheur.mhm_bitsnbobs.compat;
+package net.minheur.mhm_bitsnbobs.compat.jei;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -13,7 +13,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
-import net.minheur.mhm_bitsnbobs.item.custom.MagicFuelItem;
 import net.minheur.mhm_bitsnbobs.recipe.MysteriousMagicRecipe;
 import org.jetbrains.annotations.Nullable;
 
