@@ -47,13 +47,11 @@ public class IncubatorRecipeBuilder {
     }
 
     private void ensureValid(ResourceLocation pId) {
-        if (this.ingredient.isEmpty()) throw new IllegalStateException("No ingredients for incubating recipe " + pId + "!");
-        if (this.result == null) throw new IllegalStateException("No result for incubating recipe " + pId + "!");
-        if (this.count == 0) throw new IllegalStateException("Result count is 0 for incubating recipe " + pId + "!");
-        if (this.catalyzer == null) throw new IllegalStateException("No catalyzer for incubating recipe " + pId + "!");
-        if (this.advancement.getCriteria().isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + pId);
-        }
+        if (this.ingredient.isEmpty() ||
+        this.result == null ||
+        this.count == 0 ||
+        this.catalyzer == null) throw new IllegalStateException("Invalid recipe for incubating recipe " + pId + "!");
+        if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
     }
 
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {

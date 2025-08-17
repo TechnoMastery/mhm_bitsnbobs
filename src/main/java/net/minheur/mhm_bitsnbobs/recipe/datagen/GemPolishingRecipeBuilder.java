@@ -6,11 +6,9 @@ import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
@@ -19,6 +17,8 @@ import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
+
+import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
 
 /**
  * Here is the builder to datagen freezing recipes
@@ -48,12 +48,10 @@ public class GemPolishingRecipeBuilder {
     }
 
     private void ensureValid(ResourceLocation pId) {
-        if (this.ingredient.isEmpty()) throw new IllegalStateException("No ingredients for gem polishing recipe " + pId + "!");
-        if (this.result == null) throw new IllegalStateException("No result for gem polishing recipe " + pId + "!");
-        if (this.count == 0) throw new IllegalStateException("Result count is 0 for gem polishing recipe " + pId + "!");
-        if (this.advancement.getCriteria().isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + pId);
-        }
+        if (this.ingredient.isEmpty() ||
+        this.result == null ||
+        this.count == 0) throw new IllegalStateException("Invalid recipe for gem polishing recipe " + pId + "!");
+        if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
     }
 
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
@@ -86,7 +84,7 @@ public class GemPolishingRecipeBuilder {
         public void serializeRecipeData(JsonObject pJson) {
             pJson.add("ingredients", ingredient.toJson());
             JsonObject result = new JsonObject();
-            result.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.result)).toString());
+            result.addProperty("item", getBuiltInItemRegistry(this.result));
             if (count > 1) result.addProperty("count", count);
             pJson.add("output", result);
         }

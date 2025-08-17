@@ -1,6 +1,8 @@
 package net.minheur.mhm_bitsnbobs.util;
 
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 
 public class Utils {
     public static void damageAndBreakItem(ItemStack pStack) {
@@ -20,5 +22,9 @@ public class Utils {
     public static boolean areStacksEqualEnough(ItemStack expected, ItemStack actual) {
         return expected.getItem() == actual.getItem()
                 && actual.getCount() >= expected.getCount();
+    }
+
+    public static String getBuiltInItemRegistry(ItemLike itemLike) {
+        return BuiltInRegistries.ITEM.getKey(itemLike.asItem()).toString();
     }
 }

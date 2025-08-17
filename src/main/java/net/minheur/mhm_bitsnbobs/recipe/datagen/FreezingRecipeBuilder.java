@@ -20,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
+import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+
 /**
  * Here is the builder to datagen freezing recipes
  */
@@ -48,12 +50,10 @@ public class FreezingRecipeBuilder {
     }
 
     private void ensureValid(ResourceLocation pId) {
-        if (this.ingredient.isEmpty()) throw new IllegalStateException("No ingredients for freezing recipe " + pId + "!");
-        if (this.result == null) throw new IllegalStateException("No result for freezing recipe " + pId + "!");
-        if (this.count == 0) throw new IllegalStateException("Result count is 0 for freezing recipe " + pId + "!");
-        if (this.advancement.getCriteria().isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + pId);
-        }
+        if (this.ingredient.isEmpty() ||
+        this.result == null ||
+        this.count == 0) throw new IllegalStateException("Invalid recipe for freezing recipe " + pId + "!");
+        if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
     }
 
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
@@ -86,10 +86,8 @@ public class FreezingRecipeBuilder {
         public void serializeRecipeData(JsonObject pJson) {
             pJson.add("ingredients", ingredient.toJson());
             JsonObject result1 = new JsonObject();
-            result1.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.result)).toString());
-            if (count > 1) {
-                result1.addProperty("count", count);
-            }
+            result1.addProperty("item", getBuiltInItemRegistry(this.result));
+            if (count > 1) result1.addProperty("count", count);
             pJson.add("output", result1);
         }
 

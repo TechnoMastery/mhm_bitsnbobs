@@ -20,6 +20,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
+import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+
 /**
  * Here is the builder to datagen atomical stabilizator recipes
  */
@@ -52,14 +54,12 @@ public class AtomicalStabilizationRecipeBuilder {
     }
 
     private void ensureValid(ResourceLocation pId) {
-        if (this.leftIngredient == null) throw new IllegalStateException("No leftIngredient for atomical stabilization recipe " + pId + "!");
-        if (this.rightIngredient == null) throw new IllegalStateException("No rightIngredient for atomical stabilization recipe " + pId + "!");
-        if (this.glueIngredient == null) throw new IllegalStateException("No glueIngredient for atomical stabilization recipe " + pId + "!");
-        if (this.result == null) throw new IllegalStateException("No result for atomical stabilization recipe " + pId + "!");
-        if (this.count == 0) throw new IllegalStateException("Result count is 0 for atomical stabilization recipe " + pId + "!");
-        if (this.advancement.getCriteria().isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + pId);
-        }
+        if (this.leftIngredient == null ||
+        this.rightIngredient == null ||
+        this.glueIngredient == null ||
+        this.result == null ||
+        this.count == 0) throw new IllegalStateException("Invalid recipe for atomical stabilization recipe " + pId + "!");
+        if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
     }
 
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
@@ -98,10 +98,11 @@ public class AtomicalStabilizationRecipeBuilder {
             JsonObject rightIngredient = new JsonObject();
             JsonObject glueIngredient = new JsonObject();
             JsonObject result = new JsonObject();
-            leftIngredient.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.leftIngredient)).toString());
-            rightIngredient.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.rightIngredient)).toString());
-            glueIngredient.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.glueIngredient)).toString());
-            result.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.result)).toString());
+            leftIngredient.addProperty("item", getBuiltInItemRegistry(this.leftIngredient));
+            rightIngredient.addProperty("item", getBuiltInItemRegistry(this.rightIngredient));
+            glueIngredient.addProperty("item", getBuiltInItemRegistry(this.glueIngredient));
+            result.addProperty("item", getBuiltInItemRegistry(this.result));
+            if (count > 1) result.addProperty("count", this.count);
             pJson.add("left", leftIngredient);
             pJson.add("right", rightIngredient);
             pJson.add("glue", glueIngredient);

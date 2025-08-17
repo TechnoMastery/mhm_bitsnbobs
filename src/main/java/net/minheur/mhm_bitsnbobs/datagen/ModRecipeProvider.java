@@ -1,5 +1,7 @@
 package net.minheur.mhm_bitsnbobs.datagen;
 
+import appeng.recipes.handlers.InscriberProcessType;
+import appeng.recipes.handlers.InscriberRecipeBuilder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -16,15 +18,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.item.custom.CatalyzerItem;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.AtomicalStabilizationRecipeBuilder;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.FreezingRecipeBuilder;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.GemPolishingRecipeBuilder;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.IncubatorRecipeBuilder;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -219,6 +219,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         incubationRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.SUPER_CHARGED_CATALYZER.get(), ModItems.SUPER_CHARGED_INGOT.get(), 5, "super_charged_ingot_bis");
         // wind charged
         incubationRecipe(pWriter, Items.SAND, ModItems.WIND_CHARGED_CATALYZER.get(), Items.DIRT, 1);
+
+        // mysterious magic
+        mysteriousMagicRecipe(pWriter, Items.ENDER_PEARL, 16, ModItems.STORM_FRAGMENT.get(), 4, ModItems.STORM_FRAGMENT.get(), 4, Items.GLOWSTONE_DUST, 32, ModItems.QUANTUM_DUST.get(), 1, OtherModItems.SINGULARITY.getAsRawItem(), 16, 500);
+
+        // inscibe
+        inscriberRecipe(pWriter, ModTags.Items.QUANTUMITE_INGOTS, ModItems.INSCRIBER_QUANTUM_PRESS.get(), ModItems.PRINTED_QUANTUM_CIRCUIT.get(), 1, InscriberProcessType.INSCRIBE);
+        inscriberRecipe(pWriter, Items.IRON_BLOCK, ModItems.INSCRIBER_QUANTUM_PRESS.get(), ModItems.INSCRIBER_QUANTUM_PRESS.get(), 1, InscriberProcessType.INSCRIBE);
+        inscriberRecipe(pWriter, OtherModItems.FLUIX_DUST.getAsRawItem(), ModItems.PRINTED_QUANTUM_CIRCUIT.get(), OtherModItems.PRINTED_SILICON.getAsRawItem(), ModItems.QUANTUM_PROCESSOR.get(), 1, InscriberProcessType.PRESS);
+        inscriberRecipe(pWriter, Items.QUARTZ, ModItems.QUARTZ_SHARD.get(), 1, InscriberProcessType.INSCRIBE);
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
@@ -865,10 +874,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer, result.toString());
     }
 
+    protected static void mysteriousMagicRecipe(Consumer<FinishedRecipe> consumer, ItemLike primary, int primaryCount, ItemLike left, int leftCount, ItemLike right, int rightCount, ItemLike up, int upCount, ItemLike down, int downCount, ItemLike result, int resultCount, int fuelAmount) {
+        MysteriousMagicRecipeBuilder.magic(primary, primaryCount, left, leftCount, right, rightCount, up, upCount, down, downCount, result, resultCount, fuelAmount)
+                .unlock(getHasName(primary), has(primary)).save(consumer, primary.toString());
+    }
+
     protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {
         SingleItemRecipeBuilder var10000 = SingleItemRecipeBuilder.stonecutting(Ingredient.of(new ItemLike[]{pMaterial}), pCategory, pResult, pResultCount).unlockedBy(getHasName(pMaterial), has(pMaterial));
         String var10002 = getConversionRecipeName(pResult, pMaterial);
         var10000.save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + var10002 + "_stonecutting");
+    }
+
+    protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, TagKey<Item> middle, ItemLike top, ItemLike result, int count, InscriberProcessType mode) {
+        InscriberRecipeBuilder.inscribe(Ingredient.of(middle), result, count).setTop(Ingredient.of(top)).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + middle.location().getPath()));
+    }
+    protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike top, ItemLike result, int count, InscriberProcessType mode) {
+        InscriberRecipeBuilder.inscribe(middle, result, count).setTop(Ingredient.of(top)).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
+    }
+    protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike top, ItemLike bottom, ItemLike result, int count, InscriberProcessType mode) {
+        InscriberRecipeBuilder.inscribe(middle, result, count).setTop(Ingredient.of(top)).setBottom(Ingredient.of(bottom)).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
+    }
+    protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike result, int count, InscriberProcessType mode) {
+        InscriberRecipeBuilder.inscribe(middle, result, count).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
     }
 
     protected static void simpleSmithing(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pTemplate, ItemLike pIngredientItem, ItemLike pAddition, RecipeCategory pCategory, ItemLike pResultItem) {
