@@ -207,7 +207,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         gemPolishingRecipe(pWriter, ModItems.SAPPHIRE.get(), ModItems.RAW_SAPPHIRE.get(), 3);
 
         // atomical stabilizator
-
+        atomicalStabilizatorRecipe(pWriter, ModItems.QUANTUMITE_CHUNK.get(), ModItems.QUANTUMITE_CHUNK.get(), Items.GHAST_TEAR, ModItems.QUANTUMITE_INGOT.get(), 1);
 
         // incubator
         //basique
@@ -862,6 +862,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     protected static void atomicalStabilizatorRecipe(Consumer<FinishedRecipe> consumer, ItemLike leftIngredient, ItemLike rightIngredient, ItemLike glueIngredient, ItemLike result, int count) {
         AtomicalStabilizationRecipeBuilder.stabilization(leftIngredient, rightIngredient, glueIngredient, result, count).unlocks(getHasName(glueIngredient), has(glueIngredient))
+                .save(consumer, result.toString());
     }
 
     protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {

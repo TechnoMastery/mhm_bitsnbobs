@@ -1,15 +1,15 @@
 {
   "type": "mhm_bitsnbobs:atomical_stabilizator",
-  "left": {
-    "item": "mhm_bitsnbobs:quantumite_chunk"
-  },
-  "right": {
-    "item": "mhm_bitsnbobs:quantumite_chunk"
-  },
   "glue": {
     "item": "minecraft:ghast_tear"
   },
+  "left": {
+    "item": "mhm_bitsnbobs:quantumite_chunk"
+  },
   "output": {
     "item": "mhm_bitsnbobs:quantumite_ingot"
+  },
+  "right": {
+    "item": "mhm_bitsnbobs:quantumite_chunk"
   }
 }
