@@ -41,7 +41,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         // call for smelting ore : SMELTING = BLASTING but put x2 time in SMELTING
         oreSmelting(pWriter, List.of(ModItems.IRON_BALL.get()), RecipeCategory.MISC, Items.IRON_NUGGET, 0.1f, 200, "balls");
-        oreSmelting(pWriter, List.of(ModItems.COPPER_BALL.get()), RecipeCategory.MISC, OtherModItems.COPPER_NUGGET.getAsRawItem(), 0.1f, 200, "balls");
+        oreSmelting(pWriter, List.of(ModItems.COPPER_BALL.get()), RecipeCategory.MISC, OtherModItems.Create.COPPER_NUGGET.getAsRawItem(), 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.GOLD_BALL.get()), RecipeCategory.MISC, Items.GOLD_NUGGET, 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.DIAMOND_BALL.get()), RecipeCategory.MISC, Items.DIAMOND, 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.SAPPHIRE_BALL.get()), RecipeCategory.MISC, ModItems.SAPPHIRE_NUGGET.get(), 0.1f, 200, "balls");
@@ -181,7 +181,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleSmithing(pWriter, ModItems.LIGHTNING_UPGRADE.get(), ModItems.DIAMOND_BALL.get(), Items.DIAMOND, RecipeCategory.MISC, ModItems.SUPER_CHARGED_BALL.get());
         simpleSmithing(pWriter, Blocks.EMERALD_BLOCK, Items.AMETHYST_BLOCK, Items.AMETHYST_SHARD, RecipeCategory.MISC, Items.BUDDING_AMETHYST);
         simpleSmithing(pWriter, Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE, ModItems.DIAMOND_CATALYZER.get(), Items.NETHERITE_INGOT, RecipeCategory.MISC, ModItems.NETHERITE_CATALYZER.get());
-        simpleSmithing(pWriter, Items.EMERALD, OtherModItems.CERTUS_QUARTZ_BLOCK.getAsRawItem(), OtherModItems.CERTUS_QUARTZ_CRYSTAL.getAsRawItem(), RecipeCategory.MISC, OtherModItems.FLAWLESS_BUDDING_CERTUS_QUARTZ.getAsRawItem());
+        simpleSmithing(pWriter, Items.EMERALD, OtherModItems.Ae2.CERTUS_QUARTZ_BLOCK.getAsRawItem(), OtherModItems.Ae2.CERTUS_QUARTZ_CRYSTAL.getAsRawItem(), RecipeCategory.MISC, OtherModItems.Ae2.FLAWLESS_BUDDING_CERTUS_QUARTZ.getAsRawItem());
 
         // stone cutting : use 'simpleStoneCutting' from our libraries.
         // use it with pWriter, recipeCategory, result, ingredient → you can add, at last parameter, the amount of results. Not needed : don't set to use 1
@@ -222,12 +222,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         incubationRecipe(pWriter, Items.SAND, ModItems.WIND_CHARGED_CATALYZER.get(), Items.DIRT, 1);
 
         // mysterious magic
-        mysteriousMagicRecipe(pWriter, Items.ENDER_PEARL, 16, ModItems.STORM_FRAGMENT.get(), 4, ModItems.STORM_FRAGMENT.get(), 4, Items.GLOWSTONE_DUST, 32, ModItems.QUANTUM_DUST.get(), 1, OtherModItems.SINGULARITY.getAsRawItem(), 16, 500);
+        mysteriousMagicRecipe(pWriter, Items.ENDER_PEARL, 16, ModItems.STORM_FRAGMENT.get(), 4, ModItems.STORM_FRAGMENT.get(), 4, Items.GLOWSTONE_DUST, 32, ModItems.QUANTUM_DUST.get(), 1, OtherModItems.Ae2.SINGULARITY.getAsRawItem(), 16, 500);
 
         // inscibe
         inscriberRecipe(pWriter, ModTags.Items.QUANTUMITE_INGOTS, ModItems.INSCRIBER_QUANTUM_PRESS.get(), ModItems.PRINTED_QUANTUM_CIRCUIT.get(), 1, InscriberProcessType.INSCRIBE);
         inscriberRecipe(pWriter, Items.IRON_BLOCK, ModItems.INSCRIBER_QUANTUM_PRESS.get(), ModItems.INSCRIBER_QUANTUM_PRESS.get(), 1, InscriberProcessType.INSCRIBE);
-        inscriberRecipe(pWriter, OtherModItems.FLUIX_DUST.getAsRawItem(), ModItems.PRINTED_QUANTUM_CIRCUIT.get(), OtherModItems.PRINTED_SILICON.getAsRawItem(), ModItems.QUANTUM_PROCESSOR.get(), 1, InscriberProcessType.PRESS);
+        inscriberRecipe(pWriter, OtherModItems.Ae2.FLUIX_DUST.getAsRawItem(), ModItems.PRINTED_QUANTUM_CIRCUIT.get(), OtherModItems.Ae2.PRINTED_SILICON.getAsRawItem(), ModItems.QUANTUM_PROCESSOR.get(), 1, InscriberProcessType.PRESS);
         inscriberRecipe(pWriter, Items.QUARTZ, ModItems.QUARTZ_SHARD.get(), 1, InscriberProcessType.INSCRIBE);
 
         // create
@@ -274,7 +274,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, "sweet_berries_snowball");
         CreateCompactingRecipeBuilder.createCompacting()
                 .addIngredient(Items.STONE)
-                .addIngredient(OtherModItems.FLUIX_CRYSTAL.getAsRawItem())
+                .addIngredient(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem())
                 .addTagIngredient(ModTags.Items.OBSIDIAN_DUSTS)
                 .addTagIngredient(ItemTags.SAND)
                 .addResult(Items.END_STONE)
@@ -320,8 +320,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .pattern("III")
                 .define('I', Blocks.IRON_BLOCK)
                 .define('E', ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get())
-                .define('C', OtherModItems.CALCULATION_PROCESSOR.getAsIngredient())
-                .define('A', OtherModItems.ACCUMULATION_PROCESSOR.getAsIngredient())
+                .define('C', OtherModItems.Ae2.CALCULATION_PROCESSOR.getAsIngredient())
+                .define('A', OtherModItems.MegaCells.ACCUMULATION_PROCESSOR.getAsIngredient())
                 .unlockedBy(getHasName(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get()), has(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get()))
                 .save(pWriter);
 

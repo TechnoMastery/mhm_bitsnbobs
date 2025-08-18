@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.recipe.datagen.compat;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.simibubi.create.AllRecipeTypes;
+import com.simibubi.create.content.processing.recipe.HeatCondition;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
@@ -28,6 +29,7 @@ public class CreateCompactingRecipeBuilder {
     private final List<JsonObject> ingredients = new ArrayList<>();
     private final List<JsonObject> results = new ArrayList<>();
     private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
+    private HeatCondition heatCondition = HeatCondition.NONE;
 
     public CreateCompactingRecipeBuilder() {}
 
@@ -75,6 +77,11 @@ public class CreateCompactingRecipeBuilder {
         return this;
     }
 
+    public CreateCompactingRecipeBuilder addHeatCondition(HeatCondition condition) {
+        this.heatCondition = condition;
+        return this;
+    }
+
     public CreateCompactingRecipeBuilder unlock(String pKey, CriterionTriggerInstance pCriterion) {
         this.advancement.addCriterion(pKey, pCriterion);
         return this;
@@ -93,7 +100,7 @@ public class CreateCompactingRecipeBuilder {
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new Result(id.withPrefix("create/compacting/"), this.ingredients, this.results, this.advancement, id.withPrefix("recipes/create/compacting/")));
+        consumer.accept(new Result(id.withPrefix("create/compacting/"), this.ingredients, this.results, this.advancement, id.withPrefix("recipes/create/compacting/"), heatCondition));
     }
     public void save(Consumer<FinishedRecipe> consumer, String id) {
         this.save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
@@ -105,13 +112,15 @@ public class CreateCompactingRecipeBuilder {
         private final List<JsonObject> results;
         private final Advancement.Builder advancement;
         private final ResourceLocation advancementId;
+        private final HeatCondition heatCondition;
 
-        public Result(ResourceLocation id, List<JsonObject> ingredients, List<JsonObject> result, Advancement.Builder advancement, ResourceLocation advancementId) {
+        public Result(ResourceLocation id, List<JsonObject> ingredients, List<JsonObject> result, Advancement.Builder advancement, ResourceLocation advancementId, HeatCondition heatCondition) {
             this.id = id;
             this.ingredients = ingredients;
             this.results = result;
             this.advancement = advancement;
             this.advancementId = advancementId;
+            this.heatCondition = heatCondition;
         }
 
         @Override
@@ -121,6 +130,11 @@ public class CreateCompactingRecipeBuilder {
 
             JsonArray results = new JsonArray();
             for (JsonObject result : this.results) results.add(result);
+
+            if (heatCondition != HeatCondition.NONE) {
+                if (heatCondition == HeatCondition.HEATED) pJson.addProperty("heatRequirement", "heated");
+                else pJson.addProperty("heatRequirement", "superHeated");
+            }
 
             pJson.add("ingredients", ingredients);
             pJson.add("results", results);

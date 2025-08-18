@@ -6,18 +6,46 @@ package net.minheur.mhm_bitsnbobs.compat.compatItemlike;
  * <p> It is used to reference them.
  */
 public class OtherModItems {
-    public static final String CREATE = "create";
-    public static final String MEGACELLS = "megacells";
-    public static final String AE2 = "ae2";
+    /**
+     * The is ae2's mod OtherItem registration
+     */
+    public static class Ae2 {
+        public static final OtherModItem CALCULATION_PROCESSOR = ae2Item("calculation_processor");
+        public static final OtherModItem CERTUS_QUARTZ_BLOCK = ae2Item("quartz_block");
+        public static final OtherModItem CERTUS_QUARTZ_CRYSTAL = ae2Item("certus_quartz_crystal");
+        public static final OtherModItem FLAWLESS_BUDDING_CERTUS_QUARTZ = ae2Item("flawless_budding_quartz");
+        public static final OtherModItem SINGULARITY = ae2Item("singularity");
+        public static final OtherModItem PRINTED_SILICON = ae2Item("printed_silicon");
+        public static final OtherModItem FLUIX_DUST = ae2Item("fluix_dust");
+        public static final OtherModItem FLUIX_CRYSTAL = ae2Item("fluix_crystal");
 
-    public static final OtherModItem CALCULATION_PROCESSOR = new OtherModItem(AE2, "calculation_processor");
-    public static final OtherModItem ACCUMULATION_PROCESSOR = new OtherModItem(MEGACELLS, "accumulation_processor");
-    public static final OtherModItem COPPER_NUGGET = new OtherModItem(CREATE, "copper_nugget");
-    public static final OtherModItem CERTUS_QUARTZ_BLOCK = new OtherModItem(AE2, "quartz_block");
-    public static final OtherModItem CERTUS_QUARTZ_CRYSTAL = new OtherModItem(AE2, "certus_quartz_crystal");
-    public static final OtherModItem FLAWLESS_BUDDING_CERTUS_QUARTZ = new OtherModItem(AE2, "flawless_budding_quartz");
-    public static final OtherModItem SINGULARITY = new OtherModItem(AE2, "singularity");
-    public static final OtherModItem PRINTED_SILICON = new OtherModItem(AE2, "printed_silicon");
-    public static final OtherModItem FLUIX_DUST = new OtherModItem(AE2, "fluix_dust");
-    public static final OtherModItem FLUIX_CRYSTAL = new OtherModItem(AE2, "fluix_crystal");
+
+        private static OtherModItem ae2Item(String id) {
+            return new OtherModItem("ae2", id);
+        }
+    }
+
+    /**
+     * The is create's mod OtherItem registration
+     */
+    public static class Create {
+        public static final OtherModItem COPPER_NUGGET = createItem("copper_nugget");
+
+
+        private static OtherModItem createItem(String id) {
+            return new OtherModItem("create", id);
+        }
+    }
+
+    /**
+     * The is megacells's mod OtherItem registration
+     */
+    public static class MegaCells {
+        public static final OtherModItem ACCUMULATION_PROCESSOR = megaCellsItem("accumulation_processor");
+
+
+        private static OtherModItem megaCellsItem(String id) {
+            return new OtherModItem("megacells", id);
+        }
+    }
 }
