@@ -9,6 +9,9 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.effects.custom.IcedEffect;
 import net.minheur.mhm_bitsnbobs.effects.custom.QuantumChockedEffect;
 
+/**
+ * Registration of the mod's effects
+ */
 public class ModEffects {
     public static final DeferredRegister<MobEffect> EFFECTS =
             DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, MhmBitsnbobs.MOD_ID);

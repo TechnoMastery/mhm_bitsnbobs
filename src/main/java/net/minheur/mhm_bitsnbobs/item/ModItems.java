@@ -15,6 +15,9 @@ import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
+/**
+ * Registration of items
+ */
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MhmBitsnbobs.MOD_ID);

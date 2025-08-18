@@ -9,6 +9,9 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 
 import java.util.function.Supplier;
 
+/**
+ * Lists all the armor materials.
+ */
 public enum ModArmorMaterials implements ArmorMaterial  {
     // creation de armor materials : (different models = separate with ',' and last end with ;
     SAPPHIRE("sapphire", 27, new int[]{ 5, 7, 5, 4 }, 25,

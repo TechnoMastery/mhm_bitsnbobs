@@ -3,12 +3,15 @@ package net.minheur.mhm_bitsnbobs.config;
 import net.minecraft.core.BlockPos;
 import net.minecraftforge.common.ForgeConfigSpec;
 
+/**
+ * Adds config file for our mod.
+ */
 public class ModServerConfig {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec CONFIG;
 
     // command /spawn
-public static final ForgeConfigSpec.BooleanValue SPAWN_ENABLED;
+    public static final ForgeConfigSpec.BooleanValue SPAWN_ENABLED;
     public static final ForgeConfigSpec.IntValue SPAWN_X;
     public static final ForgeConfigSpec.IntValue SPAWN_Y;
     public static final ForgeConfigSpec.IntValue SPAWN_Z;

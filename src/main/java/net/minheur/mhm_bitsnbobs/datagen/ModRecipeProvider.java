@@ -31,12 +31,19 @@ import net.minheur.mhm_bitsnbobs.util.ModTags;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * This provider create the recipes.
+ */
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
 
+    /**
+     * Called method : it generates recipes.
+     * @param pWriter it is the consumer. Used in every recipes.
+     */
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
         // call for smelting ore : SMELTING = BLASTING but put x2 time in SMELTING
@@ -637,6 +644,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
     }
 
+    /**
+     * This creates a boat recipe.
+     * @param isChestBoat if true, the recipe will have a chest in the middle.
+     */
     protected static void simpleBoatCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike boatResult, ItemLike ingredient, boolean isChestBoat) {
         if(isChestBoat) {
             ShapedRecipeBuilder.shaped(RecipeCategory.MISC, boatResult)
@@ -656,6 +667,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         }
     }
 
+    /**
+     * this creates a recipe template for the mob heads.
+     * @param pFinishedRecipeConsumer the consumer
+     * @param headResult the result
+     * @param ingredient1 the main ingredient
+     * @param ingredient2 the secondary ingredient
+     */
     protected static void simpleHeadCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike headResult, ItemLike ingredient1, ItemLike ingredient2) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, headResult)
                 .pattern("IUI")
@@ -669,6 +687,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + headResult + "_head_crafting");
     }
 
+    /**
+     * This creates a recipe for 9 items to one. Template for block like iron.
+     */
     protected static void simpleBlockCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("SSS")
@@ -679,6 +700,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result) + "_from_nine_" + getItemName(ingredient));
     }
 
+    /**
+     * This is a template to craft a sign.
+     */
     protected static void signCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike signResult, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, signResult, 3)
                 .pattern("SSS")
@@ -688,6 +712,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer);
     }
+    /**
+     * This recipe is a template for the hanging sign.
+     */
     protected static void signHangingCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike hangingSignResult, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, hangingSignResult, 6)
                 .pattern("C C")
@@ -699,6 +726,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer);
     }
 
+    /**
+     * This is a template for a 4 to 1 recipe. Used for creating wood from logs
+     */
     protected static void simpleWoodCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, 3)
                 .pattern("SS")
@@ -708,6 +738,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer);
     }
 
+    /**
+     * The template for simple discs. Using a discBase.
+     * @param pFinishedRecipeConsumer the consumer
+     * @param resultDisc the result
+     * @param discIngredient the ingredient
+     */
     protected static void simpleDiscCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item resultDisc, Item discIngredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, resultDisc)
                 .pattern(" S ")
@@ -718,6 +754,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(discIngredient), has(discIngredient))
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(resultDisc) + "_with_" + getItemName(discIngredient));
     }
+    /**
+     * The template for advanced discs. Using a discBase.
+     * @param pFinishedRecipeConsumer the consumer
+     * @param resultDisc the result
+     * @param discIngredient the ingredient
+     * @param discAddition the addition
+     */
     protected static void advancedDiscCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, Item resultDisc, ItemLike discIngredient, ItemLike discAddition) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, resultDisc)
                 .pattern("XSX")
@@ -730,6 +773,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(resultDisc) + "_with_" + getItemName(discIngredient));
     }
 
+    /**
+     * Template for stairs.
+     */
     protected static void simpleStairsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Block result, Block ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, 6)
                 .pattern("S  ")
@@ -740,7 +786,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
-    // armor making
+    /**
+     * Helmet crafting
+     */
     protected static void simpleHelmetCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("SSS")
@@ -749,6 +797,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
+    /**
+     * chestplate crafting
+     */
     protected static void simpleChestplateCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("S S")
@@ -758,6 +809,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
+    /**
+     * leggings crafting
+     */
     protected static void simpleLeggingsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("SSS")
@@ -767,6 +821,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
+    /**
+     * boots crafting
+     */
     protected static void simpleBootsCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("S S")
@@ -776,7 +833,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
-    // tools and weapons
+    /**
+     * Recipe template for a sword
+     */
     protected static void simpleSwordCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, result)
                 .pattern("S")
@@ -787,6 +846,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
+    /**
+     * Recipe template for a pickaxe
+     */
     protected static void simplePickaxeCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("SSS")
@@ -797,6 +859,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
+    /**
+     * Recipe template for a shovel
+     */
     protected static void simpleShovelCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("S")
@@ -807,6 +872,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
+    /**
+     * Recipe template for an axe
+     */
     protected static void simpleAxesCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("SS")
@@ -817,6 +885,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinisherRecpipeConsumer);
     }
+    /**
+     * Recipe template for a hoe
+     */
     protected static void simpleHoesCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Item result, ItemLike ingredient, ItemLike stick) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
                 .pattern("SS")
@@ -828,6 +899,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
+    /**
+     * The recipe template for the catalyzer
+     * @param pFinishedRecipeConsumer the consumer
+     * @param catalyzerResult the catalizer you want to craft
+     * @param base the base of the catalizer
+     * @param surround the item you add to the base
+     */
     protected static void catalyzerCrafting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike catalyzerResult, ItemLike base, ItemLike surround) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, catalyzerResult)
                 .pattern(" B ")
@@ -839,6 +917,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer);
     }
 
+    /**
+     * The slab template
+     */
     protected static void simpleSlabCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Block result, Block ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, 6)
                 .pattern("SSS")
@@ -847,6 +928,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
+    /**
+     * The pressure plate template
+     */
     protected static void simplePressurePlateCrafting(Consumer<FinishedRecipe> pFinisherRecpipeConsumer, Block result, Block ingredient) {
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result)
                 .pattern("SS")
@@ -855,14 +939,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinisherRecpipeConsumer);
     }
 
-    // en dessous : liste des shapeless crafting (1 to 9 ingredient. only the used ones wrote, cause very big xD). l'item 1 est le plus important, c'est celui qui unlock
-    // la recette et qui s'affiche en nom
+    /**
+     * The shapeless of one item
+     */
     protected static void simpleShapelessCraftingOne(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, Integer resultQuantity, Integer ingredientQuantity) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQuantity)
                 .requires(ingredient, ingredientQuantity)
                 .unlockedBy(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result) + "_from_shapeless_of_one_" + getItemName(ingredient));
     }
+    /**
+     * The shapeless of two items
+     */
     protected static void simpleShapelessCraftingTwo(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Integer resultQ, ItemLike ingredient1, Integer ingredient1Q, ItemLike ingredient2, Integer ingredient2Q) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQ)
                 .requires(ingredient1, ingredient1Q)
@@ -870,6 +958,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ingredient1), has(ingredient1))
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result) + "_from_shapeless_of_two_base_" + getItemName(ingredient1));
     }
+    /**
+     * The shapeless of three items
+     */
     protected static void simpleShapelessCraftingThree(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, Integer resultQuantity, ItemLike ingredient1, Integer ingredient1Q, ItemLike ingredient2, Integer ingredient2Q, ItemLike ingredient3, Integer ingredient3Q) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result, resultQuantity)
                 .requires(ingredient1, ingredient1Q)
@@ -879,15 +970,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(result)+"_from_shapeless_of_three_base_"+getItemName(ingredient1));
     }
 
+    /**
+     * The ore smelting recipe
+     */
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
     }
+    /**
+     * The ore blasting
+     */
     protected static void oreBlasting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.BLASTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_blasting");
     }
+    /**
+     * The item smoking
+     */
     protected static void itemSmoking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMOKING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTime, pGroup, "_from_smoking");
     }
+    /**
+     * Ore cooking : it's the base of {@link #oreBlasting}, {@link #oreBlasting} and {@link #itemSmoking}.
+     */
     protected static void oreCooking(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeSerializer<? extends AbstractCookingRecipe> pCookingSerializer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTime, String pGroup, String pRecipeName) {
         for(ItemLike itemlike : pIngredients) {
             SimpleCookingRecipeBuilder.generic(Ingredient.of(new ItemLike[]{itemlike}), pCategory, pResult,
@@ -898,58 +1001,101 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     }
 
+    /**
+     * The recipe for the freezer.
+     */
     protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         FreezingRecipeBuilder.freezing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer, result.toString());
     }
 
+    /**
+     * The recipe for the gem polishing. Takes an {@link ItemLike} as ingredient.
+     */
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
     }
+    /**
+     * The recipe for the gem polishing. Takes a {@link TagKey} as ingredient
+     */
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, TagKey<Item> ingredient, String getHasName, int resultAmount) {
         GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName, has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
     }
 
+    /**
+     * The recipe for the Incubation. The recipe ID is the result id.
+     */
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count) {
         IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
     }
+    /**
+     * The recipe for the Incubation. You can choose the ID.
+     */
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count, String id) {
         IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, id);
     }
 
+    /**
+     * Recipe for the atomical stabilization
+     */
     protected static void atomicalStabilizatorRecipe(Consumer<FinishedRecipe> consumer, ItemLike leftIngredient, ItemLike rightIngredient, ItemLike glueIngredient, ItemLike result, int count) {
         AtomicalStabilizationRecipeBuilder.stabilization(leftIngredient, rightIngredient, glueIngredient, result, count).unlocks(getHasName(glueIngredient), has(glueIngredient))
                 .save(consumer, result.toString());
     }
 
+    /**
+     * Recipe for mysterious magic
+     */
     protected static void mysteriousMagicRecipe(Consumer<FinishedRecipe> consumer, ItemLike primary, int primaryCount, ItemLike left, int leftCount, ItemLike right, int rightCount, ItemLike up, int upCount, ItemLike down, int downCount, ItemLike result, int resultCount, int fuelAmount) {
         MysteriousMagicRecipeBuilder.magic(primary, primaryCount, left, leftCount, right, rightCount, up, upCount, down, downCount, result, resultCount, fuelAmount)
                 .unlock(getHasName(primary), has(primary)).save(consumer, primary.toString());
     }
 
+    /**
+     * Recipe for stone cutting
+     */
     protected static void simpleStoneCutting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, RecipeCategory pCategory, ItemLike pResult, ItemLike pMaterial, int pResultCount) {
         SingleItemRecipeBuilder var10000 = SingleItemRecipeBuilder.stonecutting(Ingredient.of(new ItemLike[]{pMaterial}), pCategory, pResult, pResultCount).unlockedBy(getHasName(pMaterial), has(pMaterial));
         String var10002 = getConversionRecipeName(pResult, pMaterial);
         var10000.save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + var10002 + "_stonecutting");
     }
 
+    /**
+     * Recipe for inscriber. Takes a {@link TagKey} as {@code middle} ingredient. Has only {@code middle} and {@code top} ingredients.
+     * You can choose the result's count.
+     */
     protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, TagKey<Item> middle, ItemLike top, ItemLike result, int count, InscriberProcessType mode) {
         InscriberRecipeBuilder.inscribe(Ingredient.of(middle), result, count).setTop(Ingredient.of(top)).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + middle.location().getPath()));
     }
+    /**
+     * Recipe for inscriber. Takes {@link ItemLike} everywhere. Has only {@code middle} and {@code top} ingredients.
+     * You can choose the result's count.
+     */
     protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike top, ItemLike result, int count, InscriberProcessType mode) {
         InscriberRecipeBuilder.inscribe(middle, result, count).setTop(Ingredient.of(top)).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
     }
+    /**
+     * Recipe for inscriber. Takes {@link ItemLike} everywhere. Has the three inputs.
+     * You can choose the result's count.
+     */
     protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike top, ItemLike bottom, ItemLike result, int count, InscriberProcessType mode) {
         InscriberRecipeBuilder.inscribe(middle, result, count).setTop(Ingredient.of(top)).setBottom(Ingredient.of(bottom)).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
     }
+    /**
+     * Recipe for inscriber. Takes {@link ItemLike} everywhere. Has only {@code middle} input.
+     * You can choose result's count.
+     */
     protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike result, int count, InscriberProcessType mode) {
         InscriberRecipeBuilder.inscribe(middle, result, count).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
     }
 
+    /**
+     * Recipe for smithing transform.
+     */
     protected static void simpleSmithing(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike pTemplate, ItemLike pIngredientItem, ItemLike pAddition, RecipeCategory pCategory, ItemLike pResultItem) {
         SmithingTransformRecipeBuilder.smithing(Ingredient.of(new ItemLike[]{pTemplate}), Ingredient.of(new ItemLike[]{pIngredientItem}), Ingredient.of(new ItemLike[]{pAddition}), pCategory, (Item) pResultItem).unlocks(getHasName(pIngredientItem), has(pIngredientItem)).save(pFinishedRecipeConsumer, MhmBitsnbobs.MOD_ID + ":" + getItemName(pResultItem) + "_smithing");
     }

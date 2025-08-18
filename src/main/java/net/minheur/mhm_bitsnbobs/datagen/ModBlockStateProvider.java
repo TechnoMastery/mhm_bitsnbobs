@@ -17,11 +17,18 @@ import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 
 import java.util.function.Function;
 
+/**
+ * DataGen for the BlockState.
+ * @see DataGenerators
+ */
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, MhmBitsnbobs.MOD_ID, exFileHelper);
     }
 
+    /**
+     * Called method in {@link DataGenerators}. Generate BlockStates.
+     */
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.SAPPHIRE_BLOCK);

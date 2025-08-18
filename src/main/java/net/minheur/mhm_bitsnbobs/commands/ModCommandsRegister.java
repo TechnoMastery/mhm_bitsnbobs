@@ -9,6 +9,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minheur.mhm_bitsnbobs.config.ModServerConfig;
 
+/**
+ * The class for commands creation.
+ */
 public class ModCommandsRegister {
     public static void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
 

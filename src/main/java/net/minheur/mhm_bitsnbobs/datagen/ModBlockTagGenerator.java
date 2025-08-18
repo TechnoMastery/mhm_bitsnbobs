@@ -13,11 +13,18 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Add blocks to tags.
+ * @see DataGenerators
+ */
 public class ModBlockTagGenerator extends BlockTagsProvider {
     public ModBlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, MhmBitsnbobs.MOD_ID, existingFileHelper);
     }
 
+    /**
+     * Method called in {@link DataGenerators}. Generate tags
+     */
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         // METAL DETECTOR detection list

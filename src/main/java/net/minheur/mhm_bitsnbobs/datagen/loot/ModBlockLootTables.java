@@ -25,15 +25,22 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * This class is used to generate block loot tables.
+ * To exclude a block from loot tables, use {@code .noLootTable()} in the {@code Block.property()} part
+ * of the block creation (taking place in {@link ModBlocks}).
+ * <p> To exclude the block from the datagen but still having a manual loot table in the files, use {@link #getKnownBlocks()}
+ * down here.
+ * @see net.minheur.mhm_bitsnbobs.datagen.DataGenerators
+ */
 public class ModBlockLootTables extends BlockLootSubProvider {
     public ModBlockLootTables() {                       // WARNING !!!!! Problem here
         super(Set.of(), FeatureFlags.REGISTRY.allFlags());
     }
 
-    /// This method is used to generate loot tables. To exclude a block from loot tables,
-    /// use `.noLootTables()` in the ModBlocks.java file, in the `Blocks.property()`.
-    /// For exclude a block from loot table gen but having a manual one in the files,
-    /// refer to the `getKnownBlocks()` down there.
+    /**
+     * Method called in {@link net.minheur.mhm_bitsnbobs.datagen.DataGenerators}. Generate to loot tables.
+     */
     @Override
     protected void generate() {
         // all blocks that drop self
@@ -142,9 +149,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(rootBlock, this.createOneDropTable(droppedItem, dropCount));
     }
 
-    /// Here, you can add a `.filter(block -> block != ModBlocks.YOUR_BLOCK.get())`
-    /// to remove `YOUR_BLOCK` from creating a data-generated file. It will still look for a
-    /// file it the manuals ones.
+    /**
+     * Here, you can add {@code .filter(block -> block != ModBlocks.YOUR_BLOCK.get())}
+     * to remove {@code YOUR_BLOCK} from creating a data-generated file. It will still look for a
+     * file it the manuals ones.
+     */
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)

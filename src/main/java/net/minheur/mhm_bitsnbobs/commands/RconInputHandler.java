@@ -6,8 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Handle the rcon command input.
+ * <p> Will check for keys then if found, output the answer.
+ * @see RconAnswers
+ * @see RconInputHandler
+ */
 public class RconInputHandler {
-
     public static String analyzeText(String input) {
         List<String> detectedCategories = new ArrayList<>();
         String answer;

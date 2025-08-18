@@ -8,6 +8,10 @@ import net.minheur.mhm_bitsnbobs.datagen.loot.ModBlockLootTables;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * The provider for loot tables.
+ * @see ModBlockLootTables
+ */
 public class ModLootTableProvider {
     public static LootTableProvider create(PackOutput output) {
         return new LootTableProvider(output, Set.of(), List.of(

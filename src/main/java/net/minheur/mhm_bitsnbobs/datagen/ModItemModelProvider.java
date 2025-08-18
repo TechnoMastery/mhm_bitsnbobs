@@ -21,7 +21,14 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 
 import java.util.LinkedHashMap;
 
+/**
+ * This item model provider is used to create the item models. Each item needs a model.
+ * @see DataGenerators
+ */
 public class ModItemModelProvider extends ItemModelProvider {
+    /**
+     * Used to get the trim materials.
+     */
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
@@ -40,6 +47,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         super(output, MhmBitsnbobs.MOD_ID, existingFileHelper);
     }
 
+    /**
+     * The method called. Generates item models.
+     */
     @Override
     protected void registerModels() {
         // duplicate = auto get model item gen

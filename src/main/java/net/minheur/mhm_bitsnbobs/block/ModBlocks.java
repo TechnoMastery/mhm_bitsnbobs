@@ -27,7 +27,14 @@ import net.minheur.mhm_bitsnbobs.worldgen.tree.DarkTreeGrower;
 
 import java.util.function.Supplier;
 
+/**
+ * The class where we declare our blocks.
+ * <p>We use {@link RegistryObject} of type Block.
+ */
 public class ModBlocks {
+    /**
+     * This {@link DeferredRegister} is used to monitor the {@link RegistryObject} used there.
+     */
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, MhmBitsnbobs.MOD_ID);
 
@@ -205,16 +212,32 @@ public class ModBlocks {
 
     // end block create
 
+    /**
+     * Used to create blocks
+     * @param name the block id
+     * @param block the block properites
+     * @return a {@link RegistryObject} ready with the properties asked.
+     */
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
         return toReturn;
     }
 
+    /**
+     * Registers a blockItem
+     * @param name Block id
+     * @param block the block properties
+     * @return an item registryObject
+     */
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
+    /**
+     * registers all the blocks
+     * @param eventBus the modEventBus
+     */
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }

@@ -18,13 +18,24 @@ import net.minheur.mhm_bitsnbobs.screen.IncubatorScreen;
 
 import java.util.List;
 
+/**
+ * JEI plugin for Mhm bitsnbobs.
+ * <p> Here we register the categories for JEI.
+ */
 @JeiPlugin
 public class JEIMhmBitsnbobsPlugin implements IModPlugin {
+    /**
+     * @return the ID of the plugin. ({@code mhm_bitsnbobs:jei_plugin})
+     */
     @Override
     public ResourceLocation getPluginUid() {
         return new ResourceLocation(MhmBitsnbobs.MOD_ID, "jei_plugin");
     }
 
+    /**
+     * Here we add our categories
+     * @param registration used to registrate the categories.
+     */
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new AtomicalStabilizatorCategory(registration.getJeiHelpers().getGuiHelper()));
@@ -34,6 +45,11 @@ public class JEIMhmBitsnbobsPlugin implements IModPlugin {
         registration.addRecipeCategories(new MysteriousMagicCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
+    /**
+     * The catalysts are blocks / items that are displayed next to the recipes.
+     * <p>Often the block that supports the recipe, so the player knows what to use for the recipe.
+     * @param registration used to registrate the catalysts.
+     */
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addRecipeCatalyst(ModBlocks.ATOMICAL_STABILIZATOR.get(), AtomicalStabilizatorCategory.ATOMICAL_STABILIZATOR_TYPE);
@@ -44,6 +60,10 @@ public class JEIMhmBitsnbobsPlugin implements IModPlugin {
         IModPlugin.super.registerRecipeCatalysts(registration);
     }
 
+    /**
+     * This tells JEI which recipe type is which category
+     * @param registration used to registrate the recipes.
+     */
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
@@ -64,6 +84,10 @@ public class JEIMhmBitsnbobsPlugin implements IModPlugin {
         registration.addRecipes(MysteriousMagicCategory.MYSTERIOUS_MAGIC_TYPE, mysteriousMagicRecipes);
     }
 
+    /**
+     * This allows us to add different things to the screen, like a clickArea on our GUI to get directly to the recipes of out block
+     * @param registration used to registrate the handlers.
+     */
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(FreezerScreen.class, 80, 30, 16, 22, FreezingCategory.FREEZING_TYPE);

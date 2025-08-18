@@ -14,6 +14,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.util.cold_head.ColdHeadCapability;
 
+/**
+ * The client events
+ */
 @Mod.EventBusSubscriber(modid = MhmBitsnbobs.MOD_ID, value = Dist.CLIENT)
 public class ClientEvents {
     @SubscribeEvent

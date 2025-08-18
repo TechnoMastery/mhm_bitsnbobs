@@ -14,6 +14,9 @@ import net.minheur.mhm_bitsnbobs.worldgen.ModPlacedFeatures;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * The provider for the worldGen.
+ */
 public class ModWorldGenProvider extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
