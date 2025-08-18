@@ -4,6 +4,9 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 
+/**
+ * The utility class of the mod
+ */
 public class Utils {
     public static void damageAndBreakItem(ItemStack pStack) {
         int newDamage = pStack.getDamageValue() + 1;
