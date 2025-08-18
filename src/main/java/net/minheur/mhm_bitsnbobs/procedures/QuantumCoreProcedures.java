@@ -12,6 +12,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 
+/**
+ * Procedure for the {@code QUANTUM_CORE} damaging player & entities.
+ */
 public class QuantumCoreProcedures {
     public static void executeTickInInventory(Entity entity) {
         ((Player) entity).addEffect(new MobEffectInstance(ModEffects.QUANTUM_CHOCKED.get(), 20));

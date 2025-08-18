@@ -15,6 +15,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
+/**
+ * Monitors the add items on sus sand
+ */
 public class AddSusSandItemModifier extends LootModifier {
     public static final Supplier<Codec<AddSusSandItemModifier>> CODEC = Suppliers.memoize(()
             -> RecordCodecBuilder.create(inst -> codecStart(inst).and(ForgeRegistries.ITEMS.getCodec()

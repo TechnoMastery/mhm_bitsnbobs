@@ -9,6 +9,9 @@ import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.LevelAccessor;
 
+/**
+ * Procedure for when the {@code LIGHTNING_SWORD} hits his target
+ */
 public class LightningSwordHitEvent {
     public static void execute(LevelAccessor world, double x, double y, double z, Entity sourceentity) {
         if (sourceentity == null)

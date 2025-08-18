@@ -53,6 +53,10 @@ public class AtomicalStabilizationRecipeBuilder {
         return this;
     }
 
+    /**
+     * Make sure your recipe is valid
+     * @param pId your recipe's id / name
+     */
     private void ensureValid(ResourceLocation pId) {
         if (this.leftIngredient == null ||
         this.rightIngredient == null ||
@@ -62,11 +66,21 @@ public class AtomicalStabilizationRecipeBuilder {
         if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
     }
 
+    /**
+     * Saves your recipe.
+     * @param consumer recipe consumer
+     * @param id your recipe id / name. Take a {@link ResourceLocation}.
+     */
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
         consumer.accept(new Result(id.withPrefix("atomical_stabilization/"), this.leftIngredient, this.rightIngredient, this.glueIngredient, this.result, this.count, this.advancement, id.withPrefix("recipes/atomical_stabilization/")));
     }
+    /**
+     * Saves your recipe.
+     * @param consumer recipe consumer
+     * @param id your recipe id / name. Takes a {@link String} and will make a {@link ResourceLocation} taking in {@code mhm_bitsnbobs} and your id.
+     */
     public void save(Consumer<FinishedRecipe> consumer, String id) {
         this.save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
     }
@@ -92,6 +106,10 @@ public class AtomicalStabilizationRecipeBuilder {
             this.advancementId = advancementId;
         }
 
+        /**
+         * serialize your recipe data
+         * @param pJson your finished recipe json
+         */
         @Override
         public void serializeRecipeData(JsonObject pJson) {
             JsonObject leftIngredient = new JsonObject();
