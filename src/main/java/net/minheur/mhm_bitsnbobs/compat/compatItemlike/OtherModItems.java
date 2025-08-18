@@ -19,4 +19,5 @@ public class OtherModItems {
     public static final OtherModItem SINGULARITY = new OtherModItem(AE2, "singularity");
     public static final OtherModItem PRINTED_SILICON = new OtherModItem(AE2, "printed_silicon");
     public static final OtherModItem FLUIX_DUST = new OtherModItem(AE2, "fluix_dust");
+    public static final OtherModItem FLUIX_CRYSTAL = new OtherModItem(AE2, "fluix_crystal");
 }

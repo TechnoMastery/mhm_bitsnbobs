@@ -25,6 +25,7 @@ import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.item.custom.CatalyzerItem;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCompactingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -228,6 +229,57 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         inscriberRecipe(pWriter, Items.IRON_BLOCK, ModItems.INSCRIBER_QUANTUM_PRESS.get(), ModItems.INSCRIBER_QUANTUM_PRESS.get(), 1, InscriberProcessType.INSCRIBE);
         inscriberRecipe(pWriter, OtherModItems.FLUIX_DUST.getAsRawItem(), ModItems.PRINTED_QUANTUM_CIRCUIT.get(), OtherModItems.PRINTED_SILICON.getAsRawItem(), ModItems.QUANTUM_PROCESSOR.get(), 1, InscriberProcessType.PRESS);
         inscriberRecipe(pWriter, Items.QUARTZ, ModItems.QUARTZ_SHARD.get(), 1, InscriberProcessType.INSCRIBE);
+
+        // create
+        // compacting
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addIngredient(Items.SNOWBALL)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SUGAR)
+                .addFluidIngredient("create:chocolate", 100)
+                .addResult(ModItems.CHOCOLATE_SNOWBALL.get())
+                .unlock(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
+                .save(pWriter, "chocolate_snowball");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addIngredient(Items.DIRT)
+                .addIngredient(Items.DIRT)
+                .addIngredient(Items.DIRT)
+                .addIngredient(Items.DIRT)
+                .addResult(ModBlocks.COMPRESSED_DIRT.get())
+                .unlock(getHasName(Items.DIRT), has(Items.DIRT))
+                .save(pWriter, "compressed_dirt");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addIngredient(Items.SNOWBALL)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(ModItems.VANILLA_EXTRACT.get())
+                .addResult(ModItems.VANILLA_SNOWBALL.get())
+                .unlock(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
+                .save(pWriter, "vanilla_snowball");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addIngredient(Items.SNOWBALL)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(ModItems.STRAWBERRY.get())
+                .addResult(ModItems.STRAWBERRIES_SNOWBALL.get())
+                .unlock(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
+                .save(pWriter, "strawberries_snowball");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addIngredient(Items.SNOWBALL)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SUGAR)
+                .addIngredient(Items.SWEET_BERRIES)
+                .addResult(ModItems.SWEET_BERRIES_SNOWBALL.get())
+                .unlock(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
+                .save(pWriter, "sweet_berries_snowball");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addIngredient(Items.STONE)
+                .addIngredient(OtherModItems.FLUIX_CRYSTAL.getAsRawItem())
+                .addTagIngredient(ModTags.Items.OBSIDIAN_DUSTS)
+                .addTagIngredient(ItemTags.SAND)
+                .addResult(Items.END_STONE)
+                .unlock(getHasName(Items.STONE), has(Items.STONE))
+                .save(pWriter, "endstone");
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);

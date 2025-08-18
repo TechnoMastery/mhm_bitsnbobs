@@ -11,12 +11,12 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "item": "mhm_bitsnbobs:vanilla_extract"
     }
   ],
   "results": [
     {
-      "item": "mhm_bitsnbobs:sweet_berries_snowball"
+      "item": "mhm_bitsnbobs:vanilla_snowball"
     }
   ]
 }

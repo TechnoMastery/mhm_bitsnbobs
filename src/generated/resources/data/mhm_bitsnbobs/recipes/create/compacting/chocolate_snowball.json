@@ -11,12 +11,13 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "mhm_bitsnbobs:strawberry"
+      "amount": 100,
+      "fluid": "create:chocolate"
     }
   ],
   "results": [
     {
-      "item": "mhm_bitsnbobs:strawberries_snowball"
+      "item": "mhm_bitsnbobs:chocolate_snowball"
     }
   ]
 }
