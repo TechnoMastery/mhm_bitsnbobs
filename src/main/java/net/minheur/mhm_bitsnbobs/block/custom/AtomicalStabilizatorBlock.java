@@ -20,7 +20,6 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
 import net.minheur.mhm_bitsnbobs.block.entity.AtomicalStabilizatorBlockEntity;
-import net.minheur.mhm_bitsnbobs.block.entity.GemPolishingStationBlockEntity;
 import net.minheur.mhm_bitsnbobs.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
