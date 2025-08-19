@@ -288,6 +288,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(Items.STONE), has(Items.STONE))
                 .save(pWriter, "endstone");
 
+        // create crushing
+
+
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
         simpleBoatCrafting(pWriter, ModItems.DARK_CHEST_BOAT.get(), ModBlocks.DARK_PLANKS.get(), true);
