@@ -21,13 +21,13 @@
       "item": "mhm_bitsnbobs:iron_ball"
     },
     {
-      "count": 2,
       "chance": 0.3,
+      "count": 2,
       "item": "mhm_bitsnbobs:iron_ball"
     },
     {
-      "count": 5,
       "chance": 0.25,
+      "count": 5,
       "item": "mhm_bitsnbobs:gold_ball"
     },
     {
@@ -35,8 +35,8 @@
       "item": "mhm_bitsnbobs:diamond_ball"
     },
     {
-      "count": 2,
       "chance": 0.13,
+      "count": 2,
       "item": "mhm_bitsnbobs:sapphire_ball"
     },
     {

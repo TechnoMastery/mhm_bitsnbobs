@@ -2,14 +2,14 @@
   "type": "create:crushing",
   "ingredients": [
     {
-      "item": "mhm_bitsnbobs:red_clay"
+      "item": "minecraft:red_terracotta"
     }
   ],
   "processingTime": 500,
   "results": [
     {
       "count": 3,
-      "item": "mhm_bitsnbobs:red_clay_ball"
+      "item": "minecraft:red_sand"
     }
   ]
 }

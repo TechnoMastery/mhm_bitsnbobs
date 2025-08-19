@@ -5,7 +5,6 @@ import appeng.recipes.handlers.InscriberRecipeBuilder;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -23,7 +22,6 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
-import net.minheur.mhm_bitsnbobs.item.custom.CatalyzerItem;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCompactingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCrushingRecipeProvider;
@@ -1126,7 +1124,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addIngredient(ingredient)
                 .addResult(result, resultAmount)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, ingredient + "_crushing");
+                .save(consumer, getItemName(ingredient) + "_crushing");
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime) {
         crushingRecipe(consumer, ingredient, result, processingTime, 1);
@@ -1137,7 +1135,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(result, mainResultCount)
                 .addResult(result, bonusResultCount, bonusResultChance)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, ingredient + "_crushing");
+                .save(consumer, getItemName(ingredient) + "_crushing");
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int mainResultCount, float bonusResultChance) {
         crushingRecipe(consumer, ingredient, result, processingTime, mainResultCount, 1, bonusResultChance);
@@ -1153,7 +1151,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addIngredient(ingredient)
                 .addResult(result, resultChance)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, ingredient + "_crushing");
+                .save(consumer, getItemName(ingredient) + "_crushing");
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, ItemLike otherResult, int processingTime, float mainChance, float otherChance) {
         CreateCrushingRecipeProvider.crush(processingTime)
@@ -1161,7 +1159,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(result, mainChance)
                 .addResult(otherResult, otherChance)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, ingredient + "crushing");
+                .save(consumer, getItemName(ingredient) + "crushing");
     }
 
     /**

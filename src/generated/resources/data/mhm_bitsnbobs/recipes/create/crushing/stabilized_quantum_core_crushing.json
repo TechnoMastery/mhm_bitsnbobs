@@ -2,7 +2,7 @@
   "type": "create:crushing",
   "ingredients": [
     {
-      "item": "mhm_bitsnbobs:stabilised_quantum_core"
+      "item": "mhm_bitsnbobs:stabilized_quantum_core"
     }
   ],
   "processingTime": 500,

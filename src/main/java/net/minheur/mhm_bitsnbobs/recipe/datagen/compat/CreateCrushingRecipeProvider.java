@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+import static net.minheur.mhm_bitsnbobs.util.Utils.*;
 
 public class CreateCrushingRecipeProvider {
     /**
