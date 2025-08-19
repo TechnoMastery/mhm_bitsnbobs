@@ -2,6 +2,9 @@ package net.minheur.mhm_bitsnbobs.util;
 
 import net.minecraft.world.SimpleContainer;
 
+/**
+ * This is a container with a magic fuel int.
+ */
 public class MysteriousMagicContainer extends SimpleContainer {
     private final int fuelAmount;
 

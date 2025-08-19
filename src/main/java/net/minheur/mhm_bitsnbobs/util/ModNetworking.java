@@ -6,6 +6,9 @@ import net.minecraftforge.network.simple.SimpleChannel;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.util.cold_head.SyncColdHeadPacket;
 
+/**
+ * Handles packets of the mod
+ */
 public class ModNetworking {
     public static final SimpleChannel INSTANCE = NetworkRegistry.newSimpleChannel(
             new ResourceLocation(MhmBitsnbobs.MOD_ID, "main"),

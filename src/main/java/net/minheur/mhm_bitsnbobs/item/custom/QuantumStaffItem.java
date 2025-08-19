@@ -17,7 +17,8 @@ public class QuantumStaffItem extends Item {
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
         if (!((Player) pAttacker).getCooldowns().isOnCooldown(this)) {
             pTarget.addEffect(new MobEffectInstance(ModEffects.QUANTUM_CHOCKED.get(), 300));
-            Utils.damageAndBreakItem(pStack);
+            pStack.hurtAndBreak(1, pAttacker,
+                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
             ((Player) pAttacker).getCooldowns().addCooldown(this, 600);
         }
         return super.hurtEnemy(pStack, pTarget, pAttacker);
