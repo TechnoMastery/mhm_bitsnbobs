@@ -13,7 +13,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 
 /**
- * Procedure for the {@code QUANTUM_CORE} damaging player & entities.
+ * Procedure for the {@code QUANTUM_CORE} damaging player &amp; entities.
  */
 public class QuantumCoreProcedures {
     public static void executeTickInInventory(Entity entity) {
