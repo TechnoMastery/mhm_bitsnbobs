@@ -45,12 +45,9 @@ import net.minheur.mhm_bitsnbobs.worldgen.tree.ModFoliagePlacers;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
-/// Ce fichier est le cœur, le cerveau, le tout ce que tu veux de ton mod.
-/// C'est entre autre lui qui va définir les bases, qui va appeler les fichiers de données comme les creative mod tabs, etc.
-/// Le supprimer est critique (comme la plus pars des fichiers xD) : cela empêcherait le mod de comprendre ce qui se passe.
-/// Il s'agit de la javaClass principale.
-
-// The value here should match an entry in the META-INF/mods.toml file
+/***
+ * The file is the core of the mod. It's him who link all classes together, making all items and blocks registered.
+ */
 @Mod(MhmBitsnbobs.MOD_ID)
 public class MhmBitsnbobs
 {
@@ -59,7 +56,9 @@ public class MhmBitsnbobs
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    /// Ici donc on vient utiliser la méthode register à chaque fois pour les fichiers ayant une DeferredRegister
+    /**
+     * Here we call the register method created with every {@link net.minecraftforge.registries.DeferredRegister}.
+     */
     public MhmBitsnbobs() // FMLJavaModLoadingContext context
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -115,7 +114,9 @@ public class MhmBitsnbobs
         });
     }
 
-    /// c'est ici que l'on ajoute des items a des creative mod tabs vanilla
+    /**
+     * Here we add items to vanilla creative mod tabs
+     */
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
              event.accept(ModItems.SAPPHIRE);
@@ -218,7 +219,9 @@ public class MhmBitsnbobs
         }
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    /**
+     * You can use SubscribeEvent and let the Event Bus discover methods to call
+      */
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
