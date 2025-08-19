@@ -26,6 +26,7 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.item.custom.CatalyzerItem;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCompactingRecipeBuilder;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCrushingRecipeProvider;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -289,7 +290,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, "endstone");
 
         // create crushing
-
+        crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
+        crushingRecipe(pWriter, ModItems.QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
+        crushingRecipe(pWriter, Items.RED_TERRACOTTA, Items.RED_SAND, 500, 3);
+        crushingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 500, 3);
+        CreateCrushingRecipeProvider.crush(50)
+                .addIngredient(Items.SOUL_SOIL)
+                .addResult(Items.BONE, 0.5f)
+                .addResult(Items.BONE_MEAL, 0.5f)
+                .addResult(Items.SOUL_SAND, 0.8f)
+                .unlock(getHasName(Items.SOUL_SOIL), has(Items.SOUL_SOIL))
+                .save(pWriter, "soul_soil_crushing");
+        crushingRecipe(pWriter, ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.SMALL_CREATIVE_NUGGET.get(), 0.02f, 500);
+        crushingRecipe(pWriter, ModBlocks.COMPRESSED_DIRT.get(), Items.INK_SAC, ModItems.BIOMASS.get(), 15, 0.5f, 0.205f);
+        CreateCrushingRecipeProvider.crush(5)
+                .addIngredient(ModBlocks.RESOURCE_DIRT_BLOCK.get())
+                .addResult(ModItems.COPPER_BALL.get(), 5)
+                .addResult(ModItems.COPPER_BALL.get(), 3, 0.325f)
+                .addResult(ModItems.IRON_BALL.get(), 3)
+                .addResult(ModItems.IRON_BALL.get(), 2, 0.3f)
+                .addResult(ModItems.GOLD_BALL.get(), 5, 0.25f)
+                .addResult(ModItems.DIAMOND_BALL.get(), 0.125f)
+                .addResult(ModItems.SAPPHIRE_BALL.get(), 2, 0.13f)
+                .addResult(ModItems.CREATIVE_ESSENCE.get(), 0.02f)
+                .unlock(getHasName(ModBlocks.RESOURCE_DIRT_BLOCK.get()), has(ModBlocks.RESOURCE_DIRT_BLOCK.get()))
+                .save(pWriter, "resource_dirt_crushing");
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
@@ -1094,6 +1119,49 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike result, int count, InscriberProcessType mode) {
         InscriberRecipeBuilder.inscribe(middle, result, count).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
+    }
+
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int resultAmount) {
+        CreateCrushingRecipeProvider.crush(processingTime)
+                .addIngredient(ingredient)
+                .addResult(result, resultAmount)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, ingredient + "_crushing");
+    }
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime) {
+        crushingRecipe(consumer, ingredient, result, processingTime, 1);
+    }
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int mainResultCount, int bonusResultCount, float bonusResultChance) {
+        CreateCrushingRecipeProvider.crush(processingTime)
+                .addIngredient(ingredient)
+                .addResult(result, mainResultCount)
+                .addResult(result, bonusResultCount, bonusResultChance)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, ingredient + "_crushing");
+    }
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int mainResultCount, float bonusResultChance) {
+        crushingRecipe(consumer, ingredient, result, processingTime, mainResultCount, 1, bonusResultChance);
+    }
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, float bonusResultChance, int bonusResultCount) {
+        crushingRecipe(consumer, ingredient, result, processingTime, 1, bonusResultCount, bonusResultChance);
+    }
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, float bonusResultChance) {
+        crushingRecipe(consumer, ingredient, result, processingTime, 1, 1, bonusResultChance);
+    }
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, float resultChance, int processingTime) {
+        CreateCrushingRecipeProvider.crush(processingTime)
+                .addIngredient(ingredient)
+                .addResult(result, resultChance)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, ingredient + "_crushing");
+    }
+    protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, ItemLike otherResult, int processingTime, float mainChance, float otherChance) {
+        CreateCrushingRecipeProvider.crush(processingTime)
+                .addIngredient(ingredient)
+                .addResult(result, mainChance)
+                .addResult(otherResult, otherChance)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, ingredient + "crushing");
     }
 
     /**
