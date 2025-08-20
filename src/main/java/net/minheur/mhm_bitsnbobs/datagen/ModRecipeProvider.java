@@ -26,6 +26,7 @@ import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCompactingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCrushingRecipeProvider;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateFilingRecipeProvider;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreatePressingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -293,6 +294,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         potionFilingRecipe(pWriter, ModItems.QUARTZ_SHARD.get(), "minecraft:invisibility", 25, OtherModItems.Tfmg.NICKEL_INGOT.getAsRawItem());
         filingRecipe(pWriter, Items.IRON_NUGGET, "create_enchantment_industry:experience", 3, OtherModItems.Create.XP_NUGGET.getAsRawItem());
         potionFilingRecipe(pWriter, ModItems.QUARTZ_SHARD.get(), "minecraft:jump_boost", 25, OtherModItems.Tfmg.LEAD_INGOT.getAsRawItem());
+
+        //create pressing
+        pressingRecipe(pWriter, Items.BAKED_POTATO, ModItems.EXPLODED_POTATO.get());
 
         // create crushing
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
@@ -1126,6 +1130,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         InscriberRecipeBuilder.inscribe(middle, result, count).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
     }
 
+    /**
+     * Creates a recipe for filling : give 1 item and 1 fluid with his amount
+     * @param ingredient the ingredient you need to spout in
+     * @param fluid the fluid you need to spout
+     * @param fluidAmount the amount needed
+     * @param result the result you get
+     */
     protected static void filingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String fluid, int fluidAmount, ItemLike result) {
         CreateFilingRecipeProvider.fill(result)
                 .addIngredient(ingredient)
@@ -1133,6 +1144,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(result) + "_filing");
     }
+    /**
+     * Fill a potion on an item
+     * @param ingredient the item you need to spout on
+     * @param potionName the potion name you need
+     * @param potionAmount the amount of potion needed
+     * @param result the result you get from this
+     */
     protected static void potionFilingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String potionName, int potionAmount, ItemLike result) {
         CreateFilingRecipeProvider.fill(result)
                 .addIngredient(ingredient)
@@ -1141,6 +1159,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(consumer, getItemName(result) + "_potion_filing");
     }
 
+    /**
+     * Crushing recipe
+     * @param ingredient the item to crush
+     * @param result the item you get from crushing
+     * @param processingTime the time it takes
+     * @param resultAmount the count of item you get
+     */
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int resultAmount) {
         CreateCrushingRecipeProvider.crush(processingTime)
                 .addIngredient(ingredient)
@@ -1148,6 +1173,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
+    /**
+     * Crushing recipe. Result amount is 1.
+     * @param ingredient the item to crush
+     * @param result the item you get from crushing
+     * @param processingTime the time it takes
+     */
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime) {
         crushingRecipe(consumer, ingredient, result, processingTime, 1);
     }
@@ -1182,6 +1213,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(otherResult, otherChance)
                 .unlock(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "crushing");
+    }
+
+    protected static void pressingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {
+        CreatePressingRecipeBuilder.press(ingredient, result)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, getItemName(ingredient) + "_pressing");
     }
 
     /**
