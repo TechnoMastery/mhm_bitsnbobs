@@ -25,6 +25,7 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCompactingRecipeBuilder;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCrushingRecipeProvider;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateFilingRecipeProvider;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -286,6 +287,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(Items.END_STONE)
                 .unlock(getHasName(Items.STONE), has(Items.STONE))
                 .save(pWriter, "endstone");
+
+        // crate filing
+        filingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
+        potionFilingRecipe(pWriter, ModItems.QUARTZ_SHARD.get(), "minecraft:invisibility", 25, OtherModItems.Tfmg.NICKEL_INGOT.getAsRawItem());
+        filingRecipe(pWriter, Items.IRON_NUGGET, "create_enchantment_industry:experience", 3, OtherModItems.Create.XP_NUGGET.getAsRawItem());
+        potionFilingRecipe(pWriter, ModItems.QUARTZ_SHARD.get(), "minecraft:jump_boost", 25, OtherModItems.Tfmg.LEAD_INGOT.getAsRawItem());
 
         // create crushing
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
@@ -1117,6 +1124,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void inscriberRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike middle, ItemLike result, int count, InscriberProcessType mode) {
         InscriberRecipeBuilder.inscribe(middle, result, count).setMode(mode).save(finishedRecipeConsumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, "inscribe_" + ForgeRegistries.ITEMS.getKey(middle.asItem()).getPath()));
+    }
+
+    protected static void filingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String fluid, int fluidAmount, ItemLike result) {
+        CreateFilingRecipeProvider.fill()
+                .addIngredient(ingredient)
+                .addFluidIngredient(fluid, fluidAmount)
+                .addResult(result)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, getItemName(result) + "_filing");
+    }
+    protected static void potionFilingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String potionName, int potionAmount, ItemLike result) {
+        CreateFilingRecipeProvider.fill()
+                .addIngredient(ingredient)
+                .addPotionIngredient(potionName, potionAmount)
+                .addResult(result)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, getItemName(result) + "_potion_filing");
     }
 
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int resultAmount) {

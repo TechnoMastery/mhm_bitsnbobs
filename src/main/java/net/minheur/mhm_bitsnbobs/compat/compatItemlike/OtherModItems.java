@@ -30,6 +30,7 @@ public class OtherModItems {
      */
     public static class Create {
         public static final OtherModItem COPPER_NUGGET = createItem("copper_nugget");
+        public static final OtherModItem XP_NUGGET = createItem("experience_nugget");
 
 
         private static OtherModItem createItem(String id) {
@@ -46,6 +47,16 @@ public class OtherModItems {
 
         private static OtherModItem megaCellsItem(String id) {
             return new OtherModItem("megacells", id);
+        }
+    }
+
+    public static class Tfmg {
+        public static final OtherModItem NICKEL_INGOT = tfmgItem("nickel_ingot");
+        public static final OtherModItem LEAD_INGOT = tfmgItem("lead_ingot");
+
+
+        private static OtherModItem tfmgItem(String id) {
+            return new OtherModItem("tfmg", id);
         }
     }
 }

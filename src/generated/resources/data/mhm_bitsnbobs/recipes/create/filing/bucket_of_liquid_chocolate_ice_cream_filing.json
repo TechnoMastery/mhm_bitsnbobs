@@ -6,8 +6,7 @@
     },
     {
       "amount": 100,
-      "fluid": "create:chocolate",
-      "nbt": {}
+      "fluid": "create:chocolate"
     }
   ],
   "results": [

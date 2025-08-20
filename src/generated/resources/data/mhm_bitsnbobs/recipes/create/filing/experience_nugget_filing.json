@@ -6,8 +6,7 @@
     },
     {
       "amount": 3,
-      "fluid": "create_enchantment_industry:experience",
-      "nbt": {}
+      "fluid": "create_enchantment_industry:experience"
     }
   ],
   "results": [
