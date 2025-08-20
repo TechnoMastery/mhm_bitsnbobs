@@ -4,37 +4,27 @@
     "item": "ae2:singularity"
   },
   "loops": 15,
-  "results": [
-    {
-      "item": "mhm_bitsnbobs:quantum_core"
-    }
-  ],
+  "results": {
+    "item": "mhm_bitsnbobs:quantum_core"
+  },
   "sequence": [
     {
       "type": "create:pressing",
-      "ingredients": [
-        {
-          "item": "mhm_bitsnbobs:quantum_core"
-        }
-      ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:quantum_core"
-        }
-      ]
+      "ingredients": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      },
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
     },
     {
       "type": "create:pressing",
-      "ingredients": [
-        {
-          "item": "mhm_bitsnbobs:quantum_core"
-        }
-      ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:quantum_core"
-        }
-      ]
+      "ingredients": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      },
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
     },
     {
       "type": "create:filling",
@@ -44,15 +34,12 @@
         },
         {
           "amount": 500,
-          "fluid": "minecraft:lava",
-          "nbt": {}
+          "fluid": "minecraft:lava"
         }
       ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-        }
-      ]
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
     },
     {
       "type": "create:deploying",
@@ -64,11 +51,9 @@
           "item": "ae2:singularity"
         }
       ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-        }
-      ]
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
     },
     {
       "type": "create:filling",
@@ -78,15 +63,12 @@
         },
         {
           "amount": 1000,
-          "fluid": "minecraft:water",
-          "nbt": {}
+          "fluid": "minecraft:water"
         }
       ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-        }
-      ]
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
     },
     {
       "type": "create:deploying",
@@ -98,11 +80,9 @@
           "item": "mhm_bitsnbobs:storm_fragment"
         }
       ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-        }
-      ]
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+      }
     }
   ],
   "transitionalItem": {

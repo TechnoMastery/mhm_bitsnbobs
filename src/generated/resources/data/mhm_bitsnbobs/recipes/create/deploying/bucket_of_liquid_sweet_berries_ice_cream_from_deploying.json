@@ -8,9 +8,7 @@
       "item": "minecraft:sweet_berries"
     }
   ],
-  "results": [
-    {
-      "item": "mhm_bitsnbobs:bucket_of_liquid_sweet_berries_ice_cream"
-    }
-  ]
+  "results": {
+    "item": "mhm_bitsnbobs:bucket_of_liquid_sweet_berries_ice_cream"
+  }
 }

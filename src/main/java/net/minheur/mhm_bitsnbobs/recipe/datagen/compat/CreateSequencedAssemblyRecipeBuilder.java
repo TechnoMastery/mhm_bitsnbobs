@@ -4,9 +4,15 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.simibubi.create.AllRecipeTypes;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
@@ -42,6 +48,15 @@ public class CreateSequencedAssemblyRecipeBuilder {
         transitionalItemObject.addProperty("item", getBuiltInItemRegistry(transitionalItem));
         return new CreateSequencedAssemblyRecipeBuilder(ingredientObject, resultObject, transitionalItemObject, loops);
     }
+    public static CreateSequencedAssemblyRecipeBuilder sequence(TagKey<Item> ingredient, ItemLike result, ItemLike transitionalItem, int loops) {
+        JsonObject ingredientObject = new JsonObject();
+        JsonObject resultObject = new JsonObject();
+        JsonObject transitionalItemObject = new JsonObject();
+        ingredientObject.addProperty("tag", ingredient.location().toString());
+        resultObject.addProperty("item", getBuiltInItemRegistry(result));
+        transitionalItemObject.addProperty("item", getBuiltInItemRegistry(transitionalItem));
+        return new CreateSequencedAssemblyRecipeBuilder(ingredientObject, resultObject, transitionalItemObject, loops);
+    }
 
     public CreateSequencedAssemblyRecipeBuilder addStep(JsonObject step) {
         steps.add(step);
@@ -65,6 +80,8 @@ public class CreateSequencedAssemblyRecipeBuilder {
     }
 
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
+        ensureValid(id);
+        this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
         consumer.accept(new Result(id.withPrefix("create/sequence/"), this.ingredients, this.results, this.transitionalItem, this.steps, this.loops, this.advancement, id.withPrefix("recipe/create/sequence")));
     }
     public void save(Consumer<FinishedRecipe> consumer, String id) {

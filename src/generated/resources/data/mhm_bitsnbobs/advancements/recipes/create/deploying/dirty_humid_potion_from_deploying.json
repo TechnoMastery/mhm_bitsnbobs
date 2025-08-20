@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cinder_flour": {
+    "has_empty_big_flask": {
       "conditions": {
         "items": [
           {
             "items": [
-              "create:cinder_flour"
+              "mhm_bitsnbobs:empty_big_flask"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:blaze_powder_sequence"
+        "recipe": "mhm_bitsnbobs:dirty_humid_potion_from_deploying"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cinder_flour",
+      "has_empty_big_flask",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:blaze_powder_sequence"
+      "mhm_bitsnbobs:dirty_humid_potion_from_deploying"
     ]
   },
   "sends_telemetry_event": false

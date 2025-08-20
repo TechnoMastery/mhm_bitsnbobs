@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cinder_flour": {
+    "has_bucket_of_liquid_ice_cream": {
       "conditions": {
         "items": [
           {
             "items": [
-              "create:cinder_flour"
+              "mhm_bitsnbobs:bucket_of_liquid_ice_cream"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:blaze_powder_sequence"
+        "recipe": "mhm_bitsnbobs:bucket_of_liquid_vanilla_ice_cream_from_deploying"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cinder_flour",
+      "has_bucket_of_liquid_ice_cream",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:blaze_powder_sequence"
+      "mhm_bitsnbobs:bucket_of_liquid_vanilla_ice_cream_from_deploying"
     ]
   },
   "sends_telemetry_event": false

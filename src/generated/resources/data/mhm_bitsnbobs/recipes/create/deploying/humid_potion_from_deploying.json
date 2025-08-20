@@ -8,9 +8,7 @@
       "item": "minecraft:amethyst_shard"
     }
   ],
-  "results": [
-    {
-      "item": "mhm_bitsnbobs:humid_potion"
-    }
-  ]
+  "results": {
+    "item": "mhm_bitsnbobs:humid_potion"
+  }
 }

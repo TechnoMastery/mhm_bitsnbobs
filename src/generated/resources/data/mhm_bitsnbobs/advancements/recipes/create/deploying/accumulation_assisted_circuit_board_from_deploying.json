@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cinder_flour": {
+    "has_circuit_board": {
       "conditions": {
         "items": [
           {
             "items": [
-              "create:cinder_flour"
+              "tfmg:circuit_board"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:blaze_powder_sequence"
+        "recipe": "mhm_bitsnbobs:accumulation_assisted_circuit_board_from_deploying"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cinder_flour",
+      "has_circuit_board",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:blaze_powder_sequence"
+      "mhm_bitsnbobs:accumulation_assisted_circuit_board_from_deploying"
     ]
   },
   "sends_telemetry_event": false

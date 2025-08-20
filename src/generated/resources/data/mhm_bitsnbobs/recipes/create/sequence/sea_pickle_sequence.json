@@ -4,11 +4,9 @@
     "tag": "forge:fuels"
   },
   "loops": 5,
-  "results": [
-    {
-      "item": "minecraft:sea_pickle"
-    }
-  ],
+  "results": {
+    "item": "minecraft:sea_pickle"
+  },
   "sequence": [
     {
       "type": "create:deploying",
@@ -20,11 +18,9 @@
           "tag": "mhm_bitsnbobs:glowing_utility"
         }
       ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
-        }
-      ]
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
+      }
     },
     {
       "type": "create:filling",
@@ -34,15 +30,12 @@
         },
         {
           "amount": 250,
-          "fluid": "minecraft:water",
-          "nbt": {}
+          "fluid": "minecraft:water"
         }
       ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
-        }
-      ]
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
+      }
     },
     {
       "type": "create:deploying",
@@ -54,24 +47,18 @@
           "tag": "mhm_bitsnbobs:glowing_utility"
         }
       ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
-        }
-      ]
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
+      }
     },
     {
       "type": "create:pressing",
-      "ingredients": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
-        }
-      ],
-      "results": [
-        {
-          "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
-        }
-      ]
+      "ingredients": {
+        "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
+      },
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_sea_pickle"
+      }
     }
   ],
   "transitionalItem": {

@@ -22,7 +22,7 @@ import java.util.function.Consumer;
 
 import static net.minheur.mhm_bitsnbobs.util.Utils.*;
 
-public class CreateCrushingRecipeProvider {
+public class CreateCrushingRecipeBuilder {
     /**
      * The List of ingredient items
      */
@@ -40,12 +40,12 @@ public class CreateCrushingRecipeProvider {
      */
     private final int processTime;
 
-    public CreateCrushingRecipeProvider(int processTime) {
+    public CreateCrushingRecipeBuilder(int processTime) {
         this.processTime = processTime;
     }
 
-    public static CreateCrushingRecipeProvider crush(int processTime) {
-        return new CreateCrushingRecipeProvider(processTime);
+    public static CreateCrushingRecipeBuilder crush(int processTime) {
+        return new CreateCrushingRecipeBuilder(processTime);
     }
 
     /**
@@ -53,7 +53,7 @@ public class CreateCrushingRecipeProvider {
      * @param item the ItemLike you want to add
      * @return the current recipe
      */
-    public CreateCrushingRecipeProvider addIngredient(ItemLike item) {
+    public CreateCrushingRecipeBuilder addIngredient(ItemLike item) {
         JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", getBuiltInItemRegistry(item));
         ingredients.add(ingredient);
@@ -67,7 +67,7 @@ public class CreateCrushingRecipeProvider {
      * @param chance the chance you have to get the item
      * @return the current recipe
      */
-    public CreateCrushingRecipeProvider addResult(ItemLike item, int count, float chance) {
+    public CreateCrushingRecipeBuilder addResult(ItemLike item, int count, float chance) {
         JsonObject result = new JsonObject();
         result.addProperty("item", getBuiltInItemRegistry(item));
         if (chance <= 0) throw new IllegalStateException("Chance is equal or lower than 0 !");
@@ -76,11 +76,11 @@ public class CreateCrushingRecipeProvider {
         results.add(result);
         return this;
     }
-    public CreateCrushingRecipeProvider addResult(ItemLike item, int count) {
+    public CreateCrushingRecipeBuilder addResult(ItemLike item, int count) {
         this.addResult(item, count, 1);
         return this;
     }
-    public CreateCrushingRecipeProvider addResult(ItemLike item, float chance) {
+    public CreateCrushingRecipeBuilder addResult(ItemLike item, float chance) {
         this.addResult(item, 1, chance);
         return this;
     }
@@ -89,7 +89,7 @@ public class CreateCrushingRecipeProvider {
      * @param item the result you want
      * @return the current recipe
      */
-    public CreateCrushingRecipeProvider addResult(ItemLike item) {
+    public CreateCrushingRecipeBuilder addResult(ItemLike item) {
         this.addResult(item, 1);
         return this;
     }
@@ -100,7 +100,7 @@ public class CreateCrushingRecipeProvider {
      * @param pCriterion the criterion
      * @return the current recipe
      */
-    public CreateCrushingRecipeProvider unlock(String pKey, CriterionTriggerInstance pCriterion) {
+    public CreateCrushingRecipeBuilder unlock(String pKey, CriterionTriggerInstance pCriterion) {
         this.advancement.addCriterion(pKey, pCriterion);
         return this;
     }
@@ -127,7 +127,7 @@ public class CreateCrushingRecipeProvider {
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new CreateCrushingRecipeProvider.Result(id.withPrefix("create/crushing/"), this.ingredients, this.results, this.advancement, id.withPrefix("recipes/create/crushing/"), processTime));
+        consumer.accept(new CreateCrushingRecipeBuilder.Result(id.withPrefix("create/crushing/"), this.ingredients, this.results, this.advancement, id.withPrefix("recipes/create/crushing/"), processTime));
     }
     /**
      * Saves the recipe
@@ -139,7 +139,7 @@ public class CreateCrushingRecipeProvider {
     }
 
     /**
-     * The {@link CreateCrushingRecipeProvider.Result} is a subclass to manage the recipe once finished.
+     * The {@link CreateCrushingRecipeBuilder.Result} is a subclass to manage the recipe once finished.
      */
     public static class Result implements FinishedRecipe {
         /**

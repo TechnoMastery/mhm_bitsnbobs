@@ -18,6 +18,8 @@ public class OtherModItems {
         public static final OtherModItem PRINTED_SILICON = ae2Item("printed_silicon");
         public static final OtherModItem FLUIX_DUST = ae2Item("fluix_dust");
         public static final OtherModItem FLUIX_CRYSTAL = ae2Item("fluix_crystal");
+        public static final OtherModItem LOGIC_PROCESSOR = ae2Item("logic_processor");
+        public static final OtherModItem ENGINEERING_PROCESSOR = ae2Item("engineering_processor");
 
 
         private static OtherModItem ae2Item(String id) {
@@ -54,6 +56,7 @@ public class OtherModItems {
     public static class Tfmg {
         public static final OtherModItem NICKEL_INGOT = tfmgItem("nickel_ingot");
         public static final OtherModItem LEAD_INGOT = tfmgItem("lead_ingot");
+        public static final OtherModItem CIRCUIT_BOARD = tfmgItem("circuit_board");
 
 
         private static OtherModItem tfmgItem(String id) {

@@ -8,9 +8,7 @@
       "item": "mhm_bitsnbobs:wet_dirt"
     }
   ],
-  "results": [
-    {
-      "item": "mhm_bitsnbobs:dirty_humid_potion"
-    }
-  ]
+  "results": {
+    "item": "mhm_bitsnbobs:dirty_humid_potion"
+  }
 }

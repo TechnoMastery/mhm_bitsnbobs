@@ -123,7 +123,7 @@ public class CreateFilingRecipeProvider {
     }
 
     /**
-     * The {@link CreateCrushingRecipeProvider.Result} is a subclass to manage the recipe once finished.
+     * The {@link CreateCrushingRecipeBuilder.Result} is a subclass to manage the recipe once finished.
      */
     public static class Result implements FinishedRecipe {
         /**

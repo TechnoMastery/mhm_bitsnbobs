@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cinder_flour": {
+    "has_diamond": {
       "conditions": {
         "items": [
           {
             "items": [
-              "create:cinder_flour"
+              "minecraft:diamond"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:blaze_powder_sequence"
+        "recipe": "mhm_bitsnbobs:storm_fragment_sequence"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cinder_flour",
+      "has_diamond",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:blaze_powder_sequence"
+      "mhm_bitsnbobs:storm_fragment_sequence"
     ]
   },
   "sends_telemetry_event": false

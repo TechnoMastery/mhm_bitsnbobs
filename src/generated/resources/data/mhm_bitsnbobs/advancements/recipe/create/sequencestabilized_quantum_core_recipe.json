@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cinder_flour": {
+    "has_quantum_core": {
       "conditions": {
         "items": [
           {
             "items": [
-              "create:cinder_flour"
+              "mhm_bitsnbobs:quantum_core"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:blaze_powder_sequence"
+        "recipe": "mhm_bitsnbobs:stabilized_quantum_core_recipe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cinder_flour",
+      "has_quantum_core",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:blaze_powder_sequence"
+      "mhm_bitsnbobs:stabilized_quantum_core_recipe"
     ]
   },
   "sends_telemetry_event": false
