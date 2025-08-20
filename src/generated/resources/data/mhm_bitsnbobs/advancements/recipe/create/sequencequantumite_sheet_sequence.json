@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_quantumite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:quantumite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_quantumite_ingot"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

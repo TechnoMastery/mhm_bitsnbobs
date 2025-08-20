@@ -23,10 +23,7 @@ import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCompactingRecipeBuilder;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateCrushingRecipeProvider;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreateFilingRecipeProvider;
-import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.CreatePressingRecipeBuilder;
+import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.*;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
@@ -297,6 +294,41 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         //create pressing
         pressingRecipe(pWriter, Items.BAKED_POTATO, ModItems.EXPLODED_POTATO.get());
+
+        // create sequence
+        CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.QUANTUMITE_INGOT.get(), ModItems.QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get(), 1)
+                .addStep(
+                        CreatePressingRecipeBuilder.press(ModItems.HALF_QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get())
+                                .getFinishedRecipe().serializeRecipe()
+                )
+                .addStep(
+                        CreatePressingRecipeBuilder.press(ModItems.HALF_QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get())
+                                .getFinishedRecipe().serializeRecipe()
+                )
+                .addStep(
+                        CreatePressingRecipeBuilder.press(ModItems.HALF_QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get())
+                                .getFinishedRecipe().serializeRecipe()
+                )
+                .unlock(getHasName(ModItems.QUANTUMITE_INGOT.get()), has(ModItems.QUANTUMITE_INGOT.get()))
+                .save(pWriter, "quantumite_sheet_sequence");
+
+        CreateSequencedAssemblyRecipeBuilder.sequence(OtherModItems.Create.CINDER_FLOUR.getAsRawItem(), Items.BLAZE_POWDER, ModItems.UNFINISHED_BLAZE_POWDER.get(), 4)
+                .addStep(
+                        CreateFilingRecipeProvider.fill(ModItems.UNFINISHED_BLAZE_POWDER.get())
+                                .addIngredient(ModItems.UNFINISHED_BLAZE_POWDER.get())
+                                .addFluidIngredient("minecraft:lava", 150)
+                                .getFinishedRecipe().serializeRecipe()
+                )
+                .addStep(
+                        CreatePressingRecipeBuilder.press(ModItems.UNFINISHED_BLAZE_POWDER.get(), ModItems.UNFINISHED_BLAZE_POWDER.get())
+                                .getFinishedRecipe().serializeRecipe()
+                )
+                .addStep(
+                        CreatePressingRecipeBuilder.press(ModItems.UNFINISHED_BLAZE_POWDER.get(), ModItems.UNFINISHED_BLAZE_POWDER.get())
+                                .getFinishedRecipe().serializeRecipe()
+                )
+                .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
+                .save(pWriter, "blaze_powder_sequence");
 
         // create crushing
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);

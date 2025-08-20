@@ -31,6 +31,7 @@ public class OtherModItems {
     public static class Create {
         public static final OtherModItem COPPER_NUGGET = createItem("copper_nugget");
         public static final OtherModItem XP_NUGGET = createItem("experience_nugget");
+        public static final OtherModItem CINDER_FLOUR = createItem("cinder_flour");
 
 
         private static OtherModItem createItem(String id) {

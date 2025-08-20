@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "has_cinder_flour": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:cinder_flour"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_cinder_flour"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

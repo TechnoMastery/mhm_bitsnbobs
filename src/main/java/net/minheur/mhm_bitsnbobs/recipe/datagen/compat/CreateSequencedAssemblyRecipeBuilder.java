@@ -9,10 +9,12 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
 
@@ -60,6 +62,13 @@ public class CreateSequencedAssemblyRecipeBuilder {
         if (transitionalItem == null) throw new IllegalStateException("Invalid recipe for sequence recipe " + pId + "!");
         if (loops == 0) throw new IllegalStateException("Invalid recipe for sequence recipe " + pId + "!");
         if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
+    }
+
+    public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
+        consumer.accept(new Result(id.withPrefix("create/sequence/"), this.ingredients, this.results, this.transitionalItem, this.steps, this.loops, this.advancement, id.withPrefix("recipe/create/sequence")));
+    }
+    public void save(Consumer<FinishedRecipe> consumer, String id) {
+        save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
     }
 
     public static class Result implements FinishedRecipe {
