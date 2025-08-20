@@ -126,6 +126,10 @@ public class CreateFilingRecipeProvider {
         this.save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
     }
 
+    public FinishedRecipe getFinishedRecipe() {
+        return new Result(null, this.ingredients, this.results, null, null);
+    }
+
     /**
      * The {@link CreateCrushingRecipeProvider.Result} is a subclass to manage the recipe once finished.
      */

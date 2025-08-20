@@ -1,6 +1,8 @@
 package net.minheur.mhm_bitsnbobs.util;
 
+import com.google.gson.JsonObject;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 
@@ -35,5 +37,14 @@ public class Utils {
      */
     public static String getBuiltInItemRegistry(ItemLike itemLike) {
         return BuiltInRegistries.ITEM.getKey(itemLike.asItem()).toString();
+    }
+
+    public static JsonObject getRecipeJson(FinishedRecipe recipe) {
+        JsonObject json = new JsonObject();
+        recipe.serializeRecipeData(json);
+
+        json.addProperty("type", recipe.getType().toString());
+
+        return json;
     }
 }
