@@ -13,9 +13,7 @@
       }
     }
   ],
-  "results": [
-    {
-      "item": "tfmg:nickel_ingot"
-    }
-  ]
+  "results": {
+    "item": "tfmg:nickel_ingot"
+  }
 }

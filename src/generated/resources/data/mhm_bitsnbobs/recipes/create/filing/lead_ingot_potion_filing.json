@@ -13,9 +13,7 @@
       }
     }
   ],
-  "results": [
-    {
-      "item": "tfmg:lead_ingot"
-    }
-  ]
+  "results": {
+    "item": "tfmg:lead_ingot"
+  }
 }

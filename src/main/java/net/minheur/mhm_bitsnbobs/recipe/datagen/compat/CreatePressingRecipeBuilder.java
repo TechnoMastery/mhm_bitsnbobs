@@ -16,19 +16,18 @@ import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.*;
+import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
 
-public class CreateFilingRecipeProvider {
+public class CreatePressingRecipeBuilder {
     /**
-     * The List of ingredient items
+     * The ingredient item
      */
-    private final List<JsonObject> ingredients = new ArrayList<>();
+    private final JsonObject ingredient;
     /**
-     * The list of result items
+     * The result item
      */
     private final JsonObject result;
     /**
@@ -36,44 +35,17 @@ public class CreateFilingRecipeProvider {
      */
     private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
-    public CreateFilingRecipeProvider(JsonObject result) {
+    public CreatePressingRecipeBuilder(JsonObject ingredient, JsonObject result) {
+        this.ingredient = ingredient;
         this.result = result;
     }
 
-    public static CreateFilingRecipeProvider fill(ItemLike result) {
+    public static CreatePressingRecipeBuilder press(ItemLike ingredient, ItemLike result) {
         JsonObject resultJson = new JsonObject();
+        JsonObject ingredientJson = new JsonObject();
         resultJson.addProperty("item", getBuiltInItemRegistry(result));
-        return new CreateFilingRecipeProvider(resultJson);
-    }
-
-    /**
-     * Adding an ingredient to the list
-     * @param item the ItemLike you want to add
-     * @return the current recipe
-     */
-    public CreateFilingRecipeProvider addIngredient(ItemLike item) {
-        JsonObject ingredient = new JsonObject();
-        ingredient.addProperty("item", getBuiltInItemRegistry(item));
-        ingredients.add(ingredient);
-        return this;
-    }
-    public CreateFilingRecipeProvider addFluidIngredient(String fluid, int amount) {
-        JsonObject ingredient = new JsonObject();
-        ingredient.addProperty("fluid", fluid);
-        ingredient.addProperty("amount", amount);
-        ingredients.add(ingredient);
-        return this;
-    }
-    public CreateFilingRecipeProvider addPotionIngredient(String potionName, int amount) {
-        JsonObject ingredient = new JsonObject();
-        JsonObject nbt = new JsonObject();
-        nbt.addProperty("Bottle", "REGULAR");
-        nbt.addProperty("Potion", potionName);
-        ingredient.addProperty("fluid", "create:potion");
-        ingredient.addProperty("amount", amount);
-        ingredient.add("nbt", nbt);
-        ingredients.add(ingredient);
-        return this;
+        ingredientJson.addProperty("item", getBuiltInItemRegistry(ingredient));
+        return new CreatePressingRecipeBuilder(ingredientJson, resultJson);
     }
 
     /**
@@ -82,7 +54,7 @@ public class CreateFilingRecipeProvider {
      * @param pCriterion the criterion
      * @return the current recipe
      */
-    public CreateFilingRecipeProvider unlock(String pKey, CriterionTriggerInstance pCriterion) {
+    public CreatePressingRecipeBuilder unlock(String pKey, CriterionTriggerInstance pCriterion) {
         this.advancement.addCriterion(pKey, pCriterion);
         return this;
     }
@@ -92,10 +64,8 @@ public class CreateFilingRecipeProvider {
      * @param pId the recipe id
      */
     private void ensureValid(ResourceLocation pId) {
-        for (JsonObject ingredient : ingredients) {
-            if (ingredient == null) throw new IllegalStateException("Invalid recipe for crushing recipe " + pId + "!");
-        }
         if (result == null) throw new IllegalStateException("Invalid recipe for crushing recipe " + pId + "!");
+        if (ingredient == null) throw new IllegalStateException("Invalid recipe for crushing recipe " + pId + "!");
         if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
     }
 
@@ -107,7 +77,7 @@ public class CreateFilingRecipeProvider {
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new Result(id.withPrefix("create/filing/"), this.ingredients, this.result, this.advancement, id.withPrefix("recipes/create/filing/")));
+        consumer.accept(new Result(id.withPrefix("create/pressing/"), this.ingredient, this.result, this.advancement, id.withPrefix("recipes/create/pressing/")));
     }
     /**
      * Saves the recipe
@@ -119,11 +89,11 @@ public class CreateFilingRecipeProvider {
     }
 
     public FinishedRecipe getFinishedRecipe() {
-        return new Result(null, this.ingredients, this.result, null, null);
+        return new Result(null, this.ingredient, this.result, null, null);
     }
 
     /**
-     * The {@link CreateCrushingRecipeProvider.Result} is a subclass to manage the recipe once finished.
+     * The {@link Result} is a subclass to manage the recipe once finished.
      */
     public static class Result implements FinishedRecipe {
         /**
@@ -133,7 +103,7 @@ public class CreateFilingRecipeProvider {
         /**
          * The recipe ingredients list
          */
-        private final List<JsonObject> ingredients;
+        private final JsonObject ingredient;
         /**
          * The recipe results list
          */
@@ -147,9 +117,9 @@ public class CreateFilingRecipeProvider {
          */
         private final ResourceLocation advancementId;
 
-        public Result(ResourceLocation id, List<JsonObject> ingredients, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId) {
+        public Result(ResourceLocation id, JsonObject ingredient, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId) {
             this.id = id;
-            this.ingredients = ingredients;
+            this.ingredient = ingredient;
             this.results = result;
             this.advancement = advancement;
             this.advancementId = advancementId;
@@ -161,11 +131,8 @@ public class CreateFilingRecipeProvider {
          */
         @Override
         public void serializeRecipeData(JsonObject pJson) {
-            JsonArray ingredients = new JsonArray();
-            for (JsonObject ingredient : this.ingredients) ingredients.add(ingredient);
-
+            pJson.add("ingredients", this.ingredient);
             pJson.add("results", this.results);
-            pJson.add("ingredients", ingredients);
         }
 
         /**
@@ -181,7 +148,7 @@ public class CreateFilingRecipeProvider {
          */
         @Override
         public RecipeSerializer<?> getType() {
-            return AllRecipeTypes.FILLING.getSerializer();
+            return AllRecipeTypes.PRESSING.getSerializer();
         }
 
         /**

@@ -1127,18 +1127,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void filingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String fluid, int fluidAmount, ItemLike result) {
-        CreateFilingRecipeProvider.fill()
+        CreateFilingRecipeProvider.fill(result)
                 .addIngredient(ingredient)
                 .addFluidIngredient(fluid, fluidAmount)
-                .addResult(result)
                 .unlock(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(result) + "_filing");
     }
     protected static void potionFilingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String potionName, int potionAmount, ItemLike result) {
-        CreateFilingRecipeProvider.fill()
+        CreateFilingRecipeProvider.fill(result)
                 .addIngredient(ingredient)
                 .addPotionIngredient(potionName, potionAmount)
-                .addResult(result)
                 .unlock(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(result) + "_potion_filing");
     }
