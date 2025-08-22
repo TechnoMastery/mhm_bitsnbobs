@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import appeng.recipes.handlers.InscriberProcessType;
 import appeng.recipes.handlers.InscriberRecipeBuilder;
 import com.google.gson.JsonObject;
+import com.simibubi.create.content.processing.recipe.HeatCondition;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -26,6 +27,7 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.*;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
+import net.minheur.mhm_bitsnbobs.util.RecipeNbtBuilder;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -287,11 +289,75 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(Items.STONE), has(Items.STONE))
                 .save(pWriter, "endstone");
 
+        // mixing
+        CreateMixingRecipeBuilder.mix()
+                .addIngredient(ModTags.Items.FUELS)
+                .addFluidIngredient("minecraft:water", 1000)
+                .addResult(Items.KELP)
+                .unlock("has_fuels", has(ModTags.Items.FUELS))
+                .save(pWriter, "kelp_mixing");
+        CreateMixingRecipeBuilder.mix()
+                .addIngredient(OtherModItems.Ae2.ENDER_DUST.getAsRawItem(), 4)
+                .addIngredient(Items.AMETHYST_SHARD)
+                .addResult(Items.ENDER_PEARL)
+                .unlock(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+                .save(pWriter, "ender_pearl_mixing");
+        CreateMixingRecipeBuilder.mix()
+                .addIngredient(Items.SAND)
+                .addIngredient(Items.CLAY_BALL)
+                .addResult(Items.RED_SAND)
+                .unlock(getHasName(Items.SAND), has(Items.SAND))
+                .save(pWriter, "red_sand_mixing");
+        CreateMixingRecipeBuilder.mix()
+                .addIngredient(Items.CLAY_BALL)
+                .addFluidIngredient("minecraft:water", 500)
+                .addResult(ModItems.RED_CLAY_BALL.get(), 2)
+                .addResult(ModItems.RED_CLAY_BALL.get(), 0.25f)
+                .unlock(getHasName(Items.CLAY_BALL), has(Items.CLAY_BALL))
+                .save(pWriter, "red_clay_ball_mixing");
+        CreateMixingRecipeBuilder.mix()
+                .addIngredient(Items.AMETHYST_SHARD)
+                .addIngredient(Items.ECHO_SHARD)
+                .addResult(ModItems.MAGIC_SHARD.get(), RecipeNbtBuilder.getNbt()
+                                .addNbt("Damage", 100)
+                                .getPropertiesJson()
+                )
+                .unlock(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+                .save(pWriter, "magic_shard_mixing");
+        CreateMixingRecipeBuilder.mix(HeatCondition.SUPERHEATED)
+                .addIngredient(ModTags.Items.ROTTEN_MEATS)
+                .addIngredient(Items.LAPIS_LAZULI, 3)
+                .addIngredient(Items.BLAZE_POWDER)
+                .addFluidIngredient("minecraft:water", 1000)
+                .addFluidResult("create_enchantment_industry:experience", 5)
+                .unlock(getHasName(Items.LAPIS_LAZULI), has(Items.LAPIS_LAZULI))
+                .save(pWriter, "experience_mixing");
+        CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
+                .addIngredient(Items.CALCITE)
+                .addIngredient(Items.CLAY_BALL, 2)
+                .addFluidIngredient("minecraft:water", 250)
+                .addResult(Items.BONE)
+                .addResult(Items.BONE_MEAL, 0.2f)
+                .unlock(getHasName(Items.CALCITE), has(Items.CALCITE))
+                .save(pWriter, "bone_mixing");
+        CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
+                .addIngredient(ModItems.YEAST.get())
+                .addIngredient(OtherModItems.Create.DOUGH.getAsRawItem())
+                .addResult(ModItems.CONE.get())
+                .unlock(getHasName(OtherModItems.Create.DOUGH.getAsRawItem()), has(OtherModItems.Create.DOUGH.getAsRawItem()))
+                .save(pWriter, "cone_mixing");
+        CreateMixingRecipeBuilder.mix(HeatCondition.SUPERHEATED)
+                .addIngredient(Items.SAND, 3)
+                .addIngredient(Items.COBBLESTONE)
+                .addIngredient(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem(), 2)
+                .addIngredient(ModTags.Items.OBSIDIAN_DUSTS)
+                .addResult(OtherModItems.Ae2.ENDER_DUST.getAsRawItem())
+                .unlock(getHasName(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()), has(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()))
+                .save(pWriter, "ender_dust_mixing");
+
         // crate filing
         filingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
-        potionFilingRecipe(pWriter, ModItems.QUARTZ_SHARD.get(), "minecraft:invisibility", 25, OtherModItems.Tfmg.NICKEL_INGOT.getAsRawItem());
         filingRecipe(pWriter, Items.IRON_NUGGET, "create_enchantment_industry:experience", 3, OtherModItems.Create.XP_NUGGET.getAsRawItem());
-        potionFilingRecipe(pWriter, ModItems.QUARTZ_SHARD.get(), "minecraft:jump_boost", 25, OtherModItems.Tfmg.LEAD_INGOT.getAsRawItem());
 
         //create pressing
         pressingRecipe(pWriter, Items.BAKED_POTATO, ModItems.EXPLODED_POTATO.get());
@@ -1318,7 +1384,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "_milling");
     }
-    private static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount) {
+    protected static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount) {
         millingRecipe(consumer, ingredient, result, processTime, amount, 1f);
     }
 

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_quartz_shard": {
+    "has_sand": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:quartz_shard"
+              "minecraft:sand"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:lead_ingot_potion_filing"
+        "recipe": "mhm_bitsnbobs:red_sand_mixing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_quartz_shard",
+      "has_sand",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:lead_ingot_potion_filing"
+      "mhm_bitsnbobs:red_sand_mixing"
     ]
   },
   "sends_telemetry_event": false

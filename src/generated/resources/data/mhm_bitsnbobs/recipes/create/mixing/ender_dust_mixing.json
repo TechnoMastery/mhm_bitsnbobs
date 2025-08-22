@@ -3,15 +3,15 @@
   "heatRequirement": "superheated",
   "ingredients": [
     {
-      "amount": 3,
+      "count": 3,
       "item": "minecraft:sand"
     },
     {
       "item": "minecraft:cobblestone"
     },
     {
-      "item": "ae2:fluix_crystal",
-      "amount": 2
+      "count": 2,
+      "item": "ae2:fluix_crystal"
     },
     {
       "tag": "forge:dusts/obsidian"

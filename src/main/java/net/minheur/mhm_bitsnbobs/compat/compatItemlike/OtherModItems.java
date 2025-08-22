@@ -20,6 +20,7 @@ public class OtherModItems {
         public static final OtherModItem FLUIX_CRYSTAL = ae2Item("fluix_crystal");
         public static final OtherModItem LOGIC_PROCESSOR = ae2Item("logic_processor");
         public static final OtherModItem ENGINEERING_PROCESSOR = ae2Item("engineering_processor");
+        public static final OtherModItem ENDER_DUST = ae2Item("ender_dust");
 
 
         private static OtherModItem ae2Item(String id) {
@@ -34,6 +35,7 @@ public class OtherModItems {
         public static final OtherModItem COPPER_NUGGET = createItem("copper_nugget");
         public static final OtherModItem XP_NUGGET = createItem("experience_nugget");
         public static final OtherModItem CINDER_FLOUR = createItem("cinder_flour");
+        public static final OtherModItem DOUGH = createItem("dough");
 
 
         private static OtherModItem createItem(String id) {

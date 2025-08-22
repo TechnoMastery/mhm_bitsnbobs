@@ -6,8 +6,8 @@
       "tag": "forge:rotten_meats"
     },
     {
-      "item": "minecraft:lapis_lazuli",
-      "amount": 3
+      "count": 3,
+      "item": "minecraft:lapis_lazuli"
     },
     {
       "item": "minecraft:blaze_powder"

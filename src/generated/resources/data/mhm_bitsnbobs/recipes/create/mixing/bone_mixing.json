@@ -6,8 +6,8 @@
       "item": "minecraft:calcite"
     },
     {
-      "amount": 2,
-      "item": "minecraft:clay"
+      "count": 2,
+      "item": "minecraft:clay_ball"
     },
     {
       "amount": 250,

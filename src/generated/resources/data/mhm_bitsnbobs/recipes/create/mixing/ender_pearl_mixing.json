@@ -2,7 +2,7 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "amount": 4,
+      "count": 4,
       "item": "ae2:ender_dust"
     },
     {

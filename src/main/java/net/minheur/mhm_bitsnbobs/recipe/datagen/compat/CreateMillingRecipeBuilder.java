@@ -134,7 +134,7 @@ public class CreateMillingRecipeBuilder {
         }
 
         /**
-         * Gets the ID for the advancement associated with this recipe. Should not be null if {@link #getAdvancementJson} is
+         * Gets the ID for the advancement associated with this recipe. Should not be null if {@link #serializeAdvancement()} is
          * non-null.
          */
         @Override
