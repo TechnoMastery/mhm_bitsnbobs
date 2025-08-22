@@ -22,7 +22,7 @@ import java.util.function.Consumer;
 
 import static net.minheur.mhm_bitsnbobs.util.Utils.*;
 
-public class CreateFilingRecipeProvider {
+public class CreateFillingRecipeProvider {
     /**
      * The List of ingredient items
      */
@@ -36,14 +36,14 @@ public class CreateFilingRecipeProvider {
      */
     private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
-    public CreateFilingRecipeProvider(JsonObject result) {
+    public CreateFillingRecipeProvider(JsonObject result) {
         this.result = result;
     }
 
-    public static CreateFilingRecipeProvider fill(ItemLike result) {
+    public static CreateFillingRecipeProvider fill(ItemLike result) {
         JsonObject resultJson = new JsonObject();
         resultJson.addProperty("item", getBuiltInItemRegistry(result));
-        return new CreateFilingRecipeProvider(resultJson);
+        return new CreateFillingRecipeProvider(resultJson);
     }
 
     /**
@@ -51,20 +51,20 @@ public class CreateFilingRecipeProvider {
      * @param item the ItemLike you want to add
      * @return the current recipe
      */
-    public CreateFilingRecipeProvider addIngredient(ItemLike item) {
+    public CreateFillingRecipeProvider addIngredient(ItemLike item) {
         JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", getBuiltInItemRegistry(item));
         ingredients.add(ingredient);
         return this;
     }
-    public CreateFilingRecipeProvider addFluidIngredient(String fluid, int amount) {
+    public CreateFillingRecipeProvider addFluidIngredient(String fluid, int amount) {
         JsonObject ingredient = new JsonObject();
         ingredient.addProperty("fluid", fluid);
         ingredient.addProperty("amount", amount);
         ingredients.add(ingredient);
         return this;
     }
-    public CreateFilingRecipeProvider addPotionIngredient(String potionName, int amount) {
+    public CreateFillingRecipeProvider addPotionIngredient(String potionName, int amount) {
         JsonObject ingredient = new JsonObject();
         JsonObject nbt = new JsonObject();
         nbt.addProperty("Bottle", "REGULAR");
@@ -82,7 +82,7 @@ public class CreateFilingRecipeProvider {
      * @param pCriterion the criterion
      * @return the current recipe
      */
-    public CreateFilingRecipeProvider unlock(String pKey, CriterionTriggerInstance pCriterion) {
+    public CreateFillingRecipeProvider unlock(String pKey, CriterionTriggerInstance pCriterion) {
         this.advancement.addCriterion(pKey, pCriterion);
         return this;
     }
@@ -107,7 +107,7 @@ public class CreateFilingRecipeProvider {
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new Result(id.withPrefix("create/filing/"), this.ingredients, this.result, this.advancement, id.withPrefix("recipes/create/filing/")));
+        consumer.accept(new Result(id.withPrefix("create/filling/"), this.ingredients, this.result, this.advancement, id.withPrefix("recipes/create/filling/")));
     }
     /**
      * Saves the recipe

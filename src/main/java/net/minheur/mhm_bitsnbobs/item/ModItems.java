@@ -59,6 +59,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(8)));
     public static final RegistryObject<Item> UNPROCESSED_DUST = ITEMS.register("unprocessed_dust",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OXIDIZED_ZINC = ITEMS.register("oxidized_zinc",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> LOGIC_ASSISTED_CIRCUIT_BOARD = ITEMS.register("logic_assisted_circuit_board",
             () -> new Item(new Item.Properties().stacksTo(16)));

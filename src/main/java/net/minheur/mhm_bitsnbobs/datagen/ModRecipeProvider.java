@@ -386,12 +386,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(Items.BLAZE_POWDER), has(Items.BLAZE_POWDER))
                 .save(pWriter, "gunpowder");
 
-        // crate filing
-        filingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
-        filingRecipe(pWriter, Items.IRON_NUGGET, "create_enchantment_industry:experience", 3, OtherModItems.Create.XP_NUGGET.getAsRawItem());
+        // crate filling
+        fillingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
+        fillingRecipe(pWriter, Items.IRON_NUGGET, "create_enchantment_industry:experience", 3, OtherModItems.Create.XP_NUGGET.getAsRawItem());
+        fillingRecipe(pWriter, OtherModItems.Create.ZINC.getAsRawItem(), "minecraft:water", 300, ModItems.OXIDIZED_ZINC.get());
 
         //create pressing
         pressingRecipe(pWriter, Items.BAKED_POTATO, ModItems.EXPLODED_POTATO.get());
+        pressingRecipe(pWriter, ModItems.OXIDIZED_ZINC.get(), OtherModItems.Tfmg.NICKEL_INGOT.getAsRawItem());
 
         // create sequence
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.QUANTUMITE_INGOT.get(), ModItems.QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get(), 1)
@@ -1331,12 +1333,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param fluidAmount the amount needed
      * @param result the result you get
      */
-    protected static void filingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String fluid, int fluidAmount, ItemLike result) {
-        CreateFilingRecipeProvider.fill(result)
+    protected static void fillingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String fluid, int fluidAmount, ItemLike result) {
+        CreateFillingRecipeProvider.fill(result)
                 .addIngredient(ingredient)
                 .addFluidIngredient(fluid, fluidAmount)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, getItemName(result) + "_filing");
+                .save(consumer, getItemName(result) + "_filling");
     }
     /**
      * Fill a potion on an item
@@ -1345,12 +1347,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param potionAmount the amount of potion needed
      * @param result the result you get from this
      */
-    protected static void potionFilingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String potionName, int potionAmount, ItemLike result) {
-        CreateFilingRecipeProvider.fill(result)
+    protected static void potionFillingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String potionName, int potionAmount, ItemLike result) {
+        CreateFillingRecipeProvider.fill(result)
                 .addIngredient(ingredient)
                 .addPotionIngredient(potionName, potionAmount)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, getItemName(result) + "_potion_filing");
+                .save(consumer, getItemName(result) + "_potion_filling");
     }
 
     /**
@@ -1446,13 +1448,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .getFinishedRecipe().serializeRecipe();
     }
     protected static JsonObject getSequenceFilling(ItemLike transitionalItem, String fluid, int amount) {
-        return CreateFilingRecipeProvider.fill(transitionalItem)
+        return CreateFillingRecipeProvider.fill(transitionalItem)
                 .addIngredient(transitionalItem)
                 .addFluidIngredient(fluid, amount)
                 .getFinishedRecipe().serializeRecipe();
     }
     protected static JsonObject getSequenceFillingPotion(ItemLike transitionalItem, String potion, int amount) {
-        return CreateFilingRecipeProvider.fill(transitionalItem)
+        return CreateFillingRecipeProvider.fill(transitionalItem)
                 .addIngredient(transitionalItem)
                 .addPotionIngredient(potion, amount)
                 .getFinishedRecipe().serializeRecipe();

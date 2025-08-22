@@ -29,13 +29,14 @@ public class OtherModItems {
     }
 
     /**
-     * The is create's mod OtherItem registration
+     * The is Create's mod OtherItem registration
      */
     public static class Create {
         public static final OtherModItem COPPER_NUGGET = createItem("copper_nugget");
         public static final OtherModItem XP_NUGGET = createItem("experience_nugget");
         public static final OtherModItem CINDER_FLOUR = createItem("cinder_flour");
         public static final OtherModItem DOUGH = createItem("dough");
+        public static final OtherModItem ZINC = createItem("zinc_ingot");
 
 
         private static OtherModItem createItem(String id) {

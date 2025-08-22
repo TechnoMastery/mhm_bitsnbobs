@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "mekanism:ingot_osmium"
+    }
+  ],
+  "results": [
+    {
+      "item": "mekanism:ingot_lead"
+    }
+  ]
+}
