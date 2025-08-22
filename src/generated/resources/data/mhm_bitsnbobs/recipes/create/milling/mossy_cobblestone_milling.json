@@ -1,10 +1,8 @@
 {
   "type": "create:milling",
-  "ingredients": [
-    {
-      "item": "minecraft:mossy_cobblestone"
-    }
-  ],
+  "ingredients": {
+    "item": "minecraft:mossy_cobblestone"
+  },
   "processingTime": 50,
   "results": [
     {

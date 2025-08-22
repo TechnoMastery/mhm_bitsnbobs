@@ -358,6 +358,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
                 .save(pWriter, "emerald_sequence");
 
+        // create milling
+        CreateMillingRecipeBuilder.milling(Items.MOSSY_COBBLESTONE, 50)
+                .addResult(Items.COBBLESTONE, 0.5f)
+                .addResult(Items.ROTTEN_FLESH, 0.2f)
+                .addResult(Items.ROTTEN_FLESH, 0.05f)
+                .addResult(Items.VINE, 0.25f)
+                .unlock(getHasName(Items.MOSSY_COBBLESTONE), has(Items.MOSSY_COBBLESTONE))
+                .save(pWriter, "mossy_cobblestone_milling");
+        millingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 50, 3);
+
         // create crushing
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, ModItems.QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
@@ -1300,6 +1310,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(result)
                 .unlock(getHasName(mainIngredient), has(mainIngredient))
                 .save(consumer, getItemName(result) + "_from_deploying");
+    }
+
+    protected static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount, float chance) {
+        CreateMillingRecipeBuilder.milling(ingredient, processTime)
+                .addResult(result, amount, chance)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, getItemName(ingredient) + "_milling");
+    }
+    private static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount) {
+        millingRecipe(consumer, ingredient, result, processTime, amount, 1f);
     }
 
     /**

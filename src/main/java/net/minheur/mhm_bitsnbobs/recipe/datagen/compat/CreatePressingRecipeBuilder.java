@@ -1,6 +1,5 @@
 package net.minheur.mhm_bitsnbobs.recipe.datagen.compat;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.simibubi.create.AllRecipeTypes;
 import net.minecraft.advancements.Advancement;
@@ -16,7 +15,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Consumer;
 
 import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
