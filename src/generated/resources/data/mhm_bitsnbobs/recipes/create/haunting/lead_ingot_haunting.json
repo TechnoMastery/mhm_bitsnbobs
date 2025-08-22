@@ -1,0 +1,11 @@
+{
+  "type": "create:haunting",
+  "ingredients": {
+    "item": "minecraft:iron_ingot"
+  },
+  "results": [
+    {
+      "item": "tfmg:lead_ingot"
+    }
+  ]
+}

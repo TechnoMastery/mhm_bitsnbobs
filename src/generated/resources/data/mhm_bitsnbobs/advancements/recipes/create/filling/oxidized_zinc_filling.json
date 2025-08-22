@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mhm_bitsnbobs:oxidized_zinc_filling"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zinc_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "create:zinc_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_zinc_ingot",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mhm_bitsnbobs:oxidized_zinc_filling"
+    ]
+  },
+  "sends_telemetry_event": false
+}

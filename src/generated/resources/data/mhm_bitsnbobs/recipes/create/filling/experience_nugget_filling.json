@@ -1,0 +1,15 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    {
+      "amount": 3,
+      "fluid": "create_enchantment_industry:experience"
+    }
+  ],
+  "results": {
+    "item": "create:experience_nugget"
+  }
+}

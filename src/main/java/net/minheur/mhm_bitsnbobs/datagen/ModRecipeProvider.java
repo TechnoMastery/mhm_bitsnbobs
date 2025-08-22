@@ -395,6 +395,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         pressingRecipe(pWriter, Items.BAKED_POTATO, ModItems.EXPLODED_POTATO.get());
         pressingRecipe(pWriter, ModItems.OXIDIZED_ZINC.get(), OtherModItems.Tfmg.NICKEL_INGOT.getAsRawItem());
 
+        // create haunting
+        hauntingRecipe(pWriter, Items.IRON_INGOT, OtherModItems.Tfmg.LEAD_INGOT.getAsRawItem());
+
         // create sequence
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.QUANTUMITE_INGOT.get(), ModItems.QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get(), 1)
                 .addStep(getSequencePressing(ModItems.HALF_QUANTUMITE_SHEET.get()))
@@ -1409,6 +1412,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(otherResult, otherChance)
                 .unlock(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "crushing");
+    }
+
+    protected static void hauntingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {
+        CreateHauntingRecipeBuilder.haunt()
+                .addIngredient(ingredient)
+                .addResult(result)
+                .unlock(getHasName(ingredient), has(ingredient))
+                .save(consumer, getItemName(result) + "_haunting");
     }
 
     protected static void pressingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {

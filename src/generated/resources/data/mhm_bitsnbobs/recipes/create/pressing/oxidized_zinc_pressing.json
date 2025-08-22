@@ -1,0 +1,9 @@
+{
+  "type": "create:pressing",
+  "ingredients": {
+    "item": "mhm_bitsnbobs:oxidized_zinc"
+  },
+  "results": {
+    "item": "tfmg:nickel_ingot"
+  }
+}
