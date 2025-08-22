@@ -1,0 +1,27 @@
+{
+  "type": "create:compacting",
+  "heatRequirement": "superHeated",
+  "ingredients": [
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "item": "minecraft:charcoal"
+    },
+    {
+      "amount": 750,
+      "fluid": "minecraft:lava"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:coal"
+    }
+  ]
+}

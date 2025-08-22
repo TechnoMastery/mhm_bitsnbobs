@@ -296,6 +296,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(Items.MAGMA_BLOCK)
                 .unlock(getHasName(Items.NETHERRACK), has(Items.NETHERRACK))
                 .save(pWriter, "magma_block");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addHeatCondition(HeatCondition.SUPERHEATED)
+                .addIngredient(Items.CHARCOAL)
+                .addIngredient(Items.CHARCOAL)
+                .addIngredient(Items.CHARCOAL)
+                .addIngredient(Items.CHARCOAL)
+                .addFluidIngredient("minecraft:lava", 750)
+                .addResult(Items.COAL)
+                .unlock(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
+                .save(pWriter, "coal_compacting_extreme");
 
         // mixing
         CreateMixingRecipeBuilder.mix()
@@ -483,7 +493,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(Items.SOUL_SOIL), has(Items.SOUL_SOIL))
                 .save(pWriter, "soul_soil_crushing");
         crushingRecipe(pWriter, ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.SMALL_CREATIVE_NUGGET.get(), 0.02f, 500);
-        crushingRecipe(pWriter, ModBlocks.COMPRESSED_DIRT.get(), Items.INK_SAC, ModItems.BIOMASS.get(), 15, 0.5f, 0.205f);
+        crushingRecipe(pWriter, ModBlocks.COMPRESSED_DIRT.get(), Items.INK_SAC, ModItems.BIOMASS.get(), 15, 0.5f, 0.2f);
         CreateCrushingRecipeBuilder.crush(5)
                 .addIngredient(ModBlocks.RESOURCE_DIRT_BLOCK.get())
                 .addResult(ModItems.COPPER_BALL.get(), 5)
