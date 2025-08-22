@@ -1,0 +1,47 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create:cinder_flour"
+  },
+  "loops": 1,
+  "results": {
+    "item": "minecraft:glowstone"
+  },
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_dust"
+        },
+        {
+          "item": "minecraft:blaze_powder"
+        }
+      ],
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_dust"
+      }
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": {
+        "item": "mhm_bitsnbobs:unprocessed_dust"
+      },
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_dust"
+      }
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": {
+        "item": "mhm_bitsnbobs:unprocessed_dust"
+      },
+      "results": {
+        "item": "mhm_bitsnbobs:unprocessed_dust"
+      }
+    }
+  ],
+  "transitionalItem": {
+    "item": "mhm_bitsnbobs:unprocessed_dust"
+  }
+}

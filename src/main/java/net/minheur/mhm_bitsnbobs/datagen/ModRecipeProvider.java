@@ -369,6 +369,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(Items.REDSTONE)
                 .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "redstone_mixing");
+        CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
+                .addIngredient(Items.COAL)
+                .addIngredient(Items.BLAZE_POWDER)
+                .addResult(Items.GUNPOWDER, 2)
+                .unlock(getHasName(Items.BLAZE_POWDER), has(Items.BLAZE_POWDER))
+                .save(pWriter, "gunpowder");
 
         // crate filing
         filingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
@@ -449,7 +455,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, "netherrack_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(OtherModItems.Create.CINDER_FLOUR.getAsRawItem(), Items.GLOWSTONE, ModItems.UNPROCESSED_DUST.get(), 1)
                 .addStep(getSequenceDeploying(ModItems.UNPROCESSED_DUST.get(), Items.BLAZE_POWDER))
-                .addStep();
+                .addStep(getSequencePressing(ModItems.UNPROCESSED_DUST.get()))
+                .addStep(getSequencePressing(ModItems.UNPROCESSED_DUST.get()))
+                .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
+                .save(pWriter, "glowstone_sequence");
 
         // create milling
         CreateMillingRecipeBuilder.milling(Items.MOSSY_COBBLESTONE, 50)

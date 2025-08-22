@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "minecraft:coal"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "results": [
+    {
+      "count": 2,
+      "item": "minecraft:gunpowder"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "create:cinder_flour"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "amount": 150,
+      "fluid": "minecraft:lava"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:redstone"
+    }
+  ]
+}

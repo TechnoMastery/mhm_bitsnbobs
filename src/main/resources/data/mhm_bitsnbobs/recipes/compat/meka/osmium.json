@@ -1,0 +1,14 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "mekanism:dust_iron"
+    },
+    {
+      "item": "mhm_bitsnbobs:quartz_shard"
+    }
+  ],
+  "results": {
+    "item": "mekanism:dust_osmium"
+  }
+}
