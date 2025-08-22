@@ -259,6 +259,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // spawn egg
         withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        // custom
+        withExistingParent(ModItems.UNPROCESSED_DUST.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation("minecraft:item/gunpowder"));
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

@@ -288,6 +288,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(Items.END_STONE)
                 .unlock(getHasName(Items.STONE), has(Items.STONE))
                 .save(pWriter, "endstone");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addIngredient(Items.NETHERRACK)
+                .addIngredient(Items.NETHERRACK)
+                .addIngredient(Items.NETHERRACK)
+                .addIngredient(Items.NETHERRACK)
+                .addResult(Items.MAGMA_BLOCK)
+                .unlock(getHasName(Items.NETHERRACK), has(Items.NETHERRACK))
+                .save(pWriter, "magma_block");
 
         // mixing
         CreateMixingRecipeBuilder.mix()
@@ -354,6 +362,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(OtherModItems.Ae2.ENDER_DUST.getAsRawItem())
                 .unlock(getHasName(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()), has(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()))
                 .save(pWriter, "ender_dust_mixing");
+        CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
+                .addIngredient(OtherModItems.Create.CINDER_FLOUR.getAsRawItem())
+                .addIngredient(Items.BLAZE_POWDER)
+                .addFluidIngredient("minecraft:lava", 150)
+                .addResult(Items.REDSTONE)
+                .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
+                .save(pWriter, "redstone_mixing");
 
         // crate filing
         filingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
@@ -423,6 +438,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addStep(getSequenceDeploying(ModItems.UNFINISHED_EMERALD.get(), Items.IRON_NUGGET))
                 .unlock(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
                 .save(pWriter, "emerald_sequence");
+        CreateSequencedAssemblyRecipeBuilder.sequence(Items.COBBLESTONE, Items.NETHERRACK, Items.COBBLESTONE, 3)
+                .addStep(getSequenceFilling(Items.COBBLESTONE, "minecraft:lava", 250))
+                .addStep(getSequenceFilling(Items.COBBLESTONE, "minecraft:lava", 250))
+                .addStep(getSequenceFilling(Items.COBBLESTONE, "minecraft:lava", 250))
+                .addStep(getSequencePressing(Items.COBBLESTONE))
+                .addStep(getSequencePressing(Items.COBBLESTONE))
+                .addStep(getSequencePressing(Items.COBBLESTONE))
+                .unlock(getHasName(Items.COBBLESTONE), has(Items.COBBLESTONE))
+                .save(pWriter, "netherrack_sequence");
+        CreateSequencedAssemblyRecipeBuilder.sequence(OtherModItems.Create.CINDER_FLOUR.getAsRawItem(), Items.GLOWSTONE, ModItems.UNPROCESSED_DUST.get(), 1)
+                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_DUST.get(), Items.BLAZE_POWDER))
+                .addStep();
 
         // create milling
         CreateMillingRecipeBuilder.milling(Items.MOSSY_COBBLESTONE, 50)
