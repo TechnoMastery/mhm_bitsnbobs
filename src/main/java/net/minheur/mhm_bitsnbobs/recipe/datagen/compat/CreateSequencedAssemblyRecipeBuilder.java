@@ -82,7 +82,7 @@ public class CreateSequencedAssemblyRecipeBuilder {
     public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
         ensureValid(id);
         this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new Result(id.withPrefix("create/sequence/"), this.ingredients, this.results, this.transitionalItem, this.steps, this.loops, this.advancement, id.withPrefix("recipe/create/sequence")));
+        consumer.accept(new Result(id.withPrefix("create/sequence/"), this.ingredients, this.results, this.transitionalItem, this.steps, this.loops, this.advancement, id.withPrefix("recipe/create/sequence/")));
     }
     public void save(Consumer<FinishedRecipe> consumer, String id) {
         save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
