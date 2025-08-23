@@ -1,5 +1,11 @@
 {
   "type": "create:mechanical_crafting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create_sa"
+    }
+  ],
   "acceptMirrored": false,
   "key": {
     "B": {
@@ -9,21 +15,24 @@
       "item": "mhm_bitsnbobs:creative_block"
     },
     "C": {
-      "item": "create:shaft"
+      "item": "create_sa:large_fueling_tank"
     },
     "D": {
       "item": "mhm_bitsnbobs:hardened_ingot"
+    },
+    "E": {
+      "item": "create:sturdy_sheet"
     }
   },
   "pattern": [
     "AAAAA",
-    "ABBBD",
-    "ADCCC",
-    "ABBBD",
+    "ABEBA",
+    "ADCDA",
+    "ABEBA",
     "AAAAA"
   ],
   "result": {
     "count": 1,
-    "item": "create:creative_motor"
+    "item": "create_sa:creative_filling_tank"
   }
 }

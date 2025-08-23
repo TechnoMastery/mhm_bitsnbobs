@@ -475,6 +475,46 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "glowstone_sequence");
 
+        // create mech crafting
+        CreateMechanicalCraftingBuilder.shaped(false)
+                .pattern("  BD")
+                .pattern(" BDB")
+                .pattern("SSB ")
+                .pattern("ES  ")
+                .define('D', ModItems.FIRE_DIAMOND.get())
+                .define('S', ModItems.FIRE_STICK.get())
+                .define('B', Items.FLINT_AND_STEEL)
+                .define('E', Items.NETHERITE_SWORD)
+                .addResult(ModItems.FIRE_SWORD.get())
+                .unlock(getHasName(ModItems.FIRE_DIAMOND.get()), has(ModItems.FIRE_DIAMOND.get()))
+                .save(pWriter, "fire_sword");
+        CreateMechanicalCraftingBuilder.shaped(false)
+                .pattern("AAAAA")
+                .pattern("ABDBA")
+                .pattern("ADCDA")
+                .pattern("ABDBA")
+                .pattern("AAAAA")
+                .define('A', ModBlocks.CREATIVE_BLOCK.get())
+                .define('B', ModItems.CREATIVE_INGOT.get())
+                .define('D', ModItems.HARDENED_INGOT.get())
+                .define('C', OtherModItems.Create.FLUID_TANK.getAsRawItem())
+                .addResult(OtherModItems.Create.CREATIVE_FLUID_TANK.getAsRawItem())
+                .unlock(getHasName(OtherModItems.Create.FLUID_TANK.getAsRawItem()), has(OtherModItems.Create.FLUID_TANK.getAsRawItem()))
+                .save(pWriter, "creative/fluid_tank");
+        CreateMechanicalCraftingBuilder.shaped(false)
+                .pattern("AAAAA")
+                .pattern("ABBBD")
+                .pattern("ADCCC")
+                .pattern("ABBBD")
+                .pattern("AAAAA")
+                .define('A', ModBlocks.CREATIVE_BLOCK.get())
+                .define('B', ModItems.CREATIVE_INGOT.get())
+                .define('D', ModItems.HARDENED_INGOT.get())
+                .define('C', OtherModItems.Create.SHAFT.getAsRawItem())
+                .addResult(OtherModItems.Create.CREATIVE_MOTOR.getAsRawItem())
+                .unlock(getHasName(OtherModItems.Create.SHAFT.getAsRawItem()), has(OtherModItems.Create.SHAFT.getAsRawItem()))
+                .save(pWriter, "creative/motor");
+
         // create milling
         CreateMillingRecipeBuilder.milling(Items.MOSSY_COBBLESTONE, 50)
                 .addResult(Items.COBBLESTONE, 0.5f)

@@ -2,31 +2,27 @@
   "type": "create:mechanical_crafting",
   "acceptMirrored": false,
   "key": {
-    "B": {
-      "item": "mhm_bitsnbobs:creative_ingot"
-    },
     "A": {
       "item": "mhm_bitsnbobs:creative_block"
     },
+    "B": {
+      "item": "mhm_bitsnbobs:creative_ingot"
+    },
     "C": {
-      "item": "create_sa:large_fueling_tank"
+      "item": "create:fluid_tank"
     },
     "D": {
       "item": "mhm_bitsnbobs:hardened_ingot"
-    },
-    "E": {
-      "item": "create:sturdy_sheet"
     }
   },
   "pattern": [
     "AAAAA",
-    "ABEBA",
+    "ABDBA",
     "ADCDA",
-    "ABEBA",
+    "ABDBA",
     "AAAAA"
   ],
   "result": {
-    "count": 1,
-    "item": "create_sa:creative_filling_tank"
+    "item": "create:creative_fluid_tank"
   }
 }

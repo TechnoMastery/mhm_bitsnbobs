@@ -1,15 +1,26 @@
 package net.minheur.mhm_bitsnbobs.recipe.datagen.compat;
 
 import com.google.common.collect.Sets;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.simibubi.create.AllRecipeTypes;
 import net.minecraft.advancements.Advancement;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
+import net.minecraft.advancements.RequirementsStrategy;
+import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
+import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.util.function.Consumer;
 
 import static net.minheur.mhm_bitsnbobs.util.Utils.*;
 
@@ -54,6 +65,15 @@ public class CreateMechanicalCraftingBuilder {
         return this;
     }
 
+    public CreateMechanicalCraftingBuilder addResult(ItemLike result, int count) {
+        this.result.addProperty("item", getBuiltInItemRegistry(result));
+        if (count > 1) this.result.addProperty("count", count);
+        return this;
+    }
+    public CreateMechanicalCraftingBuilder addResult(ItemLike result) {
+        return addResult(result, 1);
+    }
+
     public CreateMechanicalCraftingBuilder unlock(String pKey, CriterionTriggerInstance pCriterion) {
         this.advancement.addCriterion(pKey, pCriterion);
         return this;
@@ -84,9 +104,82 @@ public class CreateMechanicalCraftingBuilder {
         }
     }
 
-    /*
-    Save
-    Result.
-     */
+    public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
+        ensureValid(id);
+        this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
+        consumer.accept(new Result(id.withPrefix("create/mechanical_crafting/"), this.result, this.rows, this.keys, this.acceptMirrored, this.advancement, id.withPrefix("recipes/create/mechanical_crafting/")));
+    }
+    public void save(Consumer<FinishedRecipe> consumer, String id) {
+        save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
+    }
+
+    private static class Result implements FinishedRecipe {
+        private final ResourceLocation id;
+        private final JsonObject result;
+        private final List<String> rows;
+        private final Map<Character, JsonObject> keys;
+        private final boolean acceptMirrored;
+        private final Advancement.Builder advancement;
+        private final ResourceLocation advancementId;
+
+        private Result(ResourceLocation id, JsonObject result, List<String> rows, Map<Character, JsonObject> keys, boolean acceptMirrored, Advancement.Builder advancement, ResourceLocation advancementId) {
+            this.id = id;
+            this.result = result;
+            this.rows = rows;
+            this.keys = keys;
+            this.acceptMirrored = acceptMirrored;
+            this.advancement = advancement;
+            this.advancementId = advancementId;
+        }
+
+        @Override
+        public void serializeRecipeData(JsonObject pJson) {
+            JsonObject key = new JsonObject();
+            JsonArray pattern = new JsonArray();
+
+            for (Map.Entry<Character, JsonObject> entry : this.keys.entrySet()) {
+                key.add(String.valueOf(entry.getKey()), entry.getValue());
+            }
+
+            for (String line : rows) {
+                pattern.add(line);
+            }
+
+            pJson.add("key", key);
+            pJson.add("pattern", pattern);
+            pJson.addProperty("acceptMirrored", acceptMirrored);
+            pJson.add("result", result);
+        }
+
+        /**
+         * Gets the ID for the recipe.
+         */
+        @Override
+        public ResourceLocation getId() {
+            return id;
+        }
+
+        @Override
+        public RecipeSerializer<?> getType() {
+            return AllRecipeTypes.MECHANICAL_CRAFTING.getSerializer();
+        }
+
+        /**
+         * Gets the JSON for the advancement that unlocks this recipe. Null if there is no advancement.
+         */
+        @Override
+        public @Nullable JsonObject serializeAdvancement() {
+            return advancement.serializeToJson();
+        }
+
+        /**
+         * Gets the ID for the advancement associated with this recipe. Should not be null if {@link #serializeAdvancement()} is
+         * non-null.
+         */
+        @Override
+        public @Nullable ResourceLocation getAdvancementId() {
+            return advancementId;
+        }
+    }
 
 }

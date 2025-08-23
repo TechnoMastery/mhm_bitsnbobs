@@ -2,14 +2,14 @@
   "type": "create:mechanical_crafting",
   "acceptMirrored": false,
   "key": {
-    "B": {
-      "item": "mhm_bitsnbobs:creative_ingot"
-    },
     "A": {
       "item": "mhm_bitsnbobs:creative_block"
     },
+    "B": {
+      "item": "mhm_bitsnbobs:creative_ingot"
+    },
     "C": {
-      "item": "create:fluid_tank"
+      "item": "create:shaft"
     },
     "D": {
       "item": "mhm_bitsnbobs:hardened_ingot"
@@ -17,13 +17,12 @@
   },
   "pattern": [
     "AAAAA",
-    "ABDBA",
-    "ADCDA",
-    "ABDBA",
+    "ABBBD",
+    "ADCCC",
+    "ABBBD",
     "AAAAA"
   ],
   "result": {
-    "count": 1,
-    "item": "create:creative_fluid_tank"
+    "item": "create:creative_motor"
   }
 }

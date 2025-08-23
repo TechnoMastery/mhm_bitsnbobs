@@ -37,6 +37,10 @@ public class OtherModItems {
         public static final OtherModItem CINDER_FLOUR = createItem("cinder_flour");
         public static final OtherModItem DOUGH = createItem("dough");
         public static final OtherModItem ZINC = createItem("zinc_ingot");
+        public static final OtherModItem FLUID_TANK = createItem("fluid_tank");
+        public static final OtherModItem CREATIVE_FLUID_TANK = createItem("creative_fluid_tank");
+        public static final OtherModItem CREATIVE_MOTOR = createItem("creative_motor");
+        public static final OtherModItem SHAFT = createItem("shaft");
 
 
         private static OtherModItem createItem(String id) {
