@@ -3,6 +3,7 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.advancements.AdvancementProvider;
+import net.minheur.mhm_bitsnbobs.datagen.advancements.ModStoryAdvancementSubProvider;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -19,6 +20,7 @@ public class ModAdvancementProvider extends AdvancementProvider {
     public ModAdvancementProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> registries) {
         super(pOutput, registries, List.of(
                 // advancements generators Here.
+                new ModStoryAdvancementSubProvider()
         ));
     }
 }
