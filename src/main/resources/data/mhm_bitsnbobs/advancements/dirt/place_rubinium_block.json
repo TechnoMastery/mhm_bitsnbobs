@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:rubinium_block"
     },
     "title": {
-      "translate": "advancements.dirt.place_rubinium.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.place_rubinium.title"
     },
     "description": {
-      "translate": "advancements.dirt.place_rubinium.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.place_rubinium.description"
     },
     "frame": "task",
     "show_toast": true,

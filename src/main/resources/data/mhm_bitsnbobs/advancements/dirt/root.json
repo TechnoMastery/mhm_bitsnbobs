@@ -5,10 +5,10 @@
       "item": "minecraft:dirt"
     },
     "title": {
-      "translate": "advancements.dirt.root.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.root.title"
     },
     "description": {
-      "translate": "advancements.dirt.root.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.root.description"
     },
     "frame": "task",
     "show_toast": true,

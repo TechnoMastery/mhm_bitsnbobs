@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:super_charged_ingot"
     },
     "title": {
-      "translate": "advancements.adventure.get_super_charged_ingot.title"
+      "translate": "advancements.mhm_bitsnbobs.adventure.get_super_charged_ingot.title"
     },
     "description": {
-      "translate": "advancements.adventure.get_super_charged_ingot.description"
+      "translate": "advancements.mhm_bitsnbobs.adventure.get_super_charged_ingot.description"
     },
     "frame": "task",
     "show_toast": true,

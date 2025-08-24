@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:quantum_core"
     },
     "title": {
-      "translate": "advancements.ae2.quantum_core.title"
+      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_core.title"
     },
     "description": {
-      "translate": "advancements.ae2.quantum_core.description"
+      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_core.description"
     },
     "frame": "task",
     "show_toast": true,

@@ -4,8 +4,10 @@ import com.google.gson.JsonObject;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
@@ -128,35 +130,45 @@ public abstract class ModLanguageProvider implements DataProvider {
     public TranslationBuilder add(@NotNull EntityType<?> key) {
         return add(key.getDescriptionId());
     }
-    public TranslationBuilder addCreativeTab(String name) {
-        return add("creativetab." + name);
+    public TranslationBuilder addCreativeTab(@NotNull CreativeModeTab tab) {
+        return add("creativetab." + modid + "." + tab.getDisplayName());
     }
-    /**
-     * Add an advancement's title. You need to override it because of the namespace.
-     * @param group the branch of your advancement (ex. story, adventure)
-     * @param key the id of the advancement
-     * @return a built translation
-     */
-    public abstract TranslationBuilder addAdvancementTitle(String group, String key);
-    /**
-     * Add an advancement's description. You need to override it because of the namespace.
-     * @param group the branch of your advancement (ex. story, adventure)
-     * @param key the id of the advancement
-     * @return a built translation
-     */
-    public abstract TranslationBuilder addAdvancementDesc(String group, String key);
-    /**
-     * Add a tooltip. You need to override it because of the namespace.
-     * @param tooltipId the id of your tooltip
-     * @return a built translation
-     */
-    public abstract TranslationBuilder addTooltip(String tooltipId);
-    /**
-     * Add a credit as a tooltip. You need to override it because of the namespace.
-     * @param creditId the id of your credit
-     * @return a built translation
-     */
-    public abstract TranslationBuilder addTooltipCredit(String creditId);
+    public TranslationBuilder addAdvancementTitle(String group, String key) {
+        return add("advancements." + modid + "." + group + "." + key + ".title");
+    }
+    public TranslationBuilder addAdvancementDesc(String group, String key) {
+        return add("advancements." + modid + "." + group + "." + key + ".description");
+    }
+    public TranslationBuilder addTooltip(String tooltipId) {
+        return add("tooltip." + modid + "." + tooltipId + ".tooltip");
+    }
+    public TranslationBuilder addTooltipCredit(String creditId) {
+        return add("tooltip." + modid + "." + creditId + ".credit");
+    }
+    public TranslationBuilder addSound(String soundName) {
+        return add("sounds." + modid + "." + soundName);
+    }
+    public TranslationBuilder addRecipeName(String recipeName) {
+        return add("recipe." + modid + "." + recipeName);
+    }
+    public TranslationBuilder addRecipeProperty(String recipeName, String property) {
+        return add("recipe." + modid + "." + recipeName + "." + property);
+    }
+    public TranslationBuilder addGuiName(String guiId) {
+        return add("gui." + modid + "." + guiId + ".name");
+    }
+    public TranslationBuilder addVillagerType(String villagerId) {
+        return add("entity.minecraft.villager." + modid + "." + villagerId);
+    }
+    public TranslationBuilder addAttackDeath(String damage) {
+        return add("death.attack." + damage);
+    }
+    public TranslationBuilder addAttackDeathItem(String damage) {
+        return add("death.attack." + damage + ".item");
+    }
+    public TranslationBuilder addAttackDeathPlayer(String damage) {
+        return add("death.attack." + damage + ".player");
+    }
 
     /**
      * The class that handles adding languages.

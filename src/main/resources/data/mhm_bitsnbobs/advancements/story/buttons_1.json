@@ -4,10 +4,10 @@
       "item": "minecraft:oak_planks"
     },
     "title": {
-      "translate": "advancements.story.buttons_1.title"
+      "translate": "advancements.mhm_bitsnbobs.story.buttons_1.title"
     },
     "description": {
-      "translate": "advancements.story.buttons_1.description"
+      "translate": "advancements.mhm_bitsnbobs.story.buttons_1.description"
     },
     "frame": "task",
     "show_toast": true,

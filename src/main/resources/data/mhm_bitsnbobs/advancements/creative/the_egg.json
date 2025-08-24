@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:base_egg"
     },
     "title": {
-      "translate": "advancements.creative.the_egg.title"
+      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.title"
     },
     "description": {
-      "translate": "advancements.creative.the_egg.description"
+      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.description"
     },
     "frame": "goal",
     "show_toast": true,

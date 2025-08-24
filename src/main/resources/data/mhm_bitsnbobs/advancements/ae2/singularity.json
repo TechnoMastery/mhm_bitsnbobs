@@ -4,10 +4,10 @@
       "item": "ae2:singularity"
     },
     "title": {
-      "translate": "advancements.ae2.singularity.title"
+      "translate": "advancements.mhm_bitsnbobs.ae2.singularity.title"
     },
     "description": {
-      "translate": "advancements.ae2.singularity.description"
+      "translate": "advancements.mhm_bitsnbobs.ae2.singularity.description"
     },
     "frame": "task",
     "show_toast": true,

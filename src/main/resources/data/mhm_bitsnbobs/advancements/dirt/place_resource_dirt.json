@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:resource_dirt"
     },
     "title": {
-      "translate": "advancements.dirt.resource_dirt.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.resource_dirt.title"
     },
     "description": {
-      "translate": "advancements.dirt.resource_dirt.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.resource_dirt.description"
     },
     "frame": "task",
     "show_toast": true,

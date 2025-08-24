@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:lightning_sword"
     },
     "title": {
-      "translate": "advancements.adventure.get_lightning_sword.title"
+      "translate": "advancements.mhm_bitsnbobs.adventure.get_lightning_sword.title"
     },
     "description": {
-      "translate": "advancements.adventure.get_lightning_sword.description"
+      "translate": "advancements.mhm_bitsnbobs.adventure.get_lightning_sword.description"
     },
     "frame": "goal",
     "show_toast": true,

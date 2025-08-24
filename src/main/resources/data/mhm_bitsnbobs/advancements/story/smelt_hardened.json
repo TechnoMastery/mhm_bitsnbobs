@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:hardened_ingot"
     },
     "title": {
-      "translate": "advancements.story.hardened_ingot.title"
+      "translate": "advancements.mhm_bitsnbobs.story.hardened_ingot.title"
     },
     "description": {
-      "translate": "advancements.story.hardened_ingot.description"
+      "translate": "advancements.mhm_bitsnbobs.story.hardened_ingot.description"
     },
     "frame": "task",
     "show_toast": true,

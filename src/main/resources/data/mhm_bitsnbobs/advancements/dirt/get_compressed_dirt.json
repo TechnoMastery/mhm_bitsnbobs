@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:compressed_dirt"
     },
     "title": {
-      "translate": "advancements.dirt.comp_dirt.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.comp_dirt.title"
     },
     "description": {
-      "translate": "advancements.dirt.comp_dirt.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.comp_dirt.description"
     },
     "frame": "task",
     "show_toast": true,

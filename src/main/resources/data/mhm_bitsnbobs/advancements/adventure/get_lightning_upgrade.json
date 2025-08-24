@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:lightning_upgrade"
     },
     "title": {
-      "translate": "advancements.get_lightning_upgrade.title"
+      "translate": "advancements.mhm_bitsnbobs.get_lightning_upgrade.title"
     },
     "description": {
-      "translate": "advancements.get_lightning_upgrade.description"
+      "translate": "advancements.mhm_bitsnbobs.get_lightning_upgrade.description"
     },
     "frame": "task",
     "show_toast": true,

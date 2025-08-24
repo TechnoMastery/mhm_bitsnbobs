@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:creative_ingot"
     },
     "title": {
-      "translate": "advancements.creative.get_creative_ingot.title"
+      "translate": "advancements.mhm_bitsnbobs.creative.get_creative_ingot.title"
     },
     "description": {
-      "translate": "advancements.creative.get_creative_ingot.description"
+      "translate": "advancements.mhm_bitsnbobs.creative.get_creative_ingot.description"
     },
     "frame": "task",
     "show_toast": true,

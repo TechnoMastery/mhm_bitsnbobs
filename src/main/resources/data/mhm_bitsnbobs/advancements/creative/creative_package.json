@@ -37,7 +37,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.creative.creative_package.description"
+      "translate": "advancementsmhm_bitsnbobs..creative.creative_package.description"
     },
     "frame": "challenge",
     "hidden": true,
@@ -46,7 +46,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.creative.creative_package.title"
+      "translate": "advancements.mhm_bitsnbobs.creative.creative_package.title"
     }
   },
   "requirements": [

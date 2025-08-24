@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:fire_diamond"
     },
     "title": {
-      "translate": "advancements.story.fire_diamond_get.title"
+      "translate": "advancements.mhm_bitsnbobs.story.fire_diamond_get.title"
     },
     "description": {
-      "translate": "advancements.story.fire_diamond_get.description"
+      "translate": "advancements.mhm_bitsnbobs.story.fire_diamond_get.description"
     },
     "frame": "task",
     "show_toast": true,

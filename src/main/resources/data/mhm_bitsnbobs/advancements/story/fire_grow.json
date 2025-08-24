@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:fire_seeds"
     },
     "title": {
-      "translate": "advancements.story.fire_grow.title"
+      "translate": "advancements.mhm_bitsnbobs.story.fire_grow.title"
     },
     "description": {
-      "translate": "advancements.story.fire_grow.description"
+      "translate": "advancements.mhm_bitsnbobs.story.fire_grow.description"
     },
     "frame": "task",
     "show_toast": true,

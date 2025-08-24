@@ -5,10 +5,10 @@
       "item": "mhm_bitsnbobs:creative_essence"
     },
     "title": {
-      "translate": "advancements.creative.creative_essence.title"
+      "translate": "advancements.mhm_bitsnbobs.creative.creative_essence.title"
     },
     "description": {
-      "translate": "advancements.creative.creative_essence.description"
+      "translate": "advancements.mhm_bitsnbobs.creative.creative_essence.description"
     },
     "frame": "task",
     "show_toast": true,

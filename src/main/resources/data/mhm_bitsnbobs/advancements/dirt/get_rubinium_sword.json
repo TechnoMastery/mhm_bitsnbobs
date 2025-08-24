@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:rubinium_sword"
     },
     "title": {
-      "translate": "advancements.dirt.craft_rubinium_sword.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.craft_rubinium_sword.title"
     },
     "description": {
-      "translate": "advancements.dirt.craft_rubinium_sword.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.craft_rubinium_sword.description"
     },
     "frame": "task",
     "show_toast": true,

@@ -4,10 +4,10 @@
       "item": "mhm_bitsnbobs:rubinium_ore"
     },
     "title": {
-      "translate": "advancements.dirt.place_rubinium_ore.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.place_rubinium_ore.title"
     },
     "description": {
-      "translate": "advancements.dirt.place_rubinium_ore.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.place_rubinium_ore.description"
     },
     "frame": "task",
     "show_toast": true,

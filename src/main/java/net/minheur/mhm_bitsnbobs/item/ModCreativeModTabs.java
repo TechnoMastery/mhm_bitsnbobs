@@ -22,7 +22,7 @@ public class ModCreativeModTabs {
     // première tab : indiqué par TUTORIAL_TAB (le nom)
     public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
-                    .title(Component.translatable("creativetab.tutorial_tab"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.tutorial_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.RAW_SAPPHIRE.get());
                         output.accept(ModItems.SAPPHIRE.get());
@@ -73,7 +73,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> MUSIC_DISCS = CREATIVE_MODE_TABS.register("discs",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BASE_OF_DISC.get()))
-                    .title(Component.translatable("creativetab.discs"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.discs"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.BASE_OF_DISC.get());
                         output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
@@ -96,7 +96,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> DARK_STORM = CREATIVE_MODE_TABS.register("dark_storm",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STORM_FRAGMENT.get()))
-                    .title(Component.translatable("creativetab.dark_storm"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.dark_storm"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.STORM_FRAGMENT.get());
                         output.accept(ModItems.HARDENED_INGOT.get());
@@ -135,7 +135,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> LIGHTNING = CREATIVE_MODE_TABS.register("lightning",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.LIGHTNING_UPGRADE.get()))
-                    .title(Component.translatable("creativetab.lightning"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.lightning"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.LIGHTNING_UPGRADE.get());
                         output.accept(ModItems.FIRE_DIAMOND.get());
@@ -158,7 +158,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> BALLS = CREATIVE_MODE_TABS.register("balls",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DIAMOND_BALL.get()))
-                    .title(Component.translatable("creativetab.balls"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.balls"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.IRON_BALL.get());
                         output.accept(ModItems.COPPER_BALL.get());
@@ -178,7 +178,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> RUNES = CREATIVE_MODE_TABS.register("runes",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.EMPTY_RUNE.get()))
-                    .title(Component.translatable("creativetab.runes"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.runes"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.EMPTY_RUNE.get());
                         output.accept(ModItems.XP_RUNE.get());
@@ -190,7 +190,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> DIRT_THINGS = CREATIVE_MODE_TABS.register("dirt_things",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.COMPRESSED_DIRT.get()))
-                    .title(Component.translatable("creativetab.dirt_things"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.dirt_things"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.COMPRESSED_DIRT.get());
                         output.accept(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get());
