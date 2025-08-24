@@ -38,6 +38,8 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModPoiTypeTagProvider(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+
+        generator.addProvider(event.includeServer(), new ModAdvancementGen(packOutput));
         generator.addProvider(event.includeClient(), new ModLangGen(packOutput, MhmBitsnbobs.MOD_ID));
     }
 }

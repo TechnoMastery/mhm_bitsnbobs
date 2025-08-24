@@ -1,5 +1,5 @@
 {
-  "parent": "mhm_bitsnbobs:creative/get_creative_ingot",
+  "parent": "mhm_bitsnbobs:the_essence-root",
   "criteria": {
     "creative_package": {
       "conditions": {
@@ -37,7 +37,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancementsmhm_bitsnbobs..creative.creative_package.description"
+      "translate": "advancements.mhm_bitsnbobs.creative.creative_package.description"
     },
     "frame": "challenge",
     "hidden": true,
@@ -55,7 +55,9 @@
     ]
   ],
   "rewards": {
-    "experience": 15000
-  },
-  "sends_telemetry_event": true
+    "experience": 15000,
+    "loot": [
+      "mhm_bitsnbobs:blocks/creative_block"
+    ]
+  }
 }
