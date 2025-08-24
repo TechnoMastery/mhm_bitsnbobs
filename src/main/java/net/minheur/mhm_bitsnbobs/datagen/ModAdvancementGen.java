@@ -25,7 +25,11 @@ public class ModAdvancementGen extends ModAdvancementProvider {
                 creative_THE_ESSENCE_root,
                 creative_THE_INGOT,
                 creative_THE_EGG,
-                creative_PACKAGE
+                creative_PACKAGE,
+
+                adventure_ITS_CHARGED,
+                adventure_LIGTHNING_UPGRADE,
+                adventure_STORM_SWORD
         );
     }
 
