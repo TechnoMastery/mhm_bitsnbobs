@@ -20,7 +20,7 @@ public class CatalyzerItem extends Item {
     // TODO: add things here. Don't know what.
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.mhm_bitsnbobs." + rank + ".tooltip"));
+        pTooltipComponents.add(Component.translatable("tooltip.mhm_bitsnbobs.catalyzer-" + rank + ".tooltip"));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }

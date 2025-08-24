@@ -128,9 +128,35 @@ public abstract class ModLanguageProvider implements DataProvider {
     public TranslationBuilder add(@NotNull EntityType<?> key) {
         return add(key.getDescriptionId());
     }
+    public TranslationBuilder addCreativeTab(String name) {
+        return add("creativetab." + name);
+    }
+    /**
+     * Add an advancement's title. You need to override it because of the namespace.
+     * @param group the branch of your advancement (ex. story, adventure)
+     * @param key the id of the advancement
+     * @return a built translation
+     */
     public abstract TranslationBuilder addAdvancementTitle(String group, String key);
+    /**
+     * Add an advancement's description. You need to override it because of the namespace.
+     * @param group the branch of your advancement (ex. story, adventure)
+     * @param key the id of the advancement
+     * @return a built translation
+     */
     public abstract TranslationBuilder addAdvancementDesc(String group, String key);
+    /**
+     * Add a tooltip. You need to override it because of the namespace.
+     * @param tooltipId the id of your tooltip
+     * @return a built translation
+     */
     public abstract TranslationBuilder addTooltip(String tooltipId);
+    /**
+     * Add a credit as a tooltip. You need to override it because of the namespace.
+     * @param creditId the id of your credit
+     * @return a built translation
+     */
+    public abstract TranslationBuilder addTooltipCredit(String creditId);
 
     /**
      * The class that handles adding languages.
