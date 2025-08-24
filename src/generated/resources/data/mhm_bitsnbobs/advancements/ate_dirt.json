@@ -1,0 +1,40 @@
+{
+  "parent": "mhm_bitsnbobs:very_compressed",
+  "criteria": {
+    "dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:wet_dirt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.ate_dirt.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:wet_dirt"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.ate_dirt.title"
+    }
+  },
+  "requirements": [
+    [
+      "dirt"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
+}

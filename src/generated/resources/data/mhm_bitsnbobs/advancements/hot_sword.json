@@ -1,0 +1,37 @@
+{
+  "parent": "mhm_bitsnbobs:placed_rubis_ore",
+  "criteria": {
+    "get_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:fire_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.hot_sword.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:fire_sword"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.hot_sword.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_sword"
+    ]
+  ]
+}

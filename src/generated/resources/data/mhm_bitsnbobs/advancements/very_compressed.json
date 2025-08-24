@@ -1,0 +1,37 @@
+{
+  "parent": "mhm_bitsnbobs:dirt-root",
+  "criteria": {
+    "dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:compressed_dirt"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.very_compressed.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:compressed_dirt"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.very_compressed.title"
+    }
+  },
+  "requirements": [
+    [
+      "dirt"
+    ]
+  ]
+}

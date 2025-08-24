@@ -1,0 +1,35 @@
+{
+  "parent": "mhm_bitsnbobs:placed_rubis_ore",
+  "criteria": {
+    "place_block": {
+      "conditions": {
+        "items": [
+          {
+            "block": "mhm_bitsnbobs:rubinium_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.placed_rubinium.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:rubinium_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.placed_rubinium.title"
+    }
+  },
+  "requirements": [
+    [
+      "place_block"
+    ]
+  ]
+}

@@ -29,7 +29,21 @@ public class ModAdvancementGen extends ModAdvancementProvider {
 
                 adventure_ITS_CHARGED,
                 adventure_LIGTHNING_UPGRADE,
-                adventure_STORM_SWORD
+                adventure_STORM_SWORD,
+
+                ae2_SINGULARITY,
+                ae2_QUANTUM_CORE,
+                ae2_STABLE_POWER,
+                ae2_QUANTUM_STAFF,
+
+                dirt_DIRT_root,
+                dirt_VERY_COMPRESSED,
+                dirt_RESOURCE_PACK,
+                dirt_ATE_DIRT,
+                dirt_PLACED_RUBIS_ORE,
+                dirt_PLACED_RUBINIUM,
+                dirt_HOT_SWORD,
+                dirt_STRONG_SWORD
         );
     }
 
