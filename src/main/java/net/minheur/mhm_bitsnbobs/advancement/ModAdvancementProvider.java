@@ -1,13 +1,17 @@
 package net.minheur.mhm_bitsnbobs.advancement;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.FrameType;
+import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -45,8 +49,8 @@ public abstract class ModAdvancementProvider implements DataProvider {
     }
 
     /**
-     * @param pOutput
-     * @return
+     * Executes when the datagen is launched
+     * @return the listing of advancements done
      */
     @Override
     public CompletableFuture<?> run(CachedOutput pOutput) {
@@ -75,11 +79,33 @@ public abstract class ModAdvancementProvider implements DataProvider {
         return modid + " advancement provider";
     }
 
+    /**
+     * Adding a root advancement
+     * @param id the id of your advancement
+     * @param group the group of your advancement (ex. story, adventure...)
+     * @return a new advancement builder
+     */
     public AdvancementBuilder addRoot(String id, String group) {
         if (id == null) throw new IllegalStateException("Can't have a null advancement id !");
+        if (group == null) throw new IllegalStateException("Can't have a null advancement group !");
         return new AdvancementBuilder(id + "-root", group, true);
     }
 
+    /**
+     * Adding an advancement with a parent
+     * @param id the id of your advancement
+     * @param group the group pf your advancement (ex. story, adventure...). It should be the same as the root !
+     * @return the new advancement builder
+     */
+    public AdvancementBuilder addWithParent(String id, String group) {
+        if (id == null) throw new IllegalStateException("Can't have a null advancement id !");
+        if (group == null) throw new IllegalStateException("Can't have a null advancement group !");
+        return new AdvancementBuilder(id, group, false);
+    }
+
+    /**
+     * The custom builder for advancements
+     */
     public class AdvancementBuilder {
         private final String id;
         private final String group;
@@ -134,6 +160,15 @@ public abstract class ModAdvancementProvider implements DataProvider {
             return this;
         }
 
+        /**
+         * You need to add you requirement. {@code reqs} is a double array, so you need to follow this to use it :
+         * <p>
+         *     In the array, you need to accomplish one sub-array. In each sub-array, you need to complete all
+         *     to get it. (ex. {@code [["a", "b"], ["c"]]} is {@code (a && b) || c}.
+         * </p>
+         * @param reqs the double array
+         * @return the building advancement
+         */
         public AdvancementBuilder requirements(String[][] reqs) {
             var arr = new JsonArray();
             for (String[] group : reqs) {
@@ -145,5 +180,58 @@ public abstract class ModAdvancementProvider implements DataProvider {
             return this;
         }
 
+        public AdvancementBuilder rewards(AdvancementRewards rewards) {
+            if (rewards == null) throw new IllegalStateException("You need to give a reward!");
+            JsonObject rewardJson = rewards.serializeToJson().getAsJsonObject();
+            json.add("rewards", rewardJson);
+            return this;
+        }
+
+        public AdvancementBuilder build() {
+            if (!isRoot && !json.has("parent")) throw new IllegalStateException("Not giving a parent for non-root advancement!");
+            if (!json.has("requirements")) throw new IllegalStateException("Missing requirements on advancement!");
+            if (!json.has("criteria")) throw new IllegalStateException("Missing criteria on advancement!");
+
+            registerAdvancement(id, json);
+            return this;
+        }
+
+        public ResourceLocation getLoc() {
+            return new ResourceLocation(modid, id);
+        }
+
+    }
+
+    public CriterionBuilder simpleCriterion(ResourceLocation trigger) {
+        return new CriterionBuilder(trigger);
+    }
+
+    public static class CriterionBuilder {
+        private final JsonObject criterion = new JsonObject();
+
+        public CriterionBuilder(ResourceLocation trigger) {
+            if (trigger == null) throw new IllegalStateException("Invalid trigger for criterion!");
+            criterion.addProperty("trigger", trigger.toString());
+        }
+
+        public CriterionBuilder itemCondition(ItemLike... items) {
+            if (items.length < 1) throw new IllegalStateException("You need to give at least one item!");
+            JsonObject condition = criterion.has("conditions") ? criterion.getAsJsonObject("conditions") : new JsonObject();
+            JsonArray mainItemsArray = condition.has("items") ? condition.getAsJsonArray("items") : new JsonArray();
+            for (ItemLike item : items) {
+                JsonObject object = new JsonObject();
+                JsonArray array = new JsonArray();
+                array.add(getBuiltInItemRegistry(item));
+                object.add("items", array);
+                if (mainItemsArray.contains(object)) throw new IllegalStateException("Duplicate item condition found!");
+                mainItemsArray.add(object);
+            }
+
+            return this;
+        }
+
+        public JsonObject build() {
+            return criterion;
+        }
     }
 }
