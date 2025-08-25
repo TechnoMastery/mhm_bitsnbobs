@@ -73,7 +73,7 @@ public class AdvancementBuilder {
      * You need to add you requirement. {@code reqs} is a double array, so you need to follow this to use it :
      * <p>
      *     In the array, you need to accomplish one sub-array. In each sub-array, you need to complete all
-     *     to get it. (ex. {@code [["a", "b"], ["c"]]} is {@code (a && b) || c}.
+     *     to get it. (ex. {@code [["a", "b"], ["c"]]} is {@code (a && b) || c}).
      * </p>
      * @param reqs the double array
      * @return the building advancement
