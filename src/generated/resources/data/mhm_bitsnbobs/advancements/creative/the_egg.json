@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:singularity",
+  "parent": "mhm_bitsnbobs:creative/the_ingot",
   "criteria": {
-    "core": {
+    "has_the_egg": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:quantum_core"
+              "mhm_bitsnbobs:base_egg"
             ]
           }
         ]
@@ -17,21 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_core.description"
+      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.description"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:quantum_core"
+      "item": "mhm_bitsnbobs:base_egg"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_core.title"
+      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.title"
     }
   },
   "requirements": [
     [
-      "core"
+      "has_the_egg"
     ]
   ]
 }

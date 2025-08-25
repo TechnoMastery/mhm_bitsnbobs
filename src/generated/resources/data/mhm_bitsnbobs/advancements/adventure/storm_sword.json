@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:the_essence-root",
+  "parent": "mhm_bitsnbobs:adventure/lightning_upgrade",
   "criteria": {
-    "has_creative_ingot": {
+    "sword": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:creative_ingot"
+              "mhm_bitsnbobs:lightning_sword"
             ]
           }
         ]
@@ -17,24 +17,24 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.creative.the_ingot.description"
+      "translate": "advancements.mhm_bitsnbobs.adventure.storm_sword.description"
     },
-    "frame": "task",
+    "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:creative_ingot"
+      "item": "mhm_bitsnbobs:lightning_sword"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.creative.the_ingot.title"
+      "translate": "advancements.mhm_bitsnbobs.adventure.storm_sword.title"
     }
   },
   "requirements": [
     [
-      "has_creative_ingot"
+      "sword"
     ]
   ],
   "rewards": {
-    "experience": 300
+    "experience": 5000
   }
 }

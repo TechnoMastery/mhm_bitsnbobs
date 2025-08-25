@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:quantum_core",
+  "parent": "mhm_bitsnbobs:creative/the_essence-root",
   "criteria": {
-    "core": {
+    "has_creative_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:stabilized_quantum_core"
+              "mhm_bitsnbobs:creative_ingot"
             ]
           }
         ]
@@ -17,21 +17,24 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.ae2.stable_power.description"
+      "translate": "advancements.mhm_bitsnbobs.creative.the_ingot.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:stabilized_quantum_core"
+      "item": "mhm_bitsnbobs:creative_ingot"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.ae2.stable_power.title"
+      "translate": "advancements.mhm_bitsnbobs.creative.the_ingot.title"
     }
   },
   "requirements": [
     [
-      "core"
+      "has_creative_ingot"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 300
+  }
 }

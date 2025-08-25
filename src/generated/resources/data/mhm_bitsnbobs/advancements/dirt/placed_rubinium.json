@@ -1,5 +1,5 @@
 {
-  "parent": "mhm_bitsnbobs:placed_rubis_ore",
+  "parent": "mhm_bitsnbobs:dirt/placed_rubis_ore",
   "criteria": {
     "place_block": {
       "conditions": {

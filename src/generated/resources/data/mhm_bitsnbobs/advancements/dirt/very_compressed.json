@@ -1,5 +1,5 @@
 {
-  "parent": "mhm_bitsnbobs:dirt-root",
+  "parent": "mhm_bitsnbobs:dirt/dirt-root",
   "criteria": {
     "dirt": {
       "conditions": {

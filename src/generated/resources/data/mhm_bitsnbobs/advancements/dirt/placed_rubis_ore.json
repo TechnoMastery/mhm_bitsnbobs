@@ -1,13 +1,11 @@
 {
-  "parent": "mhm_bitsnbobs:placed_rubis_ore",
+  "parent": "mhm_bitsnbobs:dirt/resource_pack",
   "criteria": {
-    "get_sword": {
+    "place_ore": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "mhm_bitsnbobs:fire_sword"
-            ]
+            "block": "mhm_bitsnbobs:rubis_ore"
           }
         ]
       },
@@ -17,21 +15,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.dirt.hot_sword.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.placed_rubis_ore.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:fire_sword"
+      "item": "mhm_bitsnbobs:rubis_ore"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.dirt.hot_sword.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.placed_rubis_ore.title"
     }
   },
   "requirements": [
     [
-      "get_sword"
+      "place_ore"
     ]
   ]
 }

@@ -138,7 +138,7 @@ public class ModAdvancements {
             .display(Items.DIRT, new ResourceLocation("minecraft", "textures/block/dirt.png"),
                     FrameType.TASK, true, true, false)
             .criterion("dirt", simpleCriterion(
-                    inventoryChanged).itemCondition(ItemTags.DIRT).build())
+                    inventoryChanged).tagCondition(ItemTags.DIRT).build())
             .requirements(new String[][]{
                     {"dirt"}
             });
@@ -209,7 +209,8 @@ public class ModAdvancements {
                     placedBlock).itemCondition(ModItems.FIRE_SWORD.get()).build())
             .requirements(new String[][]{
                     {"get_sword"}
-            });
+            })
+            .rewards(new AdvancementRewards.Builder().addExperience(5).build());
     public static final AdvancementBuilder dirt_STRONG_SWORD = addWithParent("strong_sword", dirtGroup)
             .parent(dirt_HOT_SWORD.getLoc())
             .display(ModItems.FIRE_SWORD.get(), null, FrameType.TASK,
@@ -220,6 +221,60 @@ public class ModAdvancements {
                     {"get_sword"}
             })
             .rewards(new AdvancementRewards.Builder().addExperience(150).build());
+
+    // story
+    public static final String storyGroup = "story";
+    public static final AdvancementBuilder story_HARD_IRON = addWithParent("hard_iron", storyGroup)
+            .parent(new ResourceLocation("minecraft", "story/smelt_iron"))
+            .display(ModItems.HARDENED_INGOT.get(), null, FrameType.TASK,
+                    true, true, false)
+            .criterion("hardened_ingot", simpleCriterion(
+                    inventoryChanged).itemCondition(ModItems.HARDENED_INGOT.get()).build())
+            .requirements(new String[][]{
+                    {"hardened_ingot"}
+            });
+    public static final AdvancementBuilder story_FIRE_POWER = addWithParent("fire_power", storyGroup)
+            .parent(new ResourceLocation("minecraft", "story/mine_diamond"))
+            .display(ModItems.FIRE_DIAMOND.get(), null, FrameType.TASK,
+                    true, true, false)
+            .criterion("get_diamond", simpleCriterion(
+                    inventoryChanged).itemCondition(ModItems.FIRE_DIAMOND.get()).build())
+            .requirements(new String[][]{
+                    {"get_diamond"}
+            });
+    public static final AdvancementBuilder story_GROWING_FIRE = addWithParent("growing_fire", storyGroup)
+            .parent(story_FIRE_POWER.getLoc())
+            .display(ModItems.FIRE_SEEDS.get(), null, FrameType.TASK,
+                    true, true, false)
+            .criterion("seeds", simpleCriterion(
+                    inventoryChanged).itemCondition(ModItems.FIRE_SEEDS.get()).build())
+            .requirements(new String[][]{
+                    {"seeds"}
+            });
+    public static final AdvancementBuilder story_BUTTONS = addWithParent("buttons", storyGroup)
+            .parent(new ResourceLocation("minecraft", "story/root"))
+            .display(Items.OAK_BUTTON, null, FrameType.GOAL,
+                    true, true, true)
+            .criterion("buttons", simpleCriterion(
+                    inventoryChanged).tagCondition(ItemTags.BUTTONS, 64).build())
+            .requirements(new String[][]{
+                    {"buttons"}
+            })
+            .rewards(new AdvancementRewards.Builder().addExperience(150).addLootTable(
+                    new ResourceLocation(MhmBitsnbobs.MOD_ID, "blocks/resource_dirt")
+            ).build());
+    public static final AdvancementBuilder story_MORE_BUTTONS = addWithParent("more_buttons", storyGroup)
+            .parent(story_BUTTONS.getLoc())
+            .display(Items.DARK_OAK_BUTTON, null, FrameType.GOAL,
+                    true, true, true)
+            .criterion("buttons", simpleCriterion(
+                    inventoryChanged).tagCondition(ItemTags.BUTTONS, 128).build())
+            .requirements(new String[][]{
+                    {"buttons"}
+            })
+            .rewards(new AdvancementRewards.Builder().addExperience(350).addLootTable(
+                    new ResourceLocation(MhmBitsnbobs.MOD_ID, "blocks/resource_dirt")
+            ).build());
 
     // methods
     /**
@@ -244,7 +299,11 @@ public class ModAdvancements {
         if (group == null) throw new IllegalStateException("Can't have a null advancement group !");
         return new AdvancementBuilder(id, group, false, MhmBitsnbobs.MOD_ID);
     }
-
+    /**
+     * Creates a builder for criterion
+     * @param trigger the id of the criterion's trigger
+     * @return a new criterion builder
+     */
     protected static CriterionBuilder simpleCriterion(ResourceLocation trigger) {
         return new CriterionBuilder(trigger);
     }

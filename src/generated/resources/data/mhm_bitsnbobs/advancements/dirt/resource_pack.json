@@ -1,5 +1,5 @@
 {
-  "parent": "mhm_bitsnbobs:very_compressed",
+  "parent": "mhm_bitsnbobs:dirt/very_compressed",
   "criteria": {
     "copper": {
       "conditions": {

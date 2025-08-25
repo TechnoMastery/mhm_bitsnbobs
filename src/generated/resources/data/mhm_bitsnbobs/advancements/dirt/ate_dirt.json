@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:the_ingot",
+  "parent": "mhm_bitsnbobs:dirt/very_compressed",
   "criteria": {
-    "has_the_egg": {
+    "dirt": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:base_egg"
+              "mhm_bitsnbobs:wet_dirt"
             ]
           }
         ]
@@ -17,21 +17,24 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.ate_dirt.description"
     },
     "frame": "goal",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:base_egg"
+      "item": "mhm_bitsnbobs:wet_dirt"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.ate_dirt.title"
     }
   },
   "requirements": [
     [
-      "has_the_egg"
+      "dirt"
     ]
-  ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
 }

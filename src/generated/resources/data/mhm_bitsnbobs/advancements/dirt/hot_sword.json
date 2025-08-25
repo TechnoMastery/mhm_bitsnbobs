@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:hot_sword",
+  "parent": "mhm_bitsnbobs:dirt/placed_rubis_ore",
   "criteria": {
     "get_sword": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:rubinium_sword"
+              "mhm_bitsnbobs:fire_sword"
             ]
           }
         ]
@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.dirt.strong_sword.description"
+      "translate": "advancements.mhm_bitsnbobs.dirt.hot_sword.description"
     },
     "frame": "task",
     "hidden": false,
@@ -26,7 +26,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.dirt.strong_sword.title"
+      "translate": "advancements.mhm_bitsnbobs.dirt.hot_sword.title"
     }
   },
   "requirements": [
@@ -35,6 +35,6 @@
     ]
   ],
   "rewards": {
-    "experience": 150
+    "experience": 5
   }
 }

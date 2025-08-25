@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:lightning_upgrade",
+  "parent": "mhm_bitsnbobs:story/fire_power",
   "criteria": {
-    "sword": {
+    "seeds": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:lightning_sword"
+              "mhm_bitsnbobs:fire_seeds"
             ]
           }
         ]
@@ -17,24 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.adventure.storm_sword.description"
+      "translate": "advancements.mhm_bitsnbobs.story.growing_fire.description"
     },
-    "frame": "goal",
+    "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:lightning_sword"
+      "item": "mhm_bitsnbobs:fire_seeds"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.adventure.storm_sword.title"
+      "translate": "advancements.mhm_bitsnbobs.story.growing_fire.title"
     }
   },
   "requirements": [
     [
-      "sword"
+      "seeds"
     ]
-  ],
-  "rewards": {
-    "experience": 5000
-  }
+  ]
 }

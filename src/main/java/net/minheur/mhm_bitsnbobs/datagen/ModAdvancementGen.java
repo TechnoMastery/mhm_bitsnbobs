@@ -43,7 +43,13 @@ public class ModAdvancementGen extends ModAdvancementProvider {
                 dirt_PLACED_RUBIS_ORE,
                 dirt_PLACED_RUBINIUM,
                 dirt_HOT_SWORD,
-                dirt_STRONG_SWORD
+                dirt_STRONG_SWORD,
+
+                story_HARD_IRON,
+                story_FIRE_POWER,
+                story_GROWING_FIRE,
+                story_BUTTONS,
+                story_MORE_BUTTONS
         );
     }
 

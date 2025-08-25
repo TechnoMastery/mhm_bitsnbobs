@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:stable_power",
+  "parent": "minecraft:story/smelt_iron",
   "criteria": {
-    "staff": {
+    "hardened_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:quantum_staff"
+              "mhm_bitsnbobs:hardened_ingot"
             ]
           }
         ]
@@ -17,21 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_staff.description"
+      "translate": "advancements.mhm_bitsnbobs.story.hard_iron.description"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:quantum_staff"
+      "item": "mhm_bitsnbobs:hardened_ingot"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_staff.title"
+      "translate": "advancements.mhm_bitsnbobs.story.hard_iron.title"
     }
   },
   "requirements": [
     [
-      "staff"
+      "hardened_ingot"
     ]
   ]
 }

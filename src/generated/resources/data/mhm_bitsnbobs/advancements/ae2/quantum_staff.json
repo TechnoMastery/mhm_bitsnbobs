@@ -1,12 +1,12 @@
 {
-  "parent": "mhm_bitsnbobs:very_compressed",
+  "parent": "mhm_bitsnbobs:ae2/stable_power",
   "criteria": {
-    "dirt": {
+    "staff": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:wet_dirt"
+              "mhm_bitsnbobs:quantum_staff"
             ]
           }
         ]
@@ -17,24 +17,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancements.mhm_bitsnbobs.dirt.ate_dirt.description"
+      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_staff.description"
     },
-    "frame": "goal",
+    "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "mhm_bitsnbobs:wet_dirt"
+      "item": "mhm_bitsnbobs:quantum_staff"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancements.mhm_bitsnbobs.dirt.ate_dirt.title"
+      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_staff.title"
     }
   },
   "requirements": [
     [
-      "dirt"
+      "staff"
     ]
-  ],
-  "rewards": {
-    "experience": 150
-  }
+  ]
 }

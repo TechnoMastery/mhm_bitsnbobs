@@ -106,7 +106,7 @@ public class AdvancementBuilder {
 
     public String getId() {
         check();
-        return id;
+        return group + "/" + id;
     }
     public JsonObject getJson() {
         check();
@@ -114,7 +114,7 @@ public class AdvancementBuilder {
     }
 
     public ResourceLocation getLoc() {
-        return new ResourceLocation(modid, id);
+        return new ResourceLocation(modid, group + "/" + id);
     }
 
 }

@@ -1,0 +1,40 @@
+{
+  "parent": "mhm_bitsnbobs:dirt/hot_sword",
+  "criteria": {
+    "get_sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:rubinium_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.strong_sword.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:fire_sword"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.strong_sword.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_sword"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
+}

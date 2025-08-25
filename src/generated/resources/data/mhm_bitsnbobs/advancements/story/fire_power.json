@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:story/mine_diamond",
+  "criteria": {
+    "get_diamond": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:fire_diamond"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.story.fire_power.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:fire_diamond"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.story.fire_power.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_diamond"
+    ]
+  ]
+}
