@@ -16,10 +16,18 @@ import net.minheur.techno_lib.advancement.CriterionBuilder;
  * The advancement registering class. To add them to the datagen, go to {@link net.minheur.mhm_bitsnbobs.datagen.ModAdvancementGen} and add it to the {@code build} function.
  */
 public class ModAdvancements {
+    /**
+     * Fast way of setting up an inventory changed trigger
+     */
     private static final ResourceLocation inventoryChanged = new ResourceLocation("minecraft", "inventory_changed");
+    /**
+     * Fast way of setting up a block placed trigger
+     */
     public static final ResourceLocation placedBlock = new ResourceLocation("minecraft", "placed_block");
 
-    // creative
+    /**
+     * ID for group creative
+     */
     public static final String creativeGroup = "creative";
     public static final AdvancementBuilder creative_THE_ESSENCE_root = addRoot("the_essence", creativeGroup)
             .display(ModItems.CREATIVE_ESSENCE.get(), new ResourceLocation(MhmBitsnbobs.MOD_ID, "textures/block/creative_block.png"),
@@ -66,7 +74,9 @@ public class ModAdvancements {
                     new ResourceLocation(MhmBitsnbobs.MOD_ID, "blocks/creative_block")
             ).build());
 
-    // adventure
+    /**
+     * ID for group adventure
+     */
     public static final String adventureGroup = "adventure";
     public static final AdvancementBuilder adventure_ITS_CHARGED = addWithParent("its_charged", adventureGroup)
             .parent(new ResourceLocation("minecraft", "adventure/avoid_vibration"))
@@ -98,7 +108,9 @@ public class ModAdvancements {
             })
             .rewards(new AdvancementRewards.Builder().addExperience(5000).build());
 
-    // ae2
+    /**
+     * ID for group ae2
+     */
     public static final String ae2Group = "ae2";
     public static final AdvancementBuilder ae2_SINGULARITY = addWithParent("singularity", ae2Group)
             .parent(new ResourceLocation("ae2", "main/glass_cable"))
@@ -137,7 +149,9 @@ public class ModAdvancements {
                     {"staff"}
             });
 
-    // dirt
+    /**
+     * ID for the group dirt
+     */
     public static final String dirtGroup = "dirt";
     public static final AdvancementBuilder dirt_DIRT_root = addRoot("dirt", dirtGroup)
             .display(Items.DIRT, new ResourceLocation("minecraft", "textures/block/dirt.png"),
@@ -227,7 +241,9 @@ public class ModAdvancements {
             })
             .rewards(new AdvancementRewards.Builder().addExperience(150).build());
 
-    // story
+    /**
+     * ID for the group story
+     */
     public static final String storyGroup = "story";
     public static final AdvancementBuilder story_HARD_IRON = addWithParent("hard_iron", storyGroup)
             .parent(new ResourceLocation("minecraft", "story/smelt_iron"))

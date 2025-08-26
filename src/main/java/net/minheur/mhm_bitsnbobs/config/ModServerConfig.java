@@ -7,13 +7,31 @@ import net.minecraftforge.common.ForgeConfigSpec;
  * Adds config file for our mod.
  */
 public class ModServerConfig {
+    /**
+     * The builder for config
+     */
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+    /**
+     * The builder
+     */
     public static final ForgeConfigSpec CONFIG;
 
     // command /spawn
+    /**
+     * This controls if the {@code /spawn} comment is usable
+     */
     public static final ForgeConfigSpec.BooleanValue SPAWN_ENABLED;
+    /**
+     * This is the X coordinate of the spawn
+     */
     public static final ForgeConfigSpec.IntValue SPAWN_X;
+    /**
+     * This is the Y coordinate of the spawn
+     */
     public static final ForgeConfigSpec.IntValue SPAWN_Y;
+    /**
+     * This is the Z coordinate of the spawn
+     */
     public static final ForgeConfigSpec.IntValue SPAWN_Z;
 
     static {
