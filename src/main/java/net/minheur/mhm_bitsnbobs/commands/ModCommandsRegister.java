@@ -59,7 +59,8 @@ public class ModCommandsRegister {
                             double xPos = pos.getX() + 0.5;
                             double yPos = pos.getY() + 0.5;
                             double zPos = pos.getZ() + 0.5;
-                            String command = "execute in execute in minecraft:overworld run tp @s " + xPos + " " + yPos + " " + zPos;
+                            String command = "execute in minecraft:overworld run tp @s " + xPos + " " + yPos + " " + zPos;
+                            player.getServer().getCommands().performPrefixedCommand(commandSource, command);
                             commandContext.getSource().sendSuccess(() -> Component.literal("Teleported to spawn"), true);
                             return 1;
                         })
