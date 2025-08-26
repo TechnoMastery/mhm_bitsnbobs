@@ -55,7 +55,7 @@ public class ModAdvancementGen extends ModAdvancementProvider {
 
     public void build(AdvancementBuilder... advancements) {
         for (AdvancementBuilder advancement : advancements) {
-            String id = advancement.getId();
+            String id = advancement.getFullId();
             JsonObject json = advancement.getJson();
             this.registerAdvancement(id, json);
         }

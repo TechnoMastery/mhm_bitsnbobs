@@ -1,14 +1,16 @@
 package net.minheur.mhm_bitsnbobs.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.mhm_bitsnbobs.advancement.AdvancementBuilder;
 import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.lang.ModLanguageProvider;
 import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
 
 public class ModLangGen extends ModLanguageProvider {
-    protected ModLangGen(PackOutput output, String modid) {
-        super(output, modid);
+    protected ModLangGen(PackOutput output) {
+        super(output, MhmBitsnbobs.MOD_ID);
     }
 
     @Override
@@ -200,11 +202,12 @@ public class ModLangGen extends ModLanguageProvider {
         addCreativeTab(ModCreativeModTabs.MUSIC_DISCS.get())
                 .en_us("Music discs")
                 .fr_fr("Disques de musiques");
-
-
     }
 
     public TranslationBuilder addMenuName(String id) {
         return add("menu." + id);
+    }
+    public TranslationBuilder addAdvancementTitle(AdvancementBuilder adv) {
+        return addAdvancementTitle(adv.getGroup(), adv.getId());
     }
 }

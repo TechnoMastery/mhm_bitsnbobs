@@ -104,13 +104,20 @@ public class AdvancementBuilder {
     }
 
 
-    public String getId() {
+    public String getFullId() {
         check();
         return group + "/" + id;
     }
     public JsonObject getJson() {
         check();
         return json;
+    }
+
+    public String getId() {
+        return id;
+    }
+    public String getGroup() {
+        return group;
     }
 
     public ResourceLocation getLoc() {
