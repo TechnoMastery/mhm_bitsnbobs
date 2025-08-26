@@ -18,7 +18,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 /**
  * Here is the builder to datagen freezing recipes

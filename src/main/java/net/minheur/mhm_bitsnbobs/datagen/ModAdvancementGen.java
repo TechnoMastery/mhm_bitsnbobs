@@ -3,15 +3,15 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
-import net.minheur.mhm_bitsnbobs.advancement.AdvancementBuilder;
-import net.minheur.mhm_bitsnbobs.advancement.ModAdvancementProvider;
+import net.minheur.techno_lib.advancement.AdvancementBuilder;
+import net.minheur.techno_lib.advancement.AdvancementGenProvider;
 
 import static net.minheur.mhm_bitsnbobs.advancement.ModAdvancements.*;
 
 /**
  * We call them with {@link #build(AdvancementBuilder...)} in {@link #addAdvancement()}.
  */
-public class ModAdvancementGen extends ModAdvancementProvider {
+public class ModAdvancementGen extends AdvancementGenProvider {
     protected ModAdvancementGen(PackOutput output) {
         super(output, MhmBitsnbobs.MOD_ID);
     }
@@ -53,6 +53,10 @@ public class ModAdvancementGen extends ModAdvancementProvider {
         );
     }
 
+    /**
+     * Custom method to build the advancements easier.
+     * @param advancements
+     */
     public void build(AdvancementBuilder... advancements) {
         for (AdvancementBuilder advancement : advancements) {
             String id = advancement.getFullId();

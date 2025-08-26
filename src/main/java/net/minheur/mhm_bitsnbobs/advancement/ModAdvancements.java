@@ -7,9 +7,14 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
-import net.minheur.mhm_bitsnbobs.compat.compatItemlike.OtherModItems;
+import net.minheur.mhm_bitsnbobs.compat.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
+import net.minheur.techno_lib.advancement.AdvancementBuilder;
+import net.minheur.techno_lib.advancement.CriterionBuilder;
 
+/**
+ * The advancement registering class. To add them to the datagen, go to {@link net.minheur.mhm_bitsnbobs.datagen.ModAdvancementGen} and add it to the {@code build} function.
+ */
 public class ModAdvancements {
     private static final ResourceLocation inventoryChanged = new ResourceLocation("minecraft", "inventory_changed");
     public static final ResourceLocation placedBlock = new ResourceLocation("minecraft", "placed_block");

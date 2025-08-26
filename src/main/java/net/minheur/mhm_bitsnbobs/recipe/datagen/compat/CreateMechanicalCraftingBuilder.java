@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.*;
+import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 public class CreateMechanicalCraftingBuilder {
     private final JsonObject result = new JsonObject();

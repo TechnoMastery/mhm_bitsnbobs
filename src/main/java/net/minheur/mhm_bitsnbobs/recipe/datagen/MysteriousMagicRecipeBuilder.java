@@ -6,7 +6,6 @@ import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
@@ -18,7 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 public class MysteriousMagicRecipeBuilder {
     private final ItemLike primaryIngredient;

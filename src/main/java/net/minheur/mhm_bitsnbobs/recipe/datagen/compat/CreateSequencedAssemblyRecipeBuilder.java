@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 public class CreateSequencedAssemblyRecipeBuilder {
     private final JsonObject ingredients;

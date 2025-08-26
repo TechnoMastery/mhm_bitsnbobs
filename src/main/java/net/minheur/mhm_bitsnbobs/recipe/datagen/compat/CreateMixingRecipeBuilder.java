@@ -21,10 +21,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 public class CreateMixingRecipeBuilder {
     private final List<JsonObject> ingredients = new ArrayList<>();

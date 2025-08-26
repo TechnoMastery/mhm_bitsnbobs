@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.getBuiltInItemRegistry;
+import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 /**
  * Recipe builder for create's compacting recipe

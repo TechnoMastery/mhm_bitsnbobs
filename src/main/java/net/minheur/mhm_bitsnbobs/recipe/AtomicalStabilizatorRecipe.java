@@ -12,7 +12,7 @@ import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import org.jetbrains.annotations.Nullable;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.areStacksEqualEnough;
+import static net.minheur.techno_lib.Utils.areStacksEqualEnough;
 
 public class AtomicalStabilizatorRecipe implements Recipe<SimpleContainer> {
     private final ItemStack inputLeft;

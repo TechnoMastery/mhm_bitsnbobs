@@ -10,7 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minheur.mhm_bitsnbobs.util.Utils;
 
 public class WindStickItem extends Item {
     public WindStickItem(Properties pProperties) {
