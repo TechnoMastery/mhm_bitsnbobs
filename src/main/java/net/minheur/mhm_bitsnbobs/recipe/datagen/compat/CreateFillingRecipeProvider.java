@@ -22,6 +22,9 @@ import java.util.function.Consumer;
 
 import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
+/**
+ * Datagen creation class for filling recipe from Create
+ */
 public class CreateFillingRecipeProvider {
     /**
      * The List of ingredient items
@@ -123,7 +126,7 @@ public class CreateFillingRecipeProvider {
     }
 
     /**
-     * The {@link CreateCrushingRecipeBuilder.Result} is a subclass to manage the recipe once finished.
+     * The {@link CreateFillingRecipeProvider.Result} is a subclass to manage the recipe once finished.
      */
     public static class Result implements FinishedRecipe {
         /**
