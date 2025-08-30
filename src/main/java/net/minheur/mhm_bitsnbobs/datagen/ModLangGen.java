@@ -2,11 +2,11 @@ package net.minheur.mhm_bitsnbobs.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.mhm_bitsnbobs.advancement.ModAdvancements;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
-import net.minheur.techno_lib.advancement.AdvancementBuilder;
 import net.minheur.techno_lib.lang.LanguageGenProvider;
 
 /**
@@ -342,12 +342,100 @@ public class ModLangGen extends LanguageGenProvider {
         addBlock(ModBlocks.SUPER_CHARGED_BLOCK)
                 .en_us("Super charged block")
                 .fr_fr("Bloc super chargé");
+
+
+        // advancements
+        addAdvancementTitle(ModAdvancements.adventure_STORM_SWORD)
+                .en_us("Height voltage utilities")
+                .fr_fr("Opération haut voltages");
+        addAdvancementDesc(ModAdvancements.adventure_STORM_SWORD)
+                .en_us("Get the sword of the storm")
+                .fr_fr("L'épée de la tempète");
+        addAdvancementTitle(ModAdvancements.adventure_LIGTHNING_UPGRADE)
+                .en_us("The upgrade of the netherite")
+                .fr_fr("L'amélioration pour la netherite");
+        addAdvancementDesc(ModAdvancements.adventure_LIGTHNING_UPGRADE)
+                .en_us("Pretty powerful")
+                .fr_fr("Plutôt fort non ?");
+        addAdvancementTitle(ModAdvancements.adventure_ITS_CHARGED)
+                .en_us("The super-ingot")
+                .fr_fr("Le super-lingot");
+        addAdvancementDesc(ModAdvancements.adventure_ITS_CHARGED)
+                .en_us("When you're too rich for netherite")
+                .fr_fr("Quand tu es trop riche pour la netherite");
+
+        addAdvancementTitle(ModAdvancements.ae2_QUANTUM_CORE)
+                .en_us("A killing core")
+                .fr_fr("Un noyeau tueur");
+        addAdvancementDesc(ModAdvancements.ae2_QUANTUM_CORE)
+                .en_us("You definitely shouldn't play with that.")
+                .fr_fr("Tu dois faire attention avec cette puissance");
+        addAdvancementTitle(ModAdvancements.ae2_QUANTUM_STAFF)
+                .en_us("A staff")
+                .fr_fr("Un septre");
+        addAdvancementDesc(ModAdvancements.ae2_QUANTUM_STAFF)
+                .en_us("A BIG weapon...")
+                .fr_fr("Une arme trop puissante.");
+        addAdvancementTitle(ModAdvancements.ae2_SINGULARITY)
+                .en_us("A singularity.")
+                .fr_fr("Une singularitée");
+        addAdvancementDesc(ModAdvancements.ae2_SINGULARITY)
+                .en_us("You'll want lots of them soon.")
+                .fr_fr("Tu en voudras plus.");
+        addAdvancementTitle(ModAdvancements.ae2_STABLE_POWER)
+                .en_us("A core controlled")
+                .fr_fr("Un noyeau controllé");
+        addAdvancementDesc(ModAdvancements.ae2_STABLE_POWER)
+                .en_us("This time, you'll chose who to kill.")
+                .fr_fr("Cette fois, tu contrôle qui tuer.");
+
+        addAdvancementTitle(ModAdvancements.creative_THE_ESSENCE_root)
+                .en_us("Hu ho...")
+                .fr_fr("Ho ho...");
+        addAdvancementDesc(ModAdvancements.creative_THE_ESSENCE_root)
+                .en_us("You're not suppose to have that !!")
+                .fr_fr("T'es pas censé avoir sa !!");
+        addAdvancementTitle(ModAdvancements.creative_PACKAGE)
+                .en_us("Creative package")
+                .fr_fr("Packet creatif");
+        addAdvancementDesc(ModAdvancements.creative_PACKAGE)
+                .en_us("Well done !")
+                .fr_fr("Bravo ! Tu est déterminé toi !");
+        addAdvancementTitle(ModAdvancements.creative_THE_INGOT)
+                .en_us("The god's ingot")
+                .fr_fr("Le lingot des dieux");
+        addAdvancementDesc(ModAdvancements.creative_THE_INGOT)
+                .en_us("This is  too powerful for your hands !")
+                .fr_fr("C'est trop puissant pour tes mains !");
+        addAdvancementTitle(ModAdvancements.creative_THE_EGG)
+                .en_us("The egg")
+                .fr_fr("L'œuf");
+        addAdvancementDesc(ModAdvancements.creative_THE_EGG)
+                .en_us("Source of life. From the god power.")
+                .fr_fr("La source de vie. Prise aux dieux");
+
+        addAdvancementTitle(ModAdvancements.dirt_DIRT_root)
+                .en_us("Mine dirt !")
+                .fr_fr("Minez de la terre !");
+        addAdvancementDesc(ModAdvancements.dirt_DIRT_root)
+                .en_us("Easy right ?")
+                .fr_fr("C'était simple nan ?");
+        addAdvancementTitle(ModAdvancements.dirt_VERY_COMPRESSED)
+                .en_us("That's compact...")
+                .fr_fr("C'est compacte...");
+        addAdvancementDesc(ModAdvancements.dirt_VERY_COMPRESSED)
+                .en_us("You realize compacting dirt make things compact.")
+                .fr_fr("Tu réalise que compacter rend compacte.");
+        addAdvancementTitle(ModAdvancements.dirt_STRONG_SWORD)
+                .en_us("The powerful one")
+                .fr_fr("La puissante");
+        addAdvancementDesc(ModAdvancements.dirt_STRONG_SWORD)
+                .en_us("You're one step from the best one !")
+                .fr_fr("Tu est a 2 pas de la meilleure !");
+
     }
 
     public TranslationBuilder addMenuName(String id) {
         return add("menu." + id);
-    }
-    public TranslationBuilder addAdvancementTitle(AdvancementBuilder adv) {
-        return addAdvancementTitle(adv.getGroup(), adv.getId());
     }
 }
