@@ -535,6 +535,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         millingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 50, 3);
 
         // create crushing
+        crushingRecipe(pWriter, ModItems.DARKENED_BIOMASS.get(), Items.BROWN_MUSHROOM, 500);
         crushingRecipe(pWriter, ModItems.BLUE_BIOMASS.get(), Items.LAPIS_LAZULI, 500);
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, ModItems.QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
