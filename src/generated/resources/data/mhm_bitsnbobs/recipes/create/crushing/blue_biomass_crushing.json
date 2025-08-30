@@ -1,0 +1,14 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:blue_biomass"
+    }
+  ],
+  "processingTime": 500,
+  "results": [
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ]
+}

@@ -75,6 +75,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.LIGHTNING_UPGRADE);
         simpleItem(ModItems.BIOMASS);
         simpleItem(ModItems.DARKENED_BIOMASS);
+        simpleItem(ModItems.BLUE_BIOMASS);
         simpleItem(ModItems.INK_BOTTLE);
         simpleItem(ModItems.SAPPHIRE_NUGGET);
         simpleItem(ModItems.TREE_GROWER);

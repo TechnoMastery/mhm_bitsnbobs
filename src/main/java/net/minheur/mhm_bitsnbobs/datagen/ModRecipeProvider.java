@@ -306,6 +306,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(Items.COAL)
                 .unlock(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
                 .save(pWriter, "coal_compacting_extreme");
+        CreateCompactingRecipeBuilder.createCompacting()
+                .addHeatCondition(HeatCondition.SUPERHEATED)
+                .addIngredient(ModItems.BIOMASS.get())
+                .addIngredient(ModItems.BIOMASS.get())
+                .addIngredient(ModItems.BIOMASS.get())
+                .addResult(ModItems.BLUE_BIOMASS.get())
+                .unlock(getHasName(ModItems.BIOMASS.get()), has(ModItems.BIOMASS.get()))
+                .save(pWriter, "blue_compacting");
 
         // mixing
         CreateMixingRecipeBuilder.mix()
@@ -527,6 +535,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         millingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 50, 3);
 
         // create crushing
+        crushingRecipe(pWriter, ModItems.BLUE_BIOMASS.get(), Items.LAPIS_LAZULI, 500);
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, ModItems.QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, Items.RED_TERRACOTTA, Items.RED_SAND, 500, 3);

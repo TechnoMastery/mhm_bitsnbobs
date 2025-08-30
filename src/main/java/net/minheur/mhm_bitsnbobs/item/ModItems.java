@@ -271,6 +271,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DARKENED_BIOMASS = ITEMS.register("darkened_biomass",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLUE_BIOMASS = ITEMS.register("blue_biomass",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RED_CLAY_BALL = ITEMS.register("red_clay_ball",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> INK_BOTTLE = ITEMS.register("ink_bottle",
