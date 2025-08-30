@@ -384,6 +384,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         fillingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
         fillingRecipe(pWriter, Items.IRON_NUGGET, "create_enchantment_industry:experience", 3, OtherModItems.Create.XP_NUGGET.getAsRawItem());
         fillingRecipe(pWriter, OtherModItems.Create.ZINC.getAsRawItem(), "minecraft:water", 300, ModItems.OXIDIZED_ZINC.get());
+        fillingRecipe(pWriter, ModItems.PIECE_OF_DIRT.get(), "minecraft:water", 275, ModItems.BIOMASS.get());
 
         //create pressing
         pressingRecipe(pWriter, Items.BAKED_POTATO, ModItems.EXPLODED_POTATO.get());
@@ -391,8 +392,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // create haunting
         hauntingRecipe(pWriter, Items.IRON_INGOT, OtherModItems.Tfmg.LEAD_INGOT.getAsRawItem());
+        hauntingRecipe(pWriter, ModItems.BIOMASS.get(), ModItems.DARKENED_BIOMASS.get());
 
         // create sequence
+        CreateSequencedAssemblyRecipeBuilder.sequence(Items.GLASS_BOTTLE, Items.INK_SAC, ModItems.INK_BOTTLE.get(), 1)
+                .addStep(getSequenceFilling(ModItems.INK_BOTTLE.get(), "minecraft:water", 150))
+                .addStep(getSequenceDeploying(ModItems.INK_BOTTLE.get(), ModItems.DARKENED_BIOMASS.get()))
+                .unlock(getHasName(Items.GLASS_BOTTLE), has(Items.GLASS_BOTTLE))
+                .save(pWriter, "ink_sac_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.QUANTUMITE_INGOT.get(), ModItems.QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get(), 1)
                 .addStep(getSequencePressing(ModItems.HALF_QUANTUMITE_SHEET.get()))
                 .addStep(getSequencePressing(ModItems.HALF_QUANTUMITE_SHEET.get()))
@@ -532,7 +539,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(Items.SOUL_SOIL), has(Items.SOUL_SOIL))
                 .save(pWriter, "soul_soil_crushing");
         crushingRecipe(pWriter, ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.SMALL_CREATIVE_NUGGET.get(), 0.02f, 500);
-        crushingRecipe(pWriter, ModBlocks.COMPRESSED_DIRT.get(), Items.INK_SAC, ModItems.BIOMASS.get(), 15, 0.5f, 0.2f);
+        crushingRecipe(pWriter, ModBlocks.COMPRESSED_DIRT.get(), ModItems.PIECE_OF_DIRT.get(), 15);
         CreateCrushingRecipeBuilder.crush(5)
                 .addIngredient(ModBlocks.RESOURCE_DIRT_BLOCK.get())
                 .addResult(ModItems.COPPER_BALL.get(), 5)

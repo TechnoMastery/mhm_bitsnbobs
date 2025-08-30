@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_compressed_dirt": {
+    "has_glass_bottle": {
       "conditions": {
         "items": [
           {
             "items": [
-              "mhm_bitsnbobs:compressed_dirt"
+              "minecraft:glass_bottle"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:compressed_dirtcrushing"
+        "recipe": "mhm_bitsnbobs:ink_sac_sequence"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_compressed_dirt",
+      "has_glass_bottle",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:compressed_dirtcrushing"
+      "mhm_bitsnbobs:ink_sac_sequence"
     ]
   },
   "sends_telemetry_event": false

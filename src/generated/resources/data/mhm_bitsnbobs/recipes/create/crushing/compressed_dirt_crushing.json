@@ -8,12 +8,7 @@
   "processingTime": 15,
   "results": [
     {
-      "chance": 0.5,
-      "item": "minecraft:ink_sac"
-    },
-    {
-      "chance": 0.2,
-      "item": "mhm_bitsnbobs:biomass"
+      "item": "mhm_bitsnbobs:piece_of_dirt"
     }
   ]
 }

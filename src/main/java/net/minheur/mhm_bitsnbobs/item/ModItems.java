@@ -269,7 +269,11 @@ public class ModItems {
             () -> new ZombieArmItem(new Item.Properties()));
     public static final RegistryObject<Item> BIOMASS = ITEMS.register("biomass",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DARKENED_BIOMASS = ITEMS.register("darkened_biomass",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RED_CLAY_BALL = ITEMS.register("red_clay_ball",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> INK_BOTTLE = ITEMS.register("ink_bottle",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",
