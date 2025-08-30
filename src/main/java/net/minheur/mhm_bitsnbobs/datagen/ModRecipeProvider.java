@@ -379,12 +379,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(Items.REDSTONE)
                 .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "redstone_mixing");
-        CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(Items.COAL)
-                .addIngredient(Items.BLAZE_POWDER)
-                .addResult(Items.GUNPOWDER, 2)
-                .unlock(getHasName(Items.BLAZE_POWDER), has(Items.BLAZE_POWDER))
-                .save(pWriter, "gunpowder");
 
         // crate filling
         fillingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
