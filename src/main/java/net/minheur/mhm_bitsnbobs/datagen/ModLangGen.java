@@ -432,6 +432,67 @@ public class ModLangGen extends LanguageGenProvider {
         addAdvancementDesc(ModAdvancements.dirt_STRONG_SWORD)
                 .en_us("You're one step from the best one !")
                 .fr_fr("Tu est a 2 pas de la meilleure !");
+        addAdvancementTitle(ModAdvancements.dirt_PLACED_RUBINIUM)
+                .en_us("The one that cost much")
+                .fr_fr("Celui qui coûte");
+        addAdvancementDesc(ModAdvancements.dirt_PLACED_RUBINIUM)
+                .en_us("The rubis+")
+                .fr_fr("Le rubis +");
+        addAdvancementTitle(ModAdvancements.dirt_PLACED_RUBIS_ORE)
+                .en_us("A craftable ore")
+                .fr_fr("Un minerais fabricable");
+        addAdvancementDesc(ModAdvancements.dirt_PLACED_RUBIS_ORE)
+                .en_us("Shiny")
+                .fr_fr("Brillant");
+        addAdvancementTitle(ModAdvancements.dirt_RESOURCE_PACK)
+                .en_us("Valuable dirt")
+                .fr_fr("Terre précieuse");
+        addAdvancementDesc(ModAdvancements.dirt_RESOURCE_PACK)
+                .en_us("You got all resources from it")
+                .fr_fr("Tu as eu toutes les resources qu'elle offre");
+        addAdvancementTitle(ModAdvancements.dirt_ATE_DIRT)
+                .en_us("A wet dirt...")
+                .fr_fr("Une terre mouillé...");
+        addAdvancementDesc(ModAdvancements.dirt_ATE_DIRT)
+                .en_us("Did you eat it ?")
+                .fr_fr("L'as tu mangé ?");
+        addAdvancementTitle(ModAdvancements.dirt_HOT_SWORD)
+                .en_us("Hot sword")
+                .fr_fr("Epée chaude");
+        addAdvancementDesc(ModAdvancements.dirt_HOT_SWORD)
+                .en_us("Careful to not get burned")
+                .fr_fr("Attention de ne pas se brûler");
+
+        addAdvancementTitle(ModAdvancements.story_BUTTONS)
+                .en_us("Buttons !")
+                .fr_fr("Boutons !");
+        addAdvancementDesc(ModAdvancements.story_BUTTONS)
+                .en_us("Was it a mistake ?")
+                .fr_fr("Est-ce une erreur ?");
+        addAdvancementTitle(ModAdvancements.story_MORE_BUTTONS)
+                .en_us("Buttons ! Again !")
+                .fr_fr("Plus de boutons !");
+        addAdvancementDesc(ModAdvancements.story_MORE_BUTTONS)
+                .en_us("Well, here you're cooked.")
+                .fr_fr("Ben, là c'est fichu.");
+        addAdvancementTitle(ModAdvancements.story_FIRE_POWER)
+                .en_us("Fire-full")
+                .fr_fr("Du feu plein la tête");
+        addAdvancementDesc(ModAdvancements.story_FIRE_POWER)
+                .en_us("Strong like a diamond")
+                .fr_fr("Dur comme du diamant");
+        addAdvancementTitle(ModAdvancements.story_GROWING_FIRE)
+                .en_us("Let the fire grow...")
+                .fr_fr("Laisse le feu grandir...");
+        addAdvancementDesc(ModAdvancements.story_GROWING_FIRE)
+                .en_us("As a plant.")
+                .fr_fr("Tel une plante.");
+        addAdvancementTitle(ModAdvancements.story_HARD_IRON)
+                .en_us("A powerful ingot")
+                .fr_fr("Un lingot puissant");
+        addAdvancementDesc(ModAdvancements.story_HARD_IRON)
+                .en_us("And hard too")
+                .fr_fr("Solide aussi");
 
     }
 

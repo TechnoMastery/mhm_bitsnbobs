@@ -393,6 +393,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         fillingRecipe(pWriter, Items.IRON_NUGGET, "create_enchantment_industry:experience", 3, OtherModItems.Create.XP_NUGGET.getAsRawItem());
         fillingRecipe(pWriter, OtherModItems.Create.ZINC.getAsRawItem(), "minecraft:water", 300, ModItems.OXIDIZED_ZINC.get());
         fillingRecipe(pWriter, ModItems.PIECE_OF_DIRT.get(), "minecraft:water", 275, ModItems.BIOMASS.get());
+        fillingRecipe(pWriter, ModItems.PIECE_OF_DIRT.get(), "minecraft:water", 15, ModItems.WET_DIRT.get());
 
         //create pressing
         pressingRecipe(pWriter, Items.BAKED_POTATO, ModItems.EXPLODED_POTATO.get());

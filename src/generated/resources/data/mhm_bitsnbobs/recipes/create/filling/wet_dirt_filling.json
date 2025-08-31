@@ -1,0 +1,15 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:piece_of_dirt"
+    },
+    {
+      "amount": 15,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": {
+    "item": "mhm_bitsnbobs:wet_dirt"
+  }
+}

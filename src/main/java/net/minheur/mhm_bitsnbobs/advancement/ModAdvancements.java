@@ -232,7 +232,7 @@ public class ModAdvancements {
             .rewards(new AdvancementRewards.Builder().addExperience(5).build());
     public static final AdvancementBuilder dirt_STRONG_SWORD = addWithParent("strong_sword", dirtGroup)
             .parent(dirt_HOT_SWORD.getLoc())
-            .display(ModItems.FIRE_SWORD.get(), null, FrameType.TASK,
+            .display(ModItems.RUBINIUM_SWORD.get(), null, FrameType.TASK,
                     true, true, false)
             .criterion("get_sword", simpleCriterion(
                     placedBlock).itemCondition(ModItems.RUBINIUM_SWORD.get()).build())
