@@ -178,7 +178,7 @@ dependencies {
     implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
 
     // TechnoLib
-    implementation fg.deobf("curse.maven:technolib-1335039:6929883")
+    implementation fg.deobf("curse.maven:technolib-1335039:6948131")
 
     // create ei
     implementation fg.deobf("curse.maven:create-enchantment-industry-688768:${create_ei_file_id}")
