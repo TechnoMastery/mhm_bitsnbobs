@@ -1,8 +1,6 @@
 package net.minheur.mhm_bitsnbobs.datagen;
 
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.RecordItem;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.advancement.ModAdvancements;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
@@ -11,9 +9,6 @@ import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
 import net.minheur.techno_lib.lang.LanguageGenProvider;
-import org.jetbrains.annotations.NotNull;
-
-import java.util.function.Supplier;
 
 /**
  * Lang generator. Specify with the function what type of translation you want then set the parameters to define the key.
@@ -716,6 +711,12 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.DIRTY_HUMID_POTION)
                 .en_us("Dirty humid potion")
                 .fr_fr("Potion humide salle");
+        addItem(ModItems.HUMID_POTION)
+                .en_us("Humid potion")
+                .fr_fr("Potion humide");
+        addItem(ModItems.LITTLE_HUMID_POTION)
+                .en_us("Little humid potion")
+                .fr_fr("Petite potion humide");
         addItem(ModItems.EMPTY_BIG_FLASK)
                 .en_us("Empty big flask")
                 .fr_fr("Grande fiole vide");
@@ -740,6 +741,87 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD)
                 .en_us("Quantum assisted circuit board")
                 .fr_fr("Circuit imprimé quantique assisté");
+        addItem(ModItems.PIECE_OF_DIRT)
+                .en_us("Piece of dirt")
+                .fr_fr("Morceau de terre");
+        addItem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT)
+                .en_us("Piece of extremely dry dirt")
+                .fr_fr("Morceau de terre extrêmement sèche");
+        addItem(ModItems.PINE_CONE)
+                .en_us("Pine cone")
+                .fr_fr("Pomme de pin");
+        addItem(ModItems.PRINTED_QUANTUM_CIRCUIT)
+                .en_us("Printed quantum circuit")
+                .fr_fr("Circuit quantique");
+        addItem(ModItems.MAGIC_SHARD)
+                .en_us("Magic shard")
+                .fr_fr("Eclat de magie");
+        addItem(ModItems.METAL_DETECTOR)
+                .en_us("Metal detector")
+                .fr_fr("Détecteur de métal");
+        addItem(ModItems.MILK_BUCKET_WITH_EGG)
+                .en_us("Milk bucket with eggs")
+                .fr_fr("Seau de lait et oeufs");
+        addItem(ModItems.LEGENDS_AWAKEN_V1_MUSIC_DISC)
+                .en_us("Legends awaken V1 music disc")
+                .fr_fr("Disque de musique de Legends awaken V1");
+        addRecordDesc(ModItems.LEGENDS_AWAKEN_V1_MUSIC_DISC)
+                .en_us("Legends awaken V1 - Catoutou")
+                .fr_fr("Legends awaken V1 - Catoutou");
+        addItem(ModItems.LEGENDS_AWAKEN_V2_MUSIC_DISC)
+                .en_us("Legends awaken V2 music disc")
+                .fr_fr("Disque de musique de Legends awaken V2");
+        addRecordDesc(ModItems.LEGENDS_AWAKEN_V2_MUSIC_DISC)
+                .en_us("Legends awaken V2 - Catoutou")
+                .fr_fr("Legends awaken V2 - Catoutou");
+        addItem(ModItems.LIGHTNING_SWORD)
+                .en_us("Lightning upgrade")
+                .fr_fr("Epée de foudre");
+        addItem(ModItems.LIGHTNING_UPGRADE)
+                .en_us("Lightning upgrade")
+                .fr_fr("Amélioration de foudre");
+        addItem(ModItems.REDSTONE_PULSE_MUSIC_DISC)
+                .en_us("Redstone pulse music disc")
+                .fr_fr("Disque de musique de Redstone pulse");
+        addRecordDesc(ModItems.REDSTONE_PULSE_MUSIC_DISC)
+                .en_us("Redstone pulse - Catoutou")
+                .fr_fr("Redstone pulse - Catoutou");
+        addItem(ModItems.CUBIC_GROOVE_MUSIC_DISC)
+                .en_us("Cubic groove music disc")
+                .fr_fr("Disque de musique de Cubic groove");
+        addRecordDesc(ModItems.CUBIC_GROOVE_MUSIC_DISC)
+                .en_us("Cubic groove - Catoutou")
+                .fr_fr("Cubic groove - Catoutou");
+        addItem(ModItems.IN_THE_BLOCK_MUSIC_DISC)
+                .en_us("In the block music disc")
+                .fr_fr("Disque de musique de In the block");
+        addRecordDesc(ModItems.IN_THE_BLOCK_MUSIC_DISC)
+                .en_us("In the block - Catoutou")
+                .fr_fr("In the block - Catoutou");
+        addItem(ModItems.IN_THE_WORLD_OF_MINECRAFT_MUSIC_DISC)
+                .en_us("In the world of minecraft music disc")
+                .fr_fr("Disque de musique de In the world of minecraft");
+        addRecordDesc(ModItems.IN_THE_WORLD_OF_MINECRAFT_MUSIC_DISC)
+                .en_us("In the world of minecraft - Catoutou")
+                .fr_fr("In the world of minecraft - Catoutou");
+        addItem(ModItems.MY_MINECRAFT_WORLD_MUSIC_DISC)
+                .en_us("My minecraft world music disc")
+                .fr_fr("Disque de musique de My minecraft world");
+        addRecordDesc(ModItems.MY_MINECRAFT_WORLD_MUSIC_DISC)
+                .en_us("My minecraft world - Catoutou")
+                .fr_fr("My minecraft world - Catoutou");
+        addItem(ModItems.NETHER_NIGHTS_MUSIC_DISC)
+                .en_us("Nether nights music disc")
+                .fr_fr("Disque de musique de Nether nights");
+        addRecordDesc(ModItems.NETHER_NIGHTS_MUSIC_DISC)
+                .en_us("Nether night - Catoutou")
+                .fr_fr("Nether night - Catoutou");
+        addItem(ModItems.SERENE_ECHO_MUSIC_DISC)
+                .en_us("Serene echo music disc")
+                .fr_fr("Disque de musique de Serene echo");
+        addRecordDesc(ModItems.SERENE_ECHO_MUSIC_DISC)
+                .en_us("Serene echo - Catoutou")
+                .fr_fr("Serene echo - Catoutou");
 
 
 
