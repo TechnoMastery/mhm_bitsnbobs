@@ -822,6 +822,21 @@ public class ModLangGen extends LanguageGenProvider {
         addRecordDesc(ModItems.SERENE_ECHO_MUSIC_DISC)
                 .en_us("Serene echo - Catoutou")
                 .fr_fr("Serene echo - Catoutou");
+        addItem(ModItems.DARK_SOUL_MUSIC_DISC)
+                .en_us("Dark soul music disc")
+                .fr_fr("Disque de musique de Dark soul");
+        addRecordDesc(ModItems.DARK_SOUL_MUSIC_DISC)
+                .en_us("Hold On - Myuu")
+                .fr_fr("Hold On - Myuu");
+        addItem(ModItems.QUANTUM_PROCESSOR)
+                .en_us("Quantum processor")
+                .fr_fr("Procésseur quantique");
+        addItem(ModItems.HALF_STICK)
+                .en_us("Half stick")
+                .fr_fr("Moitié de baton");
+        addItem(ModItems.QUARTER_STICK)
+                .en_us("Quarter stick")
+                .fr_fr("Quart de baton");
 
 
 
