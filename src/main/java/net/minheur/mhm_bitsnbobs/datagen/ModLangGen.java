@@ -837,6 +837,141 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.QUARTER_STICK)
                 .en_us("Quarter stick")
                 .fr_fr("Quart de baton");
+        addItem(ModItems.DEVIL_BREAD)
+                .en_us("Devil bread")
+                .fr_fr("Pains du diable");
+        addItem(ModItems.HOLY_BREAD)
+                .en_us("Holy bread")
+                .fr_fr("Pain du paradis");
+        addItem(ModItems.HARDENED_INGOT)
+                .en_us("Hardened ingot")
+                .fr_fr("Lingot endurcie");
+        addItem(ModItems.CORN)
+                .en_us("Corn")
+                .fr_fr("Maïs");
+        addItem(ModItems.CORN_SEEDS)
+                .en_us("Corn seeds")
+                .fr_fr("Graines de maïs");
+        addItem(ModItems.DARK_BOAT)
+                .en_us("Dark boat")
+                .fr_fr("Bateau sombre");
+        addItem(ModItems.DARK_CHEST_BOAT)
+                .en_us("Dark chest boat")
+                .fr_fr("Bateau sombre avec coffre");
+        addItem(ModItems.CREATIVE_ESSENCE)
+                .en_us("Creative essence")
+                .fr_fr("Essence créative");
+        addItem(ModItems.CREATIVE_INGOT)
+                .en_us("Creative ingot")
+                .fr_fr("Lingot créatif");
+        addItem(ModItems.CREATIVE_NUGGET)
+                .en_us("Creative nugget")
+                .fr_fr("Pépite créatif");
+        addItem(ModItems.CREATIVE_RESIDUE)
+                .en_us("Creative residue")
+                .fr_fr("Résidu créatif");
+        addItem(ModItems.SMALL_CREATIVE_NUGGET)
+                .en_us("Small creative nugget")
+                .fr_fr("Petite pépite créative");
+        addItem(ModItems.QUANTUM_CORE)
+                .en_us("Quantum core")
+                .fr_fr("Noyau quantique");
+        addItem(ModItems.QUANTUM_DUST)
+                .en_us("Quantum dust")
+                .fr_fr("Poudre quantique");
+        addItem(ModItems.QUANTUM_PROCESSOR)
+                .en_us("Quantum processor")
+                .fr_fr("Processeur quantique");
+        addItem(ModItems.QUANTUM_STAFF)
+                .en_us("Quantum staff")
+                .fr_fr("Septre quantique");
+        addItem(ModItems.QUANTUMITE_CHUNK)
+                .en_us("Quantumite chunk")
+                .fr_fr("Morceau de quantumite");
+        addItem(ModItems.QUANTUMITE_INGOT)
+                .en_us("Quantumite ingot")
+                .fr_fr("Lingot de quantumite");
+        addItem(ModItems.QUANTUMITE_SHEET)
+                .en_us("Quantumite chunk")
+                .fr_fr("Plaque de quantumite");
+        addItem(ModItems.SKULLKERY_TOOL)
+                .en_us("Skulkery tool")
+                .fr_fr("Outil de têtologie");
+        addItem(ModItems.SLIME_SWORD)
+                .en_us("Slime sword")
+                .fr_fr("Epée de slime");
+        addItem(ModItems.SLIMY_INGOT)
+                .en_us("Slimy ingot")
+                .fr_fr("Lingot de slime");
+        addItem(ModItems.SLIMY_STICK)
+                .en_us("Slimy stick")
+                .fr_fr("Baton de slime");
+        addItem(ModItems.SPAWNER_PART)
+                .en_us("Spawner part")
+                .fr_fr("Morceau de spawner");
+        addItem(ModItems.QUARTZ_SHARD)
+                .en_us("Quartz shard")
+                .fr_fr("Eclat de quartz");
+        addItem(ModItems.RED_CLAY_BALL)
+                .en_us("Red clay ball")
+                .fr_fr("Balle d'argile rouge");
+        addItem(ModItems.RHINO_SPAWN_EGG)
+                .en_us("Rhino spawn egg")
+                .fr_fr("Oeuf d'apparition de rhino");
+        addItem(ModItems.ROTTEN_BEEF)
+                .en_us("Rotten beef")
+                .fr_fr("Boeuf putréfié");
+        addItem(ModItems.ROTTEN_CHICKEN)
+                .en_us("Rotten chicken")
+                .fr_fr("Poulet putréfié");
+        addItem(ModItems.ROTTEN_COD)
+                .en_us("Rotten cod")
+                .fr_fr("Morue putréfié");
+        addItem(ModItems.ROTTEN_MUTTON)
+                .en_us("Rotten mutton")
+                .fr_fr("Mouton putréfié");
+        addItem(ModItems.ROTTEN_PORKCHOP)
+                .en_us("Rotten porkchop")
+                .fr_fr("Porc putréfié");
+        addItem(ModItems.ROTTEN_RABBIT)
+                .en_us("Rotten rabbit")
+                .fr_fr("Lapin putréfié");
+        addItem(ModItems.ROTTEN_SALMON)
+                .en_us("Rotten salmon")
+                .fr_fr("Saumon putréfié");
+        addItem(ModItems.ROTTEN_LEATHER)
+                .en_us("Rotten leather")
+                .fr_fr("Cuir putréfié");
+        addItem(ModItems.RESOURCE_DIRT)
+                .en_us("Resource dirt")
+                .fr_fr("Terre de resource");
+        addItem(ModItems.RAW_SAPPHIRE)
+                .en_us("Raw sapphire")
+                .fr_fr("Saphir brut");
+        addItem(ModItems.SAPPHIRE)
+                .en_us("Sapphire")
+                .fr_fr("Saphir");
+        addItem(ModItems.SAPPHIRE_AXE)
+                .en_us("Sapphire axe")
+                .fr_fr("Hache en saphir");
+        addItem(ModItems.SAPPHIRE_BOOTS)
+                .en_us("Sapphire boots")
+                .fr_fr("Bottes en saphir");
+        addItem(ModItems.SAPPHIRE_CHESTPLATE)
+                .en_us("Sapphire chestplate")
+                .fr_fr("Plastron en saphir");
+        addItem(ModItems.SAPPHIRE_HELMET)
+                .en_us("Sapphire helmet")
+                .fr_fr("Casque en saphir");
+        addItem(ModItems.SAPPHIRE_HOE)
+                .en_us("Sapphire hoe")
+                .fr_fr("Houe en saphir");
+        addItem(ModItems.SAPPHIRE_LEGGINGS)
+                .en_us("Sapphire leggings")
+                .fr_fr("Pentalon en saphir");
+
+
+
 
 
 
