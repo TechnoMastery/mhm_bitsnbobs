@@ -828,9 +828,6 @@ public class ModLangGen extends LanguageGenProvider {
         addRecordDesc(ModItems.DARK_SOUL_MUSIC_DISC)
                 .en_us("Hold On - Myuu")
                 .fr_fr("Hold On - Myuu");
-        addItem(ModItems.QUANTUM_PROCESSOR)
-                .en_us("Quantum processor")
-                .fr_fr("Procésseur quantique");
         addItem(ModItems.HALF_STICK)
                 .en_us("Half stick")
                 .fr_fr("Moitié de baton");
@@ -969,9 +966,90 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.SAPPHIRE_LEGGINGS)
                 .en_us("Sapphire leggings")
                 .fr_fr("Pentalon en saphir");
-
-
-
+        addItem(ModItems.SAPPHIRE_NUGGET)
+                .en_us("Sapphire nugget")
+                .fr_fr("Pépite de saphir");
+        addItem(ModItems.SAPPHIRE_PICKAXE)
+                .en_us("Sapphire pickaxe")
+                .fr_fr("Pioche en saphir");
+        addItem(ModItems.SAPPHIRE_SHOVEL)
+                .en_us("Sapphire shovel")
+                .fr_fr("Pelle en saphir");
+        addItem(ModItems.SAPPHIRE_STAFF)
+                .en_us("Sapphire staff")
+                .fr_fr("Sceptre de saphir");
+        addItem(ModItems.SAPPHIRE_SWORD)
+                .en_us("Sapphire sword")
+                .fr_fr("Epée en saphir");
+        addItem(ModItems.RUBINIUM)
+                .en_us("Rubinium")
+                .fr_fr("Rubinium");
+        addItem(ModItems.RUBINIUM_SWORD)
+                .en_us("Rubinium sword")
+                .fr_fr("Epée en rubinium");
+        addItem(ModItems.RUBIS)
+                .en_us("Rubis")
+                .fr_fr("Rubis");
+        addItem(ModItems.SCOOP_OF_CHOCOLATE_SORBET)
+                .en_us("Scoop of chocolate sorbet")
+                .fr_fr("Boule de sorbet au chocolat");
+        addItem(ModItems.SCOOP_OF_STRAWBERRIES_SORBET)
+                .en_us("Scoop of strawberries sorbet")
+                .fr_fr("Boule de sorbet au fraises");
+        addItem(ModItems.SCOOP_OF_SWEET_BERRIES_SORBET)
+                .en_us("Scoop of sweet berries sorbet")
+                .fr_fr("Boule de sorbet au baies sucrées");
+        addItem(ModItems.SCOOP_OF_VANILLA_SORBET)
+                .en_us("Scoop of vanilla sorbet")
+                .fr_fr("Boule de sorbet à la vanille");
+        addItem(ModItems.STABILIZED_QUANTUM_CORE)
+                .en_us("Stabilized quantum core")
+                .fr_fr("Noyau quantique stable");
+        addItem(ModItems.STORM_FRAGMENT)
+                .en_us("Storm fragment")
+                .fr_fr("Eclat de tempête");
+        addItem(ModItems.STRAWBERRIES_SNOWBALL)
+                .en_us("Strawberries snowball")
+                .fr_fr("Boule de neige au fraises");
+        addItem(ModItems.STRAWBERRIES_SORBET)
+                .en_us("Strawberries sorbet")
+                .fr_fr("Sorbet au fraises");
+        addItem(ModItems.STRAWBERRY)
+                .en_us("Strawberry")
+                .fr_fr("Fraise");
+        addItem(ModItems.STRAWBERRY_ICE_CREAM)
+                .en_us("Strawberry ice cream")
+                .fr_fr("Glace à la fraise");
+        addItem(ModItems.STRAWBERRY_SCOOP)
+                .en_us("Strawberry scoop")
+                .fr_fr("Boule de glace à la fraise");
+        addItem(ModItems.STRAWBERRY_SEEDS)
+                .en_us("Strawberry seeds")
+                .fr_fr("Graines de fraise");
+        addItem(ModItems.SUPER_CHARGED_INGOT)
+                .en_us("Super charged ingot")
+                .fr_fr("Lingot super chargé");
+        addItem(ModItems.SWEET_BERRIES_ICE_CREAM)
+                .en_us("Sweet berries ice cream")
+                .fr_fr("Glace aux baies sucrées");
+        addItem(ModItems.SWEET_BERRIES_SCOOP)
+                .en_us("Sweet berries scoop")
+                .fr_fr("Boule de glace aux baies sucrées");
+        addItem(ModItems.SWEET_BERRIES_SNOWBALL)
+                .en_us("Sweet berries snowball")
+                .fr_fr("Boule de neige aux baies sucrées");
+        addItem(ModItems.SWEET_BERRIES_SORBET)
+                .en_us("Sweet berries sorbet")
+                .fr_fr("Sorbet aux baies sucrées");
+        addItem(ModItems.THE_WORLD_OF_CUBES_MUSIC_DISC)
+                .en_us("The world of cubes music disc")
+                .fr_fr("Disque de musique de The world of cubes");
+        addRecordDesc(ModItems.THE_WORLD_OF_CUBES_MUSIC_DISC)
+                .en_us("The world of cube - Catoutou")
+                .fr_fr("The world of cube - Catoutou");
+        addItem(ModItems.TREE_GROWER)
+                .en_us("Tree grower")
+                .fr_fr("Arboriculteur");
 
 
 
