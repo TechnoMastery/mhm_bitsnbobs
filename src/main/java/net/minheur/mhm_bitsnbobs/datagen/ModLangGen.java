@@ -1050,7 +1050,15 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.TREE_GROWER)
                 .en_us("Tree grower")
                 .fr_fr("Arboriculteur");
-
+        addItem(ModItems.OXIDIZED_ZINC)
+                .en_us("Oxidized zinc")
+                .fr_fr("Zinc oxydé");
+        addItem(ModItems.INSCRIBER_QUANTUM_PRESS)
+                .en_us("Inscriber quantum press")
+                .fr_fr("Presse quantique");
+        addItem(ModItems.HALF_QUANTUMITE_SHEET)
+                .en_us("Half quantumite sheet")
+                .fr_fr("Demi plaque de quantumite");
 
 
 
