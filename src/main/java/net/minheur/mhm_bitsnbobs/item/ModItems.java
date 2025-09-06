@@ -139,6 +139,8 @@ public class ModItems {
     public static final RegistryObject<Item> VANILLA_EXTRACT = ITEMS.register("vanilla_extract",
             () -> new Item(new Item.Properties().food(ModFoods.VANILLA_PODS)));
 
+    public static final RegistryObject<Item> NETHER_STICK = ITEMS.register("nether_stick",
+            () -> new NetherStickItem(new Item.Properties().stacksTo(1).durability(185)));
     public static final RegistryObject<Item> ROTTEN_BEEF = ITEMS.register("rotten_beef",
             () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
     public static final RegistryObject<Item> ROTTEN_PORKCHOP = ITEMS.register("rotten_porkchop",
