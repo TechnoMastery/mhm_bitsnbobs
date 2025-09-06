@@ -140,7 +140,7 @@ public class CreateFillingRecipeProvider {
         /**
          * The recipe results list
          */
-        private final JsonObject results;
+        private final JsonObject result;
         /**
          * The recipe advancement
          */
@@ -153,7 +153,7 @@ public class CreateFillingRecipeProvider {
         public Result(ResourceLocation id, List<JsonObject> ingredients, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId) {
             this.id = id;
             this.ingredients = ingredients;
-            this.results = result;
+            this.result = result;
             this.advancement = advancement;
             this.advancementId = advancementId;
         }
@@ -167,7 +167,10 @@ public class CreateFillingRecipeProvider {
             JsonArray ingredients = new JsonArray();
             for (JsonObject ingredient : this.ingredients) ingredients.add(ingredient);
 
-            pJson.add("results", this.results);
+            JsonArray result = new JsonArray();
+            result.add(this.result);
+
+            pJson.add("results", result);
             pJson.add("ingredients", ingredients);
         }
 

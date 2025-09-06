@@ -4,9 +4,11 @@
     "item": "mhm_bitsnbobs:sapphire"
   },
   "loops": 3,
-  "results": {
-    "item": "minecraft:emerald"
-  },
+  "results": [
+    {
+      "item": "minecraft:emerald"
+    }
+  ],
   "sequence": [
     {
       "type": "create:deploying",
@@ -18,9 +20,11 @@
           "item": "minecraft:lime_dye"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unfinished_emerald"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_emerald"
+        }
+      ]
     },
     {
       "type": "create:filling",
@@ -33,9 +37,11 @@
           "fluid": "create_enchantment_industry:experience"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unfinished_emerald"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_emerald"
+        }
+      ]
     },
     {
       "type": "create:deploying",
@@ -47,9 +53,11 @@
           "item": "minecraft:iron_nugget"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unfinished_emerald"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_emerald"
+        }
+      ]
     }
   ],
   "transitionalItem": {

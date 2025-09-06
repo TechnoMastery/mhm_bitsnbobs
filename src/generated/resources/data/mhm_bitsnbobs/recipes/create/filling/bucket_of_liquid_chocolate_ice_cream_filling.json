@@ -9,7 +9,9 @@
       "fluid": "create:chocolate"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:bucket_of_liquid_chocolate_ice_cream"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_chocolate_ice_cream"
+    }
+  ]
 }

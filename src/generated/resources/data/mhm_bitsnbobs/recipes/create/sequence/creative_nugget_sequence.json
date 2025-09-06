@@ -4,9 +4,11 @@
     "item": "mhm_bitsnbobs:small_creative_nugget"
   },
   "loops": 50,
-  "results": {
-    "item": "mhm_bitsnbobs:creative_nugget"
-  },
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:creative_nugget"
+    }
+  ],
   "sequence": [
     {
       "type": "create:deploying",
@@ -18,9 +20,11 @@
           "item": "mhm_bitsnbobs:creative_essence"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_creative_nugget"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_creative_nugget"
+        }
+      ]
     }
   ],
   "transitionalItem": {

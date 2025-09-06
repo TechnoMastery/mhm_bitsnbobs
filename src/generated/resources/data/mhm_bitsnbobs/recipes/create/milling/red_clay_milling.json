@@ -1,8 +1,10 @@
 {
   "type": "create:milling",
-  "ingredients": {
-    "item": "mhm_bitsnbobs:red_clay"
-  },
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:red_clay"
+    }
+  ],
   "processingTime": 50,
   "results": [
     {

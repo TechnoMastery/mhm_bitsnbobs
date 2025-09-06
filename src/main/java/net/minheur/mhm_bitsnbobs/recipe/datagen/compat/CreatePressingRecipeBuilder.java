@@ -1,5 +1,6 @@
 package net.minheur.mhm_bitsnbobs.recipe.datagen.compat;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.simibubi.create.AllRecipeTypes;
 import net.minecraft.advancements.Advancement;
@@ -105,7 +106,7 @@ public class CreatePressingRecipeBuilder {
         /**
          * The recipe results list
          */
-        private final JsonObject results;
+        private final JsonObject result;
         /**
          * The recipe advancement
          */
@@ -118,7 +119,7 @@ public class CreatePressingRecipeBuilder {
         public Result(ResourceLocation id, JsonObject ingredient, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId) {
             this.id = id;
             this.ingredient = ingredient;
-            this.results = result;
+            this.result = result;
             this.advancement = advancement;
             this.advancementId = advancementId;
         }
@@ -129,8 +130,14 @@ public class CreatePressingRecipeBuilder {
          */
         @Override
         public void serializeRecipeData(JsonObject pJson) {
-            pJson.add("ingredients", this.ingredient);
-            pJson.add("results", this.results);
+            JsonArray result = new JsonArray();
+            JsonArray ingredient = new JsonArray();
+
+            result.add(this.result);
+            ingredient.add(this.ingredient);
+
+            pJson.add("ingredients", ingredient);
+            pJson.add("results", result);
         }
 
         /**

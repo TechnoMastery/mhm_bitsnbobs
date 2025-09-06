@@ -8,7 +8,9 @@
       "item": "ae2:logic_processor"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:logic_assisted_circuit_board"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:logic_assisted_circuit_board"
+    }
+  ]
 }

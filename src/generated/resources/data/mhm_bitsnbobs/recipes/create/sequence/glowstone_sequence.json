@@ -4,9 +4,11 @@
     "item": "create:cinder_flour"
   },
   "loops": 1,
-  "results": {
-    "item": "minecraft:glowstone"
-  },
+  "results": [
+    {
+      "item": "minecraft:glowstone"
+    }
+  ],
   "sequence": [
     {
       "type": "create:deploying",
@@ -18,27 +20,37 @@
           "item": "minecraft:blaze_powder"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_dust"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_dust"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "mhm_bitsnbobs:unprocessed_dust"
-      },
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_dust"
-      }
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_dust"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_dust"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "mhm_bitsnbobs:unprocessed_dust"
-      },
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_dust"
-      }
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_dust"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_dust"
+        }
+      ]
     }
   ],
   "transitionalItem": {

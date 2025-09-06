@@ -8,7 +8,9 @@
       "item": "mhm_bitsnbobs:quantum_processor"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:quantum_assisted_circuit_board"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:quantum_assisted_circuit_board"
+    }
+  ]
 }

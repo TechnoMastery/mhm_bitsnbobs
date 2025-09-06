@@ -107,6 +107,9 @@ public class CreateMillingRecipeBuilder {
                 results.add(result);
             }
 
+            JsonArray ingredient = new JsonArray();
+            ingredient.add(this.ingredient);
+
             pJson.add("results", results);
             pJson.addProperty("processingTime", processTime);
             pJson.add("ingredients", ingredient);

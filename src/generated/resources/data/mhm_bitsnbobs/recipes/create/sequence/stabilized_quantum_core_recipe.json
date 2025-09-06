@@ -4,9 +4,11 @@
     "item": "mhm_bitsnbobs:quantum_core"
   },
   "loops": 4,
-  "results": {
-    "item": "mhm_bitsnbobs:stabilized_quantum_core"
-  },
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:stabilized_quantum_core"
+    }
+  ],
   "sequence": [
     {
       "type": "create:deploying",
@@ -18,9 +20,11 @@
           "item": "ae2:singularity"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
     },
     {
       "type": "create:filling",
@@ -33,9 +37,11 @@
           "fluid": "minecraft:water"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
     },
     {
       "type": "create:filling",
@@ -48,9 +54,11 @@
           "fluid": "minecraft:lava"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
     },
     {
       "type": "create:deploying",
@@ -62,9 +70,11 @@
           "item": "ae2:singularity"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
     },
     {
       "type": "create:deploying",
@@ -76,18 +86,24 @@
           "item": "minecraft:obsidian"
         }
       ],
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-      }
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-      },
-      "results": {
-        "item": "mhm_bitsnbobs:unprocessed_quantum_core"
-      }
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unprocessed_quantum_core"
+        }
+      ]
     }
   ],
   "transitionalItem": {

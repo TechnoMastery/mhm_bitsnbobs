@@ -4,9 +4,11 @@
     "item": "minecraft:cobblestone"
   },
   "loops": 3,
-  "results": {
-    "item": "minecraft:netherrack"
-  },
+  "results": [
+    {
+      "item": "minecraft:netherrack"
+    }
+  ],
   "sequence": [
     {
       "type": "create:filling",
@@ -19,9 +21,11 @@
           "fluid": "minecraft:lava"
         }
       ],
-      "results": {
-        "item": "minecraft:cobblestone"
-      }
+      "results": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ]
     },
     {
       "type": "create:filling",
@@ -34,9 +38,11 @@
           "fluid": "minecraft:lava"
         }
       ],
-      "results": {
-        "item": "minecraft:cobblestone"
-      }
+      "results": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ]
     },
     {
       "type": "create:filling",
@@ -49,36 +55,50 @@
           "fluid": "minecraft:lava"
         }
       ],
-      "results": {
-        "item": "minecraft:cobblestone"
-      }
+      "results": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "minecraft:cobblestone"
-      },
-      "results": {
-        "item": "minecraft:cobblestone"
-      }
+      "ingredients": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "minecraft:cobblestone"
-      },
-      "results": {
-        "item": "minecraft:cobblestone"
-      }
+      "ingredients": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "minecraft:cobblestone"
-      },
-      "results": {
-        "item": "minecraft:cobblestone"
-      }
+      "ingredients": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:cobblestone"
+        }
+      ]
     }
   ],
   "transitionalItem": {

@@ -113,10 +113,12 @@ public class CreateSequencedAssemblyRecipeBuilder {
         @Override
         public void serializeRecipeData(JsonObject pJson) {
             pJson.add("ingredient", ingredient);
-            pJson.add("results", result);
             pJson.add("transitionalItem", transitionalItem);
             pJson.addProperty("loops", loops);
             JsonArray steps = new JsonArray();
+            JsonArray results = new JsonArray();
+            results.add(result);
+            pJson.add("results", results);
             for (JsonObject step : this.steps) {
                 steps.add(step);
             }

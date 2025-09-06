@@ -9,7 +9,9 @@
       "fluid": "minecraft:water"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:biomass"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:biomass"
+    }
+  ]
 }

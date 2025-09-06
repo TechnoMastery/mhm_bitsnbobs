@@ -99,6 +99,9 @@ public class CreateDeployingRecipeBuilder {
             ingredients.add(mainIngredient);
             ingredients.add(deployIngredient);
 
+            JsonArray result = new JsonArray();
+            result.add(this.result);
+
             pJson.add("ingredients", ingredients);
             pJson.add("results", result);
         }

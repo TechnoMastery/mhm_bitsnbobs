@@ -8,7 +8,9 @@
       "item": "mhm_bitsnbobs:vanilla_extract"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:bucket_of_liquid_vanilla_ice_cream"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_vanilla_ice_cream"
+    }
+  ]
 }

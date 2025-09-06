@@ -4,36 +4,50 @@
     "item": "mhm_bitsnbobs:quantumite_ingot"
   },
   "loops": 1,
-  "results": {
-    "item": "mhm_bitsnbobs:quantumite_sheet"
-  },
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:quantumite_sheet"
+    }
+  ],
   "sequence": [
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "mhm_bitsnbobs:half_quantumite_sheet"
-      },
-      "results": {
-        "item": "mhm_bitsnbobs:half_quantumite_sheet"
-      }
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:half_quantumite_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:half_quantumite_sheet"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "mhm_bitsnbobs:half_quantumite_sheet"
-      },
-      "results": {
-        "item": "mhm_bitsnbobs:half_quantumite_sheet"
-      }
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:half_quantumite_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:half_quantumite_sheet"
+        }
+      ]
     },
     {
       "type": "create:pressing",
-      "ingredients": {
-        "item": "mhm_bitsnbobs:half_quantumite_sheet"
-      },
-      "results": {
-        "item": "mhm_bitsnbobs:half_quantumite_sheet"
-      }
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:half_quantumite_sheet"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:half_quantumite_sheet"
+        }
+      ]
     }
   ],
   "transitionalItem": {

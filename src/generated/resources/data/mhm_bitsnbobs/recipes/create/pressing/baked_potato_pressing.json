@@ -1,9 +1,13 @@
 {
   "type": "create:pressing",
-  "ingredients": {
-    "item": "minecraft:baked_potato"
-  },
-  "results": {
-    "item": "mhm_bitsnbobs:exploded_potato"
-  }
+  "ingredients": [
+    {
+      "item": "minecraft:baked_potato"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:exploded_potato"
+    }
+  ]
 }

@@ -9,7 +9,9 @@
       "fluid": "create_enchantment_industry:experience"
     }
   ],
-  "results": {
-    "item": "create:experience_nugget"
-  }
+  "results": [
+    {
+      "item": "create:experience_nugget"
+    }
+  ]
 }

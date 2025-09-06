@@ -8,7 +8,9 @@
       "item": "ae2:calculation_processor"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:calculation_assisted_circuit_board"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:calculation_assisted_circuit_board"
+    }
+  ]
 }

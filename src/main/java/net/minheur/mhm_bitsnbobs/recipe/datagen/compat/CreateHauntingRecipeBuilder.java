@@ -97,7 +97,10 @@ public class CreateHauntingRecipeBuilder {
                 results.add(result);
             }
 
-            pJson.add("ingredients", ingredient);
+            JsonArray ingredientArray = new JsonArray();
+            ingredientArray.add(ingredient);
+
+            pJson.add("ingredients", ingredientArray);
             pJson.add("results", results);
         }
 

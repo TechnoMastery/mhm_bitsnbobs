@@ -9,7 +9,9 @@
       "fluid": "minecraft:water"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:wet_dirt"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:wet_dirt"
+    }
+  ]
 }

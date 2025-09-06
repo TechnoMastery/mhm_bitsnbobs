@@ -9,7 +9,9 @@
       "fluid": "minecraft:water"
     }
   ],
-  "results": {
-    "item": "mhm_bitsnbobs:oxidized_zinc"
-  }
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:oxidized_zinc"
+    }
+  ]
 }
