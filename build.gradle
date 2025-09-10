@@ -178,7 +178,7 @@ dependencies {
     implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
 
     // TechnoLib
-    implementation fg.deobf("curse.maven:technolib-1335039:6948131")
+    implementation fg.deobf("curse.maven:technolib-1335039:${technoLib_file_id}")
 
     // create ei
     implementation fg.deobf("curse.maven:create-enchantment-industry-688768:${create_ei_file_id}")
@@ -218,7 +218,7 @@ tasks.named('processResources', ProcessResources).configure {
             mod_id: mod_id, modid: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, create_ei_file_id: create_ei_file_id,
             ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits, tfmg_file_id: tfmg_file_if,
-            megacells_file_id: megacells_file_id, cloth_file_id: cloth_file_id
+            megacells_file_id: megacells_file_id, cloth_file_id: cloth_file_id, technoLib_file_id: technoLib_file_id
     ]
     inputs.properties replaceProperties
 
