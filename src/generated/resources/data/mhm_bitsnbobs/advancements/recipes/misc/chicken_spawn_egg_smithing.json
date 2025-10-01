@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:chicken_smithing"
+        "recipe": "mhm_bitsnbobs:chicken_spawn_egg_smithing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:chicken_smithing"
+      "mhm_bitsnbobs:chicken_spawn_egg_smithing"
     ]
   },
   "sends_telemetry_event": false

@@ -7,7 +7,7 @@
     "item": "minecraft:diamond"
   },
   "result": {
-    "item": "minecraft:chicken"
+    "item": "minecraft:chicken_spawn_egg"
   },
   "template": {
     "item": "mhm_bitsnbobs:base_egg"
