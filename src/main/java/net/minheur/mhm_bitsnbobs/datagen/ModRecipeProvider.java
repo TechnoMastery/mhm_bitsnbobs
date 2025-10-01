@@ -1465,7 +1465,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(result, mainChance)
                 .addResult(otherResult, otherChance)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, getItemName(ingredient) + "crushing");
+                .save(consumer, getItemName(ingredient) + "_crushing");
     }
 
     protected static void hauntingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {

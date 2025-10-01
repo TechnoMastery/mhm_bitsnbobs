@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mhm_bitsnbobs:red_biomasscrushing"
+        "recipe": "mhm_bitsnbobs:red_biomass_crushing"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "mhm_bitsnbobs:red_biomasscrushing"
+      "mhm_bitsnbobs:red_biomass_crushing"
     ]
   },
   "sends_telemetry_event": false
