@@ -1,6 +1,9 @@
 package net.minheur.mhm_bitsnbobs.compat;
 
 import net.minheur.techno_lib.otherItem.OtherModItem;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * This class contains the creation of {@link OtherModItem} instances.
@@ -70,6 +73,14 @@ public class OtherModItems {
 
         private static OtherModItem tfmgItem(String id) {
             return new OtherModItem("tfmg", id);
+        }
+    }
+
+    public static final class Numismatics {
+        public static final OtherModItems NUMISMATICS_SPUR = numiItem("spur");
+
+        private static OtherModItems numiItem(String id) {
+            return new OtherModItems("numismatics", id);
         }
     }
 }

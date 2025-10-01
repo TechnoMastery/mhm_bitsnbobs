@@ -78,7 +78,6 @@ public class ModBlocks {
             () -> new IncubatorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
     public static final RegistryObject<Block> MYSTERIOUS_ALTAR = registerBlock("mysterious_altar",
             () -> new MysteriousAltarBlock(BlockBehaviour.Properties.copy(Blocks.SCULK_CATALYST)));
-
     public static final RegistryObject<Block> FREEZER = registerBlock("freezer",
             () -> new FreezerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
     public static final RegistryObject<Block> ATOMICAL_STABILIZATOR = registerBlock("atomical_stabilizator",

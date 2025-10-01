@@ -183,6 +183,8 @@ dependencies {
     // create ei
     implementation fg.deobf("curse.maven:create-enchantment-industry-688768:${create_ei_file_id}")
 
+    implementation fg.deobf("curse.maven:mekanism-268560:6552911")
+
     // tfmg
     implementation fg.deobf("curse.maven:create-industry-693815:${tfmg_file_if}")
 
@@ -195,6 +197,10 @@ dependencies {
     implementation(fg.deobf("org.appliedenergistics:guideme:${guideme_version}"))
     compileOnly(fg.deobf("org.appliedenergistics:guideme:${guideme_version}:api"))
     runtimeOnly(fg.deobf("org.appliedenergistics:guideme:${guideme_version}"))
+
+    implementation fg.deobf("curse.maven:numismatics-889722:${numismatics_file_id}")
+
+    implementation fg.deobf("curse.maven:create-industry-693815:6816350")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
@@ -217,6 +223,8 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range: loader_version_range,
             mod_id: mod_id, modid: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, create_ei_file_id: create_ei_file_id,
+            ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits,
+            numismatics_file_id: numismatics_file_id,
             ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits, tfmg_file_id: tfmg_file_if,
             megacells_file_id: megacells_file_id, cloth_file_id: cloth_file_id, technoLib_file_id: technoLib_file_id
     ]
