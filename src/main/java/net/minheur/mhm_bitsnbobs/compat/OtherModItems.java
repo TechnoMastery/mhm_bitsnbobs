@@ -75,12 +75,4 @@ public class OtherModItems {
             return new OtherModItem("tfmg", id);
         }
     }
-
-    public static final class Numismatics {
-        public static final OtherModItems NUMISMATICS_SPUR = numiItem("spur");
-
-        private static OtherModItems numiItem(String id) {
-            return new OtherModItems("numismatics", id);
-        }
-    }
 }
