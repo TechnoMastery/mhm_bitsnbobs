@@ -1,0 +1,17 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "count": 4,
+      "item": "ae2:ender_dust"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:ender_pearl"
+    }
+  ]
+}

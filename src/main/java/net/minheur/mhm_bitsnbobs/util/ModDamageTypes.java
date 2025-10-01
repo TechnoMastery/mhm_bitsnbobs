@@ -7,6 +7,9 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 
+/**
+ * Registers the damage types.
+ */
 public class ModDamageTypes {
     public static final ResourceLocation BRAIN_FREEZE_ID = new ResourceLocation(MhmBitsnbobs.MOD_ID, "brain_freeze");
     public static final ResourceLocation ELECTROCUTED_ID = new ResourceLocation(MhmBitsnbobs.MOD_ID, "electrocuted");

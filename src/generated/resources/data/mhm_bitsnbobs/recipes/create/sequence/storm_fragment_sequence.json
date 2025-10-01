@@ -1,0 +1,76 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:diamond"
+  },
+  "loops": 4,
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:storm_fragment"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        },
+        {
+          "amount": 150,
+          "fluid": "create_enchantment_industry:hyper_experience"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        },
+        {
+          "item": "minecraft:lapis_lazuli"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "mhm_bitsnbobs:unfinished_storm_fragment"
+  }
+}

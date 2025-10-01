@@ -7,6 +7,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 
+/**
+ * Registrate recipe serializers
+ */
 public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
             DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MhmBitsnbobs.MOD_ID);
@@ -22,6 +25,9 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<FreezingRecipe>> FREEZING_SERIALIZER =
             SERIALIZERS.register("freezing", () -> FreezingRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<AtomicalStabilizatorRecipe>> ATOMICAL_STABILIZATOR_SERIALIZER =
+            SERIALIZERS.register("atomical_stabilizator", () -> AtomicalStabilizatorRecipe.Serializer.INSTANCE);
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);

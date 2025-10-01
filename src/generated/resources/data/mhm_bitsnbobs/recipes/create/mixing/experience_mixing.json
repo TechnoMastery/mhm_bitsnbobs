@@ -1,0 +1,26 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "superheated",
+  "ingredients": [
+    {
+      "tag": "forge:rotten_meats"
+    },
+    {
+      "count": 3,
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "amount": 1000,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "amount": 5,
+      "fluid": "create_enchantment_industry:experience"
+    }
+  ]
+}

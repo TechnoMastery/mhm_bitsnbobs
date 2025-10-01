@@ -18,11 +18,18 @@ import net.minheur.mhm_bitsnbobs.loot.AddItemModifier;
 import net.minheur.mhm_bitsnbobs.loot.AddSusSandItemModifier;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 
+/**
+ * Loot modifiers are used to add blocks or items to existing loot tables.
+ * @see DataGenerators
+ */
 public class ModGlobalLootModifiersProvider extends GlobalLootModifierProvider {
     public ModGlobalLootModifiersProvider(PackOutput output) {
         super(output, MhmBitsnbobs.MOD_ID);
     }
 
+    /**
+     * Method called. Generates loot modifiers.
+     */
     @Override
     protected void start() {
         // shema add item to vanilla drops : change name (modifier) + change where it drops & randomChance. Also, can add others properties

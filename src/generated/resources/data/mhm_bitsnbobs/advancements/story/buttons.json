@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:story/root",
+  "criteria": {
+    "buttons": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:buttons"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.story.buttons.description"
+    },
+    "frame": "goal",
+    "hidden": true,
+    "icon": {
+      "item": "minecraft:oak_button"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.story.buttons.title"
+    }
+  },
+  "requirements": [
+    [
+      "buttons"
+    ]
+  ],
+  "rewards": {
+    "experience": 150,
+    "loot": [
+      "mhm_bitsnbobs:blocks/resource_dirt"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:darkened_biomass"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:red_biomass"
+    }
+  ]
+}

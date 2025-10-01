@@ -1,0 +1,37 @@
+{
+  "parent": "mhm_bitsnbobs:creative/the_ingot",
+  "criteria": {
+    "has_the_egg": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:base_egg"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:base_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.creative.the_egg.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_egg"
+    ]
+  ]
+}

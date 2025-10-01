@@ -1,13 +1,20 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
+  "type": "create:crushing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
   "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:quartz_shard"
+    }
+  ],
+  "processingTime": 200,
+  "results": [
     {
       "item": "mekanism:fluorite_gem"
     }
-  ],
-  "result": {
-    "item": "mekanism:fluorite_ore",
-    "count": 2
-  }
+  ]
 }

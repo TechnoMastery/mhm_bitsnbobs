@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mhm_bitsnbobs:vanilla_sorbet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_vanilla_snowball": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:vanilla_snowball"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_vanilla_snowball",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mhm_bitsnbobs:vanilla_sorbet"
+    ]
+  },
+  "sends_telemetry_event": false
+}

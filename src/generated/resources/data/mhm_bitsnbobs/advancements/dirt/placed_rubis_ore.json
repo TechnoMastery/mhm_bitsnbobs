@@ -1,0 +1,35 @@
+{
+  "parent": "mhm_bitsnbobs:dirt/resource_pack",
+  "criteria": {
+    "place_ore": {
+      "conditions": {
+        "items": [
+          {
+            "block": "mhm_bitsnbobs:rubis_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:placed_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.placed_rubis_ore.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:rubis_ore"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.placed_rubis_ore.title"
+    }
+  },
+  "requirements": [
+    [
+      "place_ore"
+    ]
+  ]
+}

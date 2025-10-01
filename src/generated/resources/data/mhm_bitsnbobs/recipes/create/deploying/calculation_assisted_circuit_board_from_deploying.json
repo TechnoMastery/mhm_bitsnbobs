@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "tfmg:circuit_board"
+    },
+    {
+      "item": "ae2:calculation_processor"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:calculation_assisted_circuit_board"
+    }
+  ]
+}

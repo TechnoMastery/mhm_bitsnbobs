@@ -9,7 +9,7 @@ import net.minheur.mhm_bitsnbobs.procedures.effects.IcedEffectProcedures;
 import java.util.ArrayList;
 import java.util.List;
 
-import static net.minheur.mhm_bitsnbobs.util.Utils.getRGB;
+import static net.minheur.techno_lib.Utils.getRGB;
 
 public class IcedEffect extends MobEffect {
     public IcedEffect() {

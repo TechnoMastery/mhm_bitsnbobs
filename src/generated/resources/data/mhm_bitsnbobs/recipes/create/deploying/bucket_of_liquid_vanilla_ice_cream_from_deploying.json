@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_ice_cream"
+    },
+    {
+      "item": "mhm_bitsnbobs:vanilla_extract"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:bucket_of_liquid_vanilla_ice_cream"
+    }
+  ]
+}

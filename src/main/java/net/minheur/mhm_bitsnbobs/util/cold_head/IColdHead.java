@@ -2,6 +2,9 @@ package net.minheur.mhm_bitsnbobs.util.cold_head;
 
 import net.minecraft.world.entity.LivingEntity;
 
+/**
+ * Interface for {@link ColdHead}
+ */
 public interface IColdHead {
     float getColdLevel();
     void setColdLevel(float level);

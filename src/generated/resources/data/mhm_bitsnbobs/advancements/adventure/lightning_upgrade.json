@@ -1,0 +1,37 @@
+{
+  "parent": "minecraft:adventure/avoid_vibration",
+  "criteria": {
+    "lightning_upgrade": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:lightning_upgrade"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.adventure.lightning_upgrade.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:lightning_upgrade"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.adventure.lightning_upgrade.title"
+    }
+  },
+  "requirements": [
+    [
+      "lightning_upgrade"
+    ]
+  ]
+}

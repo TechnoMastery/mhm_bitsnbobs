@@ -1,5 +1,9 @@
 {
   "values": [
-    "mhm_bitsnbobs:hardened_ingot"
+    "mhm_bitsnbobs:hardened_ingot",
+    "mhm_bitsnbobs:creative_ingot",
+    "mhm_bitsnbobs:slimy_ingot",
+    "mhm_bitsnbobs:super_charged_ingot",
+    "mhm_bitsnbobs:wind_charged_ingot"
   ]
 }

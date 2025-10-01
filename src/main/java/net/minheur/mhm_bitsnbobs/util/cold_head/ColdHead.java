@@ -7,6 +7,9 @@ import net.minecraftforge.network.PacketDistributor;
 import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
 import net.minheur.mhm_bitsnbobs.util.ModNetworking;
 
+/**
+ * Cold head main class
+ */
 public class ColdHead implements IColdHead {
     private float cold = 0f;
     private long lastUpdateTick = 0L;

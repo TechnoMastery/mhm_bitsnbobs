@@ -1,0 +1,50 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "item": "minecraft:ink_sac"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:ink_bottle"
+        },
+        {
+          "amount": 150,
+          "fluid": "minecraft:water"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:ink_bottle"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:ink_bottle"
+        },
+        {
+          "item": "mhm_bitsnbobs:darkened_biomass"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:ink_bottle"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "mhm_bitsnbobs:ink_bottle"
+  }
+}

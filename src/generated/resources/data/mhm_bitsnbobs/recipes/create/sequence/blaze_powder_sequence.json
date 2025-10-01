@@ -1,0 +1,60 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "create:cinder_flour"
+  },
+  "loops": 4,
+  "results": [
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:filling",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
+        },
+        {
+          "amount": 150,
+          "fluid": "minecraft:lava"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
+        }
+      ],
+      "results": [
+        {
+          "item": "mhm_bitsnbobs:unfinished_blaze_powder"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "mhm_bitsnbobs:unfinished_blaze_powder"
+  }
+}

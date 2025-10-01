@@ -12,6 +12,9 @@ import net.minheur.mhm_bitsnbobs.util.ModTags;
 
 import java.util.List;
 
+/**
+ * Registration of tool tiers
+ */
 public class ModToolTiers {
     public static final Tier SAPPHIRE = TierSortingRegistry.registerTier(
             new ForgeTier(5, 1500, 5f, 4f, 25,

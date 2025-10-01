@@ -1,0 +1,15 @@
+{
+  "type": "ae2:inscriber",
+  "ingredients": {
+    "middle": {
+      "item": "minecraft:iron_block"
+    },
+    "top": {
+      "item": "mhm_bitsnbobs:inscriber_quantum_press"
+    }
+  },
+  "mode": "inscribe",
+  "result": {
+    "item": "mhm_bitsnbobs:inscriber_quantum_press"
+  }
+}

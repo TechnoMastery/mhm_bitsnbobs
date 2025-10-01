@@ -17,16 +17,23 @@ import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 
 import java.util.function.Function;
 
+/**
+ * DataGen for the BlockState.
+ * @see DataGenerators
+ */
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, MhmBitsnbobs.MOD_ID, exFileHelper);
     }
 
+    /**
+     * Called method in {@link DataGenerators}. Generate BlockStates.
+     */
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
         blockWithItem(ModBlocks.RAW_SAPPHIRE_BLOCK);
-
+        blockWithItem(ModBlocks.RED_CLAY);
         blockWithItem(ModBlocks.RUBIS_ORE);
         blockWithItem(ModBlocks.SAPPHIRE_ORE);
         blockWithItem(ModBlocks.DEEPSLATE_SAPPHIRE_ORE);
@@ -95,10 +102,10 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
         simpleBlockWithItem(ModBlocks.FREEZER.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/freezer")));
-
+        simpleBlockWithItem(ModBlocks.ATOMICAL_STABILIZATOR.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/atomical_stabilizator")));
         simpleBlockWithItem(ModBlocks.MYSTERIOUS_ALTAR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/mysterious_altar")));
-
         simpleBlockWithItem(ModBlocks.INCUBATOR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/incubator")));
         simpleBlockWithItem(ModBlocks.CRYPTO_MINER.get(),

@@ -1,0 +1,40 @@
+{
+  "parent": "mhm_bitsnbobs:adventure/lightning_upgrade",
+  "criteria": {
+    "sword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:lightning_sword"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.adventure.storm_sword.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:lightning_sword"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.adventure.storm_sword.title"
+    }
+  },
+  "requirements": [
+    [
+      "sword"
+    ]
+  ],
+  "rewards": {
+    "experience": 5000
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "criteria": {
+    "dirt": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "minecraft:textures/block/dirt.png",
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.dirt-root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:dirt"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.dirt.dirt-root.title"
+    }
+  },
+  "requirements": [
+    [
+      "dirt"
+    ]
+  ]
+}

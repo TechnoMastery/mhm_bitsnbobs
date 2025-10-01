@@ -1,0 +1,37 @@
+{
+  "parent": "mhm_bitsnbobs:ae2/stable_power",
+  "criteria": {
+    "staff": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:quantum_staff"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_staff.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:quantum_staff"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.ae2.quantum_staff.title"
+    }
+  },
+  "requirements": [
+    [
+      "staff"
+    ]
+  ]
+}

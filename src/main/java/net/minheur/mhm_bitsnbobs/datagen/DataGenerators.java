@@ -11,8 +11,9 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 
 import java.util.concurrent.CompletableFuture;
 
-/// Le fichier DataGenerator.java sert à "activer" les morceaux du dataGen :
-/// c'est lui qui va les appeler afin qu'ils soient executé lorsque le bouton RunData est pressé.
+/**
+ * This class is used to registrate dataGen parts : he calls them to executes. It is called himself in {@link MhmBitsnbobs}.
+ */
 @Mod.EventBusSubscriber(modid = MhmBitsnbobs.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
     @SubscribeEvent
@@ -37,5 +38,8 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), new ModPoiTypeTagProvider(packOutput, lookupProvider, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
+
+        generator.addProvider(event.includeServer(), new ModAdvancementGen(packOutput));
+        generator.addProvider(event.includeClient(), new ModLangGen(packOutput));
     }
 }

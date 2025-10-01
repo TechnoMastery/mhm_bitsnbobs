@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:adventure/avoid_vibration",
+  "criteria": {
+    "super_charged_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:super_charged_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.adventure.its_charged.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:super_charged_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.adventure.its_charged.title"
+    }
+  },
+  "requirements": [
+    [
+      "super_charged_ingot"
+    ]
+  ],
+  "rewards": {
+    "experience": 350
+  }
+}

@@ -31,18 +31,16 @@ import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
 
 import java.util.List;
 
+/**
+ * The simple events
+ */
 @Mod.EventBusSubscriber(modid = MhmBitsnbobs.MOD_ID)
 public class ModEvents {
 
-    /// Ce fichier cert actuellement uniquement à créer des trades.
-    /// Pour cela, choisissez votre villageois : pour le wandering trader, suivez la procédure d'ajout dans le AddCustomWanderingTrades.
-    /// Pour des villageois normaux, dans AddCustomTrades créer un if : un seul par métier. Le `event.getType()` doit être égal à `VillagerProfession.LA PROFESSION QUE VOUS SOUHAITEZ` : c'est simple.
-    /// Ensuite, dans les "if", ajoutez le `Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();` à chaque fois.
-    /// Procédure ajout : copiez le paté. changez les infos (tous est dans le nom des infos). pour les enchants, créer l'item dans une variable.
-    /// Pour les enchants, regardez il y a des exemples dans LIBRARIAN. Les noms de variables peuvent être utilisé une fois dans un même if,
-    /// mais un nom peut être le même entre 2 "if" différent. Ils ne pourront pas accéder à la variable d'un autre if
-
-    // villagers
+    /**
+     * Adding trades to villager and also to custom villager.
+     * @param event the event is used to create the trades.
+     */
     @SubscribeEvent
     public static void AddCustomTrades(VillagerTradesEvent event) {
 
@@ -108,7 +106,7 @@ public class ModEvents {
                     2, 5, 0.02f));
         }
 
-        // exemple pour un pnj personalisé
+        // custom PNJ
         if(event.getType() == ModVillagers.SOUND_MASTER.get()) {
             Int2ObjectMap<List<VillagerTrades.ItemListing>> trades = event.getTrades();
 
@@ -133,7 +131,10 @@ public class ModEvents {
 
     }
 
-    // wandering trader
+    /**
+     * Adding trades to wandering traders.
+     * @param event the event is used to create the trades.
+     */
     @SubscribeEvent
     public static void AddCustomWanderingTrades(WandererTradesEvent event) {
         List<VillagerTrades.ItemListing> genericTrades = event.getGenericTrades();
@@ -155,11 +156,18 @@ public class ModEvents {
                 1, 2, 0.15f));
     }
 
+    /**
+     * This is used to run {@link RconKeywordLoader}.
+     */
     @SubscribeEvent
     public static void onRegisterReloadListeners(AddReloadListenerEvent event) {
         event.addListener(new RconKeywordLoader());
     }
 
+    /**
+     * This adds a {@code cold_head} capability the the player.
+     * @see ColdHeadCapability
+     */
     @SubscribeEvent
     public static void onAttachCapabilities(AttachCapabilitiesEvent<Entity> event) {
         if (event.getObject() instanceof LivingEntity) {
@@ -178,6 +186,9 @@ public class ModEvents {
         });
     }
 
+    /**
+     * This runs the {@code cold_head} tick system when the player ticks.
+     */
     @SubscribeEvent
     public static void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase != TickEvent.Phase.END || event.player.level().isClientSide()) return;

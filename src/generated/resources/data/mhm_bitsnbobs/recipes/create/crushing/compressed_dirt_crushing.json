@@ -1,0 +1,14 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:compressed_dirt"
+    }
+  ],
+  "processingTime": 15,
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:piece_of_dirt"
+    }
+  ]
+}

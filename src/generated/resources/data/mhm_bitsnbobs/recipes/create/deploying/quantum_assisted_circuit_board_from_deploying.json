@@ -1,0 +1,16 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "tfmg:circuit_board"
+    },
+    {
+      "item": "mhm_bitsnbobs:quantum_processor"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:quantum_assisted_circuit_board"
+    }
+  ]
+}

@@ -12,6 +12,9 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 
+/**
+ * Registration of creative mod tab and addition of items to them.
+ */
 public class ModCreativeModTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MhmBitsnbobs.MOD_ID);
@@ -19,15 +22,17 @@ public class ModCreativeModTabs {
     // première tab : indiqué par TUTORIAL_TAB (le nom)
     public static final RegistryObject<CreativeModeTab> TUTORIAL_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
-                    .title(Component.translatable("creativetab.tutorial_tab"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.tutorial_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.RAW_SAPPHIRE.get());
                         output.accept(ModItems.SAPPHIRE.get());
+                        output.accept(ModItems.NETHER_STICK.get());
                         output.accept(ModItems.SAPPHIRE_NUGGET.get());
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
                         output.accept(ModItems.CORN.get());
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
                         output.accept(ModBlocks.FREEZER.get());
+                        output.accept(ModBlocks.ATOMICAL_STABILIZATOR.get());
                         output.accept(ModItems.DICE.get());
                         output.accept(ModItems.METAL_DETECTOR.get());
                         output.accept(ModItems.PINE_CONE.get());
@@ -69,7 +74,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> MUSIC_DISCS = CREATIVE_MODE_TABS.register("discs",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.BASE_OF_DISC.get()))
-                    .title(Component.translatable("creativetab.discs"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.discs"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.BASE_OF_DISC.get());
                         output.accept(ModItems.END_OF_THE_START_MUSIC_DISC.get());
@@ -92,7 +97,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> DARK_STORM = CREATIVE_MODE_TABS.register("dark_storm",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STORM_FRAGMENT.get()))
-                    .title(Component.translatable("creativetab.dark_storm"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.dark_storm"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.STORM_FRAGMENT.get());
                         output.accept(ModItems.HARDENED_INGOT.get());
@@ -114,12 +119,24 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.QUANTUM_STAFF.get());
                         output.accept(ModBlocks.MYSTERIOUS_ALTAR.get());
                         output.accept(ModItems.MAGIC_SHARD.get());
+                        output.accept(ModItems.PRINTED_QUANTUM_CIRCUIT.get());
+                        output.accept(ModItems.INSCRIBER_QUANTUM_PRESS.get());
+                        output.accept(ModItems.QUANTUM_PROCESSOR.get());
+                        output.accept(ModItems.QUANTUMITE_INGOT.get());
+                        output.accept(ModItems.QUANTUMITE_SHEET.get());
+                        output.accept(ModItems.HALF_QUANTUMITE_SHEET.get());
+                        output.accept(ModItems.QUANTUMITE_CHUNK.get());
+                        output.accept(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD.get());
+                        output.accept(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD.get());
                     })
                     .build());
 
     public static final RegistryObject<CreativeModeTab> LIGHTNING = CREATIVE_MODE_TABS.register("lightning",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.LIGHTNING_UPGRADE.get()))
-                    .title(Component.translatable("creativetab.lightning"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.lightning"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.LIGHTNING_UPGRADE.get());
                         output.accept(ModItems.FIRE_DIAMOND.get());
@@ -142,7 +159,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> BALLS = CREATIVE_MODE_TABS.register("balls",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DIAMOND_BALL.get()))
-                    .title(Component.translatable("creativetab.balls"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.balls"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.IRON_BALL.get());
                         output.accept(ModItems.COPPER_BALL.get());
@@ -162,7 +179,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> RUNES = CREATIVE_MODE_TABS.register("runes",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.EMPTY_RUNE.get()))
-                    .title(Component.translatable("creativetab.runes"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.runes"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.EMPTY_RUNE.get());
                         output.accept(ModItems.XP_RUNE.get());
@@ -174,7 +191,7 @@ public class ModCreativeModTabs {
 
     public static final RegistryObject<CreativeModeTab> DIRT_THINGS = CREATIVE_MODE_TABS.register("dirt_things",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.COMPRESSED_DIRT.get()))
-                    .title(Component.translatable("creativetab.dirt_things"))
+                    .title(Component.translatable("creativetab.mhm_bitsnbobs.dirt_things"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.COMPRESSED_DIRT.get());
                         output.accept(ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get());

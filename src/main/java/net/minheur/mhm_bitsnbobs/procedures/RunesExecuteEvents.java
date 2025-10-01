@@ -5,6 +5,9 @@ import net.minecraft.commands.Commands;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 
+/**
+ * Procedures for runes
+ */
 public class RunesExecuteEvents {
     public static void executeMoney(Entity pPlayer) {
         if(pPlayer == null || pPlayer.getServer() == null) return;

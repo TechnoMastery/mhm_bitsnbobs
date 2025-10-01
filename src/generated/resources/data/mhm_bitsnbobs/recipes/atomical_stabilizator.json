@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "megacells:accumulation_processor"
+    },
+    "C": {
+      "item": "ae2:calculation_processor"
+    },
+    "E": {
+      "item": "mhm_bitsnbobs:engineering_assisted_circuit_board"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "pattern": [
+    "IEI",
+    "CAC",
+    "III"
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:atomical_stabilizator"
+  },
+  "show_notification": true
+}

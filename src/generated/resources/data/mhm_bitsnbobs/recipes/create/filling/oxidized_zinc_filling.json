@@ -1,0 +1,17 @@
+{
+  "type": "create:filling",
+  "ingredients": [
+    {
+      "item": "create:zinc_ingot"
+    },
+    {
+      "amount": 300,
+      "fluid": "minecraft:water"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:oxidized_zinc"
+    }
+  ]
+}

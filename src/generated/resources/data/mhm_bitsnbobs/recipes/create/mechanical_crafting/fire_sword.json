@@ -1,0 +1,27 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": false,
+  "key": {
+    "B": {
+      "item": "minecraft:flint_and_steel"
+    },
+    "D": {
+      "item": "mhm_bitsnbobs:fire_diamond"
+    },
+    "E": {
+      "item": "minecraft:netherite_sword"
+    },
+    "S": {
+      "item": "mhm_bitsnbobs:fire_stick"
+    }
+  },
+  "pattern": [
+    "  BD",
+    " BDB",
+    "SSB ",
+    "ES  "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:fire_sword"
+  }
+}

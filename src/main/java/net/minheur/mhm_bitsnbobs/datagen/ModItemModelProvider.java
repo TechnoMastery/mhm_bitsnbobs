@@ -21,7 +21,14 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 
 import java.util.LinkedHashMap;
 
+/**
+ * This item model provider is used to create the item models. Each item needs a model.
+ * @see DataGenerators
+ */
 public class ModItemModelProvider extends ItemModelProvider {
+    /**
+     * Used to get the trim materials.
+     */
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
         trimMaterials.put(TrimMaterials.QUARTZ, 0.1F);
@@ -40,10 +47,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         super(output, MhmBitsnbobs.MOD_ID, existingFileHelper);
     }
 
+    /**
+     * The method called. Generates item models.
+     */
     @Override
     protected void registerModels() {
         // duplicate = auto get model item gen
         simpleItem(ModItems.SAPPHIRE);
+        simpleItem(ModItems.NETHER_STICK);
         simpleItem(ModItems.WIND_CHARGED_INGOT);
         simpleItem(ModItems.RAW_SAPPHIRE);
         simpleItem(ModItems.EXTREMELY_DRY_DIRT);
@@ -64,6 +75,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CREATIVE_RESIDUE);
         simpleItem(ModItems.LIGHTNING_UPGRADE);
         simpleItem(ModItems.BIOMASS);
+        simpleItem(ModItems.DARKENED_BIOMASS);
+        simpleItem(ModItems.BLUE_BIOMASS);
+        simpleItem(ModItems.RED_BIOMASS);
+        simpleItem(ModItems.INK_BOTTLE);
         simpleItem(ModItems.SAPPHIRE_NUGGET);
         simpleItem(ModItems.TREE_GROWER);
         simpleItem(ModItems.FIRE_DIAMOND);
@@ -71,6 +86,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FIRE_STICK);
         simpleItem(ModItems.CHOCOLATE_SCOOP);
         simpleItem(ModItems.STRAWBERRY_SCOOP);
+        simpleItem(ModItems.OXIDIZED_ZINC);
         simpleItem(ModItems.VANILLA_SCOOP);
         simpleItem(ModItems.SWEET_BERRIES_SCOOP);
         simpleItem(ModItems.CHOCOLATE_SNOWBALL);
@@ -100,6 +116,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.GOLD_BALL);
         simpleItem(ModItems.DIAMOND_BALL);
         simpleItem(ModItems.SAPPHIRE_BALL);
+        simpleItem(ModItems.PRINTED_QUANTUM_CIRCUIT);
+        simpleItem(ModItems.INSCRIBER_QUANTUM_PRESS);
+        simpleItem(ModItems.QUANTUM_PROCESSOR);
+        simpleItem(ModItems.QUANTUMITE_INGOT);
+        simpleItem(ModItems.QUANTUMITE_SHEET);
+        simpleItem(ModItems.HALF_QUANTUMITE_SHEET);
+        simpleItem(ModItems.QUANTUMITE_CHUNK);
         simpleItem(ModItems.RED_CLAY_BALL);
         simpleItem(ModItems.EMPTY_BIG_FLASK);
         simpleItem(ModItems.EMPTY_LITTLE_FLASK);
@@ -211,6 +234,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         // trapdoor
         trapdoorItem(ModBlocks.SAPPHIRE_TRAPDOOR);
 
+        circuitBoardItem(ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.ENGINEERING_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.QUANTUM_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.LOGIC_ASSISTED_CIRCUIT_BOARD);
+        circuitBoardItem(ModItems.CALCULATION_ASSISTED_CIRCUIT_BOARD);
+
         // tools
         handheldItem(ModItems.SAPPHIRE_SWORD);
         handheldItem(ModItems.SAPPHIRE_PICKAXE);
@@ -236,6 +265,11 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         // spawn egg
         withExistingParent(ModItems.RHINO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+
+        // custom
+        withExistingParent(ModItems.UNPROCESSED_DUST.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation("minecraft:item/gunpowder"));
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
@@ -301,6 +335,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/rune"));
+    }
+
+    private ItemModelBuilder circuitBoardItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(MhmBitsnbobs.MOD_ID, "item/assisted_circuit_board"));
     }
 
     private ItemModelBuilder discItem(RegistryObject<Item> item) {

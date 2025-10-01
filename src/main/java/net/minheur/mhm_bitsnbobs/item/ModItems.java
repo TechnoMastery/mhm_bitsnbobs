@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs.item;
 import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
-import net.minecraftforge.common.util.ITeleporter;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,6 +15,9 @@ import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 
+/**
+ * Registration of items
+ */
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MhmBitsnbobs.MOD_ID);
@@ -25,36 +27,51 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> WIND_CHARGED_INGOT = ITEMS.register("wind_charged_ingot",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SAPPHIRE = ITEMS. register("sapphire",
+    public static final RegistryObject<Item> SAPPHIRE = ITEMS.register("sapphire",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SAPPHIRE_NUGGET = ITEMS. register("sapphire_nugget",
+    public static final RegistryObject<Item> SAPPHIRE_NUGGET = ITEMS.register("sapphire_nugget",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> BASE_EGG = ITEMS. register("base_egg",
+    public static final RegistryObject<Item> BASE_EGG = ITEMS.register("base_egg",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> SPAWNER_PART = ITEMS. register("spawner_part",
+    public static final RegistryObject<Item> SPAWNER_PART = ITEMS.register("spawner_part",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CONTROL_PANEL = ITEMS. register("control_panel",
+    public static final RegistryObject<Item> CONTROL_PANEL = ITEMS.register("control_panel",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> HALF_STICK = ITEMS. register("half_stick",
+    public static final RegistryObject<Item> HALF_STICK = ITEMS.register("half_stick",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> QUARTER_STICK = ITEMS. register("quarter_stick",
+    public static final RegistryObject<Item> QUARTER_STICK = ITEMS.register("quarter_stick",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> ROTTEN_LEATHER = ITEMS. register("rotten_leather",
+    public static final RegistryObject<Item> ROTTEN_LEATHER = ITEMS.register("rotten_leather",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> EXTREMELY_DRY_DIRT = ITEMS. register("extremely_dry_dirt",
+    public static final RegistryObject<Item> EXTREMELY_DRY_DIRT = ITEMS.register("extremely_dry_dirt",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> PIECE_OF_EXTREMELY_DRY_DIRT = ITEMS. register("piece_of_extremely_dry_dirt",
+    public static final RegistryObject<Item> PIECE_OF_EXTREMELY_DRY_DIRT = ITEMS.register("piece_of_extremely_dry_dirt",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RESOURCE_DIRT = ITEMS.register("resource_dirt",
             () -> new Item(new Item.Properties().stacksTo(16)));
-    public static final RegistryObject<Item> WET_DIRT = ITEMS. register("wet_dirt",
+    public static final RegistryObject<Item> WET_DIRT = ITEMS.register("wet_dirt",
             () -> new Item(new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> PIECE_OF_DIRT = ITEMS. register("piece_of_dirt",
+    public static final RegistryObject<Item> PIECE_OF_DIRT = ITEMS.register("piece_of_dirt",
             () -> new ReturnOtherWhenEatedItem(new Item.Properties().food(ModFoods.PIECE_OF_DIRT), ModItems.WET_DIRT.get()));
-    public static final RegistryObject<Item> SKULLKERY_TOOL = ITEMS. register("skullkery_tool",
+    public static final RegistryObject<Item> SKULLKERY_TOOL = ITEMS.register("skullkery_tool",
             () -> new SkullkeryToolItem(new Item.Properties().stacksTo(1).durability(59)));
-    public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS. register("controlled_stick",
+    public static final RegistryObject<Item> CONTROLLED_STICK = ITEMS.register("controlled_stick",
             () -> new Item(new Item.Properties().stacksTo(8)));
+    public static final RegistryObject<Item> UNPROCESSED_DUST = ITEMS.register("unprocessed_dust",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OXIDIZED_ZINC = ITEMS.register("oxidized_zinc",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> LOGIC_ASSISTED_CIRCUIT_BOARD = ITEMS.register("logic_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> CALCULATION_ASSISTED_CIRCUIT_BOARD = ITEMS.register("calculation_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> ENGINEERING_ASSISTED_CIRCUIT_BOARD = ITEMS.register("engineering_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> ACCUMULATION_ASSISTED_CIRCUIT_BOARD = ITEMS.register("accumulation_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> QUANTUM_ASSISTED_CIRCUIT_BOARD = ITEMS.register("quantum_assisted_circuit_board",
+            () -> new Item(new Item.Properties().stacksTo(16)));
 
     // to see
     public static final RegistryObject<Item> BASE_OF_DISC = ITEMS.register("base_of_disc",
@@ -66,6 +83,22 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static final RegistryObject<Item> STABILIZED_QUANTUM_CORE = ITEMS.register("stabilized_quantum_core",
             () -> new StabilizedQuantumCoreItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> PRINTED_QUANTUM_CIRCUIT = ITEMS.register("printed_quantum_circuit",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> INSCRIBER_QUANTUM_PRESS = ITEMS.register("inscriber_quantum_press",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUM_PROCESSOR = ITEMS.register("quantum_processor",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> QUANTUMITE_INGOT = ITEMS.register("quantumite_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUMITE_SHEET = ITEMS.register("quantumite_sheet",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> QUANTUMITE_CHUNK = ITEMS.register("quantumite_chunk",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> HALF_QUANTUMITE_SHEET = ITEMS.register("half_quantumite_sheet",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> TREE_GROWER = ITEMS.register("tree_grower",
             () -> new CraftingDamageItem(new Item.Properties().stacksTo(1).durability(50)));
@@ -106,6 +139,8 @@ public class ModItems {
     public static final RegistryObject<Item> VANILLA_EXTRACT = ITEMS.register("vanilla_extract",
             () -> new Item(new Item.Properties().food(ModFoods.VANILLA_PODS)));
 
+    public static final RegistryObject<Item> NETHER_STICK = ITEMS.register("nether_stick",
+            () -> new NetherStickItem(new Item.Properties().stacksTo(1).durability(185)));
     public static final RegistryObject<Item> ROTTEN_BEEF = ITEMS.register("rotten_beef",
             () -> new Item(new Item.Properties().food(Foods.ROTTEN_FLESH)));
     public static final RegistryObject<Item> ROTTEN_PORKCHOP = ITEMS.register("rotten_porkchop",
@@ -236,7 +271,15 @@ public class ModItems {
             () -> new ZombieArmItem(new Item.Properties()));
     public static final RegistryObject<Item> BIOMASS = ITEMS.register("biomass",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> DARKENED_BIOMASS = ITEMS.register("darkened_biomass",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLUE_BIOMASS = ITEMS.register("blue_biomass",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RED_BIOMASS = ITEMS.register("red_biomass",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RED_CLAY_BALL = ITEMS.register("red_clay_ball",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> INK_BOTTLE = ITEMS.register("ink_bottle",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> EMPTY_BIG_FLASK = ITEMS. register("empty_big_flask",

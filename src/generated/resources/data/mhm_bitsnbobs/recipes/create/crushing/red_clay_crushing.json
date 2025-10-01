@@ -1,0 +1,15 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:red_clay"
+    }
+  ],
+  "processingTime": 500,
+  "results": [
+    {
+      "count": 3,
+      "item": "mhm_bitsnbobs:red_clay_ball"
+    }
+  ]
+}

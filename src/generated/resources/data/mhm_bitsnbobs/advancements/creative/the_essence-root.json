@@ -1,0 +1,40 @@
+{
+  "criteria": {
+    "has_creative_essence": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:creative_essence"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "mhm_bitsnbobs:textures/block/creative_block.png",
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.creative.the_essence-root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:creative_essence"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.creative.the_essence-root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_creative_essence"
+    ]
+  ],
+  "rewards": {
+    "experience": 150
+  }
+}

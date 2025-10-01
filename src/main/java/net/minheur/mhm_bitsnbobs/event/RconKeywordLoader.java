@@ -15,6 +15,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The RCON keywords loader. Disabled
+ * @see net.minheur.mhm_bitsnbobs.commands.RconAnswers
+ * @see net.minheur.mhm_bitsnbobs.commands.RconInputHandler
+ */
 public class RconKeywordLoader extends SimpleJsonResourceReloadListener {
 
     public static final Map<String, List<String>> KEYWORDS = new HashMap<>();

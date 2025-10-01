@@ -10,7 +10,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
-import net.minheur.mhm_bitsnbobs.util.Utils;
 
 public class WindStickItem extends Item {
     public WindStickItem(Properties pProperties) {
@@ -43,7 +42,8 @@ public class WindStickItem extends Item {
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
         if (!((Player) pAttacker).getCooldowns().isOnCooldown(this)) {
             pTarget.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 60, 4));
-            Utils.damageAndBreakItem(pStack);
+            pStack.hurtAndBreak(1, pAttacker,
+                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
             ((Player) pAttacker).getCooldowns().addCooldown(this, 60);
         }
         return super.hurtEnemy(pStack, pTarget, pAttacker);
@@ -57,7 +57,8 @@ public class WindStickItem extends Item {
         double z = pLivingEntity.getZ();
         if (!((Player) pLivingEntity).getCooldowns().isOnCooldown(this)) {
             pLivingEntity.addEffect(new MobEffectInstance(MobEffects.LEVITATION, 60, 4));
-            Utils.damageAndBreakItem(pStack);
+            pStack.hurtAndBreak(1, pLivingEntity,
+                    player -> player.broadcastBreakEvent(player.getUsedItemHand()));
             ((Player) pLivingEntity).getCooldowns().addCooldown(this, 60);
         }
         return returnValue;

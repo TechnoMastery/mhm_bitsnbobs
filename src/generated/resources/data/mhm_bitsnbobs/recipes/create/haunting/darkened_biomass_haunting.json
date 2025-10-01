@@ -1,0 +1,13 @@
+{
+  "type": "create:haunting",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:biomass"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:darkened_biomass"
+    }
+  ]
+}

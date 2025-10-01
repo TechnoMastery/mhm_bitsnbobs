@@ -45,12 +45,9 @@ import net.minheur.mhm_bitsnbobs.worldgen.tree.ModFoliagePlacers;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModTrunkPlacerTypes;
 import org.slf4j.Logger;
 
-/// Ce fichier est le cœur, le cerveau, le tout ce que tu veux de ton mod.
-/// C'est entre autre lui qui va définir les bases, qui va appeler les fichiers de données comme les creative mod tabs, etc.
-/// Le supprimer est critique (comme la plus pars des fichiers xD) : cela empêcherait le mod de comprendre ce qui se passe.
-/// Il s'agit de la javaClass principale.
-
-// The value here should match an entry in the META-INF/mods.toml file
+/***
+ * The file is the core of the mod. It's him who link all classes together, making all items and blocks registered.
+ */
 @Mod(MhmBitsnbobs.MOD_ID)
 public class MhmBitsnbobs
 {
@@ -59,7 +56,9 @@ public class MhmBitsnbobs
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    /// Ici donc on vient utiliser la méthode register à chaque fois pour les fichiers ayant une DeferredRegister
+    /**
+     * Here we call the register method created with every {@link net.minecraftforge.registries.DeferredRegister}.
+     */
     public MhmBitsnbobs() // FMLJavaModLoadingContext context
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -115,7 +114,9 @@ public class MhmBitsnbobs
         });
     }
 
-    /// c'est ici que l'on ajoute des items a des creative mod tabs vanilla
+    /**
+     * Here we add items to vanilla creative mod tabs
+     */
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
              event.accept(ModItems.SAPPHIRE);
@@ -168,7 +169,12 @@ public class MhmBitsnbobs
              event.accept(ModItems.QUARTER_STICK);
              event.accept(ModItems.ZOMBIE_ARM);
              event.accept(ModItems.BIOMASS);
+             event.accept(ModItems.DARKENED_BIOMASS);
+             event.accept(ModItems.BLUE_BIOMASS);
+             event.accept(ModItems.RED_BIOMASS);
              event.accept(ModItems.SAPPHIRE_NUGGET);
+             event.accept(ModItems.RED_CLAY_BALL);
+            event.accept(ModItems.OXIDIZED_ZINC);
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BASE_EGG);
@@ -213,10 +219,16 @@ public class MhmBitsnbobs
             event.accept(ModBlocks.RUBINIUM_BLOCK);
             event.accept(ModItems.TREE_GROWER);
             event.accept(ModItems.BIOMASS);
+            event.accept(ModItems.DARKENED_BIOMASS);
+            event.accept(ModItems.BLUE_BIOMASS);
+            event.accept(ModItems.RED_BIOMASS);
+            event.accept(ModBlocks.RED_CLAY);
         }
     }
 
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    /**
+     * You can use SubscribeEvent and let the Event Bus discover methods to call
+      */
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event)
     {
@@ -245,6 +257,7 @@ public class MhmBitsnbobs
             MenuScreens.register(ModMenuTypes.GEM_POLISHING_MENU.get(), GemPolishingStationScreen::new);
             MenuScreens.register(ModMenuTypes.INCUBATOR_MENU.get(), IncubatorScreen::new);
             MenuScreens.register(ModMenuTypes.MYSTERIOUS_ALTAR_MENU.get(), MysteriousAltarScreen::new);
+            MenuScreens.register(ModMenuTypes.ATOMICAL_STABILIZATOR_MENU.get(), AtomicalStabilizatorScreen::new);
         }
     }
 }

@@ -1,0 +1,40 @@
+{
+  "parent": "mhm_bitsnbobs:creative/the_essence-root",
+  "criteria": {
+    "has_creative_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:creative_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.mhm_bitsnbobs.creative.the_ingot.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "mhm_bitsnbobs:creative_ingot"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.mhm_bitsnbobs.creative.the_ingot.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_creative_ingot"
+    ]
+  ],
+  "rewards": {
+    "experience": 300
+  }
+}

@@ -12,8 +12,10 @@ import net.minheur.mhm_bitsnbobs.entity.custom.ModBoatEntity;
 import net.minheur.mhm_bitsnbobs.entity.custom.ModChestBoatEntity;
 import net.minheur.mhm_bitsnbobs.entity.custom.RhinoEntity;
 
+/**
+ * The registration of the entities.
+ */
 public class ModEntities {
-    /// Si vous êtes observateurs, vous remarquerez que c'est à peu près pareille à chaque nouvelle DeferredRegister xD
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
             DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MhmBitsnbobs.MOD_ID);
 
@@ -32,7 +34,6 @@ public class ModEntities {
             ENTITY_TYPES.register("dice_projectile", () -> EntityType.Builder.<DiceProjectileEntity>of(DiceProjectileEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).build("dice_projectile"));
 
-    /// Pareille pour la register methode, toujours là avec les deferredRegister
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);
     }

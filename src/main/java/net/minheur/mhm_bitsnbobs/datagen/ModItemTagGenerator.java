@@ -16,11 +16,17 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Add items to tags.
+ */
 public class ModItemTagGenerator extends ItemTagsProvider {
     public ModItemTagGenerator(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_, CompletableFuture<TagLookup<Block>> p_275322_, @Nullable ExistingFileHelper existingFileHelper) {
         super(p_275343_, p_275729_, p_275322_, MhmBitsnbobs.MOD_ID, existingFileHelper);
     }
 
+    /**
+     * Method called. Generate tags.
+     */
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(ItemTags.TRIMMABLE_ARMOR)
@@ -30,6 +36,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.SAPPHIRE_CHESTPLATE.get(),
                         ModItems.SAPPHIRE_LEGGINGS.get(),
                         ModItems.SAPPHIRE_BOOTS.get()
+                );
+        this.tag(ModTags.Items.QUANTUMITE_INGOTS)
+                .add(
+                        ModItems.QUANTUMITE_INGOT.get()
                 );
         this.tag(ModTags.Items.BASEDISK)
                 .add(
@@ -84,6 +94,10 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         Items.GLOW_BERRIES,
                         Items.GLOW_LICHEN
                 );
+        this.tag(ModTags.Items.ATOMICAL_STABILIZATOR_GLUES)
+                .add(
+                        Items.GHAST_TEAR
+                );
         this.tag(ItemTags.MUSIC_DISCS)
                 .add(
                         ModItems.BAR_BRAWL_MUSIC_DISC.get(),
@@ -104,7 +118,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 );
         this.tag(Tags.Items.INGOTS)
                 .add(
-                        ModItems.HARDENED_INGOT.get()
+                        ModItems.HARDENED_INGOT.get(),
+                        ModItems.CREATIVE_INGOT.get(),
+                        ModItems.SLIMY_INGOT.get(),
+                        ModItems.SUPER_CHARGED_INGOT.get(),
+                        ModItems.WIND_CHARGED_INGOT.get()
                 );
         this.tag(ItemTags.LOGS_THAT_BURN)
                 .add(

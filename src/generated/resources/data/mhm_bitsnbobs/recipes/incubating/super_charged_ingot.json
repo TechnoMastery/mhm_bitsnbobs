@@ -1,0 +1,12 @@
+{
+  "type": "mhm_bitsnbobs:incubating",
+  "catalyzer": {
+    "item": "mhm_bitsnbobs:super_charged_catalyzer"
+  },
+  "ingredients": {
+    "item": "minecraft:netherite_ingot"
+  },
+  "output": {
+    "item": "mhm_bitsnbobs:super_charged_ingot"
+  }
+}
