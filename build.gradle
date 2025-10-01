@@ -183,6 +183,7 @@ dependencies {
     // create ei
     implementation fg.deobf("curse.maven:create-enchantment-industry-688768:${create_ei_file_id}")
 
+    // meka
     implementation fg.deobf("curse.maven:mekanism-268560:6552911")
 
     // tfmg
@@ -225,7 +226,7 @@ tasks.named('processResources', ProcessResources).configure {
             mod_authors: mod_authors, mod_description: mod_description, create_ei_file_id: create_ei_file_id,
             ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits,
             numismatics_file_id: numismatics_file_id,
-            ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits, tfmg_file_id: tfmg_file_if,
+            tfmg_file_id: tfmg_file_if,
             megacells_file_id: megacells_file_id, cloth_file_id: cloth_file_id, technoLib_file_id: technoLib_file_id
     ]
     inputs.properties replaceProperties
