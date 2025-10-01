@@ -180,6 +180,8 @@ dependencies {
     // create ei
     implementation fg.deobf("curse.maven:create-enchantment-industry-688768:${create_ei_file_id}")
 
+    implementation fg.deobf("curse.maven:mekanism-268560:6552911")
+
     // ae2
     implementation(fg.deobf("appeng:appliedenergistics2-forge:${ae2_version}"))
 
