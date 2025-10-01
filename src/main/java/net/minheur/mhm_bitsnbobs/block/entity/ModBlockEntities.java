@@ -28,10 +28,6 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("freezer_be", () ->
                     BlockEntityType.Builder.of(FreezerBlockEntity::new,
                             ModBlocks.FREEZER.get()).build(null));
-    public static final RegistryObject<BlockEntityType<CryptoMinerBlockEntity>> CRYPTO_MINER_BE =
-            BLOCK_ENTITIES.register("crypto_miner_be", () ->
-                    BlockEntityType.Builder.of(CryptoMinerBlockEntity::new,
-                            ModBlocks.CRYPTO_MINER.get()).build(null));
 
     /// add here all signs
     public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =

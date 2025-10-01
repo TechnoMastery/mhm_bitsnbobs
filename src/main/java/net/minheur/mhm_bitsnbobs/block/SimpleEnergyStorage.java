@@ -27,7 +27,7 @@ public class SimpleEnergyStorage extends EnergyStorage {
         return extracted;
     }
 
-    public void forceSetEnergy(int amount) {
+    public void setEnergy(int amount) {
         if (amount < 0) amount = 0;
         if (amount > capacity) amount = capacity;
         this.energy = amount;

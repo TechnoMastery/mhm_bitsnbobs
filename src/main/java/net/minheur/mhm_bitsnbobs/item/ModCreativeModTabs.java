@@ -114,7 +114,6 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.QUANTUM_STAFF.get());
                         output.accept(ModBlocks.MYSTERIOUS_ALTAR.get());
                         output.accept(ModItems.MAGIC_SHARD.get());
-                        output.accept(ModBlocks.CRYPTO_MINER.get());
                     })
                     .build());
 
