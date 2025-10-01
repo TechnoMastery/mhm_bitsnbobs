@@ -169,6 +169,8 @@ public class MhmBitsnbobs
              event.accept(ModItems.QUARTER_STICK);
              event.accept(ModItems.ZOMBIE_ARM);
              event.accept(ModItems.BIOMASS);
+             event.accept(ModItems.DARKENED_BIOMASS);
+             event.accept(ModItems.BLUE_BIOMASS);
              event.accept(ModItems.SAPPHIRE_NUGGET);
              event.accept(ModItems.RED_CLAY_BALL);
             event.accept(ModItems.OXIDIZED_ZINC);
@@ -216,6 +218,8 @@ public class MhmBitsnbobs
             event.accept(ModBlocks.RUBINIUM_BLOCK);
             event.accept(ModItems.TREE_GROWER);
             event.accept(ModItems.BIOMASS);
+            event.accept(ModItems.DARKENED_BIOMASS);
+            event.accept(ModItems.BLUE_BIOMASS);
             event.accept(ModBlocks.RED_CLAY);
         }
     }
