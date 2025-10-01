@@ -537,6 +537,9 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.BLUE_BIOMASS)
                 .en_us("Blue biomass")
                 .fr_fr("Biomasse bleu");
+        addItem(ModItems.RED_BIOMASS)
+                .en_us("Red biomass")
+                .fr_fr("Biomasse rouge");
         addItem(ModItems.DARKENED_BIOMASS)
                 .en_us("Darkened biomass")
                 .fr_fr("Biomasse assombrie");

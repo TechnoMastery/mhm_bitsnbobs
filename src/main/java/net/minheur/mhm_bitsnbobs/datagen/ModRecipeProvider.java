@@ -538,6 +538,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // create crushing
         crushingRecipe(pWriter, ModItems.DARKENED_BIOMASS.get(), Items.BROWN_MUSHROOM, 500);
         crushingRecipe(pWriter, ModItems.BLUE_BIOMASS.get(), Items.LAPIS_LAZULI, 500);
+        crushingRecipe(pWriter, ModItems.RED_BIOMASS.get(), Items.RED_MUSHROOM, Items.REDSTONE, 500, 1f, 0.2f);
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, ModItems.QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, Items.RED_TERRACOTTA, Items.RED_SAND, 500, 3);
@@ -575,6 +576,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         deployingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), Items.SWEET_BERRIES, ModItems.BUCKET_OF_LIQUID_SWEET_BERRIES_ICE_CREAM.get());
         deployingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), ModItems.STRAWBERRY.get(), ModItems.BUCKET_OF_LIQUID_STRAWBERRIES_ICE_CREAM.get());
         deployingRecipe(pWriter, OtherModItems.Tfmg.CIRCUIT_BOARD.getAsRawItem(), OtherModItems.MegaCells.ACCUMULATION_PROCESSOR.getAsRawItem(), ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD.get());
+        deployingRecipe(pWriter, ModItems.DARKENED_BIOMASS.get(), Items.REDSTONE, ModItems.RED_BIOMASS.get());
 
         // chest crafting
         simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);

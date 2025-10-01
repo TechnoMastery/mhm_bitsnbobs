@@ -171,6 +171,7 @@ public class MhmBitsnbobs
              event.accept(ModItems.BIOMASS);
              event.accept(ModItems.DARKENED_BIOMASS);
              event.accept(ModItems.BLUE_BIOMASS);
+             event.accept(ModItems.RED_BIOMASS);
              event.accept(ModItems.SAPPHIRE_NUGGET);
              event.accept(ModItems.RED_CLAY_BALL);
             event.accept(ModItems.OXIDIZED_ZINC);
@@ -220,6 +221,7 @@ public class MhmBitsnbobs
             event.accept(ModItems.BIOMASS);
             event.accept(ModItems.DARKENED_BIOMASS);
             event.accept(ModItems.BLUE_BIOMASS);
+            event.accept(ModItems.RED_BIOMASS);
             event.accept(ModBlocks.RED_CLAY);
         }
     }
