@@ -80,9 +80,6 @@ public class CryptoMinerBlockEntity extends BlockEntity {
     public static void serverTick(Level level, BlockPos pos, BlockState state, CryptoMinerBlockEntity be) {
         if (level.isClientSide()) return;
 
-        System.out.println("Energy=" + be.energyStorage.getEnergyStored());
-        System.out.println("Progress=" + be.progress);
-
         if (be.canWork()) {
             be.progress++;
             be.energyStorage.extractEnergy(FE_PER_TICK, false);
