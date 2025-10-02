@@ -258,6 +258,7 @@ public class MhmBitsnbobs
             MenuScreens.register(ModMenuTypes.INCUBATOR_MENU.get(), IncubatorScreen::new);
             MenuScreens.register(ModMenuTypes.MYSTERIOUS_ALTAR_MENU.get(), MysteriousAltarScreen::new);
             MenuScreens.register(ModMenuTypes.ATOMICAL_STABILIZATOR_MENU.get(), AtomicalStabilizatorScreen::new);
+            MenuScreens.register(ModMenuTypes.ELECTRONIC_CRYSTALLIZER_MENU.get(), ElectronicCrystallizerScreen::new);
         }
     }
 }

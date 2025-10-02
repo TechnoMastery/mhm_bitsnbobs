@@ -353,6 +353,9 @@ public class ModLangGen extends LanguageGenProvider {
         addBlock(ModBlocks.SUPER_CHARGED_BLOCK)
                 .en_us("Super charged block")
                 .fr_fr("Bloc super chargé");
+        addBlock(ModBlocks.ELECTRONIC_CRYSTALLIZER)
+                .en_us("Electronic crystallizer")
+                .fr_fr("Cristalliseur électrique");
 
 
         // advancements

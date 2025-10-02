@@ -25,6 +25,8 @@ public class ModMenuTypes {
             registerMenuType("freezer_menu", FreezerMenu::new);
     public static final RegistryObject<MenuType<AtomicalStabilizatorMenu>> ATOMICAL_STABILIZATOR_MENU =
             registerMenuType("atomical_stabilizator_menu", AtomicalStabilizatorMenu::new);
+    public static final RegistryObject<MenuType<ElectronicCrystallizerMenu>> ELECTRONIC_CRYSTALLIZER_MENU =
+            registerMenuType("electronic_scrystallizer_menu", ElectronicCrystallizerMenu::new);
 
 
 private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {

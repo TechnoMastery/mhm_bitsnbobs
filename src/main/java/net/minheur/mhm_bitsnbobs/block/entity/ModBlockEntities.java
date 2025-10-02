@@ -32,6 +32,10 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("atomical_stabilisator_be", () ->
                     BlockEntityType.Builder.of(AtomicalStabilizatorBlockEntity::new,
                             ModBlocks.ATOMICAL_STABILIZATOR.get()).build(null));
+    public static final RegistryObject<BlockEntityType<ElectronicCrystallizerBlockEntity>> ELECTRONIC_CRYSTALLIZER_BE =
+            BLOCK_ENTITIES.register("electronic_crystallizer_be", () ->
+                    BlockEntityType.Builder.of(ElectronicCrystallizerBlockEntity::new,
+                            ModBlocks.ELECTRONIC_CRYSTALLIZER.get()).build(null));
 
     /// add here all signs
     public static final RegistryObject<BlockEntityType<ModSignBlockEntity>> MOD_SIGN =
