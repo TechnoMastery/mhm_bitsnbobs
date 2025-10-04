@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "mhm_bitsnbobs:crypto_miner"
+          "name": "mhm_bitsnbobs:electronic_crystallyzer"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "mhm_bitsnbobs:blocks/crypto_miner"
+  "random_sequence": "mhm_bitsnbobs:blocks/electronic_crystallyzer"
 }
