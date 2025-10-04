@@ -174,7 +174,9 @@ public class MhmBitsnbobs
              event.accept(ModItems.RED_BIOMASS);
              event.accept(ModItems.SAPPHIRE_NUGGET);
              event.accept(ModItems.RED_CLAY_BALL);
-            event.accept(ModItems.OXIDIZED_ZINC);
+             event.accept(ModItems.OXIDIZED_ZINC);
+             event.accept(ModItems.SYRINGE_TUBE);
+             event.accept(ModItems.SYRINGE);
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BASE_EGG);

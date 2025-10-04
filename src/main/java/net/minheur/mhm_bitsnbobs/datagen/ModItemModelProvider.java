@@ -164,6 +164,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ROTTEN_COD);
         simpleItem(ModItems.ROTTEN_SALMON);
         simpleItem(ModItems.ROTTEN_RABBIT);
+        simpleItem(ModItems.SYRINGE);
+        simpleItem(ModItems.SYRINGE_TUBE);
 
         // base
         discItem(ModItems.BASE_OF_DISC);

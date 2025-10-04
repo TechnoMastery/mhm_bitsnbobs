@@ -198,6 +198,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.QUARTER_STICK.get(), ModItems.HALF_STICK.get(), 2);
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.QUARTER_STICK.get(), Items.STICK, 4);
         simpleStoneCutting(pWriter, RecipeCategory.MISC, Items.COBBLED_DEEPSLATE, Items.COBBLESTONE, 1);
+        simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.SYRINGE_TUBE.get(), Items.GLASS, 8);
 
         simpleWoodCrafting(pWriter, Items.MOSS_BLOCK, ModItems.BIOMASS.get());
 
@@ -912,6 +913,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.HARDENED_INGOT.get())
                 .define('D', Items.IRON_BARS)
                 .unlockedBy(getHasName(ModItems.HARDENED_INGOT.get()), has(ModItems.HARDENED_INGOT.get()))
+                .save(pWriter);
+
+        // syringe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SYRINGE.get())
+                .pattern("  N")
+                .pattern(" T ")
+                .pattern("I  ")
+                .define('N', Items.IRON_NUGGET)
+                .define('T', ModItems.SYRINGE_TUBE.get())
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(ModItems.SYRINGE_TUBE.get()), has(ModItems.SYRINGE_TUBE.get()))
                 .save(pWriter);
 
         // spawner craft

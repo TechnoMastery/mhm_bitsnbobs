@@ -267,6 +267,11 @@ public class ModItems {
     public static final RegistryObject<Item> UNPROCESSED_SEA_PICKLE = ITEMS.register("unprocessed_sea_pickle",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SYRINGE = ITEMS.register("syringe",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> SYRINGE_TUBE = ITEMS.register("syringe_tube",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
     public static final RegistryObject<Item> ZOMBIE_ARM = ITEMS.register("zombie_arm",
             () -> new ZombieArmItem(new Item.Properties()));
     public static final RegistryObject<Item> BIOMASS = ITEMS.register("biomass",
