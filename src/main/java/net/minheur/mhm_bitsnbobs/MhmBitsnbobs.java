@@ -31,6 +31,8 @@ import net.minheur.mhm_bitsnbobs.config.ModServerConfig;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
 import net.minheur.mhm_bitsnbobs.entity.client.ModBoatRenderer;
 import net.minheur.mhm_bitsnbobs.entity.client.RhinoRenderer;
+import net.minheur.mhm_bitsnbobs.fluid.ModFluids;
+import net.minheur.mhm_bitsnbobs.fluid.ModFluidsTypes;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.loot.ModLootModifiers;
@@ -71,6 +73,9 @@ public class MhmBitsnbobs
         ModBlocks.register(modEventBus);
 
         ModEffects.register(modEventBus);
+
+        ModFluids.register(modEventBus);
+        ModFluidsTypes.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
         ModVillagers.register(modEventBus);

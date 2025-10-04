@@ -11,6 +11,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
 import net.minheur.mhm_bitsnbobs.entity.custom.ModBoatEntity;
+import net.minheur.mhm_bitsnbobs.fluid.ModFluids;
 import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
@@ -356,6 +357,10 @@ public class ModItems {
             () -> new RecordItem(6, ModSounds.REDSTONE_PULSE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3080));
     public static final RegistryObject<Item> SERENE_ECHO_MUSIC_DISC = ITEMS.register("serene_echo_music_disc",
             () -> new RecordItem(6, ModSounds.SERENE_ECHO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4800));
+
+    // buckets
+    public static final RegistryObject<Item> TEST_BUCKET = ITEMS.register("test_bucket",
+            () -> new BucketItem(ModFluids.TEST_SOURCE, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     // fuel item
     public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",

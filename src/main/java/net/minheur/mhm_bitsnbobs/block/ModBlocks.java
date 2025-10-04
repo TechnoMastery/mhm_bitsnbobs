@@ -20,6 +20,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.custom.*;
 import net.minheur.mhm_bitsnbobs.block.custom.IncubatorBlock;
+import net.minheur.mhm_bitsnbobs.fluid.ModFluids;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
@@ -84,6 +85,10 @@ public class ModBlocks {
             () -> new AtomicalStabilizatorBlock(BlockBehaviour.Properties.copy(ModBlocks.CREATIVE_BLOCK.get())));
     public static final RegistryObject<Block> ELECTRONIC_CRYSTALLIZER = registerBlock("electronic_crystallyzer",
             () -> new ElectronicCrystallizerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+
+    // fluids
+    public static final RegistryObject<LiquidBlock> TEST_FLUID_BLOCK = BLOCKS.register("test_fluid_block",
+            () -> new LiquidBlock(ModFluids.TEST_SOURCE, BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()));
 
     // end custom
 
