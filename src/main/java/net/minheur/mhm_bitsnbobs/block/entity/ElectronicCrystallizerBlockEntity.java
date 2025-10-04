@@ -66,7 +66,7 @@ public class ElectronicCrystallizerBlockEntity extends BlockEntity implements Me
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 500;
+    private final int maxProgress = 500;
 
     public ElectronicCrystallizerBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.ELECTRONIC_CRYSTALLIZER_BE.get(), pPos, pBlockState);
@@ -218,6 +218,16 @@ public class ElectronicCrystallizerBlockEntity extends BlockEntity implements Me
     @Override
     public CompoundTag getUpdateTag() {
         return saveWithoutMetadata();
+    }
+
+    private void onEnergyChanged() {
+        if (this.level != null && !this.level.isClientSide()) {
+            setChanged();
+        }
+    }
+
+    public ContainerData getData() {
+        return data;
     }
 
 }

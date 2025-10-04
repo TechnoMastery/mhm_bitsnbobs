@@ -11,7 +11,7 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 
 public class ElectronicCrystallizerScreen extends AbstractContainerScreen<ElectronicCrystallizerMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(MhmBitsnbobs.MOD_ID, "textures/gui/atomical_stabilizator_gui.png");
+            new ResourceLocation(MhmBitsnbobs.MOD_ID, "textures/gui/gem_polishing_station_gui.png");
 
     public ElectronicCrystallizerScreen(ElectronicCrystallizerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);

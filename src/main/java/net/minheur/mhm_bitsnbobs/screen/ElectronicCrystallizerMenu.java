@@ -30,10 +30,8 @@ public class ElectronicCrystallizerMenu extends AbstractContainerMenu {
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler, 2, 80, 11)); // glue
-            this.addSlot(new SlotItemHandler(iItemHandler, 0, 52, 11)); // left
-            this.addSlot(new SlotItemHandler(iItemHandler, 1, 108, 11)); // right
-            this.addSlot(new SlotItemHandler(iItemHandler, 3, 80, 59)); // out
+            this.addSlot(new SlotItemHandler(iItemHandler, 0, 80, 11));
+            this.addSlot(new SlotItemHandler(iItemHandler, 1, 80, 59));
         });
         addDataSlots(data);
     }
