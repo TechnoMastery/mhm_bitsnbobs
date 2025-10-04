@@ -27,6 +27,7 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minheur.mhm_bitsnbobs.block.SimpleEnergyStorage;
 import net.minheur.mhm_bitsnbobs.recipe.AtomicalStabilizatorRecipe;
+import net.minheur.mhm_bitsnbobs.recipe.ElectronicCrystallizerRecipe;
 import net.minheur.mhm_bitsnbobs.screen.AtomicalStabilizatorMenu;
 import net.minheur.mhm_bitsnbobs.screen.ElectronicCrystallizerMenu;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
@@ -48,6 +49,11 @@ public class ElectronicCrystallizerBlockEntity extends BlockEntity implements Me
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return slot == INPUT_SLOT;
+        }
+
+        @Override
+        public int getSlotLimit(int slot) {
+            return slot == INPUT_SLOT ? 1 : 64;
         }
     };
 
@@ -175,16 +181,16 @@ public class ElectronicCrystallizerBlockEntity extends BlockEntity implements Me
     }
 
     private void craftItem() {
-        Optional<AtomicalStabilizatorRecipe> recipe = getCurrentRecipe();
+        Optional<ElectronicCrystallizerRecipe> recipe = getCurrentRecipe();
         ItemStack result = recipe.get().getResultItem(null);
-        this.itemHandler.extractItem(INPUT_SLOT_LEFT, recipe.get().getInputLeft().getCount(), false);
-        this.itemHandler.extractItem(INPUT_SLOT_RIGHT, recipe.get().getInputRight().getCount(), false);
-        this.itemHandler.extractItem(GLUE_SLOT, recipe.get().getGlue().getCount(), false);
+        this.itemHandler.extractItem(INPUT_SLOT, 1, false);
+        this.itemHandler.setStackInSlot(INPUT_SLOT, new ItemStack(recipe.get().getIngredientPlaceholder().getItem(),
+                1));
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
     private boolean hasRecipe() {
-        Optional<AtomicalStabilizatorRecipe> recipe = getCurrentRecipe();
+        Optional<ElectronicCrystallizerRecipe> recipe = getCurrentRecipe();
         if(recipe.isEmpty()) {
             return false;
         }
