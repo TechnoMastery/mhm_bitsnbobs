@@ -176,6 +176,11 @@ public class ElectronicCrystallizerBlockEntity extends BlockEntity implements Me
             resetProgress();
         }
     }
+
+    private boolean hasPower(Optional<ElectronicCrystallizerRecipe> recipe) {
+        return recipe.get().getEnergyNeed() <= this.energyStorage.getEnergyStored();
+    }
+
     private void resetProgress() {
         progress = 0;
     }
@@ -186,14 +191,21 @@ public class ElectronicCrystallizerBlockEntity extends BlockEntity implements Me
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
         this.itemHandler.setStackInSlot(INPUT_SLOT, new ItemStack(recipe.get().getIngredientPlaceholder().getItem(),
                 1));
+        consumePower(recipe.get().getEnergyNeed());
         this.itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(result.getItem(),
                 this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
     }
+
+    private void consumePower(int energy) {
+        this.energyStorage.extractEnergy(energy, false);
+    }
+
     private boolean hasRecipe() {
         Optional<ElectronicCrystallizerRecipe> recipe = getCurrentRecipe();
-        if(recipe.isEmpty()) {
-            return false;
-        }
+
+        if(recipe.isEmpty()) return false;
+        if (!hasPower(recipe)) return false;
+
         ItemStack result = recipe.get().getResultItem(getLevel().registryAccess());
         return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
     }

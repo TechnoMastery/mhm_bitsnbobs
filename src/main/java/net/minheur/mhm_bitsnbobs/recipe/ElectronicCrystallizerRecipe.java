@@ -1,8 +1,6 @@
 package net.minheur.mhm_bitsnbobs.recipe;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -18,12 +16,14 @@ public class ElectronicCrystallizerRecipe implements Recipe<SimpleContainer> {
     private final ItemStack ingredient;
     private final ItemStack ingredientPlaceholder;
     private final ItemStack result;
+    private final int energy;
     private final ResourceLocation id;
 
-    public ElectronicCrystallizerRecipe(ItemStack ingredient, ItemStack ingredientPlaceholder, ItemStack result, ResourceLocation id) {
+    public ElectronicCrystallizerRecipe(ItemStack ingredient, ItemStack ingredientPlaceholder, ItemStack result, int energy, ResourceLocation id) {
         this.ingredient = ingredient;
         this.ingredientPlaceholder = ingredientPlaceholder;
         this.result = result;
+        this.energy = energy;
         this.id = id;
     }
 
@@ -38,6 +38,9 @@ public class ElectronicCrystallizerRecipe implements Recipe<SimpleContainer> {
     }
     public ItemStack getIngredientPlaceholder() {
         return ingredientPlaceholder.copy();
+    }
+    public int getEnergyNeed() {
+        return energy;
     }
 
     @Override
@@ -85,8 +88,9 @@ public class ElectronicCrystallizerRecipe implements Recipe<SimpleContainer> {
                 ItemStack input = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "ingredient"));
                 ItemStack inputPlaceholder = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "placeholder"));
                 ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(jsonObject, "output"));
+                int energyNeeded = GsonHelper.getAsInt(jsonObject, "energy");
 
-                return new ElectronicCrystallizerRecipe(input, inputPlaceholder, output, pRecipeId);
+                return new ElectronicCrystallizerRecipe(input, inputPlaceholder, output, energyNeeded, pRecipeId);
             } catch (Exception e) {
                 System.err.println("Failed to parse recipe : " + pRecipeId);
                 e.printStackTrace();
@@ -99,8 +103,9 @@ public class ElectronicCrystallizerRecipe implements Recipe<SimpleContainer> {
             ItemStack input = pBuffer.readItem();
             ItemStack inputPlaceholder = pBuffer.readItem();
             ItemStack output = pBuffer.readItem();
+            int energy = pBuffer.readInt();
 
-            return new ElectronicCrystallizerRecipe(input, inputPlaceholder, output, pRecipeId);
+            return new ElectronicCrystallizerRecipe(input, inputPlaceholder, output, energy, pRecipeId);
         }
 
         @Override
@@ -108,6 +113,7 @@ public class ElectronicCrystallizerRecipe implements Recipe<SimpleContainer> {
             pBuffer.writeItemStack(pRecipe.getIngredient(), false);
             pBuffer.writeItemStack(pRecipe.getIngredientPlaceholder(), false);
             pBuffer.writeItemStack(pRecipe.getResultItem(null), false);
+            pBuffer.writeInt(pRecipe.getEnergyNeed());
         }
     }
 }
