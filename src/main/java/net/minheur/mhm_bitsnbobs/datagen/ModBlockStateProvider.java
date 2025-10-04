@@ -97,6 +97,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         makeStrawberryCrop((CropBlock) ModBlocks.STRAWBERRY_CROP.get(), "strawberry_stage", "strawberry_stage");
         makeCornCrop(((CropBlock) ModBlocks.CORN_CROP.get()), "corn_stage_", "corn_stage_");
 
+        // fluids
+        fluidBlock(ModBlocks.TEST_FLUID_BLOCK);
+
         // block entity
         simpleBlockWithItem(ModBlocks.GEM_POLISHING_STATION.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/gem_polishing_station")));
@@ -152,6 +155,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 models().singleTexture(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), new ResourceLocation("minecraft:block/leaves"),
                         "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
 
+    }
+
+    private void fluidBlock(RegistryObject<LiquidBlock> fluidBlock) {
+        simpleBlock(fluidBlock.get(), models().getBuilder(fluidBlock.getId().getPath())
+                .parent(models().getExistingFile(mcLoc("minecraft:water"))));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

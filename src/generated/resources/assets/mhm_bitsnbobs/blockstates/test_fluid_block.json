@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "mhm_bitsnbobs:block/test_fluid_block"
+    }
+  }
+}
