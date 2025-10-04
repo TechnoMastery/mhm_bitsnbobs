@@ -113,7 +113,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     // Ce paté de public void + private est à dupliquer pour les crop blocks. changer les 2 cast dans le second + les noms et l'use dans le 1er : actuellement StrawberryCropBlock.
-    public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
+    private void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
@@ -126,7 +126,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     // cornCropBlock
-    public void makeCornCrop(CropBlock block, String modelName, String textureName) {
+    private void makeCornCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> cornStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
@@ -158,11 +158,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+    private void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
         ModelFile sign = models().sign(name(signBlock), texture);
         hangingSignBlock(signBlock, wallSignBlock, sign);
     }
-    public void hangingSignBlock(Block signBloc, Block wallSignBloc, ModelFile sign) {
+    private void hangingSignBlock(Block signBloc, Block wallSignBloc, ModelFile sign) {
         simpleBlock(signBloc, sign);
         simpleBlock(wallSignBloc, sign);
     }
