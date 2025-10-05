@@ -1068,7 +1068,12 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.HALF_QUANTUMITE_SHEET)
                 .en_us("Half quantumite sheet")
                 .fr_fr("Demi plaque de quantumite");
-
+        addItem(ModItems.SYRINGE)
+                .en_us("Syringe")
+                .fr_fr("Seringue");
+        addItem(ModItems.SYRINGE_TUBE)
+                .en_us("Syringe tube")
+                .fr_fr("Tube de seringue");
 
 
     }
