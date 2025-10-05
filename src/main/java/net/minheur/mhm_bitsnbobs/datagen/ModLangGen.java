@@ -79,6 +79,7 @@ public class ModLangGen extends LanguageGenProvider {
         addTooltip("alloyed_sword")
                 .en_us("Useless like this, but needed to craft the best sword ever!")
                 .fr_fr("Inutile comme sa, mais nécessaire pour fabriquer la mailleur épée !");
+        addTooltip("nether_stick"); // TODO: Xaqorix: add the tooltip
 
 
         // sounds
