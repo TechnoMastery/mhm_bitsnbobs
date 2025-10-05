@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "minecraft:iron_nugget"
+    },
+    "T": {
+      "item": "mhm_bitsnbobs:syringe_tube"
+    }
+  },
+  "pattern": [
+    "  N",
+    " T ",
+    "I  "
+  ],
+  "result": {
+    "item": "mhm_bitsnbobs:syringe"
+  },
+  "show_notification": true
+}
