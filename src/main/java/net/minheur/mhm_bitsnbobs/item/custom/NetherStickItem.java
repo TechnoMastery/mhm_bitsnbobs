@@ -1,6 +1,7 @@
 package net.minheur.mhm_bitsnbobs.item.custom;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -73,6 +74,7 @@ public class NetherStickItem extends Item {
             pStack.hurtAndBreak(1, pLivingEntity, player -> player.broadcastBreakEvent(player.getUsedItemHand()));
             ((Player) pLivingEntity).getCooldowns().addCooldown(this, 60);
         }
+        if (pLivingEntity instanceof Player player) player.awardStat(Stats.ITEM_USED.get(this));
         return returnValue;
     }
 }
