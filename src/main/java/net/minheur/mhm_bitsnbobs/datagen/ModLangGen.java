@@ -19,6 +19,8 @@ public class ModLangGen extends LanguageGenProvider {
         super(output, MhmBitsnbobs.MOD_ID);
     }
 
+    // when no translations set : add a to do
+
     @Override
     protected void addTranslation() {
         // credits
