@@ -3,44 +3,20 @@ package net.minheur.mhm_bitsnbobs.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import net.minecraft.world.SimpleContainer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.techno_lib.custom.recipe.AbstractMultipleIngredientRecipe;
 import org.jetbrains.annotations.Nullable;
 
-public class FreezingRecipe implements Recipe<SimpleContainer> {
-    private final NonNullList<Ingredient> inputItems;
-    private final ItemStack output;
-    private final ResourceLocation id;
-
+public class FreezingRecipe extends AbstractMultipleIngredientRecipe {
     public FreezingRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ResourceLocation id) {
-        this.inputItems = inputItems;
-        this.output = output;
-        this.id = id;
-    }
-
-    @Override
-    public NonNullList<ItemStack> getRemainingItems(SimpleContainer pContainer) {
-        NonNullList<ItemStack> remainders = NonNullList.withSize(pContainer.getContainerSize(), ItemStack.EMPTY);
-        for (int i = 0; i < pContainer.getContainerSize(); i++) {
-            ItemStack itemstack = pContainer.getItem(i);
-            Item item = itemstack.getItem();
-            if (item.hasCraftingRemainingItem()) {
-                ItemStack remainder = new ItemStack(item.getCraftingRemainingItem());
-                if (itemstack.hasTag()) {
-                    remainder.setTag(itemstack.getTag().copy());
-                }
-                remainders.set(i, remainder);
-            }
-        }
-        return remainders;
+        super(id, inputItems, output);
     }
 
     @Override
@@ -48,32 +24,7 @@ public class FreezingRecipe implements Recipe<SimpleContainer> {
         if(level.isClientSide()) {
             return false;
         }
-        return inputItems.get(0).test(simpleContainer.getItem(0));
-    }
-
-    @Override
-    public NonNullList<Ingredient> getIngredients() {
-        return inputItems;
-    }
-
-    @Override
-    public ItemStack assemble(SimpleContainer simpleContainer, RegistryAccess registryAccess) {
-        return output.copy();
-    }
-
-    @Override
-    public boolean canCraftInDimensions(int i, int i1) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResultItem(RegistryAccess registryAccess) {
-        return output.copy();
-    }
-
-    @Override
-    public ResourceLocation getId() {
-        return id;
+        return this.ingredients.get(0).test(simpleContainer.getItem(0));
     }
 
     @Override
@@ -122,7 +73,7 @@ public class FreezingRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, FreezingRecipe pRecipe) {
-            pBuffer.writeInt(pRecipe.inputItems.size());
+            pBuffer.writeInt(pRecipe.ingredients.size());
             for(Ingredient ingredient : pRecipe.getIngredients()) {
                 ingredient.toNetwork(pBuffer);
             }
