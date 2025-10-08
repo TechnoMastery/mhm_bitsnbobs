@@ -50,13 +50,13 @@ public class ModConfiguredFeatures {
         register(context, RUBIS_ORE_KEY, Feature.ORE, new OreConfiguration(stoneReplaceable, ModBlocks.RUBIS_ORE.get().defaultBlockState(), 3));
 
         // here example of tree gen
-        register(context, DARK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
-                BlockStateProvider.simple(ModBlocks.DARK_LOG.get()),
-                // on choisi le trunk si dessous
-                new DarkTrunkPlacer(5, 4, 3),
-                BlockStateProvider.simple(ModBlocks.DARK_LEAVES.get()),
-                new DarkFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
-                new TwoLayersFeatureSize(1, 0, 2)).build());
+        // register(context, DARK_KEY, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+        //         BlockStateProvider.simple(ModBlocks.DARK_LOG.get()),
+        //         // on choisi le trunk si dessous
+        //         new DarkTrunkPlacer(5, 4, 3),
+        //         BlockStateProvider.simple(ModBlocks.DARK_LEAVES.get()),
+        //         new DarkFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), 3),
+        //         new TwoLayersFeatureSize(1, 0, 2)).build());
 
     }
 

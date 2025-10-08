@@ -24,8 +24,8 @@ public class ModEventBusClientEvents {
     public static void registerLayer(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ModModelLayers.RHINO_LAYER, RhinoModel::createBodyLayer);
 
-        event.registerLayerDefinition(ModModelLayers.DARK_BOAT_LAYER, BoatModel::createBodyModel);
-        event.registerLayerDefinition(ModModelLayers.DARK_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
+        // event.registerLayerDefinition(ModModelLayers.DARK_BOAT_LAYER, BoatModel::createBodyModel);
+        // event.registerLayerDefinition(ModModelLayers.DARK_CHEST_BOAT_LAYER, ChestBoatModel::createBodyModel);
     }
 
     @SubscribeEvent
@@ -33,7 +33,7 @@ public class ModEventBusClientEvents {
         event.registerBlockEntityRenderer(ModBlockEntities.GEM_POLISHING_BE.get(), GemPolishingBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(ModBlockEntities.MYSTERIOUS_MAGIC_BE.get(), MysteriousAltarBlockEntityRenderer::new);
 
-        event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);
+        // event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
+        // event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);
     }
 }

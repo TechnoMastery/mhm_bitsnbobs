@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.techno_lib.datagen.recipe.AbstractSingleIngredientRecipeBuilder;
 
@@ -20,7 +21,7 @@ import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 public class FreezingRecipeBuilder extends AbstractSingleIngredientRecipeBuilder {
 
     public FreezingRecipeBuilder(Ingredient ingredient, ItemLike result, int count) {
-        super("freezing", result, count, ingredient);
+        super(MhmBitsnbobs.MOD_ID,"freezing", result, count, ingredient);
     }
 
     public static FreezingRecipeBuilder freezing(Ingredient ingredient, ItemLike result) {
@@ -31,8 +32,8 @@ public class FreezingRecipeBuilder extends AbstractSingleIngredientRecipeBuilder
     }
 
     @Override
-    protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Advancement.Builder builder, ResourceLocation resourceLocation1) {
-        consumer.accept(new Result(resourceLocation, this.result, this.count, this.ingredient, this.advancement, resourceLocation));
+    protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
+        consumer.accept(new Result(resourceLocation.withPrefix("freezing/"), this.result, this.count, this.ingredient, this.advancement, resourceLocation.withPrefix("recipes/freezing/")));
     }
 
     public static class Result extends SingleIngredientResult {

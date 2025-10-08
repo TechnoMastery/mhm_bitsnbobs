@@ -246,7 +246,7 @@ public class MhmBitsnbobs
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             // wood types
-            Sheets.addWoodType(ModWoodTypes.DARK);
+            // Sheets.addWoodType(ModWoodTypes.DARK);
 
             // entities
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);

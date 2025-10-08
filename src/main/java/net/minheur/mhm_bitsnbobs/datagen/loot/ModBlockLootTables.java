@@ -64,25 +64,25 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.MYSTERIOUS_ALTAR.get());
         this.dropSelf(ModBlocks.ELECTRONIC_CRYSTALLIZER.get());
         this.dropSelf(ModBlocks.INCUBATOR.get());
-        this.dropSelf(ModBlocks.DARK_SAPLING.get());
-        this.dropSelf(ModBlocks.DARK_LOG.get());
-        this.dropSelf(ModBlocks.DARK_WOOD.get());
-        this.dropSelf(ModBlocks.STRIPPED_DARK_LOG.get());
-        this.dropSelf(ModBlocks.STRIPPED_DARK_WOOD.get());
-        this.dropSelf(ModBlocks.DARK_PLANKS.get());
+        // this.dropSelf(ModBlocks.DARK_SAPLING.get());
+        // this.dropSelf(ModBlocks.DARK_LOG.get());
+        // this.dropSelf(ModBlocks.DARK_WOOD.get());
+        // this.dropSelf(ModBlocks.STRIPPED_DARK_LOG.get());
+        // this.dropSelf(ModBlocks.STRIPPED_DARK_WOOD.get());
+        // this.dropSelf(ModBlocks.DARK_PLANKS.get());
 
-        this.add(ModBlocks.DARK_LEAVES.get(), block ->
-                createLeavesDrops(block, ModBlocks.DARK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+        // this.add(ModBlocks.DARK_LEAVES.get(), block ->
+        //         createLeavesDrops(block, ModBlocks.DARK_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         // signs
-        this.add(ModBlocks.DARK_SIGN.get(), block ->
-                createSingleItemTable(ModItems.DARK_SIGN.get()));
-        this.add(ModBlocks.DARK_WALL_SIGN.get(), block ->
-                createSingleItemTable(ModItems.DARK_SIGN.get()));
-        this.add(ModBlocks.DARK_HANGING_SIGN.get(), block ->
-                createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
-        this.add(ModBlocks.DARK_WALL_HANGING_SIGN.get(), block ->
-                createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
+        // this.add(ModBlocks.DARK_SIGN.get(), block ->
+        //         createSingleItemTable(ModItems.DARK_SIGN.get()));
+        // this.add(ModBlocks.DARK_WALL_SIGN.get(), block ->
+        //         createSingleItemTable(ModItems.DARK_SIGN.get()));
+        // this.add(ModBlocks.DARK_HANGING_SIGN.get(), block ->
+        //         createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
+        // this.add(ModBlocks.DARK_WALL_HANGING_SIGN.get(), block ->
+        //         createSingleItemTable(ModItems.DARK_HANGING_SIGN.get()));
 
         // utilisé quand le block drop 1 type d'item / block, dans une quantité fixe
         this.dropOneType(ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.CREATIVE_RESIDUE.get(), 2);

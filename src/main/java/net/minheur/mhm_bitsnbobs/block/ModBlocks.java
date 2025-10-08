@@ -89,8 +89,8 @@ public class ModBlocks {
     // end custom
 
     // saplings
-    public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
-            () -> new SaplingBlock(new DarkTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
+    // public static final RegistryObject<Block> DARK_SAPLING = registerBlock("dark_sapling",
+    //         () -> new SaplingBlock(new DarkTreeGrower(), BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
     // Modèle minerai si dessous ==> UniformInt.of() = qnt min / max d' experience.
     // Eft c un modèle de block a XP
@@ -114,15 +114,15 @@ public class ModBlocks {
                     .strength(5f).requiresCorrectToolForDrops(), UniformInt.of(3, 7)));
 
     // signs
-    public static final RegistryObject<Block> DARK_SIGN = BLOCKS.register("dark_sign",
-            () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.DARK));
-    public static final RegistryObject<Block> DARK_WALL_SIGN = BLOCKS.register("dark_wall_sign",
-            () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.DARK));
+    // public static final RegistryObject<Block> DARK_SIGN = BLOCKS.register("dark_sign",
+    //         () -> new ModStandingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SIGN), ModWoodTypes.DARK));
+    // public static final RegistryObject<Block> DARK_WALL_SIGN = BLOCKS.register("dark_wall_sign",
+    //         () -> new ModWallSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_SIGN), ModWoodTypes.DARK));
 
-    public static final RegistryObject<Block> DARK_HANGING_SIGN = BLOCKS.register("dark_hanging_sign",
-            () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.DARK));
-    public static final RegistryObject<Block> DARK_WALL_HANGING_SIGN = BLOCKS.register("dark_wall_hanging_sign",
-            () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.DARK));
+    // public static final RegistryObject<Block> DARK_HANGING_SIGN = BLOCKS.register("dark_hanging_sign",
+    //         () -> new ModHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_HANGING_SIGN), ModWoodTypes.DARK));
+    // public static final RegistryObject<Block> DARK_WALL_HANGING_SIGN = BLOCKS.register("dark_wall_hanging_sign",
+    //         () -> new ModWallHangingSignBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN), ModWoodTypes.DARK));
 
     // non-block blocks
     public static final RegistryObject<Block> SAPPHIRE_STAIRS = registerBlock("sapphire_stairs",
@@ -168,49 +168,49 @@ public class ModBlocks {
             () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ModBlocks.CATMINT,
                     BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
-    // custom wood
-    public static final RegistryObject<Block> DARK_LOG = registerBlock("dark_log",
-            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f), ModBlocks.STRIPPED_DARK_LOG.get().defaultBlockState()));
-    public static final RegistryObject<Block> DARK_WOOD = registerBlock("dark_wood",
-            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f), ModBlocks.STRIPPED_DARK_WOOD.get().defaultBlockState()));
-    public static final RegistryObject<Block> STRIPPED_DARK_LOG = registerBlock("stripped_dark_log",
-            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f)));
-    public static final RegistryObject<Block> STRIPPED_DARK_WOOD = registerBlock("stripped_dark_wood",
-            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
-
-    public static final RegistryObject<Block> DARK_PLANKS = registerBlock("dark_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)) {
-                // here is an anonymous class. When multiples planks, can create a PlanksBlock custom block class.
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 20;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 5;
-                }
-            });
-    public static final RegistryObject<Block> DARK_LEAVES = registerBlock("dark_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
-                // here is an anonymous class. When multiples leaves, can create a LeavesBlock custom block class.
-                // If possible ; already is a LeavesBlock. Might have to create a class extends LeavesBlock. To experiment.
-                @Override
-                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return true;
-                }
-                @Override
-                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 60;
-                }
-                @Override
-                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-                    return 30;
-                }
-            });
+    // // custom wood
+    // public static final RegistryObject<Block> DARK_LOG = registerBlock("dark_log",
+    //         () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f), ModBlocks.STRIPPED_DARK_LOG));
+    // public static final RegistryObject<Block> DARK_WOOD = registerBlock("dark_wood",
+    //         () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f), ModBlocks.STRIPPED_DARK_WOOD));
+    // public static final RegistryObject<Block> STRIPPED_DARK_LOG = registerBlock("stripped_dark_log",
+    //         () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f)));
+    // public static final RegistryObject<Block> STRIPPED_DARK_WOOD = registerBlock("stripped_dark_wood",
+    //         () -> new Block(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
+//
+    // public static final RegistryObject<Block> DARK_PLANKS = registerBlock("dark_planks",
+    //         () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)) {
+    //             // here is an anonymous class. When multiples planks, can create a PlanksBlock custom block class.
+    //             @Override
+    //             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+    //                 return true;
+    //             }
+    //             @Override
+    //             public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+    //                 return 20;
+    //             }
+    //             @Override
+    //             public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+    //                 return 5;
+    //             }
+    //         });
+    // public static final RegistryObject<Block> DARK_LEAVES = registerBlock("dark_leaves",
+    //         () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {
+    //             // here is an anonymous class. When multiples leaves, can create a LeavesBlock custom block class.
+    //             // If possible ; already is a LeavesBlock. Might have to create a class extends LeavesBlock. To experiment.
+    //             @Override
+    //             public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+    //                 return true;
+    //             }
+    //             @Override
+    //             public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+    //                 return 60;
+    //             }
+    //             @Override
+    //             public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+    //                 return 30;
+    //             }
+    //         });
 
     // end block create
 

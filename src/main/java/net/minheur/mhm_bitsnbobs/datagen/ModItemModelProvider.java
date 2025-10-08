@@ -144,10 +144,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SWEET_BERRIES_ICE_CREAM);
         simpleItem(ModItems.QUARTER_STICK);
         simpleItem(ModItems.YEAST);
-        simpleItem(ModItems.DARK_SIGN);
-        simpleItem(ModItems.DARK_HANGING_SIGN);
-        simpleItem(ModItems.DARK_BOAT);
-        simpleItem(ModItems.DARK_CHEST_BOAT);
+        // simpleItem(ModItems.DARK_SIGN);
+        // simpleItem(ModItems.DARK_HANGING_SIGN);
+        // simpleItem(ModItems.DARK_BOAT);
+        // simpleItem(ModItems.DARK_CHEST_BOAT);
         simpleItem(ModItems.SLIMY_INGOT);
         simpleItem(ModItems.SLIMY_STICK);
         simpleItem(ModItems.BUCKET_OF_LIQUID_ICE_CREAM);
@@ -208,7 +208,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.METAL_DETECTOR);
 
         // saplings
-        saplingItem(ModBlocks.DARK_SAPLING);
+        // saplingItem(ModBlocks.DARK_SAPLING);
 
         // runes
         runeItem(ModItems.XP_RUNE);

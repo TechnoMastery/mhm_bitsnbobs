@@ -101,17 +101,17 @@ public class ModCreativeModTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.STORM_FRAGMENT.get());
                         output.accept(ModItems.HARDENED_INGOT.get());
-                        output.accept(ModBlocks.DARK_LOG.get());
-                        output.accept(ModBlocks.DARK_WOOD.get());
-                        output.accept(ModBlocks.STRIPPED_DARK_LOG.get());
-                        output.accept(ModBlocks.STRIPPED_DARK_WOOD.get());
-                        output.accept(ModBlocks.DARK_PLANKS.get());
-                        output.accept(ModBlocks.DARK_LEAVES.get());
-                        output.accept(ModItems.DARK_SIGN.get());
-                        output.accept(ModItems.DARK_HANGING_SIGN.get());
-                        output.accept(ModItems.DARK_BOAT.get());
-                        output.accept(ModItems.DARK_CHEST_BOAT.get());
-                        output.accept(ModBlocks.DARK_SAPLING.get());
+                        // output.accept(ModBlocks.DARK_LOG.get());
+                        // output.accept(ModBlocks.DARK_WOOD.get());
+                        // output.accept(ModBlocks.STRIPPED_DARK_LOG.get());
+                        // output.accept(ModBlocks.STRIPPED_DARK_WOOD.get());
+                        // output.accept(ModBlocks.DARK_PLANKS.get());
+                        // output.accept(ModBlocks.DARK_LEAVES.get());
+                        // output.accept(ModItems.DARK_SIGN.get());
+                        // output.accept(ModItems.DARK_HANGING_SIGN.get());
+                        // output.accept(ModItems.DARK_BOAT.get());
+                        // output.accept(ModItems.DARK_CHEST_BOAT.get());
+                        // output.accept(ModBlocks.DARK_SAPLING.get());
                         output.accept(ModItems.WIND_CHARGED_INGOT.get());
                         output.accept(ModItems.QUANTUM_CORE.get());
                         output.accept(ModItems.QUANTUM_DUST.get());

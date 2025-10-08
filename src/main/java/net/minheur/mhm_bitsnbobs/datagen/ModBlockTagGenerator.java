@@ -118,17 +118,17 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                         ModBlocks.EXTREMELY_DRY_DIRT_BLOCK.get(),
                         ModBlocks.RESOURCE_DIRT_BLOCK.get()
                 );
-        this.tag(BlockTags.LOGS_THAT_BURN)
-                .add(
-                        ModBlocks.DARK_LOG.get(),
-                        ModBlocks.DARK_WOOD.get(),
-                        ModBlocks.STRIPPED_DARK_LOG.get(),
-                        ModBlocks.STRIPPED_DARK_WOOD.get()
-                );
-        this.tag(BlockTags.PLANKS)
-                .add(
-                        ModBlocks.DARK_PLANKS.get()
-                );
+        // this.tag(BlockTags.LOGS_THAT_BURN)
+        //         .add(
+        //                 ModBlocks.DARK_LOG.get(),
+        //                 ModBlocks.DARK_WOOD.get(),
+        //                 ModBlocks.STRIPPED_DARK_LOG.get(),
+        //                 ModBlocks.STRIPPED_DARK_WOOD.get()
+        //         );
+        // this.tag(BlockTags.PLANKS)
+        //         .add(
+        //                 ModBlocks.DARK_PLANKS.get()
+        //         );
         this.tag(BlockTags.DIRT)
                 .add(
                         ModBlocks.RESOURCE_DIRT_BLOCK.get()

@@ -49,23 +49,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SOUND_BLOCK);
 
         // signs
-        signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));
-        hangingSignBlock(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.DARK_PLANKS.get()));
+        // signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));
+        // hangingSignBlock(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.DARK_PLANKS.get()));
 
         // wood
-        logBlock(((RotatedPillarBlock) ModBlocks.DARK_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.DARK_WOOD.get()), blockTexture(ModBlocks.DARK_LOG.get()), blockTexture(ModBlocks.DARK_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_LOG.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
-                new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/stripped_dark_log_top"));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_WOOD.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
-                blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()));
-        blockItem(ModBlocks.DARK_LOG);
-        blockItem(ModBlocks.DARK_WOOD);
-        blockItem(ModBlocks.STRIPPED_DARK_LOG);
-        blockItem(ModBlocks.STRIPPED_DARK_WOOD);
-        blockWithItem(ModBlocks.DARK_PLANKS);
-        leavesBlock(ModBlocks.DARK_LEAVES);
-        saplingBlock(ModBlocks.DARK_SAPLING);
+        // logBlock(((RotatedPillarBlock) ModBlocks.DARK_LOG.get()));
+        // axisBlock(((RotatedPillarBlock) ModBlocks.DARK_WOOD.get()), blockTexture(ModBlocks.DARK_LOG.get()), blockTexture(ModBlocks.DARK_LOG.get()));
+        // axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_LOG.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
+        //         new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/stripped_dark_log_top"));
+        // axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_WOOD.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
+        //         blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()));
+        // blockItem(ModBlocks.DARK_LOG);
+        // blockItem(ModBlocks.DARK_WOOD);
+        // blockItem(ModBlocks.STRIPPED_DARK_LOG);
+        // blockItem(ModBlocks.STRIPPED_DARK_WOOD);
+        // blockWithItem(ModBlocks.DARK_PLANKS);
+        // leavesBlock(ModBlocks.DARK_LEAVES);
+        // saplingBlock(ModBlocks.DARK_SAPLING);
 
         // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or duplicate)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));

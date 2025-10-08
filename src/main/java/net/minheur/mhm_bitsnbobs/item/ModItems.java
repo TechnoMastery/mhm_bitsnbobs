@@ -433,10 +433,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.DEVIl_BREAD)));
 
     // boats
-    public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",
-            () -> new ModBoatItem(false, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> DARK_CHEST_BOAT = ITEMS.register("dark_chest_boat",
-            () -> new ModBoatItem(true, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
+    // public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",
+    //         () -> new ModBoatItem(false, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
+    // public static final RegistryObject<Item> DARK_CHEST_BOAT = ITEMS.register("dark_chest_boat",
+    //         () -> new ModBoatItem(true, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
 
     // seeds
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
@@ -454,10 +454,10 @@ public class ModItems {
                     new Item.Properties()));
 
     // signs
-    public static final RegistryObject<Item> DARK_SIGN = ITEMS.register("dark_sign",
-            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_WALL_SIGN.get()));
-    public static final RegistryObject<Item> DARK_HANGING_SIGN = ITEMS.register("dark_hanging_sign",
-            () -> new HangingSignItem(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    // public static final RegistryObject<Item> DARK_SIGN = ITEMS.register("dark_sign",
+    //         () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_WALL_SIGN.get()));
+    // public static final RegistryObject<Item> DARK_HANGING_SIGN = ITEMS.register("dark_hanging_sign",
+    //         () -> new HangingSignItem(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
     // end item create
 

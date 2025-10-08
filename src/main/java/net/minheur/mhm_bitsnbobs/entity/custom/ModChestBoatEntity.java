@@ -29,11 +29,11 @@ public class ModChestBoatEntity extends ChestBoat {
 
     @Override
     public Item getDropItem() {
-        switch (getModVariant()) {
-            case DARK -> {
-                return ModItems.DARK_CHEST_BOAT.get();
-            }
-        }
+        // switch (getModVariant()) {
+        //     case DARK -> {
+        //         return ModItems.DARK_CHEST_BOAT.get();
+        //     }
+        // }
         return super.getDropItem();
     }
 
@@ -43,7 +43,7 @@ public class ModChestBoatEntity extends ChestBoat {
 
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE, ModBoatEntity.Type.DARK.ordinal());
+        // this.entityData.define(DATA_ID_TYPE, ModBoatEntity.Type.DARK.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
