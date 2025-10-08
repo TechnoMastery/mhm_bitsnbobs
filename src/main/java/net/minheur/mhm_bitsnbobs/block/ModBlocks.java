@@ -24,6 +24,7 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.DarkTreeGrower;
+import net.minheur.techno_lib.custom.block.FlammableRotatedPillarWoodBlock;
 
 import java.util.function.Supplier;
 
@@ -169,13 +170,13 @@ public class ModBlocks {
 
     // custom wood
     public static final RegistryObject<Block> DARK_LOG = registerBlock("dark_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f)));
+            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).strength(3f), ModBlocks.STRIPPED_DARK_LOG.get().defaultBlockState()));
     public static final RegistryObject<Block> DARK_WOOD = registerBlock("dark_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f)));
+            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f), ModBlocks.STRIPPED_DARK_WOOD.get().defaultBlockState()));
     public static final RegistryObject<Block> STRIPPED_DARK_LOG = registerBlock("stripped_dark_log",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f)));
+            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f), null)); // TODO: patch "null"
     public static final RegistryObject<Block> STRIPPED_DARK_WOOD = registerBlock("stripped_dark_wood",
-            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
+            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f), null)); // TODO: patch "null"
 
     public static final RegistryObject<Block> DARK_PLANKS = registerBlock("dark_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)) {
