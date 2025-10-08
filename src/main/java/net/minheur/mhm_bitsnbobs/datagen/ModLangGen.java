@@ -8,7 +8,7 @@ import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
-import net.minheur.techno_lib.lang.LanguageGenProvider;
+import net.minheur.techno_lib.datagen.lang.LanguageGenProvider;
 
 /**
  * Lang generator. Specify with the function what type of translation you want then set the parameters to define the key.
