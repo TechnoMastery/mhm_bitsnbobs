@@ -174,9 +174,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> DARK_WOOD = registerBlock("dark_wood",
             () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD).strength(3f), ModBlocks.STRIPPED_DARK_WOOD.get().defaultBlockState()));
     public static final RegistryObject<Block> STRIPPED_DARK_LOG = registerBlock("stripped_dark_log",
-            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f), null)); // TODO: patch "null"
+            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG).strength(3f)));
     public static final RegistryObject<Block> STRIPPED_DARK_WOOD = registerBlock("stripped_dark_wood",
-            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f), null)); // TODO: patch "null"
+            () -> new FlammableRotatedPillarWoodBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD).strength(3f)));
 
     public static final RegistryObject<Block> DARK_PLANKS = registerBlock("dark_planks",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)) {
