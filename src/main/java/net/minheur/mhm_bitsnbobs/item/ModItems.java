@@ -367,7 +367,7 @@ public class ModItems {
             () -> new FuelItem(new Item.Properties(), 400));
 
     public static final RegistryObject<Item> FIRE_DIAMOND = ITEMS. register("fire_diamond",
-            () -> new FuelItem(new Item.Properties().rarity(Rarity.RARE).fireResistant(), 1600));
+            () -> new FireFuelItem(new Item.Properties().rarity(Rarity.RARE).fireResistant(), 1600, 500));
     public static final RegistryObject<Item> FIRE_STICK = ITEMS. register("fire_stick",
             () -> new FuelItem(new Item.Properties().rarity(Rarity.RARE).fireResistant().stacksTo(16), 1600));
 

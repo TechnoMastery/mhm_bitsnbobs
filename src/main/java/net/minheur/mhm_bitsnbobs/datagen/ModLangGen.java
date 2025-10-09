@@ -81,7 +81,9 @@ public class ModLangGen extends LanguageGenProvider {
         addTooltip("alloyed_sword")
                 .en_us("Useless like this, but needed to craft the best sword ever!")
                 .fr_fr("Inutile comme sa, mais nécessaire pour fabriquer la mailleur épée !");
-        addTooltip("nether_stick"); // TODO: Xaqorix: add the tooltip
+        addTooltip("nether_stick")
+                .en_us("This stick give you some protection")
+                .fr_fr("Ce Baton te donne de la protection.");
 
 
         // sounds
@@ -1068,6 +1070,9 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.HALF_QUANTUMITE_SHEET)
                 .en_us("Half quantumite sheet")
                 .fr_fr("Demi plaque de quantumite");
+        addItem(ModItems.NETHER_STICK)
+                .en_us("Nether stick")
+                .fr_fr("Baton du nether");
         addItem(ModItems.SYRINGE)
                 .en_us("Syringe")
                 .fr_fr("Seringue");
