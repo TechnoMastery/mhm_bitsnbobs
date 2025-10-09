@@ -9,8 +9,8 @@ import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.compat.OtherModItems;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
-import net.minheur.techno_lib.advancement.AdvancementBuilder;
-import net.minheur.techno_lib.advancement.CriterionBuilder;
+import net.minheur.techno_lib.datagen.advancement.AdvancementBuilder;
+import net.minheur.techno_lib.datagen.advancement.CriterionBuilder;
 
 /**
  * The advancement registering class. To add them to the datagen, go to {@link net.minheur.mhm_bitsnbobs.datagen.ModAdvancementGen} and add it to the {@code build} function.

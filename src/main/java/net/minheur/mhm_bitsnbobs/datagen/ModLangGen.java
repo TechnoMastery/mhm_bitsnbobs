@@ -8,7 +8,7 @@ import net.minheur.mhm_bitsnbobs.effects.ModEffects;
 import net.minheur.mhm_bitsnbobs.item.ModCreativeModTabs;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.util.ModDamageTypes;
-import net.minheur.techno_lib.lang.LanguageGenProvider;
+import net.minheur.techno_lib.datagen.lang.LanguageGenProvider;
 
 /**
  * Lang generator. Specify with the function what type of translation you want then set the parameters to define the key.
@@ -18,6 +18,8 @@ public class ModLangGen extends LanguageGenProvider {
     protected ModLangGen(PackOutput output) {
         super(output, MhmBitsnbobs.MOD_ID);
     }
+
+    // when no translations set : add a to do
 
     @Override
     protected void addTranslation() {
@@ -248,27 +250,27 @@ public class ModLangGen extends LanguageGenProvider {
         addBlock(ModBlocks.CREATIVE_RESIDUE_BLOCK)
                 .en_us("Block of creative residue")
                 .fr_fr("Bloc de résidu créatif");
-        addBlock(ModBlocks.DARK_HANGING_SIGN)
-                .en_us("Dark hanging sign")
-                .fr_fr("Panneau suspendu sombre");
-        addBlock(ModBlocks.DARK_LEAVES)
-                .en_us("Dark leaves")
-                .fr_fr("Feuillage sombre");
-        addBlock(ModBlocks.DARK_LOG)
-                .en_us("Dark log")
-                .fr_fr("Tronc sombre");
-        addBlock(ModBlocks.DARK_PLANKS)
-                .en_us("Dark planks")
-                .fr_fr("Planches sombre");
-        addBlock(ModBlocks.DARK_SAPLING)
-                .en_us("Dark sapling")
-                .fr_fr("Pousse d'arbre sombre");
-        addBlock(ModBlocks.DARK_SIGN)
-                .en_us("Dark sign")
-                .fr_fr("Panneau sombre");
-        addBlock(ModBlocks.DARK_WOOD)
-                .en_us("Dark wood")
-                .fr_fr("Bois sombre");
+        // addBlock(ModBlocks.DARK_HANGING_SIGN)
+        //         .en_us("Dark hanging sign")
+        //         .fr_fr("Panneau suspendu sombre");
+        // addBlock(ModBlocks.DARK_LEAVES)
+        //         .en_us("Dark leaves")
+        //         .fr_fr("Feuillage sombre");
+        // addBlock(ModBlocks.DARK_LOG)
+        //         .en_us("Dark log")
+        //         .fr_fr("Tronc sombre");
+        // addBlock(ModBlocks.DARK_PLANKS)
+        //         .en_us("Dark planks")
+        //         .fr_fr("Planches sombre");
+        // addBlock(ModBlocks.DARK_SAPLING)
+        //         .en_us("Dark sapling")
+        //         .fr_fr("Pousse d'arbre sombre");
+        // addBlock(ModBlocks.DARK_SIGN)
+        //         .en_us("Dark sign")
+        //         .fr_fr("Panneau sombre");
+        // addBlock(ModBlocks.DARK_WOOD)
+        //         .en_us("Dark wood")
+        //         .fr_fr("Bois sombre");
         addBlock(ModBlocks.DEEPSLATE_SAPPHIRE_ORE)
                 .en_us("Deepslate sapphire ore")
                 .fr_fr("Minerais de saphir de pierre des abîmes");
@@ -347,15 +349,18 @@ public class ModLangGen extends LanguageGenProvider {
         addBlock(ModBlocks.SOUND_BLOCK)
                 .en_us("Sound block")
                 .fr_fr("Bloc de musique");
-        addBlock(ModBlocks.STRIPPED_DARK_LOG)
-                .en_us("Stripped dark log")
-                .fr_fr("Tronc sombre écorcé");
-        addBlock(ModBlocks.STRIPPED_DARK_WOOD)
-                .en_us("Stripped dark wood")
-                .fr_fr("Bois sombre écorcé");
+        // addBlock(ModBlocks.STRIPPED_DARK_LOG)
+        //         .en_us("Stripped dark log")
+        //         .fr_fr("Tronc sombre écorcé");
+        // addBlock(ModBlocks.STRIPPED_DARK_WOOD)
+        //         .en_us("Stripped dark wood")
+        //         .fr_fr("Bois sombre écorcé");
         addBlock(ModBlocks.SUPER_CHARGED_BLOCK)
                 .en_us("Super charged block")
                 .fr_fr("Bloc super chargé");
+        addBlock(ModBlocks.ELECTRONIC_CRYSTALLIZER)
+                .en_us("Electronic crystallizer")
+                .fr_fr("Cristalliseur électrique");
 
 
         // advancements
@@ -540,6 +545,9 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.BLUE_BIOMASS)
                 .en_us("Blue biomass")
                 .fr_fr("Biomasse bleu");
+        addItem(ModItems.RED_BIOMASS)
+                .en_us("Red biomass")
+                .fr_fr("Biomasse rouge");
         addItem(ModItems.DARKENED_BIOMASS)
                 .en_us("Darkened biomass")
                 .fr_fr("Biomasse assombrie");
@@ -852,12 +860,12 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.CORN_SEEDS)
                 .en_us("Corn seeds")
                 .fr_fr("Graines de maïs");
-        addItem(ModItems.DARK_BOAT)
-                .en_us("Dark boat")
-                .fr_fr("Bateau sombre");
-        addItem(ModItems.DARK_CHEST_BOAT)
-                .en_us("Dark chest boat")
-                .fr_fr("Bateau sombre avec coffre");
+        // addItem(ModItems.DARK_BOAT)
+        //         .en_us("Dark boat")
+        //         .fr_fr("Bateau sombre");
+        // addItem(ModItems.DARK_CHEST_BOAT)
+        //         .en_us("Dark chest boat")
+        //         .fr_fr("Bateau sombre avec coffre");
         addItem(ModItems.CREATIVE_ESSENCE)
                 .en_us("Creative essence")
                 .fr_fr("Essence créative");
@@ -1065,7 +1073,12 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.NETHER_STICK)
                 .en_us("Nether stick")
                 .fr_fr("Baton du nether");
-
+        addItem(ModItems.SYRINGE)
+                .en_us("Syringe")
+                .fr_fr("Seringue");
+        addItem(ModItems.SYRINGE_TUBE)
+                .en_us("Syringe tube")
+                .fr_fr("Tube de seringue");
 
 
     }

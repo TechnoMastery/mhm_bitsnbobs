@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "appflux"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "appflux:redstone_crystal"
+    },
+    {
+      "item": "appflux:harden_insulating_resin"
+    },
+    {
+      "item": "ae2:sky_stone_block"
+    },
+    {
+      "fluid": "minecraft:lava",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "item": "appflux:sky_harden_insulating_resin",
+      "count": 2
+    }
+  ]
+}

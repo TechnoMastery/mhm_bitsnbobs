@@ -49,23 +49,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.SOUND_BLOCK);
 
         // signs
-        signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));
-        hangingSignBlock(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.DARK_PLANKS.get()));
+        // signBlock(((StandingSignBlock) ModBlocks.DARK_SIGN.get()), ((WallSignBlock) ModBlocks.DARK_WALL_SIGN.get()), blockTexture(ModBlocks.DARK_PLANKS.get()));
+        // hangingSignBlock(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), blockTexture(ModBlocks.DARK_PLANKS.get()));
 
         // wood
-        logBlock(((RotatedPillarBlock) ModBlocks.DARK_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.DARK_WOOD.get()), blockTexture(ModBlocks.DARK_LOG.get()), blockTexture(ModBlocks.DARK_LOG.get()));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_LOG.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
-                new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/stripped_dark_log_top"));
-        axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_WOOD.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
-                blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()));
-        blockItem(ModBlocks.DARK_LOG);
-        blockItem(ModBlocks.DARK_WOOD);
-        blockItem(ModBlocks.STRIPPED_DARK_LOG);
-        blockItem(ModBlocks.STRIPPED_DARK_WOOD);
-        blockWithItem(ModBlocks.DARK_PLANKS);
-        leavesBlock(ModBlocks.DARK_LEAVES);
-        saplingBlock(ModBlocks.DARK_SAPLING);
+        // logBlock(((RotatedPillarBlock) ModBlocks.DARK_LOG.get()));
+        // axisBlock(((RotatedPillarBlock) ModBlocks.DARK_WOOD.get()), blockTexture(ModBlocks.DARK_LOG.get()), blockTexture(ModBlocks.DARK_LOG.get()));
+        // axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_LOG.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
+        //         new ResourceLocation(MhmBitsnbobs.MOD_ID, "block/stripped_dark_log_top"));
+        // axisBlock(((RotatedPillarBlock) ModBlocks.STRIPPED_DARK_WOOD.get()), blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()),
+        //         blockTexture(ModBlocks.STRIPPED_DARK_LOG.get()));
+        // blockItem(ModBlocks.DARK_LOG);
+        // blockItem(ModBlocks.DARK_WOOD);
+        // blockItem(ModBlocks.STRIPPED_DARK_LOG);
+        // blockItem(ModBlocks.STRIPPED_DARK_WOOD);
+        // blockWithItem(ModBlocks.DARK_PLANKS);
+        // leavesBlock(ModBlocks.DARK_LEAVES);
+        // saplingBlock(ModBlocks.DARK_SAPLING);
 
         // stairs : to a .cast after the first .get to make it ok, .cast for [ slab , stairs , button, pressure_plate , fence , fence_gate , wall ] too (or duplicate)
         stairsBlock(((StairBlock) ModBlocks.SAPPHIRE_STAIRS.get()), blockTexture(ModBlocks.SAPPHIRE_BLOCK.get()));
@@ -108,10 +108,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
                 new ModelFile.UncheckedModelFile(modLoc("block/mysterious_altar")));
         simpleBlockWithItem(ModBlocks.INCUBATOR.get(),
                 new ModelFile.UncheckedModelFile(modLoc("block/incubator")));
+        simpleBlockWithItem(ModBlocks.ELECTRONIC_CRYSTALLIZER.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/electronic_crystallizer")));
     }
 
     // Ce paté de public void + private est à dupliquer pour les crop blocks. changer les 2 cast dans le second + les noms et l'use dans le 1er : actuellement StrawberryCropBlock.
-    public void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
+    private void makeStrawberryCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> strawberryStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
@@ -124,7 +126,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     // cornCropBlock
-    public void makeCornCrop(CropBlock block, String modelName, String textureName) {
+    private void makeCornCrop(CropBlock block, String modelName, String textureName) {
         Function<BlockState, ConfiguredModel[]> function = state -> cornStates(state, block, modelName, textureName);
 
         getVariantBuilder(block).forAllStates(function);
@@ -156,11 +158,11 @@ public class ModBlockStateProvider extends BlockStateProvider {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 
-    public void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
+    private void hangingSignBlock(Block signBlock, Block wallSignBlock, ResourceLocation texture) {
         ModelFile sign = models().sign(name(signBlock), texture);
         hangingSignBlock(signBlock, wallSignBlock, sign);
     }
-    public void hangingSignBlock(Block signBloc, Block wallSignBloc, ModelFile sign) {
+    private void hangingSignBlock(Block signBloc, Block wallSignBloc, ModelFile sign) {
         simpleBlock(signBloc, sign);
         simpleBlock(wallSignBloc, sign);
     }

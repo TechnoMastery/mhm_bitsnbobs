@@ -1,0 +1,18 @@
+{
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:red_biomass"
+    }
+  ],
+  "processingTime": 500,
+  "results": [
+    {
+      "item": "minecraft:red_mushroom"
+    },
+    {
+      "chance": 0.2,
+      "item": "minecraft:redstone"
+    }
+  ]
+}

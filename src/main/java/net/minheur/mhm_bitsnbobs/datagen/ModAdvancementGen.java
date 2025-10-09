@@ -3,8 +3,8 @@ package net.minheur.mhm_bitsnbobs.datagen;
 import com.google.gson.JsonObject;
 import net.minecraft.data.PackOutput;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
-import net.minheur.techno_lib.advancement.AdvancementBuilder;
-import net.minheur.techno_lib.advancement.AdvancementGenProvider;
+import net.minheur.techno_lib.datagen.advancement.AdvancementBuilder;
+import net.minheur.techno_lib.datagen.advancement.AdvancementGenProvider;
 
 import static net.minheur.mhm_bitsnbobs.advancement.ModAdvancements.*;
 

@@ -169,9 +169,14 @@ public class MhmBitsnbobs
              event.accept(ModItems.QUARTER_STICK);
              event.accept(ModItems.ZOMBIE_ARM);
              event.accept(ModItems.BIOMASS);
+             event.accept(ModItems.DARKENED_BIOMASS);
+             event.accept(ModItems.BLUE_BIOMASS);
+             event.accept(ModItems.RED_BIOMASS);
              event.accept(ModItems.SAPPHIRE_NUGGET);
              event.accept(ModItems.RED_CLAY_BALL);
-            event.accept(ModItems.OXIDIZED_ZINC);
+             event.accept(ModItems.OXIDIZED_ZINC);
+             event.accept(ModItems.SYRINGE_TUBE);
+             event.accept(ModItems.SYRINGE);
         }
         if(event.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
             event.accept(ModItems.BASE_EGG);
@@ -216,6 +221,9 @@ public class MhmBitsnbobs
             event.accept(ModBlocks.RUBINIUM_BLOCK);
             event.accept(ModItems.TREE_GROWER);
             event.accept(ModItems.BIOMASS);
+            event.accept(ModItems.DARKENED_BIOMASS);
+            event.accept(ModItems.BLUE_BIOMASS);
+            event.accept(ModItems.RED_BIOMASS);
             event.accept(ModBlocks.RED_CLAY);
         }
     }
@@ -238,7 +246,7 @@ public class MhmBitsnbobs
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             // wood types
-            Sheets.addWoodType(ModWoodTypes.DARK);
+            // Sheets.addWoodType(ModWoodTypes.DARK);
 
             // entities
             EntityRenderers.register(ModEntities.RHINO.get(), RhinoRenderer::new);
@@ -252,6 +260,7 @@ public class MhmBitsnbobs
             MenuScreens.register(ModMenuTypes.INCUBATOR_MENU.get(), IncubatorScreen::new);
             MenuScreens.register(ModMenuTypes.MYSTERIOUS_ALTAR_MENU.get(), MysteriousAltarScreen::new);
             MenuScreens.register(ModMenuTypes.ATOMICAL_STABILIZATOR_MENU.get(), AtomicalStabilizatorScreen::new);
+            MenuScreens.register(ModMenuTypes.ELECTRONIC_CRYSTALLIZER_MENU.get(), ElectronicCrystallizerScreen::new);
         }
     }
 }

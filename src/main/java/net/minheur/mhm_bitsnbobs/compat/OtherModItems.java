@@ -1,6 +1,9 @@
 package net.minheur.mhm_bitsnbobs.compat;
 
 import net.minheur.techno_lib.otherItem.OtherModItem;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraftforge.registries.ForgeRegistries;
 
 /**
  * This class contains the creation of {@link OtherModItem} instances.

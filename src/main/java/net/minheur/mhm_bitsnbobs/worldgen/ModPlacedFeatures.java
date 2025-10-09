@@ -39,8 +39,8 @@ public class ModPlacedFeatures {
         register(context, RUBIS_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.RUBIS_ORE_KEY),
                 ModOrePlacement.rareOrePlacement(5, HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(0))));
 
-        register(context, DARK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DARK_KEY),
-                VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.DARK_SAPLING.get()));
+        // register(context, DARK_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.DARK_KEY),
+        //         VegetationPlacements.treePlacement(PlacementUtils.countExtra(3, 0.1f, 2), ModBlocks.DARK_SAPLING.get()));
     }
 
     private static ResourceKey<PlacedFeature> registerKey(String name) {

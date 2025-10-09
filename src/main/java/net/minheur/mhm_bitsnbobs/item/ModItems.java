@@ -267,6 +267,11 @@ public class ModItems {
     public static final RegistryObject<Item> UNPROCESSED_SEA_PICKLE = ITEMS.register("unprocessed_sea_pickle",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SYRINGE = ITEMS.register("syringe",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> SYRINGE_TUBE = ITEMS.register("syringe_tube",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
     public static final RegistryObject<Item> ZOMBIE_ARM = ITEMS.register("zombie_arm",
             () -> new ZombieArmItem(new Item.Properties()));
     public static final RegistryObject<Item> BIOMASS = ITEMS.register("biomass",
@@ -274,6 +279,8 @@ public class ModItems {
     public static final RegistryObject<Item> DARKENED_BIOMASS = ITEMS.register("darkened_biomass",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BLUE_BIOMASS = ITEMS.register("blue_biomass",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RED_BIOMASS = ITEMS.register("red_biomass",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RED_CLAY_BALL = ITEMS.register("red_clay_ball",
             () -> new Item(new Item.Properties()));
@@ -426,10 +433,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.DEVIl_BREAD)));
 
     // boats
-    public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",
-            () -> new ModBoatItem(false, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> DARK_CHEST_BOAT = ITEMS.register("dark_chest_boat",
-            () -> new ModBoatItem(true, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
+    // public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",
+    //         () -> new ModBoatItem(false, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
+    // public static final RegistryObject<Item> DARK_CHEST_BOAT = ITEMS.register("dark_chest_boat",
+    //         () -> new ModBoatItem(true, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
 
     // seeds
     public static final RegistryObject<Item> STRAWBERRY_SEEDS = ITEMS.register("strawberry_seeds",
@@ -447,10 +454,10 @@ public class ModItems {
                     new Item.Properties()));
 
     // signs
-    public static final RegistryObject<Item> DARK_SIGN = ITEMS.register("dark_sign",
-            () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_WALL_SIGN.get()));
-    public static final RegistryObject<Item> DARK_HANGING_SIGN = ITEMS.register("dark_hanging_sign",
-            () -> new HangingSignItem(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
+    // public static final RegistryObject<Item> DARK_SIGN = ITEMS.register("dark_sign",
+    //         () -> new SignItem(new Item.Properties().stacksTo(16), ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_WALL_SIGN.get()));
+    // public static final RegistryObject<Item> DARK_HANGING_SIGN = ITEMS.register("dark_hanging_sign",
+    //         () -> new HangingSignItem(ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.DARK_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
 
     // end item create
 

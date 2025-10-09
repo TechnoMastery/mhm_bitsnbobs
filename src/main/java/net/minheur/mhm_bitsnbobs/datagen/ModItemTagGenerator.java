@@ -124,16 +124,16 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                         ModItems.SUPER_CHARGED_INGOT.get(),
                         ModItems.WIND_CHARGED_INGOT.get()
                 );
-        this.tag(ItemTags.LOGS_THAT_BURN)
-                .add(
-                        ModBlocks.DARK_LOG.get().asItem(),
-                        ModBlocks.DARK_WOOD.get().asItem(),
-                        ModBlocks.STRIPPED_DARK_LOG.get().asItem(),
-                        ModBlocks.STRIPPED_DARK_WOOD.get().asItem()
-                );
-        this.tag(ItemTags.PLANKS)
-                .add(
-                        ModBlocks.DARK_PLANKS.get().asItem()
-                );
+        // this.tag(ItemTags.LOGS_THAT_BURN)
+        //         .add(
+        //                 ModBlocks.DARK_LOG.get().asItem(),
+        //                 ModBlocks.DARK_WOOD.get().asItem(),
+        //                 ModBlocks.STRIPPED_DARK_LOG.get().asItem(),
+        //                 ModBlocks.STRIPPED_DARK_WOOD.get().asItem()
+        //         );
+        // this.tag(ItemTags.PLANKS)
+        //         .add(
+        //                 ModBlocks.DARK_PLANKS.get().asItem()
+        //         );
     }
 }

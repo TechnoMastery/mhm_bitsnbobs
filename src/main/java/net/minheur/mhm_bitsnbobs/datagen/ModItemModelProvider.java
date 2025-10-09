@@ -77,6 +77,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.BIOMASS);
         simpleItem(ModItems.DARKENED_BIOMASS);
         simpleItem(ModItems.BLUE_BIOMASS);
+        simpleItem(ModItems.RED_BIOMASS);
         simpleItem(ModItems.INK_BOTTLE);
         simpleItem(ModItems.SAPPHIRE_NUGGET);
         simpleItem(ModItems.TREE_GROWER);
@@ -143,10 +144,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.SWEET_BERRIES_ICE_CREAM);
         simpleItem(ModItems.QUARTER_STICK);
         simpleItem(ModItems.YEAST);
-        simpleItem(ModItems.DARK_SIGN);
-        simpleItem(ModItems.DARK_HANGING_SIGN);
-        simpleItem(ModItems.DARK_BOAT);
-        simpleItem(ModItems.DARK_CHEST_BOAT);
+        // simpleItem(ModItems.DARK_SIGN);
+        // simpleItem(ModItems.DARK_HANGING_SIGN);
+        // simpleItem(ModItems.DARK_BOAT);
+        // simpleItem(ModItems.DARK_CHEST_BOAT);
         simpleItem(ModItems.SLIMY_INGOT);
         simpleItem(ModItems.SLIMY_STICK);
         simpleItem(ModItems.BUCKET_OF_LIQUID_ICE_CREAM);
@@ -163,6 +164,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.ROTTEN_COD);
         simpleItem(ModItems.ROTTEN_SALMON);
         simpleItem(ModItems.ROTTEN_RABBIT);
+        simpleItem(ModItems.SYRINGE);
+        simpleItem(ModItems.SYRINGE_TUBE);
 
         // base
         discItem(ModItems.BASE_OF_DISC);
@@ -205,7 +208,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.METAL_DETECTOR);
 
         // saplings
-        saplingItem(ModBlocks.DARK_SAPLING);
+        // saplingItem(ModBlocks.DARK_SAPLING);
 
         // runes
         runeItem(ModItems.XP_RUNE);

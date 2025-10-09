@@ -35,9 +35,10 @@ public class ModBoatEntity extends Boat {
 
     @Override
     public Item getDropItem() {
-        return switch (getModVariant()) {
-            case DARK -> ModItems.DARK_BOAT.get();
-        };
+        return super.getDropItem();
+        // return switch (getModVariant()) {
+        //     case DARK -> ModItems.DARK_BOAT.get();
+        // };
     }
 
     public void setVariant(Type pVariant) {
@@ -50,7 +51,7 @@ public class ModBoatEntity extends Boat {
 
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(DATA_ID_TYPE, Type.DARK.ordinal());
+        // this.entityData.define(DATA_ID_TYPE, Type.DARK.ordinal());
     }
 
     protected void addAdditionalSaveData(CompoundTag pCompound) {
@@ -65,8 +66,8 @@ public class ModBoatEntity extends Boat {
 
     public static enum Type implements StringRepresentable {
         // here put all boats type. separate with ",". End with ";".
-        DARK(ModBlocks.DARK_PLANKS.get(), "dark");
-
+        // DARK(ModBlocks.DARK_PLANKS.get(), "dark");
+        ;
         private final String name;
         private final Block planks;
         public static final StringRepresentable.EnumCodec<ModBoatEntity.Type> CODEC = StringRepresentable.fromEnum(ModBoatEntity.Type::values);
@@ -98,7 +99,8 @@ public class ModBoatEntity extends Boat {
         }
 
         public static ModBoatEntity.Type byName(String pName) {
-            return (ModBoatEntity.Type)CODEC.byName(pName, DARK);
+            // return (ModBoatEntity.Type)CODEC.byName(pName, DARK);
+            return null;
         }
     }
 }

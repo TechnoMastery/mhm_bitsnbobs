@@ -106,10 +106,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShapelessCraftingOne(pWriter, ModItems.CREATIVE_INGOT.get(), ModBlocks.CREATIVE_BLOCK.get(), 9, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.SUPER_CHARGED_INGOT.get(), ModBlocks.SUPER_CHARGED_BLOCK.get(), 9, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.EMPTY_RUNE.get(), Items.EMERALD, 5, 1);
-        simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_LOG.get(), 4, 1);
-        simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_WOOD.get(), 4, 1);
-        simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_WOOD.get(), 4, 1);
-        simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_LOG.get(), 4, 1);
+        // simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_LOG.get(), 4, 1);
+        // simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_WOOD.get(), 4, 1);
+        // simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_WOOD.get(), 4, 1);
+        // simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_LOG.get(), 4, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.DICE.get(), Blocks.WHITE_CONCRETE, 16, 1);
 
         simpleShapelessCraftingTwo(pWriter, ModItems.SLIMY_INGOT.get(), 1, Items.SLIME_BALL, 1, ModItems.HARDENED_INGOT.get(), 1);
@@ -134,7 +134,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShapelessCraftingThree(pWriter,ModItems.DEVIL_BREAD.get(),3, ModItems.HOLY_BREAD.get(),1, Items.LAVA_BUCKET, 2, ModItems.YEAST.get(),6);
 
         // crafting log → wood
-        simpleWoodCrafting(pWriter, ModBlocks.DARK_WOOD.get(), ModBlocks.DARK_LOG.get());
+        // simpleWoodCrafting(pWriter, ModBlocks.DARK_WOOD.get(), ModBlocks.DARK_LOG.get());
 
         // catalyzers
         catalyzerCrafting(pWriter, ModItems.IRON_CATALYZER.get(), ModItems.CONTROL_PANEL.get(), ModItems.IRON_BALL.get());
@@ -164,7 +164,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // eggs
         simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.DIAMOND, Items.WHEAT, RecipeCategory.MISC, Items.COW_SPAWN_EGG);
         simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.DIAMOND, Blocks.WHITE_WOOL, RecipeCategory.MISC, Items.SHEEP_SPAWN_EGG);
-        simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.DIAMOND, Items.FEATHER, RecipeCategory.MISC, Items.CHICKEN);
+        simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.DIAMOND, Items.FEATHER, RecipeCategory.MISC, Items.CHICKEN_SPAWN_EGG);
         simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.DIAMOND, Items.PORKCHOP, RecipeCategory.MISC, Items.PIG_SPAWN_EGG);
         simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.PIG_SPAWN_EGG, Items.GOLD_INGOT, RecipeCategory.MISC, Items.PIGLIN_SPAWN_EGG);
         simpleSmithing(pWriter, ModItems.BASE_EGG.get(), Items.PIG_SPAWN_EGG, Items.GOLDEN_SWORD, RecipeCategory.MISC, Items.ZOMBIFIED_PIGLIN_SPAWN_EGG);
@@ -198,6 +198,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.QUARTER_STICK.get(), ModItems.HALF_STICK.get(), 2);
         simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.QUARTER_STICK.get(), Items.STICK, 4);
         simpleStoneCutting(pWriter, RecipeCategory.MISC, Items.COBBLED_DEEPSLATE, Items.COBBLESTONE, 1);
+        simpleStoneCutting(pWriter, RecipeCategory.MISC, ModItems.SYRINGE_TUBE.get(), Items.GLASS, 8);
 
         simpleWoodCrafting(pWriter, Items.MOSS_BLOCK, ModItems.BIOMASS.get());
 
@@ -538,6 +539,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // create crushing
         crushingRecipe(pWriter, ModItems.DARKENED_BIOMASS.get(), Items.BROWN_MUSHROOM, 500);
         crushingRecipe(pWriter, ModItems.BLUE_BIOMASS.get(), Items.LAPIS_LAZULI, 500);
+        crushingRecipe(pWriter, ModItems.RED_BIOMASS.get(), Items.RED_MUSHROOM, Items.REDSTONE, 500, 1f, 0.2f);
         crushingRecipe(pWriter, ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, ModItems.QUANTUM_CORE.get(), ModItems.QUANTUM_DUST.get(), 500, 0.2f);
         crushingRecipe(pWriter, Items.RED_TERRACOTTA, Items.RED_SAND, 500, 3);
@@ -575,10 +577,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         deployingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), Items.SWEET_BERRIES, ModItems.BUCKET_OF_LIQUID_SWEET_BERRIES_ICE_CREAM.get());
         deployingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), ModItems.STRAWBERRY.get(), ModItems.BUCKET_OF_LIQUID_STRAWBERRIES_ICE_CREAM.get());
         deployingRecipe(pWriter, OtherModItems.Tfmg.CIRCUIT_BOARD.getAsRawItem(), OtherModItems.MegaCells.ACCUMULATION_PROCESSOR.getAsRawItem(), ModItems.ACCUMULATION_ASSISTED_CIRCUIT_BOARD.get());
+        deployingRecipe(pWriter, ModItems.DARKENED_BIOMASS.get(), Items.REDSTONE, ModItems.RED_BIOMASS.get());
 
         // chest crafting
-        simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
-        simpleBoatCrafting(pWriter, ModItems.DARK_CHEST_BOAT.get(), ModBlocks.DARK_PLANKS.get(), true);
+        // simpleBoatCrafting(pWriter, ModItems.DARK_BOAT.get(), ModBlocks.DARK_PLANKS.get(), false);
+        // simpleBoatCrafting(pWriter, ModItems.DARK_CHEST_BOAT.get(), ModBlocks.DARK_PLANKS.get(), true);
 
         // head crafting
         simpleHeadCrafting(pWriter, Items.SKELETON_SKULL, Items.BONE, Items.BONE);
@@ -596,8 +599,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, MhmBitsnbobs.MOD_ID + ":" + Items.ZOMBIE_HEAD + "_head_crafting");
 
         // signs & hanging signs
-        signCrafting(pWriter, ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_PLANKS.get());
-        signHangingCrafting(pWriter, ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.STRIPPED_DARK_LOG.get());
+        // signCrafting(pWriter, ModBlocks.DARK_SIGN.get(), ModBlocks.DARK_PLANKS.get());
+        // signHangingCrafting(pWriter, ModBlocks.DARK_HANGING_SIGN.get(), ModBlocks.STRIPPED_DARK_LOG.get());
 
         // no pattern
         // wind stick
@@ -910,6 +913,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', ModItems.HARDENED_INGOT.get())
                 .define('D', Items.IRON_BARS)
                 .unlockedBy(getHasName(ModItems.HARDENED_INGOT.get()), has(ModItems.HARDENED_INGOT.get()))
+                .save(pWriter);
+
+        // syringe
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SYRINGE.get())
+                .pattern("  N")
+                .pattern(" T ")
+                .pattern("I  ")
+                .define('N', Items.IRON_NUGGET)
+                .define('T', ModItems.SYRINGE_TUBE.get())
+                .define('I', Items.IRON_INGOT)
+                .unlockedBy(getHasName(ModItems.SYRINGE_TUBE.get()), has(ModItems.SYRINGE_TUBE.get()))
                 .save(pWriter);
 
         // spawner craft
@@ -1463,7 +1477,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(result, mainChance)
                 .addResult(otherResult, otherChance)
                 .unlock(getHasName(ingredient), has(ingredient))
-                .save(consumer, getItemName(ingredient) + "crushing");
+                .save(consumer, getItemName(ingredient) + "_crushing");
     }
 
     protected static void hauntingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {
