@@ -7,6 +7,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
+import net.minheur.techno_lib.custom.block.entity.AbstractMenuBlockEntity;
 
 public class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
@@ -24,7 +25,7 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("mysterious_magic_be", () ->
                     BlockEntityType.Builder.of(MysteriousAltarBlockEntity::new,
                             ModBlocks.MYSTERIOUS_ALTAR.get()).build(null));
-    public static final RegistryObject<BlockEntityType<FreezerBlockEntity>> FREEZING_BE =
+    public static final RegistryObject<BlockEntityType<? extends AbstractMenuBlockEntity>> FREEZING_BE =
             BLOCK_ENTITIES.register("freezer_be", () ->
                     BlockEntityType.Builder.of(FreezerBlockEntity::new,
                             ModBlocks.FREEZER.get()).build(null));
