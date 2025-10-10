@@ -2,19 +2,15 @@ package net.minheur.mhm_bitsnbobs.recipe.datagen;
 
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
 import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.RequirementsStrategy;
-import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
-import org.jetbrains.annotations.Nullable;
+import net.minheur.techno_lib.datagen.recipe.AbstractSingleIngredientRecipeBuilder;
 
 import java.util.function.Consumer;
 
@@ -23,16 +19,9 @@ import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 /**
  * Here is the builder to datagen freezing recipes
  */
-public class GemPolishingRecipeBuilder {
-    private final Ingredient ingredient;
-    private final ItemLike result;
-    private final int count;
-    private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
-
+public class GemPolishingRecipeBuilder extends AbstractSingleIngredientRecipeBuilder {
     public GemPolishingRecipeBuilder(Ingredient ingredient, ItemLike result, int count) {
-        this.ingredient = ingredient;
-        this.result = result;
-        this.count = count;
+        super(MhmBitsnbobs.MOD_ID, "gem_polishing", result, count, ingredient);
     }
 
     public static GemPolishingRecipeBuilder gemPolishing(Ingredient ingredient, ItemLike result) {
@@ -47,37 +36,14 @@ public class GemPolishingRecipeBuilder {
         return this;
     }
 
-    private void ensureValid(ResourceLocation pId) {
-        if (this.ingredient.isEmpty() ||
-        this.result == null ||
-        this.count == 0) throw new IllegalStateException("Invalid recipe for gem polishing recipe " + pId + "!");
-        if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
+    @Override
+    protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
+        consumer.accept(new Result(resourceLocation.withPrefix("gem_polishing/"), this.ingredient, this.result, this.count, this.advancement, resourceLocation.withPrefix("recipes/gem_polishing/")));
     }
 
-    public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
-        ensureValid(id);
-        this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new Result(id.withPrefix("gem_polishing/"), this.ingredient, this.result, this.count, this.advancement, id.withPrefix("recipes/gem_polishing/")));
-    }
-    public void save(Consumer<FinishedRecipe> consumer, String id) {
-        this.save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
-    }
-
-    public static class Result implements FinishedRecipe {
-        private final ResourceLocation id;
-        private final Ingredient ingredient;
-        private final ItemLike result;
-        private final int count;
-        private final Advancement.Builder advancement;
-        private final ResourceLocation advancementId;
-
+    public static class Result extends SingleIngredientResult {
         public Result(ResourceLocation id, Ingredient ingredient, ItemLike result, int count, Advancement.Builder advancement, ResourceLocation advancementId) {
-            this.id = id;
-            this.ingredient = ingredient;
-            this.result = result;
-            this.count = count;
-            this.advancement = advancement;
-            this.advancementId = advancementId;
+            super(id, result, count, advancement, advancementId, ingredient);
         }
 
         @Override
@@ -90,23 +56,8 @@ public class GemPolishingRecipeBuilder {
         }
 
         @Override
-        public ResourceLocation getId() {
-            return id;
-        }
-
-        @Override
         public RecipeSerializer<?> getType() {
             return ModRecipes.GEM_POLISHING_SERIALIZER.get();
-        }
-
-        @Override
-        public @Nullable JsonObject serializeAdvancement() {
-            return advancement.serializeToJson();
-        }
-
-        @Override
-        public @Nullable ResourceLocation getAdvancementId() {
-            return advancementId;
         }
     }
 
