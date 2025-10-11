@@ -37,6 +37,14 @@ public class AtomicalStabilizationRecipeBuilder extends AbstractResultRecipeBuil
     }
 
     @Override
+    protected boolean isRecipeEmpty() {
+        return super.isRecipeEmpty() ||
+                leftIngredient == null ||
+                rightIngredient == null ||
+                glueIngredient == null;
+    }
+
+    @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
         consumer.accept(new Result(resourceLocation.withPrefix("atomical_stabilization"), leftIngredient, rightIngredient, glueIngredient, result, count, advancement, resourceLocation.withPrefix("recipes/atomical_stabilization/")));
     }
