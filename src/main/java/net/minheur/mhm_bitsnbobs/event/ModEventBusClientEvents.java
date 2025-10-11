@@ -31,7 +31,7 @@ public class ModEventBusClientEvents {
     @SubscribeEvent
     public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
         registerMenuRenderer(event, ModBlockEntities.GEM_POLISHING_BE, GemPolishingBlockEntityRenderer::new);
-        event.registerBlockEntityRenderer(ModBlockEntities.MYSTERIOUS_MAGIC_BE.get(), MysteriousAltarBlockEntityRenderer::new);
+        registerMenuRenderer(event, ModBlockEntities.MYSTERIOUS_MAGIC_BE, MysteriousAltarBlockEntityRenderer::new);
 
         // event.registerBlockEntityRenderer(ModBlockEntities.MOD_SIGN.get(), SignRenderer::new);
         // event.registerBlockEntityRenderer(ModBlockEntities.MOD_HANGING_SIGN.get(), HangingSignRenderer::new);

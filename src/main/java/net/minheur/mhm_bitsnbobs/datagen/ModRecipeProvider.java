@@ -1354,7 +1354,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void mysteriousMagicRecipe(Consumer<FinishedRecipe> consumer, ItemLike primary, int primaryCount, ItemLike left, int leftCount, ItemLike right, int rightCount, ItemLike up, int upCount, ItemLike down, int downCount, ItemLike result, int resultCount, int fuelAmount) {
         MysteriousMagicRecipeBuilder.magic(primary, primaryCount, left, leftCount, right, rightCount, up, upCount, down, downCount, result, resultCount, fuelAmount)
-                .unlock(getHasName(primary), has(primary)).save(consumer, primary.toString());
+                .unlocks(getHasName(primary), has(primary)).save(consumer, primary.toString());
     }
 
     /**

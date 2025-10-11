@@ -13,13 +13,14 @@ import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
+import net.minheur.techno_lib.datagen.recipe.AbstractResultRecipeBuilder;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
 import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
-public class MysteriousMagicRecipeBuilder {
+public class MysteriousMagicRecipeBuilder extends AbstractResultRecipeBuilder {
     private final ItemLike primaryIngredient;
     private final int primaryCount;
     private final ItemLike leftIngredient;
@@ -30,12 +31,10 @@ public class MysteriousMagicRecipeBuilder {
     private final int upCount;
     private final ItemLike downIngredient;
     private final int downCount;
-    private final ItemLike result;
-    private final int resultCount;
     private final int fuelAmount;
-    private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
     public MysteriousMagicRecipeBuilder(ItemLike primaryIngredient, int primaryCount, ItemLike leftIngredient, int leftCount, ItemLike rightIngredient, int rightCount, ItemLike upIngredient, int upCount, ItemLike downIngredient, int downCount, ItemLike result, int resultCount, int fuelAmount) {
+        super(MhmBitsnbobs.MOD_ID, "mysterious_magic", result, resultCount);
         this.primaryIngredient = primaryIngredient;
         this.primaryCount = primaryCount;
         this.leftIngredient = leftIngredient;
@@ -46,8 +45,6 @@ public class MysteriousMagicRecipeBuilder {
         this.upCount = upCount;
         this.downIngredient = downIngredient;
         this.downCount = downCount;
-        this.result = result;
-        this.resultCount = resultCount;
         this.fuelAmount = fuelAmount;
     }
 
@@ -61,72 +58,38 @@ public class MysteriousMagicRecipeBuilder {
         return magic(primaryIngredient, leftIngredient, rightIngredient, upIngredient, downIngredient, result, 1, fuelAmount);
     }
 
-    public MysteriousMagicRecipeBuilder unlock(String pKey, CriterionTriggerInstance pCriterion) {
-        this.advancement.addCriterion(pKey, pCriterion);
-        return this;
+    @Override
+    protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
+        consumer.accept(new Result(resourceLocation.withPrefix("mysterious_magic/"), primaryIngredient, leftIngredient, rightIngredient, upIngredient, downIngredient,
+                result, primaryCount, leftCount, rightCount, upCount, downCount, count, fuelAmount, advancement, resourceLocation.withPrefix("recipes/mysterious_magic/")));
     }
 
-    private void ensureValid(ResourceLocation pId) {
-        if (this.primaryIngredient == null ||
-        this.leftIngredient == null ||
-        this.rightIngredient == null ||
-        this.upIngredient == null ||
-        this.downIngredient == null ||
-        this.result == null ||
-        this.primaryCount == 0 ||
-        this.leftCount == 0 ||
-        this.rightCount == 0 ||
-        this.upCount == 0 ||
-        this.downCount == 0 ||
-        this.fuelAmount == 0 ||
-        this.resultCount == 0) throw new IllegalStateException("Invalid recipe for mysterious magic recipe " + pId + "!");
-        if (this.advancement.getCriteria().isEmpty()) throw new IllegalStateException("No way of obtaining recipe " + pId);
-    }
-
-    public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
-        ensureValid(id);
-        this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new Result(id.withPrefix("mysterious_magic/"), this.primaryIngredient, this.leftIngredient, this.rightIngredient, this.upIngredient, this.downIngredient, this.result, this.primaryCount, this.leftCount, this.rightCount, this.upCount, this.downCount, this.resultCount, this.fuelAmount, this.advancement, id.withPrefix("recipes/mysterious_magic/")));
-    }
-    public void save(Consumer<FinishedRecipe> consumer, String id) {
-        this.save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
-    }
-
-    public static class Result implements FinishedRecipe {
-        private final ResourceLocation id;
+    public static class Result extends ResultRecipeResult {
         private final ItemLike primaryItem;
         private final ItemLike leftItem;
         private final ItemLike rightItem;
         private final ItemLike upItem;
         private final ItemLike downItem;
-        private final ItemLike result;
         private final int primaryCount;
         private final int leftCount;
         private final int rightCount;
         private final int upCount;
         private final int downCount;
-        private final int resultCount;
         private final int fuelAmount;
-        private final Advancement.Builder advancement;
-        private final ResourceLocation advancementId;
 
         public Result(ResourceLocation id, ItemLike primaryItem, ItemLike leftItem, ItemLike rightItem, ItemLike upItem, ItemLike downItem, ItemLike result, int primaryCount, int leftCount, int rightCount, int upCount, int downCount, int resultCount, int fuelAmount, Advancement.Builder advancement, ResourceLocation advancementId) {
-            this.id = id;
+            super(id, result, resultCount, advancement, advancementId);
             this.primaryItem = primaryItem;
             this.leftItem = leftItem;
             this.rightItem = rightItem;
             this.upItem = upItem;
             this.downItem = downItem;
-            this.result = result;
             this.primaryCount = primaryCount;
             this.leftCount = leftCount;
             this.rightCount = rightCount;
             this.upCount = upCount;
             this.downCount = downCount;
-            this.resultCount = resultCount;
             this.fuelAmount = fuelAmount;
-            this.advancement = advancement;
-            this.advancementId = advancementId;
         }
 
         @Override
@@ -148,7 +111,7 @@ public class MysteriousMagicRecipeBuilder {
             if (rightCount > 1) rightIngredient.addProperty("count", rightCount);
             if (upCount > 1) upIngredient.addProperty("count", upCount);
             if (downCount > 1) downIngredient.addProperty("count", downCount);
-            if (resultCount > 1) resultIngredient.addProperty("count", resultCount);
+            if (count > 1) resultIngredient.addProperty("count", count);
             pJson.add("primary", primaryIngredient);
             pJson.add("leftItem", leftIngredient);
             pJson.add("rightItem", rightIngredient);
@@ -159,23 +122,8 @@ public class MysteriousMagicRecipeBuilder {
         }
 
         @Override
-        public ResourceLocation getId() {
-            return id;
-        }
-
-        @Override
         public RecipeSerializer<?> getType() {
             return ModRecipes.MYSTERIOUS_MAGIC_SERIALIZER.get();
-        }
-
-        @Override
-        public @Nullable JsonObject serializeAdvancement() {
-            return advancement.serializeToJson();
-        }
-
-        @Override
-        public @Nullable ResourceLocation getAdvancementId() {
-            return advancementId;
         }
     }
 }

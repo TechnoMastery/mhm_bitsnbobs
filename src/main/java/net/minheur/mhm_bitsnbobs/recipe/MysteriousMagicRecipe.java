@@ -1,7 +1,6 @@
 package net.minheur.mhm_bitsnbobs.recipe;
 
 import com.google.gson.JsonObject;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -10,29 +9,27 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.techno_lib.custom.recipe.AbstractResultRecipe;
 import org.jetbrains.annotations.Nullable;
 
 import static net.minheur.techno_lib.Utils.areStacksEqualEnough;
 
-public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
+public class MysteriousMagicRecipe extends AbstractResultRecipe {
     private final ItemStack primaryInput;
     private final ItemStack upInput;
     private final ItemStack downInput;
     private final ItemStack leftInput;
     private final ItemStack rightInput;
     private final int fuelAmount;
-    private final ItemStack output;
-    private final ResourceLocation id;
 
     protected MysteriousMagicRecipe(ItemStack primaryInput, ItemStack upInput, ItemStack downInput, ItemStack leftInput, ItemStack rightInput, int fullAmount, ItemStack output, ResourceLocation id) {
+        super(id, output);
         this.primaryInput = primaryInput;
         this.upInput = upInput;
         this.downInput = downInput;
         this.leftInput = leftInput;
         this.rightInput = rightInput;
         this.fuelAmount = fullAmount;
-        this.output = output;
-        this.id = id;
     }
 
     @Override
@@ -57,21 +54,6 @@ public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
                         areStacksEqualEnough(rightInput, rightStack);
     }
 
-    @Override
-    public ItemStack assemble(SimpleContainer pContainer, RegistryAccess pRegistryAccess) {
-        return output.copy();
-    }
-
-    @Override
-    public boolean canCraftInDimensions(int pWidth, int pHeight) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResultItem(RegistryAccess pRegistryAccess) {
-        return output.copy();
-    }
-
     public ItemStack getUpInput() {
         return upInput.copy();
     }
@@ -90,11 +72,6 @@ public class MysteriousMagicRecipe implements Recipe<SimpleContainer> {
     
     public int getFuelAmount() {
         return fuelAmount;
-    }
-
-    @Override
-    public ResourceLocation getId() {
-        return id;
     }
 
     @Override
