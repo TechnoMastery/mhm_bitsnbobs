@@ -1,7 +1,6 @@
 package net.minheur.mhm_bitsnbobs.recipe;
 
 import com.google.gson.JsonObject;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -10,23 +9,21 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.techno_lib.custom.recipe.AbstractResultRecipe;
 import org.jetbrains.annotations.Nullable;
 
 import static net.minheur.techno_lib.Utils.areStacksEqualEnough;
 
-public class AtomicalStabilizatorRecipe implements Recipe<SimpleContainer> {
+public class AtomicalStabilizatorRecipe extends AbstractResultRecipe {
     private final ItemStack inputLeft;
     private final ItemStack inputRight;
     private final ItemStack glue;
-    private final ItemStack output;
-    private final ResourceLocation id;
 
     public AtomicalStabilizatorRecipe(ItemStack inputLeft, ItemStack inputRight, ItemStack glue, ItemStack output, ResourceLocation id) {
+        super(id, output);
         this.inputLeft = inputLeft;
         this.inputRight = inputRight;
         this.glue = glue;
-        this.output = output;
-        this.id = id;
     }
 
     @Override
@@ -42,21 +39,6 @@ public class AtomicalStabilizatorRecipe implements Recipe<SimpleContainer> {
                 areStacksEqualEnough(glue, glueSlot);
     }
 
-    @Override
-    public ItemStack assemble(SimpleContainer simpleContainer, RegistryAccess registryAccess) {
-        return output.copy();
-    }
-
-    @Override
-    public boolean canCraftInDimensions(int i, int i1) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResultItem(RegistryAccess registryAccess) {
-        return output.copy();
-    }
-
     public ItemStack getInputLeft() {
         return inputLeft.copy();
     }
@@ -65,11 +47,6 @@ public class AtomicalStabilizatorRecipe implements Recipe<SimpleContainer> {
     }
     public ItemStack getGlue() {
         return glue.copy();
-    }
-
-    @Override
-    public ResourceLocation getId() {
-        return id;
     }
 
     @Override

@@ -2,19 +2,13 @@ package net.minheur.mhm_bitsnbobs.recipe.datagen;
 
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.RequirementsStrategy;
-import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.techno_lib.datagen.recipe.AbstractResultRecipeBuilder;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
@@ -56,6 +50,17 @@ public class MysteriousMagicRecipeBuilder extends AbstractResultRecipeBuilder {
     }
     public static MysteriousMagicRecipeBuilder magic(ItemLike primaryIngredient, ItemLike leftIngredient, ItemLike rightIngredient, ItemLike upIngredient, ItemLike downIngredient, ItemLike result, int fuelAmount) {
         return magic(primaryIngredient, leftIngredient, rightIngredient, upIngredient, downIngredient, result, 1, fuelAmount);
+    }
+
+    @Override
+    protected boolean isRecipeEmpty() {
+        return super.isRecipeEmpty() ||
+                primaryCount <= 0 || primaryIngredient == null ||
+                upCount <= 0 || upIngredient == null ||
+                downCount <= 0 || downIngredient == null ||
+                leftCount <= 0 || leftIngredient == null ||
+                rightCount <= 0 || rightIngredient == null ||
+                fuelAmount <= 0;
     }
 
     @Override
