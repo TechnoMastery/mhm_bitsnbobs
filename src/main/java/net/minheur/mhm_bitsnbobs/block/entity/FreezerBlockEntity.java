@@ -14,7 +14,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minheur.mhm_bitsnbobs.recipe.FreezingRecipe;
 import net.minheur.mhm_bitsnbobs.screen.FreezerMenu;
+import net.minheur.mhm_bitsnbobs.util.DelegatingItemStackHandler;
 import net.minheur.techno_lib.custom.block.entity.AbstractMenuBlockEntity;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
@@ -28,7 +30,15 @@ public class FreezerBlockEntity extends AbstractMenuBlockEntity {
     private int maxProgress = 500;
 
     public FreezerBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.FREEZING_BE.get(), pPos, pBlockState, 2);
+        super(ModBlockEntities.FREEZING_BE.get(), pPos, pBlockState, new DelegatingItemStackHandler(2) {
+            @Override
+            public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+                return slot == INPUT_SLOT;
+            }
+        });
+
+        ((DelegatingItemStackHandler) this.itemHandler).setOwner(this);
+
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
