@@ -12,11 +12,9 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.items.IItemHandler;
-import net.minecraftforge.items.ItemStackHandler;
 import net.minheur.mhm_bitsnbobs.recipe.GemPolishingRecipe;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationMenu;
+import net.minheur.mhm_bitsnbobs.util.DelegatingItemStackHandler;
 import net.minheur.techno_lib.custom.block.entity.AbstractMenuBlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -24,33 +22,23 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Optional;
 
 public class GemPolishingStationBlockEntity extends AbstractMenuBlockEntity {
-    /// Item handler + ints for slots : Useful to not get lost
-    public final ItemStackHandler itemHandler = new ItemStackHandler(2) {
-        @Override
-        protected void onContentsChanged(int slot) {
-            setChanged();
-            if(!level.isClientSide()) {
-                level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
-            }
-        }
-
-        @Override
-        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return slot == INPUT_SLOT;
-        }
-    };
-
     public static final int INPUT_SLOT = 0;
     public static final int OUTPUT_SLOT = 1;
-
-    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 78;
 
     public GemPolishingStationBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.GEM_POLISHING_BE.get(), pPos, pBlockState, 2);
+        super(ModBlockEntities.GEM_POLISHING_BE.get(), pPos, pBlockState, new DelegatingItemStackHandler(2) {
+            @Override
+            public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+                return slot == INPUT_SLOT;
+            }
+        });
+
+        ((DelegatingItemStackHandler) this.itemHandler).setOwner(this);
+
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -148,7 +136,7 @@ public class GemPolishingStationBlockEntity extends AbstractMenuBlockEntity {
     }
     private Optional<GemPolishingRecipe> getCurrentRecipe() {
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        for(int i=0; i < itemHandler.getSlots(); i++) {
+        for(int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
         return this.level.getRecipeManager().getRecipeFor(GemPolishingRecipe.Type.INSTANCE, inventory, level);
