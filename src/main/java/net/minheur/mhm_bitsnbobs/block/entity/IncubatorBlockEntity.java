@@ -15,26 +15,15 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minheur.mhm_bitsnbobs.recipe.IncubatorRecipe;
 import net.minheur.mhm_bitsnbobs.screen.IncubatorMenu;
+import net.minheur.mhm_bitsnbobs.util.DelegatingItemStackHandler;
+import net.minheur.mhm_bitsnbobs.util.ModTags;
 import net.minheur.techno_lib.custom.block.entity.AbstractMenuBlockEntity;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
 public class IncubatorBlockEntity extends AbstractMenuBlockEntity {
-
-    // private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
-    //     @Override
-    //     public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-    //         if (slot == INPUT_SLOT) {
-    //             return !stack.is(ModTags.Items.CATALYZERS);
-    //         }
-    //         if (slot == CATALYZER_SLOT) {
-    //             return stack.is(ModTags.Items.CATALYZERS);
-    //         }
-    //         return false;
-    //     }
-    // };
-
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
     private static final int CATALYZER_SLOT = 2;
@@ -44,7 +33,17 @@ public class IncubatorBlockEntity extends AbstractMenuBlockEntity {
     private int maxProgress = 108;
 
     public IncubatorBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.INCUBATOR_BE.get(), pPos, pBlockState, 3);
+        super(ModBlockEntities.INCUBATOR_BE.get(), pPos, pBlockState, new DelegatingItemStackHandler(3) {
+            @Override
+            public boolean isItemValid(int slot, @NotNull ItemStack stack) {
+                if (slot == INPUT_SLOT) return true;
+                if (slot == CATALYZER_SLOT) return stack.is(ModTags.Items.CATALYZERS);
+                return false;
+            }
+        });
+
+        ((DelegatingItemStackHandler) this.itemHandler).setOwner(this);
+
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
