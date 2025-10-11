@@ -37,7 +37,7 @@ public class IncubatorRecipeBuilder extends AbstractSingleIngredientRecipeBuilde
 
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
-        consumer.accept(new Result(resourceLocation.withPrefix("incubating/"), this.ingredient, this.catalyzer, this.result, this.count, this.advancement, resourceLocation.withPrefix("recipes/incubation/")));
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), this.ingredient, this.catalyzer, this.result, this.count, this.advancement, getFullAdvancementId(resourceLocation)));
     }
 
     public static class Result extends SingleIngredientResult {

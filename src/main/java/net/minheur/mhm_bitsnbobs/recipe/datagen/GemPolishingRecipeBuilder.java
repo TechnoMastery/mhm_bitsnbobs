@@ -33,7 +33,7 @@ public class GemPolishingRecipeBuilder extends AbstractSingleIngredientRecipeBui
 
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
-        consumer.accept(new Result(resourceLocation.withPrefix("gem_polishing/"), this.ingredient, this.result, this.count, this.advancement, resourceLocation.withPrefix("recipes/gem_polishing/")));
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), this.ingredient, this.result, this.count, this.advancement, getFullAdvancementId(resourceLocation)));
     }
 
     public static class Result extends SingleIngredientResult {

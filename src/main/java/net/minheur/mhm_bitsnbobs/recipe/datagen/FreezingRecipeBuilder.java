@@ -33,7 +33,7 @@ public class FreezingRecipeBuilder extends AbstractSingleIngredientRecipeBuilder
 
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
-        consumer.accept(new Result(resourceLocation.withPrefix("freezing/"), this.result, this.count, this.ingredient, this.advancement, resourceLocation.withPrefix("recipes/freezing/")));
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), this.result, this.count, this.ingredient, this.advancement, getFullAdvancementId(resourceLocation)));
     }
 
     public static class Result extends SingleIngredientResult {

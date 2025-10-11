@@ -65,8 +65,8 @@ public class MysteriousMagicRecipeBuilder extends AbstractResultRecipeBuilder {
 
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
-        consumer.accept(new Result(resourceLocation.withPrefix("mysterious_magic/"), primaryIngredient, leftIngredient, rightIngredient, upIngredient, downIngredient,
-                result, primaryCount, leftCount, rightCount, upCount, downCount, count, fuelAmount, advancement, resourceLocation.withPrefix("recipes/mysterious_magic/")));
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), primaryIngredient, leftIngredient, rightIngredient, upIngredient, downIngredient,
+                result, primaryCount, leftCount, rightCount, upCount, downCount, count, fuelAmount, advancement, getFullRecipeId(resourceLocation)));
     }
 
     public static class Result extends ResultRecipeResult {
