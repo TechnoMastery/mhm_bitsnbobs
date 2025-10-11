@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs.recipe;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
@@ -12,21 +11,16 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.techno_lib.custom.recipe.AbstractMultipleIngredientRecipe;
 import org.jetbrains.annotations.Nullable;
 
-public class IncubatorRecipe implements Recipe<SimpleContainer> {
-    private final NonNullList<Ingredient> inputItems;
-    private final ItemStack output;
+public class IncubatorRecipe extends AbstractMultipleIngredientRecipe {
     private final ItemStack catalyzer;
-    private final ResourceLocation id;
 
     public IncubatorRecipe(NonNullList<Ingredient> inputItems, ItemStack output, ItemStack catalyzer, ResourceLocation id) {
-        this.inputItems = inputItems;
-        this.output = output;
+        super(id, inputItems, output);
         this.catalyzer = catalyzer;
-        this.id = id;
     }
-
 
     @Override
     public boolean matches(SimpleContainer simpleContainer, Level level) {
@@ -34,36 +28,11 @@ public class IncubatorRecipe implements Recipe<SimpleContainer> {
             return false;
         }
 
-        return inputItems.get(0).test(simpleContainer.getItem(0)) && catalyzer.is(simpleContainer.getItem(2).getItem());
-    }
-
-    @Override
-    public NonNullList<Ingredient> getIngredients() {
-        return inputItems;
-    }
-
-    @Override
-    public ItemStack assemble(SimpleContainer simpleContainer, RegistryAccess registryAccess) {
-        return output.copy();
-    }
-
-    @Override
-    public boolean canCraftInDimensions(int i, int i1) {
-        return true;
-    }
-
-    @Override
-    public ItemStack getResultItem(RegistryAccess registryAccess) {
-        return output.copy();
+        return ingredients.get(0).test(simpleContainer.getItem(0)) && catalyzer.is(simpleContainer.getItem(2).getItem());
     }
 
     public ItemStack getCatalyzerItem() {
         return catalyzer.copy();
-    }
-
-    @Override
-    public ResourceLocation getId() {
-        return id;
     }
 
     @Override
@@ -85,7 +54,6 @@ public class IncubatorRecipe implements Recipe<SimpleContainer> {
     public static class Serializer implements RecipeSerializer<IncubatorRecipe> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID = new ResourceLocation(MhmBitsnbobs.MOD_ID, "incubating");
-
 
         @Override
         public IncubatorRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
@@ -114,7 +82,7 @@ public class IncubatorRecipe implements Recipe<SimpleContainer> {
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, IncubatorRecipe pRecipe) {
-            pBuffer.writeInt(pRecipe.inputItems.size());
+            pBuffer.writeInt(pRecipe.ingredients.size());
             for (Ingredient ingredients : pRecipe.getIngredients()) {
                 ingredients.toNetwork(pBuffer);
             }

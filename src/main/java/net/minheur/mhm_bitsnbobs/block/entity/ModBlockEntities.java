@@ -1,6 +1,5 @@
 package net.minheur.mhm_bitsnbobs.block.entity;
 
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +17,7 @@ public class ModBlockEntities {
             BLOCK_ENTITIES.register("gem_polishing_be", () ->
                     BlockEntityType.Builder.of(GemPolishingStationBlockEntity::new,
                             ModBlocks.GEM_POLISHING_STATION.get()).build(null));
-    public static final RegistryObject<BlockEntityType<IncubatorBlockEntity>> INCUBATOR_BE =
+    public static final RegistryObject<BlockEntityType<? extends AbstractMenuBlockEntity>> INCUBATOR_BE =
             BLOCK_ENTITIES.register("incubator_be", () ->
                     BlockEntityType.Builder.of(IncubatorBlockEntity::new,
                             ModBlocks.INCUBATOR.get()).build(null));
