@@ -31,11 +31,6 @@ public class GemPolishingRecipeBuilder extends AbstractSingleIngredientRecipeBui
         return new GemPolishingRecipeBuilder(ingredient, result, pCount);
     }
 
-    public GemPolishingRecipeBuilder unlocks(String pKey, CriterionTriggerInstance pCriterion) {
-        this.advancement.addCriterion(pKey, pCriterion);
-        return this;
-    }
-
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
         consumer.accept(new Result(resourceLocation.withPrefix("gem_polishing/"), this.ingredient, this.result, this.count, this.advancement, resourceLocation.withPrefix("recipes/gem_polishing/")));
