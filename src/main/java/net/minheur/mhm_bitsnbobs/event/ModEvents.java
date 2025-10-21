@@ -1,7 +1,6 @@
 package net.minheur.mhm_bitsnbobs.event;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
-import net.minecraft.client.gui.screens.social.PlayerEntry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -61,7 +60,7 @@ public class ModEvents {
             // level 2
             trades.get(2).add((pTrader, pRandom) -> new MerchantOffer(
                     new ItemStack(Items.EMERALD, 5),
-                    new ItemStack(ModItems.CORN.get(), 6),
+                    new ItemStack(ModItems.CORNCOB.get(), 6),
                     5, 9, 0.035f));
 
             // level 3

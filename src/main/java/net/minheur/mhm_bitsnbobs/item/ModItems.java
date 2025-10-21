@@ -317,7 +317,7 @@ public class ModItems {
     public static final RegistryObject<Item> WIND_STICK = ITEMS.register("wind_stick",
             () -> new WindStickItem(new Item.Properties().stacksTo(1).durability(600)));
 
-    public static final RegistryObject<Item> CORN = ITEMS.register("corn",
+    public static final RegistryObject<Item> CORNCOB = ITEMS.register("corncob",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HARDENED_INGOT = ITEMS.register("hardened_ingot",

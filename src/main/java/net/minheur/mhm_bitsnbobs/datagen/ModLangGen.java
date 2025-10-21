@@ -854,7 +854,7 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.HARDENED_INGOT)
                 .en_us("Hardened ingot")
                 .fr_fr("Lingot endurcie");
-        addItem(ModItems.CORN)
+        addItem(ModItems.CORNCOB)
                 .en_us("Corn")
                 .fr_fr("Maïs");
         addItem(ModItems.CORN_SEEDS)
