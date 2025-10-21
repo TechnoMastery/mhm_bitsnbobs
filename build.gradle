@@ -177,6 +177,9 @@ dependencies {
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
     implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
 
+    // create food
+    implementation fg.deobf("curse.maven:create-food-959439:${createfood_version}")
+
     // TechnoLib
     implementation fg.deobf("curse.maven:technolib-1335039:${technoLib_file_id}")
 
@@ -225,7 +228,7 @@ tasks.named('processResources', ProcessResources).configure {
             mod_id: mod_id, modid: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, create_ei_file_id: create_ei_file_id,
             ae2_version: ae2_version, ae2_version_range: ae2_version_range, mod_credits: mod_credits,
-            numismatics_file_id: numismatics_file_id,
+            numismatics_file_id: numismatics_file_id, createfood_version: createfood_version,
             tfmg_file_id: tfmg_file_if, meka_file_id: meka_file_id,
             megacells_file_id: megacells_file_id, cloth_file_id: cloth_file_id, technoLib_file_id: technoLib_file_id
     ]
