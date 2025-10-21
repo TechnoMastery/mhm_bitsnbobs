@@ -48,6 +48,7 @@ public class ModTags {
         public static final TagKey<Item> QUANTUMITE_INGOTS = forgeTag("ingot/quantumite");
         public static final TagKey<Item> ATOMICAL_STABILIZATOR_GLUES = tag("atomical_stabilizator_glues");
         public static final TagKey<Item> OBSIDIAN_DUSTS = forgeTag("dusts/obsidian");
+        public static final TagKey<Item> SALT = forgeTag("salt");
 
         /**
          * create the tag. It's a shortcut to not have to copy the long registry line each time.

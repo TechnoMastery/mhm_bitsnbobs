@@ -10,7 +10,6 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.block.ModBlocks;
 import net.minheur.mhm_bitsnbobs.entity.ModEntities;
-import net.minheur.mhm_bitsnbobs.entity.custom.ModBoatEntity;
 import net.minheur.mhm_bitsnbobs.item.custom.*;
 import net.minheur.mhm_bitsnbobs.item.custom.runes.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
@@ -329,6 +328,21 @@ public class ModItems {
             () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> RUBINIUM = ITEMS.register("rubinium",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC).stacksTo(40)));
+
+    public static final RegistryObject<Item> POLENTA = ITEMS.register("polenta",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> POLENTA_BOWL = ITEMS.register("polenta_bowl",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COOKED_POLENTA_BOWL = ITEMS.register("cooked_polenta_bowl",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> POLENTA_CUBE = ITEMS.register("polenta_cube",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CORN = ITEMS.register("corn",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CORNMEAL = ITEMS.register("cornmeal",
+            () -> new Item(new Item.Properties()));
+
 
     public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
             () -> new RecordItem(6, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));

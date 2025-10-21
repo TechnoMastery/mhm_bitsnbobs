@@ -1079,18 +1079,12 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.SYRINGE_TUBE)
                 .en_us("Syringe tube")
                 .fr_fr("Tube de seringue");
-
+        addItem(ModItems.CORN)
+                .en_us("Corn")
+                .fr_fr("Maïs");
+        addItem()
 
     }
-
-
-
-
-
-
-
-
-
 
     public TranslationBuilder addMenuName(String id) {
         return add("menu." + id);
