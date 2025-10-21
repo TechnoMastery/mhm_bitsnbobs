@@ -65,6 +65,12 @@ public class OtherModItems {
         }
     }
 
+    public static class Meka {
+        private static OtherModItem mekaItem(String id) {
+            return new OtherModItem("mekanism", id);
+        }
+    }
+
     public static class Tfmg {
         public static final OtherModItem NICKEL_INGOT = tfmgItem("nickel_ingot");
         public static final OtherModItem LEAD_INGOT = tfmgItem("lead_ingot");
