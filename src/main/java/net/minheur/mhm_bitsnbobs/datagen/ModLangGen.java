@@ -1080,7 +1080,17 @@ public class ModLangGen extends LanguageGenProvider {
                 .en_us("Syringe tube")
                 .fr_fr("Tube de seringue");
 
+
     }
+
+
+
+
+
+
+
+
+
 
     public TranslationBuilder addMenuName(String id) {
         return add("menu." + id);
