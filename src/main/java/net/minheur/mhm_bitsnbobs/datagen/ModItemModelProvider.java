@@ -60,7 +60,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.EXTREMELY_DRY_DIRT);
         simpleItem(ModItems.PIECE_OF_EXTREMELY_DRY_DIRT);
         simpleItem(ModItems.RESOURCE_DIRT);
-        simpleItem(ModItems.CORN);
+        simpleItem(ModItems.CORNCOB);
         simpleItem(ModItems.STORM_FRAGMENT);
         simpleItem(ModItems.DICE);
         simpleItem(ModItems.WET_DIRT);

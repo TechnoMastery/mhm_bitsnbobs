@@ -29,7 +29,7 @@ public class ModCreativeModTabs {
                         output.accept(ModItems.NETHER_STICK.get());
                         output.accept(ModItems.SAPPHIRE_NUGGET.get());
                         output.accept(ModItems.SAPPHIRE_STAFF.get());
-                        output.accept(ModItems.CORN.get());
+                        output.accept(ModItems.CORNCOB.get());
                         output.accept(ModItems.RHINO_SPAWN_EGG.get());
                         output.accept(ModBlocks.FREEZER.get());
                         output.accept(ModBlocks.ATOMICAL_STABILIZATOR.get());

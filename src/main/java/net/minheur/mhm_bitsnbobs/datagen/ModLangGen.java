@@ -854,9 +854,9 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.HARDENED_INGOT)
                 .en_us("Hardened ingot")
                 .fr_fr("Lingot endurcie");
-        addItem(ModItems.CORN)
-                .en_us("Corn")
-                .fr_fr("Maïs");
+        addItem(ModItems.CORNCOB)
+                .en_us("Corncob")
+                .fr_fr("Epi de maïs");
         addItem(ModItems.CORN_SEEDS)
                 .en_us("Corn seeds")
                 .fr_fr("Graines de maïs");
@@ -1080,17 +1080,7 @@ public class ModLangGen extends LanguageGenProvider {
                 .en_us("Syringe tube")
                 .fr_fr("Tube de seringue");
 
-
     }
-
-
-
-
-
-
-
-
-
 
     public TranslationBuilder addMenuName(String id) {
         return add("menu." + id);
