@@ -1082,7 +1082,21 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.CORN)
                 .en_us("Corn")
                 .fr_fr("Maïs");
-        addItem()
+        addItem(ModItems.CORNMEAL)
+                .en_us("Cornmeal")
+                .fr_fr("Farine de maïs");
+        addItem(ModItems.POLENTA)
+                .en_us("Polenta")
+                .fr_fr("Polenta");
+        addItem(ModItems.POLENTA_BOWL)
+                .en_us("Polenta bowl")
+                .fr_fr("Bol de polenta");
+        addItem(ModItems.COOKED_POLENTA_BOWL)
+                .en_us("Cooked polenta bowl")
+                .fr_fr("Bol de polenta cuite");
+        addItem(ModItems.POLENTA_CUBE)
+                .en_us("Polenta cube")
+                .fr_fr("Cube de polenta");
 
     }
 

@@ -334,9 +334,9 @@ public class ModItems {
     public static final RegistryObject<Item> POLENTA_BOWL = ITEMS.register("polenta_bowl",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> COOKED_POLENTA_BOWL = ITEMS.register("cooked_polenta_bowl",
-            () -> new Item(new Item.Properties()));
+            () -> new ReturnOtherWhenEatedItem(new Item.Properties().food(ModFoods.POLENTA_BOWL), Items.BOWL));
     public static final RegistryObject<Item> POLENTA_CUBE = ITEMS.register("polenta_cube",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties().food(ModFoods.POLENTA_CUBE)));
 
     public static final RegistryObject<Item> CORN = ITEMS.register("corn",
             () -> new Item(new Item.Properties()));
