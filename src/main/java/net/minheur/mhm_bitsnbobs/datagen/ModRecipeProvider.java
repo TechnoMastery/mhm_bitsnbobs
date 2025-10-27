@@ -28,6 +28,8 @@ import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.*;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 import net.minheur.mhm_bitsnbobs.util.RecipeNbtBuilder;
+import net.minheur.mhm_bitsnbobs.util.Utils;
+import net.minheur.techno_lib.builders.RecipeJsonObjectBuilder;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -1345,7 +1347,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * Recipe for the atomical stabilization
      */
     protected static void atomicalStabilizatorRecipe(Consumer<FinishedRecipe> consumer, ItemLike leftIngredient, ItemLike rightIngredient, ItemLike glueIngredient, ItemLike result, int count) {
-        AtomicalStabilizationRecipeBuilder.stabilization(leftIngredient, rightIngredient, glueIngredient, result, count).unlocks(getHasName(glueIngredient), has(glueIngredient))
+        AtomicalStabilizationRecipeBuilder.stabilization(
+                        Utils.json().addItem(leftIngredient).build(),
+                        Utils.json().addItem(rightIngredient).build(),
+                        Utils.json().addItem(glueIngredient).build(),
+                        Utils.json().addItem(result).addCount(count).build()
+                ).unlocks(getHasName(glueIngredient), has(glueIngredient))
                 .save(consumer, result.toString());
     }
 
