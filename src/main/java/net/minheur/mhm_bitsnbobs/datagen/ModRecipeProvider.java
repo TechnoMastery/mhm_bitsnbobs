@@ -1310,8 +1310,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         FreezingRecipeBuilder.freezing(
-                        Utils.json().addItem(ingredient).build(),
-                        Utils.json().addItem(result).addCount(resultAmount).build()
+                        Utils.json().addItem(result).addCount(resultAmount).build(),
+                        Utils.json().addItem(ingredient).build()
                 ).unlocks(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer, result.toString());
     }
