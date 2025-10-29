@@ -547,25 +547,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         crushingRecipe(pWriter, Items.RED_TERRACOTTA, Items.RED_SAND, 500, 3);
         crushingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 500, 3);
         CreateCrushingRecipeBuilder.crush(50)
-                .addIngredient(Items.SOUL_SOIL)
-                .addResult(Items.BONE, 0.5f)
-                .addResult(Items.BONE_MEAL, 0.5f)
-                .addResult(Items.SOUL_SAND, 0.8f)
-                .unlock(getHasName(Items.SOUL_SOIL), has(Items.SOUL_SOIL))
+                .addIngredient(Utils.json().addItem(Items.SOUL_SOIL).build())
+                .addResult(Utils.json().addItem(Items.BONE).addChance(0.5f).build())
+                .addResult(Utils.json().addItem(Items.BONE_MEAL).addChance(0.5f).build())
+                .addResult(Utils.json().addItem(Items.SOUL_SAND).addChance(0.8f).build())
+                .unlocks(getHasName(Items.SOUL_SOIL), has(Items.SOUL_SOIL))
                 .save(pWriter, "soul_soil_crushing");
         crushingRecipe(pWriter, ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.SMALL_CREATIVE_NUGGET.get(), 0.02f, 500);
         crushingRecipe(pWriter, ModBlocks.COMPRESSED_DIRT.get(), ModItems.PIECE_OF_DIRT.get(), 15);
         CreateCrushingRecipeBuilder.crush(5)
-                .addIngredient(ModBlocks.RESOURCE_DIRT_BLOCK.get())
-                .addResult(ModItems.COPPER_BALL.get(), 5)
-                .addResult(ModItems.COPPER_BALL.get(), 3, 0.325f)
-                .addResult(ModItems.IRON_BALL.get(), 3)
-                .addResult(ModItems.IRON_BALL.get(), 2, 0.3f)
-                .addResult(ModItems.GOLD_BALL.get(), 5, 0.25f)
-                .addResult(ModItems.DIAMOND_BALL.get(), 0.125f)
-                .addResult(ModItems.SAPPHIRE_BALL.get(), 2, 0.13f)
-                .addResult(ModItems.CREATIVE_ESSENCE.get(), 0.02f)
-                .unlock(getHasName(ModBlocks.RESOURCE_DIRT_BLOCK.get()), has(ModBlocks.RESOURCE_DIRT_BLOCK.get()))
+                .addIngredient(Utils.json().addItem(ModBlocks.RESOURCE_DIRT_BLOCK.get()).build())
+                .addResult(Utils.json().addItem(ModItems.COPPER_BALL.get()).addCount(5).build())
+                .addResult(Utils.json().addItem(ModItems.COPPER_BALL.get()).addCount(3).addChance(0.325f).build())
+                .addResult(Utils.json().addItem(ModItems.IRON_BALL.get()).addCount(3).build())
+                .addResult(Utils.json().addItem(ModItems.IRON_BALL.get()).addCount(2).addChance(0.3f).build())
+                .addResult(Utils.json().addItem(ModItems.GOLD_BALL.get()).addCount(5).addChance(0.25f).build())
+                .addResult(Utils.json().addItem(ModItems.DIAMOND_BALL.get()).addChance(0.125f).build())
+                .addResult(Utils.json().addItem(ModItems.SAPPHIRE_BALL.get()).addCount(2).addChance(0.13f).build())
+                .addResult(Utils.json().addItem(ModItems.CREATIVE_ESSENCE.get()).addChance(0.02f).build())
+                .unlocks(getHasName(ModBlocks.RESOURCE_DIRT_BLOCK.get()), has(ModBlocks.RESOURCE_DIRT_BLOCK.get()))
                 .save(pWriter, "resource_dirt_crushing");
 
         // deploying
@@ -1468,9 +1468,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int resultAmount) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(ingredient)
-                .addResult(result, resultAmount)
-                .unlock(getHasName(ingredient), has(ingredient))
+                .addIngredient(Utils.json().addItem(ingredient).build())
+                .addResult(Utils.json().addItem(result).addCount(resultAmount).build())
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
     /**
@@ -1484,10 +1484,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int mainResultCount, int bonusResultCount, float bonusResultChance) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(ingredient)
-                .addResult(result, mainResultCount)
-                .addResult(result, bonusResultCount, bonusResultChance)
-                .unlock(getHasName(ingredient), has(ingredient))
+                .addIngredient(Utils.json().addItem(ingredient).build())
+                .addResult(Utils.json().addItem(result).addCount(mainResultCount).build())
+                .addResult(Utils.json().addItem(result).addCount(bonusResultCount).addChance(bonusResultChance).build())
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int mainResultCount, float bonusResultChance) {
@@ -1501,17 +1501,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, float resultChance, int processingTime) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(ingredient)
-                .addResult(result, resultChance)
-                .unlock(getHasName(ingredient), has(ingredient))
+                .addIngredient(Utils.json().addItem(ingredient).build())
+                .addResult(Utils.json().addItem(result).addChance(resultChance).build())
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, ItemLike otherResult, int processingTime, float mainChance, float otherChance) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(ingredient)
-                .addResult(result, mainChance)
-                .addResult(otherResult, otherChance)
-                .unlock(getHasName(ingredient), has(ingredient))
+                .addIngredient(Utils.json().addItem(ingredient).build())
+                .addResult(Utils.json().addItem(result).addChance(mainChance).build())
+                .addResult(Utils.json().addItem(otherResult).addChance(otherChance).build())
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
 
