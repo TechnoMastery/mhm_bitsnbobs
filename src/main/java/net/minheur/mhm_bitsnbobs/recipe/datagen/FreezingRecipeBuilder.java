@@ -4,50 +4,40 @@ import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
-import net.minheur.techno_lib.datagen.recipe.AbstractSingleIngredientRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.jsonIngredient.AJsonIngredientResultRecipeBuilder;
 
 import java.util.function.Consumer;
-
-import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 /**
  * Here is the builder to datagen freezing recipes
  */
-public class FreezingRecipeBuilder extends AbstractSingleIngredientRecipeBuilder {
+public class FreezingRecipeBuilder extends AJsonIngredientResultRecipeBuilder {
 
-    public FreezingRecipeBuilder(Ingredient ingredient, ItemLike result, int count) {
-        super(MhmBitsnbobs.MOD_ID,"freezing", result, count, ingredient);
+    public FreezingRecipeBuilder(JsonObject ingredient, JsonObject result) {
+        super(MhmBitsnbobs.MOD_ID,"freezing", result, ingredient);
     }
 
-    public static FreezingRecipeBuilder freezing(Ingredient ingredient, ItemLike result) {
-        return new FreezingRecipeBuilder(ingredient, result, 1);
-    }
-    public static FreezingRecipeBuilder freezing(Ingredient ingredient, ItemLike result, int pCount) {
-        return new FreezingRecipeBuilder(ingredient, result, pCount);
+    public static FreezingRecipeBuilder freezing(JsonObject ingredient, JsonObject result) {
+        return new FreezingRecipeBuilder(result, ingredient);
     }
 
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
-        consumer.accept(new Result(getFullRecipeId(resourceLocation), this.result, this.count, this.ingredient, this.advancement, getFullAdvancementId(resourceLocation)));
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), this.result, this.ingredient, this.advancement, getFullAdvancementId(resourceLocation)));
     }
 
-    public static class Result extends SingleIngredientResult {
-        public Result(ResourceLocation id, ItemLike result, int pCount, Ingredient ingredient, Advancement.Builder advancement, ResourceLocation advancementId) {
-            super(id, result, pCount, advancement, advancementId, ingredient);
+    public static class Result extends IngredientResult {
+        public Result(ResourceLocation id, JsonObject result, JsonObject ingredient, Advancement.Builder advancement, ResourceLocation advancementId) {
+            super(id, advancement, advancementId, result, ingredient);
         }
 
         @Override
         public void serializeRecipeData(JsonObject pJson) {
-            pJson.add("ingredients", ingredient.toJson());
-            JsonObject result1 = new JsonObject();
-            result1.addProperty("item", getBuiltInItemRegistry(this.result));
-            if (count > 1) result1.addProperty("count", count);
-            pJson.add("output", result1);
+            pJson.add("ingredients", ingredient);
+            pJson.add("output", result);
         }
 
         @Override

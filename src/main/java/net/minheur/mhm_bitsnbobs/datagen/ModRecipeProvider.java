@@ -1309,7 +1309,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * The recipe for the freezer.
      */
     protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
-        FreezingRecipeBuilder.freezing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName(ingredient), has(ingredient))
+        FreezingRecipeBuilder.freezing(
+                Utils.json().addItem(ingredient).build(),
+                        Utils.json().addItem(result).addCount(resultAmount).build()
+                ).unlocks(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer, result.toString());
     }
 
