@@ -1560,14 +1560,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
     protected static JsonObject getSequenceFilling(ItemLike transitionalItem, String fluid, int amount) {
         return CreateFillingRecipeProvider.fill(transitionalItem)
-                .addIngredient(transitionalItem)
-                .addFluidIngredient(fluid, amount)
+                .addIngredient(Utils.json().addItem(transitionalItem).build())
+                .addIngredient(Utils.json().addFluid(fluid, amount).build())
                 .getFinishedRecipe().serializeRecipe();
     }
     protected static JsonObject getSequenceFillingPotion(ItemLike transitionalItem, String potion, int amount) {
         return CreateFillingRecipeProvider.fill(transitionalItem)
-                .addIngredient(transitionalItem)
                 .addPotionIngredient(potion, amount)
+                .addIngredient(Utils.json().addItem(transitionalItem).build())
                 .getFinishedRecipe().serializeRecipe();
     }
     protected static JsonObject getSequenceDeploying(ItemLike transitionalItem, ItemLike deployItem) {
