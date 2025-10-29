@@ -1530,11 +1530,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void deployingRecipe(Consumer<FinishedRecipe> consumer, ItemLike mainIngredient, ItemLike deployIngredient, ItemLike result) {
-        CreateDeployingRecipeBuilder.deploy()
-                .addMainIngredient(mainIngredient)
-                .addDeployIngredient(deployIngredient)
-                .addResult(result)
-                .unlock(getHasName(mainIngredient), has(mainIngredient))
+        CreateDeployingRecipeBuilder.deploy(Utils.json().addItem(mainIngredient).build(),
+                        Utils.json().addItem(deployIngredient).build(),
+                        Utils.json().addItem(result).build())
+                .unlocks(getHasName(mainIngredient), has(mainIngredient))
                 .save(consumer, getItemName(result) + "_from_deploying");
     }
 
@@ -1572,17 +1571,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .getFinishedRecipe().serializeRecipe();
     }
     protected static JsonObject getSequenceDeploying(ItemLike transitionalItem, ItemLike deployItem) {
-        return CreateDeployingRecipeBuilder.deploy()
-                .addMainIngredient(transitionalItem)
-                .addDeployIngredient(deployItem)
-                .addResult(transitionalItem)
+        JsonObject trans = new RecipeJsonObjectBuilder().addItem(transitionalItem).build();
+        return CreateDeployingRecipeBuilder.deploy(trans,
+                        Utils.json().addItem(deployItem).build(),
+                        trans)
                 .getFinishedRecipe().serializeRecipe();
     }
     protected static JsonObject getSequenceDeploying(ItemLike transitionalItem, TagKey<Item> deployItem) {
-        return CreateDeployingRecipeBuilder.deploy()
-                .addMainIngredient(transitionalItem)
-                .addDeployIngredient(deployItem)
-                .addResult(transitionalItem)
+        JsonObject trans = new RecipeJsonObjectBuilder().addItem(transitionalItem).build();
+        return CreateDeployingRecipeBuilder.deploy(trans,
+                        Utils.json().addTag(deployItem).build(),
+                        trans)
                 .getFinishedRecipe().serializeRecipe();
     }
 }
