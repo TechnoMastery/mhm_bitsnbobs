@@ -1310,7 +1310,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         FreezingRecipeBuilder.freezing(
-                Utils.json().addItem(ingredient).build(),
+                        Utils.json().addItem(ingredient).build(),
                         Utils.json().addItem(result).addCount(resultAmount).build()
                 ).unlocks(getHasName(ingredient), has(ingredient))
                 .save(pFinishedRecipeConsumer, result.toString());
@@ -1321,7 +1321,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         GemPolishingRecipeBuilder.gemPolishing(
-                Utils.json().addItem(ingredient).build(),
+                        Utils.json().addItem(ingredient).build(),
                         Utils.json().addItem(result).addCount(resultAmount).build()
                 ).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
@@ -1331,7 +1331,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, TagKey<Item> ingredient, String getHasName, int resultAmount) {
         GemPolishingRecipeBuilder.gemPolishing(
-                Utils.json().addTag(ingredient).build(),
+                        Utils.json().addTag(ingredient).build(),
                         Utils.json().addItem(result).addCount(resultAmount).build()
                 ).unlocks(getHasName, has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
@@ -1341,14 +1341,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * The recipe for the Incubation. The recipe ID is the result id.
      */
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count) {
-        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count).unlocks(getHasName(ingredient), has(ingredient))
+        IncubatorRecipeBuilder.incubation(
+                        Utils.json().addItem(ingredient).build(),
+                        Utils.json().addItem(catalyzer).build(),
+                        Utils.json().addItem(result).addCount(count).build()
+                ).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
     }
     /**
      * The recipe for the Incubation. You can choose the ID.
      */
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count, String id) {
-        IncubatorRecipeBuilder.incubation(Ingredient.of(ingredient), catalyzer, result, count).unlocks(getHasName(ingredient), has(ingredient))
+        IncubatorRecipeBuilder.incubation(
+                        Utils.json().addItem(ingredient).build(),
+                        Utils.json().addItem(catalyzer).build(),
+                        Utils.json().addItem(result).addCount(count).build()
+                ).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, id);
     }
 

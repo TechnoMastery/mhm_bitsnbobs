@@ -2,61 +2,49 @@ package net.minheur.mhm_bitsnbobs.recipe.datagen;
 
 import com.google.gson.JsonObject;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
-import net.minheur.techno_lib.datagen.recipe.AbstractSingleIngredientRecipeBuilder;
+import net.minheur.techno_lib.datagen.recipe.jsonIngredient.AJsonIngredientResultRecipeBuilder;
 
 import java.util.function.Consumer;
 
-public class IncubatorRecipeBuilder extends AbstractSingleIngredientRecipeBuilder {
-    private final ItemLike catalyzer;
+public class IncubatorRecipeBuilder extends AJsonIngredientResultRecipeBuilder {
+    private final JsonObject catalyzer;
 
-    public IncubatorRecipeBuilder(Ingredient ingredient, ItemLike catalyzer, ItemLike result, int count) {
-        super(MhmBitsnbobs.MOD_ID, "incubation", result, count, ingredient);
+    public IncubatorRecipeBuilder(JsonObject ingredient, JsonObject catalyzer, JsonObject result) {
+        super(MhmBitsnbobs.MOD_ID, "incubation", result, ingredient);
         this.catalyzer = catalyzer;
     }
 
-    public static IncubatorRecipeBuilder incubation(Ingredient ingredient, ItemLike catalyzer, ItemLike result) {
-        return new IncubatorRecipeBuilder(ingredient, catalyzer, result, 1);
-    }
-    public static IncubatorRecipeBuilder incubation(Ingredient ingredient, ItemLike catalyzer, ItemLike result, int count) {
-        return new IncubatorRecipeBuilder(ingredient, catalyzer, result, count);
+    public static IncubatorRecipeBuilder incubation(JsonObject ingredient, JsonObject catalyzer, JsonObject result) {
+        return new IncubatorRecipeBuilder(ingredient, catalyzer, result);
     }
 
     @Override
     protected boolean isRecipeEmpty() {
-        return super.isRecipeEmpty() || catalyzer == null;
+        return super.isRecipeEmpty() || catalyzer.isJsonNull();
     }
 
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
-        consumer.accept(new Result(getFullRecipeId(resourceLocation), this.ingredient, this.catalyzer, this.result, this.count, this.advancement, getFullAdvancementId(resourceLocation)));
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), this.ingredient, this.catalyzer, this.result, this.advancement, getFullAdvancementId(resourceLocation)));
     }
 
-    public static class Result extends SingleIngredientResult {
-        private final ItemLike catalyzer;
+    public static class Result extends IngredientResult {
+        private final JsonObject catalyzer;
 
-        public Result(ResourceLocation id, Ingredient ingredient, ItemLike catalyzer, ItemLike result, int count, Advancement.Builder advancement, ResourceLocation advancementId) {
-            super(id, result, count, advancement, advancementId, ingredient);
+        public Result(ResourceLocation id, JsonObject ingredient, JsonObject catalyzer, JsonObject result, Advancement.Builder advancement, ResourceLocation advancementId) {
+            super(id, advancement, advancementId, result, ingredient);
             this.catalyzer = catalyzer;
         }
 
         @Override
         public void serializeRecipeData(JsonObject pJson) {
-            pJson.add("ingredients", ingredient.toJson());
-            JsonObject catalyzer = new JsonObject();
-            catalyzer.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.catalyzer)).toString());
+            pJson.add("ingredients", ingredient);
             pJson.add("catalyzer", catalyzer);
-            JsonObject result = new JsonObject();
-            result.addProperty("item", BuiltInRegistries.ITEM.getKey(((Item) this.result)).toString());
-            if (count > 1) result.addProperty("count", count);
             pJson.add("output", result);
         }
 
