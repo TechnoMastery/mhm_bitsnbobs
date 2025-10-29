@@ -1377,8 +1377,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * Recipe for mysterious magic
      */
     protected static void mysteriousMagicRecipe(Consumer<FinishedRecipe> consumer, ItemLike primary, int primaryCount, ItemLike left, int leftCount, ItemLike right, int rightCount, ItemLike up, int upCount, ItemLike down, int downCount, ItemLike result, int resultCount, int fuelAmount) {
-        MysteriousMagicRecipeBuilder.magic(primary, primaryCount, left, leftCount, right, rightCount, up, upCount, down, downCount, result, resultCount, fuelAmount)
-                .unlocks(getHasName(primary), has(primary)).save(consumer, primary.toString());
+        MysteriousMagicRecipeBuilder.magic(
+                        Utils.json().addItem(primary).addCount(primaryCount).build(),
+                        Utils.json().addItem(left).addCount(leftCount).build(),
+                        Utils.json().addItem(right).addCount(rightCount).build(),
+                        Utils.json().addItem(up).addCount(upCount).build(),
+                        Utils.json().addItem(down).addCount(downCount).build(),
+                        Utils.json().addItem(result).addCount(resultCount).build(),
+                        fuelAmount
+                ).unlocks(getHasName(primary), has(primary))
+                .save(consumer, primary.toString());
+    }
+    protected static void mysteriousMagicRecipe(Consumer<FinishedRecipe> consumer, ItemLike primary, ItemLike left, ItemLike right, ItemLike up, ItemLike down, ItemLike result, int fuelAmount) {
+        mysteriousMagicRecipe(consumer, primary, 1, left, 1, right, 1, up, 1, down, 1, result, 1, fuelAmount);
     }
 
     /**
