@@ -5,15 +5,11 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
 import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
-import net.minheur.techno_lib.datagen.recipe.AbstractResultRecipeBuilder;
 import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
 import java.util.function.Consumer;
-
-import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 
 /**
  * Here is the builder to datagen atomical stabilizator recipes
