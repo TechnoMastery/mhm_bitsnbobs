@@ -1320,14 +1320,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * The recipe for the gem polishing. Takes an {@link ItemLike} as ingredient.
      */
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
-        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName(ingredient), has(ingredient))
+        GemPolishingRecipeBuilder.gemPolishing(
+                Utils.json().addItem(ingredient).build(),
+                        Utils.json().addItem(result).addCount(resultAmount).build()
+                ).unlocks(getHasName(ingredient), has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
     }
     /**
      * The recipe for the gem polishing. Takes a {@link TagKey} as ingredient
      */
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, TagKey<Item> ingredient, String getHasName, int resultAmount) {
-        GemPolishingRecipeBuilder.gemPolishing(Ingredient.of(ingredient), result, resultAmount).unlocks(getHasName, has(ingredient))
+        GemPolishingRecipeBuilder.gemPolishing(
+                Utils.json().addTag(ingredient).build(),
+                        Utils.json().addItem(result).addCount(resultAmount).build()
+                ).unlocks(getHasName, has(ingredient))
                 .save(finishedRecipeConsumer, result.toString());
     }
 
