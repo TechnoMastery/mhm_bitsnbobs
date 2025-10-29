@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minheur.mhm_bitsnbobs.recipe.IncubatorRecipe;
 import net.minheur.mhm_bitsnbobs.screen.IncubatorMenu;
-import net.minheur.mhm_bitsnbobs.util.DelegatingItemStackHandler;
+import net.minheur.techno_lib.builders.DelegatingItemStackHandler;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 import net.minheur.techno_lib.custom.block.entity.AbstractMenuBlockEntity;
 import org.jetbrains.annotations.NotNull;

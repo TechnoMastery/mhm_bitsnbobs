@@ -14,7 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minheur.mhm_bitsnbobs.recipe.GemPolishingRecipe;
 import net.minheur.mhm_bitsnbobs.screen.GemPolishingStationMenu;
-import net.minheur.mhm_bitsnbobs.util.DelegatingItemStackHandler;
+import net.minheur.techno_lib.builders.DelegatingItemStackHandler;
 import net.minheur.techno_lib.custom.block.entity.AbstractMenuBlockEntity;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

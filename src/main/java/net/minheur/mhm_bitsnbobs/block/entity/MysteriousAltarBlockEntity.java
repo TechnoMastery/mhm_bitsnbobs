@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minheur.mhm_bitsnbobs.recipe.MysteriousMagicRecipe;
 import net.minheur.mhm_bitsnbobs.screen.MysteriousAltarMenu;
-import net.minheur.mhm_bitsnbobs.util.DelegatingItemStackHandler;
+import net.minheur.techno_lib.builders.DelegatingItemStackHandler;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 import net.minheur.mhm_bitsnbobs.util.MysteriousMagicContainer;
 import net.minheur.techno_lib.custom.block.entity.AbstractMenuBlockEntity;
