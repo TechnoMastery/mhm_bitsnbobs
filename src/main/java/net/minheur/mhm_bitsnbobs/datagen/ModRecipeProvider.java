@@ -540,12 +540,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, "creative/motor");
 
         // create milling
-        CreateMillingRecipeBuilder.milling(Items.MOSSY_COBBLESTONE, 50)
-                .addResult(Items.COBBLESTONE, 0.5f)
-                .addResult(Items.ROTTEN_FLESH, 0.2f)
-                .addResult(Items.ROTTEN_FLESH, 0.05f)
-                .addResult(Items.VINE, 0.25f)
-                .unlock(getHasName(Items.MOSSY_COBBLESTONE), has(Items.MOSSY_COBBLESTONE))
+        CreateMillingRecipeBuilder.milling(JsonBuilder.json().addItem(Items.MOSSY_COBBLESTONE).build(), 50)
+                .addResult(JsonBuilder.json().addItem(Items.COBBLESTONE).addChance(0.5f).build())
+                .addResult(JsonBuilder.json().addItem(Items.ROTTEN_FLESH).addChance(0.2f).build())
+                .addResult(JsonBuilder.json().addItem(Items.ROTTEN_FLESH).addChance(0.05f).build())
+                .addResult(JsonBuilder.json().addItem(Items.VINE).addChance(0.25f).build())
+                .unlocks(getHasName(Items.MOSSY_COBBLESTONE), has(Items.MOSSY_COBBLESTONE))
                 .save(pWriter, "mossy_cobblestone_milling");
         millingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 50, 3);
 
@@ -1552,9 +1552,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount, float chance) {
-        CreateMillingRecipeBuilder.milling(ingredient, processTime)
-                .addResult(result, amount, chance)
-                .unlock(getHasName(ingredient), has(ingredient))
+        CreateMillingRecipeBuilder.milling(JsonBuilder.json().addItem(ingredient).build(), processTime)
+                .addResult(JsonBuilder.json().addItem(result).addCount(amount).addChance(chance).build())
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(ingredient) + "_milling");
     }
     protected static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount) {
