@@ -5,38 +5,28 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.simibubi.create.AllRecipeTypes;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.RequirementsStrategy;
-import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
-import org.jetbrains.annotations.Nullable;
+import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
 
 import java.util.*;
 import java.util.function.Consumer;
 
-import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
-
-public class CreateMechanicalCraftingBuilder {
-    private final JsonObject result = new JsonObject();
+public class CreateMechanicalCraftingBuilder extends AResultRecipeBuilder {
     private final List<String> rows = new ArrayList<>();
     private final Map<Character, JsonObject> keys = new LinkedHashMap<>();
     private final boolean acceptMirrored;
     private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
-    public CreateMechanicalCraftingBuilder(boolean acceptMirrored) {
+    public CreateMechanicalCraftingBuilder(boolean acceptMirrored, JsonObject result) {
+        super(MhmBitsnbobs.MOD_ID, "create/mechanical_crafting", result);
         this.acceptMirrored = acceptMirrored;
     }
 
-    public static CreateMechanicalCraftingBuilder shaped(boolean acceptMirrored) {
-        return new CreateMechanicalCraftingBuilder(acceptMirrored);
+    public static CreateMechanicalCraftingBuilder shaped(boolean acceptMirrored, JsonObject result) {
+        return new CreateMechanicalCraftingBuilder(acceptMirrored, result);
     }
 
     private void checkKey(Character key) {
@@ -44,18 +34,9 @@ public class CreateMechanicalCraftingBuilder {
         if (key == ' ') throw new IllegalArgumentException("Symbol ' ' (whitespace) is reserved and cannot be defined");
     }
 
-    public CreateMechanicalCraftingBuilder define(Character key, ItemLike ingredient) {
+    public CreateMechanicalCraftingBuilder define(Character key, JsonObject ingredient) {
         checkKey(key);
-        JsonObject json = new JsonObject();
-        json.addProperty("item", getBuiltInItemRegistry(ingredient));
-        this.keys.put(key, json);
-        return this;
-    }
-    public CreateMechanicalCraftingBuilder define(Character key, TagKey<Item> tag) {
-        checkKey(key);
-        JsonObject json = new JsonObject();
-        json.addProperty("tag", tag.location().toString());
-        this.keys.put(key, json);
+        this.keys.put(key, ingredient);
         return this;
     }
 
@@ -65,71 +46,44 @@ public class CreateMechanicalCraftingBuilder {
         return this;
     }
 
-    public CreateMechanicalCraftingBuilder addResult(ItemLike result, int count) {
-        this.result.addProperty("item", getBuiltInItemRegistry(result));
-        if (count > 1) this.result.addProperty("count", count);
-        return this;
-    }
-    public CreateMechanicalCraftingBuilder addResult(ItemLike result) {
-        return addResult(result, 1);
-    }
+    @Override
+    protected boolean isRecipeEmpty() {
+        if (rows.isEmpty()) return true;
 
-    public CreateMechanicalCraftingBuilder unlock(String pKey, CriterionTriggerInstance pCriterion) {
-        this.advancement.addCriterion(pKey, pCriterion);
-        return this;
-    }
-
-    private void ensureValid(ResourceLocation pId) {
-        if (this.rows.isEmpty()) throw new IllegalStateException("No pattern is defined for shaped recipe " + pId + "!");
         Set<Character> set = Sets.newHashSet(this.keys.keySet());
         set.remove(' ');
 
         for(String s : this.rows) {
             for(int i = 0; i < s.length(); ++i) {
                 char c0 = s.charAt(i);
-                if (!this.keys.containsKey(c0) && c0 != ' ') {
-                    throw new IllegalStateException("Pattern in recipe " + pId + " uses undefined symbol '" + c0 + "'");
-                }
+                if (!this.keys.containsKey(c0) && c0 != ' ') return true;
 
                 set.remove(c0);
             }
         }
 
-        if (!set.isEmpty()) {
-            throw new IllegalStateException("Ingredients are defined but not used in pattern for recipe " + pId);
-        } else if (this.rows.size() == 1 && this.rows.get(0).length() == 1) {
-            throw new IllegalStateException("Shaped recipe " + pId + " only takes in a single item - should it be a shapeless recipe instead?");
-        } else if (this.advancement.getCriteria().isEmpty()) {
-            throw new IllegalStateException("No way of obtaining recipe " + pId);
-        }
+        if (!set.isEmpty()) return true;
+        else if (this.rows.size() == 1 && this.rows.get(0).length() == 1) return true;
+        else if (this.advancement.getCriteria().isEmpty()) return true;
+
+        return super.isRecipeEmpty();
     }
 
-    public void save(Consumer<FinishedRecipe> consumer, ResourceLocation id) {
-        ensureValid(id);
-        this.advancement.parent(RecipeBuilder.ROOT_RECIPE_ADVANCEMENT).addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id)).rewards(AdvancementRewards.Builder.recipe(id)).requirements(RequirementsStrategy.OR);
-        consumer.accept(new Result(id.withPrefix("create/mechanical_crafting/"), this.result, this.rows, this.keys, this.acceptMirrored, this.advancement, id.withPrefix("recipes/create/mechanical_crafting/")));
-    }
-    public void save(Consumer<FinishedRecipe> consumer, String id) {
-        save(consumer, new ResourceLocation(MhmBitsnbobs.MOD_ID, id));
+    @Override
+    protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), result, rows, keys, acceptMirrored, advancement, getFullAdvancementId(resourceLocation)));
     }
 
-    private static class Result implements FinishedRecipe {
-        private final ResourceLocation id;
-        private final JsonObject result;
+    private static class Result extends ResultRecipeResult {
         private final List<String> rows;
         private final Map<Character, JsonObject> keys;
         private final boolean acceptMirrored;
-        private final Advancement.Builder advancement;
-        private final ResourceLocation advancementId;
 
         private Result(ResourceLocation id, JsonObject result, List<String> rows, Map<Character, JsonObject> keys, boolean acceptMirrored, Advancement.Builder advancement, ResourceLocation advancementId) {
-            this.id = id;
-            this.result = result;
+            super(id, advancement, advancementId, result);
             this.rows = rows;
             this.keys = keys;
             this.acceptMirrored = acceptMirrored;
-            this.advancement = advancement;
-            this.advancementId = advancementId;
         }
 
         @Override
@@ -151,34 +105,9 @@ public class CreateMechanicalCraftingBuilder {
             pJson.add("result", result);
         }
 
-        /**
-         * Gets the ID for the recipe.
-         */
-        @Override
-        public ResourceLocation getId() {
-            return id;
-        }
-
         @Override
         public RecipeSerializer<?> getType() {
             return AllRecipeTypes.MECHANICAL_CRAFTING.getSerializer();
-        }
-
-        /**
-         * Gets the JSON for the advancement that unlocks this recipe. Null if there is no advancement.
-         */
-        @Override
-        public @Nullable JsonObject serializeAdvancement() {
-            return advancement.serializeToJson();
-        }
-
-        /**
-         * Gets the ID for the advancement associated with this recipe. Should not be null if {@link #serializeAdvancement()} is
-         * non-null.
-         */
-        @Override
-        public @Nullable ResourceLocation getAdvancementId() {
-            return advancementId;
         }
     }
 
