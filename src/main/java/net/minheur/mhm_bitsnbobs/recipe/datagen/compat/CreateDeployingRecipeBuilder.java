@@ -7,13 +7,15 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
+import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.techno_lib.builders.JsonBuilder;
+import net.minheur.techno_lib.datagen.recipe.ICreateSequenceRecipe;
 import net.minheur.techno_lib.datagen.recipe.result.AResultRecipeBuilder;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
-public class CreateDeployingRecipeBuilder extends AResultRecipeBuilder {
+public class CreateDeployingRecipeBuilder extends AResultRecipeBuilder implements ICreateSequenceRecipe {
     private final JsonObject mainIngredient;
     private final JsonObject deployIngredient;
 
@@ -39,8 +41,15 @@ public class CreateDeployingRecipeBuilder extends AResultRecipeBuilder {
         consumer.accept(new Result(getFullRecipeId(resourceLocation), mainIngredient, deployIngredient, result, advancement, getFullAdvancementId(resourceLocation)));
     }
 
-    public FinishedRecipe getFinishedRecipe() {
-        return new Result(null, this.mainIngredient, this.deployIngredient, this.result, null, null);
+    @Override
+    public JsonObject getSequenceRecipe() {
+        return new Result(null, this.mainIngredient, this.deployIngredient, this.result, null, null)
+                .serializeRecipe();
+    }
+
+    public static JsonObject getSequenceStep(ItemLike transitional, JsonObject deploy) {
+        JsonObject trans = JsonBuilder.json().addItem(transitional).build();
+        return new CreateDeployingRecipeBuilder(trans, deploy, trans).getSequenceRecipe();
     }
 
     public static class Result extends ResultRecipeResult {

@@ -408,7 +408,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // create sequence
         CreateSequencedAssemblyRecipeBuilder.sequence(Items.GLASS_BOTTLE, Items.INK_SAC, ModItems.INK_BOTTLE.get(), 1)
                 .addStep(getSequenceFilling(ModItems.INK_BOTTLE.get(), "minecraft:water", 150))
-                .addStep(getSequenceDeploying(ModItems.INK_BOTTLE.get(), ModItems.DARKENED_BIOMASS.get()))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.INK_BOTTLE.get(),
+                        JsonBuilder.json().addItem(ModItems.DARKENED_BIOMASS.get()).build()))
                 .unlock(getHasName(Items.GLASS_BOTTLE), has(Items.GLASS_BOTTLE))
                 .save(pWriter, "ink_sac_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.QUANTUMITE_INGOT.get(), ModItems.QUANTUMITE_SHEET.get(), ModItems.HALF_QUANTUMITE_SHEET.get(), 1)
@@ -427,26 +428,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addStep(getSequenceFilling(ModItems.UNFINISHED_STORM_FRAGMENT.get(), "create_enchantment_industry:hyper_experience", 150))
                 .addStep(getSequencePressing(ModItems.UNFINISHED_STORM_FRAGMENT.get()))
                 .addStep(getSequencePressing(ModItems.UNFINISHED_STORM_FRAGMENT.get()))
-                .addStep(getSequenceDeploying(ModItems.UNFINISHED_STORM_FRAGMENT.get(), Items.LAPIS_LAZULI))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_STORM_FRAGMENT.get(),
+                        JsonBuilder.json().addItem(Items.LAPIS_LAZULI).build()))
                 .unlock(getHasName(Items.DIAMOND), has(Items.DIAMOND))
                 .save(pWriter, "storm_fragment_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.QUANTUM_CORE.get(), ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.UNPROCESSED_QUANTUM_CORE.get(), 4)
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_QUANTUM_CORE.get(), OtherModItems.Ae2.SINGULARITY.getAsRawItem()))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
+                        JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
                 .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:water", 1000))
                 .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:lava", 1000))
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_QUANTUM_CORE.get(), OtherModItems.Ae2.SINGULARITY.getAsRawItem()))
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_QUANTUM_CORE.get(), Items.OBSIDIAN))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
+                        JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
+                        JsonBuilder.json().addItem(Items.OBSIDIAN).build()))
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
                 .unlock(getHasName(ModItems.QUANTUM_CORE.get()), has(ModItems.QUANTUM_CORE.get()))
                 .save(pWriter, "stabilized_quantum_core_recipe");
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.SMALL_CREATIVE_NUGGET.get(), ModItems.CREATIVE_NUGGET.get(), ModItems.UNPROCESSED_CREATIVE_NUGGET.get(), 50)
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_CREATIVE_NUGGET.get(), ModItems.CREATIVE_ESSENCE.get()))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_CREATIVE_NUGGET.get(),
+                        JsonBuilder.json().addItem(ModItems.CREATIVE_ESSENCE.get()).build()))
                 .unlock(getHasName(ModItems.SMALL_CREATIVE_NUGGET.get()), has(ModItems.SMALL_CREATIVE_NUGGET.get()))
                 .save(pWriter, "creative_nugget_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(ModTags.Items.FUELS, Items.SEA_PICKLE, ModItems.UNPROCESSED_SEA_PICKLE.get(), 5)
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_SEA_PICKLE.get(), ModTags.Items.GLOWING_UTILITY))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get(),
+                        JsonBuilder.json().addTag(ModTags.Items.GLOWING_UTILITY).build()))
                 .addStep(getSequenceFilling(ModItems.UNPROCESSED_SEA_PICKLE.get(), "minecraft:water", 250))
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_SEA_PICKLE.get(), ModTags.Items.GLOWING_UTILITY))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get(),
+                        JsonBuilder.json().addTag(ModTags.Items.GLOWING_UTILITY).build()))
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_SEA_PICKLE.get()))
                 .unlock("fuels", has(ModTags.Items.FUELS))
                 .save(pWriter, "sea_pickle_sequence");
@@ -454,21 +462,27 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
                 .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:lava", 500))
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_QUANTUM_CORE.get(), OtherModItems.Ae2.SINGULARITY.getAsRawItem()))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
+                        JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
                 .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:water", 1000))
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_QUANTUM_CORE.get(), ModItems.STORM_FRAGMENT.get()))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
+                        JsonBuilder.json().addItem(ModItems.STORM_FRAGMENT.get()).build()))
                 .unlock(getHasName(OtherModItems.Ae2.SINGULARITY.getAsRawItem()), has(OtherModItems.Ae2.SINGULARITY.getAsRawItem()))
                 .save(pWriter, "quantum_core_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(Items.BUCKET, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), ModItems.MILK_BUCKET_WITH_EGG.get(), 6)
                 .addStep(getSequenceFilling(ModItems.MILK_BUCKET_WITH_EGG.get(), "minecraft:milk", 50))
-                .addStep(getSequenceDeploying(ModItems.MILK_BUCKET_WITH_EGG.get(), Tags.Items.EGGS))
-                .addStep(getSequenceDeploying(ModItems.MILK_BUCKET_WITH_EGG.get(), Items.SUGAR))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(),
+                        JsonBuilder.json().addTag(Tags.Items.EGGS).build()))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(),
+                        JsonBuilder.json().addItem(Items.SUGAR).build()))
                 .unlock(getHasName(Items.BUCKET), has(Items.BUCKET))
                 .save(pWriter, getItemName(ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get()) + "_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.SAPPHIRE.get(), Items.EMERALD, ModItems.UNFINISHED_EMERALD.get(), 3)
-                .addStep(getSequenceDeploying(ModItems.UNFINISHED_EMERALD.get(), Items.LIME_DYE))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(),
+                        JsonBuilder.json().addItem(Items.LIME_DYE).build()))
                 .addStep(getSequenceFilling(ModItems.UNFINISHED_EMERALD.get(), "create_enchantment_industry:experience", 15))
-                .addStep(getSequenceDeploying(ModItems.UNFINISHED_EMERALD.get(), Items.IRON_NUGGET))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(),
+                        JsonBuilder.json().addItem(Items.IRON_NUGGET).build()))
                 .unlock(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
                 .save(pWriter, "emerald_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(Items.COBBLESTONE, Items.NETHERRACK, Items.COBBLESTONE, 3)
@@ -481,7 +495,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(Items.COBBLESTONE), has(Items.COBBLESTONE))
                 .save(pWriter, "netherrack_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(OtherModItems.Create.CINDER_FLOUR.getAsRawItem(), Items.GLOWSTONE, ModItems.UNPROCESSED_DUST.get(), 1)
-                .addStep(getSequenceDeploying(ModItems.UNPROCESSED_DUST.get(), Items.BLAZE_POWDER))
+                .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_DUST.get(),
+                        JsonBuilder.json().addItem(Items.BLAZE_POWDER).build()))
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_DUST.get()))
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_DUST.get()))
                 .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
@@ -1567,20 +1582,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         return CreateFillingRecipeProvider.fill(transitionalItem)
                 .addPotionIngredient(potion, amount)
                 .addIngredient(JsonBuilder.json().addItem(transitionalItem).build())
-                .getFinishedRecipe().serializeRecipe();
-    }
-    protected static JsonObject getSequenceDeploying(ItemLike transitionalItem, ItemLike deployItem) {
-        JsonObject trans = new RecipeJsonObjectBuilder().addItem(transitionalItem).build();
-        return CreateDeployingRecipeBuilder.deploy(trans,
-                        JsonBuilder.json().addItem(deployItem).build(),
-                        trans)
-                .getFinishedRecipe().serializeRecipe();
-    }
-    protected static JsonObject getSequenceDeploying(ItemLike transitionalItem, TagKey<Item> deployItem) {
-        JsonObject trans = new RecipeJsonObjectBuilder().addItem(transitionalItem).build();
-        return CreateDeployingRecipeBuilder.deploy(trans,
-                        JsonBuilder.json().addTag(deployItem).build(),
-                        trans)
                 .getFinishedRecipe().serializeRecipe();
     }
 }
