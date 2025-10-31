@@ -44,7 +44,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     /**
      * Called method : it generates recipes.
-     * @param pWriter it is the consumer. Used in every recipes.
+     * @param pWriter it is the consumer. Used in every recipe.
      */
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
@@ -407,7 +407,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // create sequence
         CreateSequencedAssemblyRecipeBuilder.sequence(Items.GLASS_BOTTLE, Items.INK_SAC, ModItems.INK_BOTTLE.get(), 1)
-                .addStep(getSequenceFilling(ModItems.INK_BOTTLE.get(), "minecraft:water", 150))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.INK_BOTTLE.get(), JsonBuilder.json().addFluid("minecraft:water", 150).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.INK_BOTTLE.get(),
                         JsonBuilder.json().addItem(ModItems.DARKENED_BIOMASS.get()).build()))
                 .unlock(getHasName(Items.GLASS_BOTTLE), has(Items.GLASS_BOTTLE))
@@ -419,13 +419,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlock(getHasName(ModItems.QUANTUMITE_INGOT.get()), has(ModItems.QUANTUMITE_INGOT.get()))
                 .save(pWriter, "quantumite_sheet_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(OtherModItems.Create.CINDER_FLOUR.getAsRawItem(), Items.BLAZE_POWDER, ModItems.UNFINISHED_BLAZE_POWDER.get(), 4)
-                .addStep(getSequenceFilling(ModItems.UNFINISHED_BLAZE_POWDER.get(), "minecraft:lava", 150))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNFINISHED_BLAZE_POWDER.get(), JsonBuilder.json().addFluid("minecraft:lava", 150).build()))
                 .addStep(getSequencePressing(ModItems.UNFINISHED_BLAZE_POWDER.get()))
                 .addStep(getSequencePressing(ModItems.UNFINISHED_BLAZE_POWDER.get()))
                 .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "blaze_powder_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(Items.DIAMOND, ModItems.STORM_FRAGMENT.get(), ModItems.UNFINISHED_STORM_FRAGMENT.get(), 4)
-                .addStep(getSequenceFilling(ModItems.UNFINISHED_STORM_FRAGMENT.get(), "create_enchantment_industry:hyper_experience", 150))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNFINISHED_STORM_FRAGMENT.get(), JsonBuilder.json().addFluid("create_enchantment_industry:hyper_experience", 150).build()))
                 .addStep(getSequencePressing(ModItems.UNFINISHED_STORM_FRAGMENT.get()))
                 .addStep(getSequencePressing(ModItems.UNFINISHED_STORM_FRAGMENT.get()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_STORM_FRAGMENT.get(),
@@ -435,8 +435,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.QUANTUM_CORE.get(), ModItems.STABILIZED_QUANTUM_CORE.get(), ModItems.UNPROCESSED_QUANTUM_CORE.get(), 4)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
-                .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:water", 1000))
-                .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:lava", 1000))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(), JsonBuilder.json().addFluid("minecraft:water", 1000).build()))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(), JsonBuilder.json().addFluid("minecraft:lava", 1000).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
@@ -452,7 +452,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         CreateSequencedAssemblyRecipeBuilder.sequence(ModTags.Items.FUELS, Items.SEA_PICKLE, ModItems.UNPROCESSED_SEA_PICKLE.get(), 5)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get(),
                         JsonBuilder.json().addTag(ModTags.Items.GLOWING_UTILITY).build()))
-                .addStep(getSequenceFilling(ModItems.UNPROCESSED_SEA_PICKLE.get(), "minecraft:water", 250))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get(), JsonBuilder.json().addFluid("minecraft:water", 250).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get(),
                         JsonBuilder.json().addTag(ModTags.Items.GLOWING_UTILITY).build()))
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_SEA_PICKLE.get()))
@@ -461,16 +461,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         CreateSequencedAssemblyRecipeBuilder.sequence(OtherModItems.Ae2.SINGULARITY.getAsRawItem(), ModItems.QUANTUM_CORE.get(), ModItems.UNPROCESSED_QUANTUM_CORE.get(), 15)
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
                 .addStep(getSequencePressing(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
-                .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:lava", 500))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(), JsonBuilder.json().addFluid("minecraft:lava", 500).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
-                .addStep(getSequenceFilling(ModItems.UNPROCESSED_QUANTUM_CORE.get(), "minecraft:water", 1000))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(), JsonBuilder.json().addFluid("minecraft:water", 1000).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addItem(ModItems.STORM_FRAGMENT.get()).build()))
                 .unlock(getHasName(OtherModItems.Ae2.SINGULARITY.getAsRawItem()), has(OtherModItems.Ae2.SINGULARITY.getAsRawItem()))
                 .save(pWriter, "quantum_core_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(Items.BUCKET, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), ModItems.MILK_BUCKET_WITH_EGG.get(), 6)
-                .addStep(getSequenceFilling(ModItems.MILK_BUCKET_WITH_EGG.get(), "minecraft:milk", 50))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(), JsonBuilder.json().addFluid("minecraft:milk", 50).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(),
                         JsonBuilder.json().addTag(Tags.Items.EGGS).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(),
@@ -480,15 +480,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         CreateSequencedAssemblyRecipeBuilder.sequence(ModItems.SAPPHIRE.get(), Items.EMERALD, ModItems.UNFINISHED_EMERALD.get(), 3)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(),
                         JsonBuilder.json().addItem(Items.LIME_DYE).build()))
-                .addStep(getSequenceFilling(ModItems.UNFINISHED_EMERALD.get(), "create_enchantment_industry:experience", 15))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(), JsonBuilder.json().addFluid("create_enchantment_industry:experience", 15).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(),
                         JsonBuilder.json().addItem(Items.IRON_NUGGET).build()))
                 .unlock(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
                 .save(pWriter, "emerald_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(Items.COBBLESTONE, Items.NETHERRACK, Items.COBBLESTONE, 3)
-                .addStep(getSequenceFilling(Items.COBBLESTONE, "minecraft:lava", 250))
-                .addStep(getSequenceFilling(Items.COBBLESTONE, "minecraft:lava", 250))
-                .addStep(getSequenceFilling(Items.COBBLESTONE, "minecraft:lava", 250))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(Items.COBBLESTONE, JsonBuilder.json().addFluid("minecraft:lava", 250).build()))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(Items.COBBLESTONE, JsonBuilder.json().addFluid("minecraft:lava", 250).build()))
+                .addStep(CreateFillingRecipeProvider.getSequenceStep(Items.COBBLESTONE, JsonBuilder.json().addFluid("minecraft:lava", 250).build()))
                 .addStep(getSequencePressing(Items.COBBLESTONE))
                 .addStep(getSequencePressing(Items.COBBLESTONE))
                 .addStep(getSequencePressing(Items.COBBLESTONE))
@@ -1453,9 +1453,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void fillingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String fluid, int fluidAmount, ItemLike result) {
         CreateFillingRecipeProvider.fill(result)
-                .addIngredient(ingredient)
-                .addFluidIngredient(fluid, fluidAmount)
-                .unlock(getHasName(ingredient), has(ingredient))
+                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+                .addIngredient(JsonBuilder.json().addFluid(fluid, fluidAmount).build())
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(result) + "_filling");
     }
     /**
@@ -1467,9 +1467,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void potionFillingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String potionName, int potionAmount, ItemLike result) {
         CreateFillingRecipeProvider.fill(result)
-                .addIngredient(ingredient)
-                .addPotionIngredient(potionName, potionAmount)
-                .unlock(getHasName(ingredient), has(ingredient))
+                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+                .addIngredient(JsonBuilder.json().addPotion(potionName, potionAmount).build())
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(result) + "_potion_filling");
     }
 
@@ -1570,18 +1570,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     protected static JsonObject getSequencePressing(ItemLike transitionalItem) {
         return CreatePressingRecipeBuilder.press(transitionalItem, transitionalItem)
-                .getFinishedRecipe().serializeRecipe();
-    }
-    protected static JsonObject getSequenceFilling(ItemLike transitionalItem, String fluid, int amount) {
-        return CreateFillingRecipeProvider.fill(transitionalItem)
-                .addIngredient(JsonBuilder.json().addItem(transitionalItem).build())
-                .addIngredient(JsonBuilder.json().addFluid(fluid, amount).build())
-                .getFinishedRecipe().serializeRecipe();
-    }
-    protected static JsonObject getSequenceFillingPotion(ItemLike transitionalItem, String potion, int amount) {
-        return CreateFillingRecipeProvider.fill(transitionalItem)
-                .addPotionIngredient(potion, amount)
-                .addIngredient(JsonBuilder.json().addItem(transitionalItem).build())
                 .getFinishedRecipe().serializeRecipe();
     }
 }

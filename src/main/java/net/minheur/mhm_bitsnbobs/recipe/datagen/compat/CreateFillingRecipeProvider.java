@@ -4,18 +4,14 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.simibubi.create.AllRecipeTypes;
 import net.minecraft.advancements.Advancement;
-import net.minecraft.advancements.AdvancementRewards;
-import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.advancements.RequirementsStrategy;
-import net.minecraft.advancements.critereon.RecipeUnlockedTrigger;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
 import net.minheur.mhm_bitsnbobs.MhmBitsnbobs;
+import net.minheur.techno_lib.builders.JsonBuilder;
+import net.minheur.techno_lib.datagen.recipe.ICreateSequenceRecipe;
 import net.minheur.techno_lib.datagen.recipe.jsonIngredient.AJsonIngredientsResultRecipeBuilder;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -25,7 +21,7 @@ import static net.minheur.techno_lib.Utils.getBuiltInItemRegistry;
 /**
  * Datagen creation class for filling recipe from Create
  */
-public class CreateFillingRecipeProvider extends AJsonIngredientsResultRecipeBuilder {
+public class CreateFillingRecipeProvider extends AJsonIngredientsResultRecipeBuilder implements ICreateSequenceRecipe {
 
     public CreateFillingRecipeProvider(JsonObject result) {
         super(MhmBitsnbobs.MOD_ID, "create/filling", result);
@@ -37,25 +33,26 @@ public class CreateFillingRecipeProvider extends AJsonIngredientsResultRecipeBui
         return new CreateFillingRecipeProvider(resultJson);
     }
 
-    public CreateFillingRecipeProvider addPotionIngredient(String potionName, int amount) {
-        JsonObject ingredient = new JsonObject();
-        JsonObject nbt = new JsonObject();
-        nbt.addProperty("Bottle", "REGULAR");
-        nbt.addProperty("Potion", potionName);
-        ingredient.addProperty("fluid", "create:potion");
-        ingredient.addProperty("amount", amount);
-        ingredient.add("nbt", nbt);
-        ingredients.add(ingredient);
-        return this;
-    }
-
     @Override
     protected void saveRecipeResult(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation) {
-
+        consumer.accept(new Result(getFullRecipeId(resourceLocation), ingredients, result, advancement, getFullAdvancementId(resourceLocation)));
     }
 
     public FinishedRecipe getFinishedRecipe() {
         return new Result(null, this.ingredients, this.result, null, null);
+    }
+
+    @Override
+    public JsonObject getSequenceRecipe() {
+        return new Result(null, ingredients, result, advancement, null).serializeRecipe();
+    }
+
+    public static JsonObject getSequenceStep(ItemLike transitional, JsonObject fluid) {
+        JsonObject trans = JsonBuilder.json().addItem(transitional).build();
+        CreateFillingRecipeProvider step = new CreateFillingRecipeProvider(trans);
+        step.addIngredient(trans)
+                .addIngredient(fluid);
+        return step.getSequenceRecipe();
     }
 
     /**
