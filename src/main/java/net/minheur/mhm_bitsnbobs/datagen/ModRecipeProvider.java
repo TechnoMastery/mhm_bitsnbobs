@@ -1530,10 +1530,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     protected static void hauntingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {
-        CreateHauntingRecipeBuilder.haunt()
-                .addIngredient(ingredient)
-                .addResult(result)
-                .unlock(getHasName(ingredient), has(ingredient))
+        CreateHauntingRecipeBuilder.haunt(
+                JsonBuilder.json().addItem(ingredient).build()
+                )
+                .addResult(
+                        JsonBuilder.json().addItem(result).build()
+                )
+                .unlocks(getHasName(ingredient), has(ingredient))
                 .save(consumer, getItemName(result) + "_haunting");
     }
 
