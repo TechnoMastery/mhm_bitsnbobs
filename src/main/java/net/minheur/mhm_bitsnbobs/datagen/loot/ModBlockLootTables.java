@@ -22,7 +22,6 @@ import net.minheur.mhm_bitsnbobs.block.custom.CornCropBlock;
 import net.minheur.mhm_bitsnbobs.block.custom.StrawberryCropBlock;
 import net.minheur.mhm_bitsnbobs.item.ModItems;
 
-import java.util.Random;
 import java.util.Set;
 
 /**
@@ -112,7 +111,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         LootItemCondition.Builder lootItemCondition$builder2 = LootItemBlockStatePropertyCondition
                 .hasBlockStateProperties(ModBlocks.CORN_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CornCropBlock.AGE, 8));
-        this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORN.get(),
+        this.add(ModBlocks.CORN_CROP.get(), createCropDrops(ModBlocks.CORN_CROP.get(), ModItems.CORNCOB.get(),
                 ModItems.CORN_SEEDS.get(), lootItemCondition$builder2));
 
         // flowers      packet de 2 pour la fleur + potted flower

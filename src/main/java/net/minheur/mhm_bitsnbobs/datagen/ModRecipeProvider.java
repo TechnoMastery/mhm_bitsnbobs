@@ -58,6 +58,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         oreSmelting(pWriter, List.of(ModBlocks.COMPRESSED_DIRT.get()), RecipeCategory.MISC, ModItems.EXTREMELY_DRY_DIRT.get(), 0.1f, 600, "dirt");
         oreSmelting(pWriter, List.of(ModItems.WET_DIRT.get()), RecipeCategory.MISC, ModItems.EXTREMELY_DRY_DIRT.get(), 0.1f, 1800, "dirt");
         oreSmelting(pWriter, List.of(ModBlocks.RED_CLAY.get()), RecipeCategory.MISC, Blocks.RED_TERRACOTTA, 0.1f, 200, "clay");
+        oreSmelting(pWriter, List.of(ModItems.POLENTA_BOWL.get()), RecipeCategory.FOOD, ModItems.COOKED_POLENTA_BOWL.get(), 0f, 200, "polenta");
 
         oreBlasting(pWriter, List.of(ModItems.CREATIVE_ESSENCE.get()), RecipeCategory.MISC, ModItems.CREATIVE_RESIDUE.get(), 1f, 24000, "creative");
 
@@ -106,6 +107,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         simpleShapelessCraftingOne(pWriter, ModItems.CREATIVE_NUGGET.get(), ModItems.CREATIVE_INGOT.get(), 9, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.CREATIVE_INGOT.get(), ModBlocks.CREATIVE_BLOCK.get(), 9, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.SUPER_CHARGED_INGOT.get(), ModBlocks.SUPER_CHARGED_BLOCK.get(), 9, 1);
+        simpleShapelessCraftingOne(pWriter, ModItems.CORN.get(), ModItems.CORNCOB.get(), 16, 1);
+        simpleShapelessCraftingOne(pWriter, ModItems.POLENTA_CUBE.get(), ModItems.COOKED_POLENTA_BOWL.get(), 4, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.EMPTY_RUNE.get(), Items.EMERALD, 5, 1);
         // simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_LOG.get(), 4, 1);
         // simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.DARK_WOOD.get(), 4, 1);
@@ -113,6 +116,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // simpleShapelessCraftingOne(pWriter, ModBlocks.DARK_PLANKS.get(), ModBlocks.STRIPPED_DARK_LOG.get(), 4, 1);
         simpleShapelessCraftingOne(pWriter, ModItems.DICE.get(), Blocks.WHITE_CONCRETE, 16, 1);
 
+        simpleShapelessCraftingTwo(pWriter, ModItems.POLENTA_BOWL.get(), 1, ModItems.POLENTA.get(), 3, Items.BOWL, 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.SLIMY_INGOT.get(), 1, Items.SLIME_BALL, 1, ModItems.HARDENED_INGOT.get(), 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.XP_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.GOLD_INGOT, 1);
         simpleShapelessCraftingTwo(pWriter, ModItems.MONEY_RUNE.get(), 1, ModItems.EMPTY_RUNE.get(), 1, Items.COPPER_INGOT, 1);
@@ -391,6 +395,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(JsonBuilder.json().addItem(Items.REDSTONE).build())
                 .unlocks(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "redstone_mixing");
+        CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
+                .addIngredient(ModItems.CORNMEAL.get())
+                .addIngredient(OtherModItems.CreateFood.BUTTER.getAsRawItem())
+                .addFluidIngredient("minecraft:water", 300)
+                .addFluidIngredient("minecraft:milk", 200)
+                .addIngredient(ModTags.Items.SALT)
+                .addResult(ModItems.POLENTA.get())
+                .unlock(getHasName(ModItems.CORNMEAL.get()), has(ModItems.CORNMEAL.get()))
+                .save(pWriter, "polenta_mixing");
 
         // crate filling
         fillingRecipe(pWriter, ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get(), "create:chocolate", 100, ModItems.BUCKET_OF_LIQUID_CHOCOLATE_ICE_CREAM.get());
@@ -583,6 +596,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlocks(getHasName(Items.MOSSY_COBBLESTONE), has(Items.MOSSY_COBBLESTONE))
                 .save(pWriter, "mossy_cobblestone_milling");
         millingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 50, 3);
+        millingRecipe(pWriter, ModItems.CORN.get(), ModItems.CORNMEAL.get(), 50, 3);
 
         // create crushing
         crushingRecipe(pWriter, ModItems.DARKENED_BIOMASS.get(), Items.BROWN_MUSHROOM, 500);

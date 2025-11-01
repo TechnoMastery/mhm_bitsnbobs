@@ -854,9 +854,9 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.HARDENED_INGOT)
                 .en_us("Hardened ingot")
                 .fr_fr("Lingot endurcie");
-        addItem(ModItems.CORN)
-                .en_us("Corn")
-                .fr_fr("Maïs");
+        addItem(ModItems.CORNCOB)
+                .en_us("Corncob")
+                .fr_fr("Epi de maïs");
         addItem(ModItems.CORN_SEEDS)
                 .en_us("Corn seeds")
                 .fr_fr("Graines de maïs");
@@ -1079,18 +1079,26 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.SYRINGE_TUBE)
                 .en_us("Syringe tube")
                 .fr_fr("Tube de seringue");
-
+        addItem(ModItems.CORN)
+                .en_us("Corn")
+                .fr_fr("Maïs");
+        addItem(ModItems.CORNMEAL)
+                .en_us("Cornmeal")
+                .fr_fr("Farine de maïs");
+        addItem(ModItems.POLENTA)
+                .en_us("Polenta")
+                .fr_fr("Polenta");
+        addItem(ModItems.POLENTA_BOWL)
+                .en_us("Polenta bowl")
+                .fr_fr("Bol de polenta");
+        addItem(ModItems.COOKED_POLENTA_BOWL)
+                .en_us("Cooked polenta bowl")
+                .fr_fr("Bol de polenta cuite");
+        addItem(ModItems.POLENTA_CUBE)
+                .en_us("Polenta cube")
+                .fr_fr("Cube de polenta");
 
     }
-
-
-
-
-
-
-
-
-
 
     public TranslationBuilder addMenuName(String id) {
         return add("menu." + id);

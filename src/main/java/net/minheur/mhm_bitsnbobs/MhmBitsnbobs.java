@@ -3,7 +3,6 @@ package net.minheur.mhm_bitsnbobs;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.commands.CommandSourceStack;
@@ -39,7 +38,6 @@ import net.minheur.mhm_bitsnbobs.recipe.ModRecipes;
 import net.minheur.mhm_bitsnbobs.screen.*;
 import net.minheur.mhm_bitsnbobs.sound.ModSounds;
 import net.minheur.mhm_bitsnbobs.util.ModNetworking;
-import net.minheur.mhm_bitsnbobs.util.ModWoodTypes;
 import net.minheur.mhm_bitsnbobs.villager.ModVillagers;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModFoliagePlacers;
 import net.minheur.mhm_bitsnbobs.worldgen.tree.ModTrunkPlacerTypes;
@@ -110,7 +108,7 @@ public class MhmBitsnbobs
             // ligne suivante : ajout au compostage
             ComposterBlock.COMPOSTABLES.put(ModItems.PINE_CONE.get(), 0.2f);
             ComposterBlock.COMPOSTABLES.put(ModItems.STRAWBERRY.get(), 0.5f);
-            ComposterBlock.COMPOSTABLES.put(ModItems.CORN.get(), 0.3f);
+            ComposterBlock.COMPOSTABLES.put(ModItems.CORNCOB.get(), 0.3f);
         });
     }
 
@@ -197,6 +195,13 @@ public class MhmBitsnbobs
             event.accept(ModItems.CHOCOLATE_SORBET);
             event.accept(ModItems.STRAWBERRIES_SORBET);
             event.accept(ModItems.VANILLA_SORBET);
+            event.accept(ModItems.CORNCOB);
+            event.accept(ModItems.CORN);
+            event.accept(ModItems.CORNMEAL);
+            event.accept(ModItems.POLENTA);
+            event.accept(ModItems.POLENTA_BOWL);
+            event.accept(ModItems.COOKED_POLENTA_BOWL);
+            event.accept(ModItems.POLENTA_CUBE);
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);
