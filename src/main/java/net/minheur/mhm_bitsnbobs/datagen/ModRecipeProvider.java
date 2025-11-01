@@ -514,7 +514,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('E', JsonBuilder.json().addItem(Items.NETHERITE_SWORD).build())
                 .unlocks(getHasName(ModItems.FIRE_DIAMOND.get()), has(ModItems.FIRE_DIAMOND.get()))
                 .save(pWriter, "fire_sword");
-        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.json().addItem(OtherModItems.Create.FLUID_TANK.getAsRawItem()).build())
+        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.json().addItem(OtherModItems.Create.CREATIVE_FLUID_TANK.getAsRawItem()).build())
                 .pattern("AAAAA")
                 .pattern("ABDBA")
                 .pattern("ADCDA")

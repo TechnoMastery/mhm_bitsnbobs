@@ -18,7 +18,6 @@ public class CreateMechanicalCraftingBuilder extends AResultRecipeBuilder {
     private final List<String> rows = new ArrayList<>();
     private final Map<Character, JsonObject> keys = new LinkedHashMap<>();
     private final boolean acceptMirrored;
-    private final Advancement.Builder advancement = Advancement.Builder.recipeAdvancement();
 
     public CreateMechanicalCraftingBuilder(boolean acceptMirrored, JsonObject result) {
         super(MhmBitsnbobs.MOD_ID, "create/mechanical_crafting", result);
