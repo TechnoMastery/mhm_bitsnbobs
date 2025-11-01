@@ -31,14 +31,14 @@ public class CreatePressingRecipeBuilder extends AJsonIngredientResultRecipeBuil
     }
 
     @Override
-    public JsonObject getSequenceRecipe() {
-        return new Result(null, ingredient, result, null, null).serializeRecipe();
+    public FinishedRecipe getFinishedRecipe() {
+        return new Result(null, ingredient, result, null, null);
     }
 
     public static JsonObject getSequenceStep(ItemLike transitional) {
         JsonObject trans = JsonBuilder.json().addItem(transitional).build();
         CreatePressingRecipeBuilder step = new CreatePressingRecipeBuilder(trans, trans);
-        return step.getSequenceRecipe();
+        return step.getSequencedRecipe();
     }
 
     /**

@@ -2,7 +2,6 @@ package net.minheur.mhm_bitsnbobs.datagen;
 
 import appeng.recipes.handlers.InscriberProcessType;
 import appeng.recipes.handlers.InscriberRecipeBuilder;
-import com.google.gson.JsonObject;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -29,6 +28,7 @@ import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.*;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
 import net.minheur.techno_lib.builders.JsonBuilder;
 import net.minheur.techno_lib.builders.RecipeNbtBuilder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -47,7 +47,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param pWriter it is the consumer. Used in every recipe.
      */
     @Override
-    protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
+    protected void buildRecipes(@NotNull Consumer<FinishedRecipe> pWriter) {
         // call for smelting ore : SMELTING = BLASTING but put x2 time in SMELTING
         oreSmelting(pWriter, List.of(ModItems.IRON_BALL.get()), RecipeCategory.MISC, Items.IRON_NUGGET, 0.1f, 200, "balls");
         oreSmelting(pWriter, List.of(ModItems.COPPER_BALL.get()), RecipeCategory.MISC, OtherModItems.Create.COPPER_NUGGET.getAsRawItem(), 0.1f, 200, "balls");
@@ -344,12 +344,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlocks(getHasName(Items.CLAY_BALL), has(Items.CLAY_BALL))
                 .save(pWriter, "red_clay_ball_mixing");
 
-        JsonObject temporary = JsonBuilder.json().addItem(ModItems.MAGIC_SHARD.get()).build(); // TODO: use new impl
-        temporary.add("nbt", RecipeNbtBuilder.getNbt().addNbt("Damage", 100).getPropertiesJson());
         CreateMixingRecipeBuilder.mix()
                 .addIngredient(JsonBuilder.json().addItem(Items.AMETHYST_SHARD).build())
                 .addIngredient(JsonBuilder.json().addItem(Items.ECHO_SHARD).build())
-                .addResult(temporary)
+                .addResult(
+                        JsonBuilder.json().addItem(ModItems.MAGIC_SHARD.get()).addRecipeNBT(
+                                RecipeNbtBuilder.getNbt().addNbt("Damage", 100)
+                        ).build()
+                )
                 .unlocks(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD)) //
                 .save(pWriter, "magic_shard_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.SUPERHEATED)

@@ -41,15 +41,14 @@ public class CreateDeployingRecipeBuilder extends AResultRecipeBuilder implement
         consumer.accept(new Result(getFullRecipeId(resourceLocation), mainIngredient, deployIngredient, result, advancement, getFullAdvancementId(resourceLocation)));
     }
 
-    @Override
-    public JsonObject getSequenceRecipe() {
-        return new Result(null, this.mainIngredient, this.deployIngredient, this.result, null, null)
-                .serializeRecipe();
+    public static JsonObject getSequenceStep(ItemLike transitional, JsonObject deploy) {
+        JsonObject trans = JsonBuilder.json().getSimpleItem(transitional);
+        return new CreateDeployingRecipeBuilder(trans, deploy, trans).getSequencedRecipe();
     }
 
-    public static JsonObject getSequenceStep(ItemLike transitional, JsonObject deploy) {
-        JsonObject trans = JsonBuilder.json().addItem(transitional).build();
-        return new CreateDeployingRecipeBuilder(trans, deploy, trans).getSequenceRecipe();
+    @Override
+    public FinishedRecipe getFinishedRecipe() {
+        return new Result(null, mainIngredient, deployIngredient, result, null, null);
     }
 
     public static class Result extends ResultRecipeResult {

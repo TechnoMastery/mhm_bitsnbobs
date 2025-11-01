@@ -38,21 +38,17 @@ public class CreateFillingRecipeProvider extends AJsonIngredientsResultRecipeBui
         consumer.accept(new Result(getFullRecipeId(resourceLocation), ingredients, result, advancement, getFullAdvancementId(resourceLocation)));
     }
 
+    @Override
     public FinishedRecipe getFinishedRecipe() {
         return new Result(null, this.ingredients, this.result, null, null);
     }
 
-    @Override
-    public JsonObject getSequenceRecipe() {
-        return new Result(null, ingredients, result, null, null).serializeRecipe();
-    }
-
     public static JsonObject getSequenceStep(ItemLike transitional, JsonObject fluid) {
-        JsonObject trans = JsonBuilder.json().addItem(transitional).build();
+        JsonObject trans = JsonBuilder.json().getSimpleItem(transitional);
         CreateFillingRecipeProvider step = new CreateFillingRecipeProvider(trans);
         step.addIngredient(trans)
                 .addIngredient(fluid);
-        return step.getSequenceRecipe();
+        return step.getSequencedRecipe();
     }
 
     /**
