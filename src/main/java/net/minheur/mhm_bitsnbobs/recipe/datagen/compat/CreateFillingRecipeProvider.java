@@ -44,7 +44,7 @@ public class CreateFillingRecipeProvider extends AJsonIngredientsResultRecipeBui
 
     @Override
     public JsonObject getSequenceRecipe() {
-        return new Result(null, ingredients, result, advancement, null).serializeRecipe();
+        return new Result(null, ingredients, result, null, null).serializeRecipe();
     }
 
     public static JsonObject getSequenceStep(ItemLike transitional, JsonObject fluid) {
