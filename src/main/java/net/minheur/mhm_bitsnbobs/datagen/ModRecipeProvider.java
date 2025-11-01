@@ -27,8 +27,8 @@ import net.minheur.mhm_bitsnbobs.item.ModItems;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.*;
 import net.minheur.mhm_bitsnbobs.recipe.datagen.compat.*;
 import net.minheur.mhm_bitsnbobs.util.ModTags;
-import net.minheur.mhm_bitsnbobs.util.RecipeNbtBuilder;
 import net.minheur.techno_lib.builders.JsonBuilder;
+import net.minheur.techno_lib.builders.RecipeNbtBuilder;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -319,75 +319,75 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         // mixing
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(ModTags.Items.FUELS)
-                .addFluidIngredient("minecraft:water", 1000)
-                .addResult(Items.KELP)
-                .unlock("has_fuels", has(ModTags.Items.FUELS))
+                .addIngredient(JsonBuilder.json().addTag(ModTags.Items.FUELS).build())
+                .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 1000).build())
+                .addResult(JsonBuilder.json().addItem(Items.KELP).build())
+                .unlocks("has_fuels", has(ModTags.Items.FUELS))
                 .save(pWriter, "kelp_mixing");
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(OtherModItems.Ae2.ENDER_DUST.getAsRawItem(), 4)
-                .addIngredient(Items.AMETHYST_SHARD)
-                .addResult(Items.ENDER_PEARL)
-                .unlock(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+                .addIngredient(JsonBuilder.json().addItem(OtherModItems.Ae2.ENDER_DUST.getAsRawItem()).addCount(4).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.AMETHYST_SHARD).build())
+                .addResult(JsonBuilder.json().addItem(Items.ENDER_PEARL).build())
+                .unlocks(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
                 .save(pWriter, "ender_pearl_mixing");
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(Items.SAND)
-                .addIngredient(Items.CLAY_BALL)
-                .addResult(Items.RED_SAND)
-                .unlock(getHasName(Items.SAND), has(Items.SAND))
+                .addIngredient(JsonBuilder.json().addItem(Items.SAND).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.CLAY_BALL).build())
+                .addResult(JsonBuilder.json().addItem(Items.RED_SAND).build())
+                .unlocks(getHasName(Items.SAND), has(Items.SAND))
                 .save(pWriter, "red_sand_mixing");
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(Items.CLAY_BALL)
-                .addFluidIngredient("minecraft:water", 500)
-                .addResult(ModItems.RED_CLAY_BALL.get(), 2)
-                .addResult(ModItems.RED_CLAY_BALL.get(), 0.25f)
-                .unlock(getHasName(Items.CLAY_BALL), has(Items.CLAY_BALL))
+                .addIngredient(JsonBuilder.json().addItem(Items.CLAY_BALL).build())
+                .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 500).build())
+                .addResult(JsonBuilder.json().addItem(ModItems.RED_CLAY_BALL.get()).addCount(2).build())
+                .addResult(JsonBuilder.json().addItem(ModItems.RED_CLAY_BALL.get()).addChance(0.25f).build())
+                .unlocks(getHasName(Items.CLAY_BALL), has(Items.CLAY_BALL))
                 .save(pWriter, "red_clay_ball_mixing");
+
+        JsonObject temporary = JsonBuilder.json().addItem(ModItems.MAGIC_SHARD.get()).build(); // TODO: use new impl
+        temporary.add("nbt", RecipeNbtBuilder.getNbt().addNbt("Damage", 100).getPropertiesJson());
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(Items.AMETHYST_SHARD)
-                .addIngredient(Items.ECHO_SHARD)
-                .addResult(ModItems.MAGIC_SHARD.get(), RecipeNbtBuilder.getNbt()
-                                .addNbt("Damage", 100)
-                                .getPropertiesJson()
-                )
-                .unlock(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
+                .addIngredient(JsonBuilder.json().addItem(Items.AMETHYST_SHARD).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.ECHO_SHARD).build())
+                .addResult(temporary)
+                .unlocks(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD)) //
                 .save(pWriter, "magic_shard_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.SUPERHEATED)
-                .addIngredient(ModTags.Items.ROTTEN_MEATS)
-                .addIngredient(Items.LAPIS_LAZULI, 3)
-                .addIngredient(Items.BLAZE_POWDER)
-                .addFluidIngredient("minecraft:water", 1000)
-                .addFluidResult("create_enchantment_industry:experience", 5)
-                .unlock(getHasName(Items.LAPIS_LAZULI), has(Items.LAPIS_LAZULI))
+                .addIngredient(JsonBuilder.json().addTag(ModTags.Items.ROTTEN_MEATS).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.LAPIS_LAZULI).addCount(3).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.BLAZE_POWDER).build())
+                .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 1000).build())
+                .addResult(JsonBuilder.json().addFluid("create_enchantment_industry:experience", 5).build())
+                .unlocks(getHasName(Items.LAPIS_LAZULI), has(Items.LAPIS_LAZULI))
                 .save(pWriter, "experience_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(Items.CALCITE)
-                .addIngredient(Items.CLAY_BALL, 2)
-                .addFluidIngredient("minecraft:water", 250)
-                .addResult(Items.BONE)
-                .addResult(Items.BONE_MEAL, 0.2f)
-                .unlock(getHasName(Items.CALCITE), has(Items.CALCITE))
+                .addIngredient(JsonBuilder.json().addItem(Items.CALCITE).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.CLAY_BALL).addCount(2).build())
+                .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 250).build())
+                .addResult(JsonBuilder.json().addItem(Items.BONE).build())
+                .addResult(JsonBuilder.json().addItem(Items.BONE_MEAL).addChance(0.2f).build())
+                .unlocks(getHasName(Items.CALCITE), has(Items.CALCITE))
                 .save(pWriter, "bone_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(ModItems.YEAST.get())
-                .addIngredient(OtherModItems.Create.DOUGH.getAsRawItem())
-                .addResult(ModItems.CONE.get())
-                .unlock(getHasName(OtherModItems.Create.DOUGH.getAsRawItem()), has(OtherModItems.Create.DOUGH.getAsRawItem()))
+                .addIngredient(JsonBuilder.json().addItem(ModItems.YEAST.get()).build())
+                .addIngredient(JsonBuilder.json().addItem(OtherModItems.Create.DOUGH.getAsRawItem()).build())
+                .addResult(JsonBuilder.json().addItem(ModItems.CONE.get()).build())
+                .unlocks(getHasName(OtherModItems.Create.DOUGH.getAsRawItem()), has(OtherModItems.Create.DOUGH.getAsRawItem()))
                 .save(pWriter, "cone_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.SUPERHEATED)
-                .addIngredient(Items.SAND, 3)
-                .addIngredient(Items.COBBLESTONE)
-                .addIngredient(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem(), 2)
-                .addIngredient(ModTags.Items.OBSIDIAN_DUSTS)
-                .addResult(OtherModItems.Ae2.ENDER_DUST.getAsRawItem())
-                .unlock(getHasName(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()), has(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()))
+                .addIngredient(JsonBuilder.json().addItem(Items.SAND).addCount(3).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.COBBLESTONE).build())
+                .addIngredient(JsonBuilder.json().addItem(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()).addCount(2).build())
+                .addIngredient(JsonBuilder.json().addTag(ModTags.Items.OBSIDIAN_DUSTS).build())
+                .addResult(JsonBuilder.json().addItem(OtherModItems.Ae2.ENDER_DUST.getAsRawItem()).build())
+                .unlocks(getHasName(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()), has(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()))
                 .save(pWriter, "ender_dust_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(OtherModItems.Create.CINDER_FLOUR.getAsRawItem())
-                .addIngredient(Items.BLAZE_POWDER)
-                .addFluidIngredient("minecraft:lava", 150)
-                .addResult(Items.REDSTONE)
-                .unlock(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
+                .addIngredient(JsonBuilder.json().addItem(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()).build())
+                .addIngredient(JsonBuilder.json().addItem(Items.BLAZE_POWDER).build())
+                .addIngredient(JsonBuilder.json().addFluid("minecraft:lava", 150).build())
+                .addResult(JsonBuilder.json().addItem(Items.REDSTONE).build())
+                .unlocks(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "redstone_mixing");
 
         // crate filling
