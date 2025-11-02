@@ -27,10 +27,8 @@ public class CreateFillingRecipeProvider extends AJsonIngredientsResultRecipeBui
         super(MhmBitsnbobs.MOD_ID, "create/filling", result);
     }
 
-    public static CreateFillingRecipeProvider fill(ItemLike result) {
-        JsonObject resultJson = new JsonObject();
-        resultJson.addProperty("item", getBuiltInItemRegistry(result));
-        return new CreateFillingRecipeProvider(resultJson);
+    public static CreateFillingRecipeProvider fill(JsonObject result) {
+        return new CreateFillingRecipeProvider(result);
     }
 
     @Override

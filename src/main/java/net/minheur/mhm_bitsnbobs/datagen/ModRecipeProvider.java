@@ -2,6 +2,7 @@ package net.minheur.mhm_bitsnbobs.datagen;
 
 import appeng.recipes.handlers.InscriberProcessType;
 import appeng.recipes.handlers.InscriberRecipeBuilder;
+import com.google.gson.JsonObject;
 import com.simibubi.create.content.processing.recipe.HeatCondition;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -243,77 +244,77 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         // create
         // compacting
         CreateCompactingRecipeBuilder.createCompacting()
-                .addIngredient(JsonBuilder.json().addItem(Items.SNOWBALL).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SNOWBALL))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
                 .addIngredient(JsonBuilder.json().addFluid("create:chocolate", 100).build())
-                .addResult(JsonBuilder.json().addItem(ModItems.CHOCOLATE_SNOWBALL.get()).build())
+                .addResult(JsonBuilder.getSimpleItem(ModItems.CHOCOLATE_SNOWBALL.get()))
                 .unlocks(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
                 .save(pWriter, "chocolate_snowball");
         CreateCompactingRecipeBuilder.createCompacting()
-                .addIngredient(JsonBuilder.json().addItem(Items.DIRT).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.DIRT).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.DIRT).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.DIRT).build())
-                .addResult(JsonBuilder.json().addItem(ModBlocks.COMPRESSED_DIRT.get()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.DIRT))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.DIRT))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.DIRT))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.DIRT))
+                .addResult(JsonBuilder.getSimpleItem(ModBlocks.COMPRESSED_DIRT.get()))
                 .unlocks(getHasName(Items.DIRT), has(Items.DIRT))
                 .save(pWriter, "compressed_dirt");
         CreateCompactingRecipeBuilder.createCompacting()
-                .addIngredient(JsonBuilder.json().addItem(Items.SNOWBALL).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
-                .addIngredient(JsonBuilder.json().addItem(ModItems.VANILLA_EXTRACT.get()).build())
-                .addResult(JsonBuilder.json().addItem(ModItems.VANILLA_SNOWBALL.get()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SNOWBALL))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
+                .addIngredient(JsonBuilder.getSimpleItem(ModItems.VANILLA_EXTRACT.get()))
+                .addResult(JsonBuilder.getSimpleItem(ModItems.VANILLA_SNOWBALL.get()))
                 .unlocks(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
                 .save(pWriter, "vanilla_snowball");
         CreateCompactingRecipeBuilder.createCompacting()
-                .addIngredient(JsonBuilder.json().addItem(Items.SNOWBALL).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
-                .addIngredient(JsonBuilder.json().addItem(ModItems.STRAWBERRY.get()).build())
-                .addResult(JsonBuilder.json().addItem(ModItems.STRAWBERRIES_SNOWBALL.get()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SNOWBALL))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
+                .addIngredient(JsonBuilder.getSimpleItem(ModItems.STRAWBERRY.get()))
+                .addResult(JsonBuilder.getSimpleItem(ModItems.STRAWBERRIES_SNOWBALL.get()))
                 .unlocks(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
                 .save(pWriter, "strawberries_snowball");
         CreateCompactingRecipeBuilder.createCompacting()
-                .addIngredient(JsonBuilder.json().addItem(Items.SNOWBALL).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SUGAR).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.SWEET_BERRIES).build())
-                .addResult(JsonBuilder.json().addItem(ModItems.SWEET_BERRIES_SNOWBALL.get()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SNOWBALL))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SUGAR))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SWEET_BERRIES))
+                .addResult(JsonBuilder.getSimpleItem(ModItems.SWEET_BERRIES_SNOWBALL.get()))
                 .unlocks(getHasName(Items.SNOWBALL), has(Items.SNOWBALL))
                 .save(pWriter, "sweet_berries_snowball");
         CreateCompactingRecipeBuilder.createCompacting()
-                .addIngredient(JsonBuilder.json().addItem(Items.STONE).build())
-                .addIngredient(JsonBuilder.json().addItem(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.STONE))
+                .addIngredient(JsonBuilder.getSimpleItem(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()))
                 .addIngredient(JsonBuilder.json().addTag(ModTags.Items.OBSIDIAN_DUSTS).build())
                 .addIngredient(JsonBuilder.json().addTag(ItemTags.SAND).build())
-                .addResult(JsonBuilder.json().addItem(Items.END_STONE).build())
+                .addResult(JsonBuilder.getSimpleItem(Items.END_STONE))
                 .unlocks(getHasName(Items.STONE), has(Items.STONE))
                 .save(pWriter, "endstone");
         CreateCompactingRecipeBuilder.createCompacting()
-                .addIngredient(JsonBuilder.json().addItem(Items.NETHERRACK).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.NETHERRACK).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.NETHERRACK).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.NETHERRACK).build())
-                .addResult(JsonBuilder.json().addItem(Items.MAGMA_BLOCK).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.NETHERRACK))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.NETHERRACK))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.NETHERRACK))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.NETHERRACK))
+                .addResult(JsonBuilder.getSimpleItem(Items.MAGMA_BLOCK))
                 .unlocks(getHasName(Items.NETHERRACK), has(Items.NETHERRACK))
                 .save(pWriter, "magma_block");
         CreateCompactingRecipeBuilder.createCompacting()
                 .addHeatCondition(HeatCondition.SUPERHEATED)
-                .addIngredient(JsonBuilder.json().addItem(Items.CHARCOAL).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.CHARCOAL).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.CHARCOAL).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.CHARCOAL).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.CHARCOAL))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.CHARCOAL))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.CHARCOAL))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.CHARCOAL))
                 .addIngredient(JsonBuilder.json().addFluid("minecraft:lava", 750).build())
                 .addResult(JsonBuilder.json().addItem(Items.COAL).build())
                 .unlocks(getHasName(Items.CHARCOAL), has(Items.CHARCOAL))
                 .save(pWriter, "coal_compacting_extreme");
         CreateCompactingRecipeBuilder.createCompacting()
                 .addHeatCondition(HeatCondition.SUPERHEATED)
-                .addIngredient(JsonBuilder.json().addItem(ModItems.BIOMASS.get()).build())
-                .addIngredient(JsonBuilder.json().addItem(ModItems.BIOMASS.get()).build())
-                .addIngredient(JsonBuilder.json().addItem(ModItems.BIOMASS.get()).build())
-                .addResult(JsonBuilder.json().addItem(ModItems.BLUE_BIOMASS.get()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(ModItems.BIOMASS.get()))
+                .addIngredient(JsonBuilder.getSimpleItem(ModItems.BIOMASS.get()))
+                .addIngredient(JsonBuilder.getSimpleItem(ModItems.BIOMASS.get()))
+                .addResult(JsonBuilder.getSimpleItem(ModItems.BLUE_BIOMASS.get()))
                 .unlocks(getHasName(ModItems.BIOMASS.get()), has(ModItems.BIOMASS.get()))
                 .save(pWriter, "blue_compacting");
 
@@ -321,23 +322,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         CreateMixingRecipeBuilder.mix()
                 .addIngredient(JsonBuilder.json().addTag(ModTags.Items.FUELS).build())
                 .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 1000).build())
-                .addResult(JsonBuilder.json().addItem(Items.KELP).build())
+                .addResult(JsonBuilder.getSimpleItem(Items.KELP))
                 .unlocks("has_fuels", has(ModTags.Items.FUELS))
                 .save(pWriter, "kelp_mixing");
         CreateMixingRecipeBuilder.mix()
                 .addIngredient(JsonBuilder.json().addItem(OtherModItems.Ae2.ENDER_DUST.getAsRawItem()).addCount(4).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.AMETHYST_SHARD).build())
-                .addResult(JsonBuilder.json().addItem(Items.ENDER_PEARL).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.AMETHYST_SHARD))
+                .addResult(JsonBuilder.getSimpleItem(Items.ENDER_PEARL))
                 .unlocks(getHasName(Items.AMETHYST_SHARD), has(Items.AMETHYST_SHARD))
                 .save(pWriter, "ender_pearl_mixing");
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(JsonBuilder.json().addItem(Items.SAND).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.CLAY_BALL).build())
-                .addResult(JsonBuilder.json().addItem(Items.RED_SAND).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SAND))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.CLAY_BALL))
+                .addResult(JsonBuilder.getSimpleItem(Items.RED_SAND))
                 .unlocks(getHasName(Items.SAND), has(Items.SAND))
                 .save(pWriter, "red_sand_mixing");
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(JsonBuilder.json().addItem(Items.CLAY_BALL).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.CLAY_BALL))
                 .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 500).build())
                 .addResult(JsonBuilder.json().addItem(ModItems.RED_CLAY_BALL.get()).addCount(2).build())
                 .addResult(JsonBuilder.json().addItem(ModItems.RED_CLAY_BALL.get()).addChance(0.25f).build())
@@ -345,10 +346,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter, "red_clay_ball_mixing");
 
         CreateMixingRecipeBuilder.mix()
-                .addIngredient(JsonBuilder.json().addItem(Items.AMETHYST_SHARD).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.ECHO_SHARD).build())
-                .addResult(
-                        JsonBuilder.json().addItem(ModItems.MAGIC_SHARD.get()).addRecipeNBT(
+                .addIngredient(JsonBuilder.getSimpleItem(Items.AMETHYST_SHARD))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.ECHO_SHARD))
+                .addResult(JsonBuilder.json().addItem(ModItems.MAGIC_SHARD.get()).addRecipeNBT(
                                 RecipeNbtBuilder.getNbt().addNbt("Damage", 100)
                         ).build()
                 )
@@ -357,38 +357,38 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         CreateMixingRecipeBuilder.mix(HeatCondition.SUPERHEATED)
                 .addIngredient(JsonBuilder.json().addTag(ModTags.Items.ROTTEN_MEATS).build())
                 .addIngredient(JsonBuilder.json().addItem(Items.LAPIS_LAZULI).addCount(3).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.BLAZE_POWDER).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.BLAZE_POWDER))
                 .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 1000).build())
                 .addResult(JsonBuilder.json().addFluid("create_enchantment_industry:experience", 5).build())
                 .unlocks(getHasName(Items.LAPIS_LAZULI), has(Items.LAPIS_LAZULI))
                 .save(pWriter, "experience_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(JsonBuilder.json().addItem(Items.CALCITE).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.CALCITE))
                 .addIngredient(JsonBuilder.json().addItem(Items.CLAY_BALL).addCount(2).build())
                 .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 250).build())
-                .addResult(JsonBuilder.json().addItem(Items.BONE).build())
+                .addResult(JsonBuilder.getSimpleItem(Items.BONE))
                 .addResult(JsonBuilder.json().addItem(Items.BONE_MEAL).addChance(0.2f).build())
                 .unlocks(getHasName(Items.CALCITE), has(Items.CALCITE))
                 .save(pWriter, "bone_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(JsonBuilder.json().addItem(ModItems.YEAST.get()).build())
-                .addIngredient(JsonBuilder.json().addItem(OtherModItems.Create.DOUGH.getAsRawItem()).build())
-                .addResult(JsonBuilder.json().addItem(ModItems.CONE.get()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(ModItems.YEAST.get()))
+                .addIngredient(JsonBuilder.getSimpleItem(OtherModItems.Create.DOUGH.getAsRawItem()))
+                .addResult(JsonBuilder.getSimpleItem(ModItems.CONE.get()))
                 .unlocks(getHasName(OtherModItems.Create.DOUGH.getAsRawItem()), has(OtherModItems.Create.DOUGH.getAsRawItem()))
                 .save(pWriter, "cone_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.SUPERHEATED)
                 .addIngredient(JsonBuilder.json().addItem(Items.SAND).addCount(3).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.COBBLESTONE).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.COBBLESTONE))
                 .addIngredient(JsonBuilder.json().addItem(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()).addCount(2).build())
                 .addIngredient(JsonBuilder.json().addTag(ModTags.Items.OBSIDIAN_DUSTS).build())
-                .addResult(JsonBuilder.json().addItem(OtherModItems.Ae2.ENDER_DUST.getAsRawItem()).build())
+                .addResult(JsonBuilder.getSimpleItem(OtherModItems.Ae2.ENDER_DUST.getAsRawItem()))
                 .unlocks(getHasName(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()), has(OtherModItems.Ae2.FLUIX_CRYSTAL.getAsRawItem()))
                 .save(pWriter, "ender_dust_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(JsonBuilder.json().addItem(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()).build())
-                .addIngredient(JsonBuilder.json().addItem(Items.BLAZE_POWDER).build())
+                .addIngredient(JsonBuilder.getSimpleItem(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
+                .addIngredient(JsonBuilder.getSimpleItem(Items.BLAZE_POWDER))
                 .addIngredient(JsonBuilder.json().addFluid("minecraft:lava", 150).build())
-                .addResult(JsonBuilder.json().addItem(Items.REDSTONE).build())
+                .addResult(JsonBuilder.getSimpleItem(Items.REDSTONE))
                 .unlocks(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "redstone_mixing");
 
@@ -408,65 +408,65 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         hauntingRecipe(pWriter, ModItems.BIOMASS.get(), ModItems.DARKENED_BIOMASS.get());
 
         // create sequence
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(Items.GLASS_BOTTLE).build(), JsonBuilder.json().addItem(Items.INK_SAC).build(),
-                        JsonBuilder.json().addItem(ModItems.INK_BOTTLE.get()).build(), 1)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(Items.GLASS_BOTTLE), JsonBuilder.getSimpleItem(Items.INK_SAC),
+                        JsonBuilder.getSimpleItem(ModItems.INK_BOTTLE.get()), 1)
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.INK_BOTTLE.get(), JsonBuilder.json().addFluid("minecraft:water", 150).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.INK_BOTTLE.get(),
-                        JsonBuilder.json().addItem(ModItems.DARKENED_BIOMASS.get()).build()))
+                        JsonBuilder.getSimpleItem(ModItems.DARKENED_BIOMASS.get())))
                 .unlocks(getHasName(Items.GLASS_BOTTLE), has(Items.GLASS_BOTTLE))
                 .save(pWriter, "ink_sac_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(ModItems.QUANTUMITE_INGOT.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.QUANTUMITE_SHEET.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.HALF_QUANTUMITE_SHEET.get()).build(), 1)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(ModItems.QUANTUMITE_INGOT.get()),
+                        JsonBuilder.getSimpleItem(ModItems.QUANTUMITE_SHEET.get()),
+                        JsonBuilder.getSimpleItem(ModItems.HALF_QUANTUMITE_SHEET.get()), 1)
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.HALF_QUANTUMITE_SHEET.get()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.HALF_QUANTUMITE_SHEET.get()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.HALF_QUANTUMITE_SHEET.get()))
                 .unlocks(getHasName(ModItems.QUANTUMITE_INGOT.get()), has(ModItems.QUANTUMITE_INGOT.get()))
                 .save(pWriter, "quantumite_sheet_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()).build(),
-                        JsonBuilder.json().addItem(Items.BLAZE_POWDER).build(),
-                        JsonBuilder.json().addItem(ModItems.UNFINISHED_BLAZE_POWDER.get()).build(), 4)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()),
+                        JsonBuilder.getSimpleItem(Items.BLAZE_POWDER),
+                        JsonBuilder.getSimpleItem(ModItems.UNFINISHED_BLAZE_POWDER.get()), 4)
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNFINISHED_BLAZE_POWDER.get(), JsonBuilder.json().addFluid("minecraft:lava", 150).build()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_BLAZE_POWDER.get()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_BLAZE_POWDER.get()))
                 .unlocks(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "blaze_powder_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(Items.DIAMOND).build(),
-                        JsonBuilder.json().addItem(ModItems.STORM_FRAGMENT.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.UNFINISHED_STORM_FRAGMENT.get()).build(), 4)
+                        JsonBuilder.getSimpleItem(ModItems.STORM_FRAGMENT.get()),
+                        JsonBuilder.getSimpleItem(ModItems.UNFINISHED_STORM_FRAGMENT.get()), 4)
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNFINISHED_STORM_FRAGMENT.get(), JsonBuilder.json().addFluid("create_enchantment_industry:hyper_experience", 150).build()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_STORM_FRAGMENT.get()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_STORM_FRAGMENT.get()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_STORM_FRAGMENT.get(),
-                        JsonBuilder.json().addItem(Items.LAPIS_LAZULI).build()))
+                        JsonBuilder.getSimpleItem(Items.LAPIS_LAZULI)))
                 .unlocks(getHasName(Items.DIAMOND), has(Items.DIAMOND))
                 .save(pWriter, "storm_fragment_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(ModItems.QUANTUM_CORE.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.STABILIZED_QUANTUM_CORE.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.UNPROCESSED_QUANTUM_CORE.get()).build(), 4)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(ModItems.QUANTUM_CORE.get()),
+                        JsonBuilder.getSimpleItem(ModItems.STABILIZED_QUANTUM_CORE.get()),
+                        JsonBuilder.getSimpleItem(ModItems.UNPROCESSED_QUANTUM_CORE.get()), 4)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
-                        JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
+                        JsonBuilder.getSimpleItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem())))
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addFluid("minecraft:water", 1000).build()))
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addFluid("minecraft:lava", 1000).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
-                        JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
+                        JsonBuilder.getSimpleItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem())))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
-                        JsonBuilder.json().addItem(Items.OBSIDIAN).build()))
+                        JsonBuilder.getSimpleItem(Items.OBSIDIAN)))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
                 .unlocks(getHasName(ModItems.QUANTUM_CORE.get()), has(ModItems.QUANTUM_CORE.get()))
                 .save(pWriter, "stabilized_quantum_core_recipe");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(ModItems.SMALL_CREATIVE_NUGGET.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.CREATIVE_NUGGET.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.UNPROCESSED_CREATIVE_NUGGET.get()).build(), 50)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(ModItems.SMALL_CREATIVE_NUGGET.get()),
+                        JsonBuilder.getSimpleItem(ModItems.CREATIVE_NUGGET.get()),
+                        JsonBuilder.getSimpleItem(ModItems.UNPROCESSED_CREATIVE_NUGGET.get()), 50)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_CREATIVE_NUGGET.get(),
-                        JsonBuilder.json().addItem(ModItems.CREATIVE_ESSENCE.get()).build()))
+                        JsonBuilder.getSimpleItem(ModItems.CREATIVE_ESSENCE.get())))
                 .unlocks(getHasName(ModItems.SMALL_CREATIVE_NUGGET.get()), has(ModItems.SMALL_CREATIVE_NUGGET.get()))
                 .save(pWriter, "creative_nugget_sequence");
         CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addTag(ModTags.Items.FUELS).build(),
-                        JsonBuilder.json().addItem(Items.SEA_PICKLE).build(),
-                        JsonBuilder.json().addItem(ModItems.UNPROCESSED_SEA_PICKLE.get()).build(), 5)
+                        JsonBuilder.getSimpleItem(Items.SEA_PICKLE),
+                        JsonBuilder.getSimpleItem(ModItems.UNPROCESSED_SEA_PICKLE.get()), 5)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get(),
                         JsonBuilder.json().addTag(ModTags.Items.GLOWING_UTILITY).build()))
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get(),
@@ -476,46 +476,46 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_SEA_PICKLE.get()))
                 .unlocks("fuels", has(ModTags.Items.FUELS))
                 .save(pWriter, "sea_pickle_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build(),
-                        JsonBuilder.json().addItem(ModItems.QUANTUM_CORE.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.UNPROCESSED_QUANTUM_CORE.get()).build(), 15)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()),
+                        JsonBuilder.getSimpleItem(ModItems.QUANTUM_CORE.get()),
+                        JsonBuilder.getSimpleItem(ModItems.UNPROCESSED_QUANTUM_CORE.get()), 15)
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get()))
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addFluid("minecraft:lava", 500).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
-                        JsonBuilder.json().addItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem()).build()))
+                        JsonBuilder.getSimpleItem(OtherModItems.Ae2.SINGULARITY.getAsRawItem())))
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
                         JsonBuilder.json().addFluid("minecraft:water", 1000).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_QUANTUM_CORE.get(),
-                        JsonBuilder.json().addItem(ModItems.STORM_FRAGMENT.get()).build()))
-                .unlocks(getHasName(OtherModItems.Ae2.SINGULARITY.getAsRawItem()), has(OtherModItems.Ae2.SINGULARITY.getAsRawItem()))
+                        JsonBuilder.getSimpleItem(ModItems.STORM_FRAGMENT.get())))
+                .unlocks(OtherModItems.Ae2.SINGULARITY.getAsRawItem())
                 .save(pWriter, "quantum_core_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(Items.BUCKET).build(),
-                        JsonBuilder.json().addItem(ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get()).build(),
-                        JsonBuilder.json().addItem(ModItems.MILK_BUCKET_WITH_EGG.get()).build(), 6)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(Items.BUCKET),
+                        JsonBuilder.getSimpleItem(ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get()),
+                        JsonBuilder.getSimpleItem(ModItems.MILK_BUCKET_WITH_EGG.get()), 6)
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(),
                         JsonBuilder.json().addFluid("minecraft:milk", 50).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(),
                         JsonBuilder.json().addTag(Tags.Items.EGGS).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.MILK_BUCKET_WITH_EGG.get(),
-                        JsonBuilder.json().addItem(Items.SUGAR).build()))
-                .unlocks(getHasName(Items.BUCKET), has(Items.BUCKET))
+                        JsonBuilder.getSimpleItem(Items.SUGAR)))
+                .unlocks(Items.BUCKET)
                 .save(pWriter, getItemName(ModItems.BUCKET_OF_LIQUID_ICE_CREAM.get()) + "_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(ModItems.SAPPHIRE.get()).build(),
-                        JsonBuilder.json().addItem(Items.EMERALD).build(),
-                        JsonBuilder.json().addItem(ModItems.UNFINISHED_EMERALD.get()).build(), 3)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(ModItems.SAPPHIRE.get()),
+                        JsonBuilder.getSimpleItem(Items.EMERALD),
+                        JsonBuilder.getSimpleItem(ModItems.UNFINISHED_EMERALD.get()), 3)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(),
-                        JsonBuilder.json().addItem(Items.LIME_DYE).build()))
+                        JsonBuilder.getSimpleItem(Items.LIME_DYE)))
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(),
                         JsonBuilder.json().addFluid("create_enchantment_industry:experience", 15).build()))
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNFINISHED_EMERALD.get(),
-                        JsonBuilder.json().addItem(Items.IRON_NUGGET).build()))
-                .unlocks(getHasName(ModItems.SAPPHIRE.get()), has(ModItems.SAPPHIRE.get()))
+                        JsonBuilder.getSimpleItem(Items.IRON_NUGGET)))
+                .unlocks(ModItems.SAPPHIRE.get())
                 .save(pWriter, "emerald_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(Items.COBBLESTONE).build(),
-                        JsonBuilder.json().addItem(Items.NETHERRACK).build(),
-                        JsonBuilder.json().addItem(Items.COBBLESTONE).build(), 3)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(Items.COBBLESTONE),
+                        JsonBuilder.getSimpleItem(Items.NETHERRACK),
+                        JsonBuilder.getSimpleItem(Items.COBBLESTONE), 3)
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(Items.COBBLESTONE,
                         JsonBuilder.json().addFluid("minecraft:lava", 250).build()))
                 .addStep(CreateFillingRecipeProvider.getSequenceStep(Items.COBBLESTONE,
@@ -525,62 +525,62 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(Items.COBBLESTONE))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(Items.COBBLESTONE))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(Items.COBBLESTONE))
-                .unlocks(getHasName(Items.COBBLESTONE), has(Items.COBBLESTONE))
+                .unlocks(Items.COBBLESTONE)
                 .save(pWriter, "netherrack_sequence");
-        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.json().addItem(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()).build(),
-                        JsonBuilder.json().addItem(Items.GLOWSTONE).build(),
-                        JsonBuilder.json().addItem(ModItems.UNPROCESSED_DUST.get()).build(), 1)
+        CreateSequencedAssemblyRecipeBuilder.sequence(JsonBuilder.getSimpleItem(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()),
+                        JsonBuilder.getSimpleItem(Items.GLOWSTONE),
+                        JsonBuilder.getSimpleItem(ModItems.UNPROCESSED_DUST.get()), 1)
                 .addStep(CreateDeployingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_DUST.get(),
-                        JsonBuilder.json().addItem(Items.BLAZE_POWDER).build()))
+                        JsonBuilder.getSimpleItem(Items.BLAZE_POWDER)))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_DUST.get()))
                 .addStep(CreatePressingRecipeBuilder.getSequenceStep(ModItems.UNPROCESSED_DUST.get()))
-                .unlocks(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
+                .unlocks(OtherModItems.Create.CINDER_FLOUR.getAsRawItem())
                 .save(pWriter, "glowstone_sequence");
 
         // create mech crafting
-        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.json().addItem(ModItems.FIRE_SWORD.get()).build())
+        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.getSimpleItem(ModItems.FIRE_SWORD.get()))
                 .pattern("  BD")
                 .pattern(" BDB")
                 .pattern("SSB ")
                 .pattern("ES  ")
-                .define('D', JsonBuilder.json().addItem(ModItems.FIRE_DIAMOND.get()).build())
-                .define('S', JsonBuilder.json().addItem(ModItems.FIRE_STICK.get()).build())
-                .define('B', JsonBuilder.json().addItem(Items.FLINT_AND_STEEL).build())
-                .define('E', JsonBuilder.json().addItem(Items.NETHERITE_SWORD).build())
-                .unlocks(getHasName(ModItems.FIRE_DIAMOND.get()), has(ModItems.FIRE_DIAMOND.get()))
+                .define('D', JsonBuilder.getSimpleItem(ModItems.FIRE_DIAMOND.get()))
+                .define('S', JsonBuilder.getSimpleItem(ModItems.FIRE_STICK.get()))
+                .define('B', JsonBuilder.getSimpleItem(Items.FLINT_AND_STEEL))
+                .define('E', JsonBuilder.getSimpleItem(Items.NETHERITE_SWORD))
+                .unlocks(ModItems.FIRE_DIAMOND.get())
                 .save(pWriter, "fire_sword");
-        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.json().addItem(OtherModItems.Create.CREATIVE_FLUID_TANK.getAsRawItem()).build())
+        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.getSimpleItem(OtherModItems.Create.CREATIVE_FLUID_TANK.getAsRawItem()))
                 .pattern("AAAAA")
                 .pattern("ABDBA")
                 .pattern("ADCDA")
                 .pattern("ABDBA")
                 .pattern("AAAAA")
-                .define('A', JsonBuilder.json().addItem(ModBlocks.CREATIVE_BLOCK.get()).build())
-                .define('B', JsonBuilder.json().addItem(ModItems.CREATIVE_INGOT.get()).build())
-                .define('D', JsonBuilder.json().addItem(ModItems.HARDENED_INGOT.get()).build())
-                .define('C', JsonBuilder.json().addItem(OtherModItems.Create.FLUID_TANK.getAsRawItem()).build())
-                .unlocks(getHasName(OtherModItems.Create.FLUID_TANK.getAsRawItem()), has(OtherModItems.Create.FLUID_TANK.getAsRawItem()))
+                .define('A', JsonBuilder.getSimpleItem(ModBlocks.CREATIVE_BLOCK.get()))
+                .define('B', JsonBuilder.getSimpleItem(ModItems.CREATIVE_INGOT.get()))
+                .define('D', JsonBuilder.getSimpleItem(ModItems.HARDENED_INGOT.get()))
+                .define('C', JsonBuilder.getSimpleItem(OtherModItems.Create.FLUID_TANK.getAsRawItem()))
+                .unlocks(OtherModItems.Create.FLUID_TANK.getAsRawItem())
                 .save(pWriter, "creative/fluid_tank");
-        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.json().addItem(OtherModItems.Create.CREATIVE_MOTOR.getAsRawItem()).build())
+        CreateMechanicalCraftingBuilder.shaped(false, JsonBuilder.getSimpleItem(OtherModItems.Create.CREATIVE_MOTOR.getAsRawItem()))
                 .pattern("AAAAA")
                 .pattern("ABBBD")
                 .pattern("ADCCC")
                 .pattern("ABBBD")
                 .pattern("AAAAA")
-                .define('A', JsonBuilder.json().addItem(ModBlocks.CREATIVE_BLOCK.get()).build())
-                .define('B', JsonBuilder.json().addItem(ModItems.CREATIVE_INGOT.get()).build())
-                .define('D', JsonBuilder.json().addItem(ModItems.HARDENED_INGOT.get()).build())
-                .define('C', JsonBuilder.json().addItem(OtherModItems.Create.SHAFT.getAsRawItem()).build())
-                .unlocks(getHasName(OtherModItems.Create.SHAFT.getAsRawItem()), has(OtherModItems.Create.SHAFT.getAsRawItem()))
+                .define('A', JsonBuilder.getSimpleItem(ModBlocks.CREATIVE_BLOCK.get()))
+                .define('B', JsonBuilder.getSimpleItem(ModItems.CREATIVE_INGOT.get()))
+                .define('D', JsonBuilder.getSimpleItem(ModItems.HARDENED_INGOT.get()))
+                .define('C', JsonBuilder.getSimpleItem(OtherModItems.Create.SHAFT.getAsRawItem()))
+                .unlocks(OtherModItems.Create.SHAFT.getAsRawItem())
                 .save(pWriter, "creative/motor");
 
         // create milling
-        CreateMillingRecipeBuilder.milling(JsonBuilder.json().addItem(Items.MOSSY_COBBLESTONE).build(), 50)
+        CreateMillingRecipeBuilder.milling(JsonBuilder.getSimpleItem(Items.MOSSY_COBBLESTONE), 50)
                 .addResult(JsonBuilder.json().addItem(Items.COBBLESTONE).addChance(0.5f).build())
                 .addResult(JsonBuilder.json().addItem(Items.ROTTEN_FLESH).addChance(0.2f).build())
                 .addResult(JsonBuilder.json().addItem(Items.ROTTEN_FLESH).addChance(0.05f).build())
                 .addResult(JsonBuilder.json().addItem(Items.VINE).addChance(0.25f).build())
-                .unlocks(getHasName(Items.MOSSY_COBBLESTONE), has(Items.MOSSY_COBBLESTONE))
+                .unlocks(Items.MOSSY_COBBLESTONE)
                 .save(pWriter, "mossy_cobblestone_milling");
         millingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 50, 3);
 
@@ -593,16 +593,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         crushingRecipe(pWriter, Items.RED_TERRACOTTA, Items.RED_SAND, 500, 3);
         crushingRecipe(pWriter, ModBlocks.RED_CLAY.get(), ModItems.RED_CLAY_BALL.get(), 500, 3);
         CreateCrushingRecipeBuilder.crush(50)
-                .addIngredient(JsonBuilder.json().addItem(Items.SOUL_SOIL).build())
+                .addIngredient(JsonBuilder.getSimpleItem(Items.SOUL_SOIL))
                 .addResult(JsonBuilder.json().addItem(Items.BONE).addChance(0.5f).build())
                 .addResult(JsonBuilder.json().addItem(Items.BONE_MEAL).addChance(0.5f).build())
                 .addResult(JsonBuilder.json().addItem(Items.SOUL_SAND).addChance(0.8f).build())
-                .unlocks(getHasName(Items.SOUL_SOIL), has(Items.SOUL_SOIL))
+                .unlocks(Items.SOUL_SOIL)
                 .save(pWriter, "soul_soil_crushing");
         crushingRecipe(pWriter, ModBlocks.CREATIVE_RESIDUE_BLOCK.get(), ModItems.SMALL_CREATIVE_NUGGET.get(), 0.02f, 500);
         crushingRecipe(pWriter, ModBlocks.COMPRESSED_DIRT.get(), ModItems.PIECE_OF_DIRT.get(), 15);
         CreateCrushingRecipeBuilder.crush(5)
-                .addIngredient(JsonBuilder.json().addItem(ModBlocks.RESOURCE_DIRT_BLOCK.get()).build())
+                .addIngredient(JsonBuilder.getSimpleItem(ModBlocks.RESOURCE_DIRT_BLOCK.get()))
                 .addResult(JsonBuilder.json().addItem(ModItems.COPPER_BALL.get()).addCount(5).build())
                 .addResult(JsonBuilder.json().addItem(ModItems.COPPER_BALL.get()).addCount(3).addChance(0.325f).build())
                 .addResult(JsonBuilder.json().addItem(ModItems.IRON_BALL.get()).addCount(3).build())
@@ -611,7 +611,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .addResult(JsonBuilder.json().addItem(ModItems.DIAMOND_BALL.get()).addChance(0.125f).build())
                 .addResult(JsonBuilder.json().addItem(ModItems.SAPPHIRE_BALL.get()).addCount(2).addChance(0.13f).build())
                 .addResult(JsonBuilder.json().addItem(ModItems.CREATIVE_ESSENCE.get()).addChance(0.02f).build())
-                .unlocks(getHasName(ModBlocks.RESOURCE_DIRT_BLOCK.get()), has(ModBlocks.RESOURCE_DIRT_BLOCK.get()))
+                .unlocks(ModBlocks.RESOURCE_DIRT_BLOCK.get())
                 .save(pWriter, "resource_dirt_crushing");
 
         // deploying
@@ -1357,8 +1357,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected static void freezingRecipe(Consumer<FinishedRecipe> pFinishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         FreezingRecipeBuilder.freezing(
                         JsonBuilder.json().addItem(result).addCount(resultAmount).build(),
-                        JsonBuilder.json().addItem(ingredient).build()
-                ).unlocks(getHasName(ingredient), has(ingredient))
+                        JsonBuilder.getSimpleItem(ingredient)
+                ).unlocks(ingredient)
                 .save(pFinishedRecipeConsumer, result.toString());
     }
 
@@ -1367,9 +1367,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void gemPolishingRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike result, ItemLike ingredient, int resultAmount) {
         GemPolishingRecipeBuilder.gemPolishing(
-                        JsonBuilder.json().addItem(ingredient).build(),
+                        JsonBuilder.getSimpleItem(ingredient),
                         JsonBuilder.json().addItem(result).addCount(resultAmount).build()
-                ).unlocks(getHasName(ingredient), has(ingredient))
+                ).unlocks(ingredient)
                 .save(finishedRecipeConsumer, result.toString());
     }
     /**
@@ -1388,10 +1388,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count) {
         IncubatorRecipeBuilder.incubation(
-                        JsonBuilder.json().addItem(ingredient).build(),
-                        JsonBuilder.json().addItem(catalyzer).build(),
+                        JsonBuilder.getSimpleItem(ingredient),
+                        JsonBuilder.getSimpleItem(catalyzer),
                         JsonBuilder.json().addItem(result).addCount(count).build()
-                ).unlocks(getHasName(ingredient), has(ingredient))
+                ).unlocks(ingredient)
                 .save(finishedRecipeConsumer, result.toString());
     }
     /**
@@ -1399,10 +1399,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void incubationRecipe(Consumer<FinishedRecipe> finishedRecipeConsumer, ItemLike ingredient, ItemLike catalyzer, ItemLike result, int count, String id) {
         IncubatorRecipeBuilder.incubation(
-                        JsonBuilder.json().addItem(ingredient).build(),
-                        JsonBuilder.json().addItem(catalyzer).build(),
+                        JsonBuilder.getSimpleItem(ingredient),
+                        JsonBuilder.getSimpleItem(catalyzer),
                         JsonBuilder.json().addItem(result).addCount(count).build()
-                ).unlocks(getHasName(ingredient), has(ingredient))
+                ).unlocks(ingredient)
                 .save(finishedRecipeConsumer, id);
     }
 
@@ -1411,11 +1411,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void atomicalStabilizatorRecipe(Consumer<FinishedRecipe> consumer, ItemLike leftIngredient, ItemLike rightIngredient, ItemLike glueIngredient, ItemLike result, int count) {
         AtomicalStabilizationRecipeBuilder.stabilization(
-                        JsonBuilder.json().addItem(leftIngredient).build(),
-                        JsonBuilder.json().addItem(rightIngredient).build(),
-                        JsonBuilder.json().addItem(glueIngredient).build(),
+                        JsonBuilder.getSimpleItem(leftIngredient),
+                        JsonBuilder.getSimpleItem(rightIngredient),
+                        JsonBuilder.getSimpleItem(glueIngredient),
                         JsonBuilder.json().addItem(result).addCount(count).build()
-                ).unlocks(getHasName(glueIngredient), has(glueIngredient))
+                ).unlocks(glueIngredient)
                 .save(consumer, result.toString());
     }
 
@@ -1431,7 +1431,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                         JsonBuilder.json().addItem(down).addCount(downCount).build(),
                         JsonBuilder.json().addItem(result).addCount(resultCount).build(),
                         fuelAmount
-                ).unlocks(getHasName(primary), has(primary))
+                ).unlocks(primary)
                 .save(consumer, primary.toString());
     }
     protected static void mysteriousMagicRecipe(Consumer<FinishedRecipe> consumer, ItemLike primary, ItemLike left, ItemLike right, ItemLike up, ItemLike down, ItemLike result, int fuelAmount) {
@@ -1484,10 +1484,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param result the result you get
      */
     protected static void fillingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String fluid, int fluidAmount, ItemLike result) {
-        CreateFillingRecipeProvider.fill(result)
-                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+        CreateFillingRecipeProvider.fill(JsonBuilder.getSimpleItem(result))
+                .addIngredient(JsonBuilder.getSimpleItem(ingredient))
                 .addIngredient(JsonBuilder.json().addFluid(fluid, fluidAmount).build())
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(result) + "_filling");
     }
     /**
@@ -1498,10 +1498,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      * @param result the result you get from this
      */
     protected static void potionFillingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, String potionName, int potionAmount, ItemLike result) {
-        CreateFillingRecipeProvider.fill(result)
-                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+        CreateFillingRecipeProvider.fill(JsonBuilder.getSimpleItem(result))
+                .addIngredient(JsonBuilder.getSimpleItem(ingredient))
                 .addIngredient(JsonBuilder.json().addPotion(potionName, potionAmount).build())
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(result) + "_potion_filling");
     }
 
@@ -1514,9 +1514,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
      */
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int resultAmount) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+                .addIngredient(JsonBuilder.getSimpleItem(ingredient))
                 .addResult(JsonBuilder.json().addItem(result).addCount(resultAmount).build())
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
     /**
@@ -1530,10 +1530,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int mainResultCount, int bonusResultCount, float bonusResultChance) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+                .addIngredient(JsonBuilder.getSimpleItem(ingredient))
                 .addResult(JsonBuilder.json().addItem(result).addCount(mainResultCount).build())
                 .addResult(JsonBuilder.json().addItem(result).addCount(bonusResultCount).addChance(bonusResultChance).build())
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processingTime, int mainResultCount, float bonusResultChance) {
@@ -1547,52 +1547,50 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, float resultChance, int processingTime) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+                .addIngredient(JsonBuilder.getSimpleItem(ingredient))
                 .addResult(JsonBuilder.json().addItem(result).addChance(resultChance).build())
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
     protected static void crushingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, ItemLike otherResult, int processingTime, float mainChance, float otherChance) {
         CreateCrushingRecipeBuilder.crush(processingTime)
-                .addIngredient(JsonBuilder.json().addItem(ingredient).build())
+                .addIngredient(JsonBuilder.getSimpleItem(ingredient))
                 .addResult(JsonBuilder.json().addItem(result).addChance(mainChance).build())
                 .addResult(JsonBuilder.json().addItem(otherResult).addChance(otherChance).build())
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(ingredient) + "_crushing");
     }
 
     protected static void hauntingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {
         CreateHauntingRecipeBuilder.haunt(
-                JsonBuilder.json().addItem(ingredient).build()
+                JsonBuilder.getSimpleItem(ingredient)
                 )
-                .addResult(
-                        JsonBuilder.json().addItem(result).build()
-                )
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .addResult(JsonBuilder.getSimpleItem(result))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(result) + "_haunting");
     }
 
     protected static void pressingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result) {
         CreatePressingRecipeBuilder.press(
-                JsonBuilder.json().addItem(ingredient).build(),
-                JsonBuilder.json().addItem(result).build()
+                JsonBuilder.getSimpleItem(ingredient),
+                JsonBuilder.getSimpleItem(result)
                 )
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(ingredient) + "_pressing");
     }
 
     protected static void deployingRecipe(Consumer<FinishedRecipe> consumer, ItemLike mainIngredient, ItemLike deployIngredient, ItemLike result) {
-        CreateDeployingRecipeBuilder.deploy(JsonBuilder.json().addItem(mainIngredient).build(),
-                        JsonBuilder.json().addItem(deployIngredient).build(),
-                        JsonBuilder.json().addItem(result).build())
-                .unlocks(getHasName(mainIngredient), has(mainIngredient))
+        CreateDeployingRecipeBuilder.deploy(JsonBuilder.getSimpleItem(mainIngredient),
+                        JsonBuilder.getSimpleItem(deployIngredient),
+                        JsonBuilder.getSimpleItem(result))
+                .unlocks(mainIngredient)
                 .save(consumer, getItemName(result) + "_from_deploying");
     }
 
     protected static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount, float chance) {
-        CreateMillingRecipeBuilder.milling(JsonBuilder.json().addItem(ingredient).build(), processTime)
+        CreateMillingRecipeBuilder.milling(JsonBuilder.getSimpleItem(ingredient), processTime)
                 .addResult(JsonBuilder.json().addItem(result).addCount(amount).addChance(chance).build())
-                .unlocks(getHasName(ingredient), has(ingredient))
+                .unlocks(ingredient)
                 .save(consumer, getItemName(ingredient) + "_milling");
     }
     protected static void millingRecipe(Consumer<FinishedRecipe> consumer, ItemLike ingredient, ItemLike result, int processTime, int amount) {
