@@ -71,7 +71,8 @@ public class ModBoatEntity extends Boat {
         private final String name;
         private final Block planks;
         public static final StringRepresentable.EnumCodec<ModBoatEntity.Type> CODEC = StringRepresentable.fromEnum(ModBoatEntity.Type::values);
-        private static final IntFunction<ModBoatEntity.Type> BY_ID = ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+        private static final IntFunction<ModBoatEntity.Type> BY_ID = values().length == 0 ? id -> null :
+                ByIdMap.continuous(Enum::ordinal, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
 
         private Type(Block pPlanks, String pName) {
             this.name = pName;
