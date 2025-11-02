@@ -44,7 +44,7 @@ public class CreateFillingRecipeProvider extends AJsonIngredientsResultRecipeBui
     }
 
     public static JsonObject getSequenceStep(ItemLike transitional, JsonObject fluid) {
-        JsonObject trans = JsonBuilder.json().getSimpleItem(transitional);
+        JsonObject trans = JsonBuilder.getSimpleItem(transitional);
         CreateFillingRecipeProvider step = new CreateFillingRecipeProvider(trans);
         step.addIngredient(trans)
                 .addIngredient(fluid);

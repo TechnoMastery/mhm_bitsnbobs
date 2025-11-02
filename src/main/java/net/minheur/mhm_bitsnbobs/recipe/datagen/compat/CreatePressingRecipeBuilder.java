@@ -36,7 +36,7 @@ public class CreatePressingRecipeBuilder extends AJsonIngredientResultRecipeBuil
     }
 
     public static JsonObject getSequenceStep(ItemLike transitional) {
-        JsonObject trans = JsonBuilder.json().addItem(transitional).build();
+        JsonObject trans = JsonBuilder.getSimpleItem(transitional);
         CreatePressingRecipeBuilder step = new CreatePressingRecipeBuilder(trans, trans);
         return step.getSequencedRecipe();
     }

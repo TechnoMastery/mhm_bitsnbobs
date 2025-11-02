@@ -42,7 +42,7 @@ public class CreateDeployingRecipeBuilder extends AResultRecipeBuilder implement
     }
 
     public static JsonObject getSequenceStep(ItemLike transitional, JsonObject deploy) {
-        JsonObject trans = JsonBuilder.json().getSimpleItem(transitional);
+        JsonObject trans = JsonBuilder.getSimpleItem(transitional);
         return new CreateDeployingRecipeBuilder(trans, deploy, trans).getSequencedRecipe();
     }
 
