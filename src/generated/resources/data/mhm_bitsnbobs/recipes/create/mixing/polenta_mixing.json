@@ -1,0 +1,28 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:cornmeal"
+    },
+    {
+      "item": "createfood:butter"
+    },
+    {
+      "amount": 300,
+      "fluid": "minecraft:water"
+    },
+    {
+      "amount": 200,
+      "fluid": "minecraft:milk"
+    },
+    {
+      "tag": "forge:salt"
+    }
+  ],
+  "results": [
+    {
+      "item": "mhm_bitsnbobs:polenta"
+    }
+  ]
+}
