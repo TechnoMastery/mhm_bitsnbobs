@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.0,
+  "group": "polenta",
+  "ingredient": {
+    "item": "mhm_bitsnbobs:polenta_bowl"
+  },
+  "result": "mhm_bitsnbobs:cooked_polenta_bowl"
+}
