@@ -1097,6 +1097,9 @@ public class ModLangGen extends LanguageGenProvider {
         addItem(ModItems.POLENTA_CUBE)
                 .en_us("Polenta cube")
                 .fr_fr("Cube de polenta");
+        addItem(ModItems.FRIES_BOWL)
+                .en_us("Fries bowl")
+                .fr_fr("Bol de frites");
 
     }
 

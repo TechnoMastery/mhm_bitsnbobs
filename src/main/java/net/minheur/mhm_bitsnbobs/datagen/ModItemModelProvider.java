@@ -157,6 +157,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNFINISHED_STORM_FRAGMENT);
         simpleItem(ModItems.UNPROCESSED_SEA_PICKLE);
         simpleItem(ModItems.CORN);
+        simpleItem(ModItems.FRIES_BOWL);
         simpleItem(ModItems.CORNMEAL);
         simpleItem(ModItems.POLENTA);
         simpleItem(ModItems.POLENTA_BOWL);

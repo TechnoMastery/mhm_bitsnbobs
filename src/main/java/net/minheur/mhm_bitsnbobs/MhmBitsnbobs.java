@@ -202,6 +202,7 @@ public class MhmBitsnbobs
             event.accept(ModItems.POLENTA_BOWL);
             event.accept(ModItems.COOKED_POLENTA_BOWL);
             event.accept(ModItems.POLENTA_CUBE);
+            event.accept(ModItems.FRIES_BOWL);
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);

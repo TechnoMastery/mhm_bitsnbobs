@@ -445,6 +445,9 @@ public class ModItems {
     public static final RegistryObject<Item> CORNMEAL = ITEMS.register("cornmeal",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> FRIES_BOWL = ITEMS.register("fries_bowl",
+            () -> new Item(new Item.Properties().stacksTo(16)));
+
     // boats
     // public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",
     //         () -> new ModBoatItem(false, ModBoatEntity.Type.DARK, new Item.Properties().stacksTo(1)));
