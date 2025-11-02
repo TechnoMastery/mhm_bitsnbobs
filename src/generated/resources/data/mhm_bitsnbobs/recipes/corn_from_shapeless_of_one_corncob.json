@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mhm_bitsnbobs:corncob"
+    }
+  ],
+  "result": {
+    "count": 16,
+    "item": "mhm_bitsnbobs:corn"
+  }
+}

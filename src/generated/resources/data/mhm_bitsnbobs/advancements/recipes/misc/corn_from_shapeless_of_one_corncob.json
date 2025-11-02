@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_corncob": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mhm_bitsnbobs:corncob"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mhm_bitsnbobs:corn_from_shapeless_of_one_corncob"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_corncob",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mhm_bitsnbobs:corn_from_shapeless_of_one_corncob"
+    ]
+  },
+  "sends_telemetry_event": false
+}
