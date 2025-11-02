@@ -396,13 +396,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlocks(getHasName(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()), has(OtherModItems.Create.CINDER_FLOUR.getAsRawItem()))
                 .save(pWriter, "redstone_mixing");
         CreateMixingRecipeBuilder.mix(HeatCondition.HEATED)
-                .addIngredient(ModItems.CORNMEAL.get())
-                .addIngredient(OtherModItems.CreateFood.BUTTER.getAsRawItem())
-                .addFluidIngredient("minecraft:water", 300)
-                .addFluidIngredient("minecraft:milk", 200)
-                .addIngredient(ModTags.Items.SALT)
-                .addResult(ModItems.POLENTA.get())
-                .unlock(getHasName(ModItems.CORNMEAL.get()), has(ModItems.CORNMEAL.get()))
+                .addIngredient(JsonBuilder.json().getSimpleItem(ModItems.CORNMEAL.get()))
+                .addIngredient(JsonBuilder.json().getSimpleItem(OtherModItems.CreateFood.BUTTER.getAsRawItem()))
+                .addIngredient(JsonBuilder.json().addFluid("minecraft:water", 300).build())
+                .addIngredient(JsonBuilder.json().addFluid("minecraft:milk", 200).build())
+                .addIngredient(JsonBuilder.json().addTag(ModTags.Items.SALT).build())
+                .addResult(JsonBuilder.json().getSimpleItem(ModItems.POLENTA.get()))
+                .unlocks(getHasName(ModItems.CORNMEAL.get()), has(ModItems.CORNMEAL.get()))
                 .save(pWriter, "polenta_mixing");
 
         // crate filling
