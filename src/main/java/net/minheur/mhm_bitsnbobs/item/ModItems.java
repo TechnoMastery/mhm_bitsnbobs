@@ -329,21 +329,6 @@ public class ModItems {
     public static final RegistryObject<Item> RUBINIUM = ITEMS.register("rubinium",
             () -> new Item(new Item.Properties().rarity(Rarity.EPIC).stacksTo(40)));
 
-    public static final RegistryObject<Item> POLENTA = ITEMS.register("polenta",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> POLENTA_BOWL = ITEMS.register("polenta_bowl",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> COOKED_POLENTA_BOWL = ITEMS.register("cooked_polenta_bowl",
-            () -> new ReturnOtherWhenEatedItem(new Item.Properties().food(ModFoods.POLENTA_BOWL), Items.BOWL));
-    public static final RegistryObject<Item> POLENTA_CUBE = ITEMS.register("polenta_cube",
-            () -> new Item(new Item.Properties().food(ModFoods.POLENTA_CUBE)));
-
-    public static final RegistryObject<Item> CORN = ITEMS.register("corn",
-            () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CORNMEAL = ITEMS.register("cornmeal",
-            () -> new Item(new Item.Properties()));
-
-
     public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
             () -> new RecordItem(6, ModSounds.BAR_BRAWL, new Item.Properties().stacksTo(1), 2440));
     public static final RegistryObject<Item> DARK_SOUL_MUSIC_DISC = ITEMS.register("dark_soul_music_disc",

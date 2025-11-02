@@ -156,12 +156,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.UNFINISHED_BLAZE_POWDER);
         simpleItem(ModItems.UNFINISHED_STORM_FRAGMENT);
         simpleItem(ModItems.UNPROCESSED_SEA_PICKLE);
-        simpleItem(ModItems.CORN);
-        simpleItem(ModItems.CORNMEAL);
-        simpleItem(ModItems.POLENTA);
-        simpleItem(ModItems.POLENTA_BOWL);
-        simpleItem(ModItems.POLENTA_CUBE);
-        simpleItem(ModItems.COOKED_POLENTA_BOWL);
         simpleItem(ModItems.MAGIC_SHARD);
         simpleItem(ModItems.ROTTEN_PORKCHOP);
         simpleItem(ModItems.ROTTEN_BEEF);
