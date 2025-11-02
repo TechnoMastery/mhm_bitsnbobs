@@ -32,6 +32,11 @@ public class ModFoods {
             .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 2000, 20), 1f)
             .effect(() -> new MobEffectInstance(MobEffects.BLINDNESS, 2000), 1f).build();
 
+    public static final FoodProperties POLENTA_BOWL = new FoodProperties.Builder().nutrition(4)
+            .saturationMod(8).build();
+    public static final FoodProperties POLENTA_CUBE = new FoodProperties.Builder().nutrition(1)
+            .saturationMod(2).fast().build();
+
     public static final FoodProperties VANILLA_PODS = new FoodProperties.Builder().nutrition(0)
             .saturationMod(0f).alwaysEat().effect(() -> new MobEffectInstance(MobEffects.HUNGER, 50, 3), 1f).build();
 

@@ -196,6 +196,12 @@ public class MhmBitsnbobs
             event.accept(ModItems.STRAWBERRIES_SORBET);
             event.accept(ModItems.VANILLA_SORBET);
             event.accept(ModItems.CORNCOB);
+            event.accept(ModItems.CORN);
+            event.accept(ModItems.CORNMEAL);
+            event.accept(ModItems.POLENTA);
+            event.accept(ModItems.POLENTA_BOWL);
+            event.accept(ModItems.COOKED_POLENTA_BOWL);
+            event.accept(ModItems.POLENTA_CUBE);
         }
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
             event.accept(ModItems.SPAWNER_PART);
