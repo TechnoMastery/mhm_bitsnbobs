@@ -446,7 +446,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> FRIES_BOWL = ITEMS.register("fries_bowl",
-            () -> new Item(new Item.Properties().stacksTo(16)));
+            () -> new Item(new Item.Properties().stacksTo(16).food(ModFoods.FRIES_BOWL)));
 
     // boats
     // public static final RegistryObject<Item> DARK_BOAT = ITEMS.register("dark_boat",

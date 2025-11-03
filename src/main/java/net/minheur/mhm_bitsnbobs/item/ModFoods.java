@@ -21,6 +21,9 @@ public class ModFoods {
     public static final FoodProperties PIECE_OF_DIRT = new FoodProperties.Builder().nutrition(0)
             .saturationMod(0f).alwaysEat().build();
 
+    public static final FoodProperties FRIES_BOWL = new FoodProperties.Builder().nutrition(4)
+            .saturationMod(0.1f).fast().build();
+
     public static final FoodProperties HOLY_BREAD = new FoodProperties.Builder().nutrition(20)
             .saturationMod(20f).alwaysEat().effect(() -> new MobEffectInstance(MobEffects.HEALTH_BOOST, 3600,50), 1f)
             .effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600), 1f)
